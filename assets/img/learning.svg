@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 390" role="img" aria-labelledby="title">
+  <title>Ilustração de estudo</title>
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e9e6ff"/></linearGradient>
+  </defs>
+  <ellipse cx="290" cy="354" rx="205" ry="26" fill="#4035aa" opacity=".25"/>
+  <rect x="177" y="72" width="265" height="189" rx="24" fill="#302a82" opacity=".35"/>
+  <rect x="165" y="58" width="265" height="189" rx="24" fill="url(#screen)"/>
+  <rect x="187" y="83" width="96" height="13" rx="6.5" fill="#6658e8"/>
+  <rect x="187" y="111" width="176" height="8" rx="4" fill="#d9d5ef"/>
+  <rect x="187" y="132" width="136" height="8" rx="4" fill="#d9d5ef"/>
+  <rect x="187" y="169" width="64" height="54" rx="13" fill="#efeaff"/>
+  <path d="M205 203l12-18 11 9 13-18" fill="none" stroke="#6658e8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="268" y="169" width="139" height="13" rx="6.5" fill="#776bed"/>
+  <rect x="268" y="194" width="114" height="8" rx="4" fill="#d9d5ef"/>
+  <rect x="268" y="213" width="86" height="8" rx="4" fill="#d9d5ef"/>
+  <circle cx="117" cy="160" r="43" fill="#f1c7a8"/>
+  <path d="M78 153c4-33 21-51 43-48 21 3 35 23 38 49-16-13-27-18-43-17-13 1-25 6-38 16z" fill="#23233d"/>
+  <path d="M76 347c5-84 20-131 46-131 29 0 55 38 64 97l20 21-26 20-26-25-6 18z" fill="#fcfcff"/>
+  <path d="M91 235c-16 36-24 73-25 112h48l10-93z" fill="#e8e5ff"/>
+  <path d="M156 267l46 14 53-72" fill="none" stroke="#f1c7a8" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="259" cy="206" r="10" fill="#f1c7a8"/>
+  <rect x="66" y="344" width="160" height="14" rx="7" fill="#312b7c" opacity=".4"/>
+  <circle cx="462" cy="85" r="27" fill="#fff" opacity=".18"/>
+  <path d="M453 85l7 7 13-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

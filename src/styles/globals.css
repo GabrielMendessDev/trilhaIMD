@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: ui-rounded, "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		@apply min-h-screen bg-[#fbfbfd] text-slate-800 antialiased;
+	}
+	button,
+	a {
+		-webkit-tap-highlight-color: transparent;
+	}
+	button:focus-visible,
+	a:focus-visible {
+		@apply outline-3 outline-offset-2 outline-sky-400;
+	}
+	::selection {
+		@apply bg-violet-200 text-violet-950;
+	}
+}

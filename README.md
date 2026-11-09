@@ -2,6 +2,13 @@
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
+## Login com Google
+
+1. Crie um cliente OAuth do tipo **Aplicativo da Web** na [Google Auth Platform](https://console.cloud.google.com/auth/clients).
+2. Cadastre `http://localhost:3000/api/auth/callback/google` nas URIs de redirecionamento autorizadas. Em produção, cadastre a mesma rota no domínio HTTPS do app. Se o app OAuth estiver no modo de teste, inclua sua conta nos usuários de teste.
+3. No `.env` local, preencha `AUTH_GOOGLE_ID` e `AUTH_GOOGLE_SECRET` com os valores do cliente. Configure `AUTH_SECRET` (gere com `npx auth secret` se precisar) e aponte `DATABASE_URL` para o PostgreSQL. Em produção, defina também `AUTH_URL` com a origem pública do app.
+4. Rode `npm run db:push` para aplicar o schema ao banco local. Reinicie o servidor e abra `/login`.
+
 ## What's next? How do I make an app with this?
 
 We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.

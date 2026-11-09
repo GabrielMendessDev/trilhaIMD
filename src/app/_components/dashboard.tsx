@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { auth } from "~/server/auth";
 
 type IconName =
 	| "learn"
@@ -105,28 +106,45 @@ const nav = [
 	["/perfil", "Perfil", "profile"],
 ] as const;
 
-export function DashboardLayout({
+export function TrilhaLogo() {
+	return (
+		<Link
+			className="inline-flex items-center gap-2.5 font-black text-[23px] text-violet-600 tracking-[-.8px]"
+			href="/aprender"
+		>
+			<span
+				aria-hidden="true"
+				className="grid size-9 place-items-center rounded-xl bg-violet-600 text-lg text-white shadow-[0_3px_0_#4c36be]"
+			>
+				T
+			</span>
+			<span>
+				trilha <strong className="text-slate-800">IMD</strong>
+			</span>
+		</Link>
+	);
+}
+
+export async function DashboardLayout({
 	children,
 	active,
 }: {
 	children: ReactNode;
 	active: string;
 }) {
+	const user = (await auth())?.user;
+	const name = user?.name || "Minha conta";
+
 	return (
 		<div className="min-h-screen bg-[#fbfbfd]">
-			<aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-slate-100 border-r-2 bg-white px-5 py-7 lg:flex">
-				<Link
-					className="mb-8 flex items-center gap-2.5 px-2 font-black text-[23px] text-violet-600 tracking-[-.8px]"
-					href="/aprender"
-				>
-					<span className="grid size-9 place-items-center rounded-xl bg-violet-600 text-lg text-white shadow-[0_3px_0_#4c36be]">
-						T
-					</span>
-					trilha <strong className="text-slate-800">IMD</strong>
-				</Link>
+			<aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-slate-100 border-r-2 bg-white px-5 py-7 min-[1025px]:flex">
+				<div className="mb-8 px-2">
+					<TrilhaLogo />
+				</div>
 				<nav className="grid gap-1.5">
 					{nav.map(([href, label, icon]) => (
 						<Link
+							aria-current={active === href ? "page" : undefined}
 							className={`flex h-[52px] items-center gap-3.5 rounded-xl px-3.5 font-extrabold text-[15px] transition ${active === href ? "border-2 border-violet-200 bg-violet-50 text-violet-600" : "border-2 border-transparent hover:bg-slate-50"}`}
 							href={href}
 							key={href}
@@ -138,29 +156,53 @@ export function DashboardLayout({
 				</nav>
 				<Link
 					className="mt-auto flex items-center gap-3 rounded-xl px-2 py-3 hover:bg-slate-50"
-					href="/perfil"
+					href={user ? "/perfil" : "/login"}
 				>
-					<div className="grid size-11 place-items-center rounded-full bg-violet-500 font-black text-white">
-						E
+					<div className="grid size-11 shrink-0 place-items-center rounded-full bg-violet-100 font-black text-violet-700">
+						{user ? (
+							name.charAt(0).toUpperCase()
+						) : (
+							<Icon className="size-6" name="profile" />
+						)}
 					</div>
-					<span className="grid">
-						<strong className="text-sm">Estudante IMD</strong>
-						<small className="text-slate-400">Nível 1</small>
+					<span className="grid min-w-0">
+						<strong className="truncate text-sm">
+							{user ? name : "Entrar"}
+						</strong>
+						<small className="text-slate-500">
+							{user ? "Minha conta" : "Com sua conta Google"}
+						</small>
 					</span>
 				</Link>
 			</aside>
-			<header className="sticky top-0 z-20 flex h-16 items-center justify-between border-slate-100 border-b-2 bg-white/95 px-5 backdrop-blur lg:hidden">
-				<Link className="font-black text-violet-600 text-xl" href="/aprender">
+			<header className="sticky top-0 z-20 flex h-16 items-center justify-between border-slate-100 border-b-2 bg-white/95 px-4 backdrop-blur sm:px-5 min-[1025px]:hidden">
+				<Link
+					className="whitespace-nowrap font-black text-lg text-violet-600 min-[375px]:text-xl"
+					href="/aprender"
+				>
 					trilha <span className="text-slate-800">IMD</span>
 				</Link>
-				<Status compact />
+				<div className="flex items-center gap-2 min-[375px]:gap-4">
+					<Status compact />
+					{!user && (
+						<Link
+							className="font-black text-sm text-violet-700 hover:underline"
+							href="/login"
+						>
+							Entrar
+						</Link>
+					)}
+				</div>
 			</header>
-			<main className="pb-24 lg:ml-64 lg:pb-8">{children}</main>
-			<nav className="fixed inset-x-0 bottom-0 z-30 flex h-[72px] justify-around border-slate-200 border-t bg-white px-1 lg:hidden">
+			<main className="pb-24 min-[1025px]:ml-64 min-[1025px]:pb-8">
+				{children}
+			</main>
+			<nav className="fixed inset-x-0 bottom-0 z-30 flex h-[72px] justify-around border-slate-200 border-t bg-white px-1 min-[1025px]:hidden">
 				{nav
 					.filter(([href]) => href !== "/loja")
 					.map(([href, label, icon]) => (
 						<Link
+							aria-current={active === href ? "page" : undefined}
 							className={`flex min-w-14 flex-col items-center justify-center gap-1 font-extrabold text-[10px] ${active === href ? "text-violet-600" : "text-slate-400"}`}
 							href={href}
 							key={href}
@@ -175,7 +217,9 @@ export function DashboardLayout({
 }
 export function Status({ compact = false }: { compact?: boolean }) {
 	return (
-		<div className={`flex items-center ${compact ? "gap-3 text-sm" : "gap-4"}`}>
+		<div
+			className={`flex items-center ${compact ? "gap-2 text-sm min-[375px]:gap-3" : "gap-4"}`}
+		>
 			<span className="flex items-center gap-1 font-black text-orange-500">
 				<Icon className="size-5 fill-orange-400" name="fire" />0
 			</span>

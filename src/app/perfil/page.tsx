@@ -1,34 +1,58 @@
+import Link from "next/link";
 import {
 	DashboardLayout,
 	Icon,
 	PageHeading,
 	Progress,
 } from "~/app/_components/dashboard";
+import { auth, signOut } from "~/server/auth";
 
 const subjects = [
 	["Fundamentos Matemáticos", "6%", 6, "bg-violet-500"],
 	["Introdução à Programação", "0%", 0, "bg-sky-500"],
 	["Sistemas Digitais", "0%", 0, "bg-emerald-500"],
 ];
-export default function PerfilPage() {
+export default async function PerfilPage() {
+	const user = (await auth())?.user;
+	const name = user?.name || (user ? "Minha conta" : "Estudante IMD");
+
 	return (
 		<DashboardLayout active="/perfil">
 			<div className="mx-auto max-w-4xl px-5 py-10 sm:px-10">
 				<section className="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
 					<div className="grid size-24 place-items-center rounded-full bg-violet-500 font-black text-3xl text-white ring-8 ring-violet-100">
-						E
+						{name.charAt(0).toUpperCase()}
 					</div>
-					<div className="flex-1">
-						<h1 className="font-black text-3xl">Estudante IMD</h1>
-						<p className="mt-1 font-semibold text-slate-500">
-							Estudante do Instituto Metrópole Digital
+					<div className="min-w-0 flex-1">
+						<h1 className="wrap-break-word font-black text-3xl">{name}</h1>
+						<p className="wrap-break-word mt-1 font-semibold text-slate-500">
+							{user
+								? (user.email ?? "Conta Google")
+								: "Estudante do Instituto Metrópole Digital"}
 						</p>
-						<button
-							className="mt-4 rounded-xl border-2 border-slate-200 px-4 py-2 font-black text-slate-600 text-xs hover:bg-slate-50"
-							type="button"
-						>
-							EDITAR PERFIL
-						</button>
+						{user ? (
+							<form
+								action={async () => {
+									"use server";
+									await signOut({ redirectTo: "/login" });
+								}}
+								className="mt-4"
+							>
+								<button
+									className="cursor-pointer rounded-xl border-2 border-slate-200 px-4 py-2 font-black text-slate-600 text-sm hover:bg-slate-50"
+									type="submit"
+								>
+									Sair da conta
+								</button>
+							</form>
+						) : (
+							<Link
+								className="mt-4 inline-block rounded-xl border-2 border-violet-200 bg-violet-50 px-4 py-2 font-black text-sm text-violet-700 hover:bg-violet-100"
+								href="/login"
+							>
+								Entrar com o Google
+							</Link>
+						)}
 					</div>
 				</section>
 				<div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">

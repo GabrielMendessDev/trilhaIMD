@@ -1,0 +1,470 @@
+{
+	"versao": 1,
+	"trilha": "elementar",
+	"ponto": 10,
+	"atividades": [
+		{
+			"id": "desafio-festival-campus",
+			"titulo": "Desafio final: festival do campus",
+			"questoes": [
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Seu plantão no festival do campus",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Antes de abrir as portas, o festival precisa conferir inscrições, pagamentos e o monitor do palco. Identifique o que a pergunta procura: uma coleção, um valor que zera uma equação ou toda uma faixa válida."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "diagrama",
+								"legenda": "Três perguntas para escolher o procedimento.",
+								"dados": {
+									"modelo": "quadro",
+									"linhas": [
+										{
+											"simbolo": "Conjunto",
+											"leitura": "Quais candidatos entram?",
+											"exemplo": "Leia primeiro o universo e a condição."
+										},
+										{
+											"simbolo": "Equação",
+											"leitura": "Quais valores tornam a igualdade verdadeira?",
+											"exemplo": "Encontre e verifique as raízes."
+										},
+										{
+											"simbolo": "Inequação",
+											"leitura": "Onde a comparação é verdadeira?",
+											"exemplo": "Marque fronteiras e teste intervalos."
+										}
+									]
+								}
+							}
+						]
+					},
+					"numero": 1,
+					"ordem": 1
+				},
+				{
+					"numero": 2,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "A = {Nina, Rui, Sol} está no grupo de divulgação. B = {Rui, Sol, Teo} está no grupo de recepção. Quem está em A, mas ficou fora de B?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "{Nina, Teo}"
+							},
+							{
+								"id": "b",
+								"texto": "{Nina}"
+							},
+							{
+								"id": "c",
+								"texto": "{Rui, Sol}"
+							},
+							{
+								"id": "d",
+								"texto": "{Teo}"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Diferença de conjuntos",
+						"orientacao": "Comece pela divulgação e retire os nomes que também fazem recepção.",
+						"explicacao": "Rui e Sol pertencem a B. Retirando os dois de A, sobra Nina."
+					},
+					"ordem": 2
+				},
+				{
+					"numero": 3,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Os módulos disponíveis nas salas A e B são {som, luz} e {luz, vídeo, rede}. Quantos subconjuntos próprios existem na união?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "8"
+							},
+							{
+								"id": "b",
+								"texto": "16"
+							},
+							{
+								"id": "c",
+								"texto": "15"
+							},
+							{
+								"id": "d",
+								"texto": "7"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "Subconjuntos próprios",
+						"orientacao": "Conte os módulos distintos e retire o subconjunto completo.",
+						"explicacao": "A união tem 4 elementos. São 2⁴ − 1 = 15 subconjuntos próprios."
+					},
+					"ordem": 3
+				},
+				{
+					"numero": 4,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O festival guarda 2¹¹ arquivos em pacotes de 2⁵ arquivos. Em seguida, o painel calcula log₂ do número de pacotes. Que valor aparece?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "16"
+							},
+							{
+								"id": "b",
+								"texto": "32"
+							},
+							{
+								"id": "c",
+								"texto": "64"
+							},
+							{
+								"id": "d",
+								"texto": "6"
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Potência e logaritmo",
+						"orientacao": "Calcule primeiro a divisão de potências da mesma base.",
+						"explicacao": "2¹¹/2⁵ = 2⁶. O logaritmo na base 2 devolve o expoente 6."
+					},
+					"ordem": 4
+				},
+				{
+					"numero": 5,
+					"modo": "questao",
+					"questao": {
+						"tipo": "passo-a-passo",
+						"enunciado": "Uma máquina aceita as configurações do conjunto S = {x ∈ ℕ tal que x² − x − 6 = 0}. Como descobrir quais aparecem no painel?",
+						"passos": [
+							{
+								"id": "passo-1",
+								"titulo": "Resolva em ℝ",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "Fatore x² − x − 6 como (x − 3)(x + 2). As raízes são 3 e −2."
+									}
+								]
+							},
+							{
+								"id": "passo-2",
+								"titulo": "Aplique o universo da máquina",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "O painel aceita apenas valores naturais. Descarte −2 e mantenha 3."
+									}
+								]
+							},
+							{
+								"id": "passo-3",
+								"titulo": "Registre o conjunto",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "S = {3}, logo |S| = 1. A equação e a regra de entrada foram usadas juntas."
+									}
+								]
+							}
+						]
+					},
+					"ordem": 5
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "material",
+						"titulo": "Guia de revisão da Unidade 1",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Para conjuntos, separe elemento de subconjunto. Para potências e logaritmos, confira a base e o domínio. Em equações, calcule e teste as raízes. Nas inequações, decida se cada fronteira entra ou fica fora."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "referencia",
+								"titulo": "Notas e slides de Matemática Elementar",
+								"fonte": "IMD/UFRN",
+								"url": "https://matematica-elementar.github.io/"
+							}
+						]
+					},
+					"numero": 13,
+					"ordem": 6
+				},
+				{
+					"numero": 6,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O ajuste de áudio usa e^(2 ln 3). Qual é o multiplicador?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "9"
+							},
+							{
+								"id": "b",
+								"texto": "6"
+							},
+							{
+								"id": "c",
+								"texto": "3"
+							},
+							{
+								"id": "d",
+								"texto": "e⁶"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Logaritmo natural",
+						"orientacao": "Leve o multiplicador 2 para o expoente dentro de ln.",
+						"explicacao": "2 ln 3 = ln(3²). Portanto e^(ln 9) = 9."
+					},
+					"ordem": 7
+				},
+				{
+					"numero": 7,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Uma comanda tem dois sucos e um bolo por R$ 19. Outra tem um suco e um bolo por R$ 12. Qual é o preço do bolo?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "R$ 7"
+							},
+							{
+								"id": "b",
+								"texto": "R$ 5"
+							},
+							{
+								"id": "c",
+								"texto": "R$ 12"
+							},
+							{
+								"id": "d",
+								"texto": "R$ 6"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Sistemas lineares",
+						"orientacao": "A diferença entre as comandas é um suco.",
+						"explicacao": "19 − 12 = 7, então o suco custa R$ 7. O bolo custa R$ 12 − R$ 7 = R$ 5."
+					},
+					"ordem": 8
+				},
+				{
+					"numero": 8,
+					"modo": "questao",
+					"questao": {
+						"tipo": "ligacao",
+						"enunciado": "Ligue cada condição ao método que dá o primeiro passo correto.",
+						"itens": [
+							{
+								"id": "item-1",
+								"texto": "x⁴ − 5x² + 4 = 0"
+							},
+							{
+								"id": "item-2",
+								"texto": "x² + x − 2 = 0 com raiz em ℕ"
+							},
+							{
+								"id": "item-3",
+								"texto": "(x − 1)/(x − 3) ≥ 0"
+							}
+						],
+						"alternativas": [
+							{
+								"id": "opcao-1",
+								"texto": "Resolver a quadrática e filtrar as raízes naturais"
+							},
+							{
+								"id": "opcao-2",
+								"texto": "Retirar 3 do domínio e estudar o sinal"
+							},
+							{
+								"id": "opcao-3",
+								"texto": "Substituir x² por t ≥ 0"
+							}
+						],
+						"gabarito": [
+							{
+								"origem": "item-1",
+								"destino": "opcao-3"
+							},
+							{
+								"origem": "item-2",
+								"destino": "opcao-1"
+							},
+							{
+								"origem": "item-3",
+								"destino": "opcao-2"
+							}
+						],
+						"assunto": "Escolha do método",
+						"orientacao": "Olhe o grau, o universo e se há divisão por uma expressão variável.",
+						"explicacao": "A biquadrada pede t = x². A segunda pede filtrar as raízes naturais. A fração pede retirar 3 do domínio antes do estudo de sinais."
+					},
+					"ordem": 9
+				},
+				{
+					"numero": 9,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O jogo do festival testa x⁴ − 10x² + 9 = 0. Quais códigos inteiros estritamente positivos passam?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "{−3, −1, 1, 3}"
+							},
+							{
+								"id": "b",
+								"texto": "{1, 9}"
+							},
+							{
+								"id": "c",
+								"texto": "{1, 3}"
+							},
+							{
+								"id": "d",
+								"texto": "{3, 9}"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "Equação biquadrada e domínio",
+						"orientacao": "Resolva em t = x² e depois aplique a condição de código positivo.",
+						"explicacao": "t² − 10t + 9 = (t − 1)(t − 9), então x = ±1 ou ±3. Os códigos positivos são 1 e 3."
+					},
+					"ordem": 10
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Uma última verificação antes de abrir",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Para obter uma única raiz real em uma equação de 2º grau, iguale o discriminante a zero. Para uma fração ser maior ou igual a zero, os zeros válidos do numerador podem entrar, mas os do denominador ficam sempre de fora."
+							}
+						]
+					},
+					"numero": 14,
+					"ordem": 11
+				},
+				{
+					"numero": 10,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Uma animação obedece a duas regras: t² − 6t + 8 ≤ 0 e t > 3. Qual intervalo de tempo passa?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "[2, 4]"
+							},
+							{
+								"id": "b",
+								"texto": "[3, 4]"
+							},
+							{
+								"id": "c",
+								"texto": "(3, 4)"
+							},
+							{
+								"id": "d",
+								"texto": "(3, 4]"
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Inequações simultâneas",
+						"orientacao": "A solução deve satisfazer as duas regras.",
+						"explicacao": "A primeira regra dá [2, 4]. Intersectando com (3, ∞), obtemos (3, 4]."
+					},
+					"ordem": 12
+				},
+				{
+					"numero": 11,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Para que o efeito tenha exatamente uma raiz real, qual valor de k deve ser usado em 2x² − 12x + k = 0?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "18"
+							},
+							{
+								"id": "b",
+								"texto": "9"
+							},
+							{
+								"id": "c",
+								"texto": "36"
+							},
+							{
+								"id": "d",
+								"texto": "72"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Discriminante e raiz dupla",
+						"orientacao": "Escreva Δ em função de k e iguale a zero.",
+						"explicacao": "Δ = 144 − 8k. Para Δ = 0, k = 18. A raiz dupla é x = 3."
+					},
+					"ordem": 13
+				},
+				{
+					"numero": 12,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "A cabine abre quando (x − 2)(x − 5)/(x − 3) ≥ 0. A leitura pode ser qualquer real. Qual é a regra de abertura?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "[2, 3] ∪ [5, ∞)"
+							},
+							{
+								"id": "b",
+								"texto": "[2, 3) ∪ [5, ∞)"
+							},
+							{
+								"id": "c",
+								"texto": "(−∞, 2] ∪ (3, 5]"
+							},
+							{
+								"id": "d",
+								"texto": "(2, 3) ∪ (5, ∞)"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Inequação-quociente",
+						"orientacao": "Separe as fronteiras 2, 3 e 5. Confira quais delas são permitidas.",
+						"explicacao": "O quociente é positivo em (2, 3) e (5, ∞). Os zeros 2 e 5 entram, e 3 fica fora. Logo [2, 3) ∪ [5, ∞)."
+					},
+					"ordem": 14
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,597 @@
+{
+	"versao": 1,
+	"trilha": "elementar",
+	"ponto": 3,
+	"atividades": [
+		{
+			"id": "backup-em-potencias",
+			"titulo": "O backup que dobrou",
+			"questoes": [
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Multiplicações que cabem em uma potência",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Um código binário de três posições tem duas escolhas em cada posição. Para contar todas as combinações, fazemos 2 · 2 · 2. O jeito curto de escrever é 2³. Chamamos 2 de base e 3 de expoente. O expoente diz quantas vezes a base aparece como fator."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "formula",
+								"leitura": "Dois elevado a três é dois vezes dois vezes dois",
+								"termos": [
+									{
+										"forma": "potencia",
+										"base": "2",
+										"expoente": "3"
+									},
+									{
+										"forma": "texto",
+										"valor": " = 2 · 2 · 2 = 8"
+									}
+								]
+							},
+							{
+								"id": "bloco-3",
+								"tipo": "texto",
+								"texto": "Ao multiplicar potências da mesma base, some os expoentes. Ao dividir, subtraia. Por exemplo, 2⁵/2² = 2³. A base do denominador não pode ser zero."
+							}
+						]
+					},
+					"numero": 1,
+					"ordem": 1
+				},
+				{
+					"numero": 2,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Uma chave de teste tem 6 posições. Cada posição aceita 0 ou 1, independentemente das outras. Quantas chaves diferentes cabem?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "12"
+							},
+							{
+								"id": "b",
+								"texto": "36"
+							},
+							{
+								"id": "c",
+								"texto": "64"
+							},
+							{
+								"id": "d",
+								"texto": "128"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "Contagem com potências",
+						"orientacao": "Cada posição tem duas escolhas independentes.",
+						"explicacao": "Seis posições com duas escolhas cada geram 2⁶ = 64 chaves."
+					},
+					"ordem": 2
+				},
+				{
+					"numero": 3,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Um arquivo de 2¹² bytes será dividido sem sobras em blocos de 2⁴ bytes. Quantos blocos ele ocupa?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "2³"
+							},
+							{
+								"id": "b",
+								"texto": "2¹⁶"
+							},
+							{
+								"id": "c",
+								"texto": "2⁴⁸"
+							},
+							{
+								"id": "d",
+								"texto": "2⁸"
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Divisão de potências",
+						"orientacao": "As duas potências têm base 2. Compare os expoentes.",
+						"explicacao": "2¹²/2⁴ = 2^(12−4) = 2⁸."
+					},
+					"ordem": 3
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Zero, inverso e raiz",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "2³/2³ = 1 e também 2^(3−3) = 2⁰. Para toda base não nula, a⁰ = 1. Quando o expoente é negativo, usamos o recíproco. 2⁻³ = 1/2³ = 1/8."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "texto",
+								"texto": "Uma raiz desfaz uma potência. √16 é o número não negativo cujo quadrado dá 16, logo √16 = 4. Já a equação x² = 16 admite 4 e −4. A notação 16^(1/2) representa √16."
+							}
+						]
+					},
+					"numero": 13,
+					"ordem": 4
+				},
+				{
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"assunto": "Potência de base positiva",
+						"enunciado": "Um aplicativo reduz um arquivo a 1/16 do tamanho original. Qual é o fator em potência de 2?",
+						"orientacao": "Escreva 16 como potência e depois tome o recíproco.",
+						"explicacao": "16 = 2⁴. Seu recíproco é 2⁻⁴.",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "2⁴"
+							},
+							{
+								"id": "b",
+								"texto": "2⁻⁴"
+							},
+							{
+								"id": "c",
+								"texto": "2⁻²"
+							}
+						],
+						"gabarito": "b"
+					},
+					"numero": 14,
+					"ordem": 5
+				},
+				{
+					"numero": 4,
+					"modo": "questao",
+					"questao": {
+						"tipo": "ligacao",
+						"enunciado": "Ligue cada expressão ao valor correspondente.",
+						"itens": [
+							{
+								"id": "item-1",
+								"texto": "5⁰"
+							},
+							{
+								"id": "item-2",
+								"texto": "2⁻³"
+							},
+							{
+								"id": "item-3",
+								"texto": "16^(1/2)"
+							}
+						],
+						"alternativas": [
+							{
+								"id": "opcao-1",
+								"texto": "4"
+							},
+							{
+								"id": "opcao-2",
+								"texto": "1"
+							},
+							{
+								"id": "opcao-3",
+								"texto": "1/8"
+							}
+						],
+						"gabarito": [
+							{
+								"origem": "item-1",
+								"destino": "opcao-2"
+							},
+							{
+								"origem": "item-2",
+								"destino": "opcao-3"
+							},
+							{
+								"origem": "item-3",
+								"destino": "opcao-1"
+							}
+						],
+						"assunto": "Expoentes zero, negativos e fracionários",
+						"orientacao": "Leia um expoente negativo como recíproco e 1/2 como raiz quadrada.",
+						"explicacao": "5⁰ = 1, 2⁻³ = 1/8 e 16^(1/2) = 4."
+					},
+					"ordem": 6
+				},
+				{
+					"numero": 5,
+					"modo": "questao",
+					"questao": {
+						"tipo": "passo-a-passo",
+						"enunciado": "O jogo começa com 2² salas e dobra a quantidade em cada uma das próximas três rodadas.",
+						"passos": [
+							{
+								"id": "passo-1",
+								"titulo": "Escreva o multiplicador",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "Dobrar três vezes equivale a multiplicar por 2³."
+									}
+								]
+							},
+							{
+								"id": "passo-2",
+								"titulo": "Use a base comum",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "2² · 2³ = 2^(2 + 3) = 2⁵."
+									}
+								]
+							},
+							{
+								"id": "passo-3",
+								"titulo": "Confira na escala do jogo",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "São 32 salas. Contando rodada por rodada, temos 4 → 8 → 16 → 32."
+									}
+								]
+							}
+						]
+					},
+					"ordem": 7
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Sinais e expoentes fracionários",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Parênteses determinam a base. Em (−3)², a base é −3. Em −3², calculamos 3² e só então aplicamos o sinal de menos."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "texto",
+								"texto": "A raiz de índice ímpar aceita radicando negativo. Uma raiz de índice par exige radicando não negativo no conjunto dos reais. Para base positiva, elevar a 2/3 é tirar a raiz cúbica e elevar ao quadrado."
+							}
+						]
+					},
+					"numero": 15,
+					"ordem": 8
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "material",
+						"titulo": "Ficha das potências",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Para base positiva: aᵖ · aᑫ = a^(p+q), aᵖ/aᑫ = a^(p−q) e (aᵖ)ᑫ = a^(pq). A ordem das operações e os parênteses importam."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "formula",
+								"leitura": "Dois elevado a menos três é um sobre oito",
+								"termos": [
+									{
+										"forma": "potencia",
+										"base": "2",
+										"expoente": "−3"
+									},
+									{
+										"forma": "texto",
+										"valor": " = "
+									},
+									{
+										"forma": "fracao",
+										"numerador": "1",
+										"denominador": "8"
+									}
+								]
+							},
+							{
+								"id": "bloco-3",
+								"tipo": "referencia",
+								"titulo": "Notas e slides de Matemática Elementar",
+								"fonte": "IMD/UFRN",
+								"url": "https://matematica-elementar.github.io/"
+							}
+						]
+					},
+					"numero": 16,
+					"ordem": 9
+				},
+				{
+					"numero": 6,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O simulador calcula (3²)³ pontos para uma sequência. Qual expressão equivale a esse valor?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "3⁶"
+							},
+							{
+								"id": "b",
+								"texto": "3⁵"
+							},
+							{
+								"id": "c",
+								"texto": "3⁹"
+							},
+							{
+								"id": "d",
+								"texto": "9³ · 3"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Potência de potência",
+						"orientacao": "A potência externa repete o fator 3² três vezes.",
+						"explicacao": "(3²)³ = 3^(2 · 3) = 3⁶."
+					},
+					"ordem": 10
+				},
+				{
+					"numero": 7,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Um ícone quadrado tem área de 81 cm². Qual é o comprimento do lado?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "±9 cm"
+							},
+							{
+								"id": "b",
+								"texto": "9 cm"
+							},
+							{
+								"id": "c",
+								"texto": "8,1 cm"
+							},
+							{
+								"id": "d",
+								"texto": "40,5 cm"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Raiz quadrada",
+						"orientacao": "Um comprimento é não negativo.",
+						"explicacao": "A raiz quadrada principal de 81 é 9. O lado mede 9 cm."
+					},
+					"ordem": 11
+				},
+				{
+					"numero": 8,
+					"modo": "questao",
+					"questao": {
+						"tipo": "associacao",
+						"enunciado": "Para cada expressão, indique se o valor existe no conjunto dos reais.",
+						"itens": [
+							{
+								"id": "item-1",
+								"texto": "√(−9)"
+							},
+							{
+								"id": "item-2",
+								"texto": "∛(−8)"
+							},
+							{
+								"id": "item-3",
+								"texto": "0⁻²"
+							},
+							{
+								"id": "item-4",
+								"texto": "4^(1/2)"
+							}
+						],
+						"alternativas": [
+							{
+								"id": "opcao-1",
+								"texto": "Existe em ℝ"
+							},
+							{
+								"id": "opcao-2",
+								"texto": "Não existe em ℝ"
+							}
+						],
+						"gabarito": [
+							{
+								"origem": "item-1",
+								"destino": "opcao-2"
+							},
+							{
+								"origem": "item-2",
+								"destino": "opcao-1"
+							},
+							{
+								"origem": "item-3",
+								"destino": "opcao-2"
+							},
+							{
+								"origem": "item-4",
+								"destino": "opcao-1"
+							}
+						],
+						"assunto": "Domínio de potências e raízes",
+						"orientacao": "Confira o índice da raiz e se há uma divisão por zero.",
+						"explicacao": "√(−9) não é real. ∛(−8) = −2. 0⁻² exige divisão por zero. 4^(1/2) = 2."
+					},
+					"ordem": 12
+				},
+				{
+					"numero": 9,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Uma oficina usa 27^(2/3) como fator de escala. Qual é o fator?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "3"
+							},
+							{
+								"id": "b",
+								"texto": "6"
+							},
+							{
+								"id": "c",
+								"texto": "18"
+							},
+							{
+								"id": "d",
+								"texto": "9"
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Expoente fracionário",
+						"orientacao": "Comece pela raiz que o denominador indica.",
+						"explicacao": "∛27 = 3. Elevando ao quadrado, obtemos 27^(2/3) = 9."
+					},
+					"ordem": 13
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Do dobro ao número de Euler",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "O número e vale aproximadamente 2,71828. É uma base positiva usada em modelos de crescimento e decaimento. Calcule e³ · e⁻² com a mesma regra de qualquer base positiva. Na próxima etapa, ln ajudará a encontrar o expoente de e."
+							}
+						]
+					},
+					"numero": 17,
+					"ordem": 14
+				},
+				{
+					"numero": 10,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Uma simulação começa com taxa proporcional a e³ e aplica dois fatores e⁻¹. Qual potência descreve o efeito e³ · e⁻¹ · e⁻¹?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "e⁵"
+							},
+							{
+								"id": "b",
+								"texto": "e"
+							},
+							{
+								"id": "c",
+								"texto": "e⁻²"
+							},
+							{
+								"id": "d",
+								"texto": "1"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Base e",
+						"orientacao": "Junte os expoentes sem alterar a base.",
+						"explicacao": "A soma é 3 − 1 − 1 = 1, portanto e¹ = e."
+					},
+					"ordem": 15
+				},
+				{
+					"numero": 11,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Um sensor compara a expressão (−3)² com −3². Quais são os resultados, nessa ordem?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "9 e −9"
+							},
+							{
+								"id": "b",
+								"texto": "−9 e 9"
+							},
+							{
+								"id": "c",
+								"texto": "9 e 9"
+							},
+							{
+								"id": "d",
+								"texto": "−9 e −9"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Sinais e parênteses",
+						"orientacao": "Identifique se o sinal negativo faz parte da base.",
+						"explicacao": "(−3)² = (−3)(−3) = 9. Já −3² significa −(3²) = −9."
+					},
+					"ordem": 16
+				},
+				{
+					"numero": 12,
+					"modo": "mista",
+					"conteudo": {
+						"blocos": [
+							{
+								"id": "titulo",
+								"tipo": "titulo",
+								"texto": "Expoente real"
+							},
+							{
+								"id": "texto",
+								"tipo": "texto",
+								"texto": "Com base positiva, a lei aᵖ · aᑫ = a^(p + q) vale também quando p e q são irracionais."
+							}
+						]
+					},
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O ajuste de ida multiplica por 5^(√2). O de volta multiplica por 5^(−√2). Qual é o fator total?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "0"
+							},
+							{
+								"id": "b",
+								"texto": "5"
+							},
+							{
+								"id": "c",
+								"texto": "1"
+							},
+							{
+								"id": "d",
+								"texto": "5²"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "Expoente real",
+						"orientacao": "Some os expoentes opostos antes de avaliar a potência.",
+						"explicacao": "√2 e −√2 somam zero. Assim, o fator é 5⁰ = 1."
+					},
+					"ordem": 17
+				}
+			]
+		}
+	]
+}

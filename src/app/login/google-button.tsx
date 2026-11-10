@@ -1,15 +1,13 @@
 "use client";
 
-import { useFormStatus } from "react-dom";
+import { ActionButton } from "~/app/_components/action-button";
 
 export function GoogleButton({ disabled }: { disabled: boolean }) {
-	const { pending } = useFormStatus();
-
 	return (
-		<button
-			aria-busy={pending}
+		<ActionButton
+			busyLabel="Abrindo o Google…"
 			className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-3 rounded-xl border border-[#747775] bg-white px-4 py-2 font-medium text-[#1f1f1f] text-sm hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
-			disabled={disabled || pending}
+			disabled={disabled}
 			type="submit"
 		>
 			<svg aria-hidden="true" className="size-5 shrink-0" viewBox="0 0 48 48">
@@ -30,7 +28,7 @@ export function GoogleButton({ disabled }: { disabled: boolean }) {
 					fill="#EA4335"
 				/>
 			</svg>
-			{pending ? "Abrindo o Google…" : "Entrar com o Google"}
-		</button>
+			Entrar com o Google
+		</ActionButton>
 	);
 }

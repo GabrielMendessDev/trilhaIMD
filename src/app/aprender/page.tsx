@@ -1,5 +1,17 @@
-import Link from "next/link";
-import { DashboardLayout, Icon, Status } from "~/app/_components/dashboard";
+import Link from "~/app/_components/action-link";
+import {
+	DashboardLayout,
+	Icon,
+	ProgressBar,
+} from "~/app/_components/dashboard";
+import { UnlockEffect } from "~/app/_components/reward-effects";
+import { auth } from "~/server/auth";
+import {
+	getLearningProgress,
+	getPublishedPoints,
+	getTrailStatus,
+} from "~/server/learning";
+import { stagesByTrail } from "./_etapa/stages";
 import styles from "./trail.module.css";
 import { TrailDiagram } from "./trail-diagram";
 import { TrailMap } from "./trail-map";
@@ -11,16 +23,50 @@ export default async function AprenderPage({
 	searchParams: Promise<{
 		modulo?: string | string[];
 		etapa?: string | string[];
+		concluida?: string | string[];
 	}>;
 }) {
-	const { modulo, etapa } = await searchParams;
+	const { modulo, etapa, concluida } = await searchParams;
 	const trail = trails.find(({ id }) => id === modulo) ?? trails[0];
+	const user = (await auth())?.user;
+	const [catalog, progress] = await Promise.all([
+		getPublishedPoints(),
+		user ? getLearningProgress(user.id) : null,
+	]);
+	const { published, completed, next } = getTrailStatus(
+		catalog ?? [],
+		progress,
+		trail.id,
+	);
+	const completedPoint = completed.find(
+		(point) => String(point.number) === concluida,
+	);
+	const reward = progress?.done.find(
+		(row) => row.pointId === completedPoint?.id,
+	)?.xp;
 	const selected =
 		trail.positions.findIndex((_, index) => String(index + 1) === etapa) + 1 ||
+		next?.number ||
 		1;
+	const percent =
+		progress && published.length
+			? Math.round((100 * completed.length) / published.length)
+			: null;
+	const latest = progress?.done
+		.filter((row) => completed.some(({ id }) => id === row.pointId))
+		.sort(
+			(a, b) =>
+				(b.completedAt?.getTime() ?? 0) - (a.completedAt?.getTime() ?? 0),
+		)[0];
 
 	return (
 		<DashboardLayout active="/aprender">
+			{user && next && latest?.completedAt && (
+				<UnlockEffect
+					eventId={`completion:${user.id}:${latest.pointId}:${latest.completedAt.toISOString()}`}
+					stage={next.number}
+				/>
+			)}
 			<div
 				className={`${styles.page} ${styles.trailTheme}`}
 				data-trail={trail.id}
@@ -30,14 +76,16 @@ export default async function AprenderPage({
 						<h1 className="font-black text-2xl tracking-tight sm:text-4xl min-[481px]:text-3xl">
 							Trilhas de matemática
 						</h1>
-						<p className="mt-1.5 font-semibold text-slate-600">
+						<p className="ui-muted mt-1.5 font-semibold">
 							Escolha um módulo para explorar.
 						</p>
 					</div>
-					<div className={styles.status}>
-						<Status />
-					</div>
 				</header>
+				{completedPoint && reward !== undefined && (
+					<p className="study-success mb-4" role="status">
+						Etapa {completedPoint.number} concluída · {reward} XP registrados
+					</p>
+				)}
 
 				<nav aria-label="Módulos de matemática" className={styles.moduleNav}>
 					{trails.map((module) => (
@@ -61,7 +109,10 @@ export default async function AprenderPage({
 				<div className={styles.content}>
 					<section aria-labelledby="module-title" className={styles.board}>
 						<header className={styles.moduleHeader}>
-							<div>
+							<span aria-hidden="true" className={styles.heroSymbol}>
+								{trail.notation}
+							</span>
+							<div className={styles.moduleIdentity}>
 								<h2
 									className="text-balance font-black text-2xl leading-tight min-[481px]:text-3xl"
 									id="module-title"
@@ -71,16 +122,33 @@ export default async function AprenderPage({
 								</h2>
 								<p className={styles.moduleDescription}>{trail.description}</p>
 								<p className={styles.moduleCount}>
-									{trail.positions.length} etapas · 2 desafios
+									{trail.positions.length} pontos · {published.length} etapas
+									publicadas
 								</p>
+								{percent !== null && (
+									<div className={styles.moduleProgress}>
+										<ProgressBar
+											label={`Progresso em ${trail.name}`}
+											value={percent}
+										/>
+										<span>{percent}%</span>
+									</div>
+								)}
 							</div>
-							<span aria-hidden="true" className={styles.heroSymbol}>
-								{trail.notation}
-							</span>
 						</header>
 						<TrailMap
+							completedStages={completed.map(({ number }) => number)}
+							currentStage={next?.number}
 							initialStage={selected}
 							key={`${trail.id}-${selected}`}
+							previewStages={Object.keys(stagesByTrail[trail.id] ?? {}).map(
+								Number,
+							)}
+							publishedStages={published.map(({ number, title }) => ({
+								number,
+								title,
+							}))}
+							sequential={Boolean(progress)}
 							trail={trail}
 						/>
 					</section>
@@ -90,7 +158,7 @@ export default async function AprenderPage({
 							<TrailDiagram id={trail.id} />
 							<figcaption>
 								<h3 className="font-black">{trail.diagramTitle}</h3>
-								<p className="mt-1 font-medium text-slate-600 text-sm leading-relaxed">
+								<p className="ui-muted mt-1 font-medium text-sm leading-relaxed">
 									{trail.diagramCaption}
 								</p>
 							</figcaption>
@@ -98,8 +166,9 @@ export default async function AprenderPage({
 
 						<div className={styles.guide}>
 							<h3 className="font-black">Como ler o mapa</h3>
-							<p className="mt-1 text-slate-600 text-sm leading-relaxed">
-								Os círculos marcam etapas. As estrelas indicam os desafios.
+							<p className="ui-muted mt-1 text-sm leading-relaxed">
+								Os círculos marcam etapas, as estrelas indicam desafios e o
+								cadeado sinaliza um pré-requisito.
 							</p>
 						</div>
 
@@ -108,9 +177,9 @@ export default async function AprenderPage({
 								<Icon className="size-5" name="ranking" />
 								Liga Acadêmica
 							</Link>
-							<Link href="/missoes">
-								<Icon className="size-5" name="quests" />
-								Missões do dia
+							<Link href="/conquistas">
+								<Icon className="size-5" name="trophy" />
+								Conquistas
 							</Link>
 						</div>
 					</aside>

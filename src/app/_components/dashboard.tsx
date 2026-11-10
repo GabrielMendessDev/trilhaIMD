@@ -1,126 +1,38 @@
-import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
-import { auth } from "~/server/auth";
+import Link from "~/app/_components/action-link";
+import { auth, signOut } from "~/server/auth";
+import { getLearningProgress } from "~/server/learning";
+import { ActionButton } from "./action-button";
+import { FeedbackViewport } from "./feedback";
+import { Icon } from "./icon";
+import { XpBalance } from "./reward-effects";
+import styles from "./shell.module.css";
+import { SkipLink } from "./skip-link";
+import { ThemeToggle } from "./theme-toggle";
 
-type IconName =
-	| "learn"
-	| "practice"
-	| "ranking"
-	| "quests"
-	| "shop"
-	| "profile"
-	| "fire"
-	| "gem"
-	| "heart"
-	| "chevron"
-	| "lock"
-	| "check"
-	| "star"
-	| "bolt"
-	| "shield";
+export { Icon } from "./icon";
+export { ProgressBar } from "./progress-bar";
 
-const paths: Record<IconName, ReactNode> = {
-	learn: (
-		<>
-			<path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-			<path d="M9 21v-6h6v6" />
-		</>
-	),
-	practice: (
-		<>
-			<circle cx="12" cy="12" r="8" />
-			<path d="m9 12 2 2 4-5" />
-		</>
-	),
-	ranking: (
-		<path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.8-5.4 2.8 1-6.1L3.2 9.4l6.1-.9z" />
-	),
-	quests: (
-		<>
-			<path d="M8 3h8v3h3v15H5V6h3z" />
-			<path d="m8 13 2.4 2.4L16 10" />
-		</>
-	),
-	shop: (
-		<>
-			<path d="M4 9h16l-1 12H5z" />
-			<path d="M8 9a4 4 0 0 1 8 0" />
-		</>
-	),
-	profile: (
-		<>
-			<circle cx="12" cy="8" r="4" />
-			<path d="M4 21c.8-4 3.4-6 8-6s7.2 2 8 6" />
-		</>
-	),
-	fire: (
-		<path d="M12 22c4 0 7-2.7 7-6.6 0-3.1-2-5-4.2-7.2.2 2.2-1 3.4-2.1 4.2C12.4 8.5 10 6.2 8 3c-1.3 2.3-3 4.8-3 8.2C5 17.6 8 22 12 22Z" />
-	),
-	gem: <path d="m12 3 8 7-8 11L4 10z" />,
-	heart: (
-		<path d="M20.8 8.6c0 5.6-8.8 10.9-8.8 10.9S3.2 14.2 3.2 8.6A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.4Z" />
-	),
-	chevron: <path d="m7 10 5 5 5-5" />,
-	lock: (
-		<>
-			<rect height="11" rx="2" width="14" x="5" y="10" />
-			<path d="M8 10V7a4 4 0 0 1 8 0v3" />
-		</>
-	),
-	check: <path d="m5 12 4.2 4.2L19 6.5" />,
-	star: (
-		<path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.8-5.4 2.8 1-6.1-4.4-4.3 6.1-.9z" />
-	),
-	bolt: <path d="m13 2-8 12h6l-1 8 8-12h-6z" />,
-	shield: <path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z" />,
-};
-
-export function Icon({
-	name,
-	className = "",
-}: {
-	name: IconName;
-	className?: string;
-}) {
-	return (
-		<svg
-			aria-hidden="true"
-			className={className}
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="2.2"
-			viewBox="0 0 24 24"
-		>
-			{paths[name]}
-		</svg>
-	);
-}
 const nav = [
-	["/aprender", "Aprender", "learn"],
-	["/praticar", "Praticar", "practice"],
-	["/ranking", "Ranking", "ranking"],
-	["/missoes", "Missões", "quests"],
-	["/loja", "Loja", "shop"],
-	["/perfil", "Perfil", "profile"],
+	["/", "Início", "learn"],
+	["/aprender", "Trilhas", "trail"],
+	["/disciplinas", "Disciplinas", "layers"],
+	["/progresso", "Progresso", "chart"],
+	["/conquistas", "Conquistas", "trophy"],
 ] as const;
 
-export function TrilhaLogo() {
+export function TrilbitLogo() {
 	return (
-		<Link
-			className="inline-flex items-center gap-2.5 font-black text-[23px] text-violet-600 tracking-[-.8px]"
-			href="/aprender"
-		>
-			<span
-				aria-hidden="true"
-				className="grid size-9 place-items-center rounded-xl bg-violet-600 text-lg text-white shadow-[0_3px_0_#4c36be]"
-			>
-				T
-			</span>
-			<span>
-				trilha <strong className="text-slate-800">IMD</strong>
-			</span>
+		<Link className={styles.brand} href="/">
+			<Image
+				alt=""
+				height={34}
+				src="/brand/trilbit-mark.svg"
+				unoptimized
+				width={34}
+			/>
+			<span>trilbit</span>
 		</Link>
 	);
 }
@@ -133,106 +45,135 @@ export async function DashboardLayout({
 	active: string;
 }) {
 	const user = (await auth())?.user;
+	const progress = user ? await getLearningProgress(user.id) : null;
 	const name = user?.name || "Minha conta";
+	const section = nav.find(([href]) => active === href)?.[1];
+	const links = nav.map(([href, label, icon]) => (
+		<Link
+			aria-current={active === href ? "page" : undefined}
+			href={href}
+			key={href}
+		>
+			<Icon className="size-5 shrink-0" name={icon} />
+			{label}
+		</Link>
+	));
 
 	return (
-		<div className="min-h-screen bg-[#fbfbfd]">
-			<aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-slate-100 border-r-2 bg-white px-5 py-7 min-[1025px]:flex">
-				<div className="mb-8 px-2">
-					<TrilhaLogo />
+		<div className={styles.shell} data-home={active === "/" || undefined}>
+			<SkipLink />
+			<aside className={styles.rail}>
+				<div className={styles.railBrand}>
+					<TrilbitLogo />
 				</div>
-				<nav className="grid gap-1.5">
-					{nav.map(([href, label, icon]) => (
-						<Link
-							aria-current={active === href ? "page" : undefined}
-							className={`flex h-[52px] items-center gap-3.5 rounded-xl px-3.5 font-extrabold text-[15px] transition ${active === href ? "border-2 border-violet-200 bg-violet-50 text-violet-600" : "border-2 border-transparent hover:bg-slate-50"}`}
-							href={href}
-							key={href}
-						>
-							<Icon className="size-6" name={icon} />
-							{label}
-						</Link>
-					))}
+				<nav aria-label="Navegação principal" className={styles.railNav}>
+					{links}
 				</nav>
-				<Link
-					className="mt-auto flex items-center gap-3 rounded-xl px-2 py-3 hover:bg-slate-50"
-					href={user ? "/perfil" : "/login"}
-				>
-					<div className="grid size-11 shrink-0 place-items-center rounded-full bg-violet-100 font-black text-violet-700">
+				<div aria-hidden="true" className={styles.railMascot}>
+					<Image
+						alt=""
+						height={600}
+						src="/brand/bito.webp"
+						unoptimized
+						width={900}
+					/>
+				</div>
+			</aside>
+
+			<div className={styles.workspace}>
+				<header className={styles.top}>
+					<div className={styles.mobileBrand}>
+						<TrilbitLogo />
+					</div>
+					<div className={styles.desktopContext}>
+						{section ?? "Minha conta"}
+					</div>
+					<div className={styles.utilities}>
+						{progress && (
+							<div className={styles.metrics}>
+								<span className={styles.streak}>
+									<Icon className="size-4" name="fire" />
+									{progress.streak}
+									<span aria-hidden="true" className={styles.metricWord}>
+										{progress.streak === 1 ? " dia" : " dias"}
+									</span>
+									<span className="sr-only">
+										{progress.streak === 1
+											? " dia de ofensiva"
+											: " dias de ofensiva"}
+									</span>
+								</span>
+								<XpBalance
+									account={user?.id ?? ""}
+									className={styles.xp}
+									value={progress.xp}
+								>
+									<Icon className="size-4" name="gem" />
+									{progress.xp.toLocaleString("pt-BR")} XP
+								</XpBalance>
+							</div>
+						)}
 						{user ? (
-							name.charAt(0).toUpperCase()
+							<details className={styles.userMenu}>
+								<summary aria-label="Menu da conta" className={styles.avatar}>
+									{user.image?.startsWith("https://") ? (
+										<Image
+											alt=""
+											height={40}
+											src={user.image}
+											unoptimized
+											width={40}
+										/>
+									) : (
+										<Icon className="size-6" name="profile" />
+									)}
+								</summary>
+								<div className={styles.userDropdown}>
+									<strong className="block px-2 pb-2 text-sm [overflow-wrap:anywhere]">
+										{name}
+									</strong>
+									<Link className="ui-link block p-2 text-sm" href="/perfil">
+										Perfil e configurações
+									</Link>
+									<form
+										action={async () => {
+											"use server";
+											await signOut({ redirectTo: "/login" });
+										}}
+									>
+										<ActionButton
+											busyLabel="Saindo…"
+											className="ui-link p-2 text-sm"
+											type="submit"
+										>
+											Sair da conta
+										</ActionButton>
+									</form>
+								</div>
+							</details>
 						) : (
-							<Icon className="size-6" name="profile" />
+							<>
+								<ThemeToggle />
+								<Link className={styles.mobileLogin} href="/login">
+									Entrar
+								</Link>
+							</>
 						)}
 					</div>
-					<span className="grid min-w-0">
-						<strong className="truncate text-sm">
-							{user ? name : "Entrar"}
-						</strong>
-						<small className="text-slate-500">
-							{user ? "Minha conta" : "Com sua conta Google"}
-						</small>
-					</span>
-				</Link>
-			</aside>
-			<header className="sticky top-0 z-20 flex h-16 items-center justify-between border-slate-100 border-b-2 bg-white/95 px-4 backdrop-blur sm:px-5 min-[1025px]:hidden">
-				<Link
-					className="whitespace-nowrap font-black text-lg text-violet-600 min-[375px]:text-xl"
-					href="/aprender"
-				>
-					trilha <span className="text-slate-800">IMD</span>
-				</Link>
-				<div className="flex items-center gap-2 min-[375px]:gap-4">
-					<Status compact />
-					{!user && (
-						<Link
-							className="font-black text-sm text-violet-700 hover:underline"
-							href="/login"
-						>
-							Entrar
-						</Link>
-					)}
-				</div>
-			</header>
-			<main className="pb-24 min-[1025px]:ml-64 min-[1025px]:pb-8">
-				{children}
-			</main>
-			<nav className="fixed inset-x-0 bottom-0 z-30 flex h-[72px] justify-around border-slate-200 border-t bg-white px-1 min-[1025px]:hidden">
-				{nav
-					.filter(([href]) => href !== "/loja")
-					.map(([href, label, icon]) => (
-						<Link
-							aria-current={active === href ? "page" : undefined}
-							className={`flex min-w-14 flex-col items-center justify-center gap-1 font-extrabold text-[10px] ${active === href ? "text-violet-600" : "text-slate-400"}`}
-							href={href}
-							key={href}
-						>
-							<Icon className="size-5" name={icon} />
-							{label}
-						</Link>
-					))}
+				</header>
+				<FeedbackViewport />
+				<main className={styles.main} id="conteudo-principal" tabIndex={-1}>
+					{children}
+				</main>
+			</div>
+
+			<nav aria-label="Navegação principal" className={styles.mobileNav}>
+				{links}
 			</nav>
 		</div>
 	);
 }
-export function Status({ compact = false }: { compact?: boolean }) {
-	return (
-		<div
-			className={`flex items-center ${compact ? "gap-2 text-sm min-[375px]:gap-3" : "gap-4"}`}
-		>
-			<span className="flex items-center gap-1 font-black text-orange-500">
-				<Icon className="size-5 fill-orange-400" name="fire" />0
-			</span>
-			<span className="flex items-center gap-1 font-black text-sky-500">
-				<Icon className="size-5 fill-sky-400" name="gem" />
-				120
-			</span>
-			<span className="flex items-center gap-1 font-black text-rose-500">
-				<Icon className="size-5 fill-rose-400" name="heart" />5
-			</span>
-		</div>
-	);
-}
+
 export function PageHeading({
 	title,
 	description,
@@ -241,29 +182,9 @@ export function PageHeading({
 	description: string;
 }) {
 	return (
-		<header className="mb-8">
-			<h1 className="font-black text-3xl text-slate-800 tracking-tight sm:text-4xl">
-				{title}
-			</h1>
-			<p className="mt-2 max-w-2xl font-semibold text-[16px] text-slate-500 leading-relaxed">
-				{description}
-			</p>
+		<header className="ui-heading">
+			<h1>{title}</h1>
+			<p>{description}</p>
 		</header>
-	);
-}
-export function Progress({
-	value,
-	color = "bg-violet-500",
-}: {
-	value: number;
-	color?: string;
-}) {
-	return (
-		<div className="h-3 overflow-hidden rounded-full bg-slate-100">
-			<span
-				className={`block h-full rounded-full ${color}`}
-				style={{ width: `${value}%` }}
-			/>
-		</div>
 	);
 }

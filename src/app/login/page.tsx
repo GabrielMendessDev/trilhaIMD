@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import { AuthError } from "next-auth";
-import { Icon, TrilhaLogo } from "~/app/_components/dashboard";
+import Link from "~/app/_components/action-link";
+import { Icon, TrilbitLogo } from "~/app/_components/dashboard";
+import { FeedbackViewport } from "~/app/_components/feedback";
+import { ThemeToggle } from "~/app/_components/theme-toggle";
 import { auth, signIn } from "~/server/auth";
 import { isGoogleConfigured } from "~/server/auth/config";
 import { GoogleButton } from "./google-button";
 
 export const metadata: Metadata = {
-	title: "Entrar | Trilha IMD",
+	title: "Entrar",
 };
 
 async function enterWithGoogle() {
@@ -34,13 +37,15 @@ export default async function LoginPage({
 	const { error } = await searchParams;
 
 	return (
-		<div className="mx-auto flex min-h-svh w-full max-w-5xl flex-col px-5 sm:px-8">
-			<header className="flex justify-center py-7 md:justify-start">
-				<TrilhaLogo />
+		<div className="mx-auto flex min-h-svh w-full max-w-6xl flex-col px-4 sm:px-8">
+			<header className="flex items-center justify-between gap-4 py-5">
+				<TrilbitLogo />
+				<ThemeToggle />
 			</header>
+			<FeedbackViewport />
 
 			<main className="grid flex-1 items-center pb-12 md:pb-24">
-				<div className="mx-auto grid w-full max-w-md overflow-hidden rounded-2xl border-2 border-slate-100 bg-white md:max-w-none md:grid-cols-2">
+				<div className="ui-panel mx-auto grid w-full max-w-md overflow-hidden md:max-w-none md:grid-cols-2">
 					<section
 						aria-labelledby="login-title"
 						className="flex flex-col justify-center px-6 py-10 sm:p-10 lg:p-14"
@@ -51,8 +56,8 @@ export default async function LoginPage({
 						>
 							Entre na sua trilha
 						</h1>
-						<p className="mt-3 font-semibold text-slate-600 leading-relaxed">
-							Use sua conta Google para acessar a Trilha IMD.
+						<p className="ui-muted mt-3 font-semibold leading-relaxed">
+							Use sua conta Google para acessar o trilbit.
 						</p>
 
 						<form action={enterWithGoogle} className="mt-8">
@@ -60,12 +65,12 @@ export default async function LoginPage({
 						</form>
 
 						{!isGoogleConfigured ? (
-							<p className="mt-3 text-slate-600 text-sm">
+							<p className="ui-muted mt-3 text-sm">
 								O login com Google ainda precisa ser configurado neste ambiente.
 							</p>
 						) : error ? (
 							<p
-								className="mt-3 rounded-xl bg-rose-50 p-3 font-semibold text-rose-800 text-sm"
+								className="mt-3 rounded-xl bg-[var(--error-wash)] p-3 font-semibold text-[var(--error-ink)] text-sm"
 								role="alert"
 							>
 								{error === "OAuthAccountNotLinked"
@@ -75,34 +80,28 @@ export default async function LoginPage({
 						) : null}
 
 						<Link
-							className="mt-6 self-start font-extrabold text-sm text-violet-700 underline-offset-4 hover:underline"
+							className="ui-link mt-4 inline-flex min-h-11 items-center gap-2 self-start text-sm"
 							href="/aprender"
 						>
-							Explorar sem entrar <span aria-hidden="true">→</span>
+							Explorar sem entrar <Icon className="size-4" name="arrow" />
 						</Link>
 					</section>
 
-					<aside className="hidden flex-col justify-center bg-violet-600 p-10 text-white md:flex lg:p-14">
-						<div
-							aria-hidden="true"
-							className="relative mb-8 flex max-w-64 items-center justify-between gap-4 before:absolute before:inset-x-4 before:top-1/2 before:h-1 before:bg-violet-300/50"
-						>
-							<span className="relative grid size-12 place-items-center rounded-xl bg-white text-violet-700 shadow-[0_4px_0_#4c36be]">
-								<Icon className="size-6" name="learn" />
-							</span>
-							<span className="relative grid size-12 place-items-center rounded-xl bg-violet-800 text-violet-100 shadow-[0_4px_0_#4c36be]">
-								<Icon className="size-6" name="practice" />
-							</span>
-							<span className="relative grid size-12 place-items-center rounded-xl bg-violet-800 text-violet-100 shadow-[0_4px_0_#4c36be]">
-								<Icon className="size-6" name="ranking" />
-							</span>
-						</div>
-						<h2 className="text-balance font-black text-3xl tracking-tight">
-							Aprenda no seu ritmo
+					<aside className="hidden flex-col justify-center bg-[var(--night)] p-8 text-[var(--on-night)] md:flex lg:p-10">
+						<Image
+							alt=""
+							className="mx-auto mb-3 h-auto w-full max-w-xs"
+							height={600}
+							src="/brand/bito.webp"
+							unoptimized
+							width={900}
+						/>
+						<h2 className="text-balance font-extrabold text-2xl">
+							Aprenda TI.{" "}
+							<span className="text-[var(--solar)]">Evolua por trilhas.</span>
 						</h2>
-						<p className="mt-3 max-w-xs font-semibold text-violet-50 leading-relaxed">
-							Avance pelas lições do IMD, pratique o que aprendeu e complete
-							missões ao longo do caminho.
+						<p className="mt-2 max-w-sm text-[var(--on-night-muted)] text-sm leading-relaxed">
+							Feito por estudantes do BTI para quem estuda no IMD.
 						</p>
 					</aside>
 				</div>

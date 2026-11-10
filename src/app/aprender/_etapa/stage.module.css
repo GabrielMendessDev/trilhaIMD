@@ -26,7 +26,7 @@
 	justify-content: space-between;
 	gap: 1rem;
 	border: 1px solid var(--track);
-	border-radius: 1rem;
+	border-radius: var(--radius-card);
 	background: var(--tint);
 	padding: 1rem;
 	color: var(--ink);
@@ -52,7 +52,7 @@
 	place-items: center;
 	border-radius: 0.75rem;
 	background: var(--accent);
-	color: white;
+	color: var(--on-discipline);
 	font-size: 1.125rem;
 	font-weight: 850;
 }
@@ -70,7 +70,7 @@
 
 .previewIntro p,
 .panelHint {
-	color: #475569;
+	color: var(--muted);
 	font-size: 0.875rem;
 	line-height: 1.5;
 }
@@ -95,9 +95,9 @@
 	display: grid;
 	min-height: 2.75rem;
 	place-items: center;
-	border: 1px solid #e2e8f0;
+	border: 1px solid var(--line);
 	border-radius: 0.75rem;
-	background: white;
+	background: var(--surface);
 	padding: 0.375rem;
 	font-size: 0.8125rem;
 	font-weight: 750;
@@ -115,7 +115,7 @@
 .modeNav a[aria-current="page"] {
 	border-color: var(--accent);
 	background: var(--accent);
-	color: white;
+	color: var(--on-discipline);
 }
 
 .formatNav a[aria-current="page"] {
@@ -142,9 +142,10 @@
 	display: grid;
 	min-width: 0;
 	gap: 0.875rem;
-	border: 1px solid #e2e8f0;
-	border-radius: 1rem;
-	background: white;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-card);
+	background: var(--surface);
+	box-shadow: var(--shadow-card);
 	padding: 1rem;
 }
 
@@ -189,8 +190,31 @@
 
 .blocks figcaption {
 	margin-block-start: 0.375rem;
-	color: #475569;
+	color: var(--muted);
 	font-size: 0.8125rem;
+}
+
+.code {
+	min-width: 0;
+	border-radius: var(--radius-control);
+	background: var(--night);
+	color: var(--on-night);
+}
+
+.code figcaption {
+	margin: 0;
+	border-block-end: 1px solid #ffffff28;
+	padding: 0.55rem 0.875rem;
+	color: var(--on-night-muted);
+	font-family: var(--font-mono);
+}
+
+.code pre {
+	padding: 0.875rem;
+	font-size: 0.875rem;
+	line-height: 1.65;
+	overflow-wrap: anywhere;
+	white-space: pre-wrap;
 }
 
 .contentPreview,
@@ -204,7 +228,7 @@
 
 .contentPreview p {
 	margin-block-start: 0.25rem;
-	color: #475569;
+	color: var(--muted);
 }
 
 .mediaSlot {
@@ -238,9 +262,9 @@
 .associationRow select {
 	min-width: 0;
 	min-height: 2.75rem;
-	border: 1px solid #cbd5e1;
+	border: 1px solid var(--line);
 	border-radius: 0.75rem;
-	background: white;
+	background: var(--surface);
 	padding: 0.5rem 0.625rem;
 	font-size: 0.875rem;
 }
@@ -256,14 +280,14 @@
 .choiceSlot,
 .slot {
 	border-style: dashed;
-	color: #475569;
+	color: var(--muted);
 }
 
 .radioMark {
 	width: 0.875rem;
 	height: 0.875rem;
 	flex: none;
-	border: 1px solid #64748b;
+	border: 1px solid var(--muted);
 	border-radius: 50%;
 }
 
@@ -366,11 +390,6 @@
 	font-weight: 800;
 }
 
-.progress {
-	width: 100%;
-	accent-color: var(--accent);
-}
-
 .stepActions {
 	display: flex;
 	flex-wrap: wrap;
@@ -381,7 +400,7 @@
 	min-height: 2.75rem;
 	border: 1px solid var(--accent);
 	border-radius: 0.75rem;
-	background: white;
+	background: var(--surface);
 	padding: 0.375rem 0.75rem;
 	color: var(--ink);
 	font-size: 0.875rem;
@@ -390,13 +409,13 @@
 
 .stepActions button:last-child:not(:disabled) {
 	background: var(--accent);
-	color: white;
+	color: var(--on-discipline);
 }
 
 .stepActions button:disabled {
 	cursor: default;
-	border-color: #cbd5e1;
-	color: #64748b;
+	border-color: var(--line);
+	color: var(--muted);
 }
 
 @media (min-width: 481px) {

@@ -1,41 +1,67 @@
 .trailTheme[data-trail="elementar"],
 .moduleLink[data-trail="elementar"] {
-	--accent: #6d28d9;
-	--ink: #4c1d95;
-	--tint: #f4efff;
-	--track: #c4b5fd;
+	--discipline-accent: var(--orbit-hover);
+	--discipline-ink: #302282;
+	--discipline-light: #bcb4ff;
+	--discipline-flare: #9764ff;
+	--discipline-deep: #5327bd;
 }
 
 .trailTheme[data-trail="combinatoria"],
 .moduleLink[data-trail="combinatoria"] {
-	--accent: #9a490b;
-	--ink: #713607;
-	--tint: #fff6e7;
-	--track: #f4be74;
+	--discipline-accent: #914711;
+	--discipline-ink: #653106;
+	--discipline-light: var(--solar);
+	--discipline-flare: #ffac7c;
+	--discipline-deep: #a43a55;
 }
 
 .trailTheme[data-trail="calculo"],
 .moduleLink[data-trail="calculo"] {
-	--accent: #0369a1;
-	--ink: #0c4a6e;
-	--tint: #edf8ff;
-	--track: #91cdee;
+	--discipline-accent: #06679a;
+	--discipline-ink: #104264;
+	--discipline-light: #91d1ff;
+	--discipline-flare: #69baff;
+	--discipline-deep: #294eaf;
 }
 
 .trailTheme[data-trail="fmc"],
 .moduleLink[data-trail="fmc"] {
-	--accent: #047857;
-	--ink: #064e3b;
-	--tint: #eaf8f0;
-	--track: #8dd4b3;
+	--discipline-accent: #06765c;
+	--discipline-ink: #124d40;
+	--discipline-light: #61e2ca;
+	--discipline-flare: #52e0d0;
+	--discipline-deep: #117f8a;
 }
 
 .trailTheme[data-trail="vga"],
 .moduleLink[data-trail="vga"] {
-	--accent: #be185d;
-	--ink: #831843;
-	--tint: #fdf0f6;
-	--track: #eda9ca;
+	--discipline-accent: #9d3272;
+	--discipline-ink: #652451;
+	--discipline-light: #f5a6d7;
+	--discipline-flare: #f58acb;
+	--discipline-deep: #893392;
+}
+
+.trailTheme,
+.moduleLink {
+	--accent: var(--discipline-accent);
+	--ink: var(--discipline-ink);
+	--tint: color-mix(in srgb, var(--accent) 9%, var(--surface));
+	--track: color-mix(in srgb, var(--accent) 40%, var(--surface));
+	--on-discipline: var(--white);
+	--discipline-jewel: linear-gradient(
+		155deg,
+		var(--discipline-flare) -12%,
+		var(--discipline-deep) 82%
+	);
+}
+
+:global([data-theme="dark"]) .trailTheme,
+:global([data-theme="dark"]) .moduleLink {
+	--accent: var(--discipline-light);
+	--ink: var(--discipline-light);
+	--on-discipline: var(--night);
 }
 
 .page {
@@ -52,10 +78,6 @@
 	margin-block-end: 1rem;
 }
 
-.status {
-	display: none;
-}
-
 .moduleNav {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -69,9 +91,9 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0.375rem;
-	border: 1px solid #e2e8f0;
+	border: 1px solid var(--line);
 	border-radius: 0.75rem;
-	background: white;
+	background: var(--surface);
 	padding: 0.375rem 0.25rem;
 	font-size: 0.75rem;
 	font-weight: 750;
@@ -86,6 +108,18 @@
 
 .moduleLink[aria-current="page"] {
 	border-color: var(--accent);
+}
+
+:global([data-theme="dark"]) .moduleLink[aria-current="page"] {
+	background: linear-gradient(
+		145deg,
+		color-mix(in srgb, var(--discipline-deep) 68%, var(--surface)),
+		var(--surface)
+	);
+	box-shadow:
+		var(--rim-light),
+		0 5px 14px -10px var(--discipline-flare);
+	color: var(--on-night);
 }
 
 .moduleSymbol {
@@ -105,7 +139,12 @@
 
 .moduleLink[aria-current="page"] .moduleSymbol {
 	background: var(--accent);
-	color: white;
+	color: var(--on-discipline);
+}
+
+:global([data-theme="dark"]) .moduleLink[aria-current="page"] .moduleSymbol {
+	background: var(--discipline-jewel);
+	color: var(--white);
 }
 
 .content {
@@ -116,20 +155,66 @@
 
 .board {
 	min-width: 0;
-	border: 1px solid #e2e8f0;
-	border-radius: 1rem;
-	background: white;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-card);
+	background:
+		radial-gradient(circle, var(--line) 0.7px, transparent 1px) 0 0 / 22px 22px,
+		var(--surface);
+	box-shadow: var(--shadow-card);
 }
 
 .moduleHeader {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	gap: 0.625rem;
-	border-radius: 1rem 1rem 0 0;
+	gap: 1rem;
+	border-start-start-radius: inherit;
+	border-start-end-radius: inherit;
 	background: var(--tint);
+	border-block-end: 1px solid var(--line);
 	padding: 0.875rem 1rem;
 	color: var(--ink);
+}
+
+.moduleIdentity {
+	min-width: 0;
+	flex: 1;
+}
+
+.moduleProgress {
+	display: grid;
+	max-width: 26rem;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 0.65rem;
+	margin-top: 0.75rem;
+	font-size: 0.75rem;
+	font-weight: 800;
+	--progress-fill: var(--accent);
+}
+
+:global([data-theme="dark"]) .board {
+	border-color: color-mix(in srgb, var(--discipline-flare) 36%, var(--line));
+	border-radius: var(--radius-panel);
+	background:
+		url("/brand/trail-field.svg") center 10rem / 100% auto repeat-y,
+		radial-gradient(
+			ellipse at 16% 40%,
+			color-mix(in srgb, var(--discipline-deep) 36%, transparent),
+			transparent 57%
+		),
+		radial-gradient(ellipse at 92% 74%, #6755d340, transparent 47%),
+		linear-gradient(150deg, #24204b, #1a1b3a 68%);
+	box-shadow: 0 14px 42px -23px #15112b;
+}
+
+:global([data-theme="dark"]) .moduleHeader {
+	background: radial-gradient(
+		ellipse at 22% 0,
+		color-mix(in srgb, var(--discipline-flare) 24%, transparent),
+		transparent 87%
+	);
+	border-block-end-color: color-mix(in srgb, var(--track) 48%, transparent);
+	color: var(--on-night);
 }
 
 .moduleDescription {
@@ -149,21 +234,31 @@
 
 .heroSymbol {
 	display: grid;
-	width: clamp(2.75rem, 8vw, 4.75rem);
+	width: clamp(3.25rem, 8vw, 4.375rem);
 	aspect-ratio: 1;
 	flex: none;
 	place-items: center;
 	border: 1px solid var(--track);
-	border-radius: 1rem;
-	background: white;
+	border-radius: 0.9375rem;
+	background: var(--surface);
 	color: var(--accent);
 	font-family: var(--font-mono);
-	font-size: clamp(0.9375rem, 3.3vw, 1.625rem);
+	font-size: clamp(1.125rem, 4vw, 1.625rem);
 	font-weight: 750;
 }
 
+:global([data-theme="dark"]) .heroSymbol {
+	border-color: color-mix(in srgb, var(--accent) 64%, transparent);
+	background: var(--discipline-jewel);
+	box-shadow:
+		var(--rim-light),
+		0 6px 20px -8px var(--discipline-flare);
+	color: var(--white);
+	text-shadow: 0 2px 5px var(--discipline-deep);
+}
+
 .route {
-	--node-radius: 1.5rem;
+	--node-radius: 1.625rem;
 	position: relative;
 	max-width: 37rem;
 	margin: 0.75rem auto 1rem;
@@ -182,7 +277,11 @@
 
 .connection {
 	stroke: var(--track);
-	stroke-width: 5;
+	stroke-width: 6;
+}
+
+:global([data-theme="dark"]) .connection {
+	stroke: color-mix(in srgb, var(--discipline-flare) 49%, #312956);
 }
 
 .branches {
@@ -197,7 +296,7 @@
 
 .checkpoint {
 	position: relative;
-	min-height: 4.125rem;
+	min-height: 4.5rem;
 	scroll-margin-top: 5rem;
 }
 
@@ -215,12 +314,43 @@
 	cursor: pointer;
 	border: 2px solid var(--track);
 	border-radius: 50%;
-	background: white;
+	background: var(--surface);
 	color: var(--ink);
-	box-shadow: 0 3px 0 var(--tint);
+	box-shadow: 0 5px 14px -10px var(--accent);
 	font-size: 1rem;
 	font-weight: 850;
 	font-variant-numeric: tabular-nums;
+	transition:
+		border-color var(--motion-ui),
+		background-color var(--motion-ui),
+		box-shadow var(--motion-ui);
+}
+
+.checkpointIcon {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.checkpointIcon + .checkpointNumber {
+	position: absolute;
+	inset: auto 0.0625rem -0.0625rem auto;
+	display: grid;
+	min-width: 1.125rem;
+	min-height: 1.125rem;
+	place-items: center;
+	border: 1px solid var(--track);
+	border-radius: 99px;
+	background: var(--surface);
+	padding-inline: 0.125rem;
+	color: var(--ink);
+	font-size: 0.6875rem;
+	line-height: 1;
+}
+
+.checkpointButton[data-state="published"]:not([aria-pressed="true"]) {
+	border-color: var(--accent);
+	background: var(--tint);
+	color: var(--accent);
 }
 
 .checkpointButton[data-challenge="true"] {
@@ -236,8 +366,106 @@
 .checkpointButton[aria-pressed="true"] {
 	border-color: var(--accent);
 	background: var(--accent);
-	color: white;
-	box-shadow: 0 3px 0 var(--ink);
+	color: var(--on-discipline);
+	box-shadow:
+		0 0 0 4px var(--tint),
+		0 8px 20px -10px var(--accent);
+}
+
+:global([data-theme="dark"]) .checkpointButton {
+	background: linear-gradient(150deg, #39315f, #272244 72%);
+	box-shadow:
+		var(--rim-light),
+		0 5px 10px -5px #120f2a;
+}
+
+:global([data-theme="dark"]) .checkpointButton[data-state="published"],
+:global([data-theme="dark"])
+	.checkpointButton[data-state="preview"][aria-pressed="true"] {
+	border-color: var(--accent);
+	background: var(--discipline-jewel);
+	box-shadow:
+		var(--rim-light),
+		0 5px 18px -8px var(--discipline-flare);
+	color: var(--white);
+}
+
+.completedConnection {
+	stroke: var(--mint);
+	stroke-width: 6;
+	filter: drop-shadow(0 0 4px #25c5ab8c);
+}
+
+.checkpointButton[data-state="completed"] {
+	border-color: var(--mint);
+	background: linear-gradient(150deg, #6be7d7, #1bafaa 80%);
+	color: var(--night);
+	box-shadow:
+		var(--rim-light),
+		0 5px 18px -5px #25c5ab9c;
+}
+
+.checkpointButton[data-state="current"],
+:global([data-theme="dark"]) .checkpointButton[data-state="current"] {
+	z-index: 1;
+	width: calc(2 * var(--node-radius) + 0.5rem);
+	height: calc(2 * var(--node-radius) + 0.5rem);
+	border-color: #ffe4d3;
+	border-width: 3px;
+	background: var(--discipline-jewel);
+	color: var(--white);
+	box-shadow:
+		var(--rim-light),
+		0 0 0 2px var(--solar),
+		0 0 16px 2px color-mix(in srgb, var(--discipline-flare) 72%, transparent),
+		0 6px 17px -5px #31195d;
+}
+
+.checkpointButton[data-state="current"] .checkpointIcon {
+	width: 1.5rem;
+	height: 1.5rem;
+	filter: drop-shadow(0 2px 3px var(--discipline-deep));
+}
+
+.checkpointButton[data-state="locked"],
+:global([data-theme="dark"]) .checkpointButton[data-state="locked"] {
+	border-color: var(--line);
+	background: var(--surface-soft);
+	color: var(--muted);
+	box-shadow: inset 0 1px 0 #ffffff12;
+}
+
+:global([data-theme="dark"]) .checkpointButton[data-state="locked"] {
+	background: linear-gradient(150deg, #514775, #342b58 84%);
+}
+
+.checkpointButton[data-state="locked"] .checkpointNumber {
+	border-color: var(--line);
+	color: var(--muted);
+}
+
+:global([data-theme="dark"]) .checkpointButton[data-state="completed"] {
+	background: linear-gradient(150deg, #4bdfd0, #179c9e 83%);
+	color: var(--night);
+	box-shadow:
+		var(--rim-light),
+		0 5px 18px -5px #25c5ab9c;
+}
+
+.checkpointButton:hover,
+.checkpointButton[aria-pressed="true"] {
+	outline: 1px solid var(--accent);
+	outline-offset: 3px;
+}
+
+.checkpointButton:focus-visible {
+	outline: 2px solid var(--focus);
+	outline-offset: 4px;
+}
+
+.lockedHint {
+	color: var(--muted);
+	font-size: 0.6875rem;
 }
 
 .checkpointLabel {
@@ -246,10 +474,13 @@
 	left: calc(var(--position) + var(--node-radius) + 0.5rem);
 	display: grid;
 	width: max-content;
-	max-width: 7.5rem;
+	max-width: min(
+		10rem,
+		calc(100% - var(--position) - var(--node-radius) - 0.5rem)
+	);
 	transform: translateY(-50%);
 	border-radius: 0.5rem;
-	background: white;
+	background: var(--surface);
 	padding: 0.125rem 0.25rem;
 	color: var(--ink);
 	font-size: 0.75rem;
@@ -259,6 +490,7 @@
 .checkpoint[data-side="left"] .checkpointLabel {
 	right: calc(100% - var(--position) + var(--node-radius) + 0.5rem);
 	left: auto;
+	max-width: min(10rem, calc(var(--position) - var(--node-radius) - 0.5rem));
 	text-align: right;
 }
 
@@ -266,11 +498,42 @@
 	display: inline-flex;
 	min-height: 2.75rem;
 	align-items: center;
-	gap: 0.25rem;
-	color: var(--accent);
+	justify-content: center;
+	gap: 0.3rem;
+	border-radius: 0.5rem;
+	background: var(--accent);
+	padding: 0.25rem 0.4rem;
+	color: var(--on-discipline);
+	font-size: 0.6875rem;
 	font-weight: 750;
-	text-decoration: underline;
-	text-underline-offset: 0.2em;
+	text-align: start;
+	transition: box-shadow var(--motion-ui);
+}
+
+.checkpointLabel a:hover {
+	box-shadow: 0 4px 10px -4px var(--accent);
+}
+
+.checkpointLabel[data-active="true"] {
+	z-index: 2;
+	gap: 0.25rem;
+	border: 1px solid var(--track);
+	padding: 0.35rem;
+	box-shadow: var(--shadow-card);
+}
+
+:global([data-theme="dark"]) .checkpointLabel[data-active="true"] {
+	background: linear-gradient(145deg, #312752, #211c3b);
+	color: var(--on-night);
+	box-shadow:
+		var(--rim-light),
+		0 7px 18px -8px #130d2a;
+}
+
+.checkpointHint {
+	display: none;
+	color: var(--muted);
+	font-size: 0.6875rem;
 }
 
 .sidebar {
@@ -281,9 +544,9 @@
 .figure,
 .guide,
 .quickLinks {
-	border: 1px solid #e2e8f0;
-	border-radius: 1rem;
-	background: white;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-card);
+	background: var(--surface);
 	padding: 1rem;
 }
 
@@ -317,18 +580,75 @@
 	min-height: 2.75rem;
 	align-items: center;
 	gap: 0.625rem;
-	color: #5b21b6;
+	color: var(--accent);
 	font-size: 0.875rem;
 	font-weight: 750;
 }
 
 .quickLinks a + a {
-	border-top: 1px solid #e2e8f0;
+	border-top: 1px solid var(--line);
 }
 
 .quickLinks a:hover {
 	text-decoration: underline;
 	text-underline-offset: 0.2em;
+}
+
+@media (max-width: 480px) {
+	.pageHeader {
+		margin-block-end: 0.5rem;
+	}
+
+	.pageHeader h1 {
+		font-size: 1.25rem;
+	}
+
+	.pageHeader p {
+		display: none;
+	}
+
+	.moduleNav {
+		margin-block-end: 0.75rem;
+	}
+
+	.moduleLink {
+		padding-inline: 0.1875rem;
+		font-size: 0.6875rem;
+	}
+
+	.moduleHeader {
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1rem 1rem 0.85rem;
+		text-align: center;
+	}
+
+	.moduleIdentity {
+		width: min(100%, 24rem);
+	}
+
+	.moduleIdentity h2 {
+		font-size: 1.375rem;
+	}
+
+	.moduleCount {
+		margin-block-start: 0.25rem;
+	}
+
+	.moduleDescription {
+		display: none;
+	}
+
+	.moduleProgress {
+		margin-block-start: 0.5rem;
+	}
+}
+
+@media (360px <= width <= 480px) {
+	.moduleNav {
+		grid-template-columns: 1fr 1.3fr 0.94fr 0.72fr 0.64fr;
+		gap: 0.25rem;
+	}
 }
 
 @media (min-width: 481px) {
@@ -430,6 +750,10 @@
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 	}
 
+	.checkpointHint {
+		display: block;
+	}
+
 	.content {
 		grid-template-columns: minmax(0, 1fr) minmax(11rem, 0.44fr);
 	}
@@ -443,10 +767,6 @@
 @media (min-width: 1025px) {
 	.page {
 		padding-block-start: 1.75rem;
-	}
-
-	.status {
-		display: block;
 	}
 
 	.sidebar {

@@ -1,0 +1,566 @@
+{
+	"versao": 1,
+	"trilha": "elementar",
+	"ponto": 4,
+	"atividades": [
+		{
+			"id": "alarme-logaritmico",
+			"titulo": "O alarme logarítmico",
+			"questoes": [
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Que expoente produz esse número?",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Comece com 1 GB e dobre três vezes: 1 → 2 → 4 → 8. Se você já sabe o tamanho final e quer descobrir quantas duplicações ocorreram, faça a pergunta ao contrário. O logaritmo devolve o expoente."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "formula",
+								"leitura": "Logaritmo de oito na base dois é três porque dois ao cubo é oito",
+								"termos": [
+									{
+										"forma": "texto",
+										"valor": "log₂(8) = 3 porque "
+									},
+									{
+										"forma": "potencia",
+										"base": "2",
+										"expoente": "3"
+									},
+									{
+										"forma": "texto",
+										"valor": " = 8"
+									}
+								]
+							},
+							{
+								"id": "bloco-3",
+								"tipo": "texto",
+								"texto": "Em log_b(x), o b pequeno indica a base e x é o argumento. Nos reais, usamos b > 0, b ≠ 1 e x > 0. Uma base 1 produziria sempre 1, e potências reais de base positiva não produzem zero nem números negativos."
+							}
+						]
+					},
+					"numero": 1,
+					"ordem": 1
+				},
+				{
+					"numero": 2,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O armazenamento começa com 1 GB e dobra a cada rodada. O que representa log₂(32)?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "O total de 32 rodadas"
+							},
+							{
+								"id": "b",
+								"texto": "O número de rodadas para chegar a 32 GB"
+							},
+							{
+								"id": "c",
+								"texto": "O número de GB adicionados por rodada"
+							},
+							{
+								"id": "d",
+								"texto": "O tamanho inicial em GB"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Definição de logaritmo",
+						"orientacao": "Leia o resultado como expoente, em ciclos.",
+						"explicacao": "log₂(32) é o número de duplicações. Como 2⁵ = 32, são 5 rodadas."
+					},
+					"ordem": 2
+				},
+				{
+					"numero": 3,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Uma ferramenta registra log₁₀(1.000). Qual valor ela exibe?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "3"
+							},
+							{
+								"id": "b",
+								"texto": "10"
+							},
+							{
+								"id": "c",
+								"texto": "100"
+							},
+							{
+								"id": "d",
+								"texto": "1.000"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Logaritmo decimal",
+						"orientacao": "Escreva mil como uma potência de 10.",
+						"explicacao": "10³ = 1.000. Logo log₁₀(1.000) = 3."
+					},
+					"ordem": 3
+				},
+				{
+					"numero": 4,
+					"modo": "questao",
+					"questao": {
+						"tipo": "associacao",
+						"enunciado": "Decida se cada expressão é um logaritmo real válido.",
+						"itens": [
+							{
+								"id": "item-1",
+								"texto": "log₂(8)"
+							},
+							{
+								"id": "item-2",
+								"texto": "log₁(8)"
+							},
+							{
+								"id": "item-3",
+								"texto": "log₂(0)"
+							},
+							{
+								"id": "item-4",
+								"texto": "log₃(1)"
+							}
+						],
+						"alternativas": [
+							{
+								"id": "opcao-1",
+								"texto": "Inválido em ℝ"
+							},
+							{
+								"id": "opcao-2",
+								"texto": "Válido em ℝ"
+							}
+						],
+						"gabarito": [
+							{
+								"origem": "item-1",
+								"destino": "opcao-2"
+							},
+							{
+								"origem": "item-2",
+								"destino": "opcao-1"
+							},
+							{
+								"origem": "item-3",
+								"destino": "opcao-1"
+							},
+							{
+								"origem": "item-4",
+								"destino": "opcao-2"
+							}
+						],
+						"assunto": "Domínio do logaritmo",
+						"orientacao": "Confira a base e o argumento de cada expressão.",
+						"explicacao": "log₂(8) e log₃(1) são válidos. A base 1 e o argumento 0 são proibidos."
+					},
+					"ordem": 4
+				},
+				{
+					"numero": 5,
+					"modo": "questao",
+					"questao": {
+						"tipo": "passo-a-passo",
+						"enunciado": "Uma fila começa com 1 mensagem e dobra a cada ciclo. Após quantos ciclos ela chega a 16?",
+						"passos": [
+							{
+								"id": "passo-1",
+								"titulo": "Monte a potência",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "Com t ciclos, a fila tem 2ᵗ mensagens. Queremos 2ᵗ = 16."
+									}
+								]
+							},
+							{
+								"id": "passo-2",
+								"titulo": "Leia o expoente como logaritmo",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "t = log₂(16). Como 2⁴ = 16, o logaritmo vale 4."
+									}
+								]
+							},
+							{
+								"id": "passo-3",
+								"titulo": "Confira a entrada",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "O argumento 16 é positivo, a base 2 é positiva e diferente de 1. A leitura faz sentido em ℝ."
+									}
+								]
+							}
+						]
+					},
+					"ordem": 5
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "O que a soma de logaritmos representa?",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Como 2² · 2³ = 2⁵, podemos somar os expoentes para multiplicar os valores. Assim log₂(4) + log₂(8) = log₂(32). Para dividir os argumentos, subtraímos os logaritmos. Sempre confira que os argumentos separados são positivos."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "texto",
+								"texto": "Em log_b(xᵖ), com x > 0, p vira um fator: p · log_b(x). A mesma ideia permite mudar de base."
+							}
+						]
+					},
+					"numero": 13,
+					"ordem": 6
+				},
+				{
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"assunto": "Propriedade do produto",
+						"enunciado": "O painel soma log₂(2) e log₂(4). Qual expressão representa essa soma?",
+						"orientacao": "A soma de expoentes corresponde ao produto das potências.",
+						"explicacao": "2 · 4 = 8. Então log₂(2) + log₂(4) = log₂(8) = 3.",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "log₂(6)"
+							},
+							{
+								"id": "b",
+								"texto": "log₂(2)"
+							},
+							{
+								"id": "c",
+								"texto": "log₂(8)"
+							}
+						],
+						"gabarito": "c"
+					},
+					"numero": 14,
+					"ordem": 7
+				},
+				{
+					"numero": 6,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O simulador soma log₂(4) e log₂(8) para registrar dois fatores em sequência. Qual é a soma?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "2"
+							},
+							{
+								"id": "b",
+								"texto": "3"
+							},
+							{
+								"id": "c",
+								"texto": "6"
+							},
+							{
+								"id": "d",
+								"texto": "5"
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Produto de argumentos",
+						"orientacao": "Você pode calcular cada logaritmo ou multiplicar os argumentos.",
+						"explicacao": "log₂(4) = 2 e log₂(8) = 3. A soma é 5."
+					},
+					"ordem": 8
+				},
+				{
+					"numero": 7,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O painel compara duas medições e calcula log₁₀(100) − log₁₀(10). Qual é o resultado?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "0"
+							},
+							{
+								"id": "b",
+								"texto": "2"
+							},
+							{
+								"id": "c",
+								"texto": "1"
+							},
+							{
+								"id": "d",
+								"texto": "90"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "Quociente de argumentos",
+						"orientacao": "A diferença pode virar um quociente dentro de um único logaritmo.",
+						"explicacao": "100/10 = 10 e log₁₀(10) = 1."
+					},
+					"ordem": 9
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Logaritmo natural e mudança de base",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "O símbolo ln se lê “logaritmo natural” e usa a base e. Então ln(e²) = 2 e e^(ln 7) = 7. Na segunda expressão, 7 precisa ser positivo para ln existir."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "formula",
+								"leitura": "Logaritmo de x na base b é logaritmo natural de x dividido por logaritmo natural de b",
+								"termos": [
+									{
+										"forma": "texto",
+										"valor": "log_b(x) = "
+									},
+									{
+										"forma": "fracao",
+										"numerador": "ln(x)",
+										"denominador": "ln(b)"
+									}
+								]
+							},
+							{
+								"id": "bloco-3",
+								"tipo": "texto",
+								"texto": "Como ln(aˣ) = x · ln(a) para a > 0, podemos escrever aˣ como e^(x · ln(a)). É uma forma de calcular potências usando só exp e ln."
+							}
+						]
+					},
+					"numero": 15,
+					"ordem": 10
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "material",
+						"titulo": "Como escolher uma regra de logaritmo",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Produto no argumento vira soma, quociente vira diferença, e expoente de uma base positiva vira multiplicador. Comece conferindo o domínio e lembre que ln usa a base e."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "referencia",
+								"titulo": "Definição e propriedades dos logaritmos",
+								"fonte": "Portal da OBMEP/IMPA",
+								"url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=96"
+							}
+						]
+					},
+					"numero": 16,
+					"ordem": 11
+				},
+				{
+					"numero": 8,
+					"modo": "questao",
+					"questao": {
+						"tipo": "ligacao",
+						"enunciado": "Ligue cada expressão do painel à expressão equivalente.",
+						"itens": [
+							{
+								"id": "item-1",
+								"texto": "log₅(5³)"
+							},
+							{
+								"id": "item-2",
+								"texto": "ln(e²)"
+							},
+							{
+								"id": "item-3",
+								"texto": "e^(ln 7)"
+							}
+						],
+						"alternativas": [
+							{
+								"id": "opcao-1",
+								"texto": "7"
+							},
+							{
+								"id": "opcao-2",
+								"texto": "3"
+							},
+							{
+								"id": "opcao-3",
+								"texto": "2"
+							}
+						],
+						"gabarito": [
+							{
+								"origem": "item-1",
+								"destino": "opcao-2"
+							},
+							{
+								"origem": "item-2",
+								"destino": "opcao-3"
+							},
+							{
+								"origem": "item-3",
+								"destino": "opcao-1"
+							}
+						],
+						"assunto": "Logaritmo e exponencial",
+						"orientacao": "Escreva os resultados usando a base indicada.",
+						"explicacao": "log₅(5³) = 3, ln(e²) = 2 e e^(ln 7) = 7."
+					},
+					"ordem": 12
+				},
+				{
+					"numero": 9,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O código só oferece ln para calcular log₃(7). Qual expressão implementa a mudança de base corretamente?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "ln(3) / ln(7)"
+							},
+							{
+								"id": "b",
+								"texto": "ln(7) / ln(3)"
+							},
+							{
+								"id": "c",
+								"texto": "ln(7) − ln(3)"
+							},
+							{
+								"id": "d",
+								"texto": "ln(7) · ln(3)"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Mudança de base",
+						"orientacao": "O argumento aparece no numerador e a base original no denominador.",
+						"explicacao": "Pela mudança de base, log₃(7) = ln(7)/ln(3)."
+					},
+					"ordem": 13
+				},
+				{
+					"numero": 10,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Um modelo usa 8ˣ e o programa só tem a função exp(t) = eᵗ. Como obter 8ˣ?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "exp(x · ln(8))"
+							},
+							{
+								"id": "b",
+								"texto": "exp(x + ln(8))"
+							},
+							{
+								"id": "c",
+								"texto": "exp(ln(x) · 8)"
+							},
+							{
+								"id": "d",
+								"texto": "exp(ln(8) / x)"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Base e e logaritmo natural",
+						"orientacao": "Pense na fórmula aˣ = e^(x ln(a)).",
+						"explicacao": "Ao usar a = 8, resulta exp(x · ln(8))."
+					},
+					"ordem": 14
+				},
+				{
+					"numero": 11,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O script tenta simplificar log₂((−2) · (−4)). Qual avaliação é correta em ℝ?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "O argumento é negativo e o logaritmo não existe."
+							},
+							{
+								"id": "b",
+								"texto": "Podemos escrever log₂(−2) + log₂(−4)."
+							},
+							{
+								"id": "c",
+								"texto": "O resultado vale −3."
+							},
+							{
+								"id": "d",
+								"texto": "O produto é 8 e o logaritmo vale 3. Os logaritmos separados não existem."
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Domínio do logaritmo",
+						"orientacao": "Avalie o produto antes de tentar separar os fatores.",
+						"explicacao": "O produto dos dois negativos é 8, e log₂(8) = 3. Cada fator negativo isolado não é argumento válido."
+					},
+					"ordem": 15
+				},
+				{
+					"numero": 12,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O ajuste de contraste usa ln(e⁵/e²). Qual valor o painel deve mostrar?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "7"
+							},
+							{
+								"id": "b",
+								"texto": "2,5"
+							},
+							{
+								"id": "c",
+								"texto": "3"
+							},
+							{
+								"id": "d",
+								"texto": "e³"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "Logaritmo natural",
+						"orientacao": "Simplifique primeiro a divisão de potências da mesma base.",
+						"explicacao": "e⁵/e² = e³, então ln(e³) = 3."
+					},
+					"ordem": 16
+				}
+			]
+		}
+	]
+}

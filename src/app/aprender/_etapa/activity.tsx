@@ -1,3 +1,4 @@
+import { useId } from "react";
 import {
 	Association,
 	MultipleChoice,
@@ -57,44 +58,61 @@ function ActivitySlots({ kind }: { kind: Activity["kind"] }) {
 	}
 }
 
-function renderControls(activity: Activity) {
+function renderControls(activity: Activity, response: boolean) {
 	switch (activity.kind) {
 		case "multipla-escolha":
 			return (
 				activity.choices.length > 0 && (
-					<MultipleChoice choices={activity.choices} />
+					<MultipleChoice choices={activity.choices} response={response} />
 				)
 			);
 		case "associacao":
 			return (
 				activity.items.length > 0 &&
 				activity.options.length > 0 && (
-					<Association items={activity.items} options={activity.options} />
+					<Association
+						items={activity.items}
+						options={activity.options}
+						response={response}
+					/>
 				)
 			);
 		case "ligacao":
 			return (
 				activity.sources.length > 0 &&
 				activity.targets.length > 0 && (
-					<PairLinks sources={activity.sources} targets={activity.targets} />
+					<PairLinks
+						response={response}
+						sources={activity.sources}
+						targets={activity.targets}
+					/>
 				)
 			);
 		case "passo-a-passo":
 			return (
-				activity.steps.length > 0 && <Walkthrough steps={activity.steps} />
+				activity.steps.length > 0 && (
+					<Walkthrough response={response} steps={activity.steps} />
+				)
 			);
 	}
 }
 
-export function ActivityPanel({ activity }: { activity: Activity }) {
+export function ActivityPanel({
+	activity,
+	response = false,
+}: {
+	activity: Activity;
+	response?: boolean;
+}) {
+	const id = useId();
 	const format = activityFormats.find(
 		({ empty }) => empty.kind === activity.kind,
 	);
-	const controls = renderControls(activity);
+	const controls = renderControls(activity, response);
 
 	return (
-		<section aria-labelledby="stage-activity" className={styles.panel}>
-			<h2 id="stage-activity">{activity.title || format?.label}</h2>
+		<section aria-labelledby={id} className={styles.panel}>
+			<h2 id={id}>{activity.title || format?.label}</h2>
 			{activity.prompt && <p className={styles.prompt}>{activity.prompt}</p>}
 			{controls || (
 				<>

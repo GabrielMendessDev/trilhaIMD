@@ -1,6 +1,17 @@
+import type { z } from "zod";
+import type { diagramSchema, formulaBlock } from "./pedagogy.mjs";
+
 export type ContentBlock = { id: string } & (
 	| { type: "heading"; text: string }
 	| { type: "text"; text: string }
+	| { type: "code"; text: string; language?: string }
+	| { type: "diagram"; caption: string; data: z.infer<typeof diagramSchema> }
+	| {
+			type: "formula";
+			label: string;
+			terms: z.infer<typeof formulaBlock>["termos"];
+	  }
+	| { type: "resource"; title: string; source: string; url: string }
 	| {
 			type: "image";
 			src: string;
@@ -14,6 +25,8 @@ export type ContentBlock = { id: string } & (
 export type StageContent = {
 	blocks: readonly ContentBlock[];
 	summary?: string;
+	title?: string;
+	category?: "explicacao" | "diagrama" | "material";
 };
 
 export type ActivityItem = { id: string; label: string };

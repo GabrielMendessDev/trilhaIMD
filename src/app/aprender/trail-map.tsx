@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { type CSSProperties, useState } from "react";
+import { ActionButton } from "~/app/_components/action-button";
+import Link from "~/app/_components/action-link";
+import { Icon } from "~/app/_components/icon";
 import styles from "./trail.module.css";
 import { stageChallenge, type trails } from "./trails";
 
@@ -11,10 +13,15 @@ function checkpointY(index: number) {
 	return 5 + 10 * index;
 }
 
-function drawRoute({ connection, positions }: Trail) {
-	return positions.reduce<string>((path, x, index) => {
+function drawRoute(
+	{ connection, positions }: Trail,
+	start = 0,
+	end = positions.length - 1,
+) {
+	return positions.slice(start, end + 1).reduce<string>((path, x, offset) => {
+		const index = start + offset;
 		const y = checkpointY(index);
-		if (index === 0) return `M ${x} ${y}`;
+		if (offset === 0) return `M ${x} ${y}`;
 
 		switch (connection) {
 			case "curve":
@@ -30,9 +37,19 @@ function drawRoute({ connection, positions }: Trail) {
 export function TrailMap({
 	trail,
 	initialStage,
+	publishedStages,
+	previewStages,
+	completedStages,
+	currentStage,
+	sequential,
 }: {
 	trail: Trail;
 	initialStage: number;
+	publishedStages: readonly { number: number; title: string | null }[];
+	previewStages: readonly number[];
+	completedStages: readonly number[];
+	currentStage?: number;
+	sequential: boolean;
 }) {
 	const [selected, setSelected] = useState(initialStage);
 
@@ -56,13 +73,45 @@ export function TrailMap({
 					d={drawRoute(trail)}
 					vectorEffect="non-scaling-stroke"
 				/>
+				{completedStages
+					.filter((number) => number < trail.positions.length)
+					.map((number) => (
+						<path
+							className={styles.completedConnection}
+							d={drawRoute(trail, number - 1, number)}
+							key={number}
+							vectorEffect="non-scaling-stroke"
+						/>
+					))}
 			</svg>
 			<ol aria-label={`Etapas de ${trail.name}`} className={styles.checkpoints}>
 				{trail.positions.map((position, index) => {
 					const number = index + 1;
 					const challenge = stageChallenge(number);
 					const active = selected === number;
-					const label = challenge || `Etapa ${number}`;
+					const published = publishedStages.find(
+						(point) => point.number === number,
+					);
+					const label = published?.title || challenge || `Etapa ${number}`;
+					const done = completedStages.includes(number);
+					const locked =
+						sequential && published && !done && currentStage !== number;
+					const state = done
+						? "completed"
+						: locked
+							? "locked"
+							: currentStage === number
+								? "current"
+								: published || previewStages.includes(number)
+									? "published"
+									: "preview";
+					const stateLabel = {
+						completed: "Concluída",
+						locked: "Bloqueada",
+						current: "Próxima etapa",
+						published: "Disponível",
+						preview: "Prévia de estudo",
+					}[state];
 
 					return (
 						<li
@@ -72,37 +121,54 @@ export function TrailMap({
 							key={number}
 							style={{ "--position": `${position}%` } as CSSProperties}
 						>
-							<button
-								aria-label={challenge ? `Etapa ${number}, ${challenge}` : label}
+							<ActionButton
+								aria-label={`Etapa ${number}${label === `Etapa ${number}` ? "" : ` · ${label}`} · ${stateLabel}`}
 								aria-pressed={active}
 								className={styles.checkpointButton}
 								data-challenge={Boolean(challenge)}
+								data-state={state}
 								onClick={() => setSelected(number)}
 								type="button"
 							>
-								{challenge && (
-									<svg
-										aria-hidden="true"
-										fill="none"
-										height="14"
-										stroke="currentColor"
-										strokeLinejoin="round"
-										strokeWidth="1.75"
-										viewBox="0 0 24 24"
-										width="14"
-									>
-										<path d="m12 2 2.9 6.2 6.8.8-5 4.8 1.3 6.7-6-3.3-6 3.3 1.3-6.7-5-4.8 6.8-.8z" />
-									</svg>
+								{(challenge || state !== "preview") && (
+									<Icon
+										className={styles.checkpointIcon}
+										name={
+											done
+												? "check"
+												: locked
+													? "lock"
+													: challenge
+														? "star"
+														: "book"
+										}
+									/>
 								)}
-								{number}
-							</button>
+								<span className={styles.checkpointNumber}>{number}</span>
+							</ActionButton>
 							{(active || challenge) && (
-								<div className={styles.checkpointLabel}>
+								<div className={styles.checkpointLabel} data-active={active}>
 									<strong>{label}</strong>
 									{active && (
-										<Link href={`/aprender/${trail.id}/${number}`}>
-											Ver modelos <span aria-hidden="true">→</span>
-										</Link>
+										<>
+											<span className={styles.checkpointHint}>
+												{stateLabel}
+											</span>
+											{locked ? (
+												<span className={styles.lockedHint}>
+													Conclua a etapa {currentStage}.
+												</span>
+											) : (
+												<Link href={`/aprender/${trail.id}/${number}`}>
+													{done
+														? "Revisitar"
+														: published || previewStages.includes(number)
+															? "Abrir etapa"
+															: "Ver modelos"}
+													<Icon className="size-3.5 shrink-0" name="arrow" />
+												</Link>
+											)}
+										</>
 									)}
 								</div>
 							)}
@@ -111,7 +177,7 @@ export function TrailMap({
 				})}
 			</ol>
 			<p aria-live="polite" className="sr-only">
-				Etapa {selected} selecionada. Modelos disponíveis para visualização.
+				Etapa {selected} selecionada.
 			</p>
 		</div>
 	);

@@ -64,6 +64,7 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    learningProgress LearningPointProgress[]
 }
 
 model VerificationToken {
@@ -72,4 +73,85 @@ model VerificationToken {
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+enum LearningEntryMode {
+    CONTENT
+    QUESTION
+    MIXED
+}
+
+enum LearningQuestionType {
+    MULTIPLE_CHOICE
+    ASSOCIATION
+    PAIR_LINKS
+    WALKTHROUGH
+}
+
+model LearningTrail {
+    slug   String       @id
+    name   String
+    points TrailPoint[]
+}
+
+model TrailPoint {
+    id         Int                @id @default(autoincrement())
+    trailSlug  String
+    number     Int
+    trail      LearningTrail      @relation(fields: [trailSlug], references: [slug], onDelete: Restrict)
+    content    TrailPointContent?
+    activities LearningActivity[]
+    xpReward   Int                @default(10)
+    progress   LearningPointProgress[]
+
+    @@unique([trailSlug, number])
+}
+
+model LearningPointProgress {
+    userId           String
+    pointId          Int
+    completedEntries String[]   @default([])
+    attempts         Json       @default("{}") @db.JsonB
+    completedAt      DateTime?  @db.Timestamptz(3)
+    xp               Int        @default(0)
+    correctAnswers   Int        @default(0)
+    user             User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+    point            TrailPoint @relation(fields: [pointId], references: [id], onDelete: Cascade)
+
+    @@id([userId, pointId])
+    @@index([pointId])
+}
+
+model TrailPointContent {
+    pointId Int        @id
+    blocks  Json       @db.JsonB
+    summary String?
+    point   TrailPoint @relation(fields: [pointId], references: [id], onDelete: Cascade)
+}
+
+model LearningActivity {
+    id      Int             @id @default(autoincrement())
+    pointId Int
+    slug    String
+    title   String
+    point   TrailPoint      @relation(fields: [pointId], references: [id], onDelete: Cascade)
+    entries LearningEntry[]
+
+    @@unique([pointId, slug])
+}
+
+model LearningEntry {
+    activityId Int
+    number     Int
+    position   Int?
+    mode       LearningEntryMode
+    type       LearningQuestionType?
+    prompt     String?
+    media      Json?                 @db.JsonB
+    payload    Json?                 @db.JsonB
+    answer     Json?                 @db.JsonB
+    content    Json?                 @db.JsonB
+    activity   LearningActivity      @relation(fields: [activityId], references: [id], onDelete: Cascade)
+
+    @@id([activityId, number])
 }

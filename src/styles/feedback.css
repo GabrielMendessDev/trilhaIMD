@@ -1,0 +1,279 @@
+.feedback-icon {
+	width: 1.25rem;
+	height: 1.25rem;
+	flex: none;
+}
+.feedback-viewport {
+	display: grid;
+	gap: 0.5rem;
+	padding: 0.75rem clamp(1rem, 3vw, 2.5rem) 0;
+}
+.feedback-viewport > div[aria-live] {
+	display: grid;
+	gap: 0.5rem;
+}
+.feedback-toast {
+	--feedback-color: var(--accent);
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	width: 100%;
+	max-width: 52rem;
+	border: 1px solid color-mix(in srgb, var(--feedback-color) 55%, var(--line));
+	border-radius: var(--radius-control);
+	background: color-mix(in srgb, var(--feedback-color) 12%, var(--surface));
+	box-shadow: 0 5px 18px -11px var(--feedback-color);
+	padding: 0.75rem 0.875rem;
+	color: var(--ink);
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+.feedback-toast[data-kind="success"] {
+	--feedback-color: var(--success-ink);
+}
+.feedback-toast[data-kind="error"],
+.feedback-toast[data-kind="warning"] {
+	--feedback-color: var(--warm-ink);
+}
+.feedback-toast > .feedback-icon {
+	color: var(--feedback-color);
+}
+.feedback-toast p {
+	flex: 1;
+	overflow-wrap: anywhere;
+}
+.feedback-toast button {
+	display: grid;
+	flex: none;
+	width: 2.75rem;
+	min-height: 2.75rem;
+	place-items: center;
+	border-radius: var(--radius-control);
+	cursor: pointer;
+}
+.feedback-toast button:hover {
+	background: var(--surface-soft);
+}
+.feedback-navigation {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	color: var(--accent);
+	font-size: 0.875rem;
+	font-weight: 750;
+}
+.action-control {
+	position: relative;
+	display: inline-grid;
+	align-items: center;
+	justify-items: center;
+}
+.action-label,
+.action-pending {
+	display: inline-flex;
+	grid-area: 1 / 1;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	min-width: 0;
+}
+.action-label[data-hidden],
+.action-pending[data-hidden] {
+	visibility: hidden;
+}
+.action-pending[data-hidden] .feedback-spinner {
+	animation: none;
+}
+.action-control[data-action-state="success"] {
+	border-color: var(--mint);
+}
+.action-control[data-action-state="error"] {
+	border-color: var(--solar);
+}
+.action-control:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+.ui-button.action-control:disabled {
+	cursor: not-allowed;
+}
+.ui-button.action-control[aria-busy="true"] {
+	cursor: wait;
+}
+.action-control[aria-busy="true"] {
+	cursor: wait;
+}
+.action-link {
+	position: relative;
+}
+.link-pending {
+	display: grid;
+	position: absolute;
+	inset-inline-end: 0.4rem;
+	inset-block-start: 50%;
+	transform: translateY(-50%);
+	place-items: center;
+	border-radius: 50%;
+	background: var(--surface);
+	padding: 0.15rem;
+	color: var(--accent);
+	box-shadow: 0 2px 8px #151b3733;
+}
+.link-pending .feedback-icon {
+	width: 1rem;
+	height: 1rem;
+}
+button:enabled,
+summary,
+select,
+input[type="radio"] {
+	cursor: pointer;
+}
+button:enabled,
+.action-link {
+	transition:
+		background-color 180ms ease,
+		border-color 180ms ease,
+		box-shadow 180ms ease,
+		transform 180ms ease;
+}
+button:enabled:active,
+.action-link:active {
+	scale: 0.98;
+}
+button[aria-disabled="true"] {
+	cursor: not-allowed;
+}
+.study-progress > span {
+	transition: inline-size 240ms ease-out;
+}
+.completion-effects {
+	display: grid;
+	gap: 1rem;
+}
+.completion-medal {
+	display: inline-block;
+	width: 1.7rem;
+	height: 1.7rem;
+	margin-inline-end: 0.5rem;
+	color: var(--reward-ink);
+	vertical-align: middle;
+}
+.earned-awards {
+	display: grid;
+	gap: 0.65rem;
+	max-width: 47rem;
+	padding: 0.5rem 1rem;
+}
+.earned-awards h3 {
+	font-weight: 800;
+}
+.earned-awards ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+}
+.earned-awards li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--reward-ink);
+	font-weight: 750;
+}
+.earned-awards svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.feedback-spinner {
+		animation: feedback-spin 850ms linear infinite;
+	}
+	.feedback-toast {
+		animation: feedback-enter 200ms ease-out both;
+	}
+	.feedback-toast[data-kind="warning"] {
+		animation: feedback-attention 500ms ease-out both;
+	}
+	.page-transition {
+		animation: page-arrives 180ms ease-out both;
+	}
+	.lesson-transition {
+		animation: lesson-arrives 200ms ease-out both;
+	}
+	.reward-balance[data-reward] {
+		animation: reward-pulse 600ms ease-out both;
+	}
+	.completion-effects[data-celebrate] .completion-medal {
+		animation: medal-arrives 320ms cubic-bezier(0.2, 0.8, 0.3, 1.1) both;
+	}
+	.completion-effects[data-celebrate] .earned-awards li {
+		animation: medal-arrives 320ms ease-out both;
+	}
+	.completion-effects[data-celebrate] .study-progress > span {
+		animation: performance-arrives 600ms ease-out both;
+	}
+	.completion-effects[data-celebrate] [data-reward-count] {
+		animation: reward-pulse 600ms ease-out both;
+	}
+	[data-unlocked] button {
+		animation: reward-pulse 650ms ease-out both;
+	}
+}
+
+@keyframes feedback-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes feedback-enter {
+	from {
+		opacity: 0;
+		transform: translateY(0.35rem);
+	}
+}
+@keyframes feedback-attention {
+	from {
+		box-shadow: 0 5px 24px -6px var(--feedback-color);
+	}
+}
+@keyframes page-arrives {
+	from {
+		opacity: 0.8;
+	}
+}
+@keyframes lesson-arrives {
+	from {
+		opacity: 0.7;
+		transform: translateX(0.4rem);
+	}
+}
+@keyframes reward-pulse {
+	40% {
+		filter: brightness(1.2);
+		scale: 1.04;
+	}
+}
+@keyframes medal-arrives {
+	from {
+		transform: scale(0.6) rotate(-8deg);
+	}
+}
+@keyframes performance-arrives {
+	from {
+		inline-size: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.action-control,
+	.action-link,
+	button:enabled,
+	.study-progress > span {
+		transition: none;
+	}
+	button:enabled:active,
+	.action-link:active {
+		scale: none;
+	}
+}

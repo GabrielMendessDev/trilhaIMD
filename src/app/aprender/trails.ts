@@ -31,7 +31,7 @@ export const trails = [
 		id: "elementar",
 		name: "Matemática Elementar",
 		label: "Elementar",
-		notation: "±",
+		notation: "Σ",
 		description: "Explore a base para trabalhar com números e expressões.",
 		diagramTitle: "Reta numérica",
 		diagramCaption: "Na reta, a posição mostra a ordem dos números.",

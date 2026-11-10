@@ -1,0 +1,146 @@
+.trailCard {
+	display: grid;
+	min-height: 8.25rem;
+	height: 100%;
+	gap: 0.875rem;
+	align-content: center;
+	border: 1px solid var(--track);
+	border-radius: var(--radius-card);
+	background: linear-gradient(
+		148deg,
+		color-mix(in srgb, var(--accent) 13%, var(--surface)),
+		var(--surface) 78%
+	);
+	padding: 1rem;
+	box-shadow:
+		var(--shadow-card),
+		inset 0 1px 0 color-mix(in srgb, var(--accent) 18%, transparent);
+	--progress-fill: var(--accent);
+	transition:
+		transform var(--motion-ui),
+		box-shadow var(--motion-ui),
+		border-color var(--motion-ui);
+}
+.trailCard:hover {
+	transform: translateY(-2px);
+	border-color: var(--accent);
+	box-shadow: 0 9px 28px -20px var(--accent);
+}
+:global([data-theme="dark"]) .trailCard {
+	border-color: color-mix(in srgb, var(--discipline-flare) 68%, var(--line));
+	background:
+		radial-gradient(
+			ellipse at 14% 3%,
+			color-mix(in srgb, var(--discipline-flare) 42%, transparent),
+			transparent 76%
+		),
+		linear-gradient(
+			145deg,
+			color-mix(in srgb, var(--discipline-deep) 52%, var(--surface)),
+			var(--surface) 92%
+		);
+	box-shadow:
+		var(--rim-light),
+		inset 0 -1px 0 #15103770,
+		0 12px 27px -19px var(--discipline-flare);
+}
+:global([data-theme="dark"]) .trailCard:hover {
+	border-color: var(--accent);
+	box-shadow:
+		var(--rim-light),
+		0 12px 31px -15px var(--discipline-flare);
+}
+.trailIdentity {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 0.75rem;
+}
+.trailIdentity h3 {
+	font-size: 0.95rem;
+	line-height: 1.35;
+	font-weight: 750;
+}
+.trailIdentity > svg {
+	color: var(--accent);
+}
+.symbol {
+	display: grid;
+	width: 2.8rem;
+	aspect-ratio: 1;
+	place-items: center;
+	border: 1px solid var(--track);
+	border-radius: var(--radius-control);
+	background: color-mix(in srgb, var(--accent) 18%, var(--surface));
+	color: var(--accent);
+	box-shadow: inset 0 1px 0 #ffffff20;
+	font-family: var(--font-mono);
+	font-weight: 800;
+}
+:global([data-theme="dark"]) .symbol {
+	border-color: color-mix(in srgb, var(--accent) 58%, transparent);
+	background: var(--discipline-jewel);
+	color: var(--white);
+	box-shadow:
+		var(--rim-light),
+		0 5px 13px -6px var(--discipline-flare);
+	font-size: 1.2rem;
+	text-shadow: 0 1px 4px var(--discipline-deep);
+}
+.trailProgress {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 0.65rem;
+	font-size: 0.75rem;
+	font-weight: 800;
+	font-variant-numeric: tabular-nums;
+}
+.medal {
+	position: relative;
+	display: grid;
+	width: 3.75rem;
+	aspect-ratio: 1;
+	place-items: center;
+	color: var(--medal-ink, var(--muted));
+	filter: drop-shadow(0 5px 6px var(--medal-shadow, #17142c4d));
+}
+.medal::before,
+.medal::after {
+	position: absolute;
+	inset: 0;
+	background: var(--medal-edge, var(--line));
+	clip-path: polygon(50% 0, 95% 23%, 95% 74%, 50% 100%, 5% 74%, 5% 23%);
+	content: "";
+}
+.medal::after {
+	inset: 0.26rem;
+	background: var(--medal-fill, var(--surface-soft));
+}
+.medal svg {
+	position: relative;
+	z-index: 1;
+}
+.medal[data-earned="true"][data-tone="orbit"] {
+	--medal-edge: linear-gradient(145deg, #e2c5ff, #9968f2 60%, #4b279c);
+	--medal-fill: var(--orbit-glow);
+	--medal-ink: var(--white);
+	--medal-shadow: #8b54e477;
+}
+.medal[data-earned="true"][data-tone="solar"] {
+	--medal-edge: linear-gradient(145deg, #ffecd1, #ffc987 60%, #a95a32);
+	--medal-fill: linear-gradient(150deg, #ffd28f, #ee8958);
+	--medal-ink: var(--night);
+	--medal-shadow: #ff9b5c77;
+}
+.medal[data-earned="true"][data-tone="mint"] {
+	--medal-edge: linear-gradient(145deg, #d2fff6, #69e5d4 60%, #157c77);
+	--medal-fill: linear-gradient(150deg, #9af2e3, #28bbad);
+	--medal-ink: var(--night);
+	--medal-shadow: #36d9c977;
+}
+@media (prefers-reduced-motion: reduce) {
+	.trailCard:hover {
+		transform: none;
+	}
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 520">
+  <defs>
+    <linearGradient id="cloud" x2=".18" y2="1">
+      <stop stop-color="#9f7cf9" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#6558f5" stop-opacity=".1"/>
+    </linearGradient>
+    <linearGradient id="distant" x2=".24" y2="1">
+      <stop stop-color="#bda0ff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#4733a7" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 57c34-11 58 11 65 36 19-7 40 3 47 22H0Z" fill="url(#distant)"/>
+  <path d="M0 90c23-9 42 1 48 21 13-4 28 2 34 15 21-7 46 4 54 20H0Z" fill="url(#cloud)"/>
+  <path d="M540 204c-34-8-67 9-74 43-19-5-40 2-49 22-20-5-46 9-55 28h178Z" fill="url(#distant)"/>
+  <path d="M540 237c-24-8-49 7-56 27-18-4-31 4-41 17-25-6-45 6-54 23h151Z" fill="url(#cloud)"/>
+  <path d="M0 425c21-8 44-1 55 17 20-5 39 6 45 19 22-7 47 7 55 26H0Z" fill="url(#cloud)"/>
+  <g fill="#b6a5ff" opacity=".42">
+    <circle cx="92" cy="63" r="1.5"/><circle cx="130" cy="108" r=".9"/>
+    <circle cx="444" cy="201" r="1.5"/><circle cx="475" cy="184" r=".9"/>
+    <circle cx="65" cy="410" r="1.5"/><circle cx="104" cy="447" r=".9"/>
+  </g>
+</svg>

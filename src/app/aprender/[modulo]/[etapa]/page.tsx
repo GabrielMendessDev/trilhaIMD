@@ -1,11 +1,13 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import Link from "~/app/_components/action-link";
 import { DashboardLayout, Icon } from "~/app/_components/dashboard";
+import { getPublishedPoints } from "~/server/learning";
 import {
 	activityFormats,
 	type StageModel,
 	stageModes,
 } from "../../_etapa/model";
+import { PublishedLesson } from "../../_etapa/published-lesson";
 import { StageScreen } from "../../_etapa/screen";
 import styles from "../../_etapa/stage.module.css";
 import { stagesByTrail } from "../../_etapa/stages";
@@ -31,6 +33,10 @@ export default async function StagePage({
 	searchParams: Promise<{
 		modelo?: string | string[];
 		tipo?: string | string[];
+		item?: string | string[];
+		material?: string | string[];
+		retorno?: string | string[];
+		rodada?: string | string[];
 	}>;
 }) {
 	const { modulo, etapa } = await params;
@@ -44,7 +50,11 @@ export default async function StagePage({
 		notFound();
 	}
 
-	const { modelo, tipo } = await searchParams;
+	const { modelo, tipo, item, material, retorno, rodada } = await searchParams;
+	const points = await getPublishedPoints();
+	const point = points?.find(
+		(point) => point.trail === trail.id && point.number === number,
+	);
 	const mode = stageModes.find(({ id }) => id === modelo)?.id ?? "conteudo";
 	const format =
 		activityFormats.find(({ empty }) => empty.kind === tipo) ??
@@ -58,7 +68,7 @@ export default async function StagePage({
 				: { mode, content: previewContent, activity: format.empty };
 	const published = stagesByTrail[trail.id]?.[number];
 	const base = `/aprender/${trail.id}/${number}`;
-	const title = stageChallenge(number) ?? `Etapa ${number}`;
+	const title = point?.title ?? stageChallenge(number) ?? `Etapa ${number}`;
 
 	return (
 		<DashboardLayout active="/aprender">
@@ -83,7 +93,7 @@ export default async function StagePage({
 					</span>
 				</header>
 
-				{!published && (
+				{!published && !point && (
 					<div className={styles.preview}>
 						<div className={styles.previewIntro}>
 							<h2>Prévia dos modelos</h2>
@@ -120,7 +130,17 @@ export default async function StagePage({
 					</div>
 				)}
 
-				<StageScreen model={published ?? preview} />
+				{point ? (
+					<PublishedLesson
+						entryKey={typeof item === "string" ? item : undefined}
+						feedbackKey={typeof retorno === "string" ? retorno : undefined}
+						feedbackRound={rodada === "2" ? 2 : 1}
+						materialKey={typeof material === "string" ? material : undefined}
+						point={point}
+					/>
+				) : (
+					<StageScreen model={published ?? preview} />
+				)}
 			</div>
 		</DashboardLayout>
 	);

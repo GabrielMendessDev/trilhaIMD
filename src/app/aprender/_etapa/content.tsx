@@ -1,6 +1,58 @@
 import Image from "next/image";
+import { createElement, useId } from "react";
+import { Icon } from "~/app/_components/icon";
+import { LessonDiagram } from "./lesson-diagram";
 import type { ContentBlock, StageContent } from "./model";
+import pedagogy from "./pedagogy.module.css";
 import styles from "./stage.module.css";
+
+function Formula({ label, terms }: Extract<ContentBlock, { type: "formula" }>) {
+	const operators = /([=≈≤≥±+−·⇔⇒])/u;
+	const tokens = (text: string) =>
+		text
+			.split(operators)
+			.map((part) => part.trim())
+			.filter(Boolean)
+			.map((part) => {
+				if (operators.test(part)) return createElement("mo", null, part);
+				if (/^\d+(?:[.,]\d+)?$/u.test(part))
+					return createElement("mn", null, part);
+				return createElement("mtext", null, part);
+			});
+	const group = (text: string) => createElement("mrow", null, ...tokens(text));
+	return createElement(
+		"math",
+		{ "aria-label": label, className: pedagogy.formula, display: "block" },
+		createElement(
+			"mrow",
+			null,
+			...terms.flatMap((term) => {
+				switch (term.forma) {
+					case "texto":
+						return tokens(term.valor);
+					case "fracao":
+						return createElement(
+							"mfrac",
+							null,
+							group(term.numerador),
+							group(term.denominador),
+						);
+					case "raiz":
+						return createElement("msqrt", null, group(term.radicando));
+					case "potencia":
+						return createElement(
+							"msup",
+							null,
+							group(term.base),
+							group(term.expoente),
+						);
+					default:
+						return null;
+				}
+			}),
+		),
+	);
+}
 
 export function ContentBlocks({ blocks }: { blocks: readonly ContentBlock[] }) {
 	return (
@@ -11,6 +63,15 @@ export function ContentBlocks({ blocks }: { blocks: readonly ContentBlock[] }) {
 						return <h3 key={block.id}>{block.text}</h3>;
 					case "text":
 						return <p key={block.id}>{block.text}</p>;
+					case "code":
+						return (
+							<figure className={styles.code} key={block.id}>
+								{block.language && <figcaption>{block.language}</figcaption>}
+								<pre>
+									<code>{block.text}</code>
+								</pre>
+							</figure>
+						);
 					case "image":
 						return (
 							<figure key={block.id}>
@@ -24,6 +85,26 @@ export function ContentBlocks({ blocks }: { blocks: readonly ContentBlock[] }) {
 								{block.caption && <figcaption>{block.caption}</figcaption>}
 							</figure>
 						);
+					case "diagram":
+						return (
+							<LessonDiagram
+								caption={block.caption}
+								data={block.data}
+								key={block.id}
+							/>
+						);
+					case "formula":
+						return <Formula {...block} key={block.id} />;
+					case "resource":
+						return (
+							<div className={pedagogy.resource} key={block.id}>
+								<Icon name="book" />
+								<div>
+									<a href={block.url}>{block.title}</a>
+									<p>Material externo · {block.source}</p>
+								</div>
+							</div>
+						);
 					default:
 						return null;
 				}
@@ -34,10 +115,19 @@ export function ContentBlocks({ blocks }: { blocks: readonly ContentBlock[] }) {
 
 export function ContentPanel({ content }: { content: StageContent }) {
 	const empty = content.blocks.length === 0 && !content.summary;
+	const id = useId();
+	const category =
+		content.category === "diagrama"
+			? "Exploração visual"
+			: content.category === "material"
+				? "Material de estudo"
+				: "Explicação";
 
 	return (
-		<section aria-labelledby="stage-content" className={styles.panel}>
-			<h2 id="stage-content">Conteúdo</h2>
+		<section aria-labelledby={id} className={styles.panel}>
+			<h2 id={id}>
+				{content.title ?? (content.category ? category : "Conteúdo")}
+			</h2>
 			{empty ? (
 				<>
 					<p className={styles.panelHint}>

@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T00:11:18.493Z",
+  "title": "Sistema visual do trilbit",
+  "extensions": {
+    "colorMeta": {
+      "orbit": {
+        "role": "primary",
+        "displayName": "Órbita",
+        "tonalRamp": [
+          "oklch(15% 0.2254 280.1)",
+          "oklch(26% 0.2254 280.1)",
+          "oklch(38% 0.2254 280.1)",
+          "oklch(49% 0.2254 280.1)",
+          "oklch(61% 0.2254 280.1)",
+          "oklch(72% 0.2254 280.1)",
+          "oklch(84% 0.2254 280.1)",
+          "oklch(95% 0.2254 280.1)"
+        ]
+      },
+      "orbit-hover": {
+        "role": "primary",
+        "displayName": "Órbita profunda",
+        "tonalRamp": [
+          "oklch(15% 0.2303 278.2)",
+          "oklch(26% 0.2303 278.2)",
+          "oklch(38% 0.2303 278.2)",
+          "oklch(49% 0.2303 278.2)",
+          "oklch(61% 0.2303 278.2)",
+          "oklch(72% 0.2303 278.2)",
+          "oklch(84% 0.2303 278.2)",
+          "oklch(95% 0.2303 278.2)"
+        ]
+      },
+      "lavender": {
+        "role": "primary",
+        "displayName": "Lavanda",
+        "tonalRamp": [
+          "oklch(15% 0.0271 295.1)",
+          "oklch(26% 0.0271 295.1)",
+          "oklch(38% 0.0271 295.1)",
+          "oklch(49% 0.0271 295.1)",
+          "oklch(61% 0.0271 295.1)",
+          "oklch(72% 0.0271 295.1)",
+          "oklch(84% 0.0271 295.1)",
+          "oklch(95% 0.0271 295.1)"
+        ]
+      },
+      "dark-accent": {
+        "role": "primary",
+        "displayName": "Órbita clara",
+        "tonalRamp": [
+          "oklch(15% 0.1052 288.7)",
+          "oklch(26% 0.1052 288.7)",
+          "oklch(38% 0.1052 288.7)",
+          "oklch(49% 0.1052 288.7)",
+          "oklch(61% 0.1052 288.7)",
+          "oklch(72% 0.1052 288.7)",
+          "oklch(84% 0.1052 288.7)",
+          "oklch(95% 0.1052 288.7)"
+        ]
+      },
+      "dark-accent-wash": {
+        "role": "primary",
+        "displayName": "Órbita tonal escura",
+        "tonalRamp": [
+          "oklch(15% 0.0835 285.2)",
+          "oklch(26% 0.0835 285.2)",
+          "oklch(38% 0.0835 285.2)",
+          "oklch(49% 0.0835 285.2)",
+          "oklch(61% 0.0835 285.2)",
+          "oklch(72% 0.0835 285.2)",
+          "oklch(84% 0.0835 285.2)",
+          "oklch(95% 0.0835 285.2)"
+        ]
+      },
+      "solar": {
+        "role": "secondary",
+        "displayName": "Solar",
+        "tonalRamp": [
+          "oklch(15% 0.1277 56.3)",
+          "oklch(26% 0.1277 56.3)",
+          "oklch(38% 0.1277 56.3)",
+          "oklch(49% 0.1277 56.3)",
+          "oklch(61% 0.1277 56.3)",
+          "oklch(72% 0.1277 56.3)",
+          "oklch(84% 0.1277 56.3)",
+          "oklch(95% 0.1277 56.3)"
+        ]
+      },
+      "solar-hover": {
+        "role": "secondary",
+        "displayName": "Solar claro",
+        "tonalRamp": [
+          "oklch(15% 0.0879 54.5)",
+          "oklch(26% 0.0879 54.5)",
+          "oklch(38% 0.0879 54.5)",
+          "oklch(49% 0.0879 54.5)",
+          "oklch(61% 0.0879 54.5)",
+          "oklch(72% 0.0879 54.5)",
+          "oklch(84% 0.0879 54.5)",
+          "oklch(95% 0.0879 54.5)"
+        ]
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Menta",
+        "tonalRamp": [
+          "oklch(15% 0.1295 178.1)",
+          "oklch(26% 0.1295 178.1)",
+          "oklch(38% 0.1295 178.1)",
+          "oklch(49% 0.1295 178.1)",
+          "oklch(61% 0.1295 178.1)",
+          "oklch(72% 0.1295 178.1)",
+          "oklch(84% 0.1295 178.1)",
+          "oklch(95% 0.1295 178.1)"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Noite",
+        "tonalRamp": [
+          "oklch(15% 0.0546 272.4)",
+          "oklch(26% 0.0546 272.4)",
+          "oklch(38% 0.0546 272.4)",
+          "oklch(49% 0.0546 272.4)",
+          "oklch(61% 0.0546 272.4)",
+          "oklch(72% 0.0546 272.4)",
+          "oklch(84% 0.0546 272.4)",
+          "oklch(95% 0.0546 272.4)"
+        ]
+      },
+      "cloud": {
+        "role": "neutral",
+        "displayName": "Nuvem",
+        "tonalRamp": [
+          "oklch(15% 0.0054 275.0)",
+          "oklch(26% 0.0054 275.0)",
+          "oklch(38% 0.0054 275.0)",
+          "oklch(49% 0.0054 275.0)",
+          "oklch(61% 0.0054 275.0)",
+          "oklch(72% 0.0054 275.0)",
+          "oklch(84% 0.0054 275.0)",
+          "oklch(95% 0.0054 275.0)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Branco",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0)",
+          "oklch(26% 0.0000 0)",
+          "oklch(38% 0.0000 0)",
+          "oklch(49% 0.0000 0)",
+          "oklch(61% 0.0000 0)",
+          "oklch(72% 0.0000 0)",
+          "oklch(84% 0.0000 0)",
+          "oklch(95% 0.0000 0)"
+        ]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Superfície suave",
+        "tonalRamp": [
+          "oklch(15% 0.0094 279.7)",
+          "oklch(26% 0.0094 279.7)",
+          "oklch(38% 0.0094 279.7)",
+          "oklch(49% 0.0094 279.7)",
+          "oklch(61% 0.0094 279.7)",
+          "oklch(72% 0.0094 279.7)",
+          "oklch(84% 0.0094 279.7)",
+          "oklch(95% 0.0094 279.7)"
+        ]
+      },
+      "blue-gray": {
+        "role": "neutral",
+        "displayName": "Azul acinzentado",
+        "tonalRamp": [
+          "oklch(15% 0.0448 270.3)",
+          "oklch(26% 0.0448 270.3)",
+          "oklch(38% 0.0448 270.3)",
+          "oklch(49% 0.0448 270.3)",
+          "oklch(61% 0.0448 270.3)",
+          "oklch(72% 0.0448 270.3)",
+          "oklch(84% 0.0448 270.3)",
+          "oklch(95% 0.0448 270.3)"
+        ]
+      },
+      "soft-border": {
+        "role": "neutral",
+        "displayName": "Borda suave",
+        "tonalRamp": [
+          "oklch(15% 0.0123 276.1)",
+          "oklch(26% 0.0123 276.1)",
+          "oklch(38% 0.0123 276.1)",
+          "oklch(49% 0.0123 276.1)",
+          "oklch(61% 0.0123 276.1)",
+          "oklch(72% 0.0123 276.1)",
+          "oklch(84% 0.0123 276.1)",
+          "oklch(95% 0.0123 276.1)"
+        ]
+      },
+      "on-night": {
+        "role": "neutral",
+        "displayName": "Texto sobre Noite",
+        "tonalRamp": [
+          "oklch(15% 0.0161 293.8)",
+          "oklch(26% 0.0161 293.8)",
+          "oklch(38% 0.0161 293.8)",
+          "oklch(49% 0.0161 293.8)",
+          "oklch(61% 0.0161 293.8)",
+          "oklch(72% 0.0161 293.8)",
+          "oklch(84% 0.0161 293.8)",
+          "oklch(95% 0.0161 293.8)"
+        ]
+      },
+      "on-night-muted": {
+        "role": "neutral",
+        "displayName": "Texto de apoio sobre Noite",
+        "tonalRamp": [
+          "oklch(15% 0.0427 291.4)",
+          "oklch(26% 0.0427 291.4)",
+          "oklch(38% 0.0427 291.4)",
+          "oklch(49% 0.0427 291.4)",
+          "oklch(61% 0.0427 291.4)",
+          "oklch(72% 0.0427 291.4)",
+          "oklch(84% 0.0427 291.4)",
+          "oklch(95% 0.0427 291.4)"
+        ]
+      },
+      "dark-canvas": {
+        "role": "neutral",
+        "displayName": "Fundo escuro",
+        "tonalRamp": [
+          "oklch(15% 0.0441 274.1)",
+          "oklch(26% 0.0441 274.1)",
+          "oklch(38% 0.0441 274.1)",
+          "oklch(49% 0.0441 274.1)",
+          "oklch(61% 0.0441 274.1)",
+          "oklch(72% 0.0441 274.1)",
+          "oklch(84% 0.0441 274.1)",
+          "oklch(95% 0.0441 274.1)"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Superfície escura",
+        "tonalRamp": [
+          "oklch(15% 0.0518 274.0)",
+          "oklch(26% 0.0518 274.0)",
+          "oklch(38% 0.0518 274.0)",
+          "oklch(49% 0.0518 274.0)",
+          "oklch(61% 0.0518 274.0)",
+          "oklch(72% 0.0518 274.0)",
+          "oklch(84% 0.0518 274.0)",
+          "oklch(95% 0.0518 274.0)"
+        ]
+      },
+      "dark-surface-soft": {
+        "role": "neutral",
+        "displayName": "Superfície escura suave",
+        "tonalRamp": [
+          "oklch(15% 0.0572 275.2)",
+          "oklch(26% 0.0572 275.2)",
+          "oklch(38% 0.0572 275.2)",
+          "oklch(49% 0.0572 275.2)",
+          "oklch(61% 0.0572 275.2)",
+          "oklch(72% 0.0572 275.2)",
+          "oklch(84% 0.0572 275.2)",
+          "oklch(95% 0.0572 275.2)"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Texto do tema escuro",
+        "tonalRamp": [
+          "oklch(15% 0.0160 289.9)",
+          "oklch(26% 0.0160 289.9)",
+          "oklch(38% 0.0160 289.9)",
+          "oklch(49% 0.0160 289.9)",
+          "oklch(61% 0.0160 289.9)",
+          "oklch(72% 0.0160 289.9)",
+          "oklch(84% 0.0160 289.9)",
+          "oklch(95% 0.0160 289.9)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Texto de apoio do tema escuro",
+        "tonalRamp": [
+          "oklch(15% 0.0375 273.6)",
+          "oklch(26% 0.0375 273.6)",
+          "oklch(38% 0.0375 273.6)",
+          "oklch(49% 0.0375 273.6)",
+          "oklch(61% 0.0375 273.6)",
+          "oklch(72% 0.0375 273.6)",
+          "oklch(84% 0.0375 273.6)",
+          "oklch(95% 0.0375 273.6)"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Borda escura",
+        "tonalRamp": [
+          "oklch(15% 0.0579 274.0)",
+          "oklch(26% 0.0579 274.0)",
+          "oklch(38% 0.0579 274.0)",
+          "oklch(49% 0.0579 274.0)",
+          "oklch(61% 0.0579 274.0)",
+          "oklch(72% 0.0579 274.0)",
+          "oklch(84% 0.0579 274.0)",
+          "oklch(95% 0.0579 274.0)"
+        ]
+      },
+      "error-ink": {
+        "role": "tertiary",
+        "displayName": "Texto de erro",
+        "tonalRamp": [
+          "oklch(15% 0.1426 9.7)",
+          "oklch(26% 0.1426 9.7)",
+          "oklch(38% 0.1426 9.7)",
+          "oklch(49% 0.1426 9.7)",
+          "oklch(61% 0.1426 9.7)",
+          "oklch(72% 0.1426 9.7)",
+          "oklch(84% 0.1426 9.7)",
+          "oklch(95% 0.1426 9.7)"
+        ]
+      },
+      "error-wash": {
+        "role": "tertiary",
+        "displayName": "Fundo de erro",
+        "tonalRamp": [
+          "oklch(15% 0.0170 359.3)",
+          "oklch(26% 0.0170 359.3)",
+          "oklch(38% 0.0170 359.3)",
+          "oklch(49% 0.0170 359.3)",
+          "oklch(61% 0.0170 359.3)",
+          "oklch(72% 0.0170 359.3)",
+          "oklch(84% 0.0170 359.3)",
+          "oklch(95% 0.0170 359.3)"
+        ]
+      },
+      "dark-error-ink": {
+        "role": "tertiary",
+        "displayName": "Texto de erro do tema escuro",
+        "tonalRamp": [
+          "oklch(15% 0.0940 2.5)",
+          "oklch(26% 0.0940 2.5)",
+          "oklch(38% 0.0940 2.5)",
+          "oklch(49% 0.0940 2.5)",
+          "oklch(61% 0.0940 2.5)",
+          "oklch(72% 0.0940 2.5)",
+          "oklch(84% 0.0940 2.5)",
+          "oklch(95% 0.0940 2.5)"
+        ]
+      },
+      "dark-error-wash": {
+        "role": "tertiary",
+        "displayName": "Fundo de erro do tema escuro",
+        "tonalRamp": [
+          "oklch(15% 0.0529 335.4)",
+          "oklch(26% 0.0529 335.4)",
+          "oklch(38% 0.0529 335.4)",
+          "oklch(49% 0.0529 335.4)",
+          "oklch(61% 0.0529 335.4)",
+          "oklch(72% 0.0529 335.4)",
+          "oklch(84% 0.0529 335.4)",
+          "oklch(95% 0.0529 335.4)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Título de abertura",
+        "purpose": "Saudação da página inicial."
+      },
+      "headline": {
+        "displayName": "Título de página",
+        "purpose": "Cabeçalho das rotas internas."
+      },
+      "title": {
+        "displayName": "Título de seção",
+        "purpose": "Seções como Disciplinas."
+      },
+      "body": {
+        "displayName": "Texto de leitura",
+        "purpose": "Descrições e blocos de conteúdo."
+      },
+      "label": {
+        "displayName": "Rótulo de controle",
+        "purpose": "Botões, links e opções."
+      },
+      "notation": {
+        "displayName": "Notação monoespaçada",
+        "purpose": "Símbolos de disciplina, diagramas e código."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 8px 24px -18px #151b3740",
+        "purpose": "Profundidade discreta de cartões no tema claro."
+      },
+      {
+        "name": "card-dark",
+        "value": "0 8px 24px -18px #0009",
+        "purpose": "Profundidade discreta de cartões no tema escuro."
+      },
+      {
+        "name": "feature",
+        "value": "0 18px 40px -26px #21175a99",
+        "purpose": "Sombra ampla do menu da conta."
+      },
+      {
+        "name": "link-card-hover",
+        "value": "0 12px 28px -21px var(--orbit)",
+        "purpose": "Resposta ao ponteiro em cartões clicáveis."
+      },
+      {
+        "name": "checkpoint-selected",
+        "value": "0 0 0 4px var(--tint), 0 8px 20px -10px var(--accent)",
+        "purpose": "Halo da etapa selecionada no mapa."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ui",
+        "value": "180ms ease",
+        "purpose": "Transição de cor, borda e sombra em estados interativos."
+      },
+      {
+        "name": "reduced",
+        "value": "0.01ms",
+        "purpose": "Duração de animações e transições com movimento reduzido."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "map-controls",
+        "value": "481px"
+      },
+      {
+        "name": "home-two-columns",
+        "value": "520px"
+      },
+      {
+        "name": "map-with-sidebar",
+        "value": "768px"
+      },
+      {
+        "name": "desktop-rail",
+        "value": "1025px"
+      },
+      {
+        "name": "home-three-columns",
+        "value": "1200px"
+      },
+      {
+        "name": "map-wide",
+        "value": "1281px"
+      },
+      {
+        "name": "map-extra-wide",
+        "value": "1441px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal em superfícies de estudo.",
+      "html": "<button type=\"button\" class=\"ds-button-primary\">Abrir etapa</button>",
+      "css": ".ds-button-primary { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid transparent; border-radius: var(--radius-control, 12px); padding: 0.625rem 1rem; font: 750 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); cursor: pointer; transition: background-color var(--motion-ui, 180ms ease), border-color var(--motion-ui, 180ms ease); background: var(--orbit-glow, linear-gradient(155deg, #7946ed, #6335d7 72%, #4d2abc)); color: var(--on-orbit, #fff); box-shadow: inset 0 1px 0 #ffffff35, 0 6px 14px -8px #6a38e6bb; } .ds-button-primary:hover { box-shadow: inset 0 1px 0 #ffffff35, 0 9px 20px -9px #8e5af4; } .ds-button-primary:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-button-primary { transition: none; } }"
+    },
+    {
+      "name": "Secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ação de apoio com borda e superfície temática.",
+      "html": "<button type=\"button\" class=\"ds-button-secondary\">Ver modelos</button>",
+      "css": ".ds-button-secondary { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid transparent; border-radius: var(--radius-control, 12px); padding: 0.625rem 1rem; font: 750 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); cursor: pointer; transition: background-color var(--motion-ui, 180ms ease), border-color var(--motion-ui, 180ms ease); border-color: var(--line, #e5e7f0); background: var(--surface, #fff); color: var(--ink, #151b37); } .ds-button-secondary:hover { border-color: var(--accent, #5143e3); background: var(--accent-wash, #eeeafe); } .ds-button-secondary:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-button-secondary { transition: none; } }"
+    },
+    {
+      "name": "Solar",
+      "kind": "button",
+      "refersTo": "button-solar",
+      "description": "Variação de botão em Coral Solar.",
+      "html": "<button type=\"button\" class=\"ds-button-solar\">Explorar trilhas <svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></button>",
+      "css": ".ds-button-solar { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid transparent; border-radius: var(--radius-control, 12px); padding: 0.625rem 1rem; font: 750 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); cursor: pointer; transition: background-color var(--motion-ui, 180ms ease), border-color var(--motion-ui, 180ms ease); background: var(--solar, #ffaa6b); color: var(--night, #151b37); } .ds-button-solar:hover { background: #ffc29a; } .ds-button-solar:focus-visible { outline: 2px solid var(--solar, #ffaa6b); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-button-solar { transition: none; } }"
+    },
+    {
+      "name": "Campo de associação",
+      "kind": "input",
+      "refersTo": "association-select",
+      "description": "Seletor nativo de opções para exercícios de associação.",
+      "html": "<label class=\"ds-association\"><span>Conjunto A</span><select class=\"ds-association-select\"><option>Selecionar opção</option><option>Conjunto B</option></select></label>",
+      "css": ".ds-association { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 0.625rem; color: var(--ink, #151b37); font: 650 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); } .ds-association-select { min-width: 0; min-height: 2.75rem; width: 100%; border: 1px solid var(--line, #e5e7f0); border-radius: var(--radius-control, 12px); background: var(--surface, #fff); color: inherit; padding: 0.5rem 0.625rem; font: inherit; } .ds-association-select:focus-visible { outline: 2px solid var(--accent, #5143e3); outline-offset: 2px; }"
+    },
+    {
+      "name": "Navegação lateral",
+      "kind": "nav",
+      "refersTo": "desktop-nav-current",
+      "description": "A rota atual recebe fundo Órbita na navegação Noite.",
+      "html": "<nav aria-label=\"Navegação de exemplo\" class=\"ds-rail\"><a href=\"#inicio\">Início</a><a href=\"#trilhas\" aria-current=\"page\">Trilhas</a></nav>",
+      "css": ".ds-rail { display: grid; gap: 0.375rem; width: min(100%, 14.5rem); background: var(--night, #151b37); padding: 1rem; } .ds-rail a { display: flex; min-height: 2.875rem; align-items: center; border-radius: var(--radius-control, 12px); padding-inline: 0.75rem; color: var(--on-night-muted, #d3cfee); font: 650 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); text-decoration: none; transition: background-color var(--motion-ui, 180ms ease), color var(--motion-ui, 180ms ease); } .ds-rail a:hover { background: #ffffff14; color: var(--on-night, #f5f3ff); } .ds-rail a[aria-current=\"page\"] { background: var(--orbit-glow, linear-gradient(155deg, #7946ed, #6335d7 72%, #4d2abc)); color: var(--on-orbit, #fff); font-weight: 800; } .ds-rail a:focus-visible { outline: 2px solid var(--solar, #ffaa6b); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-rail a { transition: none; } }"
+    },
+    {
+      "name": "Contador de trilhas",
+      "kind": "chip",
+      "refersTo": "catalog-count",
+      "description": "Cápsula informativa com a contagem de trilhas no catálogo.",
+      "html": "<span class=\"ds-count\">5 trilhas</span>",
+      "css": ".ds-count { display: inline-block; border: 1px solid var(--line, #e5e7f0); border-radius: 100px; background: var(--surface, #fff); padding: 0.35rem 0.65rem; color: var(--muted, #57607b); font: 700 0.75rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); }"
+    },
+    {
+      "name": "Cartão de disciplina",
+      "kind": "card",
+      "refersTo": "course-card",
+      "description": "Acesso ao mapa com símbolo da disciplina e progresso baseado nas etapas publicadas.",
+      "html": "<a href=\"#mapa\" class=\"ds-course\"><span class=\"ds-course-top\"><span aria-hidden=\"true\" class=\"ds-course-symbol\">Σ</span><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></span><strong class=\"ds-course-title\">Matemática Elementar</strong><span class=\"ds-course-count\">10 etapas · 2 desafios</span></a>",
+      "css": ".ds-course { --ds-discipline-accent: var(--accent, #5143e3); --ds-discipline-tint: color-mix(in srgb, var(--ds-discipline-accent) 9%, var(--surface, #fff)); display: grid; gap: 0.55rem; align-content: start; border: 1px solid var(--line, #e5e7f0); border-radius: var(--radius-card, 20px); background: var(--surface, #fff); padding: 1rem; color: var(--ink, #151b37); text-decoration: none; box-shadow: var(--shadow-card, 0 8px 24px -18px #151b3740); transition: border-color var(--motion-ui, 180ms ease), box-shadow var(--motion-ui, 180ms ease); } .ds-course-top { display: flex; align-items: center; justify-content: space-between; color: var(--ds-discipline-accent); } .ds-course-symbol { display: grid; width: 2.65rem; aspect-ratio: 1; place-items: center; border-radius: var(--radius-control, 12px); background: var(--ds-discipline-tint); font: 800 1rem var(--font-mono, \"JetBrains Mono\", ui-monospace, monospace); } .ds-course-title { font: 800 0.975rem/1.4 var(--font-display, Sora, \"Plus Jakarta Sans\", system-ui, sans-serif); letter-spacing: -0.025em; } .ds-course-count { color: var(--muted, #57607b); font: 650 0.75rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); } .ds-course:hover { border-color: var(--ds-discipline-accent); box-shadow: 0 12px 28px -21px var(--orbit, #6558f5); } .ds-course:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-course { transition: none; } } .ds-course { background: linear-gradient(148deg, color-mix(in srgb, var(--ds-discipline-accent) 13%, var(--surface, #222143)), var(--surface, #222143) 78%); } :host-context([data-theme=\"dark\"]) .ds-course { border-color: #9764ff; background: radial-gradient(ellipse at 14% 3%, #9764ff66, transparent 76%), linear-gradient(145deg, #3c266c, #222143 92%); box-shadow: inset 0 1px 0 #ffffff35, 0 12px 27px -19px #9764ff; } :host-context([data-theme=\"dark\"]) .ds-course-symbol { color: #fff; background: linear-gradient(155deg, #9764ff, #5327bd 82%); box-shadow: inset 0 1px 0 #ffffff35, 0 5px 13px -6px #9764ff; }"
+    },
+    {
+      "name": "Ponto do mapa",
+      "kind": "custom",
+      "refersTo": "checkpoint",
+      "description": "Conclusão em Menta, próxima etapa em Órbita com contorno Solar e pré-requisito marcado pelo cadeado.",
+      "html": "<div class=\"ds-checkpoints\"><button class=\"ds-checkpoint\" data-state=\"completed\" aria-label=\"Etapa 1 concluída\" type=\"button\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m5 12 4 4 10-10\"/></svg>1</button><button class=\"ds-checkpoint\" data-state=\"current\" aria-label=\"Etapa 2 disponível\" type=\"button\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 5v15M3 4h5l4 2 4-2h5v15h-5l-4 2-4-2H3z\"/></svg>2</button><button class=\"ds-checkpoint\" data-state=\"locked\" aria-label=\"Etapa 3 bloqueada\" type=\"button\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"5\" y=\"10\" width=\"14\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 1 1 8 0v3\"/></svg>3</button></div>",
+      "css": ".ds-checkpoints { --ds-discipline-accent: var(--accent, #5143e3); --ds-discipline-ink: var(--ink, #302282); --ds-discipline-tint: color-mix(in srgb, var(--ds-discipline-accent) 9%, var(--surface, #fff)); --ds-discipline-track: color-mix(in srgb, var(--ds-discipline-accent) 40%, var(--surface, #fff)); --ds-on-discipline: var(--white, #fff); display: flex; gap: 0.875rem; } :host-context([data-theme=\"dark\"]) .ds-checkpoints { --ds-on-discipline: var(--night, #151b37); } .ds-checkpoint { display: flex; width: 3.25rem; height: 3.25rem; align-items: center; justify-content: center; gap: 0.125rem; cursor: pointer; border: 2px solid var(--ds-discipline-track); border-radius: 50%; background: var(--surface, #fff); color: var(--ds-discipline-ink); box-shadow: 0 5px 14px -10px var(--ds-discipline-accent); font: 850 1rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); font-variant-numeric: tabular-nums; transition: border-color var(--motion-ui, 180ms ease), background-color var(--motion-ui, 180ms ease), box-shadow var(--motion-ui, 180ms ease); } .ds-checkpoint[data-published=\"true\"] { border-color: var(--ds-discipline-accent); background: var(--ds-discipline-tint); color: var(--ds-discipline-accent); } .ds-checkpoint[data-challenge=\"true\"] { border-radius: 0.875rem; background: var(--ds-discipline-tint); } .ds-checkpoint:hover { border-color: var(--ds-discipline-accent); background: var(--ds-discipline-tint); } .ds-checkpoint[aria-pressed=\"true\"] { border-color: var(--ds-discipline-accent); background: var(--ds-discipline-accent); color: var(--ds-on-discipline); box-shadow: 0 0 0 4px var(--ds-discipline-tint), 0 8px 20px -10px var(--ds-discipline-accent); } .ds-checkpoint:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-checkpoint { transition: none; } } .ds-checkpoint[data-state=\"completed\"] { background: linear-gradient(150deg, #6be7d7, #1bafaa 80%); border-color: var(--mint, #25c5ab); color: var(--night, #151b37); } .ds-checkpoint[data-state=\"current\"] { width: 3.75rem; height: 3.75rem; background: linear-gradient(155deg, #9764ff, #5327bd 82%); border: 3px solid #ffe4d3; box-shadow: 0 0 0 2px var(--solar, #ffaa6b), 0 0 16px 2px #9764ffb8; color: var(--white, #fff); } .ds-checkpoint[data-state=\"locked\"] { background: var(--surface-soft, #2d2854); border-color: var(--line, #4a426e); color: var(--muted, #b7bed8); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Mapa de estudo conectado",
+    "overview": "O trilbit usa a linguagem dos mapas para orientar a revisão universitária. O T de nós conectados aparece na assinatura e a mesma geometria organiza os pontos de cada trilha. A área de estudo usa Noite e superfícies roxas como padrão. O início reúne saudação, trilhas e a próxima meta, com Bito parcialmente visível na base da navegação lateral.\n\nBito acolhe quem chega. O personagem do painel de referência ganhou uma ilustração própria, otimizada em WebP com registro de proveniência ao lado do arquivo. O símbolo em SVG foi reconstruído a partir do painel raster fornecido.",
+    "keyCharacteristics": [
+      "Área de estudo escura com alternativa clara.",
+      "Conexões e cores de disciplina que ajudam a localizar etapas.",
+      "Tipografia de leitura e controles compartilhados entre as rotas."
+    ],
+    "rules": [],
+    "dos": [
+      "Faça a área de estudo responder ao tema com as cores semânticas de fundo, superfície, texto e foco.",
+      "Faça o estado selecionado aparecer também no texto, no ícone ou no estado semântico do controle.",
+      "Faça as transições de estado respeitarem a preferência por movimento reduzido."
+    ],
+    "donts": [
+      "Evite apresentar prévias como conteúdo publicado ou exibir progresso, XP e posições de ranking sem dados reais."
+    ]
+  }
+}

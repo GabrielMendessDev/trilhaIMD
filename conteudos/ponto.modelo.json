@@ -1,0 +1,26 @@
+{
+	"versao": 1,
+	"trilha": "elementar",
+	"ponto": 1,
+	"atividades": [
+		{
+			"id": "nome-da-atividade",
+			"titulo": "Título da atividade",
+			"questoes": [
+				{
+					"numero": 1,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Escreva o enunciado aqui",
+						"alternativas": [
+							{ "id": "a", "texto": "Texto da primeira alternativa" },
+							{ "id": "b", "texto": "Texto da segunda alternativa" }
+						],
+						"gabarito": "a"
+					}
+				}
+			]
+		}
+	]
+}

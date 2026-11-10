@@ -1,13 +1,17 @@
-# Create T3 App
+# trilbit
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Plataforma de estudo por trilhas para estudantes de Tecnologia da Informação do IMD/UFRN, construída com a [T3 Stack](https://create.t3.gg/).
 
 ## Login com Google
 
 1. Crie um cliente OAuth do tipo **Aplicativo da Web** na [Google Auth Platform](https://console.cloud.google.com/auth/clients).
 2. Cadastre `http://localhost:3000/api/auth/callback/google` nas URIs de redirecionamento autorizadas. Em produção, cadastre a mesma rota no domínio HTTPS do app. Se o app OAuth estiver no modo de teste, inclua sua conta nos usuários de teste.
 3. No `.env` local, preencha `AUTH_GOOGLE_ID` e `AUTH_GOOGLE_SECRET` com os valores do cliente. Configure `AUTH_SECRET` (gere com `npx auth secret` se precisar) e aponte `DATABASE_URL` para o PostgreSQL. Em produção, defina também `AUTH_URL` com a origem pública do app.
-4. Rode `npm run db:push` para aplicar o schema ao banco local. Reinicie o servidor e abra `/login`.
+4. Aplique as [migrações do banco](conteudos/README.md#preparação-do-postgresql). Reinicie o servidor e abra `/login`.
+
+## Conteúdos e atividades
+
+O [guia do banco de aprendizagem](conteudos/README.md) descreve o formato JSON por ponto da trilha, os quatro tipos de questão e os comandos de validação e importação.
 
 ## What's next? How do I make an app with this?
 

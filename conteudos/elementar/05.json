@@ -1,0 +1,497 @@
+{
+	"versao": 1,
+	"trilha": "elementar",
+	"ponto": 5,
+	"atividades": [
+		{
+			"id": "desafio-hackathon",
+			"titulo": "Desafio da madrugada no hackathon",
+			"questoes": [
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Três postos antes de liberar o placar",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "No hackathon, organize as equipes com conjuntos, calcule o tamanho dos arquivos com potências e descubra o número de duplicações com logaritmos."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "diagrama",
+								"legenda": "Escolha a ferramenta a partir da pergunta.",
+								"dados": {
+									"modelo": "quadro",
+									"linhas": [
+										{
+											"simbolo": "A ∪ B",
+											"leitura": "quem aparece em pelo menos uma lista",
+											"exemplo": "Conte cada pessoa uma vez."
+										},
+										{
+											"simbolo": "2ⁿ",
+											"leitura": "quantas escolhas binárias em n posições",
+											"exemplo": "Para três opções de ligar ou desligar, 2³ = 8."
+										},
+										{
+											"simbolo": "log₂(x)",
+											"leitura": "quantas duplicações chegam a x",
+											"exemplo": "Se x = 16, o expoente é 4."
+										}
+									]
+								}
+							}
+						]
+					},
+					"numero": 1,
+					"ordem": 1
+				},
+				{
+					"numero": 2,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "A = {Lua, Sol, Mar} passou no teste web. B = {Mar, Céu} passou no teste mobile. Qual conjunto contém quem passou em exatamente um teste?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "{Mar}"
+							},
+							{
+								"id": "b",
+								"texto": "{Lua, Sol, Mar, Céu}"
+							},
+							{
+								"id": "c",
+								"texto": "{Lua, Sol, Céu}"
+							},
+							{
+								"id": "d",
+								"texto": "{Lua, Sol}"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "União e interseção",
+						"orientacao": "Retire quem está nas duas listas antes de concluir.",
+						"explicacao": "Mar está nas duas. Só Lua, Sol e Céu aparecem exatamente uma vez entre os grupos."
+					},
+					"ordem": 2
+				},
+				{
+					"numero": 3,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Duas equipes podem ativar os módulos {som, login} e {login, busca}, respectivamente. O painel permite qualquer subconjunto da união dos módulos. Quantas configurações ele permite?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "4"
+							},
+							{
+								"id": "b",
+								"texto": "6"
+							},
+							{
+								"id": "c",
+								"texto": "7"
+							},
+							{
+								"id": "d",
+								"texto": "8"
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Conjunto das partes",
+						"orientacao": "Conte módulos distintos antes de escolher ligados e desligados.",
+						"explicacao": "A união tem som, login e busca. Os três módulos permitem 2³ = 8 configurações."
+					},
+					"ordem": 3
+				},
+				{
+					"numero": 4,
+					"modo": "questao",
+					"questao": {
+						"tipo": "ligacao",
+						"enunciado": "Ligue o dado do placar ao menor conjunto entre as opções que o contém.",
+						"itens": [
+							{
+								"id": "item-1",
+								"texto": "0 tarefas pendentes"
+							},
+							{
+								"id": "item-2",
+								"texto": "−5 pontos"
+							},
+							{
+								"id": "item-3",
+								"texto": "3/2 minuto"
+							}
+						],
+						"alternativas": [
+							{
+								"id": "opcao-1",
+								"texto": "ℤ"
+							},
+							{
+								"id": "opcao-2",
+								"texto": "ℚ"
+							},
+							{
+								"id": "opcao-3",
+								"texto": "ℕ"
+							}
+						],
+						"gabarito": [
+							{
+								"origem": "item-1",
+								"destino": "opcao-3"
+							},
+							{
+								"origem": "item-2",
+								"destino": "opcao-1"
+							},
+							{
+								"origem": "item-3",
+								"destino": "opcao-2"
+							}
+						],
+						"assunto": "Classificação numérica",
+						"orientacao": "Escolha o primeiro conjunto da cadeia ℕ ⊊ ℤ ⊊ ℚ que contém cada valor.",
+						"explicacao": "0 é natural. −5 é inteiro fora de ℕ. 3/2 é racional fora de ℤ."
+					},
+					"ordem": 4
+				},
+				{
+					"numero": 5,
+					"modo": "questao",
+					"questao": {
+						"tipo": "passo-a-passo",
+						"enunciado": "Uma versão do aplicativo começa com um cache de 1 MB. Você pode dobrar o cache a cada atualização, mas o limite é de 8 MB.",
+						"passos": [
+							{
+								"id": "passo-1",
+								"titulo": "Encontre o teto em ciclos",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "Como 2³ = 8, log₂(8) = 3. Três atualizações atingem o limite."
+									}
+								]
+							},
+							{
+								"id": "passo-2",
+								"titulo": "Defina os valores válidos",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "O número de atualizações é natural e pode ser zero. Até o limite, temos {0, 1, 2, 3}."
+									}
+								]
+							},
+							{
+								"id": "passo-3",
+								"titulo": "Conte as opções",
+								"blocos": [
+									{
+										"id": "texto",
+										"tipo": "texto",
+										"texto": "Há quatro valores permitidos. O limite de três atualizações inclui a opção de não atualizar."
+									}
+								]
+							}
+						]
+					},
+					"ordem": 5
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "material",
+						"titulo": "Ficha rápida do hackathon",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Para filtrar horários, use a interseção. Para contar configurações, inclua a opção vazia. Para simplificar potências, confira a base. Para usar ln, o argumento deve ser positivo."
+							},
+							{
+								"id": "bloco-2",
+								"tipo": "referencia",
+								"titulo": "Notas e slides de Matemática Elementar",
+								"fonte": "IMD/UFRN",
+								"url": "https://matematica-elementar.github.io/"
+							}
+						]
+					},
+					"numero": 13,
+					"ordem": 6
+				},
+				{
+					"numero": 6,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Um cache de 2¹⁰ MB é separado em pacotes de 2⁵ MB. Qual potência representa o número de pacotes?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "2¹⁵"
+							},
+							{
+								"id": "b",
+								"texto": "2⁵"
+							},
+							{
+								"id": "c",
+								"texto": "2⁰"
+							},
+							{
+								"id": "d",
+								"texto": "2⁵⁰"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Divisão de potências",
+						"orientacao": "Divida usando a diferença dos expoentes.",
+						"explicacao": "2¹⁰/2⁵ = 2⁵."
+					},
+					"ordem": 7
+				},
+				{
+					"numero": 7,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O backup precisa encolher a um quarto do tamanho original. Qual multiplicador produz isso?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "2²"
+							},
+							{
+								"id": "b",
+								"texto": "2⁻¹"
+							},
+							{
+								"id": "c",
+								"texto": "2⁻²"
+							},
+							{
+								"id": "d",
+								"texto": "4⁻²"
+							}
+						],
+						"gabarito": "c",
+						"assunto": "Expoente negativo",
+						"orientacao": "Escreva 4 como potência de 2 e calcule seu inverso.",
+						"explicacao": "1/4 = 1/2² = 2⁻²."
+					},
+					"ordem": 8
+				},
+				{
+					"numero": 8,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O placar mostra e^(ln 9 − ln 3). Qual valor sai na tela?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "3"
+							},
+							{
+								"id": "b",
+								"texto": "6"
+							},
+							{
+								"id": "c",
+								"texto": "9"
+							},
+							{
+								"id": "d",
+								"texto": "27"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Logaritmo natural",
+						"orientacao": "Uma diferença de logaritmos de argumentos positivos pode virar um quociente.",
+						"explicacao": "ln 9 − ln 3 = ln(9/3) = ln 3. Então e^(ln 3) = 3."
+					},
+					"ordem": 9
+				},
+				{
+					"modo": "conteudo",
+					"conteudo": {
+						"categoria": "explicacao",
+						"titulo": "Da capacidade à contagem de ciclos",
+						"blocos": [
+							{
+								"id": "bloco-1",
+								"tipo": "texto",
+								"texto": "Quando o armazenamento dobra, 2ⁿ descreve o tamanho após n ciclos. Se uma regra permite até 8 unidades, os tamanhos 1, 2, 4 e 8 correspondem aos ciclos 0, 1, 2 e 3. O tamanho e o número de ciclos são quantidades diferentes."
+							}
+						]
+					},
+					"numero": 14,
+					"ordem": 10
+				},
+				{
+					"numero": 9,
+					"modo": "questao",
+					"questao": {
+						"tipo": "associacao",
+						"enunciado": "Classifique as entradas do monitor em válidas ou inválidas no conjunto dos reais.",
+						"itens": [
+							{
+								"id": "item-1",
+								"texto": "log₂(1)"
+							},
+							{
+								"id": "item-2",
+								"texto": "log₂(−4)"
+							},
+							{
+								"id": "item-3",
+								"texto": "√(−4)"
+							},
+							{
+								"id": "item-4",
+								"texto": "∛(−8)"
+							}
+						],
+						"alternativas": [
+							{
+								"id": "opcao-1",
+								"texto": "Inválida"
+							},
+							{
+								"id": "opcao-2",
+								"texto": "Válida"
+							}
+						],
+						"gabarito": [
+							{
+								"origem": "item-1",
+								"destino": "opcao-2"
+							},
+							{
+								"origem": "item-2",
+								"destino": "opcao-1"
+							},
+							{
+								"origem": "item-3",
+								"destino": "opcao-1"
+							},
+							{
+								"origem": "item-4",
+								"destino": "opcao-2"
+							}
+						],
+						"assunto": "Domínios reais",
+						"orientacao": "Confira separadamente argumentos de logaritmos e índices de raízes.",
+						"explicacao": "log₂(1) e ∛(−8) existem. O logaritmo de argumento negativo e a raiz quadrada de número negativo não são reais."
+					},
+					"ordem": 11
+				},
+				{
+					"numero": 10,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "Para subir um pacote, a sala deve estar aberta no horário [14, 17) e a rede liberada em [15, 18]. Qual é a janela disponível?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "[14, 18]"
+							},
+							{
+								"id": "b",
+								"texto": "[15, 17)"
+							},
+							{
+								"id": "c",
+								"texto": "[15, 17]"
+							},
+							{
+								"id": "d",
+								"texto": "(15, 17)"
+							}
+						],
+						"gabarito": "b",
+						"assunto": "Interseção de intervalos",
+						"orientacao": "Identifique o início mais tarde e o fim mais cedo.",
+						"explicacao": "Ambos os recursos estão disponíveis de 15 até antes de 17. A interseção é [15, 17)."
+					},
+					"ordem": 12
+				},
+				{
+					"numero": 11,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O número de cópias dobra a cada ciclo, começando com 1. Qual conjunto reúne os números de ciclos inteiros que deixam o total entre 4 e 16 cópias, inclusive?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "{4, 8, 16}"
+							},
+							{
+								"id": "b",
+								"texto": "{2, 4}"
+							},
+							{
+								"id": "c",
+								"texto": "{3}"
+							},
+							{
+								"id": "d",
+								"texto": "{2, 3, 4}"
+							}
+						],
+						"gabarito": "d",
+						"assunto": "Potências e contagem",
+						"orientacao": "A pergunta quer os expoentes, não os totais de cópias.",
+						"explicacao": "2² = 4 e 2⁴ = 16. Entre os limites inclusive, os ciclos válidos são 2, 3 e 4."
+					},
+					"ordem": 13
+				},
+				{
+					"numero": 12,
+					"modo": "questao",
+					"questao": {
+						"tipo": "multipla-escolha",
+						"enunciado": "O painel tem quatro filtros independentes. Na contagem de configurações, a equipe exclui apenas a que liga todos eles. Quantas ficam?",
+						"alternativas": [
+							{
+								"id": "a",
+								"texto": "15"
+							},
+							{
+								"id": "b",
+								"texto": "16"
+							},
+							{
+								"id": "c",
+								"texto": "8"
+							},
+							{
+								"id": "d",
+								"texto": "4"
+							}
+						],
+						"gabarito": "a",
+						"assunto": "Subconjuntos próprios",
+						"orientacao": "Conte todas as configurações e retire a que tem os quatro filtros.",
+						"explicacao": "2⁴ = 16 configurações. Ao excluir a completa, ficam 15."
+					},
+					"ordem": 14
+				}
+			]
+		}
+	]
+}

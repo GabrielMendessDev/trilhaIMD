@@ -3,106 +3,279 @@ import {
 	DashboardLayout,
 	Icon,
 	PageHeading,
+	ProgressBar,
 } from "~/app/_components/dashboard";
-import { TrailCard } from "~/app/_components/trail-card";
+import { RpgMedal } from "~/app/_components/rpg-icon";
+import { dayAt, dayIndex, studyDay } from "~/domain/rpg";
 import { auth } from "~/server/auth";
-import {
-	getLearningProgress,
-	getPublishedPoints,
-	getTrailStatus,
-} from "~/server/learning";
-import { trails } from "../aprender/trails";
-
+import { getLearningProgress } from "~/server/learning";
+import { getStudyInsights } from "~/server/study-insights";
 export const metadata = { title: "Progresso" };
-
 export default async function ProgressoPage() {
 	const user = (await auth())?.user;
-	const [points, progress] = await Promise.all([
-		getPublishedPoints(),
+	const [progress, insights] = await Promise.all([
 		user ? getLearningProgress(user.id) : null,
+		user ? getStudyInsights(user.id) : null,
 	]);
-
+	if (!progress || !insights)
+		return (
+			<DashboardLayout active="/progresso">
+				<div className="ui-page">
+					<PageHeading
+						description="Cada conceito aprendido e cada questão revisada fazem parte da sua história."
+						title="Sua evolução começa aqui"
+					/>
+					<section className="journey-empty">
+						<Icon className="size-12" name="chart" />
+						<h2>
+							{user
+								? "Seu progresso está indisponível"
+								: "Guarde seus próximos passos"}
+						</h2>
+						<p>
+							{user
+								? "Tente novamente em instantes."
+								: "Entre na sua conta para acompanhar XP, conquistas, revisões e seu ritmo de estudo."}
+						</p>
+						<Link className="ui-button" href={user ? "/aprender" : "/login"}>
+							{user ? "Ver trilhas" : "Entrar com Google"}
+						</Link>
+					</section>
+				</div>
+			</DashboardLayout>
+		);
+	const level = progress.rpg.level;
+	const days = Array.from({ length: 7 }, (_, i) => {
+		const day = dayAt(dayIndex(studyDay(new Date())) - 6 + i);
+		return {
+			day,
+			count: insights.history.filter(
+				(h) => h.at && studyDay(new Date(h.at)) === day,
+			).length,
+		};
+	});
+	const highest = Math.max(1, ...days.map((d) => d.count));
+	const earned = progress.rpg.achievements.filter((a) => a.unlockedAt);
+	const reviews = insights.review
+		.filter((r) => r.kind !== "recovered")
+		.slice(0, 5);
 	return (
 		<DashboardLayout active="/progresso">
-			<div className="ui-page">
+			<div className="ui-page evolution-page">
 				<PageHeading
-					description="Acompanhe as etapas concluídas, seu XP e sua ofensiva."
-					title="Seu progresso"
+					description="Seu ritmo, suas descobertas e os conceitos que merecem mais uma visita."
+					title="Veja o quanto você avançou"
 				/>
-				{progress ? (
-					<>
-						<ul className="mb-6 grid gap-3 sm:grid-cols-3">
-							<li className="ui-panel p-4">
-								<Icon className="mb-2 size-5 text-[var(--accent)]" name="gem" />
-								<p className="font-display font-extrabold text-2xl">
-									{progress.xp} XP
-								</p>
-								<p className="ui-muted text-sm">XP acumulado</p>
-							</li>
-							<li className="ui-panel p-4">
-								<Icon
-									className="mb-2 size-5 text-[var(--warm-ink)]"
-									name="fire"
-								/>
-								<p className="font-display font-extrabold text-2xl">
-									{progress.streak}
-								</p>
-								<p className="ui-muted text-sm">Dias de ofensiva</p>
-							</li>
-							<li className="ui-panel p-4">
-								<Icon
-									className="mb-2 size-5 text-[var(--success-ink)]"
-									name="check"
-								/>
-								<p className="font-display font-extrabold text-2xl">
-									{progress.done.length}
-								</p>
-								<p className="ui-muted text-sm">Etapas concluídas</p>
-							</li>
-						</ul>
-						{!points?.length && (
-							<p className="ui-muted mb-4">
-								As trilhas vão mostrar seu progresso quando houver lições
-								publicadas.
-							</p>
-						)}
-						<ul className="grid gap-4 min-[620px]:grid-cols-2">
-							{trails.map((trail) => {
-								const { published, completed, next } = getTrailStatus(
-									points ?? [],
-									progress,
-									trail.id,
-								);
-								return published.length ? (
-									<li key={trail.id}>
-										<TrailCard
-											completed={completed.length}
-											stage={next?.number}
-											total={published.length}
-											trail={trail}
-										/>
-									</li>
-								) : null;
-							})}
-						</ul>
-					</>
-				) : (
-					<section className="ui-panel max-w-xl p-6">
-						<h2 className="font-extrabold text-xl">
-							{user ? "Progresso indisponível" : "Estude com sua conta"}
-						</h2>
-						<p className="ui-muted mt-2">
-							{user
-								? "Tente acessar novamente em instantes."
-								: "Entre para registrar as etapas que concluir."}
+				<section className="level-journey">
+					<span className="level-crest">
+						<Icon className="size-9" name="shield" />
+						<b>{level.level}</b>
+					</span>
+					<div>
+						<h2>Nível {level.level}</h2>
+						<p>{progress.xp.toLocaleString("pt-BR")} XP acumulados</p>
+						<ProgressBar
+							label={`Progresso até o nível ${level.level + 1}`}
+							value={
+								((progress.xp - level.start) / (level.next - level.start)) * 100
+							}
+						/>
+						<small>
+							Faltam {level.next - progress.xp} XP para o nível{" "}
+							{level.level + 1}.
+						</small>
+					</div>
+					<Link className="ui-button" href="/aprender">
+						Continuar jornada <Icon className="size-4" name="arrow" />
+					</Link>
+				</section>
+				<dl className="evolution-facts">
+					<div>
+						<dt>
+							<Icon className="size-5" name="fire" />
+							Ofensiva
+						</dt>
+						<dd>
+							{progress.streak}
+							<small>dias de estudo</small>
+						</dd>
+					</div>
+					<div>
+						<dt>
+							<Icon className="size-5" name="check" />
+							Lições concluídas
+						</dt>
+						<dd>
+							{progress.done.length}
+							<small>{insights.activeCourses} trilhas em andamento</small>
+						</dd>
+					</div>
+					<div>
+						<dt>
+							<Icon className="size-5" name="bolt" />
+							Precisão de primeira
+						</dt>
+						<dd>
+							{insights.accuracy === null ? "—" : `${insights.accuracy}%`}
+							<small>{insights.attempted} questões respondidas</small>
+						</dd>
+					</div>
+					<div>
+						<dt>
+							<Icon className="size-5" name="practice" />
+							Recuperadas
+						</dt>
+						<dd>
+							{insights.recovered}
+							<small>acertos na revisão</small>
+						</dd>
+					</div>
+				</dl>
+				<div className="evolution-columns">
+					<section className="study-rhythm">
+						<h2>Seu ritmo nesta semana</h2>
+						<p>
+							Lições concluídas por dia. Cada barra representa seu estudo
+							registrado.
 						</p>
-						{!user && (
-							<Link className="ui-button mt-4" href="/login">
-								Entrar com Google
-							</Link>
-						)}
+						<div
+							aria-label={days
+								.map((d) => `${d.day}: ${d.count} lições`)
+								.join("; ")}
+							className="study-week"
+							role="img"
+						>
+							{days.map((d) => (
+								<div key={d.day}>
+									<span>{d.count}</span>
+									<i
+										style={{
+											height: `${Math.max(3, (d.count / highest) * 100)}%`,
+										}}
+									/>
+									<small>
+										{new Date(`${d.day}T12:00Z`)
+											.toLocaleDateString("pt-BR", {
+												weekday: "short",
+												timeZone: "America/Sao_Paulo",
+											})
+											.replace(".", "")}
+									</small>
+								</div>
+							))}
+						</div>
 					</section>
-				)}
+					<section className="course-evolution">
+						<h2>Progresso nas disciplinas</h2>
+						{insights.courses
+							.filter((c) => c.total > 0)
+							.map((c) => (
+								<Link href={`/disciplinas/${c.id}`} key={c.id}>
+									<div>
+										<strong>{c.name}</strong>
+										<span>
+											{c.done}/{c.total}
+										</span>
+									</div>
+									<ProgressBar label={c.name} value={c.percent} />
+								</Link>
+							))}
+						<p>
+							{insights.bestCourse
+								? `Sua maior evolução está em ${insights.bestCourse.name}.`
+								: "Conclua a primeira lição para começar seu histórico."}
+						</p>
+					</section>
+				</div>
+				<section className="review-recommendations">
+					<header>
+						<h2>Dar mais um passo no conceito</h2>
+						<span>
+							{reviews.length ? "Revisões recomendadas" : "Tudo em dia"}
+						</span>
+					</header>
+					{reviews.length ? (
+						<ul>
+							{reviews.map((r) => (
+								<li key={`${r.pointId}-${r.key}`}>
+									<Icon className="size-5" name="book" />
+									<div>
+										<strong>{r.topic}</strong>
+										<small>
+											{r.title} ·{" "}
+											{r.kind === "pending"
+												? "Revisão pendente"
+												: r.kind === "skipped"
+													? "Questão pulada"
+													: "Precisa revisar"}
+										</small>
+									</div>
+									<Link className="ui-link" href={r.href}>
+										Rever <Icon className="size-4" name="arrow" />
+									</Link>
+								</li>
+							))}
+						</ul>
+					) : (
+						<p>
+							Quando uma questão pedir mais estudo, o caminho para rever o
+							conceito aparecerá aqui.
+						</p>
+					)}
+				</section>
+				<section className="evolution-awards">
+					<header>
+						<h2>Marcos da sua jornada</h2>
+						<Link className="ui-link" href="/conquistas">
+							Ver coleção <Icon className="size-4" name="arrow" />
+						</Link>
+					</header>
+					{earned.length ? (
+						<ul>
+							{earned.slice(0, 6).map((a) => (
+								<li data-rarity={a.rarity} key={a.id}>
+									<RpgMedal
+										category={a.category}
+										goal={a.goal}
+										symbol={a.symbol}
+									/>
+									<strong>{a.name}</strong>
+								</li>
+							))}
+						</ul>
+					) : (
+						<p>
+							Sua primeira conquista começa com um dia de estudo. O Bito guarda
+							um lugar para ela aqui.
+						</p>
+					)}
+				</section>
+				<section className="learning-history">
+					<h2>Histórico de evolução</h2>
+					{insights.history.length ? (
+						<ol>
+							{insights.history
+								.slice(-8)
+								.reverse()
+								.map((h) => (
+									<li key={h.pointId}>
+										<Icon className="size-4" name="check" />
+										<span>{h.title}</span>
+										<small>
+											{h.at
+												? new Date(h.at).toLocaleDateString("pt-BR", {
+														timeZone: "America/Sao_Paulo",
+													})
+												: ""}
+										</small>
+										<b>+{h.xp} XP</b>
+									</li>
+								))}
+						</ol>
+					) : (
+						<p>Suas lições concluídas formarão este histórico.</p>
+					)}
+				</section>
 			</div>
 		</DashboardLayout>
 	);

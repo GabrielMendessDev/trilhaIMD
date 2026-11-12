@@ -14,7 +14,9 @@ assert.ok(
 const db = new PrismaClient();
 const path = "/aprender/elementar/1";
 
-test("microinterações reais, falhas, revisão, XP e navegação no Chrome", async () => {
+test("microinterações reais, falhas, revisão, XP e navegação no Chrome", {
+	timeout: 180000,
+}, async () => {
 	const id = `teste-feedback-${randomUUID()}`;
 	const token = randomUUID();
 	let browser;
@@ -34,6 +36,7 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 		assert.ok(wrongEntry && correctEntry && secondWrong);
 		browser = await openBrowser();
 		const { send, evaluate, go, screenshot } = browser;
+		await send("Emulation.setFocusEmulationEnabled", { enabled: true });
 		await send("Emulation.setEmulatedMedia", {
 			features: [{ name: "prefers-reduced-motion", value: "no-preference" }],
 		});
@@ -60,6 +63,12 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 				`document.querySelector('form[action$=responder] button[type=submit]').click()`,
 			);
 		await formReady();
+		assert.deepEqual(
+			await evaluate(
+				`(()=>{const motion=getComputedStyle(document.querySelector('.bito-rest'));return [motion.animationName,motion.animationIterationCount]})()`,
+			),
+			["bito-breathe", "2"],
+		);
 		let mode = "slow";
 		let requests = 0;
 		browser.on("Fetch.requestPaused", async (event) => {
@@ -112,14 +121,20 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 		);
 		assert.equal(requests, 1);
 		await formReady();
+		await screenshot("questao-desktop");
 		const wrong = wrongEntry.payload.alternativas.find(
 			({ id }) => id !== wrongEntry.answer,
 		).id;
+		assert.equal(
+			await evaluate(
+				`document.querySelector('form[action$=responder] button[type=submit]')===null`,
+			),
+			true,
+		);
+		mode = "fail";
 		await evaluate(
 			`document.querySelector('input[type=radio][value=${wrong}]').click()`,
 		);
-		mode = "fail";
-		await submit();
 		await until(
 			() =>
 				evaluate(
@@ -135,7 +150,7 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 		);
 		assert.equal(
 			await evaluate(
-				`document.querySelector('form[action$=responder] button[type=submit]').disabled`,
+				`document.querySelector('input[type=radio]:checked').matches(':disabled')`,
 			),
 			false,
 		);
@@ -146,8 +161,19 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			true,
 		);
 		await screenshot("erro-rede-desktop");
+		mode = "slow";
+		await evaluate(
+			`window.originalChoice=document.querySelector('input[type=radio]:checked');window.motionEvents=[];document.addEventListener('animationstart',e=>window.motionEvents.push(e.animationName))`,
+		);
+		const retryRequests = requests;
+		await evaluate(
+			`document.querySelector('input[type=radio]:checked').click();document.querySelector('input[type=radio]:checked').click()`,
+		);
+		assert.equal(
+			await evaluate(`document.querySelector('[data-outcome]')===null`),
+			true,
+		);
 		mode = "normal";
-		await submit();
 		await until(
 			() =>
 				evaluate(
@@ -157,17 +183,26 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 		);
 		assert.equal(
 			await evaluate(
-				`document.querySelectorAll('main input[type=radio]').length`,
+				`[...document.querySelectorAll('main input[type=radio]')].every(e=>e.matches(':disabled')) && window.originalChoice===document.querySelector('input[type=radio]:checked')`,
 			),
-			0,
+			true,
 		);
 		assert.match(
 			await evaluate(
-				`getComputedStyle(document.querySelector('[data-outcome=error]')).animationName`,
+				`getComputedStyle(document.querySelector('[data-outcome=error] .animated-choice:has(input:checked)')).animationName`,
 			),
-			/feedback-shake/,
+			/answer-reconsider/,
 		);
-		await screenshot("erro-mobile-base");
+		assert.equal(requests, retryRequests + 1);
+		await screenshot("erro-desktop");
+		assert.equal(
+			await evaluate(`document.querySelector('.answer-solution')===null`),
+			true,
+		);
+		assert.equal(
+			await evaluate(`document.querySelector('.answer-reveal')!==null`),
+			true,
+		);
 		await send("Emulation.setDeviceMetricsOverride", {
 			width: 390,
 			height: 844,
@@ -203,10 +238,19 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			"continuar hidratado",
 		);
 		await continueLink();
-		await until(
-			async () => (await key()) === correctEntry.key,
-			"avanço após erro",
-		);
+		try {
+			await until(
+				async () => (await key()) === correctEntry.key,
+				"avanço após erro",
+			);
+		} catch (error) {
+			console.error(
+				await evaluate(
+					`({url:location.href,key:document.querySelector('input[name=item]')?.value,headings:[...document.querySelectorAll('main h2')].map(e=>e.textContent),links:[...document.querySelectorAll('main a')].map(e=>({text:e.textContent,href:e.href})),notices:[...document.querySelectorAll('[role=status]')].map(e=>e.textContent)})`,
+				),
+			);
+			throw error;
+		}
 		await formReady();
 		await evaluate(
 			`document.querySelector('input[type=radio][value=${correctEntry.answer}]').focus()`,
@@ -229,7 +273,6 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			),
 			correctEntry.answer,
 		);
-		await submit();
 		await until(
 			() =>
 				evaluate(
@@ -239,18 +282,43 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 		);
 		assert.match(
 			await evaluate(
-				`getComputedStyle(document.querySelector('[data-outcome=success] li')).animationName`,
+				`getComputedStyle(document.querySelector('[data-outcome=success] .animated-choice:has(input:checked)')).animationName`,
 			),
-			/answer-correct/,
+			/answer-confirm/,
 		);
 		await screenshot("acerto-mobile");
-		await until(
-			() => evaluate(`document.querySelector('.feedback-toast')===null`),
-			"notificação temporária encerrada",
+		await screenshot("acerto-mobile-continuar", {
+			viewport: true,
+			bottom: true,
+		});
+		assert.equal(
+			await evaluate(
+				`window.motionEvents.some(n=>n.includes('mark-draw')) && window.motionEvents.some(n=>n.includes('panel-reveal'))`,
+			),
+			true,
 		);
 		assert.equal(
 			await evaluate(
-				`document.querySelector('[data-outcome=success] h2')?.textContent.includes('Mandou bem')`,
+				`document.activeElement===document.querySelector('.answer-verdict h2')`,
+			),
+			true,
+		);
+		try {
+			await until(
+				() => evaluate(`document.querySelector('.feedback-toast')===null`),
+				"notificação temporária encerrada",
+			);
+		} catch (error) {
+			console.error(
+				await evaluate(
+					`({url:location.href,toasts:[...document.querySelectorAll('.feedback-toast')].map(e=>e.textContent)})`,
+				),
+			);
+			throw error;
+		}
+		assert.equal(
+			await evaluate(
+				`document.querySelector('[data-outcome=success] .answer-verdict h2')?.textContent.includes('Mandou bem')`,
 			),
 			true,
 		);
@@ -275,7 +343,124 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			return result;
 		}
 		const start = entries.indexOf(correctEntry) + 1;
-		for (const entry of entries.slice(start))
+		const studyIndex = entries.findIndex(
+			(entry, index) =>
+				index > start && entry.answer === null && entry.type !== "WALKTHROUGH",
+		);
+		assert.ok(studyIndex > start);
+		for (const entry of entries.slice(start, studyIndex - 1))
+			await answer(
+				entry,
+				1,
+				entry === secondWrong
+					? entry.payload.alternativas.find(({ id }) => id !== entry.answer).id
+					: entry.answer,
+			);
+		const beforeStudy = entries[studyIndex - 1];
+		assert.equal(beforeStudy.type, "MULTIPLE_CHOICE");
+		await go(origin + path, "O inventário das tags");
+		await until(
+			async () => (await key()) === beforeStudy.key,
+			"questão antes da explicação",
+		);
+		await formReady();
+		await evaluate(
+			`document.querySelector('input[type=radio][value=${beforeStudy.answer}]').click()`,
+		);
+		await until(
+			() => evaluate(`document.querySelector('.answer-continue')!==null`),
+			"confirmação antes da explicação",
+		);
+		await continueLink();
+		await until(
+			async () => (await key()) === entries[studyIndex].key,
+			"questão para explicação",
+		);
+		assert.equal(
+			await evaluate(
+				`document.querySelector('.lesson-transition').dataset.stepKind`,
+			),
+			"explanation",
+		);
+		assert.equal(
+			await evaluate(`document.querySelector('.learning-diagram')!==null`),
+			true,
+		);
+		await until(
+			() =>
+				evaluate(
+					`document.querySelector('.lesson-transition').getAnimations().some(a=>a.animationName==='explanation-enter')`,
+				),
+			"entrada da explicação executada sem bloquear navegação",
+		);
+		await formReady();
+		await submit();
+		await until(
+			async () => (await key()) === entries[studyIndex + 1].key,
+			"explicação para exercício",
+		);
+		assert.equal(
+			await evaluate(
+				`document.querySelector('.lesson-transition').dataset.stepKind`,
+			),
+			"question",
+		);
+		const association = entries[studyIndex + 1];
+		assert.equal(association.type, "ASSOCIATION");
+		await formReady();
+		for (const [index, pair] of association.answer.entries()) {
+			await evaluate(
+				`(()=>{const field=document.querySelector('select[name="resposta:${pair.origem}"]');field.value=${JSON.stringify(pair.destino)};field.dispatchEvent(new Event('change',{bubbles:true}));})()`,
+			);
+			if (index < association.answer.length - 1)
+				assert.equal(
+					await evaluate(`document.querySelector('[data-outcome]')===null`),
+					true,
+				);
+		}
+		await until(
+			() => evaluate(`document.querySelector('[data-outcome=success]')!==null`),
+			"associação envia só ao completar",
+		);
+		await continueLink();
+		const links = entries[studyIndex + 2];
+		assert.equal(links.type, "PAIR_LINKS");
+		try {
+			await until(async () => (await key()) === links.key, "ligar pares");
+		} catch (error) {
+			console.error(
+				await evaluate(
+					`({url:location.href,key:document.querySelector('input[name=item]')?.value,links:[...document.querySelectorAll('main a')].map(e=>({text:e.textContent,href:e.href,busy:e.getAttribute('aria-busy')})),nativeMotion:window.nativeMotion,animations:document.getAnimations().map(a=>({name:a.animationName,state:a.playState})),toasts:[...document.querySelectorAll('.feedback-toast')].map(e=>e.textContent)})`,
+				),
+			);
+			throw error;
+		}
+		await formReady();
+		for (const [index, pair] of links.answer.entries()) {
+			await evaluate(
+				`document.querySelector('[data-pair-source="${pair.origem}"]').click()`,
+			);
+			await until(
+				() =>
+					evaluate(
+						`!document.querySelector('[data-pair-target="${pair.destino}"]').disabled`,
+					),
+				"destino habilitado",
+			);
+			await evaluate(
+				`document.querySelector('[data-pair-target="${pair.destino}"]').click()`,
+			);
+			if (index < links.answer.length - 1)
+				assert.equal(
+					await evaluate(`document.querySelector('[data-outcome]')===null`),
+					true,
+				);
+		}
+		await until(
+			() => evaluate(`document.querySelector('[data-outcome=success]')!==null`),
+			"pares enviam só ao completar",
+		);
+		for (const entry of entries.slice(studyIndex + 3))
 			await answer(
 				entry,
 				1,
@@ -285,22 +470,67 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			);
 		await go(origin + path, "Hora de revisar!");
 		assert.equal(await key(), wrongEntry.key);
-		await answer(wrongEntry, 2);
-		const last = await answer(
-			secondWrong,
-			2,
-			secondWrong.payload.alternativas.find(
-				({ id }) => id !== secondWrong.answer,
-			).id,
-		);
-		await go(origin + last.destination, "Vamos entender a resposta");
 		assert.equal(
 			await evaluate(
-				`document.querySelector('form[action$=responder]')===null`,
+				`document.querySelector('.lesson-transition').dataset.stepKind`,
 			),
+			"review",
+		);
+		await formReady();
+		await evaluate(
+			`document.querySelector('input[type=radio][value=${wrongEntry.answer}]').click()`,
+		);
+		await until(
+			() =>
+				evaluate(
+					`document.querySelector('.answer-verdict h2')?.textContent.includes('Você conseguiu na revisão')`,
+				),
+			"recuperação na segunda tentativa",
+		);
+		await continueLink();
+		await until(
+			async () => (await key()) === secondWrong.key,
+			"segunda questão da revisão",
+		);
+		await formReady();
+		const missedChoice = secondWrong.payload.alternativas.find(
+			({ id }) => id !== secondWrong.answer,
+		).id;
+		await evaluate(
+			`document.querySelector('input[type=radio][value=${missedChoice}]').click()`,
+		);
+		await until(
+			() =>
+				evaluate(
+					`document.querySelector('.answer-verdict h2')?.textContent.includes('Vamos entender a resposta')`,
+				),
+			"dificuldade na segunda tentativa",
+		);
+		assert.equal(
+			await evaluate(`document.querySelector('.answer-solution')!==null`),
 			true,
 		);
-		await go(origin + path, "Etapa concluída!");
+		await screenshot("revisao-mobile");
+		await send("Page.reload");
+		await until(
+			() => evaluate(`document.querySelector('.answer-solution')!==null`),
+			"feedback restaurado",
+		);
+		assert.equal(
+			await evaluate(`document.querySelector('[data-animate=true]')===null`),
+			true,
+		);
+		assert.equal(
+			await evaluate(
+				`document.querySelector('input[type=radio]:checked')?.value`,
+			),
+			missedChoice,
+		);
+		await evaluate(`document.querySelector('.answer-continue').click()`);
+		await until(
+			() => evaluate(`document.querySelector('#lesson-result')!==null`),
+			"conclusão pela navegação real",
+		);
 		await until(
 			() => evaluate(`document.querySelector('[data-celebrate=true]')!==null`),
 			"celebração confirmada",
@@ -313,7 +543,7 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 		);
 		assert.equal(
 			await evaluate(
-				`document.querySelector('.feedback-toast[data-kind=success]')!==null`,
+				`document.querySelector('.completion-next')?.textContent.includes('Etapa 2')`,
 			),
 			true,
 		);
@@ -325,6 +555,10 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			"contagem final de XP",
 		);
 		await screenshot("resultado-mobile");
+		await screenshot("resultado-mobile-acoes", {
+			viewport: true,
+			bottom: true,
+		});
 		await send("Emulation.setDeviceMetricsOverride", {
 			width: 1440,
 			height: 1000,
@@ -344,7 +578,39 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			await evaluate(`document.querySelector('[data-celebrate=true]')!==null`),
 			false,
 		);
-		await go(`${origin}/aprender`, "Trilhas de matemática");
+		assert.equal(
+			await evaluate(
+				`document.querySelector('.completion-effects a.ui-button').textContent.includes('Voltar ao mapa')`,
+			),
+			true,
+		);
+		assert.equal(
+			await evaluate(
+				`[...document.querySelectorAll('.completion-effects a')].some(a=>a.pathname==='/aprender/elementar/2')`,
+			),
+			false,
+		);
+		await until(
+			() =>
+				evaluate(
+					`Object.keys(document.querySelector('.completion-effects a.ui-button')??{}).some(k=>k.startsWith('__reactProps'))`,
+				),
+			"retorno ao mapa hidratado",
+		);
+		await evaluate(
+			`document.querySelector('.completion-effects a.ui-button').click()`,
+		);
+		await until(
+			() =>
+				evaluate(
+					`location.pathname==='/aprender' && document.querySelector('main h1')?.textContent.includes('Suas trilhas')`,
+				),
+			"conclusão retorna ao mapa",
+		);
+		assert.equal(
+			await evaluate(`new URLSearchParams(location.search).get('etapa')`),
+			"2",
+		);
 		await until(
 			() =>
 				evaluate(
@@ -356,6 +622,25 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			await evaluate(`document.querySelector('#etapa-2 button').dataset.state`),
 			"current",
 		);
+		const energy = await evaluate(
+			`(()=>{const segment=document.querySelector('[data-trail-segment="1"][data-energize]');const motion=segment.getAnimations()[0];if(!motion)return null;motion.pause();segment.style.setProperty('--accent','rgb(22, 127, 188)');motion.currentTime=300;const active=getComputedStyle(segment).stroke;motion.finish();const completed=getComputedStyle(segment).stroke;segment.style.removeProperty('--accent');return {active,completed};})()`,
+		);
+		assert.deepEqual(energy, {
+			active: "rgb(22, 127, 188)",
+			completed: "rgb(37, 197, 171)",
+		});
+		await send("Emulation.setEmulatedMedia", {
+			features: [{ name: "prefers-reduced-motion", value: "reduce" }],
+		});
+		assert.equal(
+			await evaluate(
+				`getComputedStyle(document.querySelector('[data-trail-segment="1"]')).stroke`,
+			),
+			"rgb(37, 197, 171)",
+		);
+		await send("Emulation.setEmulatedMedia", {
+			features: [{ name: "prefers-reduced-motion", value: "no-preference" }],
+		});
 		await screenshot("desbloqueio-desktop");
 		browser.on("Fetch.requestPaused", async (event) => {
 			try {
@@ -364,16 +649,18 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			} catch {}
 		});
 		await send("Fetch.enable", {
-			patterns: [{ urlPattern: "*ranking*", requestStage: "Request" }],
+			patterns: [{ urlPattern: "*progresso*", requestStage: "Request" }],
 		});
 		await until(
 			() =>
 				evaluate(
-					`Object.keys(document.querySelector('a[href="/ranking"]')??{}).some(k=>k.startsWith('__reactProps'))`,
+					`Object.keys(document.querySelector('a[href="/progresso"]')??{}).some(k=>k.startsWith('__reactProps'))`,
 				),
 			"link de navegação hidratado",
 		);
-		await evaluate(`document.querySelector('a[href="/ranking"]').focus()`);
+		await evaluate(
+			`window.routeArrivals=[];const originalAnimate=Element.prototype.animate;Element.prototype.animate=function(...args){const motion=originalAnimate.apply(this,args);queueMicrotask(()=>{if(motion.id==='route-arrival')window.routeArrivals.push({frames:motion.effect.getKeyframes(),duration:motion.effect.getTiming().duration});});return motion;};document.querySelector('a[href="/progresso"]').focus()`,
+		);
 		await send("Input.dispatchKeyEvent", {
 			type: "keyDown",
 			key: "Enter",
@@ -387,14 +674,23 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			windowsVirtualKeyCode: 13,
 		});
 		await until(
-			() => evaluate(`document.querySelector('.feedback-navigation')!==null`),
-			"navegação em processamento",
+			() =>
+				evaluate(
+					`document.querySelector('a[href="/progresso"]')?.getAttribute('aria-busy')==='true' || document.querySelector('[aria-label="Carregando conteúdo"]')!==null`,
+				),
+			"navegação em processamento no próprio link",
+		);
+		assert.equal(
+			await evaluate(
+				`document.querySelector('.feedback-navigation')===null && document.querySelector('.feedback-viewport')===null`,
+			),
+			true,
 		);
 		await screenshot("navegacao-desktop");
 		await until(
 			() =>
 				evaluate(
-					`location.pathname==='/ranking' && document.querySelector('main h1')?.getClientRects().length`,
+					`location.pathname==='/progresso' && document.querySelector('main h1')?.getClientRects().length`,
 				),
 			"destino da navegação",
 		);
@@ -402,12 +698,27 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", as
 			() => evaluate(`document.querySelector('.feedback-navigation')===null`),
 			"fim do carregamento da navegação",
 		);
+		await until(
+			() =>
+				evaluate(
+					`window.routeArrivals.some(motion=>motion.duration===340 && Number(motion.frames[0].opacity)===.2 && Number(motion.frames.at(-1).opacity)===1)`,
+				),
+			"fade de rota executado pelo navegador",
+		);
 		await send("Fetch.disable");
 		const [saved] =
 			await db.$queryRaw`SELECT xp,"correctAnswers",attempts FROM "LearningPointProgress" WHERE "userId"=${id} AND "pointId"=${point.id}`;
 		assert.equal(saved.xp, point.reward);
 		assert.equal(saved.correctAnswers, graded.length - 1);
 		assert.equal(saved.attempts[wrongEntry.key].length, 2);
+	} catch (error) {
+		if (browser)
+			console.error(
+				await browser.evaluate(
+					`({url:location.href,key:document.querySelector('input[name=item]')?.value,nativeMotion:window.nativeMotion,links:[...document.querySelectorAll('main a')].map(e=>({text:e.textContent,href:e.href,busy:e.getAttribute('aria-busy')})),animations:document.getAnimations().map(a=>({name:a.animationName,state:a.playState})),toasts:[...document.querySelectorAll('.feedback-toast')].map(e=>e.textContent)})`,
+				),
+			);
+		throw error;
 	} finally {
 		await browser?.close();
 		await db.$executeRaw`DELETE FROM "User" WHERE id=${id}`;

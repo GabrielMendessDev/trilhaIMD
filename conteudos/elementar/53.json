@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 53,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-53",
+      "titulo": "Seno, cosseno e tangente como funções",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Imagine acompanhar só a altura de um ponto dando voltas no círculo. A altura sobe, desce, fica negativa e retorna. Você acabou de construir o gráfico do seno. A posição horizontal constrói o cosseno; a razão das duas coordenadas constrói uma função com interrupções."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Descrever domínio, imagem, simetria e períodos das funções básicas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Ciclo, periodicidade e seis razões."
+              }
+            ],
+            "titulo": "Seno, cosseno e tangente como funções",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "sen e cos têm domínio ℝ, imagem [−1,1] e período fundamental 2π. Seno é ímpar; cosseno é par. Tan tem domínio ℝ∖{π/2+kπ:k∈ℤ}, imagem ℝ, período fundamental π e é ímpar. Suas assíntotas verticais são x=π/2+kπ. Em (−π/2,π/2), tan é estritamente crescente. Estudamos aqui as funções básicas, sem transformações de período e imagem."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Os períodos fundamentais do seno e cosseno são duas vezes pi; o da tangente é pi.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "T_sen=T_cos=2π; T_tan=π"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de sen x?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "O seno atinge os extremos 1 e −1 nos pontos superiores e inferiores do ciclo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "[−1,1]"
+              },
+              {
+                "id": "c",
+                "texto": "(−1,1)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As coordenadas do círculo variam de −1 a 1 e repetem a cada volta completa. Meia volta troca simultaneamente os sinais do seno e do cosseno, preservando seu quociente: tan(x+π)=tan x. No intervalo central, a tangente cresce de valores sem limite inferior até valores sem limite superior. Para a,b nesse intervalo e a<b, tan b−tan a=sen(b−a)/(cos a cos b)>0, justificando a monotonia sem cálculo diferencial."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ondas.svg",
+                "alt": "Seno e cosseno entre 0 e 2π: seno começa em 0, chega a 1 em π/2 e −1 em 3π/2; cosseno começa em 1 e chega a −1 em π. Ambos têm imagem [−1,1] e repetem o ciclo em 2π.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Seno e cosseno entre 0 e 2π: seno começa em 0, chega a 1 em π/2 e −1 em 3π/2; cosseno começa em 1 e chega a −1 em π. Ambos têm imagem [−1,1] e repetem o ciclo em 2π.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o período fundamental de cos x?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "O padrão completo da coordenada horizontal se repete em uma volta.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2π"
+              },
+              {
+                "id": "b",
+                "texto": "π"
+              },
+              {
+                "id": "c",
+                "texto": "π/2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Seno, cosseno e tangente como funções",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para esboçar sen x em [0,2π], marque (0,0),(π/2,1),(π,0),(3π/2,−1),(2π,0). Ligue com curva suave conforme o movimento do círculo."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Para cos x, marque (0,1),(π/2,0),(π,−1),(3π/2,0),(2π,1). Não troque os valores iniciais."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Para tan x, marque (0,0) no ramo central e desenhe assíntotas em ±π/2. Não conecte ramos atravessando as assíntotas; repita-os a cada π."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual função é par?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "cos(−x)=cos x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "sen x"
+              },
+              {
+                "id": "b",
+                "texto": "tan x"
+              },
+              {
+                "id": "c",
+                "texto": "cos x"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o valor inicial sen0?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "O ponto inicial do ciclo é (1,0), com coordenada vertical zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A tangente não tem imagem [−1,1]; essa limitação pertence às coordenadas seno e cosseno. Um salto de desenho através de uma assíntota não faz parte do gráfico. Nos extremos ±1 das imagens de sen e cos, use colchetes: ambos os valores são atingidos."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o valor inicial cos0?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "A coordenada horizontal do ponto inicial é 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "−1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o período fundamental de tan x?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "Uma meia volta troca os sinais de seno e cosseno e mantém o quociente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2π"
+              },
+              {
+                "id": "b",
+                "texto": "π/2"
+              },
+              {
+                "id": "c",
+                "texto": "π"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Dê uma descrição verbal de cada gráfico com pontos notáveis, domínio e período. As funções básicas fornecem um vocabulário de ciclos; aplicações com amplitudes, deslocamentos e frequências diferentes são aprofundamento fora do recorte prioritário da P3 2025.2 indicado no acervo."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem da tangente?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "O ramo central percorre todos os valores reais.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ"
+              },
+              {
+                "id": "c",
+                "texto": "[−1,1]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é uma assíntota vertical da tangente?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "O cosseno zera em π/2 e a função se torna indefinida com crescimento sem limite no entorno.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x=π/2"
+              },
+              {
+                "id": "b",
+                "texto": "y=π/2"
+              },
+              {
+                "id": "c",
+                "texto": "x=0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "sen e cos têm domínio ℝ, imagem [−1,1] e período fundamental 2π. Seno é ímpar; cosseno é par. Tan tem domínio ℝ∖{π/2+kπ:k∈ℤ}, imagem ℝ, período fundamental π e é ímpar. Suas assíntotas verticais são x=π/2+kπ. Em (−π/2,π/2), tan é estritamente crescente. Estudamos aqui as funções básicas, sem transformações de período e imagem."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Para tan x, marque (0,0) no ramo central e desenhe assíntotas em ±π/2. Não conecte ramos atravessando as assíntotas; repita-os a cada π."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como descrever domínio, imagem, simetria e períodos das funções básicas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a monotonia da tangente em (−π/2,π/2)?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "A diferença tan b−tan a é positiva para a<b nesse intervalo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Estritamente decrescente"
+              },
+              {
+                "id": "b",
+                "texto": "Constante"
+              },
+              {
+                "id": "c",
+                "texto": "Estritamente crescente"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Devemos conectar o gráfico de tan x através de x=π/2?",
+            "assunto": "Seno, cosseno e tangente como funções",
+            "orientacao": "Diferencie propriedades das coordenadas seno e cosseno das propriedades do quociente tangente.",
+            "explicacao": "A entrada é proibida e separa ramos diferentes; a assíntota não pertence ao gráfico.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só com uma linha vertical contínua"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

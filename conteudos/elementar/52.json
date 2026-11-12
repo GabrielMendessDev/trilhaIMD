@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 52,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-52",
+      "titulo": "Somar ângulos sem somar senos",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "15° não aparece na primeira tabela de ângulos notáveis, mas é 45°−30°. Esse parentesco permite um valor exato. Só não vale somar os senos como se a curva tivesse assinado contrato de linearidade."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Aplicar e justificar fórmulas de soma e diferença."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Ângulos notáveis, simetria e identidade fundamental."
+              }
+            ],
+            "titulo": "Somar ângulos sem somar senos",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "sen(α±β)=senα cosβ±cosα senβ. cos(α+β)=cosα cosβ−senα senβ e cos(α−β)=cosα cosβ+senα senβ. Quando as tangentes envolvidas e o quociente estão definidos, tan(α±β)=(tanα±tanβ)/(1∓tanα tanβ). Seno é ímpar e cosseno é par."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O seno de uma soma é a soma dos produtos cruzados de seno e cosseno.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "sen(α+β)=senα cosβ+cosα senβ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fórmula de sen(α+β)?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "A fórmula combina produtos cruzados, sem substituir seno por uma operação linear.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "senα+senβ"
+              },
+              {
+                "id": "b",
+                "texto": "senα senβ+cosα cosβ"
+              },
+              {
+                "id": "c",
+                "texto": "senα cosβ+cosα senβ"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para dois pontos unitários de ângulos α e β, a distância ao quadrado é 2−2[cosα cosβ+senα senβ] por expansão das coordenadas. Pela lei dos cossenos no triângulo com dois lados unitários, também é 2−2cos(α−β). Igualar dá a fórmula do cosseno da diferença. Usar −β e a relação sen t=cos(π/2−t) produz as demais. A fórmula da tangente vem de dividir seno por cosseno da soma ou diferença."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Aplicar e justificar fórmulas de soma e diferença.",
+                      "exemplo": "Calcule sen15°=sen(45°−30°). A fórmula fornece sen45° cos30°−cos45° sen30°."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Portanto sen15°=(√6−√2)/4. Uma conferência de tamanho: é positivo e menor que sen30°=1/2, como esperado para um ângulo agudo menor."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fórmula de cos(α−β)?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "Na diferença de ângulos o termo entre os produtos é positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "cosα−cosβ"
+              },
+              {
+                "id": "b",
+                "texto": "cosα cosβ+senα senβ"
+              },
+              {
+                "id": "c",
+                "texto": "cosα cosβ−senα senβ"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Somar ângulos sem somar senos",
+            "assunto": "Somar ângulos sem somar senos",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule sen15°=sen(45°−30°). A fórmula fornece sen45° cos30°−cos45° sen30°."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Substitua os valores: (√2/2)(√3/2)−(√2/2)(1/2)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Portanto sen15°=(√6−√2)/4. Uma conferência de tamanho: é positivo e menor que sen30°=1/2, como esperado para um ângulo agudo menor."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen15°?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "Use 45°−30° e substitua os valores notáveis.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(√6−√2)/4"
+              },
+              {
+                "id": "b",
+                "texto": "(√6+√2)/4"
+              },
+              {
+                "id": "c",
+                "texto": "1/4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cos60° pela fórmula de 30°+30°?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "(√3/2)²−(1/2)²=3/4−1/4=1/2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "1/2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "sen(α+β) não é senα+senβ. Com α=β=π/2, o primeiro vale 0 e a soma vale 2. No cosseno, a soma leva menos entre os produtos, enquanto a diferença leva mais. Reconstrua pelo caso α=β para conferir sinais."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen(−π/6)?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "O seno é ímpar.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "√3/2"
+              },
+              {
+                "id": "b",
+                "texto": "−1/2"
+              },
+              {
+                "id": "c",
+                "texto": "1/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cos(−π/3)?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "O cosseno é par.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/2"
+              },
+              {
+                "id": "b",
+                "texto": "−1/2"
+              },
+              {
+                "id": "c",
+                "texto": "−√3/2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use decomposições por ângulos conhecidos para obter resultados exatos. Como apoio à demonstração, a lei dos cossenos afirma d²=u²+v²−2uv cosγ para lados u,v com ângulo γ; sua origem é a decomposição de um lado em projeções e Pitágoras. Assim cada fórmula mantém uma ligação geométrica."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual exemplo refuta sen(α+β)=senα+senβ?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "No primeiro caso os dois lados valem 0 e 2, respectivamente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "α=β=0"
+              },
+              {
+                "id": "b",
+                "texto": "α=0,β=π/3"
+              },
+              {
+                "id": "c",
+                "texto": "α=β=π/2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fórmula de tan(α+β), no domínio adequado?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "A divisão das fórmulas de seno e cosseno gera esse quociente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(tanα−tanβ)/(1+tanα tanβ)"
+              },
+              {
+                "id": "b",
+                "texto": "(tanα+tanβ)/(1−tanα tanβ)"
+              },
+              {
+                "id": "c",
+                "texto": "tanα+tanβ"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "sen(α±β)=senα cosβ±cosα senβ. cos(α+β)=cosα cosβ−senα senβ e cos(α−β)=cosα cosβ+senα senβ. Quando as tangentes envolvidas e o quociente estão definidos, tan(α±β)=(tanα±tanβ)/(1∓tanα tanβ). Seno é ímpar e cosseno é par."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Portanto sen15°=(√6−√2)/4. Uma conferência de tamanho: é positivo e menor que sen30°=1/2, como esperado para um ângulo agudo menor."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como aplicar e justificar fórmulas de soma e diferença. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale tan75°?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "Use 45°+30°: (1+1/√3)/(1−1/√3), que simplifica a 2+√3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2+√3"
+              },
+              {
+                "id": "b",
+                "texto": "2−√3"
+              },
+              {
+                "id": "c",
+                "texto": "√3−1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que fazer se 1−tanα tanβ=0 na fórmula da soma?",
+            "assunto": "Somar ângulos sem somar senos",
+            "orientacao": "Decomponha o ângulo em notáveis e escreva a fórmula completa antes de substituir números.",
+            "explicacao": "Divisão por zero é proibida; quando as tangentes individuais existem, esse caso corresponde a cos(α+β)=0.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Definir a tangente como zero"
+              },
+              {
+                "id": "b",
+                "texto": "Cancelar o denominador"
+              },
+              {
+                "id": "c",
+                "texto": "Verificar a definição original; o quociente escrito não pode ser usado"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

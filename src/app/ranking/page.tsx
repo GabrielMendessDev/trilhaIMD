@@ -8,12 +8,12 @@ import {
 export default function RankingPage() {
 	return (
 		<DashboardLayout active="/ranking">
-			<div className="ui-page">
+			<div className="ui-page league-page">
 				<PageHeading
 					description="Acompanhe a classificação da comunidade quando as ligas estiverem disponíveis."
 					title="Ranking"
 				/>
-				<section className="ui-panel max-w-2xl p-5 sm:p-8">
+				<section className="journey-empty league-empty">
 					<span className="ui-icon">
 						<Icon className="size-6" name="ranking" />
 					</span>

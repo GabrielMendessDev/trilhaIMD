@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 60,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-60",
+      "titulo": "Missão final: ligar as três unidades",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A última estação mistura conjuntos, uma parábola, um ângulo e uma matriz. Parece uma reunião de departamentos, mas todos compartilham o mesmo método: entender os objetos, declarar condições, calcular e justificar. A habilidade que atravessa a trilha é saber fazer essas perguntas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Integrar fundamentos, funções, trigonometria e matrizes em argumentos completos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Unidades 1, 2 e 3; retome os passos indicados pelos temas."
+              }
+            ],
+            "titulo": "Missão final: ligar as três unidades",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Esta revisão autoral reúne habilidades das três unidades e não se apresenta como prova oficial. Em cada solução, explicite o universo, as restrições e a conclusão. Resultados iguais podem ter significados diferentes: uma raiz é entrada que zera uma função; um determinante é um número associado a uma matriz; um intervalo é um conjunto de entradas ou saídas conforme a pergunta."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Os valores de parâmetro que dão determinante não nulo são os que tornam a matriz invertível.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "detA(t)≠0 define os parâmetros invertíveis"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio real de 1/(x−1)?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "A divisão exige x−1≠0; a restrição usa a linguagem de conjuntos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ sem 1"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ"
+              },
+              {
+                "id": "c",
+                "texto": "[1,∞)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As conexões tornam o estudo verificável. O domínio de uma função racional usa conjuntos e equações; a imagem quadrática usa desigualdades; a relação trigonométrica fundamental usa a geometria do círculo; a inversa matricial usa sistemas. A técnica muda, mas a obrigação de justificar condições permanece."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Integrar fundamentos, funções, trigonometria e matrizes em argumentos completos.",
+                      "exemplo": "Considere A(t)=[[1,t],[2,1]]. Temos detA(t)=1−2t. A inversa existe exatamente quando t≠1/2."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "O produto nos dois sentidos é I₂. O argumento conectou parâmetro, equação linear, complemento de um ponto, determinante e produto matricial, sem precisar de uma regra nova."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale log₂16+ln e?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "log₂16=4 e ln e=1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "5"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Missão final: ligar as três unidades",
+            "assunto": "Missão final: ligar as três unidades",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Considere A(t)=[[1,t],[2,1]]. Temos detA(t)=1−2t. A inversa existe exatamente quando t≠1/2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "A condição define o conjunto (−∞,1/2)∪(1/2,∞). Para t=0, A=[[1,0],[2,1]] e A⁻¹=[[1,0],[−2,1]]."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O produto nos dois sentidos é I₂. O argumento conectou parâmetro, equação linear, complemento de um ponto, determinante e produto matricial, sem precisar de uma regra nova."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução real de x⁴−5x²+4=0?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "Com t=x², as raízes t=1,4 retornam a x=±1,±2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{−4,−1,1,4}"
+              },
+              {
+                "id": "b",
+                "texto": "{−2,−1,1,2}"
+              },
+              {
+                "id": "c",
+                "texto": "{1,4}"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de (x−2)²−1 em ℝ?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "O vértice (2,−1) fornece o mínimo −1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[−1,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[2,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Terminar a trilha não elimina a necessidade de revisão espaçada. Se você lembra a fórmula, mas não sabe dizer suas condições, o conhecimento ainda está frágil. Escolha erros que revelam uma decisão a corrigir, e não apenas questões que permitem repetir contas já confortáveis."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para f(x)=x² e g(x)=x+1, quanto vale f(g(2))?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "Primeiro g(2)=3; depois f(3)=9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5"
+              },
+              {
+                "id": "b",
+                "texto": "8"
+              },
+              {
+                "id": "c",
+                "texto": "9"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen(5π/6)?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "O ângulo tem referência π/6 e está no segundo quadrante, com seno positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "√3/2"
+              },
+              {
+                "id": "b",
+                "texto": "1/2"
+              },
+              {
+                "id": "c",
+                "texto": "−1/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Roteiro de revisão: explique um conceito sem consulta, resolva um exercício de outra unidade e depois volte ao primeiro tema. Produza uma pequena solução discursiva por unidade e confira domínio, cálculo e conclusão. A jornada termina aqui no mapa, mas a exploração matemática não precisa de créditos finais."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em qual entrada a tangente está indefinida?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "O cosseno de π/2 é zero, proibindo o quociente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "π/2"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "π/4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é det[[1,t],[2,1]]?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "Aplicar ad−bc dá 1·1−t·2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1+2t"
+              },
+              {
+                "id": "b",
+                "texto": "2−t"
+              },
+              {
+                "id": "c",
+                "texto": "1−2t"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Esta revisão autoral reúne habilidades das três unidades e não se apresenta como prova oficial. Em cada solução, explicite o universo, as restrições e a conclusão. Resultados iguais podem ter significados diferentes: uma raiz é entrada que zera uma função; um determinante é um número associado a uma matriz; um intervalo é um conjunto de entradas ou saídas conforme a pergunta."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: O produto nos dois sentidos é I₂. O argumento conectou parâmetro, equação linear, complemento de um ponto, determinante e produto matricial, sem precisar de uma regra nova."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como integrar fundamentos, funções, trigonometria e matrizes em argumentos completos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para quais t a matriz anterior admite inversa?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "O determinante precisa ser não nulo: 1−2t≠0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todos os reais"
+              },
+              {
+                "id": "b",
+                "texto": "t≠1/2"
+              },
+              {
+                "id": "c",
+                "texto": "t=1/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inversa de [[1,0],[2,1]]?",
+            "assunto": "Missão final: ligar as três unidades",
+            "orientacao": "Identifique o tipo de objeto pedido e conecte a técnica apropriada às condições da expressão original.",
+            "explicacao": "O determinante vale 1 e a fórmula dá a matriz indicada; os produtos de ida e volta são I₂.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[1,0],[−2,1]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[1,0],[2,1]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[1,2],[0,1]]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

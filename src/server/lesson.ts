@@ -15,6 +15,7 @@ import {
 	sectionFields,
 } from "~/app/aprender/_etapa/pedagogy.mjs";
 import type { TrailId } from "~/app/aprender/trails";
+import { livesOf } from "~/domain/lesson-lives.mjs";
 import { db } from "~/server/db";
 import {
 	getLearningProgress,
@@ -25,10 +26,13 @@ import {
 	type Attempt,
 	advanceLesson,
 	type LessonProgress,
-	lessonScore,
+	lessonProgressPercent,
 	type PendingItem,
 	pendingItem,
 } from "./lesson-progress";
+import { persistLesson } from "./lesson-state";
+import { lockWallet, registerAnswerRpg } from "./rpg";
+import { effectiveEntry, getQuestionState } from "./rpg-support";
 
 const block = z.discriminatedUnion("tipo", [
 	z.object({ tipo: z.literal("titulo"), id: z.string(), texto: z.string() }),
@@ -144,7 +148,7 @@ function contentOf(data: unknown): StageContent {
 	};
 }
 
-type Entry = {
+export type Entry = {
 	key: string;
 	title: string;
 	type: "MULTIPLE_CHOICE" | "ASSOCIATION" | "PAIR_LINKS" | "WALKTHROUGH" | null;
@@ -366,62 +370,134 @@ export async function recordAnswer(
 		return { error: "Conclua a etapa disponível no mapa para continuar." };
 	}
 	const entries = await getLesson(point.id);
-	const entry = entries.find((entry) => entry.key === submission.key);
-	if (!entry)
+	const original = entries.find((entry) => entry.key === submission.key);
+	if (!original)
 		return { error: "A etapa mudou. Atualize a página antes de continuar." };
+	let entry: Entry = original;
 	const items = lessonItems(entries);
-	const attempt = isGraded(entry) ? grade(entry, form) : undefined;
-	if (isGraded(entry) && !attempt)
-		return { error: "Preencha todos os campos da questão para responder." };
-	if (entry.type === "WALKTHROUGH" && form.get("resposta") !== "concluido")
-		return { error: "Percorra todos os passos antes de continuar." };
+	const assessment = (
+		answer: Attempt,
+		state: LessonProgress,
+		finished: boolean,
+	) => ({
+		...feedbackFor(entry, answer, submission.round),
+		correct: answer.correct,
+		round: submission.round,
+		selection: answer.selection,
+		finished,
+		lives: livesOf(state),
+		failed: livesOf(state) === 0,
+		progress: lessonProgressPercent(items, state, submission.round),
+		eventId: `answer:${userId}:${point.id}:${entry.key}:${submission.round}:run-${state.run ?? 1}`,
+	});
 
-	return db.$transaction(async (tx) => {
-		await tx.$executeRaw`
+	return db.$transaction(
+		async (tx) => {
+			await lockWallet(tx, userId);
+			const support = await getQuestionState(
+				userId,
+				point.id,
+				submission.key,
+				tx,
+			);
+			entry = effectiveEntry(original as Entry, support.effects);
+			if (
+				(form.get("variant") ?? "") !== (support.effects.replacement?.key ?? "")
+			)
+				return {
+					error:
+						"A questão foi atualizada. Atualize a tela antes de responder.",
+				};
+			const attempt = isGraded(entry) ? grade(entry, form) : undefined;
+			if (isGraded(entry) && !attempt)
+				return { error: "Preencha todos os campos da questão para responder." };
+			if (entry.type === "WALKTHROUGH" && form.get("resposta") !== "concluido")
+				return { error: "Percorra todos os passos antes de continuar." };
+
+			if (attempt) {
+				if (
+					attempt.selection.some((id) => support.effects.removed?.includes(id))
+				)
+					return { error: "Uma alternativa removida não pode ser enviada." };
+				attempt.assisted = support.assisted;
+			}
+			await tx.$executeRaw`
 			INSERT INTO "LearningPointProgress" ("userId", "pointId") VALUES (${userId}, ${point.id})
 			ON CONFLICT ("userId", "pointId") DO NOTHING
 		`;
-		const [row] = await tx.$queryRaw<
-			(LessonProgress & { completedAt: Date | null })[]
-		>`
-			SELECT "completedEntries", attempts, "completedAt" FROM "LearningPointProgress"
+			const [row] = await tx.$queryRaw<
+				(LessonProgress & { completedAt: Date | null })[]
+			>`
+			SELECT "completedEntries", attempts, "skippedEntries", "deferredEntries", "completedAt", lives, run FROM "LearningPointProgress"
 			WHERE "userId" = ${userId} AND "pointId" = ${point.id} FOR UPDATE
 		`;
-		if (!row)
-			return { error: "O progresso está indisponível. Tente novamente." };
-		const saved = row.attempts[submission.key]?.[submission.round - 1];
-		if (saved) {
-			const same =
-				attempt &&
-				saved.selection.length === attempt.selection.length &&
-				saved.selection.every(
-					(value, index) => value === attempt.selection[index],
-				);
-			return same
-				? { feedback: true }
-				: { error: "A resposta desta rodada já foi registrada." };
-		}
-		if (row.completedAt) return { finished: true };
-		const updated = advanceLesson(items, row, submission, attempt);
-		if (!updated) {
-			if (!isGraded(entry) && row.completedEntries.includes(submission.key))
-				return { continued: true };
-			return {
-				error:
-					"Esta tela já avançou ou pertence a outra rodada. Atualize a lição para continuar.",
-			};
-		}
-		const upcoming = pendingItem(items, updated);
-		const score = lessonScore(items, updated);
-		await tx.$executeRaw`
-			UPDATE "LearningPointProgress"
-			SET "completedEntries" = ${updated.completedEntries}::text[],
-				attempts = ${JSON.stringify(updated.attempts)}::jsonb,
-				"completedAt" = ${upcoming ? null : new Date()},
-				xp = ${upcoming ? 0 : point.reward},
-				"correctAnswers" = ${upcoming ? 0 : score.first + score.recovered + score.legacy}
-			WHERE "userId" = ${userId} AND "pointId" = ${point.id}
-		`;
-		return attempt ? { feedback: true } : { continued: true };
-	});
+			if (!row)
+				return { error: "O progresso está indisponível. Tente novamente." };
+			if (Number(form.get("run") ?? 1) !== (row.run ?? 1))
+				return {
+					error:
+						"A atividade foi recomeçada. Atualize a tela antes de responder.",
+				};
+			const saved = row.attempts[submission.key]?.[submission.round - 1];
+			if (saved) {
+				const same =
+					attempt &&
+					saved.selection.length === attempt.selection.length &&
+					saved.selection.every(
+						(value, index) => value === attempt.selection[index],
+					);
+				return same
+					? {
+							feedback: true,
+							assessment: assessment(saved, row, Boolean(row.completedAt)),
+							nextKey: pendingItem(items, row)?.key,
+						}
+					: { error: "A resposta desta rodada já foi registrada." };
+			}
+			if (row.completedAt) return { finished: true };
+			if (livesOf(row) === 0)
+				return {
+					error: "As vidas acabaram. Recomece a atividade para continuar.",
+				};
+			const updated = advanceLesson(items, row, submission, attempt);
+			if (!updated) {
+				if (!isGraded(entry) && row.completedEntries.includes(submission.key))
+					return { continued: true };
+				return {
+					error:
+						"Esta tela já avançou ou pertence a outra rodada. Atualize a lição para continuar.",
+				};
+			}
+			const awards = attempt
+				? await registerAnswerRpg(
+						tx,
+						userId,
+						point.id,
+						submission.key,
+						submission.round,
+						attempt.correct,
+						Boolean(attempt.assisted),
+					)
+				: [];
+			const persisted = await persistLesson(
+				tx,
+				userId,
+				point.id,
+				updated,
+				items,
+				point.reward,
+			);
+			const upcoming = persisted.pending;
+			awards.push(...persisted.awards);
+			return attempt
+				? {
+						feedback: true,
+						assessment: assessment(attempt, updated, persisted.finished),
+						nextKey: upcoming?.key,
+						awards,
+					}
+				: { continued: true, nextKey: upcoming?.key, awards };
+		},
+		{ timeout: 15000 },
+	);
 }

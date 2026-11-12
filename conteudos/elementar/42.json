@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 42,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-42",
+      "titulo": "Funções por partes: escolha o ramo antes da conta",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma sala tem uma regra de acesso antes do meio-dia e outra depois. Você não aplica as duas ao mesmo instante: primeiro localiza o horário, depois segue a regra. Funções por partes pedem exatamente essa ordem."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Avaliar e esboçar funções definidas por intervalos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Intervalos e gráficos afins e quadráticos."
+              }
+            ],
+            "titulo": "Funções por partes: escolha o ramo antes da conta",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma função por partes associa expressões diferentes a regiões do domínio. Os intervalos indicam qual expressão usar. Cada entrada deve ter uma única saída; sobreposição de regras com resultados diferentes viola a definição. No gráfico, ponto fechado indica extremo incluído e ponto aberto, excluído. Lacunas de domínio devem ser explicitadas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Numa função por partes, localize a entrada no intervalo antes de escolher a expressão.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Entrada → intervalo → regra"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=x+1 para x<0 e x² para x≥0, quanto vale f(−2)?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "A entrada −2 pertence ao primeiro ramo, dando −2+1=−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Considere f(x)=x+1 para x<0 e f(x)=x² para x≥0. O conjunto dos dois intervalos cobre ℝ e eles não se sobrepõem. Para x=0 só a segunda regra vale: f(0)=0. O primeiro ramo se aproxima do ponto (0,1), que é aberto; isso não o transforma em valor da função no zero."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/partes.svg",
+                "alt": "Função x+1 para x<0 e x² para x≥0: o primeiro ramo termina com ponto aberto em (0,1); o segundo inclui ponto fechado em (0,0).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Função x+1 para x<0 e x² para x≥0: o primeiro ramo termina com ponto aberto em (0,1); o segundo inclui ponto fechado em (0,0).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na mesma função, quanto vale f(0)?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "O símbolo ≥ inclui zero no segundo ramo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "Não definido"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Funções por partes: escolha o ramo antes da conta",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Avalie a função do conceito em x=−2,0,2. Para −2, use o ramo x<0: f(−2)=−2+1=−1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Para 0, use x≥0: f(0)=0²=0. Para 2, o mesmo ramo dá f(2)=4."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "No esboço, trace y=x+1 só à esquerda de zero, com (0,1) aberto; trace a metade de y=x² com x≥0, incluindo (0,0)."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale f(2)?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "A entrada 2 usa a expressão x².",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual ponto fica aberto no ramo x+1 do exemplo?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "A fórmula x+1 vale apenas para x<0; seu extremo em x=0 não entra.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,1)"
+              },
+              {
+                "id": "b",
+                "texto": "(0,0)"
+              },
+              {
+                "id": "c",
+                "texto": "(−1,0)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não escolha o ramo pelo sinal do resultado. Escolha pelo valor da entrada. E um círculo aberto no gráfico de um ramo não significa necessariamente que a entrada está fora do domínio: outro ramo pode defini-la em outra altura."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual ponto fica fechado em x=0?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "O segundo ramo inclui zero e produz a saída zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,1)"
+              },
+              {
+                "id": "b",
+                "texto": "Nenhum"
+              },
+              {
+                "id": "c",
+                "texto": "(0,0)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que determina a escolha do ramo?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "Primeiro localizamos x nas condições do domínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O ramo com menor expressão"
+              },
+              {
+                "id": "b",
+                "texto": "O intervalo da entrada"
+              },
+              {
+                "id": "c",
+                "texto": "O sinal da saída desejada"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Funções por partes podem modelar faixas de acesso, tabelas de uso de equipamentos e regras administrativas fictícias. Escreva o domínio como união dos intervalos e confira se há sobreposição ou lacuna antes de calcular valores."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Regras f(x)=0 para x≤1 e f(x)=2 para x≥1 definem uma função em ℝ?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "Em x=1 as regras dão duas saídas diferentes.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Só se os ramos forem desenhados separados"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Regras só para x<0 e x>0 cobrem qual domínio?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "Nenhum ramo inclui zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas {0}"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ sem 0"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma função por partes associa expressões diferentes a regiões do domínio. Os intervalos indicam qual expressão usar. Cada entrada deve ter uma única saída; sobreposição de regras com resultados diferentes viola a definição. No gráfico, ponto fechado indica extremo incluído e ponto aberto, excluído. Lacunas de domínio devem ser explicitadas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: No esboço, trace y=x+1 só à esquerda de zero, com (0,1) aberto; trace a metade de y=x² com x≥0, incluindo (0,0)."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como avaliar e esboçar funções definidas por intervalos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se dois ramos se sobrepõem mas dão sempre o mesmo valor na sobreposição, há conflito de unicidade?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "A mesma entrada continua com uma única saída, embora a escrita seja redundante.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas se houver infinitos pontos"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Um círculo aberto em (1,3) impede f(1)=2 por outro ramo?",
+            "assunto": "Funções por partes: escolha o ramo antes da conta",
+            "orientacao": "Teste o valor de x nas condições dos ramos, observando os extremos abertos e fechados.",
+            "explicacao": "O círculo exclui aquele ponto específico, não toda a vertical.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Impede qualquer saída em x=1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

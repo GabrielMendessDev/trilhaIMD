@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 32,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-32",
+      "titulo": "Relações e a regra de uma única saída",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma pessoa pode participar de várias atividades culturais: essa relação é perfeitamente legítima. Mas se a regra pedida for ‘a sala reservada para cada atividade num mesmo horário’, duas salas indicadas para uma única reserva podem violar a função definida. O contexto não decide sozinho; a regra formal decide."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Distinguir relações binárias de funções com domínio declarado."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Produto cartesiano e pares ordenados."
+              }
+            ],
+            "titulo": "Relações e a regra de uma única saída",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma relação de A em B é um subconjunto de A×B. Uma função f:A→B é uma relação em que cada elemento de A possui exatamente uma imagem em B. Pode haver elementos diferentes de A com a mesma imagem. No gráfico de uma função real, qualquer reta vertical corta o gráfico em no máximo um ponto, e cada x do domínio deve aparecer."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma função associa exatamente uma saída válida a cada entrada do domínio.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Cada x∈A tem exatamente um f(x)∈B"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição define uma função A→B?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "A definição exige existência e unicidade de saída para as entradas do domínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Cada entrada tem pelo menos duas saídas"
+              },
+              {
+                "id": "b",
+                "texto": "Cada elemento de A tem exatamente uma imagem em B"
+              },
+              {
+                "id": "c",
+                "texto": "Cada elemento de B recebe exatamente uma seta"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "‘Exatamente uma’ combina existência e unicidade: nenhuma entrada do domínio pode ficar sem saída e nenhuma pode ter duas saídas distintas. No teste vertical, dois pontos diferentes na mesma vertical teriam o mesmo x e diferentes y, violando a unicidade. O teste não determina sozinho um domínio declarado maior que a projeção do gráfico."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/setas.svg",
+                "alt": "Função de {1,2,3} para {a,b}: 1 vai para a, 2 vai para a e 3 vai para b. É função sobrejetora e não injetora, pois duas entradas chegam a a.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Função de {1,2,3} para {a,b}: 1 vai para a, 2 vai para a e 3 vai para b. É função sobrejetora e não injetora, pois duas entradas chegam a a.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "A={1,2}, B={a,b}. R={(1,a),(2,a)} é função?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "Repetir saída e deixar elementos de B sem uso são permitidos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Não, porque a se repete"
+              },
+              {
+                "id": "c",
+                "texto": "Não, porque b não é usado"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Relações e a regra de uma única saída",
+            "assunto": "Relações e a regra de uma única saída",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Considere A={1,2,3}, B={a,b} e R={(1,a),(2,a),(3,b)}. Cada elemento de A aparece uma vez na primeira coordenada."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Logo R define uma função A→B. A repetição da saída a é permitida."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Se acrescentarmos (1,b), a entrada 1 terá duas saídas distintas e a relação deixará de ser função. Se retirarmos (3,b), a entrada 3 ficará sem saída e também falhará."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No mesmo A e B, {(1,a),(1,b),(2,a)} é função?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "A entrada 1 tem duas saídas distintas a e b.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só se a=b no conjunto dado"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No mesmo A e B, {(1,a)} é função A→B?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "A entrada 2 do domínio não recebeu saída.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só se B tiver dois elementos"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não confunda ‘uma imagem para cada entrada’ com ‘uma entrada para cada imagem’. A segunda frase se relaciona à injetividade, um conceito adicional. Uma função não precisa usar todos os elementos do contradomínio."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma relação de A em B é um subconjunto de qual conjunto?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "A relação é formada por pares com primeira coordenada em A e segunda em B.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A×B"
+              },
+              {
+                "id": "b",
+                "texto": "A∩B"
+              },
+              {
+                "id": "c",
+                "texto": "A∪B"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O gráfico de x²+y²=1 representa y como função de x em [−1,1]?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "Para x=0 aparecem y=1 e y=−1, violando a unicidade.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas por ser um círculo"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Construa duas relações com os mesmos conjuntos: uma função e uma que falha por ausência de saída. Depois construa outra que falha por duplicidade. Explicar o motivo exato é melhor do que apenas marcar ‘não é função’."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O gráfico y=x² representa uma função ℝ→ℝ?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "Cada real x determina um único quadrado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só para x≥0"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O teste da reta vertical verifica qual parte da definição?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "Duas interseções na mesma vertical representam duas saídas para a mesma entrada.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Unicidade da saída para cada x representado"
+              },
+              {
+                "id": "b",
+                "texto": "Sobrejetividade"
+              },
+              {
+                "id": "c",
+                "texto": "Existência de inversa"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma relação de A em B é um subconjunto de A×B. Uma função f:A→B é uma relação em que cada elemento de A possui exatamente uma imagem em B. Pode haver elementos diferentes de A com a mesma imagem. No gráfico de uma função real, qualquer reta vertical corta o gráfico em no máximo um ponto, e cada x do domínio deve aparecer."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Se acrescentarmos (1,b), a entrada 1 terá duas saídas distintas e a relação deixará de ser função. Se retirarmos (3,b), a entrada 3 ficará sem saída e também falhará."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como distinguir relações binárias de funções com domínio declarado. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma função precisa usar todo o contradomínio?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "Essa exigência adicional caracteriza sobrejetividade.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só quando é constante"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a mesma relação é escrita com um par repetido, surge outra saída?",
+            "assunto": "Relações e a regra de uma única saída",
+            "orientacao": "Confira existência e unicidade da saída para todas as entradas declaradas.",
+            "explicacao": "Relações são conjuntos; repetir o mesmo par não cria um elemento diferente.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sempre deixa de ser função"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

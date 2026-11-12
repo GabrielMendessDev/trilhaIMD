@@ -1,0 +1,1082 @@
+[
+  {
+    "prompt": "Qual conjunto registra os temas música, cinema, música e debate?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "{música,cinema}"
+      },
+      {
+        "id": "b",
+        "texto": "{música,música}"
+      },
+      {
+        "id": "c",
+        "texto": "{música,cinema,debate}"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Nesta trilha, 0 pertence a qual conjunto?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "A nenhum conjunto numérico"
+      },
+      {
+        "id": "b",
+        "texto": "ℕ"
+      },
+      {
+        "id": "c",
+        "texto": "Apenas aos irracionais"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Se A={1,2,3}, qual afirmação é verdadeira?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "{2}⊆A"
+      },
+      {
+        "id": "b",
+        "texto": "{2}∈A"
+      },
+      {
+        "id": "c",
+        "texto": "4∈A"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Para A={1,2,3} e B={3,4}, qual é A∪B?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "{3}"
+      },
+      {
+        "id": "b",
+        "texto": "{1,2,4}"
+      },
+      {
+        "id": "c",
+        "texto": "{1,2,3,4}"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "18 pessoas escolhem cinema, 15 debate e 6 ambos. Quantas escolhem ao menos um?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "21"
+      },
+      {
+        "id": "b",
+        "texto": "27"
+      },
+      {
+        "id": "c",
+        "texto": "33"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual intervalo representa 1<x≤4?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "(1,4]"
+      },
+      {
+        "id": "b",
+        "texto": "[1,4)"
+      },
+      {
+        "id": "c",
+        "texto": "[1,4]"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Quanto vale 2³?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "6"
+      },
+      {
+        "id": "b",
+        "texto": "9"
+      },
+      {
+        "id": "c",
+        "texto": "8"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Quanto vale 2³·2⁴?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "64"
+      },
+      {
+        "id": "b",
+        "texto": "128"
+      },
+      {
+        "id": "c",
+        "texto": "24"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual potência traduz log₂8=3?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "2³=8"
+      },
+      {
+        "id": "b",
+        "texto": "3²=8"
+      },
+      {
+        "id": "c",
+        "texto": "8³=2"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Quanto vale log₂32?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "16"
+      },
+      {
+        "id": "b",
+        "texto": "3"
+      },
+      {
+        "id": "c",
+        "texto": "5"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Resolva 3x+12=30.",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "x=10"
+      },
+      {
+        "id": "b",
+        "texto": "x=6"
+      },
+      {
+        "id": "c",
+        "texto": "x=14"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Resolva x+y=9 e 2x+y=14.",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "(5,4)"
+      },
+      {
+        "id": "b",
+        "texto": "(4,5)"
+      },
+      {
+        "id": "c",
+        "texto": "(9,14)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Quais são as raízes de x²−5x+6=0?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "−2 e −3"
+      },
+      {
+        "id": "b",
+        "texto": "1 e 6"
+      },
+      {
+        "id": "c",
+        "texto": "2 e 3"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Em x²−6x+k=0, qual k produz raiz dupla?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "36"
+      },
+      {
+        "id": "b",
+        "texto": "9"
+      },
+      {
+        "id": "c",
+        "texto": "6"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Com t=x², em que se transforma x⁴−5x²+4=0?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "t²−5t+4=0"
+      },
+      {
+        "id": "b",
+        "texto": "t⁴−5t+4=0"
+      },
+      {
+        "id": "c",
+        "texto": "t²−5t²+4=0"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Resolva −2x≥−6.",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "x≥3"
+      },
+      {
+        "id": "b",
+        "texto": "x≤−3"
+      },
+      {
+        "id": "c",
+        "texto": "x≤3"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual é a solução de (x−1)(x−3)≤0?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "(1,3)"
+      },
+      {
+        "id": "b",
+        "texto": "[1,3]"
+      },
+      {
+        "id": "c",
+        "texto": "(−∞,1]∪[3,∞)"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é a multiplicidade de 1 em (x+2)(x−1)²(x−3)?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "2"
+      },
+      {
+        "id": "b",
+        "texto": "1"
+      },
+      {
+        "id": "c",
+        "texto": "4"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Qual é o domínio de (x−2)/(x−2)?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "ℝ"
+      },
+      {
+        "id": "b",
+        "texto": "ℝ sem 0"
+      },
+      {
+        "id": "c",
+        "texto": "ℝ sem 2"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Se A={1,2,3} e B={3,4}, qual é A∩B?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "∅"
+      },
+      {
+        "id": "b",
+        "texto": "{3}"
+      },
+      {
+        "id": "c",
+        "texto": "{1,2,3,4}"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é o grau de 5−2x³+x?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "3"
+      },
+      {
+        "id": "b",
+        "texto": "5"
+      },
+      {
+        "id": "c",
+        "texto": "1"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Qual é (x²+2x)+(3x²−x+4)?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "4x³+x+4"
+      },
+      {
+        "id": "b",
+        "texto": "4x²+3x+4"
+      },
+      {
+        "id": "c",
+        "texto": "4x²+x+4"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual é (x+3)²?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "x²+3x+9"
+      },
+      {
+        "id": "b",
+        "texto": "x²+6x+9"
+      },
+      {
+        "id": "c",
+        "texto": "x²+9"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é a fatoração de 3x²+6x?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "3x(x+2)"
+      },
+      {
+        "id": "b",
+        "texto": "3x(x+6)"
+      },
+      {
+        "id": "c",
+        "texto": "3(x²+6x)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Quais são as raízes de 2(x−1)²(x+3)?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "−1 e 3"
+      },
+      {
+        "id": "b",
+        "texto": "1 e 3"
+      },
+      {
+        "id": "c",
+        "texto": "1 e −3"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Na divisão de P por D≠0, qual identidade deve valer?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "P=D+Q+R"
+      },
+      {
+        "id": "b",
+        "texto": "P=DQ+R"
+      },
+      {
+        "id": "c",
+        "texto": "P=Q+DR"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é o resto de x³−2x+4 por x−2?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "8"
+      },
+      {
+        "id": "b",
+        "texto": "4"
+      },
+      {
+        "id": "c",
+        "texto": "−8"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Quais coeficientes representam x³−2x+4?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "1,−2,4"
+      },
+      {
+        "id": "b",
+        "texto": "1,2,4"
+      },
+      {
+        "id": "c",
+        "texto": "1,0,−2,4"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Para x³−2x²−x+2, quais são os candidatos racionais?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "Apenas 1 e 2"
+      },
+      {
+        "id": "b",
+        "texto": "±1 e ±2"
+      },
+      {
+        "id": "c",
+        "texto": "Todos os inteiros"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual polinômio de grau 2 tem raízes 1 e 3 e coeficiente líder 2?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "2(x−1)(x−3)"
+      },
+      {
+        "id": "b",
+        "texto": "(x−1)(x−3)"
+      },
+      {
+        "id": "c",
+        "texto": "2(x+1)(x+3)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Se A={1,2} e B={a,b,c}, quantos pares há em A×B?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "5"
+      },
+      {
+        "id": "b",
+        "texto": "9"
+      },
+      {
+        "id": "c",
+        "texto": "6"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual condição define uma função A→B?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "Cada entrada tem pelo menos duas saídas"
+      },
+      {
+        "id": "b",
+        "texto": "Cada elemento de A tem exatamente uma imagem em B"
+      },
+      {
+        "id": "c",
+        "texto": "Cada elemento de B recebe exatamente uma seta"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Em f:{1,2,3}→{a,b,c}, com saídas a,a,b, qual é a imagem?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "{a,b}"
+      },
+      {
+        "id": "b",
+        "texto": "{a,b,c}"
+      },
+      {
+        "id": "c",
+        "texto": "{1,2,3}"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Uma função é injetora quando qual situação não ocorre?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "Uma saída do contradomínio ficar sem uso"
+      },
+      {
+        "id": "b",
+        "texto": "Uma entrada ter saída"
+      },
+      {
+        "id": "c",
+        "texto": "Entradas distintas com a mesma saída"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Em (f∘g)(x), qual função é aplicada primeiro?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "As duas simultaneamente"
+      },
+      {
+        "id": "b",
+        "texto": "g"
+      },
+      {
+        "id": "c",
+        "texto": "f"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é a inversa de f(x)=3x+2 em ℝ?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "(x−2)/3"
+      },
+      {
+        "id": "b",
+        "texto": "1/(3x+2)"
+      },
+      {
+        "id": "c",
+        "texto": "3x−2"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Em f(x)=2x+4, qual é a taxa por unidade de x?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "4"
+      },
+      {
+        "id": "b",
+        "texto": "6"
+      },
+      {
+        "id": "c",
+        "texto": "2"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual é a concavidade de f(x)=−2x²+3?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "É uma reta"
+      },
+      {
+        "id": "b",
+        "texto": "Para baixo"
+      },
+      {
+        "id": "c",
+        "texto": "Para cima"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é a forma canônica de x²−4x+1?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "(x−2)²−3"
+      },
+      {
+        "id": "b",
+        "texto": "(x−4)²+1"
+      },
+      {
+        "id": "c",
+        "texto": "(x+2)²−3"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Quanto vale |{1,2}×{a,b,c}|?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "5"
+      },
+      {
+        "id": "b",
+        "texto": "3"
+      },
+      {
+        "id": "c",
+        "texto": "6"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "f(x)=x⁴−3x²+2 em ℝ é qual tipo?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "Nenhuma"
+      },
+      {
+        "id": "b",
+        "texto": "Par"
+      },
+      {
+        "id": "c",
+        "texto": "Ímpar"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Se f(x)=x+1 para x<0 e x² para x≥0, quanto vale f(−2)?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "−1"
+      },
+      {
+        "id": "b",
+        "texto": "4"
+      },
+      {
+        "id": "c",
+        "texto": "3"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Se T é período, qual igualdade vale para todas as entradas?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "f(T)=0"
+      },
+      {
+        "id": "b",
+        "texto": "f(x+T)=T·f(x)"
+      },
+      {
+        "id": "c",
+        "texto": "f(x+T)=f(x)"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual é o domínio de 2ˣ?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "[0,∞)"
+      },
+      {
+        "id": "b",
+        "texto": "ℝ"
+      },
+      {
+        "id": "c",
+        "texto": "(0,∞)"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é o domínio de ln x?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "(0,∞)"
+      },
+      {
+        "id": "b",
+        "texto": "ℝ"
+      },
+      {
+        "id": "c",
+        "texto": "[0,∞)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Em N(t)=50·2ᵗ, qual é o valor inicial?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "2"
+      },
+      {
+        "id": "b",
+        "texto": "100"
+      },
+      {
+        "id": "c",
+        "texto": "50"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual lado fica oposto ao ângulo reto?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "Cateto oposto ao ângulo agudo"
+      },
+      {
+        "id": "b",
+        "texto": "Hipotenusa"
+      },
+      {
+        "id": "c",
+        "texto": "Cateto adjacente"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Quantos radianos há em uma volta completa?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "2π"
+      },
+      {
+        "id": "b",
+        "texto": "π"
+      },
+      {
+        "id": "c",
+        "texto": "360π"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Qual é o ponto do ciclo correspondente a θ?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "(senθ,cosθ)"
+      },
+      {
+        "id": "b",
+        "texto": "(tanθ,senθ)"
+      },
+      {
+        "id": "c",
+        "texto": "(cosθ,senθ)"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual é a definição de secθ?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "senθ/cosθ"
+      },
+      {
+        "id": "b",
+        "texto": "1/cosθ"
+      },
+      {
+        "id": "c",
+        "texto": "1/senθ"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual identidade vale para todo θ real?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "sen²θ+cos²θ=1"
+      },
+      {
+        "id": "b",
+        "texto": "senθ+cosθ=1"
+      },
+      {
+        "id": "c",
+        "texto": "tan²θ+1=cos²θ"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Qual é a fórmula de sen(α+β)?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "senα+senβ"
+      },
+      {
+        "id": "b",
+        "texto": "senα senβ+cosα cosβ"
+      },
+      {
+        "id": "c",
+        "texto": "senα cosβ+cosα senβ"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual é a imagem de sen x?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "ℝ"
+      },
+      {
+        "id": "b",
+        "texto": "[−1,1]"
+      },
+      {
+        "id": "c",
+        "texto": "(−1,1)"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Quanto vale −225° em radianos?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "−5π/4"
+      },
+      {
+        "id": "b",
+        "texto": "−4π/5"
+      },
+      {
+        "id": "c",
+        "texto": "−3π/4"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Quantas linhas e colunas tem uma matriz 2×3?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "3 linhas e 2 colunas"
+      },
+      {
+        "id": "b",
+        "texto": "6 linhas e 1 coluna"
+      },
+      {
+        "id": "c",
+        "texto": "2 linhas e 3 colunas"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Quando A+B está definida pela soma usual?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "Quando só têm o mesmo total de entradas"
+      },
+      {
+        "id": "b",
+        "texto": "Quando A e B têm a mesma dimensão"
+      },
+      {
+        "id": "c",
+        "texto": "Quando só têm o mesmo número de linhas"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Se A é 2×3 e B é 3×4, qual é a dimensão de AB?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "2×4"
+      },
+      {
+        "id": "b",
+        "texto": "3×3"
+      },
+      {
+        "id": "c",
+        "texto": "4×2"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "prompt": "Qual é det[[2,1],[3,4]]?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "11"
+      },
+      {
+        "id": "b",
+        "texto": "−5"
+      },
+      {
+        "id": "c",
+        "texto": "5"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "prompt": "Qual condição caracteriza invertibilidade de uma matriz quadrada real?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "detA=0"
+      },
+      {
+        "id": "b",
+        "texto": "detA≠0"
+      },
+      {
+        "id": "c",
+        "texto": "Todas as entradas não nulas"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "prompt": "Qual é o domínio real de 1/(x−1)?",
+    "alternatives": [
+      {
+        "id": "a",
+        "texto": "ℝ sem 1"
+      },
+      {
+        "id": "b",
+        "texto": "ℝ"
+      },
+      {
+        "id": "c",
+        "texto": "[1,∞)"
+      }
+    ],
+    "answer": "a"
+  }
+]

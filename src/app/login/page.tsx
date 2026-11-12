@@ -37,27 +37,25 @@ export default async function LoginPage({
 	const { error } = await searchParams;
 
 	return (
-		<div className="mx-auto flex min-h-svh w-full max-w-6xl flex-col px-4 sm:px-8">
-			<header className="flex items-center justify-between gap-4 py-5">
+		<div className="entry-world">
+			<header className="entry-top">
 				<TrilbitLogo />
 				<ThemeToggle />
 			</header>
 			<FeedbackViewport />
 
-			<main className="grid flex-1 items-center pb-12 md:pb-24">
-				<div className="ui-panel mx-auto grid w-full max-w-md overflow-hidden md:max-w-none md:grid-cols-2">
-					<section
-						aria-labelledby="login-title"
-						className="flex flex-col justify-center px-6 py-10 sm:p-10 lg:p-14"
-					>
+			<main className="entry-main">
+				<div className="entry-experience">
+					<section aria-labelledby="login-title" className="entry-form">
 						<h1
 							className="text-balance font-black text-3xl tracking-tight sm:text-4xl"
 							id="login-title"
 						>
-							Entre na sua trilha
+							Sua jornada começa aqui
 						</h1>
 						<p className="ui-muted mt-3 font-semibold leading-relaxed">
-							Use sua conta Google para acessar o trilbit.
+							Entre ou crie sua conta com o Google. O próximo passo da sua
+							jornada fica salvo aqui.
 						</p>
 
 						<form action={enterWithGoogle} className="mt-8">
@@ -87,7 +85,13 @@ export default async function LoginPage({
 						</Link>
 					</section>
 
-					<aside className="hidden flex-col justify-center bg-[var(--night)] p-8 text-[var(--on-night)] md:flex lg:p-10">
+					<aside className="entry-story">
+						<div aria-hidden="true" className="entry-route">
+							<span />
+							<span />
+							<span />
+							<span />
+						</div>
 						<Image
 							alt=""
 							className="mx-auto mb-3 h-auto w-full max-w-xs"

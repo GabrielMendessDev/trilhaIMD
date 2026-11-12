@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 21,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-21",
+      "titulo": "Polinômios: uma expressão com estrutura",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma equipe descreve o custo fictício de um projeto por 2x²+3x+5. Outra escreve 5+3x+2x². As duas planilhas estão discutindo a mesma coisa com a mobília em outra ordem. Vamos descobrir a estrutura que permanece."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Identificar coeficientes, termos e grau de um polinômio."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Potências inteiras e expressões algébricas da Unidade 1."
+              }
+            ],
+            "titulo": "Polinômios: uma expressão com estrutura",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um polinômio real em x é uma soma finita aₙxⁿ+…+a₁x+a₀, com expoentes inteiros não negativos e coeficientes reais. Se aₙ≠0, seu grau é n e aₙ é o coeficiente líder. Termos ausentes têm coeficiente zero. O polinômio nulo tem todos os coeficientes zero; seu grau fica indefinido nesta trilha."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Um polinômio é uma soma finita de coeficientes reais multiplicando potências inteiras não negativas.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "P(x)=aₙxⁿ+⋯+a₀"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o grau de 5−2x³+x?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "O maior expoente com coeficiente não nulo é 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "5"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Coeficientes são organizados pelas potências de x, não pela posição em que foram escritos. Dois polinômios são idênticos quando todos os coeficientes correspondentes coincidem. Igualdade em apenas um valor de x não garante identidade: x e x² coincidem em x=0 e x=1, mas diferem em x=2."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Identificar coeficientes, termos e grau de um polinômio.",
+                      "exemplo": "Em P(x)=4−2x³+x, ordene por grau: −2x³+0x²+x+4."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Para avaliar P(−1), substitua com parênteses: 4−2(−1)³+(−1)=4+2−1=5."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o coeficiente de x² em −2x³+x+4?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "O termo x² está ausente, portanto seu coeficiente é zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "−2"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Polinômios: uma expressão com estrutura",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Em P(x)=4−2x³+x, ordene por grau: −2x³+0x²+x+4."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O grau é 3; os coeficientes, do maior grau ao constante, são −2,0,1,4."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Para avaliar P(−1), substitua com parênteses: 4−2(−1)³+(−1)=4+2−1=5."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual expressão é polinomial em x?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "Coeficientes podem ser irracionais; expoentes precisam ser inteiros não negativos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "√x+1"
+              },
+              {
+                "id": "b",
+                "texto": "√2·x²+1"
+              },
+              {
+                "id": "c",
+                "texto": "1/x+1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o grau de 7?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "Uma constante não nula é 7x⁰.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "7"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "1/x=x⁻¹ e √x=x^(1/2) não são termos polinomiais em x. Já √2·x² é permitido: √2 é um coeficiente real. Se o coeficiente aparentemente líder zera por causa de um parâmetro, determine o grau olhando os termos restantes."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o grau do polinômio nulo nesta trilha?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "Não há maior expoente com coeficiente não nulo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "Indefinido"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se P(x)=x²−3x+2, quanto vale P(−1)?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "Substituindo: 1+3+2=6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−2"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Polinômios podem modelar áreas, tendências idealizadas e relações entre grandezas. O modelo não vale automaticamente para qualquer x: uma área exige medidas admissíveis. Descreva separadamente o grau algébrico e o domínio que o contexto permite."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se (a−2)x³+4x tem a=2, qual é o grau?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "O termo cúbico desaparece e resta 4x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se ax²+bx+1 é idêntico a 3x²−2x+1, qual é (a,b)?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "Compare coeficientes das mesmas potências.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−2,3)"
+              },
+              {
+                "id": "b",
+                "texto": "(3,2)"
+              },
+              {
+                "id": "c",
+                "texto": "(3,−2)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um polinômio real em x é uma soma finita aₙxⁿ+…+a₁x+a₀, com expoentes inteiros não negativos e coeficientes reais. Se aₙ≠0, seu grau é n e aₙ é o coeficiente líder. Termos ausentes têm coeficiente zero. O polinômio nulo tem todos os coeficientes zero; seu grau fica indefinido nesta trilha."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Para avaliar P(−1), substitua com parênteses: 4−2(−1)³+(−1)=4+2−1=5."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como identificar coeficientes, termos e grau de um polinômio. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "P(0)=Q(0) garante P=Q como polinômios?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "Polinômios diferentes podem coincidir num ponto; x e x² são um exemplo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só se os coeficientes forem inteiros"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o termo constante de 2x⁴−x+8?",
+            "assunto": "Polinômios: uma expressão com estrutura",
+            "orientacao": "Ordene por potências e insira coeficientes zero nos termos ausentes antes de ler o grau.",
+            "explicacao": "O termo constante multiplica x⁰ e não varia com x.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "−1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

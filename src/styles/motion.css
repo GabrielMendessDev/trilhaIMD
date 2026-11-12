@@ -1,0 +1,796 @@
+:root {
+	--motion-press: 110ms;
+	--motion-micro: 200ms;
+	--motion-enter: 340ms;
+	--motion-step: 440ms;
+	--motion-answer: 560ms;
+	--motion-reward: 1100ms;
+	--motion-stagger: 35ms;
+	--ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-exit: cubic-bezier(0.4, 0, 1, 1);
+	--ease-spring: cubic-bezier(0.22, 1.3, 0.36, 1);
+	--ease-settle: cubic-bezier(0.22, 0.61, 0.36, 1);
+	--ease-elevate: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lesson-transition,
+.completion-effects {
+	view-transition-name: learning-step;
+}
+.study-progress > span {
+	transform-origin: left center;
+	transition: none;
+}
+.answer-experience {
+	--answer-color: var(--accent);
+}
+.answer-experience[data-outcome="success"] {
+	--answer-color: var(--success-ink);
+}
+.answer-experience[data-outcome="error"] {
+	--answer-color: var(--warm-ink);
+}
+.animated-choice {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	padding: 0.8rem 1rem;
+	transition:
+		border-color var(--motion-micro),
+		background var(--motion-micro),
+		opacity var(--motion-micro),
+		box-shadow var(--motion-micro),
+		scale var(--motion-press) var(--ease-elevate);
+}
+.animated-choice > span:not(.choice-wave) {
+	position: relative;
+	z-index: 1;
+}
+.animated-choice:has(input:enabled):active {
+	scale: 0.985;
+}
+.animated-choice:has(input:disabled) {
+	cursor: default;
+}
+.choice-wave {
+	position: absolute;
+	left: var(--wave-x, 50%);
+	top: var(--wave-y, 50%);
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background: color-mix(in srgb, var(--accent) 18%, transparent);
+	opacity: 0;
+	translate: -50% -50%;
+	pointer-events: none;
+}
+.choice-mark {
+	display: none;
+	margin-inline-start: auto;
+	color: var(--answer-color);
+	flex: none;
+}
+.answer-experience:has(input:checked)
+	.animated-choice:not(:has(input:checked)) {
+	opacity: 0.72;
+}
+.answer-experience[data-outcome] .animated-choice:has(input:checked) {
+	border-color: var(--answer-color);
+	background: linear-gradient(
+		115deg,
+		color-mix(in srgb, var(--answer-color) 16%, var(--surface)),
+		var(--surface)
+	);
+	box-shadow:
+		0 5px 20px -13px var(--answer-color),
+		inset 0 1px 0 color-mix(in srgb, var(--answer-color) 28%, transparent);
+	color: var(--ink);
+}
+.answer-experience[data-outcome] input:checked {
+	accent-color: var(--answer-color);
+}
+.answer-experience[data-outcome="success"]
+	.animated-choice:has(input:checked)
+	.choice-correct,
+.answer-experience[data-outcome="error"]
+	.animated-choice:has(input:checked)
+	.choice-incorrect {
+	display: inline-flex;
+}
+.answer-reveal {
+	display: grid;
+	grid-template-rows: 1fr;
+	max-width: 48rem;
+}
+.answer-result {
+	position: relative;
+	min-height: 0;
+	overflow: hidden;
+	border-radius: var(--radius-card);
+	background: linear-gradient(
+		125deg,
+		color-mix(in srgb, var(--answer-color) 12%, var(--surface)),
+		var(--surface)
+	);
+	padding: clamp(1rem, 3vw, 1.5rem);
+	box-shadow: inset 0 0 0 1px
+		color-mix(in srgb, var(--answer-color) 42%, var(--line));
+}
+.answer-result > * + * {
+	margin-block-start: 1rem;
+}
+.answer-verdict {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.answer-verdict h2 {
+	color: var(--answer-color);
+	font-size: 1.5rem;
+	font-weight: 800;
+	line-height: 1.4;
+	outline-offset: 5px;
+}
+.answer-caption {
+	color: var(--muted);
+	font-size: 0.875rem;
+	margin-block-start: 0.2rem;
+}
+.answer-emblem {
+	position: relative;
+	display: grid;
+	flex: none;
+	place-items: center;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	color: var(--answer-color);
+	background: color-mix(in srgb, var(--answer-color) 16%, var(--surface));
+	box-shadow:
+		inset 0 1px 0 color-mix(in srgb, var(--answer-color) 30%, transparent),
+		0 5px 12px -9px var(--answer-color);
+}
+.answer-emblem > svg {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+.answer-ring {
+	position: absolute;
+	inset: 0;
+	border: 1px solid var(--answer-color);
+	border-radius: 50%;
+	opacity: 0;
+	pointer-events: none;
+}
+.answer-guidance {
+	display: flex;
+	gap: 0.6rem;
+	font-weight: 650;
+}
+.answer-guidance > svg {
+	margin-block-start: 0.15rem;
+	color: var(--answer-color);
+}
+.answer-solution h3,
+.answer-example summary {
+	font-weight: 750;
+}
+.answer-solution ul {
+	display: grid;
+	gap: 0.5rem;
+	margin-block-start: 0.5rem;
+}
+.answer-example > div {
+	margin-block-start: 1rem;
+}
+.answer-continue {
+	width: fit-content;
+}
+.answer-particles {
+	position: absolute;
+	left: 1.5rem;
+	top: 1.5rem;
+	pointer-events: none;
+}
+.answer-particles i {
+	position: absolute;
+	width: 0.3rem;
+	height: 0.3rem;
+	background: var(--answer-color);
+	border-radius: 50%;
+	opacity: 0;
+	--px: -28px;
+	--py: -28px;
+}
+.answer-particles i:nth-child(2) {
+	--px: 0px;
+	--py: -40px;
+}
+.answer-particles i:nth-child(3) {
+	--px: 29px;
+	--py: -25px;
+}
+.answer-particles i:nth-child(4) {
+	--px: 38px;
+	--py: 12px;
+}
+.answer-particles i:nth-child(5) {
+	--px: 5px;
+	--py: 34px;
+}
+.answer-particles i:nth-child(6) {
+	--px: -34px;
+	--py: 15px;
+}
+.learning-diagram svg {
+	overflow: visible;
+}
+.learning-diagram svg g {
+	transform-box: fill-box;
+	transform-origin: center;
+}
+.sidebar-motion {
+	position: relative;
+}
+.sidebar-motion a {
+	position: relative;
+	z-index: 1;
+}
+.sidebar-indicator {
+	position: absolute;
+	inset-inline-start: 0;
+	inset-block-start: 0;
+	width: 3px;
+	border-radius: var(--radius-pill);
+	background: var(--lavender);
+	box-shadow: 2px 0 10px -2px var(--accent);
+	pointer-events: none;
+}
+.completion-effects {
+	position: relative;
+}
+.completion-effects > section {
+	position: relative;
+	isolation: isolate;
+}
+.completion-effects > section::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	border-radius: inherit;
+	background: radial-gradient(
+		ellipse at 25% 5%,
+		color-mix(in srgb, var(--accent) 15%, transparent),
+		transparent 65%
+	);
+	opacity: 0;
+	pointer-events: none;
+}
+.completion-medal {
+	position: relative;
+	border-radius: 50%;
+	box-shadow: 0 5px 20px -9px var(--reward-ink);
+}
+.completion-next {
+	color: var(--success-ink);
+	font-weight: 650;
+}
+.completion-medallion {
+	position: relative;
+	display: inline-grid;
+	width: 2.6rem;
+	height: 2.6rem;
+	margin-inline-end: 0.55rem;
+	place-items: center;
+	vertical-align: middle;
+	border-radius: 50%;
+	background: color-mix(in srgb, var(--reward-ink) 12%, var(--surface));
+	box-shadow:
+		inset 0 1px 0 color-mix(in srgb, var(--reward-ink) 30%, transparent),
+		0 5px 16px -10px var(--reward-ink);
+}
+.completion-medallion .completion-medal {
+	margin: 0;
+}
+.completion-ring {
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	border: 1px solid var(--reward-ink);
+	opacity: 0;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.ui-button:not(:disabled):not([aria-disabled="true"]):hover {
+		translate: 0 -2px;
+		box-shadow: 0 7px 20px -12px var(--accent);
+	}
+	.ui-button:not(:disabled):active {
+		translate: 0 0;
+		scale: 0.975;
+	}
+	.ui-button {
+		transition:
+			translate var(--motion-micro) var(--ease-elevate),
+			scale var(--motion-press),
+			box-shadow var(--motion-micro),
+			background-color var(--motion-micro);
+	}
+	.animated-choice:has(input:enabled:checked) .choice-wave {
+		animation: choice-wave var(--motion-answer) var(--ease-enter) both;
+	}
+	.lesson-transition .animated-choice {
+		animation: choice-enter var(--motion-enter) var(--ease-enter) backwards;
+	}
+	.lesson-transition .animated-choice:nth-of-type(2) {
+		animation-delay: var(--motion-stagger);
+	}
+	.lesson-transition .animated-choice:nth-of-type(3) {
+		animation-delay: calc(var(--motion-stagger) * 2);
+	}
+	.lesson-transition .animated-choice:nth-of-type(n + 4) {
+		animation-delay: calc(var(--motion-stagger) * 3);
+	}
+	.answer-experience[data-animate] .answer-reveal {
+		animation: panel-reveal var(--motion-step) var(--ease-enter) both;
+	}
+	.answer-experience[data-animate] .answer-emblem {
+		animation: emblem-confirm var(--motion-answer) var(--ease-spring) both;
+	}
+	.answer-experience[data-animate] .answer-ring {
+		animation: ring-expand var(--motion-answer) var(--ease-settle) both;
+	}
+	.answer-experience[data-animate] .answer-emblem path,
+	.answer-experience[data-animate]
+		.animated-choice:has(input:checked)
+		.choice-mark
+		path {
+		stroke-dasharray: 1;
+		animation: mark-draw var(--motion-enter) var(--ease-settle) both;
+	}
+	.answer-experience[data-animate][data-outcome="success"]
+		.animated-choice:has(input:checked) {
+		animation: answer-confirm var(--motion-answer) var(--ease-settle) both;
+	}
+	.answer-experience[data-animate][data-outcome="error"]
+		.animated-choice:has(input:checked) {
+		animation: answer-reconsider var(--motion-answer) var(--ease-settle) both;
+	}
+	.answer-experience[data-animate] .answer-continue {
+		animation: continue-reveal var(--motion-enter) var(--ease-enter) 100ms
+			backwards;
+	}
+	.answer-experience[data-animate] .answer-particles i {
+		animation: answer-particle var(--motion-answer) var(--ease-settle) 70ms both;
+	}
+	.lesson-transition {
+		animation: step-enter var(--motion-step) var(--ease-enter) both;
+	}
+	.lesson-transition[data-step-kind="explanation"] {
+		animation-name: explanation-enter;
+	}
+	.lesson-transition[data-step-kind="review"] {
+		animation-name: review-enter;
+	}
+	.lesson-transition h2 {
+		animation: heading-enter var(--motion-enter) var(--ease-enter) both;
+	}
+	.learning-diagram svg g,
+	.learning-diagram svg > circle,
+	.learning-diagram dl > div {
+		animation: diagram-layer var(--motion-step) var(--ease-enter) backwards;
+	}
+	.learning-diagram svg g:nth-of-type(2),
+	.learning-diagram svg > circle:nth-of-type(2),
+	.learning-diagram dl > div:nth-child(2) {
+		animation-delay: 100ms;
+	}
+	.learning-diagram svg g:nth-of-type(3),
+	.learning-diagram dl > div:nth-child(3) {
+		animation-delay: 180ms;
+	}
+	.learning-diagram svg g:nth-of-type(n + 4),
+	.learning-diagram dl > div:nth-child(n + 4) {
+		animation-delay: 260ms;
+	}
+	.learning-diagram svg > path {
+		stroke-dasharray: 1000;
+		animation: diagram-line var(--motion-answer) var(--ease-settle) both;
+	}
+	.learning-formula {
+		animation: formula-reveal var(--motion-answer) var(--ease-enter) both;
+	}
+	.completion-effects[data-celebrate] > section::before {
+		animation: result-light var(--motion-reward) var(--ease-settle) both;
+	}
+	.completion-effects[data-celebrate] .completion-medal {
+		animation: reward-medal 800ms var(--ease-spring) both;
+	}
+	.completion-effects[data-celebrate] .completion-ring {
+		animation: ring-expand 800ms var(--ease-settle) both;
+	}
+	.completion-effects[data-celebrate] .study-progress > span {
+		animation: progress-fill var(--motion-reward) var(--ease-settle) both;
+	}
+	.completion-effects[data-celebrate] h2 {
+		animation: continue-reveal var(--motion-step) var(--ease-enter) 90ms
+			backwards;
+	}
+	.completion-effects[data-celebrate] dl > div {
+		animation: continue-reveal var(--motion-step) var(--ease-enter) 160ms
+			backwards;
+	}
+	.completion-effects[data-celebrate] dl > div:nth-child(2) {
+		animation-delay: 230ms;
+	}
+	.completion-effects[data-celebrate] dl > div:nth-child(3) {
+		animation-delay: 300ms;
+	}
+	.completion-effects[data-celebrate] dl > div:nth-child(4) {
+		animation-delay: 370ms;
+	}
+	.completion-effects[data-celebrate] .ui-button {
+		animation: continue-reveal var(--motion-step) var(--ease-enter) 300ms
+			backwards;
+	}
+	.completion-effects[data-celebrate] .earned-awards li {
+		animation: reward-medal 650ms var(--ease-spring) 200ms backwards;
+	}
+	[data-trail-node] button[data-state="current"] {
+		animation: trail-ready 3200ms var(--ease-settle) 2;
+	}
+	[data-trail-node][data-just-completed] button svg {
+		animation: emblem-confirm var(--motion-answer) var(--ease-spring) both;
+	}
+	[data-trail-segment][data-energize] {
+		stroke-dasharray: 1;
+		animation: trail-energy 700ms var(--ease-settle) 180ms both;
+	}
+	[data-trail-node][data-unlocked] button {
+		animation: trail-unlock 900ms var(--ease-spring) 700ms both;
+	}
+	.reward-balance[data-reward] {
+		animation: reward-pulse var(--motion-answer) var(--ease-settle) both;
+	}
+	.streak-balance[data-reward] svg {
+		animation: flame-update var(--motion-answer) var(--ease-spring) both;
+	}
+	.sidebar-motion a:hover > svg {
+		rotate: -5deg;
+		scale: 1.08;
+		transition:
+			rotate var(--motion-micro),
+			scale var(--motion-micro);
+	}
+	.bito-rest {
+		animation: bito-breathe 6s var(--ease-settle) 2s 2;
+	}
+	.profile-menu::details-content {
+		opacity: 0;
+		translate: 0 -0.3rem;
+		transition:
+			opacity var(--motion-micro),
+			translate var(--motion-micro),
+			content-visibility var(--motion-micro) allow-discrete;
+	}
+	.profile-menu[open]::details-content {
+		opacity: 1;
+		translate: 0 0;
+	}
+	@starting-style {
+		.profile-menu[open]::details-content {
+			opacity: 0;
+			translate: 0 -0.3rem;
+		}
+	}
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none;
+	}
+	::view-transition-group(learning-step) {
+		animation-duration: var(--motion-step);
+		animation-timing-function: var(--ease-enter);
+	}
+	::view-transition-old(learning-step) {
+		animation: step-exit var(--motion-enter) var(--ease-exit) both;
+	}
+	::view-transition-new(learning-step) {
+		animation: step-enter var(--motion-step) var(--ease-enter) both;
+	}
+	:root[data-learning-direction="back"]::view-transition-old(learning-step) {
+		animation-name: step-exit-back;
+	}
+	:root[data-learning-direction="back"]::view-transition-new(learning-step) {
+		animation-name: step-enter-back;
+	}
+	/* biome-ignore format: Turbopack rejects whitespace around this view-transition name. */
+	:root:has([data-step-kind="explanation"])::view-transition-new(learning-step) {
+		animation-name: explanation-enter;
+	}
+	:root:has([data-step-kind="review"])::view-transition-new(learning-step) {
+		animation-name: review-enter;
+	}
+	:root:has(.completion-effects)::view-transition-new(learning-step) {
+		animation-name: result-enter;
+	}
+}
+
+@keyframes choice-wave {
+	0% {
+		opacity: 0.7;
+		scale: 0.3;
+	}
+	100% {
+		opacity: 0;
+		scale: 16;
+	}
+}
+@keyframes choice-enter {
+	from {
+		opacity: 0.45;
+		transform: translateY(6px);
+	}
+}
+@keyframes panel-reveal {
+	from {
+		grid-template-rows: 0fr;
+		opacity: 0.4;
+		transform: translateY(-5px);
+	}
+}
+@keyframes emblem-confirm {
+	from {
+		scale: 0.72;
+		rotate: -10deg;
+	}
+	60% {
+		scale: 1.07;
+		rotate: 2deg;
+	}
+}
+@keyframes ring-expand {
+	0% {
+		opacity: 0.5;
+		scale: 0.8;
+	}
+	100% {
+		opacity: 0;
+		scale: 1.7;
+	}
+}
+@keyframes mark-draw {
+	from {
+		stroke-dashoffset: 1;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes answer-confirm {
+	40% {
+		box-shadow:
+			0 6px 24px -10px var(--answer-color),
+			inset 0 0 0 1px var(--answer-color);
+		scale: 1.008;
+	}
+}
+@keyframes answer-reconsider {
+	20% {
+		translate: -3px;
+	}
+	40% {
+		translate: 3px;
+	}
+	65% {
+		translate: -1px;
+	}
+	85% {
+		translate: 0;
+	}
+}
+@keyframes continue-reveal {
+	from {
+		opacity: 0.25;
+		transform: translateY(8px);
+	}
+}
+@keyframes answer-particle {
+	0% {
+		opacity: 0;
+		transform: translate(0, 0) scale(0.5);
+	}
+	20% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(var(--px), var(--py)) scale(0.3);
+	}
+}
+@keyframes step-enter {
+	from {
+		opacity: 0.25;
+		transform: translateX(22px);
+	}
+}
+@keyframes step-exit {
+	to {
+		opacity: 0;
+		transform: translateX(-16px) scale(0.99);
+	}
+}
+@keyframes step-enter-back {
+	from {
+		opacity: 0.25;
+		transform: translateX(-22px);
+	}
+}
+@keyframes step-exit-back {
+	to {
+		opacity: 0;
+		transform: translateX(16px) scale(0.99);
+	}
+}
+@keyframes explanation-enter {
+	from {
+		opacity: 0.4;
+		transform: translateY(14px);
+	}
+}
+@keyframes review-enter {
+	from {
+		opacity: 0.3;
+		transform: translateY(10px) scale(0.985);
+	}
+}
+@keyframes result-enter {
+	from {
+		opacity: 0.3;
+		transform: translateY(12px) scale(0.97);
+	}
+}
+@keyframes heading-enter {
+	from {
+		opacity: 0.65;
+		transform: translateY(3px);
+	}
+}
+@keyframes diagram-layer {
+	from {
+		opacity: 0.2;
+		transform: translateY(5px);
+	}
+}
+@keyframes diagram-line {
+	from {
+		stroke-dashoffset: 1000;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes formula-reveal {
+	from {
+		opacity: 0.4;
+		clip-path: inset(0 25% 0 0);
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0);
+	}
+}
+@keyframes reward-medal {
+	from {
+		scale: 0.55;
+		rotate: -15deg;
+	}
+	55% {
+		scale: 1.16;
+		rotate: 4deg;
+	}
+	100% {
+		scale: 1;
+		rotate: 0deg;
+	}
+}
+@keyframes progress-fill {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+@keyframes result-light {
+	25% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+@keyframes trail-ready {
+	50% {
+		box-shadow:
+			var(--rim-light),
+			0 7px 25px -9px var(--accent);
+	}
+}
+@keyframes trail-energy {
+	from {
+		stroke-dashoffset: 1;
+		opacity: 0.3;
+		stroke: var(--accent);
+	}
+	70% {
+		stroke: var(--accent);
+	}
+	to {
+		stroke-dashoffset: 0;
+		opacity: 1;
+		stroke: var(--mint);
+	}
+}
+@keyframes trail-unlock {
+	0% {
+		scale: 0.92;
+	}
+	35% {
+		scale: 1.12;
+		box-shadow: 0 6px 30px -7px var(--accent);
+	}
+	100% {
+		scale: 1;
+	}
+}
+@keyframes flame-update {
+	30% {
+		scale: 1.2;
+		rotate: -8deg;
+	}
+	70% {
+		rotate: 5deg;
+	}
+}
+@keyframes bito-breathe {
+	50% {
+		translate: 0 -2px;
+		rotate: 0.4deg;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lesson-transition,
+	.completion-effects,
+	.answer-experience *,
+	.learning-diagram *,
+	.learning-formula,
+	[data-trail-node] *,
+	[data-trail-segment],
+	.reward-balance,
+	.streak-balance *,
+	.bito-rest {
+		/* biome-ignore lint/complexity/noImportantStyles: Accessibility preference overrides component choreography. */
+		animation: none !important;
+		/* biome-ignore lint/complexity/noImportantStyles: Accessibility preference overrides component transitions. */
+		transition: none !important;
+	}
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		/* biome-ignore lint/complexity/noImportantStyles: Accessibility preference overrides browser snapshot animations. */
+		animation: none !important;
+	}
+	.ui-button,
+	.profile-menu::details-content {
+		transition: none;
+	}
+	.ui-button:hover,
+	.ui-button:active {
+		translate: none;
+		scale: none;
+	}
+}

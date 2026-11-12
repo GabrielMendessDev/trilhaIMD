@@ -1,100 +1,180 @@
+import Image from "next/image";
 import { ActionButton } from "~/app/_components/action-button";
 import Link from "~/app/_components/action-link";
 import {
 	DashboardLayout,
 	Icon,
 	PageHeading,
+	ProgressBar,
 } from "~/app/_components/dashboard";
+import { RpgIcon } from "~/app/_components/rpg-icon";
 import { ThemeToggle } from "~/app/_components/theme-toggle";
 import { auth, signOut } from "~/server/auth";
-
+import { getLearningProgress } from "~/server/learning";
 export default async function PerfilPage() {
 	const user = (await auth())?.user;
-	const name = user?.name || (user ? "Minha conta" : "Visitante");
-
+	const progress = user ? await getLearningProgress(user.id) : null;
+	const equipped = progress?.rpg.inventory.filter((i) => i.equipped) ?? [];
+	const level = progress?.rpg.level;
 	return (
 		<DashboardLayout active="/perfil">
-			<div className="ui-page">
+			<div className="ui-page profile-page">
 				<PageHeading
-					description="Gerencie sua conta e personalize sua área de estudo."
-					title="Perfil"
+					description="A jornada tem a sua cara. Veja seus marcos e organize seus recursos."
+					title="Seu perfil de explorador"
 				/>
-				<section className="ui-panel flex flex-wrap items-center gap-4 p-5 sm:p-7">
-					<span className="ui-icon size-14 font-extrabold text-xl">
-						{user ? (
-							Array.from(name)[0]?.toUpperCase()
+				<section className="explorer-profile">
+					<span
+						className="explorer-avatar"
+						data-arcane={
+							equipped.some((i) => i.id === "arcane-frame") || undefined
+						}
+					>
+						{user?.image?.startsWith("https://") ? (
+							<Image
+								alt=""
+								height={88}
+								src={user.image}
+								unoptimized
+								width={88}
+							/>
 						) : (
-							<Icon className="size-6" name="profile" />
+							<Icon className="size-10" name="profile" />
 						)}
 					</span>
-					<div className="min-w-0 flex-1 [overflow-wrap:anywhere]">
-						<h2 className="font-extrabold text-lg">{name}</h2>
-						<p className="ui-muted mt-1 text-sm">
-							{user
-								? (user.email ?? "Conta Google")
-								: "Acesse com sua conta Google."}
+					<div>
+						<h2>{user?.name ?? "Sua próxima aventura espera"}</h2>
+						<p>
+							{user?.email ??
+								(user
+									? "Sua conta Trilbit"
+									: "Entre para guardar seu progresso, seus itens e suas conquistas.")}
 						</p>
+						{level && (
+							<span>
+								Nível {level.level} · {progress?.xp} XP
+							</span>
+						)}
 					</div>
-					{user ? (
-						<form
-							action={async () => {
-								"use server";
-								await signOut({ redirectTo: "/login" });
-							}}
-						>
-							<ActionButton
-								busyLabel="Saindo…"
-								className="ui-button"
-								data-variant="secondary"
-								type="submit"
-							>
-								Sair da conta
-							</ActionButton>
-						</form>
-					) : (
+					{!user && (
 						<Link className="ui-button" href="/login">
-							Entrar com o Google
+							Entrar com Google
 						</Link>
 					)}
 				</section>
-
-				<div className="mt-4 grid gap-4 min-[720px]:grid-cols-2">
-					<section className="ui-panel p-5 sm:p-7">
-						<h2 className="font-extrabold text-xl">
-							Progresso nas disciplinas
-						</h2>
-						<p className="ui-muted mt-2 max-w-prose text-sm">
-							Veja as etapas concluídas, o XP acumulado e sua ofensiva.
-						</p>
-						<Link
-							className="ui-link mt-4 inline-flex min-h-11 items-center gap-2 text-sm"
-							href="/progresso"
-						>
-							Ver progresso <Icon className="size-4" name="arrow" />
+				{progress && level && (
+					<>
+						<div className="profile-level">
+							<ProgressBar
+								label="Evolução de nível"
+								value={
+									((progress.xp - level.start) / (level.next - level.start)) *
+									100
+								}
+							/>
+							<span>{level.next - progress.xp} XP para o próximo nível</span>
+						</div>
+						<dl className="profile-stats">
+							<div>
+								<dt>Bits</dt>
+								<dd>
+									<RpgIcon name="bits" />
+									{progress.rpg.bits}
+								</dd>
+							</div>
+							<div>
+								<dt>Ofensiva</dt>
+								<dd>
+									<Icon className="size-5" name="fire" />
+									{progress.streak} {progress.streak === 1 ? "dia" : "dias"}
+								</dd>
+							</div>
+							<div>
+								<dt>Lições</dt>
+								<dd>{progress.done.length}</dd>
+							</div>
+							<div>
+								<dt>Conquistas</dt>
+								<dd>
+									{progress.rpg.achievements.filter((a) => a.unlockedAt).length}
+									/41
+								</dd>
+							</div>
+						</dl>
+					</>
+				)}
+				<div className="profile-columns">
+					<section className="profile-equipment">
+						<h2>Equipamentos da jornada</h2>
+						{equipped.length ? (
+							<ul>
+								{equipped.map((i) => (
+									<li data-rarity={i.rarity} key={i.id}>
+										<RpgIcon name={i.id} />
+										<div>
+											<strong>{i.name}</strong>
+											<small>Equipado</small>
+										</div>
+									</li>
+								))}
+							</ul>
+						) : (
+							<p>Os cosméticos que você equipar na Mochila aparecem aqui.</p>
+						)}
+						<Link className="ui-link" href="/mochila">
+							Organizar Mochila <Icon className="size-4" name="arrow" />
 						</Link>
 					</section>
-					<section className="ui-panel p-5 sm:p-7">
-						<h2 className="font-extrabold text-xl">Aparência</h2>
-						<p className="ui-muted mt-2 mb-4 text-sm">
-							A preferência de tema fica salva neste dispositivo.
-						</p>
+					<section className="profile-preferences">
+						<h2>Seu jeito de estudar</h2>
+						<p>Escolha o tema mais confortável para este dispositivo.</p>
 						<ThemeToggle withLabel />
+						<p className="motion-preference">
+							O movimento acompanha a preferência de acessibilidade do seu
+							dispositivo.
+						</p>
 					</section>
 				</div>
-				<nav
-					aria-label="Outras áreas"
-					className="mt-5 flex flex-wrap gap-4 text-sm"
-				>
-					<Link className="ui-link" href="/ranking">
-						Ranking
+				<nav aria-label="Recursos do perfil" className="profile-destinations">
+					<Link href="/progresso">
+						<Icon className="size-5" name="chart" />
+						Minha evolução
+						<Icon className="size-4" name="arrow" />
 					</Link>
-					<Link className="ui-link" href="/loja">
-						Loja
+					<Link href="/conquistas">
+						<Icon className="size-5" name="trophy" />
+						Minhas conquistas
+						<Icon className="size-4" name="arrow" />
 					</Link>
-					<Link className="ui-link" href="/missoes">
-						Missões diárias
+					<Link href="/loja">
+						<Icon className="size-5" name="shop" />
+						Loja do Bito
+						<Icon className="size-4" name="arrow" />
+					</Link>
+					<Link href="/missoes">
+						<Icon className="size-5" name="quests" />
+						Missões de hoje
+						<Icon className="size-4" name="arrow" />
 					</Link>
 				</nav>
+				{user && (
+					<form
+						action={async () => {
+							"use server";
+							await signOut({ redirectTo: "/login" });
+						}}
+						className="profile-signout"
+					>
+						<ActionButton
+							busyLabel="Saindo…"
+							className="ui-button"
+							data-variant="secondary"
+							type="submit"
+						>
+							Sair da conta
+						</ActionButton>
+					</form>
+				)}
 			</div>
 		</DashboardLayout>
 	);

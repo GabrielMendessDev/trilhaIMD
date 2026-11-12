@@ -1,6 +1,14 @@
 export type TrailId = "elementar" | "combinatoria" | "calculo" | "fmc" | "vga";
 
-export function stageChallenge(stage: number) {
+export function trailUnit(trail: TrailId, stage: number) {
+	return trail === "elementar" ? Math.ceil(stage / 20) : 1;
+}
+
+export function stageChallenge(stage: number, trail?: TrailId) {
+	if (trail === "elementar") {
+		if (stage % 20 === 0) return "Missão da unidade";
+		return;
+	}
 	if (stage === 10) return "Desafio final";
 	if (stage === 5) return "Desafio";
 }
@@ -35,7 +43,10 @@ export const trails = [
 		description: "Explore a base para trabalhar com números e expressões.",
 		diagramTitle: "Reta numérica",
 		diagramCaption: "Na reta, a posição mostra a ordem dos números.",
-		positions: [38, 51, 68, 61, 40, 27, 40, 60, 67, 50],
+		positions: Array.from(
+			{ length: 60 },
+			(_, index) => [38, 51, 68, 61, 40, 27, 40, 60, 67, 50][index % 10] ?? 50,
+		),
 		connection: "curve",
 	},
 	{
@@ -61,7 +72,7 @@ export const trails = [
 		diagramTitle: "Curva e tangente",
 		diagramCaption:
 			"A inclinação da tangente mostra a taxa de variação naquele ponto.",
-		positions: [24, 25, 27, 32, 40, 49, 58, 66, 72, 76],
+		positions: [35, 50, 65, 55, 38, 28, 42, 59, 68, 50],
 		connection: "curve",
 	},
 	{

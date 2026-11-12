@@ -1,68 +1,31 @@
 import Link from "~/app/_components/action-link";
+import { DailyMissions } from "~/app/_components/daily-missions";
 import {
 	DashboardLayout,
 	Icon,
 	PageHeading,
 } from "~/app/_components/dashboard";
-
-const milestones = [
-	{
-		title: "Primeiro passo",
-		description: "Concluir a primeira lição.",
-		icon: "star",
-	},
-	{
-		title: "Ritmo constante",
-		description: "Estudar por três dias seguidos.",
-		icon: "fire",
-	},
-	{ title: "Mente afiada", description: "Acertar 25 questões.", icon: "bolt" },
-] as const;
-
-export default function MissoesPage() {
+import { auth } from "~/server/auth";
+import { getStudyInsights } from "~/server/study-insights";
+export const metadata = { title: "Missões de hoje" };
+export default async function MissoesPage() {
+	const user = (await auth())?.user;
+	const insights = user ? await getStudyInsights(user.id) : null;
 	return (
 		<DashboardLayout active="/conquistas">
-			<div className="ui-page">
+			<div className="ui-page missions-page">
 				<PageHeading
-					description="Conheça os marcos de estudo previstos para as trilhas."
-					title="Missões e conquistas"
+					description="Faça um pouco hoje. Seu progresso é salvo enquanto você aprende."
+					title="Pequenas metas. Novas descobertas."
 				/>
-				<section className="ui-panel p-5 sm:p-7">
-					<div className="flex flex-wrap items-center justify-between gap-3">
-						<div>
-							<h2 className="font-extrabold text-xl">
-								Missões diárias em preparação
-							</h2>
-							<p className="ui-muted mt-2 text-sm">
-								Os objetivos e as recompensas vão aparecer aqui quando forem
-								ativados.
-							</p>
-						</div>
-						<Link
-							className="ui-button"
-							data-variant="secondary"
-							href="/aprender"
-						>
-							Ver trilhas
-						</Link>
-					</div>
-				</section>
-				<section aria-labelledby="achievements-title" className="mt-7">
-					<h2 className="mb-3 font-extrabold text-xl" id="achievements-title">
-						Prévia das conquistas
-					</h2>
-					<div className="grid gap-3 min-[640px]:grid-cols-3">
-						{milestones.map(({ title, description, icon }) => (
-							<article className="ui-panel p-4 sm:p-5" key={title}>
-								<span className="ui-icon">
-									<Icon className="size-5" name={icon} />
-								</span>
-								<h3 className="mt-3 font-extrabold">{title}</h3>
-								<p className="ui-muted mt-1 text-sm">{description}</p>
-							</article>
-						))}
-					</div>
-				</section>
+				<DailyMissions daily={insights?.daily ?? null} />
+				<Link className="ui-button" href={user ? "/aprender" : "/login"}>
+					{user ? "Continuar estudando" : "Entrar para acompanhar"}
+					<Icon className="size-4" name="arrow" />
+				</Link>
+				<Link className="ui-link" href="/conquistas">
+					Explorar conquistas
+				</Link>
 			</div>
 		</DashboardLayout>
 	);

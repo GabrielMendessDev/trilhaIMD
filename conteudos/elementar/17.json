@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 17,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-17",
+      "titulo": "A régua dos sinais",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um produto fica positivo quando seus dois fatores são negativos. Isso pode parecer uma conspiração até você olhar cada intervalo. A missão é montar uma régua em que nenhuma troca de sinal aconteça escondida."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Construir e justificar tabelas de sinais de produtos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Fatoração e inequações lineares (passos 13 e 16)."
+              }
+            ],
+            "titulo": "A régua dos sinais",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para estudar um produto, encontre os zeros dos fatores e divida a reta nesses pontos. Em cada intervalo sem zeros, fatores lineares mantêm o sinal. Um produto é positivo com um número par de fatores negativos e negativo com um número ímpar. Nas desigualdades ≥ ou ≤, zeros do produto podem entrar se a expressão estiver definida."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Um produto de dois fatores lineares com raízes r e s ordenadas é não positivo entre as raízes, incluindo os extremos.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "(x−r)(x−s)≤0, r<s ⇒ x∈[r,s]"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−1)(x−3)≤0?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "O produto é negativo entre as raízes e zero nos extremos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(1,3)"
+              },
+              {
+                "id": "b",
+                "texto": "[1,3]"
+              },
+              {
+                "id": "c",
+                "texto": "(−∞,1]∪[3,∞)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O fator x−a é negativo antes de a e positivo depois de a. Uma raiz de multiplicidade ímpar provoca troca de sinal; de multiplicidade par não provoca. Isso explica o comportamento de (x−a)²: nunca é negativo. Não basta alternar sinais mecanicamente sem observar multiplicidades."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/sinais.svg",
+                "alt": "Produto (x−1)(x−3): sinal positivo antes de 1, negativo entre 1 e 3, positivo depois de 3; zero em 1 e 3.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Produto (x−1)(x−3): sinal positivo antes de 1, negativo entre 1 e 3, positivo depois de 3; zero em 1 e 3.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−1)(x−3)>0?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "O produto é positivo fora das raízes, que não entram na desigualdade estrita.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,1)∪(3,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "(1,3)"
+              },
+              {
+                "id": "c",
+                "texto": "[1,3]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · A régua dos sinais",
+            "assunto": "A régua dos sinais",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva (x−1)(x−3)≤0. Os pontos críticos são 1 e 3; eles dividem a reta em três intervalos."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Antes de 1, ambos os fatores são negativos: produto positivo. Entre 1 e 3, os sinais são + e −: produto negativo. Depois de 3: ambos positivos."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Escolhemos o intervalo central e incluímos os zeros, pois ≤ aceita igualdade. S=[1,3]. Testar x=2 confirma o produto −1."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal de (x−1)(x−3) em x=2?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "Os fatores valem 1 e −1, com produto −1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Positivo"
+              },
+              {
+                "id": "b",
+                "texto": "Zero"
+              },
+              {
+                "id": "c",
+                "texto": "Negativo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em x<1, quais são os sinais de x−1 e x−3?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "Um número menor que 1 também é menor que 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Um positivo e outro negativo"
+              },
+              {
+                "id": "b",
+                "texto": "Ambos negativos"
+              },
+              {
+                "id": "c",
+                "texto": "Ambos positivos"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "‘O produto é negativo, então os dois fatores são negativos’ está errado: dois negativos produzem positivo. E uma raiz dupla pode apenas encostar no zero. Em (x−2)²>0, todos os reais servem exceto 2; não há intervalo negativo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−2)²>0?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "O quadrado só deixa de ser positivo em x=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ sem 2"
+              },
+              {
+                "id": "b",
+                "texto": "x>2"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−2)²<0?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "Um quadrado real nunca é negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x<2"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ sem 2"
+              },
+              {
+                "id": "c",
+                "texto": "∅"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma tabela de sinais é um argumento sobre intervalos inteiros, não só sobre números testados. Justifique por que não há novos zeros dentro de cada intervalo. Depois escreva a solução em frase e em notação de conjuntos: duas formas de detectar um extremo esquecido."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ao atravessar uma raiz dupla, o sinal necessariamente muda?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "Multiplicidade par mantém o sinal dos fatores restantes no entorno.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só se a raiz for positiva"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de x(x−2)≥0?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "Os dois fatores têm o mesmo sinal fora do intervalo entre as raízes; os zeros entram.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,0]∪[2,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[0,2]"
+              },
+              {
+                "id": "c",
+                "texto": "(0,2)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para estudar um produto, encontre os zeros dos fatores e divida a reta nesses pontos. Em cada intervalo sem zeros, fatores lineares mantêm o sinal. Um produto é positivo com um número par de fatores negativos e negativo com um número ímpar. Nas desigualdades ≥ ou ≤, zeros do produto podem entrar se a expressão estiver definida."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Escolhemos o intervalo central e incluímos os zeros, pois ≤ aceita igualdade. S=[1,3]. Testar x=2 confirma o produto −1."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como construir e justificar tabelas de sinais de produtos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Um produto de três fatores estritamente negativos tem que sinal?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "Três é uma quantidade ímpar de sinais negativos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Positivo"
+              },
+              {
+                "id": "b",
+                "texto": "Zero"
+              },
+              {
+                "id": "c",
+                "texto": "Negativo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual justificativa permite escolher um teste por intervalo para fatores lineares?",
+            "assunto": "A régua dos sinais",
+            "orientacao": "Ordene os zeros, determine o sinal em cada intervalo e confira se a igualdade foi permitida.",
+            "explicacao": "A análise depende de termos identificado todos os pontos onde o sinal pode mudar.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todos os intervalos têm o mesmo sinal"
+              },
+              {
+                "id": "b",
+                "texto": "Cada fator só muda de sinal no seu zero"
+              },
+              {
+                "id": "c",
+                "texto": "Um único teste prova qualquer função positiva"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

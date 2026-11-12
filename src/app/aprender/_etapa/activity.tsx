@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { Icon } from "~/app/_components/icon";
 import {
 	Association,
 	MultipleChoice,
@@ -111,8 +112,26 @@ export function ActivityPanel({
 	const controls = renderControls(activity, response);
 
 	return (
-		<section aria-labelledby={id} className={styles.panel}>
-			<h2 id={id}>{activity.title || format?.label}</h2>
+		<section
+			aria-labelledby={id}
+			className={`${styles.panel} learning-panel`}
+			data-activity-kind={activity.kind}
+		>
+			<h2 id={id}>
+				<span aria-hidden="true" className="panel-glyph">
+					<Icon name="bolt" />
+				</span>
+				<span>{activity.title || format?.label}</span>
+			</h2>
+			<p className="activity-format">
+				{activity.kind === "multipla-escolha"
+					? "Escolha uma alternativa"
+					: activity.kind === "associacao"
+						? "Associe os conceitos"
+						: activity.kind === "ligacao"
+							? "Encontre os pares"
+							: "Exemplo guiado"}
+			</p>
 			{activity.prompt && <p className={styles.prompt}>{activity.prompt}</p>}
 			{controls || (
 				<>

@@ -1,1411 +1,495 @@
 {
-	"versao": 1,
-	"trilha": "elementar",
-	"ponto": 1,
-	"atividades": [
-		{
-			"id": "inventario-das-tags",
-			"titulo": "O inventário das tags",
-			"questoes": [
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Da lista ao conjunto",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Imagine que você está organizando uma oficina. O formulário recebe web, dados, web e redes. Para saber quais temas apareceram, basta guardar cada tema uma vez. Essa coleção é um conjunto. Chamamos cada tema de elemento."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Escrevemos o nome do conjunto com uma letra e os elementos entre chaves. A = {web, dados, redes} é o mesmo conjunto que {redes, dados, web}. A ordem e as repetições não mudam seus elementos."
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "diagrama",
-								"legenda": "Leia a expressão da esquerda para a direita.",
-								"dados": {
-									"modelo": "quadro",
-									"linhas": [
-										{
-											"simbolo": "∈",
-											"leitura": "pertence a",
-											"exemplo": "web ∈ A. No exemplo numérico N = {1, 2, 3}, temos 2 ∈ N."
-										},
-										{
-											"simbolo": "∉",
-											"leitura": "não pertence a",
-											"exemplo": "jogos ∉ A. Em N = {1, 2, 3}, temos 7 ∉ N."
-										},
-										{
-											"simbolo": "∅",
-											"leitura": "conjunto vazio",
-											"exemplo": "Se ninguém respondeu, o conjunto de respostas é ∅. Ele tem zero elementos."
-										}
-									]
-								}
-							},
-							{
-								"id": "bloco-4",
-								"tipo": "texto",
-								"texto": "Atenção às chaves. ∅ é vazio. {∅} é uma coleção com um elemento, o próprio conjunto vazio. E um elemento de A fica à esquerda de ∈. A frase A ∈ web não descreve uma tag."
-							}
-						]
-					},
-					"numero": 1,
-					"ordem": 1
-				},
-				{
-					"numero": 2,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "A planilha recebeu as tags web, dados, web e redes. Qual conjunto representa essas tags?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{web, dados}"
-							},
-							{
-								"id": "b",
-								"texto": "{web, dados, redes}"
-							},
-							{
-								"id": "c",
-								"texto": "{dados, redes}"
-							},
-							{
-								"id": "d",
-								"texto": "{web, redes}"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Representação de conjuntos",
-						"orientacao": "Percorra as etiquetas e mantenha cada nome uma vez.",
-						"explicacao": "As três etiquetas distintas são web, dados e redes. Repetir web na planilha não cria outro elemento."
-					},
-					"ordem": 2
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Pertinência",
-						"enunciado": "A coleção de extensões aceitas é E = {png, svg}. Como ler png ∈ E?",
-						"orientacao": "Observe o que aparece à esquerda do símbolo.",
-						"explicacao": "Lemos “png pertence a E” porque png está listado entre as chaves de E.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "E pertence a png."
-							},
-							{
-								"id": "b",
-								"texto": "png pertence a E."
-							},
-							{
-								"id": "c",
-								"texto": "png é um subconjunto de E."
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 13,
-					"ordem": 3
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Não pertinência",
-						"enunciado": "Em E = {png, svg}, qual expressão informa que o app não aceita gif?",
-						"orientacao": "Procure o símbolo com um traço sobre a pertinência.",
-						"explicacao": "gif ∉ E se lê “gif não pertence a E”, pois a extensão está ausente da lista.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "gif ∉ E"
-							},
-							{
-								"id": "b",
-								"texto": "gif ∈ E"
-							},
-							{
-								"id": "c",
-								"texto": "E ∉ gif"
-							}
-						],
-						"gabarito": "a"
-					},
-					"numero": 14,
-					"ordem": 4
-				},
-				{
-					"numero": 3,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O conjunto A de inscrições confirmadas é {Bia, Caio, Dani}. Qual sentença é verdadeira?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "Ana ∈ A"
-							},
-							{
-								"id": "b",
-								"texto": "Caio ∉ A"
-							},
-							{
-								"id": "c",
-								"texto": "Dani ∈ A"
-							},
-							{
-								"id": "d",
-								"texto": "A ∈ Dani"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Pertinência",
-						"orientacao": "Compare cada pessoa com os nomes dentro das chaves.",
-						"explicacao": "Dani aparece na lista de confirmações. Portanto, Dani ∈ A."
-					},
-					"ordem": 5
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Chaves, condições e comparações",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Você pode listar IDs ou dar uma regra. O símbolo ℤ representa os inteiros, como −1, 0 e 1. Escrevemos {x ∈ ℤ tal que 1 ≤ x < 4} para os inteiros x de 1 até antes de 4. O resultado é {1, 2, 3}. A letra x representa um candidato. A barra vertical, quando usada no lugar de “tal que”, separa o universo da condição."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "O mesmo símbolo funciona com saldos, medições e IDs.",
-								"dados": {
-									"modelo": "quadro",
-									"linhas": [
-										{
-											"simbolo": "=",
-											"leitura": "é igual a",
-											"exemplo": "2 + 2 = 4. Duas formas de escrever o mesmo número."
-										},
-										{
-											"simbolo": "≠",
-											"leitura": "é diferente de",
-											"exemplo": "4 ≠ 5. Os valores são diferentes."
-										},
-										{
-											"simbolo": "<",
-											"leitura": "é menor que",
-											"exemplo": "−2 < 1. O saldo −2 fica à esquerda de 1."
-										},
-										{
-											"simbolo": ">",
-											"leitura": "é maior que",
-											"exemplo": "5 > 2. Há mais de 2 chamados."
-										},
-										{
-											"simbolo": "≤",
-											"leitura": "é menor ou igual a",
-											"exemplo": "3 ≤ 3. Uma senha de tamanho máximo 3 pode ter 3 caracteres."
-										},
-										{
-											"simbolo": "≥",
-											"leitura": "é maior ou igual a",
-											"exemplo": "5 ≥ 5. Um limite de pelo menos 5 permite 5."
-										}
-									]
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "Ao ler uma comparação, mantenha a ordem dos lados. “No máximo” inclui o limite e “mais de” exclui o limite."
-							}
-						]
-					},
-					"numero": 15,
-					"ordem": 6
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"assunto": "Igualdade e desigualdade",
-						"enunciado": "Associe cada regra do aplicativo à forma simbólica. A letra x representa a quantidade informada.",
-						"orientacao": "Descubra se a regra permite o valor exatamente igual a 4.",
-						"explicacao": "“Até 4” inclui 4, “acima de 4” exclui, “exatamente 4” fixa o valor e “qualquer valor diferente de 4” exclui apenas 4.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "Até 4"
-							},
-							{
-								"id": "item-2",
-								"texto": "Mais de 4"
-							},
-							{
-								"id": "item-3",
-								"texto": "Exatamente 4"
-							},
-							{
-								"id": "item-4",
-								"texto": "Diferente de 4"
-							},
-							{
-								"id": "item-5",
-								"texto": "Pelo menos 4"
-							},
-							{
-								"id": "item-6",
-								"texto": "Menos de 4"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "x ≥ 4"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "x ≠ 4"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "x = 4"
-							},
-							{
-								"id": "opcao-4",
-								"texto": "x ≤ 4"
-							},
-							{
-								"id": "opcao-5",
-								"texto": "x > 4"
-							},
-							{
-								"id": "opcao-6",
-								"texto": "x < 4"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-4"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-5"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-5",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-6",
-								"destino": "opcao-6"
-							}
-						]
-					},
-					"numero": 16,
-					"ordem": 7
-				},
-				{
-					"numero": 4,
-					"modo": "questao",
-					"questao": {
-						"tipo": "ligacao",
-						"enunciado": "Ligue cada descrição do formulário à sua representação.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "Nenhuma resposta"
-							},
-							{
-								"id": "item-2",
-								"texto": "Uma única resposta, de Bia"
-							},
-							{
-								"id": "item-3",
-								"texto": "Os IDs inteiros de 1 a 3, inclusive"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "{1, 2, 3}"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "∅"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "{Bia}"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							}
-						],
-						"assunto": "Vazio e enumeração",
-						"orientacao": "Considere o número de elementos de cada descrição e os limites incluídos.",
-						"explicacao": "∅ não tem elementos. {Bia} tem um. Os IDs de 1 a 3, inclusive, são {1, 2, 3}."
-					},
-					"ordem": 8
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "diagrama",
-						"titulo": "O que cabe dentro de outro conjunto?",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Se A = {1, 2} e B = {1, 2, 3, 4}, todos os elementos de A aparecem em B. Dizemos que A é subconjunto de B. É como a equipe de suporte estar inteiramente na lista de voluntários."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "Subconjuntos comparam duas coleções. Pertinência verifica um elemento.",
-								"dados": {
-									"modelo": "quadro",
-									"linhas": [
-										{
-											"simbolo": "⊆",
-											"leitura": "é subconjunto de",
-											"exemplo": "A ⊆ B. A ⊆ A também vale."
-										},
-										{
-											"simbolo": "⊊",
-											"leitura": "é subconjunto próprio de",
-											"exemplo": "A ⊊ B. Além de A ⊆ B, B tem algo a mais."
-										},
-										{
-											"simbolo": "⊈",
-											"leitura": "não é subconjunto de",
-											"exemplo": "{1, 8} ⊈ B porque 8 ∉ B. Um contraexemplo basta."
-										}
-									]
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "A trilha usa ⊊ para inclusão própria. Em outros textos, ⊂ pode ter esse sentido ou significar inclusão com igualdade permitida. Confira a convenção. Para provar A = B, verifique A ⊆ B e B ⊆ A."
-							}
-						]
-					},
-					"numero": 17,
-					"ordem": 9
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"assunto": "Inclusão e contraexemplo",
-						"enunciado": "Associe cada afirmação ao que ela diz sobre as duas coleções.",
-						"orientacao": "Leia os dois lados como conjuntos, mesmo quando um deles só tem um elemento.",
-						"explicacao": "⊆ permite igualdade, ⊊ exige inclusão com diferença e ⊈ indica que existe um elemento que falta no conjunto da direita.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "A ⊆ B"
-							},
-							{
-								"id": "item-2",
-								"texto": "A ⊊ B"
-							},
-							{
-								"id": "item-3",
-								"texto": "A ⊈ B"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Falta em B pelo menos um elemento de A"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Todo elemento de A aparece em B, podendo ser iguais"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Todo elemento de A aparece em B e B tem algo a mais"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							}
-						]
-					},
-					"numero": 18,
-					"ordem": 10
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Inclusão e contraexemplo",
-						"enunciado": "Os monitores têm acesso aos módulos M = {login, fórum}. A turma tem T = {login, notas}. Qual observação prova M ⊈ T?",
-						"orientacao": "Procure um módulo de M ausente em T.",
-						"explicacao": "fórum pertence a M e não pertence a T. Ele é um contraexemplo à inclusão M ⊆ T.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "login está nos dois."
-							},
-							{
-								"id": "b",
-								"texto": "notas está em T."
-							},
-							{
-								"id": "c",
-								"texto": "fórum está em M e não está em T."
-							}
-						],
-						"gabarito": "c"
-					},
-					"numero": 19,
-					"ordem": 11
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Igualdade de conjuntos",
-						"enunciado": "Um perfil só tem a tag dados. Qual relação é verdadeira entre P = {dados} e ele próprio?",
-						"orientacao": "Compare os elementos e pergunte se algum elemento extra existe.",
-						"explicacao": "P ⊆ P, pois todos os elementos de P pertencem a P. A inclusão não é própria.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "P ⊆ P"
-							},
-							{
-								"id": "b",
-								"texto": "P ⊊ P"
-							},
-							{
-								"id": "c",
-								"texto": "P ⊈ P"
-							}
-						],
-						"gabarito": "a"
-					},
-					"numero": 20,
-					"ordem": 12
-				},
-				{
-					"numero": 5,
-					"modo": "questao",
-					"questao": {
-						"tipo": "passo-a-passo",
-						"enunciado": "O catálogo aceita etiquetas e também pacotes de etiquetas. Vamos inspecionar T = {web, {dados}}.",
-						"passos": [
-							{
-								"id": "passo-1",
-								"titulo": "Liste os elementos",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "T tem dois elementos: a etiqueta web e o pacote {dados}."
-									}
-								]
-							},
-							{
-								"id": "passo-2",
-								"titulo": "Confira o que pertence",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "O pacote {dados} aparece inteiro em T, então {dados} ∈ T. A etiqueta dados sozinha fica dentro do pacote, logo dados ∉ T."
-									}
-								]
-							},
-							{
-								"id": "passo-3",
-								"titulo": "Confira a inclusão",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "{{dados}} ⊆ T, pois o único elemento desse conjunto é o pacote {dados}, que pertence a T."
-									}
-								]
-							}
-						]
-					},
-					"ordem": 13
-				},
-				{
-					"numero": 6,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "A equipe de suporte S = {Bia, Nando} faz parte da equipe geral G = {Bia, Nando, Lia}. Qual sentença descreve essa relação?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "G ⊆ S"
-							},
-							{
-								"id": "b",
-								"texto": "S = G"
-							},
-							{
-								"id": "c",
-								"texto": "S ∈ G"
-							},
-							{
-								"id": "d",
-								"texto": "S ⊊ G"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Inclusão própria",
-						"orientacao": "Veja se todo nome de S aparece em G e se G tem nomes extras.",
-						"explicacao": "Bia e Nando estão em G. Lia está em G e não está em S, portanto S ⊊ G."
-					},
-					"ordem": 14
-				},
-				{
-					"numero": 7,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Duas listas registraram A = {wifi, cabo} e B = {cabo, wifi, cabo}. Qual é a relação entre elas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "A = B"
-							},
-							{
-								"id": "b",
-								"texto": "A ⊊ B"
-							},
-							{
-								"id": "c",
-								"texto": "B ⊊ A"
-							},
-							{
-								"id": "d",
-								"texto": "B ∈ A"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Igualdade de conjuntos",
-						"orientacao": "Ignore a ordem e as repetições ao comparar as duas listas.",
-						"explicacao": "As duas coleções têm exatamente wifi e cabo. Isso torna A = B."
-					},
-					"ordem": 15
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "diagrama",
-						"titulo": "Contagem, posição e números negativos",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Um número representa quantidade, ordem ou medida. Algarismos são os sinais 0 a 9 usados para escrever números no sistema decimal. O número 12 usa dois algarismos. A quantidade zero serve para registrar uma lista vazia, mesmo sendo um número."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Na trilha, ℕ = {0, 1, 2, …}. Alguns livros começam em 1. Usamos ℕ* para os naturais positivos. Quando o saldo fica abaixo de zero ou a temperatura desce para −3 °C, usamos os inteiros ℤ, que incluem os naturais e os seus opostos."
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "diagrama",
-								"legenda": "Na reta, os números aumentam da esquerda para a direita. O destaque está no zero.",
-								"dados": {
-									"modelo": "reta",
-									"marcas": ["−3", "−2", "−1", "0", "1", "2", "3"],
-									"destaque": 3
-								}
-							},
-							{
-								"id": "bloco-4",
-								"tipo": "texto",
-								"texto": "O valor absoluto mede a distância ao zero. |−3| = 3 e |3| = 3. A distância tem a mesma medida, embora −3 < 3. Nesta lição, o módulo serve apenas para entender distância na reta."
-							}
-						]
-					},
-					"numero": 21,
-					"ordem": 16
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Naturais e inteiros",
-						"enunciado": "O painel mostra 12 alertas. O que está correto?",
-						"orientacao": "Separe os sinais usados na escrita da quantidade que eles registram.",
-						"explicacao": "12 representa uma quantidade natural. A escrita usa os algarismos 1 e 2.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "12 é um único algarismo."
-							},
-							{
-								"id": "b",
-								"texto": "12 é um número escrito com dois algarismos."
-							},
-							{
-								"id": "c",
-								"texto": "Só o número 1 é natural."
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 22,
-					"ordem": 17
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Naturais e inteiros",
-						"enunciado": "A temperatura foi de −3 °C às 6h e −1 °C às 8h. Qual leitura está correta?",
-						"orientacao": "Veja qual valor está mais à direita na reta.",
-						"explicacao": "−3 fica à esquerda de −1, então −3 < −1. A distância de −3 até o zero é 3.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "−3 < −1 e |−3| = 3"
-							},
-							{
-								"id": "b",
-								"texto": "−3 > −1 e |−3| = −3"
-							},
-							{
-								"id": "c",
-								"texto": "−3 = −1 e |−3| = 0"
-							}
-						],
-						"gabarito": "a"
-					},
-					"numero": 23,
-					"ordem": 18
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Frações, aproximações e números reais",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Meio litro pode ser escrito 1/2, 2/4 ou 0,5. São representações do mesmo número. Os racionais ℚ podem ser escritos como a/b com a e b inteiros e b ≠ 0. Por exemplo, −4 = −4/1, então todo inteiro é racional."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "formula",
-								"leitura": "Um meio é igual a dois quartos e a zero vírgula cinco",
-								"termos": [
-									{
-										"forma": "fracao",
-										"numerador": "1",
-										"denominador": "2"
-									},
-									{
-										"forma": "texto",
-										"valor": " = "
-									},
-									{
-										"forma": "fracao",
-										"numerador": "2",
-										"denominador": "4"
-									},
-									{
-										"forma": "texto",
-										"valor": " = 0,5"
-									}
-								]
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "Os decimais dos racionais terminam ou repetem um padrão. Por exemplo, 1/3 = 0,333… e 1/4 = 0,25. Já √2, √3 e π são irracionais. Seus decimais não terminam nem repetem um bloco. √9 vale 3, então é racional. 1,41 aproxima √2, mas 1,41 é racional e não é o valor exato de √2."
-							},
-							{
-								"id": "bloco-4",
-								"tipo": "formula",
-								"leitura": "Raiz de dois é aproximadamente um vírgula quarenta e um",
-								"termos": [
-									{
-										"forma": "raiz",
-										"radicando": "2"
-									},
-									{
-										"forma": "texto",
-										"valor": " ≈ 1,41"
-									}
-								]
-							},
-							{
-								"id": "bloco-5",
-								"tipo": "texto",
-								"texto": "Os reais ℝ reúnem os racionais e os irracionais. Cada ponto da reta numérica representa um real. ℝ ∖ ℚ indica os reais que ficam fora dos racionais."
-							}
-						]
-					},
-					"numero": 24,
-					"ordem": 19
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "diagrama",
-						"titulo": "Explore a família dos números reais",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "diagrama",
-								"legenda": "Escolha um conjunto para ver um exemplo e um número que fica fora dele.",
-								"dados": {
-									"modelo": "inclusao",
-									"camadas": [
-										{
-											"simbolo": "ℕ",
-											"nome": "Números naturais",
-											"exemplo": "0 arquivos",
-											"fora": "−1"
-										},
-										{
-											"simbolo": "ℤ",
-											"nome": "Números inteiros",
-											"exemplo": "−3 °C",
-											"fora": "1/2"
-										},
-										{
-											"simbolo": "ℚ",
-											"nome": "Números racionais",
-											"exemplo": "−1/4",
-											"fora": "√2"
-										},
-										{
-											"simbolo": "ℝ",
-											"nome": "Números reais",
-											"exemplo": "√3 e 1/2",
-											"fora": "Não existe real cujo quadrado seja −1. Essa ideia volta na etapa 7."
-										}
-									],
-									"observacao": "ℕ ⊊ ℤ ⊊ ℚ ⊊ ℝ. Os irracionais ficam dentro de ℝ e fora de ℚ."
-								}
-							}
-						]
-					},
-					"numero": 25,
-					"ordem": 20
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Racionais e irracionais",
-						"enunciado": "Qual par mostra duas escritas diferentes da mesma quantidade?",
-						"orientacao": "Compare a fração e o valor decimal com a mesma unidade.",
-						"explicacao": "3/4 equivale a 75/100, ou 0,75. Já √2 é irracional e sua aproximação 1,41 não é exata.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "√2 e 1,41"
-							},
-							{
-								"id": "b",
-								"texto": "3/4 e 0,75"
-							},
-							{
-								"id": "c",
-								"texto": "1/3 e 0,3"
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 26,
-					"ordem": 21
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Racionais e irracionais",
-						"enunciado": "Um sensor mede exatamente √9 m e outro mede exatamente √2 m. Qual leitura é racional?",
-						"orientacao": "Verifique se algum quadrado inteiro produz o número dentro da raiz.",
-						"explicacao": "√9 = 3, que pode ser escrito 3/1. √2 é irracional.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "As duas"
-							},
-							{
-								"id": "b",
-								"texto": "Só √2"
-							},
-							{
-								"id": "c",
-								"texto": "Só √9"
-							}
-						],
-						"gabarito": "c"
-					},
-					"numero": 27,
-					"ordem": 22
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Ordem dos reais",
-						"enunciado": "Qual valor fica entre 1 e √2 na reta? Use √2 ≈ 1,414.",
-						"orientacao": "Compare os três valores com a mesma quantidade de casas decimais.",
-						"explicacao": "1,00 < 1,40 < 1,414… . Logo 1,4 é racional e fica entre 1 e o irracional √2.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "1,4"
-							},
-							{
-								"id": "b",
-								"texto": "1,5"
-							},
-							{
-								"id": "c",
-								"texto": "0,9"
-							}
-						],
-						"gabarito": "a"
-					},
-					"numero": 28,
-					"ordem": 23
-				},
-				{
-					"numero": 8,
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"enunciado": "Classifique cada valor pelo conjunto mais específico entre as opções. Uma opção pode se repetir.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "0 tarefas pendentes"
-							},
-							{
-								"id": "item-2",
-								"texto": "−3 °C"
-							},
-							{
-								"id": "item-3",
-								"texto": "1/2 litro"
-							},
-							{
-								"id": "item-4",
-								"texto": "√2 m de diagonal"
-							},
-							{
-								"id": "item-5",
-								"texto": "7 commits"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Racional que não é inteiro"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Natural"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Irracional"
-							},
-							{
-								"id": "opcao-4",
-								"texto": "Inteiro que não é natural"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-4"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-5",
-								"destino": "opcao-2"
-							}
-						],
-						"assunto": "Classificação numérica",
-						"orientacao": "Escolha a opção mais específica para cada número. O zero é natural na trilha.",
-						"explicacao": "0 e 7 contam quantidades naturais. −3 é inteiro negativo. 1/2 é racional não inteiro. √2 é irracional."
-					},
-					"ordem": 24
-				},
-				{
-					"numero": 9,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Uma catraca aceita os IDs do conjunto E = {x ∈ ℤ tal que 1 ≤ x < 4}. Qual é E?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{0, 1, 2, 3}"
-							},
-							{
-								"id": "b",
-								"texto": "{1, 2, 3, 4}"
-							},
-							{
-								"id": "c",
-								"texto": "{1, 2, 3}"
-							},
-							{
-								"id": "d",
-								"texto": "{2, 3}"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Comparações e universo",
-						"orientacao": "O limite de baixo pode entrar e o de cima fica de fora. Liste apenas inteiros.",
-						"explicacao": "1, 2 e 3 satisfazem 1 ≤ x < 4. O 0 fica abaixo da faixa e 4 falha na comparação estrita."
-					},
-					"ordem": 25
-				},
-				{
-					"numero": 10,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Uma lista vazia de alertas é A = ∅. Outra lista guarda um único pacote vazio e é B = {∅}. Qual afirmação é verdadeira?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "A = B"
-							},
-							{
-								"id": "b",
-								"texto": "∅ ∈ B"
-							},
-							{
-								"id": "c",
-								"texto": "∅ ∈ A"
-							},
-							{
-								"id": "d",
-								"texto": "B ⊆ A"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Conjunto vazio",
-						"orientacao": "Distinga não ter nada de guardar um pacote que está vazio.",
-						"explicacao": "O único elemento de B é ∅, então ∅ ∈ B. A tem zero elementos e B tem um."
-					},
-					"ordem": 26
-				},
-				{
-					"numero": 11,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O painel diz que todo participante do grupo A está no grupo B. Qual evidência derruba a afirmação?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "Uma pessoa que está nos dois grupos"
-							},
-							{
-								"id": "b",
-								"texto": "Uma pessoa de B que não está em A"
-							},
-							{
-								"id": "c",
-								"texto": "Uma pessoa que está fora dos dois grupos"
-							},
-							{
-								"id": "d",
-								"texto": "Uma pessoa de A que não está em B"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Contraexemplos",
-						"orientacao": "Para derrubar uma frase sobre todos de A, procure alguém dentro de A.",
-						"explicacao": "Uma pessoa em A que não está em B torna falsa a frase “todo participante de A está em B”."
-					},
-					"ordem": 27
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Para todo, existe e as setas",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "∀ se lê “para todo”. Em ∀x ∈ ℕ, x + 0 = x, leia: para todo número natural x, somar zero deixa x igual. Num app, dizer que todo cadastro tem e-mail exige verificar cada cadastro. Um cadastro sem e-mail derruba a afirmação."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "∃ se lê “existe pelo menos um”. Em ∃x ∈ ℕ, x + 2 = 5, o número 3 serve como exemplo. Na oficina, basta um participante levar extensão para a frase “existe alguém com extensão” ser verdadeira. “Existe” também permite vários exemplos."
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "diagrama",
-								"legenda": "A seta muda de significado conforme a expressão.",
-								"dados": {
-									"modelo": "quadro",
-									"linhas": [
-										{
-											"simbolo": "→",
-											"leitura": "de um domínio para outro",
-											"exemplo": "Em f: ℕ → ℕ, a seta diz que f recebe e retorna naturais. Um contador pode receber dias e devolver o total de acessos."
-										},
-										{
-											"simbolo": "⇒",
-											"leitura": "implica",
-											"exemplo": "x = 2 ⇒ x² = 4. Ter credencial de monitor implica ter acesso à sala, mas outros perfis também podem acessar."
-										},
-										{
-											"simbolo": "⇔",
-											"leitura": "se e somente se",
-											"exemplo": "x + 1 = 3 ⇔ x = 2. Num armário que abre exatamente com o PIN 204, o armário abre se e somente se o PIN for 204."
-										}
-									]
-								}
-							},
-							{
-								"id": "bloco-4",
-								"tipo": "texto",
-								"texto": "O reverso de uma implicação precisa de sua própria justificativa. De x² = 4, por exemplo, também pode vir x = −2. Uma equivalência afirma que ambas as direções funcionam."
-							}
-						]
-					},
-					"numero": 29,
-					"ordem": 28
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"assunto": "Quantificadores e setas",
-						"enunciado": "Associe cada notação à leitura que descreve seu papel.",
-						"orientacao": "Separe quantificadores, condição lógica e domínio de função.",
-						"explicacao": "∀ percorre todos, ∃ pede pelo menos um, → indica domínio e destino no exemplo de função, ⇒ afirma uma direção, ⇔ afirma duas.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "∀x ∈ ℕ"
-							},
-							{
-								"id": "item-2",
-								"texto": "∃x ∈ ℕ"
-							},
-							{
-								"id": "item-3",
-								"texto": "f: ℕ → ℕ"
-							},
-							{
-								"id": "item-4",
-								"texto": "P ⇒ Q"
-							},
-							{
-								"id": "item-5",
-								"texto": "P ⇔ Q"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "P se e somente se Q"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Existe um natural x"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "f recebe naturais e tem contradomínio nos naturais"
-							},
-							{
-								"id": "opcao-4",
-								"texto": "Para todo natural x"
-							},
-							{
-								"id": "opcao-5",
-								"texto": "Se P, então Q"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-4"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-5"
-							},
-							{
-								"origem": "item-5",
-								"destino": "opcao-1"
-							}
-						]
-					},
-					"numero": 30,
-					"ordem": 29
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Quantificadores e setas",
-						"enunciado": "Em uma fila há cinco chamados, dos quais dois estão atrasados. Qual frase descreve o que sabemos?",
-						"orientacao": "Uma afirmação com “todo” exige que não haja exceções.",
-						"explicacao": "Dois atrasados já satisfazem “existe pelo menos um”. Como três estão no prazo, “todos” seria falso.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "∀ chamados, o chamado está atrasado."
-							},
-							{
-								"id": "b",
-								"texto": "∃ chamado que está atrasado."
-							},
-							{
-								"id": "c",
-								"texto": "Não existe chamado atrasado."
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 31,
-					"ordem": 30
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Quantificadores e setas",
-						"enunciado": "Qual frase traduz “todo ID inteiro x menor que zero é negativo”?",
-						"orientacao": "Leia ∀ como “para todo” e a implicação da condição para o resultado.",
-						"explicacao": "O enunciado percorre todos os inteiros, com a condição x < 0 na esquerda da implicação.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "∃x ∈ ℤ tal que x < 0."
-							},
-							{
-								"id": "b",
-								"texto": "f: ℤ → ℤ."
-							},
-							{
-								"id": "c",
-								"texto": "∀x ∈ ℤ, x < 0 ⇒ x é negativo."
-							}
-						],
-						"gabarito": "c"
-					},
-					"numero": 32,
-					"ordem": 31
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Quantificadores e setas",
-						"enunciado": "Considere x² = 4 para x real. Qual sentença expressa corretamente a relação em ambas as direções?",
-						"orientacao": "Teste valores negativos e positivos antes de afirmar equivalência.",
-						"explicacao": "Tanto 2 quanto −2 ao quadrado dão 4. Toda solução real de x² = 4 é uma dessas duas.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "x² = 4 ⇔ x = 2 ou x = −2"
-							},
-							{
-								"id": "b",
-								"texto": "x² = 4 ⇔ x = 2"
-							},
-							{
-								"id": "c",
-								"texto": "x² = 4 ⇔ x > 0"
-							}
-						],
-						"gabarito": "a"
-					},
-					"numero": 33,
-					"ordem": 32
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Quantificadores e setas",
-						"enunciado": "Um programa f recebe dias contados em naturais e devolve número de mensagens, também natural. Como indicar o domínio e o contradomínio?",
-						"orientacao": "A notação pedida descreve entrada e saída, como a assinatura de uma função.",
-						"explicacao": "f: ℕ → ℕ indica que os naturais são domínio e contradomínio. ⇒ e ⇔ expressam relações entre afirmações.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "ℕ ⇒ ℕ"
-							},
-							{
-								"id": "b",
-								"texto": "f: ℕ → ℕ"
-							},
-							{
-								"id": "c",
-								"texto": "f: ℕ ⇔ ℕ"
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 34,
-					"ordem": 33
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "material",
-						"titulo": "Ficha de leitura dos símbolos",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Comece identificando os objetos: número, elemento, conjunto ou afirmação. Em seguida, leia a relação. Por último, teste um exemplo e, se a frase disser “para todo”, procure um contraexemplo."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "Dois testes que ajudam a depurar uma expressão.",
-								"dados": {
-									"modelo": "quadro",
-									"linhas": [
-										{
-											"simbolo": "∈",
-											"leitura": "elemento em um conjunto",
-											"exemplo": "2 ∈ {1, 2}. Leia o lado esquerdo inteiro."
-										},
-										{
-											"simbolo": "⊆",
-											"leitura": "todos os elementos de um conjunto em outro",
-											"exemplo": "{2} ⊆ {1, 2}. Confira todos os elementos."
-										},
-										{
-											"simbolo": "∀ / ∃",
-											"leitura": "todos / pelo menos um",
-											"exemplo": "Um contraexemplo refuta “todos”. Um exemplo confirma “existe”."
-										}
-									]
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "referencia",
-								"titulo": "Conjuntos e conjuntos numéricos",
-								"fonte": "Portal da OBMEP/IMPA",
-								"url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=87"
-							}
-						]
-					},
-					"numero": 35,
-					"ordem": 34
-				},
-				{
-					"numero": 12,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Qual valor pertence a ℚ e fica fora de ℤ?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "−2,5"
-							},
-							{
-								"id": "b",
-								"texto": "−4"
-							},
-							{
-								"id": "c",
-								"texto": "0"
-							},
-							{
-								"id": "d",
-								"texto": "√3"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Racionais não inteiros",
-						"orientacao": "Procure o valor que pode ser escrito como fração mas tem parte fracionária diferente de zero.",
-						"explicacao": "−2,5 = −5/2 é racional e não inteiro. −4 e 0 são inteiros. √3 é irracional."
-					},
-					"ordem": 35
-				}
-			]
-		}
-	]
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 1,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-01",
+      "titulo": "Coleções, pistas e linguagem matemática",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma comissão recolhe sugestões para uma semana cultural: música, cinema, música, debate. Para listar os temas diferentes, repetir música não ajuda — nem se o pedido vier em caixa alta. Como registrar a coleção sem confundir variedade com quantidade de votos?"
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Representar conjuntos e distinguir elementos, vazio e conjunto unitário."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Leitura de números e comparação de listas; nenhum conteúdo de curso específico."
+              }
+            ],
+            "titulo": "Coleções, pistas e linguagem matemática",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Conjunto é uma coleção de elementos bem determinados. Escrevemos A={música,cinema,debate}. Ordem e repetição não mudam A. O símbolo ∈ significa ‘pertence a’; ∉ significa ‘não pertence a’. ∅ é o conjunto vazio. {∅} tem um elemento, que é um conjunto. Na descrição por propriedade, {x∈ℤ : x²=4} reúne os inteiros que satisfazem a condição."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O objeto a pertence ao conjunto A.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "a∈A"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual conjunto registra os temas música, cinema, música e debate?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "Os três temas distintos aparecem uma única vez.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{música,cinema}"
+              },
+              {
+                "id": "b",
+                "texto": "{música,música}"
+              },
+              {
+                "id": "c",
+                "texto": "{música,cinema,debate}"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Dois conjuntos são iguais quando possuem exatamente os mesmos elementos: cada elemento de um precisa aparecer no outro e vice-versa. Por isso {1,2,2}={2,1}. Mas ∅≠{∅}: o primeiro não contém elementos; o segundo contém o objeto ∅. Chaves não são apenas decoração tipográfica."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Representar conjuntos e distinguir elementos, vazio e conjunto unitário.",
+                      "exemplo": "Considere A={x∈ℤ : −1≤x<3}. O universo declarado é o dos inteiros; não inclua frações."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Logo A={−1,0,1,2}. Temos 0∈A e 3∉A. A escrita {2,1,0,−1} representa o mesmo conjunto."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A={1,3,5}, qual frase é verdadeira?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "O número 3 está listado entre os elementos de A.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5∉A"
+              },
+              {
+                "id": "b",
+                "texto": "3∈A"
+              },
+              {
+                "id": "c",
+                "texto": "2∈A"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Coleções, pistas e linguagem matemática",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Considere A={x∈ℤ : −1≤x<3}. O universo declarado é o dos inteiros; não inclua frações."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Teste os extremos: −1 satisfaz ≤ e entra; 3 falha em < e fica fora. Os elementos são −1,0,1,2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Logo A={−1,0,1,2}. Temos 0∈A e 3∉A. A escrita {2,1,0,−1} representa o mesmo conjunto."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual conjunto é igual a {1,2,3}?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "Ordem e repetição não alteram o conjunto de elementos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{3,2,1,1}"
+              },
+              {
+                "id": "b",
+                "texto": "{1,2}"
+              },
+              {
+                "id": "c",
+                "texto": "{1,2,4}"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos elementos tem ∅?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "O vazio não contém elemento algum.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma lista pode contar repetições; um conjunto não. Se a pergunta for ‘quantos votos chegaram?’, a lista original pode ter quatro entradas. Se for ‘quais temas apareceram?’, o conjunto tem três elementos. Escolha a estrutura conforme a pergunta."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos elementos tem {∅}?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "As chaves envolvem um único objeto, o conjunto vazio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Infinitos"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é {x∈ℤ : x²=4}?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "Tanto −2 quanto 2 têm quadrado igual a 4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{−2,2}"
+              },
+              {
+                "id": "b",
+                "texto": "{2}"
+              },
+              {
+                "id": "c",
+                "texto": "{4}"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Conjuntos descrevem participantes de pesquisa, ingredientes, referências bibliográficas ou soluções de equações. Faça uma pausa: invente uma coleção com regra clara de pertencimento e uma descrição vaga. ‘Números pares’ é precisa; ‘números interessantes’ precisa de um critério antes de virar uma definição."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é {x∈ℤ : 0<x<3}?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "A desigualdade é estrita nos dois extremos e o universo é inteiro.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{0,1,2,3}"
+              },
+              {
+                "id": "b",
+                "texto": "{0,1,2}"
+              },
+              {
+                "id": "c",
+                "texto": "{1,2}"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A={0,2}, qual afirmação é falsa?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "O elemento 1 não consta em A.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2∈A"
+              },
+              {
+                "id": "b",
+                "texto": "1∈A"
+              },
+              {
+                "id": "c",
+                "texto": "0∈A"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Conjunto é uma coleção de elementos bem determinados. Escrevemos A={música,cinema,debate}. Ordem e repetição não mudam A. O símbolo ∈ significa ‘pertence a’; ∉ significa ‘não pertence a’. ∅ é o conjunto vazio. {∅} tem um elemento, que é um conjunto. Na descrição por propriedade, {x∈ℤ : x²=4} reúne os inteiros que satisfazem a condição."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Logo A={−1,0,1,2}. Temos 0∈A e 3∉A. A escrita {2,1,0,−1} representa o mesmo conjunto."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como representar conjuntos e distinguir elementos, vazio e conjunto unitário. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual informação se perde ao converter uma lista de votos em conjunto?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "O conjunto guarda presença, mas não frequência.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Quantas vezes cada opção foi marcada"
+              },
+              {
+                "id": "b",
+                "texto": "Quais opções apareceram"
+              },
+              {
+                "id": "c",
+                "texto": "Se uma opção apareceu"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quando dois conjuntos são iguais?",
+            "assunto": "Coleções, pistas e linguagem matemática",
+            "orientacao": "Leia as chaves e identifique os objetos distintos antes de contar ou comparar.",
+            "explicacao": "Mesma cardinalidade não garante mesmos elementos; {1} e {2} são diferentes.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Quando têm o mesmo número de elementos"
+              },
+              {
+                "id": "b",
+                "texto": "Quando foram escritos na mesma ordem"
+              },
+              {
+                "id": "c",
+                "texto": "Quando possuem exatamente os mesmos elementos"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
 }

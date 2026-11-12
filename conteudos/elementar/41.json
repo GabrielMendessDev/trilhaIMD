@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 41,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-41",
+      "titulo": "Simetria: o espelho precisa de domínio",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um gráfico parece um espelho. Mas será que é simétrico no eixo vertical ou em torno da origem? E se alguém recortar metade do domínio? A aparência dá pistas; substituir −x e conferir as entradas dá a decisão."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Distinguir funções pares, ímpares e sem essas simetrias."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Funções, polinômios e substituição com sinais."
+              }
+            ],
+            "titulo": "Simetria: o espelho precisa de domínio",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Com domínio simétrico em relação a zero, f é par se f(−x)=f(x), e ímpar se f(−x)=−f(x), para todo x do domínio. Pares têm simetria no eixo y; ímpares, na origem. Uma função pode ser nenhuma das duas. A função nula em domínio simétrico é simultaneamente par e ímpar."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Funções pares preservam a saída ao trocar o sinal da entrada; ímpares trocam também o sinal da saída.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Par: f(−x)=f(x); ímpar: f(−x)=−f(x)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f(x)=x⁴−3x²+2 em ℝ é qual tipo?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "Todos os expoentes são pares, incluindo o expoente zero da constante.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Nenhuma"
+              },
+              {
+                "id": "b",
+                "texto": "Par"
+              },
+              {
+                "id": "c",
+                "texto": "Ímpar"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Trocar x por −x reflete horizontalmente os pontos. Para função par, a saída permanece; para ímpar, também troca de sinal. Um polinômio real em ℝ é par quando só tem potências pares com coeficientes não nulos; é ímpar quando só tem potências ímpares, sem constante não nula. Isso decorre de (−x)ⁿ=(−1)ⁿxⁿ."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/simetria.svg",
+                "alt": "Gráficos de x² e x³: x² é simétrico no eixo y; x³ é simétrico na origem. Pontos com entradas opostas têm saídas iguais na primeira função e opostas na segunda.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Gráficos de x² e x³: x² é simétrico no eixo y; x³ é simétrico na origem. Pontos com entradas opostas têm saídas iguais na primeira função e opostas na segunda.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "g(x)=x³+x em ℝ é qual tipo?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "g(−x)=−x³−x=−g(x).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Ímpar"
+              },
+              {
+                "id": "b",
+                "texto": "Par"
+              },
+              {
+                "id": "c",
+                "texto": "Nenhuma"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Simetria: o espelho precisa de domínio",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para f(x)=x⁴−3x²+2 em ℝ, calcule f(−x)=(−x)⁴−3(−x)²+2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Como os expoentes são pares, o resultado é x⁴−3x²+2=f(x). A função é par."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Já g(x)=x³+x é ímpar: g(−x)=−x³−x=−g(x). Em h(x)=x²+x, a substituição não dá nem h(x) nem −h(x) para todo x."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "h(x)=x²+x em ℝ é qual tipo?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "h(−x)=x²−x não é identicamente igual a h(x) nem a −h(x).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Par"
+              },
+              {
+                "id": "b",
+                "texto": "Ímpar"
+              },
+              {
+                "id": "c",
+                "texto": "Nem par nem ímpar"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual igualdade define função par?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "A reflexão da entrada preserva a saída.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "f(x)=x"
+              },
+              {
+                "id": "b",
+                "texto": "f(−x)=f(x)"
+              },
+              {
+                "id": "c",
+                "texto": "f(−x)=−f(x)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O expoente de um único termo não classifica toda a expressão. Além disso, f(x)=x² com domínio [0,∞) não é par pela definição adotada: o domínio não é simétrico. O desenho recortado perdeu o espelho."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual simetria corresponde à função ímpar?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "O ponto (x,y) acompanha (−x,−y).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Em relação à origem"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas em relação ao eixo y"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas em relação ao eixo x"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição sobre o domínio vem antes da classificação?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "Se x está no domínio, −x também precisa estar.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Conter apenas positivos"
+              },
+              {
+                "id": "b",
+                "texto": "Ser finito"
+              },
+              {
+                "id": "c",
+                "texto": "Ser simétrico em relação a zero"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Descreva simetria por uma igualdade, não só por um adjetivo. Testes em alguns pontos podem refutar paridade, mas não a provam em domínio infinito. Use a transformação simbólica para cobrir todas as entradas."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f(x)=x² em [0,∞) é par nesta trilha?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "O domínio não é simétrico em relação a zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só por ter expoente par"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como classificar f(x)=0 em ℝ?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "Zero satisfaz simultaneamente f(−x)=f(x)=−f(x).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Par e ímpar"
+              },
+              {
+                "id": "b",
+                "texto": "Só par"
+              },
+              {
+                "id": "c",
+                "texto": "Só ímpar"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Com domínio simétrico em relação a zero, f é par se f(−x)=f(x), e ímpar se f(−x)=−f(x), para todo x do domínio. Pares têm simetria no eixo y; ímpares, na origem. Uma função pode ser nenhuma das duas. A função nula em domínio simétrico é simultaneamente par e ímpar."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Já g(x)=x³+x é ímpar: g(−x)=−x³−x=−g(x). Em h(x)=x²+x, a substituição não dá nem h(x) nem −h(x) para todo x."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como distinguir funções pares, ímpares e sem essas simetrias. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f é ímpar e 0 está no domínio, quanto vale f(0)?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "f(0)=−f(0) implica 2f(0)=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "Não é possível concluir"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma função constante não nula em ℝ é qual tipo?",
+            "assunto": "Simetria: o espelho precisa de domínio",
+            "orientacao": "Verifique a simetria do domínio e substitua menos x na expressão inteira.",
+            "explicacao": "A saída não muda com x, mas não é igual ao próprio oposto.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Nem par nem ímpar"
+              },
+              {
+                "id": "b",
+                "texto": "Par e não ímpar"
+              },
+              {
+                "id": "c",
+                "texto": "Ímpar e não par"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 56,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-56",
+      "titulo": "Somar, escalar e transpor",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Duas equipes registraram as mesmas atividades nas mesmas linhas e turnos nas mesmas colunas. Agora é possível somar as tabelas. Se uma equipe trocou os eixos, a primeira tarefa será alinhar a organização, não sair somando posições às cegas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Operar entrada a entrada e reconhecer transpostas e simétricas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Dimensões e índices de matrizes."
+              }
+            ],
+            "titulo": "Somar, escalar e transpor",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A+B e A−B exigem a mesma dimensão e operam entrada a entrada. Em λA, cada entrada é multiplicada pelo real λ. A transposta Aᵀ troca linhas por colunas: (Aᵀ)ᵢⱼ=aⱼᵢ. Se A tem dimensão m×n, Aᵀ tem n×m. Uma matriz simétrica é quadrada e satisfaz Aᵀ=A."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A transposta troca os índices de linha e coluna.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "(Aᵀ)ᵢⱼ=aⱼᵢ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quando A+B está definida pela soma usual?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "Precisamos de posições correspondentes em todas as linhas e colunas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Quando só têm o mesmo total de entradas"
+              },
+              {
+                "id": "b",
+                "texto": "Quando A e B têm a mesma dimensão"
+              },
+              {
+                "id": "c",
+                "texto": "Quando só têm o mesmo número de linhas"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A transposição leva cada posição (i,j) para (j,i), portanto aplicá-la duas vezes devolve a posição original: (Aᵀ)ᵀ=A. A condição de simetria é aᵢⱼ=aⱼᵢ em todas as posições. Soma de matrizes representa soma de valores comparáveis quando os rótulos e as unidades das tabelas foram alinhados."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Operar entrada a entrada e reconhecer transpostas e simétricas.",
+                      "exemplo": "Tome A=[[1,2],[3,4]] e B=[[2,0],[−1,5]]. Some posição a posição: A+B=[[3,2],[2,9]]."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "A não é simétrica, pois a₁₂=2 e a₂₁=3. Já [[1,2],[2,4]] é simétrica, porque as posições espelhadas coincidem."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A=[[1,2],[3,4]], qual é 2A?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "O escalar 2 multiplica cada entrada.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[2,4],[6,8]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[1,4],[9,16]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[3,4],[5,6]]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Somar, escalar e transpor",
+            "assunto": "Somar, escalar e transpor",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Tome A=[[1,2],[3,4]] e B=[[2,0],[−1,5]]. Some posição a posição: A+B=[[3,2],[2,9]]."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Multiplique A por 2: 2A=[[2,4],[6,8]]. A transposta é Aᵀ=[[1,3],[2,4]]."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A não é simétrica, pois a₁₂=2 e a₂₁=3. Já [[1,2],[2,4]] é simétrica, porque as posições espelhadas coincidem."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é Aᵀ para A=[[1,2],[3,4]]?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "As linhas de A tornam-se colunas na transposta.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[4,3],[2,1]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[2,1],[4,3]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[1,3],[2,4]]"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a dimensão da transposta de uma matriz 2×3?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "A transposição troca as contagens de linhas e colunas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "6×1"
+              },
+              {
+                "id": "b",
+                "texto": "3×2"
+              },
+              {
+                "id": "c",
+                "texto": "2×3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A transposta não inverte a ordem dos números numa linha; ela transforma uma linha inteira em coluna. E multiplicar por escalar não é elevar cada entrada a uma potência. Matrizes com a mesma quantidade total de entradas, mas dimensões diferentes, não podem ser somadas pela regra usual."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é A+B no exemplo?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "Somamos valores de posições iguais.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[3,2],[2,9]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[2,0],[−3,20]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[−1,2],[4,−1]]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é A−B no exemplo?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "Subtraímos cada entrada de B da correspondente em A.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[3,2],[2,9]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[1,2],[3,4]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[−1,2],[4,−1]]"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Antes de somar dados matriciais, confira significado, unidade e posição dos rótulos. Uma transposição pode facilitar a leitura sem mudar os valores registrados. Explique em palavras para onde vai o elemento a₂₃ ao transpor: linha 3, coluna 2."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual matriz é simétrica?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "Ela é quadrada e a₁₂=a₂₁.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[1,0,2]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[1,2],[2,4]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[1,2],[3,4]]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale (Aᵀ)ᵀ?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "Trocar os índices duas vezes devolve cada posição original.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A"
+              },
+              {
+                "id": "b",
+                "texto": "−A"
+              },
+              {
+                "id": "c",
+                "texto": "A²"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A+B e A−B exigem a mesma dimensão e operam entrada a entrada. Em λA, cada entrada é multiplicada pelo real λ. A transposta Aᵀ troca linhas por colunas: (Aᵀ)ᵢⱼ=aⱼᵢ. Se A tem dimensão m×n, Aᵀ tem n×m. Uma matriz simétrica é quadrada e satisfaz Aᵀ=A."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: A não é simétrica, pois a₁₂=2 e a₂₁=3. Já [[1,2],[2,4]] é simétrica, porque as posições espelhadas coincidem."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como operar entrada a entrada e reconhecer transpostas e simétricas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em que posição fica a₂₃ após transpor?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "A transposta troca a ordem dos dois índices.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Linha 2, coluna 3"
+              },
+              {
+                "id": "b",
+                "texto": "Linha 3, coluna 3"
+              },
+              {
+                "id": "c",
+                "texto": "Linha 3, coluna 2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Podemos somar usualmente matrizes 2×3 e 3×2?",
+            "assunto": "Somar, escalar e transpor",
+            "orientacao": "Para somar, confira dimensões; para transpor, troque linhas por colunas sem inverter a ordem dentro delas.",
+            "explicacao": "A quantidade total de entradas é igual, mas as dimensões não coincidem.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só se todas as entradas forem positivas"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

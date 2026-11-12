@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 11,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-11",
+      "titulo": "Equações: a balança e suas condições",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um grupo reserva uma sala com custo fixo fictício de 12 unidades e mais 3 por participante. O total foi 30. Quantas pessoas entraram no modelo? A letra x vai guardar a informação ausente; ela não torna o problema automaticamente misterioso."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Resolver equações lineares e identificar identidades e contradições."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Operações com números reais e distributividade."
+              }
+            ],
+            "titulo": "Equações: a balança e suas condições",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Equação é uma igualdade que pode depender de incógnitas. Seu conjunto solução reúne os valores que a tornam verdadeira no universo declarado. Somar o mesmo número aos dois lados e multiplicar ambos por uma constante não nula preserva a equivalência. Em ax+b=0, se a≠0 então x=−b/a; se a=0, analise b=0 ou b≠0."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Na equação linear com coeficiente a não nulo, x é menos b dividido por a.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "ax+b=0 ⇒ x=−b/a, a≠0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva 3x+12=30.",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "Subtraia 12 e divida por 3: x=18/3=6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x=10"
+              },
+              {
+                "id": "b",
+                "texto": "x=6"
+              },
+              {
+                "id": "c",
+                "texto": "x=14"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O chamado ‘passar para o outro lado’ abrevia operações nos dois membros. De 3x+12=30, subtrair 12 dos dois lados produz 3x=18. Dividir por 3 é reversível porque 3≠0. Se a conta acaba em 0=0, todos os valores do domínio servem; se acaba em 0=5, nenhum serve."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Resolver equações lineares e identificar identidades e contradições.",
+                      "exemplo": "Resolva 2(x−3)+4=x+5 em ℝ. A distributiva dá 2x−6+4=x+5."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Verifique na expressão original: 2(7−3)+4=12 e 7+5=12. Portanto S={7}."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a expansão de 2(x−3)?",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "A distributiva multiplica os dois termos por 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2x−6"
+              },
+              {
+                "id": "b",
+                "texto": "2x−3"
+              },
+              {
+                "id": "c",
+                "texto": "2x+6"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Equações: a balança e suas condições",
+            "assunto": "Equações: a balança e suas condições",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva 2(x−3)+4=x+5 em ℝ. A distributiva dá 2x−6+4=x+5."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Simplifique: 2x−2=x+5. Subtraia x e some 2 aos dois membros: x=7."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Verifique na expressão original: 2(7−3)+4=12 e 7+5=12. Portanto S={7}."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva 2(x−3)+4=x+5.",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "Simplificar produz 2x−2=x+5, logo x=7.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x=5"
+              },
+              {
+                "id": "b",
+                "texto": "x=−7"
+              },
+              {
+                "id": "c",
+                "texto": "x=7"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva 5x=0.",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "Dividir por 5, que não é zero, dá x=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Nenhum real"
+              },
+              {
+                "id": "b",
+                "texto": "x=0"
+              },
+              {
+                "id": "c",
+                "texto": "Qualquer real"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Dividir por uma expressão com incógnita pode eliminar casos em que ela é zero. Mesmo em equações simples, escreva a operação em vez de trocar sinais por memória. E não esqueça a distributiva: 2(x−3)=2x−6, não 2x−3."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o conjunto solução de 0x=0 em ℝ?",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "A igualdade é verdadeira para todo real x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "{0}"
+              },
+              {
+                "id": "c",
+                "texto": "∅"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o conjunto solução de 0x=3?",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "O lado esquerdo vale 0 para todo x e nunca é 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "{3}"
+              },
+              {
+                "id": "c",
+                "texto": "∅"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em orçamentos, doses de modelos fictícios ou cronogramas, declare o significado e a unidade de x. Depois confira se a solução algébrica é admissível no contexto. Aqui nenhum exemplo deve ser interpretado como orientação clínica ou financeira real."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x/3+2=5.",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "Subtraia 2 para obter x/3=3 e multiplique por 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x=21"
+              },
+              {
+                "id": "b",
+                "texto": "x=9"
+              },
+              {
+                "id": "c",
+                "texto": "x=1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual operação é sempre reversível numa equação real?",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "Somar 4 é desfeito subtraindo 4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Somar 4 aos dois membros"
+              },
+              {
+                "id": "b",
+                "texto": "Multiplicar por zero"
+              },
+              {
+                "id": "c",
+                "texto": "Dividir por x sem restrição"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Equação é uma igualdade que pode depender de incógnitas. Seu conjunto solução reúne os valores que a tornam verdadeira no universo declarado. Somar o mesmo número aos dois lados e multiplicar ambos por uma constante não nula preserva a equivalência. Em ax+b=0, se a≠0 então x=−b/a; se a=0, analise b=0 ou b≠0."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Verifique na expressão original: 2(7−3)+4=12 e 7+5=12. Portanto S={7}."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como resolver equações lineares e identificar identidades e contradições. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se ax+b=0 e a≠0, qual é a solução?",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "Isolamos ax=−b e dividimos pelo coeficiente não nulo a.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x=b/a"
+              },
+              {
+                "id": "b",
+                "texto": "x=−a/b"
+              },
+              {
+                "id": "c",
+                "texto": "x=−b/a"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma contagem exige x inteiro não negativo e a equação dá x=−2. A conclusão é qual?",
+            "assunto": "Equações: a balança e suas condições",
+            "orientacao": "Faça a mesma operação nos dois membros e separe o caso de coeficiente da incógnita igual a zero.",
+            "explicacao": "A condição do contexto exclui a solução negativa, sem permitir alterar o valor arbitrariamente.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Podemos trocar por 2"
+              },
+              {
+                "id": "b",
+                "texto": "O modelo não tem solução admissível nesse contexto"
+              },
+              {
+                "id": "c",
+                "texto": "Há menos duas pessoas"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

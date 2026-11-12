@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 18,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-18",
+      "titulo": "Produtos com várias pistas",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Agora a régua ganhou três portas e uma delas aparece duas vezes. Será que o sinal troca em todas? Antes de sair alternando + e −, vale descobrir qual porta só encosta no zero e qual atravessa para o outro lado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Estudar sinais de produtos com três fatores e raízes repetidas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Sinais de fatores e quadráticas (passo 17)."
+              }
+            ],
+            "titulo": "Produtos com várias pistas",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Os zeros reais dos fatores dividem a reta em intervalos. Em cada intervalo, determine o sinal de cada fator. Potências pares são positivas fora do zero; potências ímpares mantêm o sinal da base. Ordene os pontos críticos e trate a inclusão dos zeros somente depois de escolher os sinais que atendem à desigualdade."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O quadrado de x menos r é sempre não negativo.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "(x−r)²≥0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a multiplicidade de 1 em (x+2)(x−1)²(x−3)?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "O expoente do fator x−1 é dois.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Perto de uma raiz r, escreva o produto como (x−r)ᵐg(x), com g contínua e g(r)≠0. O fator g mantém sinal no entorno. Se m é par, (x−r)ᵐ é positivo dos dois lados; se m é ímpar, troca sinal. Para os produtos polinomiais deste passo, a fatoração identifica todas as trocas possíveis."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Estudar sinais de produtos com três fatores e raízes repetidas.",
+                      "exemplo": "Resolva (x+2)(x−1)²(x−3)<0. Os zeros são −2,1,3; a raiz 1 tem multiplicidade dois."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Como a desigualdade é estrita, excluímos também o zero em 1. S=(−2,1)∪(1,3). Conferir x=0 e x=2 dá resultados negativos."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal de (x−1)² para x≠1?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "Um quadrado não nulo é estritamente positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Negativo"
+              },
+              {
+                "id": "b",
+                "texto": "Depende do lado de 1"
+              },
+              {
+                "id": "c",
+                "texto": "Positivo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Produtos com várias pistas",
+            "assunto": "Produtos com várias pistas",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva (x+2)(x−1)²(x−3)<0. Os zeros são −2,1,3; a raiz 1 tem multiplicidade dois."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Fora de x=1, o fator quadrado é positivo. O sinal depende de (x+2)(x−3), que é negativo entre −2 e 3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Como a desigualdade é estrita, excluímos também o zero em 1. S=(−2,1)∪(1,3). Conferir x=0 e x=2 dá resultados negativos."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x+2)(x−1)²(x−3)<0?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "O produto é negativo entre −2 e 3, mas zera em 1, que deve ser excluído.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[−2,3]"
+              },
+              {
+                "id": "b",
+                "texto": "(−2,1)∪(1,3)"
+              },
+              {
+                "id": "c",
+                "texto": "(−2,3)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a desigualdade do exemplo fosse ≤0, qual seria a solução?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "Os três zeros seriam aceitos e todo o intervalo entre −2 e 3 teria produto não positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[−2,3]"
+              },
+              {
+                "id": "b",
+                "texto": "(−2,1)∪(1,3)"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ignorar uma raiz par na troca de sinal não significa incluí-la em uma desigualdade estrita. Em x=1, o produto do exemplo é zero, portanto não serve. Multiplicidade regula a troca; o símbolo da desigualdade regula a aceitação do zero."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal de x(x−1)(x−2) para x>2?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "Os três fatores são positivos nesse intervalo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Negativo"
+              },
+              {
+                "id": "b",
+                "texto": "Zero"
+              },
+              {
+                "id": "c",
+                "texto": "Positivo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal de x(x−1)(x−2) para x<0?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "Os três fatores são negativos, e três sinais negativos produzem negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Zero"
+              },
+              {
+                "id": "b",
+                "texto": "Negativo"
+              },
+              {
+                "id": "c",
+                "texto": "Positivo"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um caminho eficiente é estudar fatores pares separadamente, sem apagá-los do conjunto de zeros. Desenhe os quatro intervalos do exemplo, escreva os sinais por extenso e explique por que os dois intervalos centrais têm o mesmo sinal apesar do ponto excluído entre eles."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de x(x−1)(x−2)>0?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "Os sinais da esquerda para a direita são −,+,−,+, com raízes excluídas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,1)∪(2,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "(−∞,0)∪(1,2)"
+              },
+              {
+                "id": "c",
+                "texto": "[0,2]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ao atravessar uma raiz de multiplicidade três, o sinal de um produto polinomial muda?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "Multiplicidade ímpar provoca troca de sinal.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Só se a raiz for zero"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Os zeros reais dos fatores dividem a reta em intervalos. Em cada intervalo, determine o sinal de cada fator. Potências pares são positivas fora do zero; potências ímpares mantêm o sinal da base. Ordene os pontos críticos e trate a inclusão dos zeros somente depois de escolher os sinais que atendem à desigualdade."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Como a desigualdade é estrita, excluímos também o zero em 1. S=(−2,1)∪(1,3). Conferir x=0 e x=2 dá resultados negativos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como estudar sinais de produtos com três fatores e raízes repetidas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em (x−1)²(x+2)≥0, qual é a solução?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "O fator quadrado é positivo exceto em 1, onde o produto é zero; o sinal restante depende de x+2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[1,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[−2,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "(−∞,−2]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que testar apenas x=0 não resolve qualquer inequação polinomial?",
+            "assunto": "Produtos com várias pistas",
+            "orientacao": "Confira as multiplicidades: uma raiz par não troca sinal, mas continua sendo zero da expressão.",
+            "explicacao": "É necessário localizar todos os zeros e estudar cada intervalo determinado por eles.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Pode haver outros intervalos separados por zeros"
+              },
+              {
+                "id": "b",
+                "texto": "Todo produto tem o mesmo sinal"
+              },
+              {
+                "id": "c",
+                "texto": "O teste sempre inclui todas as raízes"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

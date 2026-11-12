@@ -96,11 +96,30 @@ export async function openBrowser() {
 			heading,
 		);
 	};
-	const screenshot = async (name) => {
+	const screenshot = async (name, options = {}) => {
 		if (!process.env.TRILBIT_SCREENSHOTS) return;
 		await evaluate("document.fonts.ready.then(()=>true)");
-		await delay(250);
-		const result = await send("Page.captureScreenshot", { format: "png" });
+		await delay(1200);
+		await evaluate(
+			options.bottom
+				? "window.scrollTo(0,document.body.scrollHeight)"
+				: "window.scrollTo(0,0)",
+		);
+		const metrics = await send("Page.getLayoutMetrics");
+		const bounds = metrics.cssContentSize;
+		const result = await send("Page.captureScreenshot", {
+			format: "png",
+			captureBeyondViewport: !options.viewport,
+			...(!options.viewport && {
+				clip: {
+					x: 0,
+					y: 0,
+					width: bounds.width,
+					height: bounds.height,
+					scale: 1,
+				},
+			}),
+		});
 		await writeFile(
 			join(process.env.TRILBIT_SCREENSHOTS, `${name}.png`),
 			Buffer.from(result.data, "base64"),

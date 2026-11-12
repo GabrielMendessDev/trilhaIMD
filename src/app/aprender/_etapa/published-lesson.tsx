@@ -5,6 +5,7 @@ import {
 	CompletionEffects,
 	RewardValue,
 } from "~/app/_components/reward-effects";
+import { livesOf } from "~/domain/lesson-lives.mjs";
 import { auth } from "~/server/auth";
 import type { PublishedPoint } from "~/server/learning";
 import {
@@ -12,7 +13,6 @@ import {
 	getPublishedPoints,
 	getTrailStatus,
 } from "~/server/learning";
-import { newAchievementsAt } from "~/server/learning-metrics";
 import {
 	feedbackFor,
 	getLesson,
@@ -22,16 +22,24 @@ import {
 } from "~/server/lesson";
 import {
 	type LessonProgress,
+	lessonProgressPercent,
 	lessonScore,
 	pendingItem,
 } from "~/server/lesson-progress";
+import { getCompletionBits } from "~/server/rpg";
+import { getAllQuestionStates } from "~/server/rpg-actions";
+import { effectiveEntry } from "~/server/rpg-support";
 import { trailMapHref } from "../trails";
+import { AnswerResult } from "./answer-result";
 import { ContentPanel } from "./content";
-import { Walkthrough } from "./controls";
+import { MultipleChoice, Walkthrough } from "./controls";
 import { LessonForm } from "./lesson-form";
+import { LessonLives } from "./lesson-lives";
 import { AnswerMotion, LessonTransition } from "./lesson-motion";
-import { LessonNotice } from "./lesson-notice";
+import { LessonRestart } from "./lesson-restart";
+import { MaterialCompletion } from "./material-completion";
 import styles from "./pedagogy.module.css";
+import { QuestionHelp } from "./question-help";
 import { StageScreen } from "./screen";
 
 const emptyProgress: LessonProgress = { completedEntries: [], attempts: {} };
@@ -94,7 +102,14 @@ export async function PublishedLesson({
 	const row = progress?.rows.find((item) => item.pointId === id);
 	const state = row ?? emptyProgress;
 	const items = lessonItems(lesson);
-	const models = lesson.map((entry) => ({ entry, model: toStageModel(entry) }));
+	const questionStates = user ? await getAllQuestionStates(user.id, id) : {};
+	const models = lesson.map((original) => {
+		const entry = effectiveEntry(
+			original,
+			questionStates[original.key]?.effects ?? {},
+		);
+		return { entry, model: toStageModel(entry) };
+	});
 	const materials = models.flatMap(({ entry, model }) =>
 		"content" in model && model.content.category === "material"
 			? [
@@ -117,6 +132,7 @@ export async function PublishedLesson({
 			>
 				<div className="mt-4 space-y-4">
 					<ContentPanel content={material.content} />
+					{user && <MaterialCompletion entryKey={material.key} pointId={id} />}
 					<Link className="ui-button" href={base}>
 						Voltar à lição
 					</Link>
@@ -148,8 +164,33 @@ export async function PublishedLesson({
 	const attempt =
 		feedbackKey && row?.attempts[feedbackKey]?.[feedbackRound - 1];
 	const feedbackEntry =
-		attempt && lesson.find(({ key }) => key === feedbackKey);
+		attempt && models.find(({ entry }) => entry.key === feedbackKey)?.entry;
+	if (user && row && !row.completedAt && livesOf(row) === 0 && !feedbackEntry)
+		return (
+			<section
+				aria-labelledby="lesson-lost"
+				className="ui-panel learning-panel space-y-4 p-5"
+			>
+				<LessonLives lives={0} />
+				<h2 id="lesson-lost">Atividade perdida</h2>
+				<p>
+					As 5 vidas acabaram nesta rodada. Esta atividade não foi concluída e a
+					próxima etapa continua bloqueada.
+				</p>
+				<p>
+					Você pode consultar os materiais e recomeçar do início com 5 vidas.
+					Seus erros anteriores ficam registrados; as outras etapas e o saldo da
+					conta continuam salvos.
+				</p>
+				<LessonRestart pointId={id} run={row.run ?? 1} />
+				<Link className="ui-link" href={trailMapHref(trail, number)}>
+					Voltar ao mapa
+				</Link>
+				{library}
+			</section>
+		);
 	if (attempt && feedbackEntry && isGraded(feedbackEntry)) {
+		const effects = questionStates[feedbackEntry.key]?.effects;
 		const result = feedbackFor(feedbackEntry, attempt, feedbackRound);
 		const definitiveError = feedbackRound === 2 && !attempt.correct;
 		const example =
@@ -160,105 +201,71 @@ export async function PublishedLesson({
 					"activity" in model &&
 					model.activity.kind === "passo-a-passo",
 			)?.model;
-		const message = attempt.correct
-			? feedbackRound === 1
-				? "Mandou bem!"
-				: "Você conseguiu na revisão!"
-			: feedbackRound === 1
-				? "Ainda não foi dessa vez!"
-				: "Vamos entender a resposta";
+		const recordedModel = toStageModel(feedbackEntry);
 		return (
 			<div className="mt-4 space-y-4">
 				<AnswerMotion
-					className={styles.feedback}
+					className="answer-experience space-y-4"
 					correct={attempt.correct}
-					eventId={`answer:${user?.id}:${point.id}:${feedbackKey}:${feedbackRound}`}
+					eventId={`answer:${user?.id}:${id}:${feedbackKey}:${feedbackRound}:run-${state.run ?? 1}`}
 				>
-					<div className={styles.feedbackHeader}>
-						<span className={styles.feedbackIcon}>
-							{attempt.correct ? (
-								<Icon name="check" />
-							) : (
-								<svg aria-hidden="true" viewBox="0 0 24 24">
-									<path d="m7 7 10 10M17 7 7 17" />
-								</svg>
-							)}
-						</span>
-						<LessonNotice
-							correct={attempt.correct}
-							eventId={`answer:${user?.id}:${point.id}:${feedbackKey}:${feedbackRound}`}
-							key={`${feedbackKey}-${feedbackRound}`}
-							message={message}
-						/>
-					</div>
-					<div className="space-y-2">
-						<p className={styles.secondary}>
-							Questão{" "}
-							{items
-								.filter(({ graded }) => graded)
-								.findIndex(({ key }) => key === feedbackKey) + 1}{" "}
-							de {items.filter(({ graded }) => graded).length} ·{" "}
-							{feedbackRound === 2 ? "Revisão" : "Primeira rodada"}
-						</p>
-						<ProgressBar
-							label="Andamento da lição"
-							value={(state.completedEntries.length / lesson.length) * 100}
-						/>
-					</div>
-					<p className={styles.feedbackPrompt}>{feedbackEntry.prompt}</p>
-					<ul
-						aria-label={attempt.correct ? "Resposta correta" : "Sua resposta"}
-						className={styles.answerList}
-					>
-						{result.chosen.map(({ id, label, value }) => (
-							<li key={id}>
-								{label && <strong>{label} · </strong>}
-								{value}
-							</li>
-						))}
-					</ul>
-					{result.hint && (
-						<>
-							<p>{result.hint}</p>
-							<p className={styles.secondary}>
-								Esta questão volta no fim da primeira rodada.
-							</p>
-						</>
-					)}
-					{result.solution.length > 0 && (
-						<div className={styles.solution}>
-							<h3>Resposta correta</h3>
-							<ul>
-								{result.solution.map(({ id, label, value }) => (
+					<ProgressBar
+						label={
+							feedbackRound === 2
+								? "Andamento da revisão"
+								: "Andamento da lição"
+						}
+						value={lessonProgressPercent(items, state, feedbackRound)}
+					/>
+					<LessonLives lives={livesOf(state)} review={feedbackRound === 2} />
+					<section className="ui-panel learning-panel space-y-4 p-5">
+						<h2>{feedbackEntry.title}</h2>
+						<p>{feedbackEntry.prompt}</p>
+						{"activity" in recordedModel &&
+						recordedModel.activity.kind === "multipla-escolha" ? (
+							<MultipleChoice
+								choices={recordedModel.activity.choices.filter(
+									(choice) => !effects?.removed?.includes(choice.id),
+								)}
+								locked
+								selected={attempt.selection[0]}
+							/>
+						) : (
+							<ul aria-label="Sua resposta" className={styles.answerList}>
+								{result.chosen.map(({ id, label, value }) => (
 									<li key={id}>
 										{label && <strong>{label} · </strong>}
 										{value}
 									</li>
 								))}
 							</ul>
-						</div>
-					)}
-					{result.explanation && <p>{result.explanation}</p>}
-					{example &&
-						"activity" in example &&
-						example.activity.kind === "passo-a-passo" && (
-							<details className={styles.workedExample}>
-								<summary>Ver exemplo resolvido da atividade</summary>
-								{example.activity.prompt && <p>{example.activity.prompt}</p>}
-								<Walkthrough steps={example.activity.steps} />
-							</details>
 						)}
-					{feedbackRound === 2 && (
-						<p className={styles.secondary}>
-							{attempt.correct
-								? "Questão recuperada na revisão."
-								: "Questão registrada como ponto para estudar."}
-						</p>
-					)}
-					<Link className="ui-button w-fit" href={base}>
-						{row?.completedAt ? "Ver meu resultado" : "Continuar"}{" "}
-						<Icon className="size-4" name="arrow" />
-					</Link>
+					</section>
+					<QuestionHelp example={effects?.example} hint={effects?.hint} />
+					<AnswerResult
+						assessment={{
+							...result,
+							correct: attempt.correct,
+							round: feedbackRound,
+							selection: attempt.selection,
+							finished: Boolean(row?.completedAt),
+							lives: livesOf(state),
+							failed: livesOf(state) === 0,
+							progress: 0,
+							eventId: `answer:${user?.id}:${id}:${feedbackKey}:${feedbackRound}:run-${state.run ?? 1}`,
+						}}
+						destination={(() => {
+							const next = pendingItem(items, state);
+							return next ? `${base}?item=${next.key}` : base;
+						})()}
+						example={
+							example &&
+							"activity" in example &&
+							example.activity.kind === "passo-a-passo" ? (
+								<Walkthrough steps={example.activity.steps} />
+							) : undefined
+						}
+					/>
 				</AnswerMotion>
 				{library}
 			</div>
@@ -278,7 +285,14 @@ export async function PublishedLesson({
 			({ number: step }) =>
 				step > number && !completed.some(({ number }) => number === step),
 		);
-		const awards = newAchievementsAt(progress?.rows ?? [], id);
+		const completionTime = row.completedAt.getTime();
+		const awards =
+			progress?.rpg.achievements.filter(
+				(a) =>
+					a.unlockedAt &&
+					Math.abs(new Date(a.unlockedAt).getTime() - completionTime) < 2000,
+			) ?? [];
+		const completionBits = user ? await getCompletionBits(user.id, id) : 0;
 		const completionId = `completion:${user?.id}:${id}:${row.completedAt.toISOString()}`;
 		return (
 			<div className="mt-4 space-y-4">
@@ -288,11 +302,17 @@ export async function PublishedLesson({
 					reward={row.xp}
 					unlocked={upcoming?.number}
 				>
-					<section aria-labelledby="lesson-result" className={styles.result}>
+					<section
+						aria-labelledby="lesson-result"
+						className={`${styles.result} lesson-completion`}
+					>
 						<div className={styles.resultHeader}>
 							<div>
 								<h2 id="lesson-result">
-									<Icon className="completion-medal" name="trophy" />
+									<span className="completion-medallion">
+										<span aria-hidden="true" className="completion-ring" />
+										<Icon className="completion-medal" name="trophy" />
+									</span>
 									Etapa concluída!
 								</h2>
 								<p>
@@ -327,7 +347,18 @@ export async function PublishedLesson({
 									<RewardValue value={row.xp} />
 								</dd>
 							</div>
+							<div>
+								<dt>Bits recebidos</dt>
+								<dd>
+									<span className="completion-bits">+{completionBits}</span>
+								</dd>
+							</div>
 						</dl>
+						{(row.skippedEntries?.length ?? 0) > 0 && (
+							<p>
+								{row.skippedEntries.length} questões puladas, sem pontuação.
+							</p>
+						)}
 						{score.legacy > 0 && (
 							<p>
 								{score.legacy} acertos registrados antes da revisão em duas
@@ -358,13 +389,10 @@ export async function PublishedLesson({
 						<div className={styles.actions}>
 							<Link
 								className="ui-button"
-								href={
-									upcoming
-										? `/aprender/${trail}/${upcoming.number}`
-										: trailMapHref(trail, number)
-								}
+								data-learning-direction="back"
+								href={trailMapHref(trail, upcoming?.number ?? number)}
 							>
-								{upcoming ? "Próxima etapa" : "Voltar ao mapa"}
+								Voltar ao mapa
 								<Icon className="size-4" name="arrow" />
 							</Link>
 							{lesson[0] && (
@@ -391,7 +419,7 @@ export async function PublishedLesson({
 		) ?? models[0];
 	if (!current) return null;
 	const { entry, model } = current;
-	const index = lesson.indexOf(entry);
+	const index = lesson.findIndex((item) => item.key === entry.key);
 	const round = pending?.round ?? 1;
 	const retryQueue =
 		round === 2
@@ -404,6 +432,9 @@ export async function PublishedLesson({
 	return (
 		<LessonTransition
 			key={`${entry.key}-${round}`}
+			kind={
+				round === 2 ? "review" : isGraded(entry) ? "question" : "explanation"
+			}
 			screenKey={`${entry.key}-${round}`}
 		>
 			<section aria-label="Lição" className="mt-4 space-y-4">
@@ -414,7 +445,7 @@ export async function PublishedLesson({
 							<h2>Hora de revisar!</h2>
 							<p>
 								Volte às questões que ficaram pendentes. Você tem mais uma
-								tentativa em cada uma.
+								tentativa em cada uma. Os erros da revisão não tiram vidas.
 							</p>
 						</div>
 					</div>
@@ -427,24 +458,57 @@ export async function PublishedLesson({
 								? `Questão ${questionIndex + 1} de ${gradedItems.length} · Tela ${index + 1} de ${lesson.length}`
 								: `Material de estudo · Tela ${index + 1} de ${lesson.length}`}
 					</p>
-					<ProgressBar
-						label={round === 2 ? "Andamento da revisão" : "Andamento da lição"}
-						value={
-							row?.completedAt
-								? 100
-								: round === 2
-									? (retryIndex / retryQueue.length) * 100
+					{(!user || !progress || row?.completedAt) && (
+						<ProgressBar
+							label="Andamento da lição"
+							value={
+								row?.completedAt
+									? 100
 									: (state.completedEntries.length / lesson.length) * 100
-						}
-					/>
+							}
+						/>
+					)}
 				</div>
 				{user && progress && !row?.completedAt ? (
 					<LessonForm
+						autoSubmit={isGraded(entry)}
+						bag={{
+							pointId: id,
+							effects: {
+								model,
+								variant:
+									questionStates[entry.key]?.effects.replacement?.key ?? "",
+								hint: questionStates[entry.key]?.effects.hint,
+								example: questionStates[entry.key]?.effects.example,
+								removed: questionStates[entry.key]?.effects.removed ?? [],
+							},
+						}}
 						endpoint={`${base}/responder`}
 						entryKey={entry.key}
+						example={(() => {
+							const worked = models.find(
+								({ entry: candidate, model: sample }) =>
+									candidate.key.split("-", 1)[0] ===
+										entry.key.split("-", 1)[0] &&
+									"activity" in sample &&
+									sample.activity.kind === "passo-a-passo",
+							)?.model;
+							return worked &&
+								"activity" in worked &&
+								worked.activity.kind === "passo-a-passo" ? (
+								<Walkthrough steps={worked.activity.steps} />
+							) : undefined;
+						})()}
 						key={`${entry.key}-${round}`}
-						label={isGraded(entry) ? "Verificar resposta" : "Continuar"}
+						label="Continuar"
+						lives={livesOf(state)}
+						progress={
+							round === 2
+								? (retryIndex / retryQueue.length) * 100
+								: (state.completedEntries.length / lesson.length) * 100
+						}
 						round={round}
+						run={state.run ?? 1}
 					>
 						<StageScreen model={model} response />
 					</LessonForm>

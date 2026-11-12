@@ -8,10 +8,16 @@ import {
 	useCallback,
 	useContext,
 	useEffect,
+	useLayoutEffect,
 	useRef,
 	useState,
 } from "react";
 import { FeedbackIcon } from "./feedback-icon";
+import {
+	commitLearningNavigation,
+	hasNativeNavigation,
+	revealPageContent,
+} from "./learning-navigation";
 
 export type FeedbackKind = "success" | "error" | "info" | "warning" | "loading";
 type Notice = {
@@ -42,13 +48,27 @@ function NavigationObserver() {
 	const search = useSearchParams();
 	const { finishNavigation, navigation } = useFeedback();
 	const location = `${pathname}${search.size ? `?${search}` : ""}`;
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (navigation && location !== navigation.from) {
-			finishNavigation();
-			const main = document.querySelector<HTMLElement>(
-				"#conteudo-principal, main",
-			);
-			main?.focus({ preventScroll: true });
+			const complete = () => {
+				const main = document.querySelector<HTMLElement>(
+					"#conteudo-principal, main",
+				);
+				if (!main) return false;
+				const native = hasNativeNavigation();
+				finishNavigation();
+				if (!native) revealPageContent(main);
+				main.focus({ preventScroll: true });
+				return true;
+			};
+			if (complete()) return;
+			const observer = new MutationObserver(() => {
+				if (complete()) observer.disconnect();
+			});
+			observer.observe(document.body, { childList: true, subtree: true });
+			return () => {
+				observer.disconnect();
+			};
 		}
 	}, [location, navigation, finishNavigation]);
 	return null;
@@ -58,7 +78,7 @@ export function FeedbackProvider({ children }: { children: ReactNode }) {
 	const [notices, setNotices] = useState<Notice[]>([]);
 	const [navigation, setNavigation] = useState<Navigation | null>(null);
 	const navigating = useRef<Navigation | null>(null);
-	const balance = useRef<{ account: string; value: number } | null>(null);
+	const balance = useRef(new Map<string, number>());
 	const dismiss = useCallback(
 		(id: string) =>
 			setNotices((current) => current.filter((item) => item.id !== id)),
@@ -70,8 +90,12 @@ export function FeedbackProvider({ children }: { children: ReactNode }) {
 		);
 	}, []);
 	const finishNavigation = useCallback(() => {
+		commitLearningNavigation();
 		navigating.current = null;
 		setNavigation(null);
+		setNotices((current) =>
+			current.filter((notice) => notice.id !== "navigation"),
+		);
 	}, []);
 	const startNavigation = useCallback((target: string) => {
 		const url = new URL(target, window.location.href);
@@ -86,9 +110,9 @@ export function FeedbackProvider({ children }: { children: ReactNode }) {
 		return true;
 	}, []);
 	const observeBalance = useCallback((account: string, value: number) => {
-		const previous = balance.current;
-		balance.current = { account, value };
-		return previous?.account === account && value > previous.value;
+		const previous = balance.current.get(account);
+		balance.current.set(account, value);
+		return previous !== undefined && value > previous;
 	}, []);
 	useEffect(() => {
 		if (!navigation) return;
@@ -174,8 +198,8 @@ function Toast({ notice }: { notice: Notice }) {
 }
 
 export function FeedbackViewport() {
-	const { notices, navigation } = useFeedback();
-	if (!notices.length && !navigation) return null;
+	const { notices } = useFeedback();
+	if (!notices.length) return null;
 	return (
 		<aside aria-label="Avisos do Trilbit" className="feedback-viewport">
 			<div aria-atomic="false" aria-live="polite">
@@ -192,12 +216,6 @@ export function FeedbackViewport() {
 						<Toast key={notice.id} notice={notice} />
 					))}
 			</div>
-			{navigation && (
-				<div className="feedback-navigation" role="status">
-					<FeedbackIcon kind="loading" />
-					<span>Abrindo página…</span>
-				</div>
-			)}
 		</aside>
 	);
 }

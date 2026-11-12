@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 28,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-28",
+      "titulo": "Ruffini: a divisão em modo compacto",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A divisão longa do passo 26 repete uma rotina. Ruffini guarda só os coeficientes e transforma a rotina numa sequência: baixar, multiplicar, somar. É uma compactação de trabalho, sem eliminar a necessidade de saber o que cada número representa."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Executar Briot–Ruffini com zeros de coeficientes e sinal correto."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Divisão por x−a e teorema do resto."
+              }
+            ],
+            "titulo": "Ruffini: a divisão em modo compacto",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para dividir por x−a, escreva os coeficientes de P em ordem decrescente, inclusive os zeros. Baixe o primeiro; multiplique-o por a; some ao coeficiente seguinte; repita. O último resultado é o resto; os anteriores são os coeficientes do quociente, cujo grau é uma unidade menor."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Ruffini repete as operações baixar, multiplicar pelo zero do divisor e somar.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Baixar → multiplicar por a → somar"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais coeficientes representam x³−2x+4?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "O coeficiente zero de x² mantém as posições corretas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1,−2,4"
+              },
+              {
+                "id": "b",
+                "texto": "1,2,4"
+              },
+              {
+                "id": "c",
+                "texto": "1,0,−2,4"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Comparar coeficientes em P=(x−a)Q+r gera exatamente a recorrência do algoritmo. Se P começa por cₙxⁿ, o primeiro coeficiente de Q é cₙ; o seguinte é cₙ₋₁+a·cₙ. Cada nova soma cancela o próximo termo da divisão longa. O último valor coincide com P(a), como exige o teorema do resto."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ruffini.svg",
+                "alt": "Ruffini por x−2: coeficientes 1,0,−2,4; produtos intermediários 2,4,4; resultados 1,2,2,8. Os três primeiros resultados formam x²+2x+2; o último é o resto 8.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Ruffini por x−2: coeficientes 1,0,−2,4; produtos intermediários 2,4,4; resultados 1,2,2,8. Os três primeiros resultados formam x²+2x+2; o último é o resto 8.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual a é usado para divisor x+2?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "O divisor é x−(−2).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/2"
+              },
+              {
+                "id": "b",
+                "texto": "−2"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Ruffini: a divisão em modo compacto",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Divida x³−2x+4 por x−2. Coeficientes: 1,0,−2,4; usamos a=2. Baixe 1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Multiplique 1·2=2 e some a 0, obtendo 2. Multiplique 2·2=4 e some a −2, obtendo 2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Multiplique 2·2=4 e some a 4, obtendo 8. A linha final é 1,2,2,8: Q=x²+2x+2 e R=8."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a primeira ação de Ruffini?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "O coeficiente líder inicia os coeficientes do quociente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Baixar o coeficiente líder"
+              },
+              {
+                "id": "b",
+                "texto": "Somar todos os coeficientes"
+              },
+              {
+                "id": "c",
+                "texto": "Trocar todos os sinais"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a linha final para x³−2x+4 dividido por x−2?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "A recorrência baixar, multiplicar por 2 e somar produz esses valores.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1,0,−2,4"
+              },
+              {
+                "id": "b",
+                "texto": "1,−2,2,0"
+              },
+              {
+                "id": "c",
+                "texto": "1,2,2,8"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O zero do divisor x+2 é −2. Use esse valor, não o coeficiente +2. Ruffini nesta forma dá o quociente para x−a; para 2x−4, divida o quociente obtido com a=2 por 2, conservando o resto."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na linha 1,2,2,8, qual é o resto?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "O último resultado da sequência é o resto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "8"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual quociente corresponde à linha 1,2,2,8?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "Os três primeiros valores são coeficientes do quociente de grau 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²+2x+2"
+              },
+              {
+                "id": "b",
+                "texto": "x³+2x²+2x+8"
+              },
+              {
+                "id": "c",
+                "texto": "x²+2x+8"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Faça uma execução com a tabela e outra pela identidade P=DQ+R. O objetivo não é apenas decorar o movimento da mão: é conseguir dizer onde começa o quociente e por que o último número é diferente dos anteriores."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se o último resultado é zero, o que se conclui?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "Resto zero significa divisibilidade, não ausência de quociente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O quociente é zero"
+              },
+              {
+                "id": "b",
+                "texto": "P é o polinômio nulo"
+              },
+              {
+                "id": "c",
+                "texto": "O divisor divide P exatamente"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o quociente de x²−1 por x−1?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "Ruffini com a=1 e coeficientes 1,0,−1 dá linha 1,1,0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²+1"
+              },
+              {
+                "id": "b",
+                "texto": "x+1"
+              },
+              {
+                "id": "c",
+                "texto": "x−1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para dividir por x−a, escreva os coeficientes de P em ordem decrescente, inclusive os zeros. Baixe o primeiro; multiplique-o por a; some ao coeficiente seguinte; repita. O último resultado é o resto; os anteriores são os coeficientes do quociente, cujo grau é uma unidade menor."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Multiplique 2·2=4 e some a 4, obtendo 8. A linha final é 1,2,2,8: Q=x²+2x+2 e R=8."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como executar Briot–Ruffini com zeros de coeficientes e sinal correto. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de x²−1 por x+1?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "P(−1)=1−1=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "−2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Após usar Ruffini com a=2 para divisor 2x−4, o que fazer com o quociente encontrado?",
+            "assunto": "Ruffini: a divisão em modo compacto",
+            "orientacao": "Escreva todos os coeficientes e lembre que o último número da linha é o resto.",
+            "explicacao": "Como 2x−4=2(x−2), o quociente precisa compensar o fator 2; o resto permanece.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Multiplicá-lo por 2"
+              },
+              {
+                "id": "b",
+                "texto": "Dividir o resto por 2"
+              },
+              {
+                "id": "c",
+                "texto": "Dividi-lo por 2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

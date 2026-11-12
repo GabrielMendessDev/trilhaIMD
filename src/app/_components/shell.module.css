@@ -12,11 +12,7 @@
 }
 
 :global([data-theme="dark"]) .shell[data-home] .workspace {
-	background:
-		radial-gradient(ellipse at 0 10%, #542c9baa, transparent 60%),
-		radial-gradient(ellipse at 42% 85%, #34378a9c, transparent 73%),
-		radial-gradient(ellipse at 95% 0, #49367280, transparent 40%),
-		linear-gradient(140deg, #2d1c57, #17182f 75%);
+	background: var(--canvas);
 }
 
 .skip {
@@ -279,13 +275,6 @@
 	max-width: none;
 	height: auto;
 	filter: drop-shadow(0 0 14px #6558f566);
-	animation: bito-float 6s ease-in-out infinite;
-}
-
-@keyframes bito-float {
-	50% {
-		transform: translateY(-5px) rotate(2deg);
-	}
 }
 
 .metrics {

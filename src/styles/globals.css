@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @import "./feedback.css";
+@import "./motion.css";
+@import "./learning-surfaces.css";
+@import "./rpg.css";
+@import "./experience.css";
 
 @font-face {
 	font-family: Sora;

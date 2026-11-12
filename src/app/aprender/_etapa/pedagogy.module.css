@@ -155,7 +155,6 @@
 	margin-top: 0.25rem;
 }
 
-.feedback,
 .result {
 	position: relative;
 	display: grid;
@@ -166,102 +165,29 @@
 	background: var(--surface);
 	padding: clamp(1rem, 3vw, 1.65rem);
 }
-.feedback {
-	--signal: var(--solar);
-	border-color: color-mix(in srgb, var(--signal) 60%, var(--line));
-	box-shadow: 0 8px 28px color-mix(in srgb, var(--signal) 14%, transparent);
-}
-.feedback[data-outcome="success"] {
-	--signal: var(--mint);
-}
-.feedbackHeader,
 .resultHeader {
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
 }
-.feedbackHeader h2,
 .resultHeader h2 {
 	font-size: 1.5rem;
 	font-weight: 800;
 	line-height: 1.2;
 }
-.feedbackHeader h2:focus {
-	outline-offset: 4px;
-}
-.feedbackIcon {
-	display: grid;
-	width: 2.75rem;
-	height: 2.75rem;
-	flex: none;
-	place-items: center;
-	border-radius: var(--radius-control);
-	background: var(--signal);
-	color: var(--night);
-}
-.feedbackIcon svg {
-	width: 1.35rem;
-	height: 1.35rem;
-	fill: none;
-	stroke: currentColor;
-	stroke-width: 2.4;
-	stroke-linecap: round;
-}
-.feedbackPrompt {
-	font-weight: 700;
-}
-.feedback p,
 .result p {
 	max-width: 68ch;
 	line-height: 1.6;
 }
-.answerList,
-.solution ul {
+.answerList {
 	display: grid;
 	gap: 0.4rem;
 }
-.answerList li,
-.solution {
-	border: 1px solid color-mix(in srgb, var(--signal) 52%, var(--line));
+.answerList li {
 	border-radius: var(--radius-control);
-	background: color-mix(in srgb, var(--signal) 13%, var(--surface));
+	background: color-mix(in srgb, var(--answer-color) 13%, var(--surface));
 	padding: 0.65rem 0.8rem;
 	overflow-wrap: anywhere;
-}
-.solution {
-	--signal: var(--mint);
-}
-.solution h3 {
-	margin-block-end: 0.35rem;
-}
-.workedExample {
-	border-block: 1px solid var(--line);
-}
-.workedExample summary {
-	min-height: 2.75rem;
-	align-content: center;
-	cursor: pointer;
-	color: var(--accent);
-	font-weight: 800;
-}
-.workedExample > :not(summary) {
-	margin-block-end: 0.75rem;
-}
-.noticeText {
-	display: grid;
-	justify-items: start;
-	gap: 0.3rem;
-}
-.flash {
-	border-radius: var(--radius-control);
-	background: color-mix(in srgb, var(--signal) 16%, var(--surface));
-	color: var(--ink);
-	padding: 0.2rem 0.5rem;
-	font-size: 0.875rem;
-	font-weight: 800;
-}
-.flash[data-visible="false"] {
-	visibility: hidden;
 }
 
 .resultHeader {
@@ -344,46 +270,5 @@
 	.resultHeader img {
 		width: 5rem;
 		height: 5rem;
-	}
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	.feedback[data-animate] {
-		animation: feedback-border 300ms ease-out both;
-	}
-	.feedback[data-animate][data-outcome="error"] {
-		animation: feedback-shake 260ms ease-out both;
-	}
-	.feedback[data-animate] .feedbackIcon {
-		animation: check-arrives 280ms cubic-bezier(0.2, 0.8, 0.3, 1.1) both;
-	}
-	.feedback[data-animate][data-outcome="success"] .answerList li {
-		animation: answer-correct 320ms ease-out both;
-	}
-}
-
-@keyframes feedback-border {
-	from {
-		border-color: var(--signal);
-		box-shadow: 0 10px 36px color-mix(in srgb, var(--signal) 25%, transparent);
-	}
-}
-@keyframes check-arrives {
-	from {
-		transform: scale(0.86);
-	}
-}
-@keyframes feedback-shake {
-	25% {
-		transform: translateX(-2px);
-	}
-	60% {
-		transform: translateX(2px);
-	}
-}
-@keyframes answer-correct {
-	40% {
-		transform: scale(1.01);
-		box-shadow: 0 6px 24px -10px var(--mint);
 	}
 }

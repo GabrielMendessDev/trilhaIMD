@@ -1,0 +1,511 @@
+{
+  "versao": 2,
+  "data": "2026-11-12",
+  "trilha": "elementar",
+  "fonte": "IMD1001_acervo_unificado_P1_P2_P3.md",
+  "unidades": [
+    {
+      "unidade": 1,
+      "inicio": 1,
+      "fim": 20
+    },
+    {
+      "unidade": 2,
+      "inicio": 21,
+      "fim": 40
+    },
+    {
+      "unidade": 3,
+      "inicio": 41,
+      "fim": 60
+    }
+  ],
+  "passos": [
+    {
+      "ponto": 1,
+      "arquivo": "01.json",
+      "titulo": "Coleções, pistas e linguagem matemática",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 2,
+      "arquivo": "02.json",
+      "titulo": "O mapa dos números",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 3,
+      "arquivo": "03.json",
+      "titulo": "Pertencer é diferente de estar contido",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 4,
+      "arquivo": "04.json",
+      "titulo": "Operações: cruzando listas sem tropeçar",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 5,
+      "arquivo": "05.json",
+      "titulo": "O mistério das inscrições repetidas",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 6,
+      "arquivo": "06.json",
+      "titulo": "Intervalos: quem pode entrar?",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 7,
+      "arquivo": "07.json",
+      "titulo": "Potências: multiplicar sem escrever tudo",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 8,
+      "arquivo": "08.json",
+      "titulo": "Potências sob investigação",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 9,
+      "arquivo": "09.json",
+      "titulo": "Logaritmo nasce de uma pergunta",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 10,
+      "arquivo": "10.json",
+      "titulo": "Logaritmos: a pergunta escondida",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 11,
+      "arquivo": "11.json",
+      "titulo": "Equações: a balança e suas condições",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 12,
+      "arquivo": "12.json",
+      "titulo": "Sistemas: três finais possíveis",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 13,
+      "arquivo": "13.json",
+      "titulo": "Quadráticas: escolher o caminho",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 14,
+      "arquivo": "14.json",
+      "titulo": "Discriminante e o parâmetro suspeito",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 15,
+      "arquivo": "15.json",
+      "titulo": "Biquadradas: a troca que precisa voltar",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 16,
+      "arquivo": "16.json",
+      "titulo": "Desigualdades: virando o sinal com motivo",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 17,
+      "arquivo": "17.json",
+      "titulo": "A régua dos sinais",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 18,
+      "arquivo": "18.json",
+      "titulo": "Produtos com várias pistas",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 19,
+      "arquivo": "19.json",
+      "titulo": "Quocientes: o ponto que nunca entra",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 20,
+      "arquivo": "20.json",
+      "titulo": "Missão P1: defender uma solução",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 21,
+      "arquivo": "21.json",
+      "titulo": "Polinômios: uma expressão com estrutura",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 22,
+      "arquivo": "22.json",
+      "titulo": "Operações: organizar antes de calcular",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 23,
+      "arquivo": "23.json",
+      "titulo": "Produtos notáveis sem feitiçaria",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 24,
+      "arquivo": "24.json",
+      "titulo": "Fatorar é enxergar as peças",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 25,
+      "arquivo": "25.json",
+      "titulo": "Raízes e multiplicidades",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 26,
+      "arquivo": "26.json",
+      "titulo": "Divisão polinomial, passo a passo",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 27,
+      "arquivo": "27.json",
+      "titulo": "O resto pode ser descoberto sem dividir",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 28,
+      "arquivo": "28.json",
+      "titulo": "Ruffini: a divisão em modo compacto",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 29,
+      "arquivo": "29.json",
+      "titulo": "Raízes racionais: candidatos não são garantias",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 30,
+      "arquivo": "30.json",
+      "titulo": "Oficina de prova: remontar um polinômio",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 31,
+      "arquivo": "31.json",
+      "titulo": "Pares ordenados: a ordem conta",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 32,
+      "arquivo": "32.json",
+      "titulo": "Relações e a regra de uma única saída",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 33,
+      "arquivo": "33.json",
+      "titulo": "Domínio, contradomínio e imagem",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 34,
+      "arquivo": "34.json",
+      "titulo": "Injetora, sobrejetora e bijetora",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 35,
+      "arquivo": "35.json",
+      "titulo": "Composição: a ordem muda o resultado",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 36,
+      "arquivo": "36.json",
+      "titulo": "Inversa: voltar pelo mesmo caminho",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 37,
+      "arquivo": "37.json",
+      "titulo": "Função afim: duas informações desenham uma reta",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 38,
+      "arquivo": "38.json",
+      "titulo": "Parábolas: raízes, concavidade e esboço",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 39,
+      "arquivo": "39.json",
+      "titulo": "Vértice: encontrar o melhor valor possível",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 40,
+      "arquivo": "40.json",
+      "titulo": "Missão P2: da regra ao gráfico",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 41,
+      "arquivo": "41.json",
+      "titulo": "Simetria: o espelho precisa de domínio",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 42,
+      "arquivo": "42.json",
+      "titulo": "Funções por partes: escolha o ramo antes da conta",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 43,
+      "arquivo": "43.json",
+      "titulo": "Periodicidade: repetir exige uma regra",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 44,
+      "arquivo": "44.json",
+      "titulo": "Exponenciais: crescer, decair e nunca tocar zero",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 45,
+      "arquivo": "45.json",
+      "titulo": "Logarítmica: o gráfico de volta",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 46,
+      "arquivo": "46.json",
+      "titulo": "Modelos multiplicativos e tempo de espera",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 47,
+      "arquivo": "47.json",
+      "titulo": "Triângulos: uma razão que não depende do tamanho",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 48,
+      "arquivo": "48.json",
+      "titulo": "Radianos: medir ângulo pelo arco",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 49,
+      "arquivo": "49.json",
+      "titulo": "Ciclo unitário e ângulos notáveis",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 50,
+      "arquivo": "50.json",
+      "titulo": "Seis razões e seus pontos proibidos",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 51,
+      "arquivo": "51.json",
+      "titulo": "Identidades: provar sem apagar o domínio",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 52,
+      "arquivo": "52.json",
+      "titulo": "Somar ângulos sem somar senos",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 53,
+      "arquivo": "53.json",
+      "titulo": "Seno, cosseno e tangente como funções",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 54,
+      "arquivo": "54.json",
+      "titulo": "Oficina do ciclo: justificar em vez de adivinhar",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 55,
+      "arquivo": "55.json",
+      "titulo": "Matrizes: linhas e colunas com significado",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 56,
+      "arquivo": "56.json",
+      "titulo": "Somar, escalar e transpor",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 57,
+      "arquivo": "57.json",
+      "titulo": "Produto matricial: linha encontra coluna",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 58,
+      "arquivo": "58.json",
+      "titulo": "Determinantes 2×2 e 3×3",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 59,
+      "arquivo": "59.json",
+      "titulo": "Inversas 2×2 e 3×3: conferir é parte da solução",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 60,
+      "arquivo": "60.json",
+      "titulo": "Missão final: ligar as três unidades",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    }
+  ],
+  "totais": {
+    "passos": 60,
+    "telas": 1020,
+    "questoes": 600,
+    "exemplos": 60
+  }
+}

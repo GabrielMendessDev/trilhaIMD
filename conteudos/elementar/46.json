@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 46,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-46",
+      "titulo": "Modelos multiplicativos e tempo de espera",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um projeto de catalogação dobra o número de registros organizados a cada etapa de um modelo ideal. Outro perde metade dos arquivos pendentes por etapa. O desafio não é só calcular o tamanho: é descobrir quando uma meta será atingida e se o resultado cabe numa etapa inteira."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Resolver equações exponenciais simples e interpretar logaritmos em modelos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Inversão entre exponencial e logaritmo."
+              }
+            ],
+            "titulo": "Modelos multiplicativos e tempo de espera",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um modelo multiplicativo pode ser N(t)=N₀aᵗ, com N₀>0 e a>0, a≠1. Para atingir M>0, resolva aᵗ=M/N₀, obtendo t=ln(M/N₀)/ln a. Se t representa etapas inteiras e se pede ‘ao menos’, compare inteiros e use o sentido de crescimento ou decaimento. O modelo não autoriza extrapolações ilimitadas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Um modelo multiplicativo aplica o mesmo fator a cada unidade de tempo.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "N(t)=N₀aᵗ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em N(t)=50·2ᵗ, qual é o valor inicial?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "N(0)=50·1=50.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "100"
+              },
+              {
+                "id": "c",
+                "texto": "50"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Dividir por N₀ isola a potência. Aplicar ln transforma ln(aᵗ)=t ln a; como a≠1, ln a≠0 e a divisão é válida. Esse argumento deriva a fórmula a partir das propriedades já demonstradas. Para a<1, o denominador é negativo, coerente com a redução multiplicativa."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/exponenciais.svg",
+                "alt": "Curvas 2ˣ crescente e (1/2)ˣ decrescente: ambas passam por (0,1), permanecem positivas e se aproximam do eixo horizontal sem tocá-lo.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Curvas 2ˣ crescente e (1/2)ˣ decrescente: ambas passam por (0,1), permanecem positivas e se aproximam do eixo horizontal sem tocá-lo.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale N(3) nesse modelo?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "50·2³=50·8=400.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "150"
+              },
+              {
+                "id": "b",
+                "texto": "400"
+              },
+              {
+                "id": "c",
+                "texto": "300"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Modelos multiplicativos e tempo de espera",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Uma coleção fictícia começa com 50 registros e dobra por etapa: N(t)=50·2ᵗ. Para chegar a 400, resolva 2ᵗ=8."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Como 8=2³, a meta exata ocorre em t=3. Pelo logaritmo: ln8/ln2=3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Se a meta for pelo menos 300 em etapas inteiras, N(2)=200 e N(3)=400. A primeira etapa admissível é 3, embora o instante real de igualdade esteja entre 2 e 3."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em qual etapa exata N(t)=400?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "A equação se reduz a 2ᵗ=8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "8"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a primeira etapa inteira com N(t)≥300?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "Na etapa 2 há 200; na 3 há 400, e o modelo é crescente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma redução de 20% por etapa corresponde a fator 0,8, não −0,2. E duplicar a cada etapa não significa acrescentar sempre o mesmo número. Antes de calcular logaritmos, confira se as grandezas comparadas têm unidades compatíveis."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma redução de 20% por etapa usa qual fator?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "Permanece 80% do valor anterior, isto é, 0,8 vezes esse valor.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1,2"
+              },
+              {
+                "id": "b",
+                "texto": "0,8"
+              },
+              {
+                "id": "c",
+                "texto": "−0,2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma redução pela metade usa qual modelo com início 80?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "O fator multiplicativo é 1/2 a cada etapa.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "N(t)=80·(1/2)ᵗ"
+              },
+              {
+                "id": "b",
+                "texto": "N(t)=80−t/2"
+              },
+              {
+                "id": "c",
+                "texto": "N(t)=80·2ᵗ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use exemplos em acervos, ambientes, redes ou culturas fictícias como modelos matemáticos, sem tomar os números como previsões reais. Declare o que o tempo mede, se ele é contínuo ou discreto e em que faixa a regra foi assumida."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Após três etapas de redução pela metade a partir de 80, qual é o valor?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "80·(1/2)³=80/8=10.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "40"
+              },
+              {
+                "id": "b",
+                "texto": "20"
+              },
+              {
+                "id": "c",
+                "texto": "10"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual fórmula resolve N₀aᵗ=M nas condições dadas?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "Dividir pelo inicial e aplicar ln isola o expoente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "t=M/(N₀a)"
+              },
+              {
+                "id": "b",
+                "texto": "t=ln(M/N₀)/ln a"
+              },
+              {
+                "id": "c",
+                "texto": "t=ln(M−N₀)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um modelo multiplicativo pode ser N(t)=N₀aᵗ, com N₀>0 e a>0, a≠1. Para atingir M>0, resolva aᵗ=M/N₀, obtendo t=ln(M/N₀)/ln a. Se t representa etapas inteiras e se pede ‘ao menos’, compare inteiros e use o sentido de crescimento ou decaimento. O modelo não autoriza extrapolações ilimitadas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Se a meta for pelo menos 300 em etapas inteiras, N(2)=200 e N(3)=400. A primeira etapa admissível é 3, embora o instante real de igualdade esteja entre 2 e 3."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como resolver equações exponenciais simples e interpretar logaritmos em modelos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que ln a pode ser usado como divisor?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "O único argumento positivo com ln igual a zero é 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Porque a≠1 implica ln a≠0"
+              },
+              {
+                "id": "b",
+                "texto": "Porque todo logaritmo é positivo"
+              },
+              {
+                "id": "c",
+                "texto": "Porque a pode ser negativo"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O modelo matemático garante previsões válidas para sempre num fenômeno real?",
+            "assunto": "Modelos multiplicativos e tempo de espera",
+            "orientacao": "Divida pelo valor inicial, isole a potência e confira se o tempo pedido é real ou inteiro.",
+            "explicacao": "Validade empírica depende das hipóteses e da faixa de aplicação, não apenas da forma algébrica.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só se usar base e"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

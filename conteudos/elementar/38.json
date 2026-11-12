@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 38,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-38",
+      "titulo": "Parábolas: raízes, concavidade e esboço",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma bola num modelo idealizado sobe e desce, enquanto outra expressão mede um custo com mínimo. Ambas podem produzir parábolas, mas a abertura e o domínio contam histórias diferentes. O gráfico deve seguir a fórmula e as condições, não a nossa expectativa."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Relacionar coeficientes e discriminante ao gráfico quadrático."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Quadráticas da Unidade 1 e leitura de gráficos."
+              }
+            ],
+            "titulo": "Parábolas: raízes, concavidade e esboço",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "f(x)=ax²+bx+c, a≠0, tem gráfico parabólico: concavidade para cima se a>0, para baixo se a<0. O intercepto vertical é (0,c). Os zeros reais são as interseções com o eixo horizontal e dependem de Δ=b²−4ac. O eixo de simetria é x=−b/(2a)."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A entrada do vértice é menos b dividido por duas vezes a; a saída vem da substituição na função.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "xᵥ=−b/(2a); yᵥ=f(xᵥ)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a concavidade de f(x)=−2x²+3?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "O coeficiente de x² é negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "É uma reta"
+              },
+              {
+                "id": "b",
+                "texto": "Para baixo"
+              },
+              {
+                "id": "c",
+                "texto": "Para cima"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Completar quadrados dá f(x)=a(x−h)²+k, com h=−b/(2a) e k=f(h). Pontos h−t e h+t têm a mesma imagem porque (−t)²=t². Quando há duas raízes, o eixo fica no ponto médio delas. O sinal de a indica para onde os valores crescem ao se afastar do eixo."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/parabola.svg",
+                "alt": "Parábola x²−4x+3 com concavidade para cima, zeros em 1 e 3, intercepto (0,3) e vértice (2,−1).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Parábola x²−4x+3 com concavidade para cima, zeros em 1 e 3, intercepto (0,3) e vértice (2,−1).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o intercepto vertical de x²−4x+3?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "Em x=0, a imagem é 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,3)"
+              },
+              {
+                "id": "b",
+                "texto": "(3,0)"
+              },
+              {
+                "id": "c",
+                "texto": "(0,−4)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Parábolas: raízes, concavidade e esboço",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para f(x)=x²−4x+3, fatore: (x−1)(x−3). Marque (1,0) e (3,0), além de (0,3)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O eixo está em x=2; f(2)=−1. O vértice é (2,−1) e a concavidade é para cima."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Esboce uma curva simétrica passando pelos pontos. Entre 1 e 3, f é negativa; fora, positiva. O esboço e a tabela de sinais descrevem a mesma função."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais são os zeros de x²−4x+3?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "A fatoração é (x−1)(x−3).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1 e −3"
+              },
+              {
+                "id": "b",
+                "texto": "0 e 3"
+              },
+              {
+                "id": "c",
+                "texto": "1 e 3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o eixo de simetria dessa parábola?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "O eixo vertical passa por −b/(2a)=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x=−2"
+              },
+              {
+                "id": "b",
+                "texto": "x=2"
+              },
+              {
+                "id": "c",
+                "texto": "y=2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Concavidade para cima não significa que f é crescente em toda a reta: ela decresce até o vértice e cresce depois. E Δ<0 não significa ausência de gráfico; significa ausência de interseções reais com o eixo x."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o vértice dessa função?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "Substituir x=2 resulta 4−8+3=−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(2,−1)"
+              },
+              {
+                "id": "b",
+                "texto": "(−1,2)"
+              },
+              {
+                "id": "c",
+                "texto": "(2,1)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se Δ<0, qual afirmação é correta?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "Não existem zeros reais, mas a parábola continua definida em ℝ.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O gráfico não existe"
+              },
+              {
+                "id": "b",
+                "texto": "A função é constante"
+              },
+              {
+                "id": "c",
+                "texto": "O gráfico não cruza o eixo x"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Antes de desenhar uma parábola, procure quatro informações: concavidade, intercepto, zeros e vértice. Não é necessário inventar dezenas de pontos. Descreva os pontos por coordenadas para que o entendimento não dependa apenas da imagem."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se Δ=0, quantos pontos distintos do gráfico estão no eixo x?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "A raiz dupla corresponde ao vértice tocando o eixo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma parábola com a>0 é crescente em toda ℝ?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "Ela decresce antes do vértice e cresce depois.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Só se c>0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "f(x)=ax²+bx+c, a≠0, tem gráfico parabólico: concavidade para cima se a>0, para baixo se a<0. O intercepto vertical é (0,c). Os zeros reais são as interseções com o eixo horizontal e dependem de Δ=b²−4ac. O eixo de simetria é x=−b/(2a)."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Esboce uma curva simétrica passando pelos pontos. Entre 1 e 3, f é negativa; fora, positiva. O esboço e a tabela de sinais descrevem a mesma função."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como relacionar coeficientes e discriminante ao gráfico quadrático. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale f(1+t) em comparação com f(1−t), se o eixo é x=1?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "A simetria da forma canônica garante igualdade para deslocamentos opostos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "São sempre opostos"
+              },
+              {
+                "id": "b",
+                "texto": "Um deles é sempre zero"
+              },
+              {
+                "id": "c",
+                "texto": "São iguais"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal de (x−1)(x−3) para 1<x<3?",
+            "assunto": "Parábolas: raízes, concavidade e esboço",
+            "orientacao": "Localize concavidade, zeros, intercepto e eixo de simetria antes de descrever o gráfico.",
+            "explicacao": "O primeiro fator é positivo e o segundo negativo.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Zero"
+              },
+              {
+                "id": "b",
+                "texto": "Negativo"
+              },
+              {
+                "id": "c",
+                "texto": "Positivo"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

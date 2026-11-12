@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 23,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-23",
+      "titulo": "Produtos notáveis sem feitiçaria",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um quadrado de lado a+b pode ser dividido em quatro peças. Duas delas são retângulos iguais. É justamente uma dessas peças que costuma desaparecer quando alguém escreve (a+b)²=a²+b². A geometria pode chamar a peça de volta."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Demonstrar quadrados de binômios e diferença de quadrados."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Distributividade e multiplicação de polinômios."
+              }
+            ],
+            "titulo": "Produtos notáveis sem feitiçaria",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As identidades são (a+b)²=a²+2ab+b², (a−b)²=a²−2ab+b² e (a+b)(a−b)=a²−b². Valem para reais a,b e também para expressões polinomiais substituídas em seus lugares. O sinal do termo central depende do produto dos dois termos do binômio."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O quadrado de uma soma tem dois quadrados e o termo central duas vezes a vezes b.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "(a+b)²=a²+2ab+b²"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x+3)²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "O termo central é 2·x·3=6x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²+3x+9"
+              },
+              {
+                "id": "b",
+                "texto": "x²+6x+9"
+              },
+              {
+                "id": "c",
+                "texto": "x²+9"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Expanda (a+b)(a+b): aparecem a², ab, ba e b². Como ab=ba em ℝ, os dois termos centrais somam 2ab. Na diferença de quadrados, −ab e +ab se cancelam. O desenho por áreas é intuitivo para medidas positivas; a distributiva demonstra as identidades para todos os reais."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Demonstrar quadrados de binômios e diferença de quadrados.",
+                      "exemplo": "Expanda (2x−3)². Identifique a=2x e b=3."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Logo (2x−3)²=4x²−12x+9. Em x=0, ambos os lados valem 9; em x=1, ambos valem 1."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x−4)²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "O termo central é −2·x·4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²−8x+16"
+              },
+              {
+                "id": "b",
+                "texto": "x²−16"
+              },
+              {
+                "id": "c",
+                "texto": "x²−4x+16"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Produtos notáveis sem feitiçaria",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Expanda (2x−3)². Identifique a=2x e b=3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Calcule a²=4x², −2ab=−12x e b²=9."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Logo (2x−3)²=4x²−12x+9. Em x=0, ambos os lados valem 9; em x=1, ambos valem 1."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (2x−3)²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "É preciso elevar 2x ao quadrado e calcular o termo central.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4x²−9"
+              },
+              {
+                "id": "b",
+                "texto": "4x²−6x+9"
+              },
+              {
+                "id": "c",
+                "texto": "4x²−12x+9"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x+5)(x−5)?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "Os termos cruzados se cancelam.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²−10x+25"
+              },
+              {
+                "id": "b",
+                "texto": "x²−25"
+              },
+              {
+                "id": "c",
+                "texto": "x²+25"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "(a−b)² não é a²−b²: o primeiro é quadrado de uma diferença; o segundo é produto de conjugados. Use a=b=1 para ver a diferença: os dois podem coincidir nesse caso, mas a=2,b=1 produz 1 contra 3. Um teste mal escolhido pode esconder o erro."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 99²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "(100−1)²=10000−200+1=9801.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "9801"
+              },
+              {
+                "id": "b",
+                "texto": "9999"
+              },
+              {
+                "id": "c",
+                "texto": "9601"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual termo falta em (a+b)²=a²+___+b²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "A expansão tem dois produtos iguais ab.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ab"
+              },
+              {
+                "id": "b",
+                "texto": "a+b"
+              },
+              {
+                "id": "c",
+                "texto": "2ab"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Produtos notáveis ajudam no cálculo mental e na fatoração. 99²=(100−1)²=10000−200+1=9801. Reconstrua uma identidade pela distributiva quando esquecer o sinal; a memória vira consequência do raciocínio."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual expressão é sempre não negativa para x real?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "Todo quadrado real é não negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x−2"
+              },
+              {
+                "id": "b",
+                "texto": "(x−2)²"
+              },
+              {
+                "id": "c",
+                "texto": "x²−4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (3x+1)²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "O quadrado de 3x é 9x² e o termo cruzado é 6x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "9x²+6x+1"
+              },
+              {
+                "id": "b",
+                "texto": "9x²+1"
+              },
+              {
+                "id": "c",
+                "texto": "3x²+6x+1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As identidades são (a+b)²=a²+2ab+b², (a−b)²=a²−2ab+b² e (a+b)(a−b)=a²−b². Valem para reais a,b e também para expressões polinomiais substituídas em seus lugares. O sinal do termo central depende do produto dos dois termos do binômio."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Logo (2x−3)²=4x²−12x+9. Em x=0, ambos os lados valem 9; em x=1, ambos valem 1."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como demonstrar quadrados de binômios e diferença de quadrados. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual fatoração corresponde a a²−b²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "O produto de conjugados cancela os termos cruzados.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(a−b)²"
+              },
+              {
+                "id": "b",
+                "texto": "(a+b)²"
+              },
+              {
+                "id": "c",
+                "texto": "(a−b)(a+b)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual exemplo refuta (a+b)²=a²+b²?",
+            "assunto": "Produtos notáveis sem feitiçaria",
+            "orientacao": "Expanda pela distributiva para conferir o termo central, especialmente quando houver um sinal de menos.",
+            "explicacao": "Com a=b=1, o lado esquerdo é 4 e o direito é 2.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a=1,b=0"
+              },
+              {
+                "id": "b",
+                "texto": "a=1,b=1"
+              },
+              {
+                "id": "c",
+                "texto": "a=0,b=1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

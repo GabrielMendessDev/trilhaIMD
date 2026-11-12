@@ -4,6 +4,7 @@ import { Icon } from "~/app/_components/icon";
 import { LessonDiagram } from "./lesson-diagram";
 import type { ContentBlock, StageContent } from "./model";
 import pedagogy from "./pedagogy.module.css";
+import { SetExplorer } from "./set-explorer";
 import styles from "./stage.module.css";
 
 function Formula({ label, terms }: Extract<ContentBlock, { type: "formula" }>) {
@@ -22,7 +23,11 @@ function Formula({ label, terms }: Extract<ContentBlock, { type: "formula" }>) {
 	const group = (text: string) => createElement("mrow", null, ...tokens(text));
 	return createElement(
 		"math",
-		{ "aria-label": label, className: pedagogy.formula, display: "block" },
+		{
+			"aria-label": label,
+			className: `${pedagogy.formula} learning-formula`,
+			display: "block",
+		},
 		createElement(
 			"mrow",
 			null,
@@ -116,6 +121,15 @@ export function ContentBlocks({ blocks }: { blocks: readonly ContentBlock[] }) {
 export function ContentPanel({ content }: { content: StageContent }) {
 	const empty = content.blocks.length === 0 && !content.summary;
 	const id = useId();
+	const visualMembership =
+		content.category !== "material" &&
+		!content.blocks.some(
+			(block) =>
+				block.type === "diagram" &&
+				["inclusao", "venn"].includes(block.data.modelo),
+		) &&
+		/conjunto/i.test(JSON.stringify(content.blocks)) &&
+		/pertence|pertinência|∈|⊆/i.test(JSON.stringify(content.blocks));
 	const category =
 		content.category === "diagrama"
 			? "Exploração visual"
@@ -124,9 +138,14 @@ export function ContentPanel({ content }: { content: StageContent }) {
 				: "Explicação";
 
 	return (
-		<section aria-labelledby={id} className={styles.panel}>
+		<section aria-labelledby={id} className={`${styles.panel} learning-panel`}>
 			<h2 id={id}>
-				{content.title ?? (content.category ? category : "Conteúdo")}
+				<span aria-hidden="true" className="panel-glyph">
+					<Icon name="book" />
+				</span>
+				<span>
+					{content.title ?? (content.category ? category : "Conteúdo")}
+				</span>
 			</h2>
 			{empty ? (
 				<>
@@ -157,6 +176,17 @@ export function ContentPanel({ content }: { content: StageContent }) {
 							Imagem com legenda opcional
 						</div>
 					</div>
+				</>
+			) : visualMembership ? (
+				<>
+					<ContentBlocks blocks={content.blocks.slice(0, 2)} />
+					<SetExplorer />
+					{content.blocks.length > 2 && (
+						<details className="concept-reading-more">
+							<summary>Mais símbolos e exemplos</summary>
+							<ContentBlocks blocks={content.blocks.slice(2)} />
+						</details>
+					)}
 				</>
 			) : (
 				<ContentBlocks blocks={content.blocks} />

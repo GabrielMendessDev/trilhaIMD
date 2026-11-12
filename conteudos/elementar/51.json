@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 51,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-51",
+      "titulo": "Identidades: provar sem apagar o domínio",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma identidade parece uma igualdade já pronta, mas sua prova tem trabalho para fazer. O desafio é transformar um lado no outro sem dividir por algo que pode ser zero. Até as fórmulas clássicas precisam apresentar o ingresso do domínio."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Demonstrar identidades fundamentais e simplificar expressões válidas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Seis razões e pontos proibidos."
+              }
+            ],
+            "titulo": "Identidades: provar sem apagar o domínio",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "No círculo unitário, sen²θ+cos²θ=1 para todo real θ. Dividindo por cos²θ, onde cosθ≠0, obtemos 1+tan²θ=sec²θ. Dividindo por sen²θ, onde senθ≠0, obtemos 1+cot²θ=csc²θ. Identidade significa igualdade para todas as entradas do domínio comum indicado."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A soma dos quadrados do seno e do cosseno é um.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "sen²θ+cos²θ=1"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual identidade vale para todo θ real?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "É a equação do círculo unitário em suas coordenadas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "sen²θ+cos²θ=1"
+              },
+              {
+                "id": "b",
+                "texto": "senθ+cosθ=1"
+              },
+              {
+                "id": "c",
+                "texto": "tan²θ+1=cos²θ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As coordenadas do círculo satisfazem x²+y²=1; trocar x por cosθ e y por senθ fornece a relação fundamental. As outras duas identidades vêm de dividir termo a termo, preservando as restrições. Isso permite reconstruir as fórmulas e explica por que seus domínios não são idênticos."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/tangente.svg",
+                "alt": "Ramos da tangente separados por assíntotas verticais em −π/2 e π/2. O ramo central é crescente e passa pela origem; não há pontos nas assíntotas.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Ramos da tangente separados por assíntotas verticais em −π/2 e π/2. O ramo central é crescente e passa pela origem; não há pontos nas assíntotas.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sec²θ−tan²θ no domínio original?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "Reorganizar 1+tan²θ=sec²θ dá a diferença igual a 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "−1"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Identidades: provar sem apagar o domínio",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Simplifique sec²θ−tan²θ onde cosθ≠0. Pela identidade 1+tan²θ=sec²θ, a diferença vale 1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Outra prova escreve (1−sen²θ)/cos²θ=cos²θ/cos²θ=1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O resultado reduzido 1 não amplia o domínio original: θ=π/2 continua proibido, pois a expressão de partida não existe ali."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição permite dividir a relação fundamental por cos²θ?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "O divisor precisa ser não nulo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "θ>0"
+              },
+              {
+                "id": "b",
+                "texto": "cosθ≠0"
+              },
+              {
+                "id": "c",
+                "texto": "senθ≠0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a outra identidade pitagórica com cot e csc?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "Dividimos a relação fundamental por sen²θ.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1+cot²θ=csc²θ"
+              },
+              {
+                "id": "b",
+                "texto": "1+cot²θ=sec²θ"
+              },
+              {
+                "id": "c",
+                "texto": "cot²θ+csc²θ=1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Verificar em θ=0 ou θ=π/4 não demonstra uma identidade universal. Também não tire raiz de cos²θ como se fosse sempre cosθ: a raiz principal é |cosθ|. Para escolher o sinal, use o quadrante."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se senθ=3/5 e θ está no segundo quadrante, quanto vale cosθ?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "cos²θ=1−9/25=16/25 e o cosseno é negativo no segundo quadrante.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4/5"
+              },
+              {
+                "id": "b",
+                "texto": "−3/5"
+              },
+              {
+                "id": "c",
+                "texto": "−4/5"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale √(cos²θ) em geral?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "A raiz principal é não negativa e corresponde ao valor absoluto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−cosθ sempre"
+              },
+              {
+                "id": "b",
+                "texto": "|cosθ|"
+              },
+              {
+                "id": "c",
+                "texto": "cosθ sempre"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma prova eficiente começa pelo lado mais composto, troca razões por seno e cosseno e usa a relação fundamental. Anote as condições antes dos cancelamentos. Compare uma identidade com uma equação trigonométrica: a segunda pode valer só para algumas entradas."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Testar uma igualdade em três ângulos prova uma identidade em ℝ?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "Um domínio infinito exige argumento geral; testes podem apenas refutar uma igualdade universal.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Só se forem ângulos notáveis"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ao reduzir sec²θ−tan²θ a 1, podemos incluir θ=π/2 no domínio original?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "As razões originais não estão definidas nesse ponto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só se escrever 1 primeiro"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "No círculo unitário, sen²θ+cos²θ=1 para todo real θ. Dividindo por cos²θ, onde cosθ≠0, obtemos 1+tan²θ=sec²θ. Dividindo por sen²θ, onde senθ≠0, obtemos 1+cot²θ=csc²θ. Identidade significa igualdade para todas as entradas do domínio comum indicado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: O resultado reduzido 1 não amplia o domínio original: θ=π/2 continua proibido, pois a expressão de partida não existe ali."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como demonstrar identidades fundamentais e simplificar expressões válidas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se tanθ=2, quanto vale sec²θ?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "Pela identidade, sec²θ=1+2²=5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "5"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se cotθ=3, quanto vale csc²θ?",
+            "assunto": "Identidades: provar sem apagar o domínio",
+            "orientacao": "Use a relação fundamental e só divida por fatores não nulos; o quadrante determina o sinal de uma raiz.",
+            "explicacao": "A identidade fornece 1+3²=10.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "10"
+              },
+              {
+                "id": "b",
+                "texto": "8"
+              },
+              {
+                "id": "c",
+                "texto": "9"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 36,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-36",
+      "titulo": "Inversa: voltar pelo mesmo caminho",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma máquina multiplica por 3 e soma 2. Para desfazer o trabalho, você subtrai 2 e divide por 3. O caminho de volta inverte também a ordem das ações. Nem toda máquina permite voltar de modo único, e é aí que entra a bijeção."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Construir inversas de bijeções e distinguir inversa de recíproco."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Bijeção, composição e equações."
+              }
+            ],
+            "titulo": "Inversa: voltar pelo mesmo caminho",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se f:A→B é bijetora, existe f⁻¹:B→A tal que f⁻¹∘f=id_A e f∘f⁻¹=id_B. Para encontrar uma expressão, escreva y=f(x), isole x em termos de y e renomeie a variável. A inversa f⁻¹ não é o recíproco 1/f. Uma função injetora possui inversa da imagem para o domínio, ainda que não seja sobrejetora no contradomínio original."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "As composições de uma bijeção com sua inversa são as identidades nos conjuntos correspondentes.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "f⁻¹∘f=id_A; f∘f⁻¹=id_B"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inversa de f(x)=3x+2 em ℝ?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "Isole x em y=3x+2 para obter x=(y−2)/3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x−2)/3"
+              },
+              {
+                "id": "b",
+                "texto": "1/(3x+2)"
+              },
+              {
+                "id": "c",
+                "texto": "3x−2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Sobrejetividade garante pelo menos uma preimagem para cada y∈B; injetividade garante no máximo uma. Juntas, garantem exatamente uma, permitindo a função de volta. Graficamente, trocar x e y reflete os pares em torno da reta y=x."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/inversas.svg",
+                "alt": "Curvas 2ˣ e log₂x, refletidas em y=x. A exponencial passa por (0,1),(1,2),(2,4); a logarítmica passa por (1,0),(2,1),(4,2).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Curvas 2ˣ e log₂x, refletidas em y=x. A exponencial passa por (0,1),(1,2),(2,4); a logarítmica passa por (1,0),(2,1),(4,2).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f⁻¹ significa necessariamente 1/f?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "Inversa desfaz a função; recíproco divide 1 pelo seu valor.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas para funções afins"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Inversa: voltar pelo mesmo caminho",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para f:ℝ→ℝ, f(x)=3x+2, comece com y=3x+2. Subtraia 2 e divida por 3: x=(y−2)/3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Logo f⁻¹(x)=(x−2)/3. É diferente de 1/(3x+2)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira as duas composições: ((3x+2)−2)/3=x e 3((x−2)/3)+2=x. Ambas valem para todo real."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição garante inversa B→A para f:A→B?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "Precisamos de existência e unicidade de preimagem para cada elemento de B.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Ser constante"
+              },
+              {
+                "id": "b",
+                "texto": "Bijeção"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas sobrejeção"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f:ℝ→[0,∞), f(x)=x², tem inversa funcional nesse domínio?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "A função não é injetora: x e −x podem ter a mesma saída.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Só em zero"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "x² em ℝ não tem inversa funcional para sua imagem porque 1 e −1 viram a mesma saída. Restrinja o domínio a [0,∞) e a inversa será √x. Escrever ±√x como uma única saída destruiria a definição de função."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inversa de x² quando domínio e contradomínio são [0,∞)?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "A raiz principal retorna o único número não negativo com aquele quadrado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "±√x"
+              },
+              {
+                "id": "b",
+                "texto": "−√x"
+              },
+              {
+                "id": "c",
+                "texto": "√x"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o gráfico da inversa em relação ao original?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "Cada par (a,b) vira (b,a).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Uma translação de uma unidade"
+              },
+              {
+                "id": "b",
+                "texto": "Reflexo em y=x"
+              },
+              {
+                "id": "c",
+                "texto": "Reflexo no eixo x sempre"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Pense em perda de informação. Se duas entradas diferentes geram a mesma saída, o retorno não sabe qual escolher. Para conferir uma inversa, registre os conjuntos e teste as duas composições; uma manipulação de símbolos isolada não substitui essas condições."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=x−5 em ℝ, qual é f⁻¹(x)?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "Somar 5 desfaz subtrair 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x+5"
+              },
+              {
+                "id": "b",
+                "texto": "x−5"
+              },
+              {
+                "id": "c",
+                "texto": "1/(x−5)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é f⁻¹(f(x)) para uma bijeção?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "A composição de ida e volta é a identidade no domínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "f(x)²"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "x"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se f:A→B é bijetora, existe f⁻¹:B→A tal que f⁻¹∘f=id_A e f∘f⁻¹=id_B. Para encontrar uma expressão, escreva y=f(x), isole x em termos de y e renomeie a variável. A inversa f⁻¹ não é o recíproco 1/f. Uma função injetora possui inversa da imagem para o domínio, ainda que não seja sobrejetora no contradomínio original."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Confira as duas composições: ((3x+2)−2)/3=x e 3((x−2)/3)+2=x. Ambas valem para todo real."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como construir inversas de bijeções e distinguir inversa de recíproco. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma função injetora f:A→B não sobrejetora tem inversa em qual conjunto de partida?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "Sobre a imagem, cada saída possui uma única preimagem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas A∩B"
+              },
+              {
+                "id": "b",
+                "texto": "Im(f)"
+              },
+              {
+                "id": "c",
+                "texto": "Todo B obrigatoriamente"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=2x−1, quanto vale f⁻¹(7)?",
+            "assunto": "Inversa: voltar pelo mesmo caminho",
+            "orientacao": "Declare domínio e contradomínio, isole a entrada e confira as duas composições; inversa não é recíproco.",
+            "explicacao": "Resolva 2x−1=7, obtendo x=4.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "13"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

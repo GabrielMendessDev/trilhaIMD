@@ -1,523 +1,495 @@
 {
-	"versao": 1,
-	"trilha": "elementar",
-	"ponto": 8,
-	"atividades": [
-		{
-			"id": "janela-de-operacao",
-			"titulo": "Encontre a janela de operação",
-			"questoes": [
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Quanto cabe no orçamento?",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Uma locadora cobra uma taxa de R$ 12 e R$ 4 por hora. Ter até R$ 32 significa 12 + 4t ≤ 32. Uma inequação procura todos os valores que tornam a comparação verdadeira. Aqui também exigimos t ≥ 0."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Subtraia 12 dos dois lados. Divida por 4, que é positivo, para obter t ≤ 5. Se você multiplicar ou dividir por um valor negativo, troque o sentido da comparação. Pense em 2 < 3. Ao multiplicar ambos por −1, obtemos −2 > −3."
-							}
-						]
-					},
-					"numero": 1,
-					"ordem": 1
-				},
-				{
-					"numero": 2,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "A locadora cobra R$ 12 de taxa mais R$ 4 por hora. Se você tem até R$ 32, qual é a condição sobre o tempo t ≥ 0?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "t ≥ 5"
-							},
-							{
-								"id": "b",
-								"texto": "t < 5"
-							},
-							{
-								"id": "c",
-								"texto": "0 ≤ t ≤ 5"
-							},
-							{
-								"id": "d",
-								"texto": "0 ≤ t ≤ 8"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Inequação linear",
-						"orientacao": "Subtraia a taxa fixa e preserve a exigência t ≥ 0.",
-						"explicacao": "12 + 4t ≤ 32 dá 4t ≤ 20 e t ≤ 5. Com t ≥ 0, a faixa é 0 ≤ t ≤ 5."
-					},
-					"ordem": 2
-				},
-				{
-					"numero": 3,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um reservatório começa com 18 litros e perde 3 litros por minuto. Em que instantes t ≥ 0 ainda há mais de 6 litros, segundo o modelo 18 − 3t?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "t > 4"
-							},
-							{
-								"id": "b",
-								"texto": "0 ≤ t < 4"
-							},
-							{
-								"id": "c",
-								"texto": "0 ≤ t ≤ 4"
-							},
-							{
-								"id": "d",
-								"texto": "t ≥ 4"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Divisão por número negativo",
-						"orientacao": "Ao dividir pelo coeficiente de t, confira o sentido da comparação.",
-						"explicacao": "18 − 3t > 6 vira −3t > −12 e t < 4. Com t ≥ 0, a faixa é [0, 4)."
-					},
-					"ordem": 3
-				},
-				{
-					"numero": 4,
-					"modo": "questao",
-					"questao": {
-						"tipo": "ligacao",
-						"enunciado": "Ligue cada regra de tempo, em minutos, ao intervalo correspondente.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "x > 2"
-							},
-							{
-								"id": "item-2",
-								"texto": "x ≤ 5"
-							},
-							{
-								"id": "item-3",
-								"texto": "2 < x ≤ 5"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "(−∞, 5]"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "(2, 5]"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "(2, ∞)"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-2"
-							}
-						],
-						"assunto": "Representação de intervalos",
-						"orientacao": "Aponte quais extremos podem entrar.",
-						"explicacao": "x > 2 dá (2, ∞). x ≤ 5 dá (−∞, 5]. As duas condições juntas dão (2, 5]."
-					},
-					"ordem": 4
-				},
-				{
-					"numero": 5,
-					"modo": "questao",
-					"questao": {
-						"tipo": "passo-a-passo",
-						"enunciado": "O espaço abre quando t ≥ 9 e a rede encerra o atendimento no instante t = 12, que já fica de fora.",
-						"passos": [
-							{
-								"id": "passo-1",
-								"titulo": "Traduza a abertura",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "O primeiro horário permitido é 9. Em intervalos, escrevemos [9, ∞)."
-									}
-								]
-							},
-							{
-								"id": "passo-2",
-								"titulo": "Traduza o encerramento",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Como 12 fica de fora, a rede aceita t < 12. Isso dá (−∞, 12)."
-									}
-								]
-							},
-							{
-								"id": "passo-3",
-								"titulo": "Interseccione as regras",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "O atendimento depende das duas condições. O resultado é [9, 12)."
-									}
-								]
-							}
-						]
-					},
-					"ordem": 5
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "diagrama",
-						"titulo": "Onde a quadrática fica positiva ou negativa?",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Para estudar x² − 6x + 8, fatoramos como (x − 2)(x − 4). Os zeros 2 e 4 separam a reta em três trechos. Fora das raízes, os fatores têm o mesmo sinal. Entre elas, os sinais são diferentes."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "As marcas mostram os zeros 2 e 4, com o ponto de teste 3 entre eles.",
-								"dados": {
-									"modelo": "reta",
-									"marcas": ["1", "2", "3", "4", "5"],
-									"destaque": 2
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "Quando o coeficiente do quadrado é positivo e as raízes são distintas, a expressão é positiva fora e negativa entre as raízes. Com coeficiente negativo, os sinais invertem. Uma raiz dupla zera sem trocar de sinal. Sem raiz real, o sinal é sempre o do coeficiente do quadrado."
-							}
-						]
-					},
-					"numero": 13,
-					"ordem": 6
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "material",
-						"titulo": "Checklist das inequações simultâneas",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Resolva cada condição. Marque cada faixa na reta. Faça a interseção e confira as pontas. O colchete inclui a extremidade. Se não houver parte em comum, escreva ∅."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "referencia",
-								"titulo": "Notas e slides de Matemática Elementar",
-								"fonte": "IMD/UFRN",
-								"url": "https://matematica-elementar.github.io/"
-							}
-						]
-					},
-					"numero": 14,
-					"ordem": 7
-				},
-				{
-					"numero": 6,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O monitor aceita uma leitura real x se 1 ≤ 2x + 1 < 9. Quais valores são aceitos?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "(0, 4)"
-							},
-							{
-								"id": "b",
-								"texto": "[0, 4]"
-							},
-							{
-								"id": "c",
-								"texto": "(1, 9)"
-							},
-							{
-								"id": "d",
-								"texto": "[0, 4)"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Inequação encadeada",
-						"orientacao": "Subtraia 1 das três partes e divida por um número positivo.",
-						"explicacao": "1 ≤ 2x + 1 < 9 dá 0 ≤ 2x < 8, portanto [0, 4)."
-					},
-					"ordem": 8
-				},
-				{
-					"numero": 7,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um jogo considera segura a região em que x² − 6x + 8 ≤ 0. Qual é essa região?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[2, 4]"
-							},
-							{
-								"id": "b",
-								"texto": "(2, 4)"
-							},
-							{
-								"id": "c",
-								"texto": "(−∞, 2] ∪ [4, ∞)"
-							},
-							{
-								"id": "d",
-								"texto": "[−4, −2]"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Sinal de quadrática",
-						"orientacao": "Identifique as duas raízes e teste um valor entre elas.",
-						"explicacao": "(x − 2)(x − 4) é negativo entre as raízes e zera nas pontas. Como a regra aceita zero, fica [2, 4]."
-					},
-					"ordem": 9
-				},
-				{
-					"numero": 8,
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"enunciado": "Para g(x) = x² − 4x + 3, indique o sinal em cada caso.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "x < 1"
-							},
-							{
-								"id": "item-2",
-								"texto": "x = 1"
-							},
-							{
-								"id": "item-3",
-								"texto": "1 < x < 3"
-							},
-							{
-								"id": "item-4",
-								"texto": "x > 3"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Zero"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Positivo"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Negativo"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-2"
-							}
-						],
-						"assunto": "Quadro de sinais",
-						"orientacao": "Fatore em (x − 1)(x − 3) e observe quando os fatores têm sinais diferentes.",
-						"explicacao": "O produto é positivo fora de [1, 3], zero nas raízes e negativo entre elas."
-					},
-					"ordem": 10
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Sinal de uma quadrática",
-						"enunciado": "O sensor aprova quando x² − 1 < 0. Qual faixa é aprovada?",
-						"orientacao": "Fatore como diferença de quadrados e teste x = 0.",
-						"explicacao": "Os zeros são −1 e 1. Em x = 0 o valor é −1. A faixa negativa é (−1, 1), com pontas abertas.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[−1, 1]"
-							},
-							{
-								"id": "b",
-								"texto": "(−1, 1)"
-							},
-							{
-								"id": "c",
-								"texto": "(−∞, −1) ∪ (1, ∞)"
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 15,
-					"ordem": 11
-				},
-				{
-					"numero": 9,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O código aprova uma entrada real se x² − 4x + 4 < 0. Qual é o conjunto de entradas aprovadas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{2}"
-							},
-							{
-								"id": "b",
-								"texto": "∅"
-							},
-							{
-								"id": "c",
-								"texto": "ℝ"
-							},
-							{
-								"id": "d",
-								"texto": "(−∞, 2)"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Raiz dupla e desigualdade estrita",
-						"orientacao": "Observe que x² − 4x + 4 é um quadrado perfeito.",
-						"explicacao": "(x − 2)² nunca é negativo. Como a desigualdade é estrita, nem o zero entra."
-					},
-					"ordem": 12
-				},
-				{
-					"numero": 10,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Uma regra do simulador exige x² + 1 > 0. Qual conjunto de valores reais passa?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "∅"
-							},
-							{
-								"id": "b",
-								"texto": "(0, ∞)"
-							},
-							{
-								"id": "c",
-								"texto": "ℝ ∖ {0}"
-							},
-							{
-								"id": "d",
-								"texto": "ℝ"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Quadrática sem zeros reais",
-						"orientacao": "O menor valor possível de x² é zero.",
-						"explicacao": "x² + 1 é sempre pelo menos 1 e, portanto, positivo para todo x real."
-					},
-					"ordem": 13
-				},
-				{
-					"numero": 11,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Duas verificações do mesmo sensor exigem x² − 5x + 6 ≤ 0 e x > 5/2. Qual intervalo passa nas duas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[2, 3]"
-							},
-							{
-								"id": "b",
-								"texto": "[5/2, 3]"
-							},
-							{
-								"id": "c",
-								"texto": "(5/2, 3]"
-							},
-							{
-								"id": "d",
-								"texto": "(3, ∞)"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Interseção de condições",
-						"orientacao": "Resolva a quadrática e corte a faixa pela segunda regra.",
-						"explicacao": "A primeira regra dá [2, 3]. Intersectando com (5/2, ∞), resulta (5/2, 3]."
-					},
-					"ordem": 14
-				},
-				{
-					"numero": 12,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um sistema aprova apenas quando x ≥ 3 e 2x < 4. Qual é o conjunto de entradas aprovadas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "∅"
-							},
-							{
-								"id": "b",
-								"texto": "[2, 3]"
-							},
-							{
-								"id": "c",
-								"texto": "(−∞, 2) ∪ [3, ∞)"
-							},
-							{
-								"id": "d",
-								"texto": "[3, ∞)"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Condições incompatíveis",
-						"orientacao": "A segunda regra impõe um teto menor que o piso da primeira.",
-						"explicacao": "2x < 4 exige x < 2, incompatível com x ≥ 3. O conjunto-solução é ∅."
-					},
-					"ordem": 15
-				}
-			]
-		}
-	]
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 8,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-08",
+      "titulo": "Potências sob investigação",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um arquivo é duplicado três vezes. Você prevê 2³ cópias. Agora alguém propõe que duplicar e triplicar dá ‘2³+2²=2⁵’. Parece uma economia de escrita. A matemática pede para ver as contas antes de assinar."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Aplicar leis de expoentes com suas hipóteses e diagnosticar regras falsas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Potências inteiras e frações (passo 7)."
+              }
+            ],
+            "titulo": "Potências sob investigação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para a>0 e expoentes reais r,s: aʳaˢ=aʳ⁺ˢ, aʳ/aˢ=aʳ⁻ˢ e (aʳ)ˢ=aʳˢ. Para a≠0, expoentes inteiros admitem a⁰=1 e a⁻ⁿ=1/aⁿ. A definição de expoente racional envolve raízes; base positiva evita ambiguidades ao estender as regras a expoentes reais."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O produto de potências da mesma base positiva soma os expoentes.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "aʳaˢ=aʳ⁺ˢ, a>0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 2³·2⁴?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "Some os expoentes: 2⁷=128.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "64"
+              },
+              {
+                "id": "b",
+                "texto": "128"
+              },
+              {
+                "id": "c",
+                "texto": "24"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Com expoentes naturais, a³a² concatena três fatores e dois fatores: cinco ao todo. Já a³+a² soma dois números e não concatena fatores. O expoente zero é compatível com a³/a³=a⁰=1, desde que a≠0. Para racionais m/n, aᵐ⁄ⁿ é a raiz n-ésima de aᵐ quando a>0."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Aplicar leis de expoentes com suas hipóteses e diagnosticar regras falsas.",
+                      "exemplo": "Calcule (16^(3/4)·2⁻¹)/2. Primeiro 16^(1/4)=2, porque 2⁴=16."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Dividir por 2 dá 2. Uma conferência alternativa troca 16 por 2⁴ e reúne expoentes: 2³·2⁻¹/2¹=2¹."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 3⁵/3²?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "Subtraia expoentes: 3³=27.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "27"
+              },
+              {
+                "id": "b",
+                "texto": "9"
+              },
+              {
+                "id": "c",
+                "texto": "243"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Potências sob investigação",
+            "assunto": "Potências sob investigação",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule (16^(3/4)·2⁻¹)/2. Primeiro 16^(1/4)=2, porque 2⁴=16."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Então 16^(3/4)=2³=8 e 2⁻¹=1/2. O numerador vale 4."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Dividir por 2 dá 2. Uma conferência alternativa troca 16 por 2⁴ e reúne expoentes: 2³·2⁻¹/2¹=2¹."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale (2³)²?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "Multiplique os expoentes: 2⁶=64.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "32"
+              },
+              {
+                "id": "b",
+                "texto": "256"
+              },
+              {
+                "id": "c",
+                "texto": "64"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 5⁻²?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "Expoente negativo indica recíproco, não sinal negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1/25"
+              },
+              {
+                "id": "b",
+                "texto": "1/25"
+              },
+              {
+                "id": "c",
+                "texto": "−25"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "−2²=−4, enquanto (−2)²=4. O sinal faz parte da base apenas no segundo caso. Em ℝ, √(x²)=|x|, portanto a simplificação para x exige x≥0. Não estenda automaticamente identidades de bases positivas a bases negativas com expoentes fracionários."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 27^(2/3)?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "A raiz cúbica de 27 é 3; ao quadrado resulta 9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "9"
+              },
+              {
+                "id": "b",
+                "texto": "18"
+              },
+              {
+                "id": "c",
+                "texto": "6"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale (−3)²?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "A base inteira é −3, e (−3)(−3)=9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−9"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "9"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Escalas de laboratório e ordens de grandeza de dados usam a mesma estrutura. Explique as condições antes de simplificar. Para refutar uma regra universal falsa, basta um contraexemplo: 2³+2²=12 e 2⁵=32."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale −3²?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "A potência é calculada antes do sinal: −(3²)=−9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−6"
+              },
+              {
+                "id": "b",
+                "texto": "−9"
+              },
+              {
+                "id": "c",
+                "texto": "9"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se x=−4, quanto vale √(x²)?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "A raiz quadrada principal é não negativa: √16=4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "−4"
+              },
+              {
+                "id": "c",
+                "texto": "16"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para a>0 e expoentes reais r,s: aʳaˢ=aʳ⁺ˢ, aʳ/aˢ=aʳ⁻ˢ e (aʳ)ˢ=aʳˢ. Para a≠0, expoentes inteiros admitem a⁰=1 e a⁻ⁿ=1/aⁿ. A definição de expoente racional envolve raízes; base positiva evita ambiguidades ao estender as regras a expoentes reais."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Dividir por 2 dá 2. Uma conferência alternativa troca 16 por 2⁴ e reúne expoentes: 2³·2⁻¹/2¹=2¹."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como aplicar leis de expoentes com suas hipóteses e diagnosticar regras falsas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual igualdade é falsa?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "A soma vale 12, enquanto 2⁵ vale 32.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2³·2²=2⁵"
+              },
+              {
+                "id": "b",
+                "texto": "(2³)²=2⁶"
+              },
+              {
+                "id": "c",
+                "texto": "2³+2²=2⁵"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para a>0, qual é aʳ/aˢ?",
+            "assunto": "Potências sob investigação",
+            "orientacao": "Distinga soma de números de produto de potências; para radicais, use a raiz principal.",
+            "explicacao": "O quociente de potências da mesma base subtrai expoentes.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "aʳ⁄ˢ"
+              },
+              {
+                "id": "b",
+                "texto": "aʳ⁻ˢ"
+              },
+              {
+                "id": "c",
+                "texto": "aʳ⁺ˢ"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
 }

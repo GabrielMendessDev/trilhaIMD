@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 58,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-58",
+      "titulo": "Determinantes 2×2 e 3×3",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma matriz inteira pode receber um único número que ajuda a dizer se ela admite inversa. Mas esse número não é a soma das entradas. No caso 2×2, dois produtos disputam o resultado; no 3×3, uma organização de seis produtos evita perder sinais."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Calcular determinantes por fórmulas diretas e regra de Sarrus."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Matrizes quadradas e operações com sinais."
+              }
+            ],
+            "titulo": "Determinantes 2×2 e 3×3",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para A=[[a,b],[c,d]], detA=ad−bc. Para A=[[a,b,c],[d,e,f],[g,h,i]], detA=aei+bfg+cdh−ceg−bdi−afh. A regra de Sarrus organiza esses seis produtos repetindo as duas primeiras colunas à direita. Ela é específica para 3×3; não a estenda a 4×4. Determinantes são definidos aqui para matrizes quadradas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O determinante dois por dois é a vezes d menos b vezes c.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "det[[a,b],[c,d]]=ad−bc"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é det[[2,1],[3,4]]?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "O cálculo é 2·4−1·3=8−3=5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "11"
+              },
+              {
+                "id": "b",
+                "texto": "−5"
+              },
+              {
+                "id": "c",
+                "texto": "5"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em 2×2, ad−bc mede a área orientada do paralelogramo das colunas: zero indica direções dependentes. A fórmula pode ser demonstrada decompondo a área ou usando base×altura com coordenadas. Em 3×3, os seis termos da expressão definem a regra usada; Sarrus apenas os organiza, sem criar novos produtos. Propriedades gerais e cofatores não são prioridade da P3 2025.2 conforme o acervo."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Calcular determinantes por fórmulas diretas e regra de Sarrus.",
+                      "exemplo": "Calcule detA para A=[[1,2,0],[0,3,1],[2,0,1]]. Os produtos somados são 1·3·1=3, 2·1·2=4 e 0·0·0=0."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Portanto detA=3+4+0−0−0−0=7. Para B=[[2,1],[3,4]], detB=2·4−1·3=5."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é det[[1,2],[2,4]]?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "1·4−2·2=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−4"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "8"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Determinantes 2×2 e 3×3",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule detA para A=[[1,2,0],[0,3,1],[2,0,1]]. Os produtos somados são 1·3·1=3, 2·1·2=4 e 0·0·0=0."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Os produtos subtraídos são 0·3·2=0, 2·0·1=0 e 1·1·0=0."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Portanto detA=3+4+0−0−0−0=7. Para B=[[2,1],[3,4]], detB=2·4−1·3=5."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é det[[1,−2],[3,4]]?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "1·4−(−2)·3=4+6=10.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "10"
+              },
+              {
+                "id": "b",
+                "texto": "−2"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é det[[1,2,0],[0,3,1],[2,0,1]]?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "Os produtos positivos somam 7 e os subtraídos somam zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "−1"
+              },
+              {
+                "id": "c",
+                "texto": "7"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em ad−bc, a subtração é parte da definição e não uma soma de diagonais. Na regra de Sarrus, calcule cada produto com seus sinais antes de subtrair o grupo. Uma entrada negativa pode transformar uma subtração de produto negativo em adição."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o produto aei na matriz do exemplo?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "a=1,e=3,i=1, portanto aei=3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o produto bfg no exemplo?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "b=2,f=1,g=2, portanto bfg=4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use a fórmula com letras como legenda permanente ao lado do cálculo. Depois confira cada entrada pela sua linha e coluna. O determinante será o teste inicial para a existência de inversa, mas não é ele próprio a matriz inversa."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "A regra de Sarrus ensinada vale diretamente para qual ordem?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "Repetir colunas como em Sarrus não fornece o determinante de uma matriz 4×4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Qualquer ordem"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas 2×2"
+              },
+              {
+                "id": "c",
+                "texto": "3×3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é detI₂?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "1·1−0·0=1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para A=[[a,b],[c,d]], detA=ad−bc. Para A=[[a,b,c],[d,e,f],[g,h,i]], detA=aei+bfg+cdh−ceg−bdi−afh. A regra de Sarrus organiza esses seis produtos repetindo as duas primeiras colunas à direita. Ela é específica para 3×3; não a estenda a 4×4. Determinantes são definidos aqui para matrizes quadradas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Portanto detA=3+4+0−0−0−0=7. Para B=[[2,1],[3,4]], detB=2·4−1·3=5."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como calcular determinantes por fórmulas diretas e regra de Sarrus. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é det[[k,1],[2,1]]?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "Use ad−bc: k·1−1·2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "k−2"
+              },
+              {
+                "id": "b",
+                "texto": "k+2"
+              },
+              {
+                "id": "c",
+                "texto": "2k−1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para qual k a matriz anterior tem determinante zero?",
+            "assunto": "Determinantes 2×2 e 3×3",
+            "orientacao": "Calcule cada produto com seu sinal antes de subtrair; em três por três, organize os seis produtos de Sarrus.",
+            "explicacao": "A equação k−2=0 dá k=2.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−2"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

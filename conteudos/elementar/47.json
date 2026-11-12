@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 47,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-47",
+      "titulo": "Triângulos: uma razão que não depende do tamanho",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um grupo de extensão mede a altura de uma estrutura sem subir nela. Um desenho em escala diferente mantém os ângulos e muda todos os lados na mesma proporção. As razões sobrevivem à mudança de tamanho: essa é a porta de entrada da trigonometria."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Usar seno, cosseno e tangente de ângulos agudos em triângulos retângulos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Razões, raízes e teorema de Pitágoras."
+              }
+            ],
+            "titulo": "Triângulos: uma razão que não depende do tamanho",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Num triângulo retângulo, a hipotenusa é o lado oposto ao ângulo reto. Para um ângulo agudo θ, senθ=cateto oposto/hipotenusa, cosθ=cateto adjacente/hipotenusa e tanθ=cateto oposto/cateto adjacente. O cateto oposto depende do ângulo escolhido. Pitágoras fornece oposto²+adjacente²=hipotenusa²."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O seno de um ângulo agudo é a razão entre cateto oposto e hipotenusa.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "senθ=oposto/hipotenusa"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual lado fica oposto ao ângulo reto?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "A hipotenusa é definida pelo ângulo reto e é o maior lado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Cateto oposto ao ângulo agudo"
+              },
+              {
+                "id": "b",
+                "texto": "Hipotenusa"
+              },
+              {
+                "id": "c",
+                "texto": "Cateto adjacente"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Triângulos retângulos com o mesmo ângulo agudo são semelhantes pelo critério ângulo–ângulo. Seus lados correspondentes mudam pelo mesmo fator; por isso as razões dependem de θ e não do tamanho. Dividir Pitágoras pelo quadrado da hipotenusa dá sen²θ+cos²θ=1."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/triangulo.svg",
+                "alt": "Triângulo retângulo com cateto adjacente 4 na horizontal, oposto 3 na vertical e hipotenusa 5. O ângulo θ está no extremo esquerdo da base.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Triângulo retângulo com cateto adjacente 4 na horizontal, oposto 3 na vertical e hipotenusa 5. O ângulo θ está no extremo esquerdo da base.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No triângulo do exemplo, quanto vale senθ?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "O seno divide o cateto oposto 3 pela hipotenusa 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3/5"
+              },
+              {
+                "id": "b",
+                "texto": "4/5"
+              },
+              {
+                "id": "c",
+                "texto": "3/4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Triângulos: uma razão que não depende do tamanho",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Num triângulo 3–4–5, escolha o ângulo cujo cateto oposto mede 3 e o adjacente 4. A hipotenusa mede 5."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Assim senθ=3/5, cosθ=4/5 e tanθ=3/4. Confira: (3/5)²+(4/5)²=9/25+16/25=1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Se o triângulo for ampliado por fator 2, os lados viram 6,8,10. As razões continuam 6/10=3/5, 8/10=4/5 e 6/8=3/4."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cosθ no exemplo?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "O cosseno usa cateto adjacente 4 e hipotenusa 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3/5"
+              },
+              {
+                "id": "b",
+                "texto": "4/3"
+              },
+              {
+                "id": "c",
+                "texto": "4/5"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale tanθ no exemplo?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "A tangente divide oposto por adjacente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3/5"
+              },
+              {
+                "id": "b",
+                "texto": "3/4"
+              },
+              {
+                "id": "c",
+                "texto": "4/3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "‘Adjacente’ aqui não é qualquer lado que toca o ângulo: excluímos a hipotenusa. E a altura de uma estrutura pode exigir somar a altura do ponto de observação ao cateto calculado; um desenho com unidades evita essa perda de contexto."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se os catetos medem 5 e 12, quanto mede a hipotenusa?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "Pitágoras dá √(25+144)=√169=13.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "13"
+              },
+              {
+                "id": "b",
+                "texto": "17"
+              },
+              {
+                "id": "c",
+                "texto": "7"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ampliar todos os lados por fator 3 muda as razões do mesmo ângulo?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "O fator comum cancela no quociente dos lados.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim, triplica todas"
+              },
+              {
+                "id": "b",
+                "texto": "Sim, divide todas por 3"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use problemas geométricos de medidas hipotéticas, sem presumir equipamentos específicos. Esboce um triângulo, marque o ângulo de referência e só então nomeie oposto, adjacente e hipotenusa. Se trocar o ângulo agudo, os dois catetos trocam de papel."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ao trocar um ângulo agudo pelo outro, o que acontece com os catetos oposto e adjacente?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "Esses nomes dependem do ângulo de referência.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Mantêm sempre o mesmo nome"
+              },
+              {
+                "id": "b",
+                "texto": "Trocam de papel"
+              },
+              {
+                "id": "c",
+                "texto": "Viram hipotenusas"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual identidade deriva de Pitágoras?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "Dividir os quadrados dos lados pela hipotenusa ao quadrado produz a identidade.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "sen²θ+cos²θ=1"
+              },
+              {
+                "id": "b",
+                "texto": "senθ+cosθ=1"
+              },
+              {
+                "id": "c",
+                "texto": "tanθ=senθ·cosθ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Num triângulo retângulo, a hipotenusa é o lado oposto ao ângulo reto. Para um ângulo agudo θ, senθ=cateto oposto/hipotenusa, cosθ=cateto adjacente/hipotenusa e tanθ=cateto oposto/cateto adjacente. O cateto oposto depende do ângulo escolhido. Pitágoras fornece oposto²+adjacente²=hipotenusa²."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Se o triângulo for ampliado por fator 2, os lados viram 6,8,10. As razões continuam 6/10=3/5, 8/10=4/5 e 6/8=3/4."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como usar seno, cosseno e tangente de ângulos agudos em triângulos retângulos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se um ângulo agudo tem senθ=1/2 e hipotenusa 10, quanto mede o cateto oposto?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "Oposto/10=1/2 implica oposto=5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "20"
+              },
+              {
+                "id": "b",
+                "texto": "10"
+              },
+              {
+                "id": "c",
+                "texto": "5"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual justificativa explica por que as razões dependem só do ângulo?",
+            "assunto": "Triângulos: uma razão que não depende do tamanho",
+            "orientacao": "Marque o ângulo escolhido antes de nomear os catetos e identifique a hipotenusa pelo ângulo reto.",
+            "explicacao": "Triângulos com os mesmos ângulos têm lados correspondentes proporcionais.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todo ângulo agudo é de 45°"
+              },
+              {
+                "id": "b",
+                "texto": "Semelhança de triângulos"
+              },
+              {
+                "id": "c",
+                "texto": "Todos os triângulos têm lados iguais"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

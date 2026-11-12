@@ -1,10 +1,13 @@
 import Link from "~/app/_components/action-link";
+import { CourseChapters } from "~/app/_components/course-chapters";
 import {
 	DashboardLayout,
 	Icon,
-	ProgressBar,
+	PageHeading,
 } from "~/app/_components/dashboard";
+import { JourneyBanner } from "~/app/_components/journey-banner";
 import { UnlockEffect } from "~/app/_components/reward-effects";
+import { TrailSymbol } from "~/app/_components/trail-symbol";
 import { auth } from "~/server/auth";
 import {
 	getLearningProgress,
@@ -12,22 +15,20 @@ import {
 	getTrailStatus,
 } from "~/server/learning";
 import { stagesByTrail } from "./_etapa/stages";
-import styles from "./trail.module.css";
 import { TrailDiagram } from "./trail-diagram";
 import { TrailMap } from "./trail-map";
 import { trailMapHref, trails } from "./trails";
-
 export default async function AprenderPage({
 	searchParams,
 }: {
 	searchParams: Promise<{
-		modulo?: string | string[];
-		etapa?: string | string[];
-		concluida?: string | string[];
+		modulo?: string;
+		etapa?: string;
+		concluida?: string;
 	}>;
 }) {
-	const { modulo, etapa, concluida } = await searchParams;
-	const trail = trails.find(({ id }) => id === modulo) ?? trails[0];
+	const query = await searchParams;
+	const trail = trails.find((t) => t.id === query.modulo) ?? trails[0];
 	const user = (await auth())?.user;
 	const [catalog, progress] = await Promise.all([
 		getPublishedPoints(),
@@ -38,27 +39,16 @@ export default async function AprenderPage({
 		progress,
 		trail.id,
 	);
-	const completedPoint = completed.find(
-		(point) => String(point.number) === concluida,
-	);
-	const reward = progress?.done.find(
-		(row) => row.pointId === completedPoint?.id,
-	)?.xp;
 	const selected =
-		trail.positions.findIndex((_, index) => String(index + 1) === etapa) + 1 ||
+		trail.positions.findIndex((_, i) => String(i + 1) === query.etapa) + 1 ||
 		next?.number ||
 		1;
-	const percent =
-		progress && published.length
-			? Math.round((100 * completed.length) / published.length)
-			: null;
 	const latest = progress?.done
-		.filter((row) => completed.some(({ id }) => id === row.pointId))
+		.filter((r) => completed.some((p) => p.id === r.pointId))
 		.sort(
 			(a, b) =>
 				(b.completedAt?.getTime() ?? 0) - (a.completedAt?.getTime() ?? 0),
 		)[0];
-
 	return (
 		<DashboardLayout active="/aprender">
 			{user && next && latest?.completedAt && (
@@ -67,121 +57,101 @@ export default async function AprenderPage({
 					stage={next.number}
 				/>
 			)}
-			<div
-				className={`${styles.page} ${styles.trailTheme}`}
-				data-trail={trail.id}
-			>
-				<header className={styles.pageHeader}>
-					<div>
-						<h1 className="font-black text-2xl tracking-tight sm:text-4xl min-[481px]:text-3xl">
-							Trilhas de matemática
-						</h1>
-						<p className="ui-muted mt-1.5 font-semibold">
-							Escolha um módulo para explorar.
-						</p>
-					</div>
-				</header>
-				{completedPoint && reward !== undefined && (
-					<p className="study-success mb-4" role="status">
-						Etapa {completedPoint.number} concluída · {reward} XP registrados
-					</p>
-				)}
-
-				<nav aria-label="Módulos de matemática" className={styles.moduleNav}>
-					{trails.map((module) => (
-						<Link
-							aria-current={module.id === trail.id ? "page" : undefined}
-							className={styles.moduleLink}
-							data-trail={module.id}
-							href={trailMapHref(module.id)}
-							key={module.id}
-							scroll={false}
-							title={module.name}
-						>
-							<span aria-hidden="true" className={styles.moduleSymbol}>
-								{module.notation}
-							</span>
-							{module.label}
-						</Link>
-					))}
+			<div className="ui-page trails-page">
+				<PageHeading
+					description="Escolha sua jornada. Cada lição abre um novo caminho."
+					title="Suas trilhas"
+				/>
+				<nav aria-label="Jornadas disponíveis" className="journey-catalog">
+					{trails.map((t) => {
+						const status = getTrailStatus(catalog ?? [], progress, t.id);
+						return (
+							<Link
+								aria-current={trail.id === t.id ? "page" : undefined}
+								className="course-mini"
+								data-trail={t.id}
+								href={trailMapHref(t.id)}
+								key={t.id}
+								scroll={false}
+							>
+								<TrailSymbol id={t.id} />
+								<strong>{t.label}</strong>
+								<span>
+									{status.published.length
+										? `${status.completed.length}/${status.published.length} lições`
+										: "Em preparação"}
+								</span>
+							</Link>
+						);
+					})}
 				</nav>
-
-				<div className={styles.content}>
-					<section aria-labelledby="module-title" className={styles.board}>
-						<header className={styles.moduleHeader}>
-							<span aria-hidden="true" className={styles.heroSymbol}>
-								{trail.notation}
-							</span>
-							<div className={styles.moduleIdentity}>
-								<h2
-									className="text-balance font-black text-2xl leading-tight min-[481px]:text-3xl"
-									id="module-title"
-								>
-									{trail.name}
-									{trail.id === "fmc" && " (FMC 1)"}
-								</h2>
-								<p className={styles.moduleDescription}>{trail.description}</p>
-								<p className={styles.moduleCount}>
-									{trail.positions.length} pontos · {published.length} etapas
-									publicadas
-								</p>
-								{percent !== null && (
-									<div className={styles.moduleProgress}>
-										<ProgressBar
-											label={`Progresso em ${trail.name}`}
-											value={percent}
-										/>
-										<span>{percent}%</span>
-									</div>
-								)}
-							</div>
-						</header>
-						<TrailMap
-							completedStages={completed.map(({ number }) => number)}
-							currentStage={next?.number}
-							initialStage={selected}
-							key={`${trail.id}-${selected}`}
-							previewStages={Object.keys(stagesByTrail[trail.id] ?? {}).map(
-								Number,
-							)}
-							publishedStages={published.map(({ number, title }) => ({
-								number,
-								title,
-							}))}
-							sequential={Boolean(progress)}
+				<div className="trail-detail-columns">
+					<section
+						aria-label={`Percurso de ${trail.name}`}
+						className="journey-world"
+						data-trail={trail.id}
+					>
+						<JourneyBanner
+							completed={completed.length}
+							href={next ? `/aprender/${trail.id}/${next.number}` : undefined}
+							next={next}
+							total={published.length}
 							trail={trail}
 						/>
+						<div className="journey-map-surface">
+							<div className="journey-map-label">
+								<h3>
+									{trail.id === "elementar"
+										? "Trilha completa · Passos 1 a 60"
+										: "Explore o percurso"}
+								</h3>
+								<span className="journey-checkpoint-note">
+									<Icon className="size-4" name="star" />{" "}
+									{trail.id === "elementar"
+										? "60 passos conectados"
+										: "Checkpoints 5 e 10"}
+								</span>
+							</div>
+							<TrailMap
+								completedStages={completed.map((p) => p.number)}
+								currentStage={next?.number}
+								initialStage={selected}
+								key={`${trail.id}-${selected}`}
+								previewStages={Object.keys(stagesByTrail[trail.id] ?? {}).map(
+									Number,
+								)}
+								publishedStages={published}
+								sequential={Boolean(progress)}
+								trail={trail}
+							/>
+						</div>
 					</section>
-
-					<aside aria-label="Detalhes do módulo" className={styles.sidebar}>
-						<figure className={styles.figure}>
+					<aside
+						aria-label="Conteúdo da unidade"
+						className="trail-detail-support"
+					>
+						<CourseChapters
+							completed={completed.map((p) => p.number)}
+							current={progress ? next?.number : undefined}
+							points={published}
+							trail={trail.id}
+						/>
+						{trail.id === "elementar" && (
+							<Link className="ui-link" href="/materiais/elementar/index.html">
+								Ler a trilha completa · 60 passos{" "}
+								<Icon className="size-4" name="arrow" />
+							</Link>
+						)}
+						<figure className="trail-concept">
 							<TrailDiagram id={trail.id} />
 							<figcaption>
-								<h3 className="font-black">{trail.diagramTitle}</h3>
-								<p className="ui-muted mt-1 font-medium text-sm leading-relaxed">
-									{trail.diagramCaption}
-								</p>
+								<h2>{trail.diagramTitle}</h2>
+								<p>{trail.diagramCaption}</p>
 							</figcaption>
 						</figure>
-
-						<div className={styles.guide}>
-							<h3 className="font-black">Como ler o mapa</h3>
-							<p className="ui-muted mt-1 text-sm leading-relaxed">
-								Os círculos marcam etapas, as estrelas indicam desafios e o
-								cadeado sinaliza um pré-requisito.
-							</p>
-						</div>
-
-						<div className={styles.quickLinks}>
-							<Link href="/ranking">
-								<Icon className="size-5" name="ranking" />
-								Liga Acadêmica
-							</Link>
-							<Link href="/conquistas">
-								<Icon className="size-5" name="trophy" />
-								Conquistas
-							</Link>
-						</div>
+						<Link className="ui-link" href={`/disciplinas/${trail.id}`}>
+							Conhecer a disciplina <Icon className="size-4" name="arrow" />
+						</Link>
 					</aside>
 				</div>
 			</div>

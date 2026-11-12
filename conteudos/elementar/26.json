@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 26,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-26",
+      "titulo": "Divisão polinomial, passo a passo",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Dividir um polinômio parece uma conta de escola que mudou de figurino. O truque continua sendo retirar a maior peça possível e acompanhar o que sobra. O resto tem uma regra de tamanho: seu grau precisa ficar abaixo do divisor."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Aplicar o algoritmo da divisão e conferir P=DQ+R."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Operações e grau de polinômios."
+              }
+            ],
+            "titulo": "Divisão polinomial, passo a passo",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para D≠0, existem únicos Q e R tais que P=DQ+R, com R=0 ou grau R<grau D. P é dividendo, D divisor, Q quociente e R resto. Na divisão longa, ordene os termos e preencha potências ausentes com coeficiente zero antes de dividir os termos líderes."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O dividendo é igual ao divisor vezes o quociente mais o resto.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "P=DQ+R"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na divisão de P por D≠0, qual identidade deve valer?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "O dividendo é divisor vezes quociente mais resto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "P=D+Q+R"
+              },
+              {
+                "id": "b",
+                "texto": "P=DQ+R"
+              },
+              {
+                "id": "c",
+                "texto": "P=Q+DR"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A cada rodada, subtraímos de P um múltiplo de D que cancela seu termo de maior grau. O grau do restante diminui até ficar menor que o de D. Se duas respostas existissem, teríamos D(Q₁−Q₂)=R₂−R₁; um lado não nulo teria grau ao menos o de D e o outro teria grau menor, uma contradição."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ruffini.svg",
+                "alt": "Ruffini por x−2: coeficientes 1,0,−2,4; produtos intermediários 2,4,4; resultados 1,2,2,8. Os três primeiros resultados formam x²+2x+2; o último é o resto 8.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Ruffini por x−2: coeficientes 1,0,−2,4; produtos intermediários 2,4,4; resultados 1,2,2,8. Os três primeiros resultados formam x²+2x+2; o último é o resto 8.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se D tem grau 2 e R≠0, quais graus R pode ter?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "O resto precisa ter grau estritamente menor que o divisor.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0 ou 1"
+              },
+              {
+                "id": "b",
+                "texto": "2 ou 3"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas 2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Divisão polinomial, passo a passo",
+            "assunto": "Divisão polinomial, passo a passo",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Divida x³−2x+4 por x−2. Escreva x³+0x²−2x+4. O primeiro termo do quociente é x²; subtraia x³−2x² e obtenha 2x²−2x+4."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O próximo termo é 2x; subtraia 2x²−4x e obtenha 2x+4. O próximo é 2; subtraia 2x−4 e obtenha 8."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Logo Q=x²+2x+2 e R=8. Confira: (x−2)(x²+2x+2)+8=x³−2x+4."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o quociente de x³−2x+4 por x−2?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "A divisão longa produz os coeficientes 1,2,2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²−2"
+              },
+              {
+                "id": "b",
+                "texto": "x²+2x+4"
+              },
+              {
+                "id": "c",
+                "texto": "x²+2x+2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto da divisão anterior?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "A conferência P=(x−2)(x²+2x+2)+8 confirma o resto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "8"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao subtrair o múltiplo do divisor, troque o sinal de todos os seus termos. E a divisão não terminou se o restante ainda tem grau igual ao do divisor. Uma lacuna de coeficiente muda as colunas e pode arruinar uma conta correta até ali."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual coeficiente precisa ser inserido em x³−2x+4?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "O termo de grau 2 está ausente, mas sua posição precisa ser mantida.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0 para x²"
+              },
+              {
+                "id": "b",
+                "texto": "1 para x²"
+              },
+              {
+                "id": "c",
+                "texto": "0 para x"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ao dividir 3x³ por x, qual primeiro termo aparece?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "Dividimos coeficientes e subtraímos expoentes.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3x³"
+              },
+              {
+                "id": "b",
+                "texto": "2x²"
+              },
+              {
+                "id": "c",
+                "texto": "3x²"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A identidade P=DQ+R é seu contrato de conferência. Faça a multiplicação de volta em vez de apenas olhar o formato da resposta. Essa estrutura vai tornar os teoremas do resto e de Ruffini consequências naturais, e não mais duas regras soltas."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (2x²−2x+4)−(2x²−4x)?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "Distribua o sinal negativo: −2x²+4x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4x²−6x+4"
+              },
+              {
+                "id": "b",
+                "texto": "2x+4"
+              },
+              {
+                "id": "c",
+                "texto": "−6x+4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de (x²+1) dividido por x?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "x²+1=x·x+1, com resto constante.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "x"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para D≠0, existem únicos Q e R tais que P=DQ+R, com R=0 ou grau R<grau D. P é dividendo, D divisor, Q quociente e R resto. Na divisão longa, ordene os termos e preencha potências ausentes com coeficiente zero antes de dividir os termos líderes."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Logo Q=x²+2x+2 e R=8. Confira: (x−2)(x²+2x+2)+8=x³−2x+4."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como aplicar o algoritmo da divisão e conferir P=DQ+R. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "É permitido dividir por polinômio nulo?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "O algoritmo exige D≠0; divisão por zero não é definida.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só se o dividendo também for nulo"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como conferir Q e R obtidos?",
+            "assunto": "Divisão polinomial, passo a passo",
+            "orientacao": "Mantenha as colunas das potências e use a identidade da divisão para conferir a resposta.",
+            "explicacao": "A identidade inteira confirma todos os coeficientes.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Substituir sempre x=0 e encerrar"
+              },
+              {
+                "id": "b",
+                "texto": "Expandir DQ+R e comparar com P"
+              },
+              {
+                "id": "c",
+                "texto": "Comparar só o grau de Q"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

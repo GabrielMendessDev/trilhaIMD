@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 49,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-49",
+      "titulo": "Ciclo unitário e ângulos notáveis",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O triângulo retângulo ajudou com ângulos agudos. Agora vamos fazê-lo passear por uma volta completa. No círculo de raio 1, o ponto final da rotação guarda dois números: cosseno na horizontal e seno na vertical."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Ler seno e cosseno como coordenadas e obter valores exatos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Radianos e razões no triângulo retângulo."
+              }
+            ],
+            "titulo": "Ciclo unitário e ângulos notáveis",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "No ciclo unitário, o ponto do ângulo θ é (cosθ,senθ). Quadrantes I, II, III e IV têm sinais de (cos,sen) iguais a (+,+),(−,+),(−,−),(+,−). Os marcos são 0→(1,0), π/2→(0,1), π→(−1,0), 3π/2→(0,−1). Para π/6,π/4,π/3, os senos são 1/2,√2/2,√3/2 e os cossenos, √3/2,√2/2,1/2."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O ponto do ciclo unitário tem cosseno na coordenada horizontal e seno na vertical.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "P(θ)=(cosθ,senθ)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o ponto do ciclo correspondente a θ?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "O cosseno mede a coordenada horizontal e o seno a vertical.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(senθ,cosθ)"
+              },
+              {
+                "id": "b",
+                "texto": "(tanθ,senθ)"
+              },
+              {
+                "id": "c",
+                "texto": "(cosθ,senθ)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um triângulo retângulo isósceles de catetos 1 tem hipotenusa √2: dividir por ela dá sen(π/4)=cos(π/4)=√2/2. Dividir um triângulo equilátero de lado 2 ao meio produz lados 1,√3,2 e os valores de 30° e 60°. Reflexões no círculo fornecem os sinais e os valores dos demais quadrantes."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ciclo.svg",
+                "alt": "Ciclo unitário: em 0 o ponto é (1,0); em π/2 é (0,1); em π é (−1,0); em 3π/2 é (0,−1). No primeiro quadrante, o ponto tem coordenadas (cosθ,senθ).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Ciclo unitário: em 0 o ponto é (1,0); em π/2 é (0,1); em π é (−1,0); em 3π/2 é (0,−1). No primeiro quadrante, o ponto tem coordenadas (cosθ,senθ).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen(π/6)?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "O triângulo 30°–60°–90° fornece oposto 1 e hipotenusa 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "√2/2"
+              },
+              {
+                "id": "b",
+                "texto": "1/2"
+              },
+              {
+                "id": "c",
+                "texto": "√3/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Ciclo unitário e ângulos notáveis",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule sen(5π/6) e cos(5π/6). O ângulo está no segundo quadrante e seu ângulo de referência é π−5π/6=π/6."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O seno é positivo e mantém o valor 1/2. O cosseno é negativo e fica −√3/2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O ponto é (−√3/2,1/2). Confira que os quadrados somam 3/4+1/4=1, como exige o círculo unitário."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cos(π/3)?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "O cosseno de 60° é 1/2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/2"
+              },
+              {
+                "id": "b",
+                "texto": "√3/2"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen(π/4)?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "No triângulo isósceles retângulo, a razão é 1/√2=√2/2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/2"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "√2/2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A ordem do par é (cos,sen), mesmo quando você está mais interessado no seno. Nos eixos, não se atribui um quadrante ao ponto. E valores notáveis exatos não precisam virar decimais para ser respostas completas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cosπ?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "O ponto de meia volta é (−1,0).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "−1"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen(3π/2)?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "O ponto é (0,−1), cuja coordenada vertical é −1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Esboce o círculo com os eixos e escreva os sinais por extenso, além de quaisquer cores. Localize um ângulo pela volta e depois use a referência aguda. Essa sequência é mais segura do que tentar memorizar uma tabela enorme sem geometria."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No segundo quadrante, quais são os sinais de cos e sen?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "O ponto fica à esquerda e acima da origem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Positivo e negativo"
+              },
+              {
+                "id": "b",
+                "texto": "Ambos negativos"
+              },
+              {
+                "id": "c",
+                "texto": "Negativo e positivo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen(5π/6)?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "A referência é π/6 e o seno é positivo no segundo quadrante.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "√3/2"
+              },
+              {
+                "id": "b",
+                "texto": "1/2"
+              },
+              {
+                "id": "c",
+                "texto": "−1/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "No ciclo unitário, o ponto do ângulo θ é (cosθ,senθ). Quadrantes I, II, III e IV têm sinais de (cos,sen) iguais a (+,+),(−,+),(−,−),(+,−). Os marcos são 0→(1,0), π/2→(0,1), π→(−1,0), 3π/2→(0,−1). Para π/6,π/4,π/3, os senos são 1/2,√2/2,√3/2 e os cossenos, √3/2,√2/2,1/2."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: O ponto é (−√3/2,1/2). Confira que os quadrados somam 3/4+1/4=1, como exige o círculo unitário."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como ler seno e cosseno como coordenadas e obter valores exatos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cos(5π/6)?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "A referência é π/6 e o cosseno é negativo no segundo quadrante.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−√3/2"
+              },
+              {
+                "id": "b",
+                "texto": "√3/2"
+              },
+              {
+                "id": "c",
+                "texto": "−1/2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Um ponto exatamente no eixo vertical superior pertence a qual quadrante?",
+            "assunto": "Ciclo unitário e ângulos notáveis",
+            "orientacao": "Localize o quadrante, escolha o ângulo de referência e atribua os sinais às duas coordenadas.",
+            "explicacao": "Os eixos são fronteiras dos quadrantes, não parte de um deles.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Ao primeiro"
+              },
+              {
+                "id": "b",
+                "texto": "Ao segundo"
+              },
+              {
+                "id": "c",
+                "texto": "A nenhum quadrante"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

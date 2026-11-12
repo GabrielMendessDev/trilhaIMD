@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 31,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-31",
+      "titulo": "Pares ordenados: a ordem conta",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um encontro universitário oferece duas oficinas e três horários. ‘Oficina, horário’ forma uma escolha; inverter para ‘horário, oficina’ muda a leitura. Conjuntos ignoram ordem dos elementos, mas pares ordenados fazem questão dela."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Construir produtos cartesianos e interpretar pares e coordenadas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Conjuntos e contagem finita."
+              }
+            ],
+            "titulo": "Pares ordenados: a ordem conta",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O par (a,b) tem primeira e segunda coordenadas. (a,b)=(c,d) exatamente quando a=c e b=d. A×B={(a,b):a∈A e b∈B}. Para conjuntos finitos, |A×B|=|A|·|B|. No plano ℝ², a primeira coordenada é horizontal e a segunda vertical."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A quantidade de pares de dois conjuntos finitos é o produto de suas cardinalidades.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "|A×B|=|A|·|B|"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A={1,2} e B={a,b,c}, quantos pares há em A×B?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "Cada um dos dois elementos de A combina com três de B: 2·3=6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5"
+              },
+              {
+                "id": "b",
+                "texto": "9"
+              },
+              {
+                "id": "c",
+                "texto": "6"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para cada elemento de A há |B| escolhas na segunda posição. Como há |A| escolhas na primeira, o princípio multiplicativo fornece a cardinalidade. A×B e B×A geralmente não são iguais, embora suas cardinalidades finitas coincidam. Se algum fator é vazio, não existe par possível."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/pares.svg",
+                "alt": "Pontos (1,3), (1,4), (2,3), (2,4) representam o produto cartesiano {1,2}×{3,4}; a primeira coordenada é horizontal.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Pontos (1,3), (1,4), (2,3), (2,4) representam o produto cartesiano {1,2}×{3,4}; a primeira coordenada é horizontal.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual par pertence a {1,2}×{3,4}?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "A primeira coordenada deve estar em {1,2} e a segunda em {3,4}.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(1,2)"
+              },
+              {
+                "id": "b",
+                "texto": "(2,3)"
+              },
+              {
+                "id": "c",
+                "texto": "(3,2)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Pares ordenados: a ordem conta",
+            "assunto": "Pares ordenados: a ordem conta",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Se A={cinema,música} e B={manhã,tarde}, comece com cinema: (cinema,manhã) e (cinema,tarde)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Depois música: (música,manhã) e (música,tarde). Reúna os quatro pares em A×B."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "No caso numérico (−2,3), ande duas unidades para a esquerda no eixo horizontal e três para cima no vertical. A ordem define o ponto."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Os pares (1,2) e (2,1) são iguais?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "Pares ordenados são comparados posição a posição.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Só se estiverem no plano"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se (x,3)=(2,y), qual é (x,y)?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "As primeiras coordenadas dão x=2 e as segundas dão y=3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(3,2)"
+              },
+              {
+                "id": "b",
+                "texto": "(2,2)"
+              },
+              {
+                "id": "c",
+                "texto": "(2,3)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O conjunto {1,2} e o par (1,2) não são a mesma estrutura. Também não troque ℝ² por ‘o quadrado de cada real’: ℝ² é o conjunto dos pares de reais. O expoente em uma notação de conjunto tem significado próprio."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é A×∅?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "Não existe segunda coordenada disponível para formar um par.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{∅}"
+              },
+              {
+                "id": "b",
+                "texto": "∅"
+              },
+              {
+                "id": "c",
+                "texto": "A"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em (−2,3), qual é a coordenada horizontal?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "A primeira coordenada indica a posição horizontal.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−2"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Pares podem descrever locais e horários, participantes e respostas ou medidas e instantes. Declare o significado de cada posição antes de construir a tabela; assim a notação serve estudantes de qualquer área sem exigir conhecimento técnico adicional."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que é ℝ²?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "O produto ℝ×ℝ é o plano cartesiano.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O conjunto dos quadrados reais"
+              },
+              {
+                "id": "b",
+                "texto": "O conjunto dos reais positivos"
+              },
+              {
+                "id": "c",
+                "texto": "O conjunto dos pares ordenados de reais"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A={1} e B={2}, A×B é igual a B×A?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "O primeiro contém (1,2); o segundo contém (2,1).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "São ambos vazios"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O par (a,b) tem primeira e segunda coordenadas. (a,b)=(c,d) exatamente quando a=c e b=d. A×B={(a,b):a∈A e b∈B}. Para conjuntos finitos, |A×B|=|A|·|B|. No plano ℝ², a primeira coordenada é horizontal e a segunda vertical."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: No caso numérico (−2,3), ande duas unidades para a esquerda no eixo horizontal e três para cima no vertical. A ordem define o ponto."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como construir produtos cartesianos e interpretar pares e coordenadas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é {1,2}×{0}?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "O único elemento de B é a segunda coordenada em cada par.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{(1,0),(2,0)}"
+              },
+              {
+                "id": "b",
+                "texto": "{(0,1),(0,2)}"
+              },
+              {
+                "id": "c",
+                "texto": "{0,1,2}"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se |A|=4 e |A×B|=12, com conjuntos finitos, quanto vale |B|?",
+            "assunto": "Pares ordenados: a ordem conta",
+            "orientacao": "A primeira coordenada vem do primeiro conjunto e a segunda do segundo; a ordem dos pares importa.",
+            "explicacao": "A igualdade 4·|B|=12 fornece |B|=3.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8"
+              },
+              {
+                "id": "b",
+                "texto": "48"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1741 @@
+{
+  "scenario": "Primeira rodada; questão atual; estoque positivo; sem auxílios e sem pulos prévios. Cobertura não é cota de pulos por sessão.",
+  "points": [
+    {
+      "id": 1,
+      "number": 1,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 26,
+      "maximumSkips": 13,
+      "totals": {
+        "question-pass": 26,
+        "hint-scroll": 26,
+        "answer-lens": 21,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 25
+      },
+      "coverage": [
+        {
+          "key": "1-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-13",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-14",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-16",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-18",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-19",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-20",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-22",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-23",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-26",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-27",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-28",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-8",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-9",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-30",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-31",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-32",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-33",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-34",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "1-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "number": 2,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 17,
+      "maximumSkips": 8,
+      "totals": {
+        "question-pass": 17,
+        "hint-scroll": 17,
+        "answer-lens": 14,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 16
+      },
+      "coverage": [
+        {
+          "key": "2-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-13",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-14",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-15",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-17",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-8",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-9",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-20",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-22",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-23",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "2-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "number": 3,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 11,
+      "maximumSkips": 5,
+      "totals": {
+        "question-pass": 11,
+        "hint-scroll": 11,
+        "answer-lens": 9,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 10
+      },
+      "coverage": [
+        {
+          "key": "3-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-14",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-8",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-9",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "3-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "number": 4,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 11,
+      "maximumSkips": 5,
+      "totals": {
+        "question-pass": 11,
+        "hint-scroll": 11,
+        "answer-lens": 9,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 10
+      },
+      "coverage": [
+        {
+          "key": "4-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-4",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-14",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-8",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-9",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "4-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "number": 5,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 10,
+      "maximumSkips": 5,
+      "totals": {
+        "question-pass": 9,
+        "hint-scroll": 10,
+        "answer-lens": 8,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 9
+      },
+      "coverage": [
+        {
+          "key": "5-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-8",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-9",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "5-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": "Esta questão essencial precisa ser respondida sem pulo ou troca.",
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Esta questão essencial precisa ser respondida sem pulo ou troca.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "number": 6,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 10,
+      "maximumSkips": 5,
+      "totals": {
+        "question-pass": 10,
+        "hint-scroll": 10,
+        "answer-lens": 8,
+        "example-scroll": 2,
+        "challenge-swap": 2,
+        "tactical-delay": 9
+      },
+      "coverage": [
+        {
+          "key": "6-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-8",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-9",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "6-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "number": 7,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 12,
+      "maximumSkips": 6,
+      "totals": {
+        "question-pass": 12,
+        "hint-scroll": 12,
+        "answer-lens": 10,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 11
+      },
+      "coverage": [
+        {
+          "key": "7-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-8",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-9",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-17",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "7-18",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "number": 8,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 11,
+      "maximumSkips": 5,
+      "totals": {
+        "question-pass": 11,
+        "hint-scroll": 11,
+        "answer-lens": 9,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 10
+      },
+      "coverage": [
+        {
+          "key": "8-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-8",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-15",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-9",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "8-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "number": 9,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 11,
+      "maximumSkips": 5,
+      "totals": {
+        "question-pass": 11,
+        "hint-scroll": 11,
+        "answer-lens": 9,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 10
+      },
+      "coverage": [
+        {
+          "key": "9-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-4",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-8",
+          "type": "ASSOCIATION",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-9",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-16",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "9-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "number": 10,
+      "trail": "elementar",
+      "intro": false,
+      "graded": 10,
+      "maximumSkips": 5,
+      "totals": {
+        "question-pass": 9,
+        "hint-scroll": 10,
+        "answer-lens": 9,
+        "example-scroll": 1,
+        "challenge-swap": 1,
+        "tactical-delay": 9
+      },
+      "coverage": [
+        {
+          "key": "10-2",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": null,
+            "challenge-swap": null,
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-3",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-4",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-6",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-7",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-8",
+          "type": "PAIR_LINKS",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": "A lente precisa de múltipla escolha com ao menos três opções.",
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-9",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-10",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-11",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": null,
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Não há variante equivalente validada para esta questão.",
+            "tactical-delay": null
+          }
+        },
+        {
+          "key": "10-12",
+          "type": "MULTIPLE_CHOICE",
+          "availability": {
+            "question-pass": "Esta questão essencial precisa ser respondida sem pulo ou troca.",
+            "hint-scroll": null,
+            "answer-lens": null,
+            "example-scroll": "Ainda não há exemplo adicional para esta habilidade.",
+            "challenge-swap": "Esta questão essencial precisa ser respondida sem pulo ou troca.",
+            "tactical-delay": "Não há outra tela para estudar antes desta questão."
+          }
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "question-pass": 127,
+    "hint-scroll": 129,
+    "answer-lens": 106,
+    "example-scroll": 11,
+    "challenge-swap": 11,
+    "tactical-delay": 119
+  }
+}

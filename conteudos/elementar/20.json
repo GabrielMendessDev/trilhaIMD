@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 20,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-20",
+      "titulo": "Missão P1: defender uma solução",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Chegou a banca da sua própria solução. Ela aceita calculadora mental, rascunho e uma dose moderada de café imaginário. Mas vai pedir: ‘Por que esse intervalo? De onde saiu essa raiz?’ A missão é fazer o raciocínio sobreviver a essas perguntas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Integrar os fundamentos e construir justificativas completas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Passos 1 a 19; retome o tema de cada erro."
+              }
+            ],
+            "titulo": "Missão P1: defender uma solução",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Resolver é produzir valores que satisfazem condições; justificar é mostrar por que todos os valores obtidos servem e nenhum outro serve. Uma resposta discursiva precisa declarar universo, restrições, transformações equivalentes e conjunto solução. Esta revisão é autoral e combina habilidades do mapa da P1 2025.2, sem reproduzir a prova."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma solução organizada declara hipóteses, desenvolve o método, verifica e conclui.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Hipóteses → método → verificação → solução"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A={1,2,3} e B={3,4}, qual é A∩B?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "A interseção contém apenas o elemento comum 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "∅"
+              },
+              {
+                "id": "b",
+                "texto": "{3}"
+              },
+              {
+                "id": "c",
+                "texto": "{1,2,3,4}"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Cada transformação deve preservar as soluções ou ter seus candidatos conferidos ao final. Dividir por uma expressão que pode zerar exige separar casos. Elevar ao quadrado pode introduzir soluções. Testar candidatos confirma inclusão, mas a garantia de completude vem do método, não de experimentar alguns números."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Integrar os fundamentos e construir justificativas completas.",
+                      "exemplo": "Determine k para que x²−4x+k=0 tenha uma raiz real distinta. A equação é quadrática porque a=1."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Conclua: k=4, com raiz dupla x=2. Verifique 2²−4·2+4=0 e explique que qualquer k diferente muda o sinal de Δ para um dos outros casos."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Um conjunto com 5 elementos tem quantos subconjuntos próprios?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "Há 2⁵=32 subconjuntos e só o completo é excluído.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "31"
+              },
+              {
+                "id": "b",
+                "texto": "32"
+              },
+              {
+                "id": "c",
+                "texto": "30"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Missão P1: defender uma solução",
+            "assunto": "Missão P1: defender uma solução",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Determine k para que x²−4x+k=0 tenha uma raiz real distinta. A equação é quadrática porque a=1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Calcule Δ=16−4k e imponha Δ=0. Então k=4 e a equação fica (x−2)²=0."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Conclua: k=4, com raiz dupla x=2. Verifique 2²−4·2+4=0 e explique que qualquer k diferente muda o sinal de Δ para um dos outros casos."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 8^(2/3)·2⁻¹?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "A raiz cúbica de 8 é 2; 2²·1/2=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "8"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale ln(e²)+log₃27?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "As duas parcelas valem 2 e 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "5"
+              },
+              {
+                "id": "c",
+                "texto": "6"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma lista de respostas sem restrições não permite revisar o método. Também evite justificar uma identidade por um único exemplo: exemplos podem refutar uma afirmação universal, mas não demonstrá-la. Quando errar, identifique a decisão incorreta, não apenas o número final."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva 3x−5=7 em ℝ.",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "Somando 5 e dividindo por 3, obtemos x=4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{4}"
+              },
+              {
+                "id": "b",
+                "texto": "{2/3}"
+              },
+              {
+                "id": "c",
+                "texto": "{−4}"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x+y=6 e x−y=2.",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "Somando as equações: 2x=8; depois y=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{(2,4)}"
+              },
+              {
+                "id": "b",
+                "texto": "{(3,3)}"
+              },
+              {
+                "id": "c",
+                "texto": "{(4,2)}"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Faça esta revisão em duas passagens: primeiro sem consulta; depois explique cada alternativa escolhida com uma frase e uma conta. Se um tema travar, retorne ao passo indicado pelo assunto. O objetivo é autonomia: contar, transformar, resolver e comunicar."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual k dá raiz dupla a x²−4x+k=0?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "Δ=16−4k=0 implica k=4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "16"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais são as raízes reais de x⁴−10x²+9=0?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "t²−10t+9=(t−1)(t−9); retornar a x dá ±1 e ±3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−3,−1,1,3"
+              },
+              {
+                "id": "b",
+                "texto": "1 e 9"
+              },
+              {
+                "id": "c",
+                "texto": "−9,−1,1,9"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Resolver é produzir valores que satisfazem condições; justificar é mostrar por que todos os valores obtidos servem e nenhum outro serve. Uma resposta discursiva precisa declarar universo, restrições, transformações equivalentes e conjunto solução. Esta revisão é autoral e combina habilidades do mapa da P1 2025.2, sem reproduzir a prova."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Conclua: k=4, com raiz dupla x=2. Verifique 2²−4·2+4=0 e explique que qualquer k diferente muda o sinal de Δ para um dos outros casos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como integrar os fundamentos e construir justificativas completas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de 2x−1≥3 e x<5?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "A primeira condição dá x≥2; intersectando com x<5 resulta [2,5).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(2,5]"
+              },
+              {
+                "id": "b",
+                "texto": "[2,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "[2,5)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−1)/(x+2)<0?",
+            "assunto": "Missão P1: defender uma solução",
+            "orientacao": "Identifique qual ferramenta da unidade responde à pergunta e escreva o conjunto solução no universo pedido.",
+            "explicacao": "O quociente é negativo entre os pontos críticos; −2 é proibido e 1 não satisfaz a desigualdade estrita.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,−2)∪(1,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "(−2,1)"
+              },
+              {
+                "id": "c",
+                "texto": "[−2,1]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

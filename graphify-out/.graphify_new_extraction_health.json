@@ -1,0 +1,206 @@
+{
+  "node_count": 160,
+  "unverified_node_count": 0,
+  "raw_edge_count": 272,
+  "non_object_edges": 0,
+  "missing_endpoint_edges": 0,
+  "dangling_endpoint_edges": 68,
+  "external_reference_edges": 13,
+  "self_loop_edges": 0,
+  "valid_candidate_edges": 191,
+  "exact_duplicate_edges": 0,
+  "directed_unique_endpoint_pairs": 180,
+  "directed_same_endpoint_collapsed_edges": 11,
+  "undirected_unique_endpoint_pairs": 180,
+  "undirected_same_endpoint_collapsed_edges": 11,
+  "same_endpoint_group_count": 11,
+  "relation_variant_groups": 11,
+  "source_file_variant_groups": 0,
+  "source_location_variant_groups": 0,
+  "context_variant_groups": 0,
+  "post_build_graph_type": "Graph",
+  "post_build_node_count": 223,
+  "post_build_edge_count": 261,
+  "post_build_error": "",
+  "producer_suppression": {
+    "path": "C:\\Users\\luizr\\AppData\\Roaming\\uv\\tools\\graphifyy\\Lib\\site-packages\\graphify\\extract.py",
+    "total_sites": 12,
+    "sites": [
+      {
+        "line": 1778,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 2342,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 2344,
+        "name": "seen_doc_refs",
+        "tuple_arity": 0,
+        "sample": "seen_doc_refs: set[str] = set()"
+      },
+      {
+        "line": 2822,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 2969,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n.get(\"id\") for n in nodes}"
+      },
+      {
+        "line": 3821,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 4005,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 6658,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 6766,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 6845,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 7360,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 7361,
+        "name": "seen_edges",
+        "tuple_arity": 4,
+        "sample": "seen_edges: set[tuple[str, str, str, str | None]] = set()"
+      }
+    ],
+    "error": ""
+  },
+  "examples": [
+    {
+      "source": "src_app_aprender_etapa_lesson_bag_lessonbag",
+      "target": "src_app_aprender_etapa_lesson_bag_lessonbag_applyitem",
+      "edge_count": 2,
+      "relations": [
+        "calls",
+        "contains"
+      ],
+      "source_files": [
+        "src/app/aprender/_etapa/lesson-bag.tsx"
+      ],
+      "source_locations": [
+        "L215",
+        "L73"
+      ],
+      "contexts": [
+        "",
+        "call"
+      ]
+    },
+    {
+      "source": "tests_items_checkpoint_browser",
+      "target": "tests_items_checkpoint_browser_openbag",
+      "edge_count": 2,
+      "relations": [
+        "calls",
+        "contains"
+      ],
+      "source_files": [
+        "tests/items-checkpoint-browser.mjs"
+      ],
+      "source_locations": [
+        "L112",
+        "L90"
+      ],
+      "contexts": [
+        "",
+        "call"
+      ]
+    },
+    {
+      "source": "tests_rpg_http",
+      "target": "tests_rpg_http_learner",
+      "edge_count": 2,
+      "relations": [
+        "calls",
+        "contains"
+      ],
+      "source_files": [
+        "tests/rpg-http.mjs"
+      ],
+      "source_locations": [
+        "L103",
+        "L18"
+      ],
+      "contexts": [
+        "",
+        "call"
+      ]
+    },
+    {
+      "source": "tests_rpg_http",
+      "target": "tests_rpg_http_state",
+      "edge_count": 2,
+      "relations": [
+        "calls",
+        "contains"
+      ],
+      "source_files": [
+        "tests/rpg-http.mjs"
+      ],
+      "source_locations": [
+        "L105",
+        "L32"
+      ],
+      "contexts": [
+        "",
+        "call"
+      ]
+    },
+    {
+      "source": "tests_rpg_http",
+      "target": "tests_rpg_http_post",
+      "edge_count": 2,
+      "relations": [
+        "calls",
+        "contains"
+      ],
+      "source_files": [
+        "tests/rpg-http.mjs"
+      ],
+      "source_locations": [
+        "L281",
+        "L37"
+      ],
+      "contexts": [
+        "",
+        "call"
+      ]
+    }
+  ]
+}

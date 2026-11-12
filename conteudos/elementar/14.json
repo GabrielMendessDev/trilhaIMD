@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 14,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-14",
+      "titulo": "Discriminante e o parâmetro suspeito",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um problema esconde um número sob a letra k e exige ‘exatamente uma raiz real’. É um enigma com pista forte: duas raízes estão tentando ocupar o mesmo endereço. O discriminante detecta o encontro."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Determinar condições para raízes reais e raízes duplas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Métodos para equações quadráticas (passo 13)."
+              }
+            ],
+            "titulo": "Discriminante e o parâmetro suspeito",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para ax²+bx+c=0, a≠0, Δ=b²−4ac. Se Δ>0, há duas raízes reais distintas; se Δ=0, há uma raiz real distinta de multiplicidade dois; se Δ<0, não há raízes reais. A fórmula é x=(−b±√Δ)/(2a). Antes de usar Δ com parâmetros, confira se o coeficiente de x² continua diferente de zero."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Delta é b ao quadrado menos quatro vezes a vezes c.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Δ=b²−4ac"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em x²−6x+k=0, qual k produz raiz dupla?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "Δ=36−4k=0 implica k=9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "36"
+              },
+              {
+                "id": "b",
+                "texto": "9"
+              },
+              {
+                "id": "c",
+                "texto": "6"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Completar o quadrado transforma a equação em (x+b/(2a))²=Δ/(4a²). Como 4a²>0 e um quadrado real é não negativo, o sinal de Δ explica os três casos. Esta justificativa retoma a ideia geométrica; a dedução geral não é prioridade da P1 2025.2, segundo o acervo."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/parabola.svg",
+                "alt": "Parábola x²−4x+3 com concavidade para cima, zeros em 1 e 3, intercepto (0,3) e vértice (2,−1).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Parábola x²−4x+3 com concavidade para cima, zeros em 1 e 3, intercepto (0,3) e vértice (2,−1).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para x²−6x+k=0 ter duas raízes reais distintas, qual condição vale?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "Precisamos de Δ=36−4k>0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "k<9"
+              },
+              {
+                "id": "b",
+                "texto": "k>9"
+              },
+              {
+                "id": "c",
+                "texto": "k=9"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Discriminante e o parâmetro suspeito",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Em x²−6x+k=0, temos a=1, b=−6 e c=k. Portanto Δ=36−4k."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Uma raiz real distinta exige Δ=0: 36−4k=0, logo k=9."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A equação vira (x−3)²=0, com raiz dupla x=3. Para k<9 há duas raízes reais; para k>9 não há raízes reais."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é Δ de 2x²−3x+1=0?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "Δ=(−3)²−4·2·1=9−8=1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "17"
+              },
+              {
+                "id": "b",
+                "texto": "5"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais são as raízes de 2x²−3x+1=0?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "Pela fórmula, x=(3±1)/4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1 e −1/2"
+              },
+              {
+                "id": "b",
+                "texto": "1 e 1/2"
+              },
+              {
+                "id": "c",
+                "texto": "1 e 2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se a=0, a equação deixa de ser quadrática e precisa de análise própria. Em kx²+x−1=0, k=0 produz a equação linear x−1=0, que também possui uma solução real. Ignorar esse caso perde soluções do problema com parâmetro."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas raízes reais distintas tem x²+4=0?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "O discriminante é −16; nenhum quadrado real vale −4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a raiz de x²+4x+4=0?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "A expressão é (x+2)², cujo zero é −2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "−4"
+              },
+              {
+                "id": "c",
+                "texto": "−2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao escrever uma solução discursiva, registre os coeficientes, o discriminante, a condição pedida e a verificação. ‘Uma raiz’ deve ser interpretado com cuidado: uma raiz distinta pode ter multiplicidade dois. Faça essa distinção em suas próprias palavras."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em kx²+x−1=0, o caso k=0 é qual equação?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "O termo quadrático desaparece e resta uma equação linear.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1=0"
+              },
+              {
+                "id": "b",
+                "texto": "x−1=0"
+              },
+              {
+                "id": "c",
+                "texto": "x²−1=0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição precisa vir antes da fórmula quadrática?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "O denominador 2a e a classificação quadrática exigem a diferente de zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a≠0"
+              },
+              {
+                "id": "b",
+                "texto": "b≠0"
+              },
+              {
+                "id": "c",
+                "texto": "c≠0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para ax²+bx+c=0, a≠0, Δ=b²−4ac. Se Δ>0, há duas raízes reais distintas; se Δ=0, há uma raiz real distinta de multiplicidade dois; se Δ<0, não há raízes reais. A fórmula é x=(−b±√Δ)/(2a). Antes de usar Δ com parâmetros, confira se o coeficiente de x² continua diferente de zero."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: A equação vira (x−3)²=0, com raiz dupla x=3. Para k<9 há duas raízes reais; para k>9 não há raízes reais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como determinar condições para raízes reais e raízes duplas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se Δ=0 numa quadrática, quantas raízes reais distintas existem?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "As duas expressões da fórmula coincidem; a raiz tem multiplicidade dois.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição dá raízes reais a x²+k=0?",
+            "assunto": "Discriminante e o parâmetro suspeito",
+            "orientacao": "Confira se a equação continua quadrática e traduza a quantidade de raízes pedida numa condição sobre delta.",
+            "explicacao": "Precisamos de x²=−k≥0, portanto k≤0.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "k>0"
+              },
+              {
+                "id": "b",
+                "texto": "k≤0"
+              },
+              {
+                "id": "c",
+                "texto": "k≥0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

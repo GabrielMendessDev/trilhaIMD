@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 48,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-48",
+      "titulo": "Radianos: medir ângulo pelo arco",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Graus dividem a volta em 360 partes. Radianos fazem uma pergunta geométrica: quantos raios cabem no comprimento do arco? A nova unidade parece menos familiar, mas conversa diretamente com a circunferência."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Converter graus e radianos e localizar voltas e sentidos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Circunferência e proporções."
+              }
+            ],
+            "titulo": "Radianos: medir ângulo pelo arco",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em uma circunferência de raio r>0, o ângulo central em radianos é θ=s/r, com s sendo o comprimento de arco orientado. Uma volta mede 2π rad=360°; meia volta, π rad=180°. Converta graus para radianos multiplicando por π/180; faça o caminho inverso multiplicando por 180/π. O sentido anti-horário é positivo."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O ângulo em radianos é arco dividido pelo raio; pi radianos equivalem a cento e oitenta graus.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "θ=s/r; π rad=180°"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos radianos há em uma volta completa?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "O arco completo tem comprimento 2πr; dividido por r resulta 2π.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2π"
+              },
+              {
+                "id": "b",
+                "texto": "π"
+              },
+              {
+                "id": "c",
+                "texto": "360π"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A circunferência inteira tem comprimento 2πr, então θ=(2πr)/r=2π. O raio cancela: a medida angular independe do tamanho da circunferência. Ângulos que diferem por 2kπ, k inteiro, chegam ao mesmo ponto no ciclo, embora suas medidas orientadas possam ser diferentes."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ciclo.svg",
+                "alt": "Ciclo unitário: em 0 o ponto é (1,0); em π/2 é (0,1); em π é (−1,0); em 3π/2 é (0,−1). No primeiro quadrante, o ponto tem coordenadas (cosθ,senθ).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Ciclo unitário: em 0 o ponto é (1,0); em π/2 é (0,1); em π é (−1,0); em 3π/2 é (0,−1). No primeiro quadrante, o ponto tem coordenadas (cosθ,senθ).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 180° em radianos?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "Meia volta equivale a π radianos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2π"
+              },
+              {
+                "id": "b",
+                "texto": "π/2"
+              },
+              {
+                "id": "c",
+                "texto": "π"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Radianos: medir ângulo pelo arco",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Converta 150°: 150·π/180=5π/6 rad. É menor que π e maior que π/2, logo termina no segundo quadrante."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Converta −π/3 rad: −π/3·180/π=−60°. A rotação é horária."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Somando uma volta a −π/3, obtemos 5π/3, que termina no mesmo ponto. Os ângulos são coterminais, não a mesma medida orientada."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 60° em radianos?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "Multiplicar 60 por π/180 dá π/3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3π"
+              },
+              {
+                "id": "b",
+                "texto": "π/3"
+              },
+              {
+                "id": "c",
+                "texto": "π/6"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 150° em radianos?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "Simplificamos 150π/180 para 5π/6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5π/6"
+              },
+              {
+                "id": "b",
+                "texto": "3π/5"
+              },
+              {
+                "id": "c",
+                "texto": "5π/3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "π rad equivale a 180°, e não a 3,14°. A constante π é um número; ‘rad’ indica a unidade angular. Também não esqueça o sinal ao converter uma rotação horária."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 3π/2 rad em graus?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "Multiplicar por 180/π dá 270°.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "90°"
+              },
+              {
+                "id": "b",
+                "texto": "180°"
+              },
+              {
+                "id": "c",
+                "texto": "270°"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sentido de um ângulo negativo pela convenção adotada?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "O sentido anti-horário foi escolhido como positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sempre vertical"
+              },
+              {
+                "id": "b",
+                "texto": "Horário"
+              },
+              {
+                "id": "c",
+                "texto": "Anti-horário"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use uma volta desenhada com os marcos 0,π/2,π,3π/2 e 2π. Depois localize ângulos intermediários por comparação. Uma conversão exata com π é preferível a arredondar cedo e perder informação."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual ângulo é coterminal com −π/3?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "Somamos 2π e obtemos 5π/3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5π/3"
+              },
+              {
+                "id": "b",
+                "texto": "π/3"
+              },
+              {
+                "id": "c",
+                "texto": "2π/3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em qual quadrante termina 5π/6?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "Está entre π/2 e π.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Primeiro"
+              },
+              {
+                "id": "b",
+                "texto": "Terceiro"
+              },
+              {
+                "id": "c",
+                "texto": "Segundo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em uma circunferência de raio r>0, o ângulo central em radianos é θ=s/r, com s sendo o comprimento de arco orientado. Uma volta mede 2π rad=360°; meia volta, π rad=180°. Converta graus para radianos multiplicando por π/180; faça o caminho inverso multiplicando por 180/π. O sentido anti-horário é positivo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Somando uma volta a −π/3, obtemos 5π/3, que termina no mesmo ponto. Os ângulos são coterminais, não a mesma medida orientada."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como converter graus e radianos e localizar voltas e sentidos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se um arco mede 6 e o raio 3, qual é o ângulo em radianos?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "θ=s/r=6/3=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/2"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "18"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "π rad é igual a aproximadamente 3,14°?",
+            "assunto": "Radianos: medir ângulo pelo arco",
+            "orientacao": "Escreva a unidade original e multiplique pelo fator de conversão correto, conservando o sinal.",
+            "explicacao": "π rad=180°; trocar unidade sem conversão altera a medida.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Só em raio 1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

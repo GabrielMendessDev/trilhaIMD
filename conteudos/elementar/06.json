@@ -1,517 +1,484 @@
 {
-	"versao": 1,
-	"trilha": "elementar",
-	"ponto": 6,
-	"atividades": [
-		{
-			"id": "conta-da-lanchonete",
-			"titulo": "O mistério da conta da lanchonete",
-			"questoes": [
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Uma igualdade com uma informação faltando",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Você pagou uma taxa de R$ 4 e mais R$ 3 por página. O total foi R$ 13. Se x representa a quantidade de páginas, a informação vira 4 + 3x = 13. Uma igualdade com uma incógnita a determinar é uma equação."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Imagine uma balança. Tirar 4 dos dois lados preserva o equilíbrio: 3x = 9. Dividir ambos por 3 deixa x = 3. A solução é um número que torna a igualdade verdadeira. Verifique substituindo: 4 + 3 · 3 = 13."
-							}
-						]
-					},
-					"numero": 1,
-					"ordem": 1
-				},
-				{
-					"numero": 2,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um cartão de impressão custa R$ 6 de taxa fixa e R$ 2 por página. O total foi R$ 18. Quantas páginas foram impressas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "5"
-							},
-							{
-								"id": "b",
-								"texto": "12"
-							},
-							{
-								"id": "c",
-								"texto": "6"
-							},
-							{
-								"id": "d",
-								"texto": "9"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Equação linear",
-						"orientacao": "Retire a taxa fixa antes de dividir pelo preço por página.",
-						"explicacao": "18 − 6 = 12. A R$ 2 por página, foram impressas 6 páginas."
-					},
-					"ordem": 2
-				},
-				{
-					"numero": 3,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O painel começou com 17 chamados. Depois de resolver x chamados e receber mais 4, ficou com 12. Qual valor de x satisfaz 17 − x + 4 = 12?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "9"
-							},
-							{
-								"id": "b",
-								"texto": "5"
-							},
-							{
-								"id": "c",
-								"texto": "13"
-							},
-							{
-								"id": "d",
-								"texto": "21"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Equação linear",
-						"orientacao": "Junte os números conhecidos e isole o termo que contém x.",
-						"explicacao": "17 + 4 = 21. Se 21 − x = 12, então x = 9."
-					},
-					"ordem": 3
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Quando a incógnita desaparece",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Se os dois lados virarem 0 = 0, a igualdade vale para qualquer valor do domínio. Se virarem 0 = 5, nenhum valor serve. Se sobrar 2x = 6, há uma solução, x = 3."
-							}
-						]
-					},
-					"numero": 13,
-					"ordem": 4
-				},
-				{
-					"numero": 4,
-					"modo": "questao",
-					"questao": {
-						"tipo": "ligacao",
-						"enunciado": "Ligue cada registro já simplificado à conclusão sobre x ∈ ℝ.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "0 = 0"
-							},
-							{
-								"id": "item-2",
-								"texto": "0 = 5"
-							},
-							{
-								"id": "item-3",
-								"texto": "2x = 6"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Uma solução, x = 3"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Qualquer x real serve"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Nenhum x real serve"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							}
-						],
-						"assunto": "Conjunto-solução",
-						"orientacao": "Identifique se a igualdade que sobrou é sempre verdadeira, sempre falsa ou depende de x.",
-						"explicacao": "0 = 0 é sempre verdadeira. 0 = 5 é impossível. 2x = 6 vale somente para x = 3."
-					},
-					"ordem": 5
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Duas comandas, dois preços",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Com dois preços desconhecidos, chamamos de sistema o conjunto de equações que devem valer ao mesmo tempo. Um par ordenado (x, y) deve funcionar nas duas. Você pode isolar um preço e substituí-lo na outra equação ou somar e subtrair equações para eliminar um dos preços."
-							}
-						]
-					},
-					"numero": 14,
-					"ordem": 6
-				},
-				{
-					"numero": 5,
-					"modo": "questao",
-					"questao": {
-						"tipo": "passo-a-passo",
-						"enunciado": "Duas comandas dão o preço de um salgado s e de um suco j. A primeira dá s + j = 9. A segunda dá 2s + j = 14.",
-						"passos": [
-							{
-								"id": "passo-1",
-								"titulo": "Elimine o preço repetido",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Subtraia a primeira equação da segunda. A diferença entre as comandas é um salgado, então s = 5."
-									}
-								]
-							},
-							{
-								"id": "passo-2",
-								"titulo": "Recupere o outro preço",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Substitua s = 5 na primeira equação. Temos 5 + j = 9, logo j = 4."
-									}
-								]
-							},
-							{
-								"id": "passo-3",
-								"titulo": "Confira nas duas comandas",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "5 + 4 = 9 e 2 · 5 + 4 = 14. O par (5, 4) atende às duas condições."
-									}
-								]
-							}
-						]
-					},
-					"ordem": 7
-				},
-				{
-					"numero": 6,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Num pedido, x é o preço de um sanduíche e y o de um suco. As comandas dão x + y = 13 e x + 2y = 18. Qual é o par (x, y)?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "(5, 8)"
-							},
-							{
-								"id": "b",
-								"texto": "(8, 5)"
-							},
-							{
-								"id": "c",
-								"texto": "(9, 4)"
-							},
-							{
-								"id": "d",
-								"texto": "(13, 5)"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Eliminação em sistemas",
-						"orientacao": "Subtraia a primeira comanda da segunda.",
-						"explicacao": "A diferença é y = 5. Na primeira comanda sobra x = 13 − 5 = 8."
-					},
-					"ordem": 8
-				},
-				{
-					"numero": 7,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O sistema de estoque registra x + y = 9 e 2x + 2y = 18. Considerando x e y reais, quantas soluções há?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "Nenhuma"
-							},
-							{
-								"id": "b",
-								"texto": "Uma"
-							},
-							{
-								"id": "c",
-								"texto": "Duas"
-							},
-							{
-								"id": "d",
-								"texto": "Infinitas"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Sistemas equivalentes",
-						"orientacao": "Compare a proporção entre os dois lados de cada equação.",
-						"explicacao": "A segunda equação é o dobro da primeira. Todo par (x, 9 − x) serve."
-					},
-					"ordem": 9
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "A mesma informação ou uma contradição",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "x + y = 4 e 2x + 2y = 8 dizem a mesma coisa. Todo par (x, 4 − x) com x real serve. Se a segunda igualasse 9, as duas regras seriam incompatíveis."
-							}
-						]
-					},
-					"numero": 15,
-					"ordem": 10
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "material",
-						"titulo": "Ficha para conferir sistemas",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Isolou uma variável? Substitua. Viu o mesmo coeficiente nas duas equações? Tente eliminar. Encontrou um par? Confira nas duas linhas. Para infinitas soluções, escreva um conjunto de pares com um valor livre."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "referencia",
-								"titulo": "Notas e slides de Matemática Elementar",
-								"fonte": "IMD/UFRN",
-								"url": "https://matematica-elementar.github.io/"
-							}
-						]
-					},
-					"numero": 16,
-					"ordem": 11
-				},
-				{
-					"numero": 8,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Dois arquivos deveriam indicar os mesmos valores x e y. Um diz x + y = 5 e o outro diz 2x + 2y = 11. Qual diagnóstico é correto?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "O sistema não tem solução."
-							},
-							{
-								"id": "b",
-								"texto": "O sistema tem solução única."
-							},
-							{
-								"id": "c",
-								"texto": "O sistema tem infinitas soluções."
-							},
-							{
-								"id": "d",
-								"texto": "O par (2, 3) resolve o sistema."
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Sistema incompatível",
-						"orientacao": "Dobre a primeira equação e compare o total com o segundo arquivo.",
-						"explicacao": "Ao dobrar x + y = 5, o total seria 10, e não 11. O sistema não tem solução."
-					},
-					"ordem": 12
-				},
-				{
-					"numero": 9,
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"enunciado": "Associe cada par (x, y) ao resultado da conferência no sistema x + y = 7 e x − y = 1.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "(4, 3)"
-							},
-							{
-								"id": "item-2",
-								"texto": "(5, 2)"
-							},
-							{
-								"id": "item-3",
-								"texto": "(3, 2)"
-							},
-							{
-								"id": "item-4",
-								"texto": "(0, 0)"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Só a segunda"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Nenhuma"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "As duas"
-							},
-							{
-								"id": "opcao-4",
-								"texto": "Só a primeira"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-4"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-2"
-							}
-						],
-						"assunto": "Conferência de pares",
-						"orientacao": "Teste a soma e a diferença para cada par.",
-						"explicacao": "(4, 3) dá soma 7 e diferença 1. (5, 2) só dá soma 7. (3, 2) só dá diferença 1. (0, 0) falha nas duas."
-					},
-					"ordem": 13
-				},
-				{
-					"numero": 10,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Ao resolver o sistema y = 2x + 1 e x + y = 10, qual equação em x resulta da substituição?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "2x + 1 = 10"
-							},
-							{
-								"id": "b",
-								"texto": "2x + y = 10"
-							},
-							{
-								"id": "c",
-								"texto": "3x + 1 = 10"
-							},
-							{
-								"id": "d",
-								"texto": "3x = 11"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Substituição",
-						"orientacao": "Troque y pela expressão equivalente antes de juntar os termos em x.",
-						"explicacao": "x + (2x + 1) = 10 dá 3x + 1 = 10."
-					},
-					"ordem": 14
-				},
-				{
-					"numero": 11,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Duas planilhas registram a mesma regra: x + y = 8 e 3x + 3y = 24. Qual descrição dá todas as soluções reais?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "Apenas o par (4, 4)"
-							},
-							{
-								"id": "b",
-								"texto": "Todos os pares (x, 8 − x), com x ∈ ℝ"
-							},
-							{
-								"id": "c",
-								"texto": "Todos os pares (x, 8 + x), com x ∈ ℝ"
-							},
-							{
-								"id": "d",
-								"texto": "Todos os pares reais"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Infinitas soluções",
-						"orientacao": "Isole y na regra comum aos dois arquivos.",
-						"explicacao": "y = 8 − x. Como a segunda equação é a primeira multiplicada por 3, qualquer x real gera uma solução."
-					},
-					"ordem": 15
-				},
-				{
-					"numero": 12,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um lote tem 14 cabos, entre USB e HDMI. Cada USB custa R$ 5, cada HDMI custa R$ 10 e o lote vale R$ 100. Quantos cabos HDMI há?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "4"
-							},
-							{
-								"id": "b",
-								"texto": "5"
-							},
-							{
-								"id": "c",
-								"texto": "8"
-							},
-							{
-								"id": "d",
-								"texto": "6"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Modelagem de sistemas",
-						"orientacao": "Compare o custo real com um lote em que todos fossem USB.",
-						"explicacao": "Quatorze USB custariam R$ 70. Cada troca por HDMI acrescenta R$ 5. A diferença de R$ 30 corresponde a 6 cabos HDMI."
-					},
-					"ordem": 16
-				}
-			]
-		}
-	]
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 6,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-06",
+      "titulo": "Intervalos: quem pode entrar?",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A sala de estudos funciona das 8h às 20h; uma atividade aceita chegadas depois das 10h e até as 12h. O relógio não lê intenções: chegar exatamente às 10h conta? Esse pequeno detalhe é a diferença entre um extremo aberto e um fechado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Traduzir condições simultâneas e alternativas para intervalos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Conjuntos numéricos e operações entre conjuntos (passos 2 a 4)."
+              }
+            ],
+            "titulo": "Intervalos: quem pode entrar?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um intervalo é um conjunto de reais entre limites. Em (a,b], a<x≤b: parêntese exclui e colchete inclui. ±∞ não são números reais e sempre levam parênteses. ‘E’ pede interseção; ‘ou’ inclusivo pede união. Uma solução pode ser vazia, um ponto ou vários intervalos."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O intervalo aberto em a e fechado em b contém os reais maiores que a e menores ou iguais a b.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "(a,b]={x∈ℝ:a<x≤b}"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual intervalo representa 1<x≤4?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "O limite 1 é excluído e 4 é incluído.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(1,4]"
+              },
+              {
+                "id": "b",
+                "texto": "[1,4)"
+              },
+              {
+                "id": "c",
+                "texto": "[1,4]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na interseção, cada número precisa passar por todos os filtros. Para x>1 e x≤4, os testes deixam (1,4]. Na união basta passar por um filtro. Para x<0 ou x≥2, há dois pedaços separados: (−∞,0)∪[2,∞). Testar os extremos evita decidir o colchete por aparência."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/intervalo.svg",
+                "alt": "Reta com intervalo (1,4]: 1 está excluído por círculo aberto, 4 incluído por círculo fechado; o trecho entre eles está destacado.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Reta com intervalo (1,4]: 1 está excluído por círculo aberto, 4 incluído por círculo fechado; o trecho entre eles está destacado.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é [0,5]∩(2,8)?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "Os números precisam ser maiores que 2 e no máximo 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[0,8)"
+              },
+              {
+                "id": "b",
+                "texto": "[2,5]"
+              },
+              {
+                "id": "c",
+                "texto": "(2,5]"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Intervalos: quem pode entrar?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Uma biblioteca aceita acesso para 8≤t≤20 e uma atividade exige 10<t≤12. Escreva [8,20]∩(10,12]."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O segundo intervalo já está contido no primeiro. A interseção é (10,12]."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Verifique: 10 não entra, 11 entra, 12 entra. Aqui t é um horário idealizado como número real; uma regra administrativa diferente mudaria o modelo."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (−∞,1)∪[1,∞)?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "O segundo intervalo inclui 1 e os dois cobrem todos os reais.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "∅"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ sem 1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é [0,1]∩[2,3]?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "Nenhum número pertence aos dois intervalos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "∅"
+              },
+              {
+                "id": "b",
+                "texto": "[0,3]"
+              },
+              {
+                "id": "c",
+                "texto": "{1,2}"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não arredonde um intervalo real para uma lista de inteiros sem que o domínio peça isso. (1,2) contém infinitos reais, embora não contenha nenhum inteiro. Também não use [−∞,3], pois infinito não é ponto final alcançável."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é [0,2]∩[2,4]?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "O único ponto comum é o extremo 2, incluído nos dois.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "∅"
+              },
+              {
+                "id": "b",
+                "texto": "(0,4)"
+              },
+              {
+                "id": "c",
+                "texto": "{2}"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a escrita correta de x≤3?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "O infinito fica aberto; 3 pertence ao conjunto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,3)"
+              },
+              {
+                "id": "b",
+                "texto": "(−∞,3]"
+              },
+              {
+                "id": "c",
+                "texto": "[−∞,3]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em alimentação, transporte ou planejamento de pesquisa, condições de viabilidade podem ser combinadas do mesmo jeito. Escreva primeiro a frase, depois os testes sobre x e só então o intervalo. Desenhe a reta com legenda verbal para que a resposta não dependa da cor."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos inteiros há em (1,2)?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "Nenhum inteiro é estritamente maior que 1 e menor que 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "Infinitos"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição representa [2,6)?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "Leia cada extremo conforme seu colchete ou parêntese.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2<x≤6"
+              },
+              {
+                "id": "b",
+                "texto": "x≤2 ou x>6"
+              },
+              {
+                "id": "c",
+                "texto": "2≤x<6"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um intervalo é um conjunto de reais entre limites. Em (a,b], a<x≤b: parêntese exclui e colchete inclui. ±∞ não são números reais e sempre levam parênteses. ‘E’ pede interseção; ‘ou’ inclusivo pede união. Uma solução pode ser vazia, um ponto ou vários intervalos."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Verifique: 10 não entra, 11 entra, 12 entra. Aqui t é um horário idealizado como número real; uma regra administrativa diferente mudaria o modelo."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como traduzir condições simultâneas e alternativas para intervalos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o conjunto de x>3 e x<1?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "Um real não pode satisfazer simultaneamente essas duas desigualdades.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "∅"
+              },
+              {
+                "id": "c",
+                "texto": "(1,3)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de x<0 ou x≥2?",
+            "assunto": "Intervalos: quem pode entrar?",
+            "orientacao": "Teste cada extremo na condição original e diferencie ‘e’, que exige os dois testes, de ‘ou’.",
+            "explicacao": "‘Ou’ reúne os dois conjuntos; 0 fica fora e 2 entra.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,0)∪[2,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "(0,2)"
+              },
+              {
+                "id": "c",
+                "texto": "[0,2]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
 }

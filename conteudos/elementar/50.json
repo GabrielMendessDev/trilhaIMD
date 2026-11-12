@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 50,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-50",
+      "titulo": "Seis razões e seus pontos proibidos",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Seno e cosseno já guardam as coordenadas. As outras razões combinam ou invertem esses valores. Parece um elenco com seis protagonistas, mas as duas coordenadas sustentam quase toda a trama — desde que ninguém divida por zero."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Relacionar tan, sec, csc e cot a seno e cosseno com domínio."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Ciclo trigonométrico, frações e ângulos notáveis."
+              }
+            ],
+            "titulo": "Seis razões e seus pontos proibidos",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "tanθ=senθ/cosθ e secθ=1/cosθ exigem cosθ≠0. cscθ=1/senθ e cotθ=cosθ/senθ exigem senθ≠0. Assim tan e sec excluem θ=π/2+kπ; csc e cot excluem θ=kπ, k∈ℤ. Seno e cosseno estão definidos para todo real. sec é secante; csc, cossecante; cot, cotangente."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A tangente é seno dividido por cosseno, onde o cosseno não é zero.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "tanθ=senθ/cosθ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a definição de secθ?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "Secante é o recíproco do cosseno.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "senθ/cosθ"
+              },
+              {
+                "id": "b",
+                "texto": "1/cosθ"
+              },
+              {
+                "id": "c",
+                "texto": "1/senθ"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As definições prolongam as razões do triângulo usando coordenadas orientadas. Os pontos proibidos surgem exatamente dos zeros dos denominadores no ciclo unitário. A tangente é positiva nos quadrantes I e III, pois seno e cosseno têm mesmo sinal; é negativa em II e IV, onde têm sinais opostos."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ciclo.svg",
+                "alt": "Ciclo unitário: em 0 o ponto é (1,0); em π/2 é (0,1); em π é (−1,0); em 3π/2 é (0,−1). No primeiro quadrante, o ponto tem coordenadas (cosθ,senθ).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Ciclo unitário: em 0 o ponto é (1,0); em π/2 é (0,1); em π é (−1,0); em 3π/2 é (0,−1). No primeiro quadrante, o ponto tem coordenadas (cosθ,senθ).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a definição de cscθ?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "Cossecante é o recíproco do seno.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/senθ"
+              },
+              {
+                "id": "b",
+                "texto": "1/cosθ"
+              },
+              {
+                "id": "c",
+                "texto": "cosθ/senθ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Seis razões e seus pontos proibidos",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para θ=π/3, senθ=√3/2 e cosθ=1/2. Então tanθ=√3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Os recíprocos dão secθ=2 e cscθ=2/√3=2√3/3. A cotangente é 1/√3=√3/3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Em θ=π/2, o seno vale 1 e o cosseno zero. Logo csc e cot estão definidas, com valores 1 e 0; tan e sec não estão definidas."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a definição de tanθ?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "A tangente divide a coordenada vertical pela horizontal.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "cosθ/senθ"
+              },
+              {
+                "id": "b",
+                "texto": "1/senθ"
+              },
+              {
+                "id": "c",
+                "texto": "senθ/cosθ"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em quais ângulos a tangente não está definida?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "O denominador cosθ zera nos pontos superiores e inferiores do ciclo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas em 0"
+              },
+              {
+                "id": "b",
+                "texto": "π/2+kπ, k∈ℤ"
+              },
+              {
+                "id": "c",
+                "texto": "kπ, k∈ℤ"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "sec não é 1/sen: secante é recíproco do cosseno; cossecante é recíproco do seno. E cotθ=1/tanθ só pode ser usado onde ambos os lados estão definidos: em π/2, cot vale 0, mas tan nem existe."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em quais ângulos csc não está definida?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "O denominador senθ zera nos pontos horizontais do ciclo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "kπ, k∈ℤ"
+              },
+              {
+                "id": "b",
+                "texto": "π/2+kπ, k∈ℤ"
+              },
+              {
+                "id": "c",
+                "texto": "Nenhum real"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale tan(π/3)?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "(√3/2)/(1/2)=√3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/√3"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "√3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para calcular qualquer uma das seis razões, comece com o par (cos,sen), confira denominadores e só então divida. Faça uma tabela de pontos proibidos com uma frase explicando a causa de cada exclusão."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sec(π/3)?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "O cosseno é 1/2 e seu recíproco é 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "√3"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "1/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cot(π/2)?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "cos(π/2)/sen(π/2)=0/1=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "Não definido"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "tanθ=senθ/cosθ e secθ=1/cosθ exigem cosθ≠0. cscθ=1/senθ e cotθ=cosθ/senθ exigem senθ≠0. Assim tan e sec excluem θ=π/2+kπ; csc e cot excluem θ=kπ, k∈ℤ. Seno e cosseno estão definidos para todo real. sec é secante; csc, cossecante; cot, cotangente."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Em θ=π/2, o seno vale 1 e o cosseno zero. Logo csc e cot estão definidas, com valores 1 e 0; tan e sec não estão definidas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como relacionar tan, sec, csc e cot a seno e cosseno com domínio. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal da tangente no terceiro quadrante?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "Seno e cosseno são ambos negativos, e o quociente é positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Negativo"
+              },
+              {
+                "id": "b",
+                "texto": "Zero em todo o quadrante"
+              },
+              {
+                "id": "c",
+                "texto": "Positivo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Podemos substituir cot(π/2) por 1/tan(π/2)?",
+            "assunto": "Seis razões e seus pontos proibidos",
+            "orientacao": "Escreva a razão usando seno e cosseno e confira o denominador antes de dividir.",
+            "explicacao": "A tangente não está definida nesse ângulo, embora a cotangente esteja.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas se arredondar π"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

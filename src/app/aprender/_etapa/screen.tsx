@@ -13,7 +13,15 @@ export function StageScreen({
 	return (
 		<div className={styles.stageBody}>
 			<div className={styles.panels} data-mode={model.mode}>
-				{"content" in model && <ContentPanel content={model.content} />}
+				{"content" in model &&
+					(model.mode === "mista" ? (
+						<details className="lesson-contextual-reading">
+							<summary>Relembrar o conceito</summary>
+							<ContentPanel content={model.content} />
+						</details>
+					) : (
+						<ContentPanel content={model.content} />
+					))}
 				{"activity" in model && (
 					<ActivityPanel
 						activity={model.activity}

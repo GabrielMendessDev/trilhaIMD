@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 37,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-37",
+      "titulo": "Função afim: duas informações desenham uma reta",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um transporte fictício cobra 4 unidades fixas e 2 por trecho. A conta cresce sempre pelo mesmo incremento. Você consegue prever o desenho sem calcular todos os valores: uma reta está se formando, com um começo e uma inclinação."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Interpretar coeficientes, monotonia, zero e equação por dois pontos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Funções, coordenadas e equações lineares."
+              }
+            ],
+            "titulo": "Função afim: duas informações desenham uma reta",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A função afim é f(x)=ax+b. O coeficiente a é a variação de f por unidade de x; b=f(0) é o intercepto vertical. Para a>0 é estritamente crescente; a<0, estritamente decrescente; a=0, constante. Se a≠0, o zero é −b/a. Por dois pontos de abscissas distintas, a=(y₂−y₁)/(x₂−x₁) e b=y₁−ax₁."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma função afim tem taxa constante a, obtida dividindo variação de saída por variação de entrada.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "f(x)=ax+b; a=Δy/Δx"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em f(x)=2x+4, qual é a taxa por unidade de x?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "O coeficiente de x é a inclinação da reta.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A diferença f(x₂)−f(x₁)=a(x₂−x₁) demonstra a monotonia e a taxa constante. Se x₂>x₁, o sinal da variação é o sinal de a. Para esboçar o gráfico, marque dois pontos e trace a reta no domínio indicado; num contexto discreto, a reta é apenas uma extensão do conjunto de pontos admissíveis."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/reta.svg",
+                "alt": "Reta y=2x+3, crescente, passando por (0,3), (1,5) e (3,9); intercepta o eixo horizontal em −1,5.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Reta y=2x+3, crescente, passando por (0,3), (1,5) e (3,9); intercepta o eixo horizontal em −1,5.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em f(x)=2x+4, quanto vale f(0)?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "O termo independente é o intercepto vertical.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Função afim: duas informações desenham uma reta",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Uma reta passa por (1,5) e (3,9). A inclinação é (9−5)/(3−1)=4/2=2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Substitua o primeiro ponto em y=2x+b: 5=2+b, logo b=3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A função é f(x)=2x+3. Em ℝ, seu zero é −3/2 e sua imagem é ℝ; num domínio x≥0, a imagem passa a ser [3,∞)."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o zero de f(x)=2x+4?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "Resolva 2x+4=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−2"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "−4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f(x)=−3x+1 é qual tipo em ℝ?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "A inclinação −3 é negativa.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Estritamente crescente"
+              },
+              {
+                "id": "b",
+                "texto": "Constante"
+              },
+              {
+                "id": "c",
+                "texto": "Estritamente decrescente"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O intercepto b não é a inclinação. E uma reta vertical não é o gráfico de y como função de x: a fórmula por dois pontos exige x₂≠x₁. Não estenda um modelo de custo para quantidades negativas sem justificativa do contexto."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inclinação da reta pelos pontos (1,5) e (3,9)?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "A razão entre as variações é 4/2=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/2"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a equação dessa reta?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "Usando (1,5), obtemos b=3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "y=2x+3"
+              },
+              {
+                "id": "b",
+                "texto": "y=3x+2"
+              },
+              {
+                "id": "c",
+                "texto": "y=2x+5"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Taxas constantes podem modelar trajetos, escalas de pontuação e consumo idealizado. Para desenhar, registre os eixos e as unidades. Para argumentar crescimento, use a diferença entre duas imagens em vez de confiar só no desenho."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de f(x)=2x+3 no domínio [0,∞)?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "A função é crescente e atinge o mínimo 3 em x=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "(3,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "[3,∞)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual função é constante?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "O coeficiente angular é zero na função constante.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "f(x)=x+5"
+              },
+              {
+                "id": "b",
+                "texto": "f(x)=5"
+              },
+              {
+                "id": "c",
+                "texto": "f(x)=5x"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A função afim é f(x)=ax+b. O coeficiente a é a variação de f por unidade de x; b=f(0) é o intercepto vertical. Para a>0 é estritamente crescente; a<0, estritamente decrescente; a=0, constante. Se a≠0, o zero é −b/a. Por dois pontos de abscissas distintas, a=(y₂−y₁)/(x₂−x₁) e b=y₁−ax₁."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: A função é f(x)=2x+3. Em ℝ, seu zero é −3/2 e sua imagem é ℝ; num domínio x≥0, a imagem passa a ser [3,∞)."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como interpretar coeficientes, monotonia, zero e equação por dois pontos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que dois pontos com mesma abscissa e ordenadas distintas não definem y=f(x)?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "A reta vertical viola a unicidade da imagem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A mesma entrada teria duas saídas"
+              },
+              {
+                "id": "b",
+                "texto": "A inclinação seria zero"
+              },
+              {
+                "id": "c",
+                "texto": "Faltaria intercepto vertical"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=ax+b, qual é f(x+h)−f(x)?",
+            "assunto": "Função afim: duas informações desenham uma reta",
+            "orientacao": "Diferencie taxa de variação, intercepto e zero; para dois pontos, use variações na mesma ordem.",
+            "explicacao": "Substituir e cancelar os termos comuns deixa ah.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a+h"
+              },
+              {
+                "id": "b",
+                "texto": "bh"
+              },
+              {
+                "id": "c",
+                "texto": "ah"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

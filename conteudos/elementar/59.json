@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 59,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-59",
+      "titulo": "Inversas 2×2 e 3×3: conferir é parte da solução",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Desfazer uma transformação matricial exige uma matriz de volta. Dividir cada entrada por ela mesma não resolve; a inversa deve produzir identidade pelo produto linha–coluna. A verificação é o teste que não aceita desculpas de sinal."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Determinar invertibilidade e construir inversas sem cofatores."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Produto matricial, determinantes e sistemas lineares."
+              }
+            ],
+            "titulo": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma matriz quadrada real A é invertível se, e somente se, detA≠0. Sua inversa satisfaz AA⁻¹=A⁻¹A=I. Para 2×2, A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]]. Para 3×3, resolva A v₁=e₁, A v₂=e₂ e A v₃=e₃, usando as colunas da identidade como lados direitos; reúna as soluções em colunas. Isso equivale a reduzir [A | I] até [I | A⁻¹] por operações reversíveis de linhas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Multiplicar uma matriz invertível por sua inversa nos dois sentidos produz a identidade.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "AA⁻¹=A⁻¹A=I"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição caracteriza invertibilidade de uma matriz quadrada real?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "O determinante não nulo é o critério; entradas individuais podem ser zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "detA=0"
+              },
+              {
+                "id": "b",
+                "texto": "detA≠0"
+              },
+              {
+                "id": "c",
+                "texto": "Todas as entradas não nulas"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "No caso 2×2, multiplicar A por [[d,−b],[−c,a]] produz (ad−bc)I, provando a fórmula quando o determinante não zera. Para o método por colunas, AX=I significa exatamente A vⱼ=eⱼ para cada coluna de X. Como operações elementares de linha são reversíveis, aplicar as mesmas operações a A e I constrói uma matriz que desfaz A. O critério geral do determinante é usado aqui como teorema; sua demonstração completa pertence ao estudo de Álgebra Linear, além do recorte de propriedades de determinantes desta unidade."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Determinar invertibilidade e construir inversas sem cofatores.",
+                      "exemplo": "Em A=[[2,1],[1,1]], detA=1. A fórmula fornece A⁻¹=[[1,−1],[−1,2]]. Multiplicar nos dois sentidos dá I₂."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Para lados direitos e₁,e₂,e₃, as colunas resultantes são (1,0,0),(−1,1,0),(1,−1,1). Logo B⁻¹=[[1,−1,1],[0,1,−1],[0,0,1]]. Conferindo BB⁻¹ e B⁻¹B, cada linha×coluna fornece os uns diagonais e os zeros externos."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inversa de [[2,1],[1,1]]?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "O determinante é 1; trocamos os elementos diagonais e negamos os outros.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[1,−1],[−1,2]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[1/2,1],[1,1]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[2,−1],[−1,1]]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Inversas 2×2 e 3×3: conferir é parte da solução",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Em A=[[2,1],[1,1]], detA=1. A fórmula fornece A⁻¹=[[1,−1],[−1,2]]. Multiplicar nos dois sentidos dá I₂."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Para B=[[1,1,0],[0,1,1],[0,0,1]], resolva B(x,y,z)ᵀ=(u,v,w)ᵀ: z=w; y=v−w; x=u−v+w."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Para lados direitos e₁,e₂,e₃, as colunas resultantes são (1,0,0),(−1,1,0),(1,−1,1). Logo B⁻¹=[[1,−1,1],[0,1,−1],[0,0,1]]. Conferindo BB⁻¹ e B⁻¹B, cada linha×coluna fornece os uns diagonais e os zeros externos."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o produto de A por A⁻¹?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "Pela definição, a inversa desfaz A e produz a identidade.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Matriz nula"
+              },
+              {
+                "id": "b",
+                "texto": "A²"
+              },
+              {
+                "id": "c",
+                "texto": "I"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "[[1,2],[2,4]] tem inversa?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "Seu determinante é 4−4=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só porque não tem zeros"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A⁻¹ não é a matriz dos recíprocos das entradas. Entradas zero são permitidas em uma matriz invertível; o que não pode ser zero é seu determinante. Se o sistema para alguma coluna da identidade não tiver solução, não há inversa completa."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para B do exemplo, qual é a solução de B(x,y,z)ᵀ=(u,v,w)ᵀ para z?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "A última linha da equação é z=w.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "z=w"
+              },
+              {
+                "id": "b",
+                "texto": "z=u"
+              },
+              {
+                "id": "c",
+                "texto": "z=v−w"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No mesmo sistema, quanto vale y?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "A segunda linha diz y+z=v e z=w.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "v+w"
+              },
+              {
+                "id": "b",
+                "texto": "u−v"
+              },
+              {
+                "id": "c",
+                "texto": "v−w"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para qualquer inversa candidata, faça pelo menos o produto inteiro com A e confirme identidade; os dois sentidos ficam explícitos nos exemplos. Em uma solução discursiva, mostre determinante, método, matriz candidata e verificação. O procedimento 3×3 não depende de cofatores."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No mesmo sistema, quanto vale x?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "A primeira linha é x+y=u; substituindo y=v−w dá x=u−v+w.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "u−v−w"
+              },
+              {
+                "id": "b",
+                "texto": "u−v+w"
+              },
+              {
+                "id": "c",
+                "texto": "u+v+w"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a segunda coluna de B⁻¹ no exemplo?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "Use (u,v,w)=(0,1,0) nas fórmulas de x,y,z.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−1,1,0)ᵀ"
+              },
+              {
+                "id": "b",
+                "texto": "(1,−1,1)ᵀ"
+              },
+              {
+                "id": "c",
+                "texto": "(0,1,1)ᵀ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma matriz quadrada real A é invertível se, e somente se, detA≠0. Sua inversa satisfaz AA⁻¹=A⁻¹A=I. Para 2×2, A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]]. Para 3×3, resolva A v₁=e₁, A v₂=e₂ e A v₃=e₃, usando as colunas da identidade como lados direitos; reúna as soluções em colunas. Isso equivale a reduzir [A | I] até [I | A⁻¹] por operações reversíveis de linhas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Para lados direitos e₁,e₂,e₃, as colunas resultantes são (1,0,0),(−1,1,0),(1,−1,1). Logo B⁻¹=[[1,−1,1],[0,1,−1],[0,0,1]]. Conferindo BB⁻¹ e B⁻¹B, cada linha×coluna fornece os uns diagonais e os zeros externos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como determinar invertibilidade e construir inversas sem cofatores. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a terceira coluna de B⁻¹?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "Use (u,v,w)=(0,0,1), obtendo x=1,y=−1,z=1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,0,1)ᵀ"
+              },
+              {
+                "id": "b",
+                "texto": "(−1,1,0)ᵀ"
+              },
+              {
+                "id": "c",
+                "texto": "(1,−1,1)ᵀ"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que acompanha A na matriz aumentada usada para inverter?",
+            "assunto": "Inversas 2×2 e 3×3: conferir é parte da solução",
+            "orientacao": "Verifique determinante não nulo e confira a matriz candidata com o produto linha por coluna.",
+            "explicacao": "Aplicar operações reversíveis à matriz aumentada de A e I até obter I à esquerda produz a inversa à direita.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A transposta obrigatoriamente"
+              },
+              {
+                "id": "b",
+                "texto": "A identidade da mesma ordem"
+              },
+              {
+                "id": "c",
+                "texto": "A matriz nula"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

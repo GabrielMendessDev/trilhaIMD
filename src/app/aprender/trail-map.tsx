@@ -9,8 +9,8 @@ import { stageChallenge, type trails } from "./trails";
 
 type Trail = (typeof trails)[number];
 
-function checkpointY(index: number) {
-	return 5 + 10 * index;
+function checkpointY(index: number, count: number) {
+	return ((index + 0.5) * 100) / count;
 }
 
 function drawRoute(
@@ -20,12 +20,12 @@ function drawRoute(
 ) {
 	return positions.slice(start, end + 1).reduce<string>((path, x, offset) => {
 		const index = start + offset;
-		const y = checkpointY(index);
+		const y = checkpointY(index, positions.length);
 		if (offset === 0) return `M ${x} ${y}`;
 
 		switch (connection) {
 			case "curve":
-				return `${path} C ${positions[index - 1]} ${y - 6}, ${x} ${y - 4}, ${x} ${y}`;
+				return `${path} C ${positions[index - 1]} ${y - 60 / positions.length}, ${x} ${y - 40 / positions.length}, ${x} ${y}`;
 			case "circuit":
 				return `${path} V ${y - 5} H ${x} V ${y}`;
 			default:
@@ -42,6 +42,7 @@ export function TrailMap({
 	completedStages,
 	currentStage,
 	sequential,
+	reviewStages = [],
 }: {
 	trail: Trail;
 	initialStage: number;
@@ -50,11 +51,12 @@ export function TrailMap({
 	completedStages: readonly number[];
 	currentStage?: number;
 	sequential: boolean;
+	reviewStages?: readonly number[];
 }) {
 	const [selected, setSelected] = useState(initialStage);
 
 	return (
-		<div className={styles.route}>
+		<div className={`${styles.route} journey-path`}>
 			<svg
 				aria-hidden="true"
 				className={styles.routeLines}
@@ -79,7 +81,9 @@ export function TrailMap({
 						<path
 							className={styles.completedConnection}
 							d={drawRoute(trail, number - 1, number)}
+							data-trail-segment={number}
 							key={number}
+							pathLength="1"
 							vectorEffect="non-scaling-stroke"
 						/>
 					))}
@@ -87,7 +91,7 @@ export function TrailMap({
 			<ol aria-label={`Etapas de ${trail.name}`} className={styles.checkpoints}>
 				{trail.positions.map((position, index) => {
 					const number = index + 1;
-					const challenge = stageChallenge(number);
+					const challenge = stageChallenge(number, trail.id);
 					const active = selected === number;
 					const published = publishedStages.find(
 						(point) => point.number === number,
@@ -115,8 +119,10 @@ export function TrailMap({
 
 					return (
 						<li
-							className={styles.checkpoint}
+							className={`${styles.checkpoint} journey-stop`}
+							data-review={reviewStages.includes(number) || undefined}
 							data-side={position >= 50 ? "left" : "right"}
+							data-trail-node="true"
 							id={`etapa-${number}`}
 							key={number}
 							style={{ "--position": `${position}%` } as CSSProperties}
@@ -124,7 +130,7 @@ export function TrailMap({
 							<ActionButton
 								aria-label={`Etapa ${number}${label === `Etapa ${number}` ? "" : ` · ${label}`} · ${stateLabel}`}
 								aria-pressed={active}
-								className={styles.checkpointButton}
+								className={`${styles.checkpointButton} journey-node`}
 								data-challenge={Boolean(challenge)}
 								data-state={state}
 								onClick={() => setSelected(number)}
@@ -134,20 +140,25 @@ export function TrailMap({
 									<Icon
 										className={styles.checkpointIcon}
 										name={
-											done
-												? "check"
-												: locked
-													? "lock"
-													: challenge
-														? "star"
-														: "book"
+											reviewStages.includes(number)
+												? "practice"
+												: done
+													? "check"
+													: locked
+														? "lock"
+														: challenge
+															? "star"
+															: "book"
 										}
 									/>
 								)}
 								<span className={styles.checkpointNumber}>{number}</span>
 							</ActionButton>
 							{(active || challenge) && (
-								<div className={styles.checkpointLabel} data-active={active}>
+								<div
+									className={`${styles.checkpointLabel} journey-node-detail`}
+									data-active={active}
+								>
 									<strong>{label}</strong>
 									{active && (
 										<>
@@ -164,7 +175,7 @@ export function TrailMap({
 														? "Revisitar"
 														: published || previewStages.includes(number)
 															? "Abrir etapa"
-															: "Ver modelos"}
+															: "Conhecer o conteúdo"}
 													<Icon className="size-3.5 shrink-0" name="arrow" />
 												</Link>
 											)}

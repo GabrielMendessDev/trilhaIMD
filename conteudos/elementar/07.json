@@ -1,669 +1,495 @@
 {
-	"versao": 1,
-	"trilha": "elementar",
-	"ponto": 7,
-	"atividades": [
-		{
-			"id": "modo-teste-quadraticas",
-			"titulo": "Modo teste no laboratório de jogos",
-			"questoes": [
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "O instante em que o jogo toca o chão",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Um objeto começa no chão, sobe e depois desce. Se a altura for h(t) = −t² + 4t, encontrar os instantes em que ela vale zero resolve uma equação de segundo grau. O termo t² significa t vezes t. Uma raiz é um valor que zera a expressão."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Para escrever uma quadrática, junte todos os termos em um lado: ax² + bx + c = 0. O a deve ser diferente de zero. Em −t² + 4t = 0, temos a = −1, b = 4 e c = 0. Podemos fatorar como t(4 − t) = 0. Um produto zera quando pelo menos um fator é zero."
-							}
-						]
-					},
-					"numero": 1,
-					"ordem": 1
-				},
-				{
-					"numero": 2,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um objeto no jogo toca o chão quando h(t) = −t² + 4t = 0. Ele sai do chão em t = 0. Em que instante positivo volta ao chão?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "2 s"
-							},
-							{
-								"id": "b",
-								"texto": "4 s"
-							},
-							{
-								"id": "c",
-								"texto": "1 s"
-							},
-							{
-								"id": "d",
-								"texto": "8 s"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Raízes de uma quadrática",
-						"orientacao": "Fatore t em −t² + 4t e procure a raiz positiva.",
-						"explicacao": "t(4 − t) zera em 0 e em 4. O retorno ao chão ocorre em 4 s."
-					},
-					"ordem": 2
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Discriminante e fórmula de Bhaskara",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Calcule Δ = b² − 4ac. O discriminante diz quantas raízes reais distintas a equação tem: duas se Δ > 0, uma se Δ = 0 e nenhuma se Δ < 0."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "formula",
-								"leitura": "x é menos b mais ou menos a raiz do discriminante, dividido por dois a",
-								"termos": [
-									{
-										"forma": "texto",
-										"valor": "x = "
-									},
-									{
-										"forma": "fracao",
-										"numerador": "−b ± √Δ",
-										"denominador": "2a"
-									}
-								]
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "O símbolo ± indica dois cálculos, um com soma e outro com subtração. Com Δ = 0, os dois dão o mesmo valor. Por exemplo, x² − 4x + 4 tem Δ = 0 e raiz 2."
-							}
-						]
-					},
-					"numero": 13,
-					"ordem": 3
-				},
-				{
-					"numero": 3,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O sensor entra em modo especial quando x² − 6x + 9 = 0. Quantas raízes reais distintas esse teste tem?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "Nenhuma"
-							},
-							{
-								"id": "b",
-								"texto": "Duas"
-							},
-							{
-								"id": "c",
-								"texto": "Uma"
-							},
-							{
-								"id": "d",
-								"texto": "Três"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Discriminante",
-						"orientacao": "Compare o quadrado de b com 4ac.",
-						"explicacao": "Δ = 36 − 36 = 0. Existe uma única raiz distinta, x = 3."
-					},
-					"ordem": 4
-				},
-				{
-					"numero": 4,
-					"modo": "questao",
-					"questao": {
-						"tipo": "ligacao",
-						"enunciado": "Ligue o sinal do discriminante de uma quadrática ao número de raízes reais distintas.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "Δ > 0"
-							},
-							{
-								"id": "item-2",
-								"texto": "Δ = 0"
-							},
-							{
-								"id": "item-3",
-								"texto": "Δ < 0"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Zero"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Duas"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Uma"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							}
-						],
-						"assunto": "Discriminante",
-						"orientacao": "Veja se √Δ tem dois sinais distintos, é zero ou não é real.",
-						"explicacao": "Δ positivo gera duas raízes, Δ zero gera uma e Δ negativo gera nenhuma raiz real."
-					},
-					"ordem": 5
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Reconheça os fatores pela soma e pelo produto",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Se a quadrática tem raízes reais r e s, então r + s = −b/a e r · s = c/a. Para x² − 7x + 12, procure dois números com soma 7 e produto 12. São 3 e 4."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Se a equação tem x⁴ e x², faça t = x² para obter uma quadrática em t. Como t é um quadrado real, descarte t < 0 e volte para x: t = 0 dá x = 0, e t > 0 dá x = ±√t."
-							}
-						]
-					},
-					"numero": 14,
-					"ordem": 6
-				},
-				{
-					"numero": 5,
-					"modo": "questao",
-					"questao": {
-						"tipo": "passo-a-passo",
-						"enunciado": "O simulador sinaliza eventos quando x⁴ − 5x² + 4 = 0. Veja como reduzir a equação.",
-						"passos": [
-							{
-								"id": "passo-1",
-								"titulo": "Troque x² por t",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Como x é real, t = x² precisa ser não negativo. A equação vira t² − 5t + 4 = 0."
-									}
-								]
-							},
-							{
-								"id": "passo-2",
-								"titulo": "Resolva em t",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Os números 1 e 4 têm soma 5 e produto 4. Então t = 1 ou t = 4."
-									}
-								]
-							},
-							{
-								"id": "passo-3",
-								"titulo": "Volte para x",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "De x² = 1 vem x = ±1. De x² = 4 vem x = ±2. O conjunto-solução é {−2, −1, 1, 2}."
-									}
-								]
-							}
-						]
-					},
-					"ordem": 7
-				},
-				{
-					"numero": 6,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O simulador registra eventos quando 2x² + x − 3 = 0. Qual par de valores a fórmula de Bhaskara retorna?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{−1, 3/2}"
-							},
-							{
-								"id": "b",
-								"texto": "{1, 3/2}"
-							},
-							{
-								"id": "c",
-								"texto": "{−1, −3/2}"
-							},
-							{
-								"id": "d",
-								"texto": "{1, −3/2}"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Fórmula de Bhaskara",
-						"orientacao": "Aqui a = 2, b = 1, c = −3. Calcule Δ antes de dividir.",
-						"explicacao": "Δ = 25. Assim x = (−1 ± 5)/4, o que dá 1 e −3/2."
-					},
-					"ordem": 8
-				},
-				{
-					"numero": 7,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um terreno retangular tem área de 24 m² e perímetro de 20 m. As medidas dos lados são raízes de x² − 10x + 24 = 0. Quais são as medidas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "4 m e 6 m"
-							},
-							{
-								"id": "b",
-								"texto": "3 m e 8 m"
-							},
-							{
-								"id": "c",
-								"texto": "2 m e 12 m"
-							},
-							{
-								"id": "d",
-								"texto": "5 m e 5 m"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Soma e produto",
-						"orientacao": "As medidas somam 10 e seu produto vale 24.",
-						"explicacao": "4 e 6 somam 10 e multiplicam 24, dando perímetro 20 m e área 24 m²."
-					},
-					"ordem": 9
-				},
-				{
-					"numero": 8,
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"enunciado": "Depois de usar t = x², associe cada valor obtido para t ao número de valores reais de x que ele gera.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "t = −4"
-							},
-							{
-								"id": "item-2",
-								"texto": "t = 0"
-							},
-							{
-								"id": "item-3",
-								"texto": "t = 9"
-							},
-							{
-								"id": "item-4",
-								"texto": "t = 1"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Um valor"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Dois valores"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Nenhum valor"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-2"
-							}
-						],
-						"assunto": "Substituição em biquadradas",
-						"orientacao": "Um quadrado real é sempre maior ou igual a zero.",
-						"explicacao": "Para t negativo não há x real. t = 0 dá x = 0. Para 9 e 1 há duas raízes reais opostas."
-					},
-					"ordem": 10
-				},
-				{
-					"numero": 9,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O sensor dispara quando x⁴ + 3x² − 4 = 0. Quais leituras reais disparam o sensor?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{−2, −1, 1, 2}"
-							},
-							{
-								"id": "b",
-								"texto": "{1}"
-							},
-							{
-								"id": "c",
-								"texto": "{−1, 1}"
-							},
-							{
-								"id": "d",
-								"texto": "∅"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Equação biquadrada",
-						"orientacao": "Substitua x² por t e descarte t negativo.",
-						"explicacao": "t² + 3t − 4 = (t + 4)(t − 1). Só t = 1 pode ser quadrado real. Voltando a x, obtemos −1 e 1."
-					},
-					"ordem": 11
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Parâmetro no lugar de um coeficiente",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Um parâmetro é um valor que a pergunta deixa em aberto. Se a regra pede exatamente uma raiz real e a equação é realmente de segundo grau, iguale Δ a zero e resolva a equação no parâmetro. Se o parâmetro também puder zerar o termo quadrático, analise esse valor separadamente."
-							}
-						]
-					},
-					"numero": 15,
-					"ordem": 12
-				},
-				{
-					"numero": 10,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Uma rotina usa x⁴ − 4x² = 0. Qual é o conjunto-solução em ℝ?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{−2, 2}"
-							},
-							{
-								"id": "b",
-								"texto": "{−2, 0, 2}"
-							},
-							{
-								"id": "c",
-								"texto": "{0, 2}"
-							},
-							{
-								"id": "d",
-								"texto": "{0, 4}"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Equação biquadrada",
-						"orientacao": "Fatore t na equação t² − 4t = 0.",
-						"explicacao": "t(t − 4) = 0, então t é 0 ou 4. Logo x vale −2, 0 ou 2."
-					},
-					"ordem": 13
-				},
-				{
-					"numero": 11,
-					"modo": "mista",
-					"conteudo": {
-						"blocos": [
-							{
-								"id": "titulo",
-								"tipo": "titulo",
-								"texto": "Raiz dupla no jogo"
-							},
-							{
-								"id": "texto",
-								"tipo": "texto",
-								"texto": "Com a ≠ 0, uma quadrática tem exatamente uma raiz real distinta quando Δ = 0."
-							}
-						]
-					},
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Qual valor de k faz x² − 8x + k = 0 ter uma raiz real dupla?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "4"
-							},
-							{
-								"id": "b",
-								"texto": "8"
-							},
-							{
-								"id": "c",
-								"texto": "64"
-							},
-							{
-								"id": "d",
-								"texto": "16"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Raiz dupla",
-						"orientacao": "Uma única raiz distinta exige Δ = 0.",
-						"explicacao": "Δ = 64 − 4k. Igualando a zero, k = 16 e a raiz dupla é x = 4."
-					},
-					"ordem": 14
-				},
-				{
-					"numero": 12,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Uma catraca aceita apenas códigos naturais que resolvem x² + x − 6 = 0. Qual conjunto de códigos será aceito?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{2}"
-							},
-							{
-								"id": "b",
-								"texto": "{−3, 2}"
-							},
-							{
-								"id": "c",
-								"texto": "{−3}"
-							},
-							{
-								"id": "d",
-								"texto": "∅"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Raízes e conjunto numérico",
-						"orientacao": "Resolva a equação em ℝ e só depois filtre os naturais.",
-						"explicacao": "(x + 3)(x − 2) = 0. As raízes são −3 e 2, mas só 2 pertence a ℕ."
-					},
-					"ordem": 15
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "material",
-						"titulo": "Depois dos reais: números complexos",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Em ℝ, o quadrado de um número nunca é negativo. Por isso x² = −1 não tem solução real. Para lidar com essa situação, a matemática define a unidade imaginária i por i² = −1. Os números complexos ℂ têm a forma a + bi, com a e b reais."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "formula",
-								"leitura": "i ao quadrado é igual a menos um",
-								"termos": [
-									{
-										"forma": "potencia",
-										"base": "i",
-										"expoente": "2"
-									},
-									{
-										"forma": "texto",
-										"valor": " = −1"
-									}
-								]
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "3 + 2i pertence a ℂ e fica fora de ℝ. Já 4 = 4 + 0i pertence aos dois. A equação x² = −1 tem as soluções i e −i em ℂ. Este é um complemento conceitual. Os exercícios anteriores continuam no universo real."
-							},
-							{
-								"id": "bloco-4",
-								"tipo": "diagrama",
-								"legenda": "Explore as inclusões até os complexos.",
-								"dados": {
-									"modelo": "inclusao",
-									"camadas": [
-										{
-											"simbolo": "ℕ",
-											"nome": "Naturais",
-											"exemplo": "3",
-											"fora": "−2"
-										},
-										{
-											"simbolo": "ℤ",
-											"nome": "Inteiros",
-											"exemplo": "−2",
-											"fora": "1/2"
-										},
-										{
-											"simbolo": "ℚ",
-											"nome": "Racionais",
-											"exemplo": "1/2",
-											"fora": "π"
-										},
-										{
-											"simbolo": "ℝ",
-											"nome": "Reais",
-											"exemplo": "π",
-											"fora": "i"
-										},
-										{
-											"simbolo": "ℂ",
-											"nome": "Complexos",
-											"exemplo": "3 + 2i e também 4",
-											"fora": "Uma matriz é outro tipo de objeto matemático."
-										}
-									],
-									"observacao": "ℕ ⊊ ℤ ⊊ ℚ ⊊ ℝ ⊊ ℂ. Dentro de ℝ, os irracionais são os números de ℝ ∖ ℚ."
-								}
-							},
-							{
-								"id": "bloco-5",
-								"tipo": "referencia",
-								"titulo": "Notas e slides de Matemática Elementar",
-								"fonte": "IMD/UFRN",
-								"url": "https://matematica-elementar.github.io/"
-							}
-						]
-					},
-					"numero": 16,
-					"ordem": 16
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Introdução aos complexos",
-						"enunciado": "Qual número pertence a ℂ e fica fora de ℝ?",
-						"orientacao": "Na forma a + bi, confira se a parte que multiplica i é zero.",
-						"explicacao": "3 + 2i tem parte imaginária 2, portanto não é real. 4 = 4 + 0i e √2 = √2 + 0i são reais e complexos.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "4"
-							},
-							{
-								"id": "b",
-								"texto": "3 + 2i"
-							},
-							{
-								"id": "c",
-								"texto": "√2"
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 17,
-					"ordem": 17
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Introdução aos complexos",
-						"enunciado": "Qual relação descreve i, sabendo que i² = −1?",
-						"orientacao": "Compare com o que acontece quando se eleva um número real ao quadrado.",
-						"explicacao": "Como i² = −1, i não pode ser real. Ele pertence a ℂ por definição.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "i ∈ ℕ"
-							},
-							{
-								"id": "b",
-								"texto": "i ∈ ℝ"
-							},
-							{
-								"id": "c",
-								"texto": "i ∈ ℂ e i ∉ ℝ"
-							}
-						],
-						"gabarito": "c"
-					},
-					"numero": 18,
-					"ordem": 18
-				}
-			]
-		}
-	]
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 7,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-07",
+      "titulo": "Potências: multiplicar sem escrever tudo",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma sequência começa com 1 e duplica a cada rodada: 1,2,4,8. Se o processo andar uma rodada para trás, chegamos a 1/2. O expoente negativo vai nascer desse movimento, sem precisar de uma regra caída do céu."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Interpretar expoentes inteiros, zero e negativos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Multiplicação e frações."
+              }
+            ],
+            "titulo": "Potências: multiplicar sem escrever tudo",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para n natural positivo, aⁿ é o produto de n fatores iguais a a. Base e expoente têm papéis diferentes: 3⁴ usa quatro fatores 3. Para a≠0, definimos a⁰=1 e a⁻ⁿ=1/aⁿ para manter as leis de multiplicação. 0⁻¹ não existe, pois exigiria divisão por zero; 0⁰ não será usado nesta trilha."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma potência de expoente negativo é o recíproco da potência correspondente; a base não pode ser zero.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "a⁻ⁿ=1/aⁿ, a≠0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 2³?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "São três fatores 2: 2·2·2=8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "6"
+              },
+              {
+                "id": "b",
+                "texto": "9"
+              },
+              {
+                "id": "c",
+                "texto": "8"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A sequência de potências de base 2 é …,2⁻²=1/4,2⁻¹=1/2,2⁰=1,2¹=2,2²=4,… Cada avanço multiplica por 2 e cada retorno divide por 2. Isso torna os expoentes coerentes nos dois sentidos. O sinal do expoente não é o sinal do resultado."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Interpretar expoentes inteiros, zero e negativos.",
+                      "exemplo": "Simplifique 3²·3⁻¹. Primeiro escreva 3²=9 e 3⁻¹=1/3."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Compare com −3²=−9 e (−3)²=9. Os parênteses dizem se o sinal negativo integra a base."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a base em 5⁴?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "A base é o número repetido como fator.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "20"
+              },
+              {
+                "id": "b",
+                "texto": "5"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Potências: multiplicar sem escrever tudo",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Simplifique 3²·3⁻¹. Primeiro escreva 3²=9 e 3⁻¹=1/3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O produto é 9/3=3. Pela lei dos expoentes, 3²·3⁻¹=3¹=3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Compare com −3²=−9 e (−3)²=9. Os parênteses dizem se o sinal negativo integra a base."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 7⁰?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "Uma base não nula elevada a zero vale 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "7"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 2⁻³?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "Expoente negativo dá o recíproco de 2³.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−8"
+              },
+              {
+                "id": "b",
+                "texto": "−1/8"
+              },
+              {
+                "id": "c",
+                "texto": "1/8"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "2³ é 2·2·2=8, não 2·3=6. E 2⁻³ é 1/8, não −8. Em frações, (2/3)⁻¹=3/2, porque o recíproco deve produzir 1 quando multiplicado pela base."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale (2/3)⁻¹?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "O recíproco de 2/3 é 3/2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2/3"
+              },
+              {
+                "id": "b",
+                "texto": "3/2"
+              },
+              {
+                "id": "c",
+                "texto": "−2/3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 10²·10³?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "Multiplicar potências da mesma base soma seus expoentes.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "10⁵"
+              },
+              {
+                "id": "b",
+                "texto": "10⁶"
+              },
+              {
+                "id": "c",
+                "texto": "20⁵"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Potências aparecem em crescimento de populações idealizadas, organização de possibilidades e medidas científicas. A notação reduz escrita, mas você deve conseguir desmontá-la em fatores para conferir exemplos pequenos. Explique por que a condição a≠0 é necessária ao usar expoente negativo."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 4³/4²?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "Subtrair os expoentes dá 4¹.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "16"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual expressão não está definida em ℝ?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "0⁻¹ exigiria 1/0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−2)³"
+              },
+              {
+                "id": "b",
+                "texto": "0⁻¹"
+              },
+              {
+                "id": "c",
+                "texto": "2⁰"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para n natural positivo, aⁿ é o produto de n fatores iguais a a. Base e expoente têm papéis diferentes: 3⁴ usa quatro fatores 3. Para a≠0, definimos a⁰=1 e a⁻ⁿ=1/aⁿ para manter as leis de multiplicação. 0⁻¹ não existe, pois exigiria divisão por zero; 0⁰ não será usado nesta trilha."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Compare com −3²=−9 e (−3)²=9. Os parênteses dizem se o sinal negativo integra a base."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como interpretar expoentes inteiros, zero e negativos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale (−2)³?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "Três fatores negativos produzem um resultado negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−8"
+              },
+              {
+                "id": "b",
+                "texto": "8"
+              },
+              {
+                "id": "c",
+                "texto": "−6"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que 3⁰=1 é coerente com 3²/3²?",
+            "assunto": "Potências: multiplicar sem escrever tudo",
+            "orientacao": "Desmonte a potência em fatores quando possível e confira se o sinal pertence à base.",
+            "explicacao": "A lei de quociente liga o expoente zero ao número 1.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O quociente vale zero"
+              },
+              {
+                "id": "b",
+                "texto": "Toda potência de 3 vale 1"
+              },
+              {
+                "id": "c",
+                "texto": "O quociente vale 1 e também 3²⁻²"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
 }

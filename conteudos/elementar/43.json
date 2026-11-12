@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 43,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-43",
+      "titulo": "Periodicidade: repetir exige uma regra",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma rotina de laboratório se repete em ciclos. Ver dois resultados iguais não prova que o ciclo inteiro voltou: pode ter sido coincidência. A periodicidade exige que toda a função aceite o mesmo deslocamento, não apenas um par de pontos."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Reconhecer períodos, período fundamental e limites da observação."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Funções e leitura de padrões."
+              }
+            ],
+            "titulo": "Periodicidade: repetir exige uma regra",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "T>0 é um período de f se o domínio é preservado por deslocamentos ±T e f(x+T)=f(x) para todo x do domínio. Quando existe o menor período positivo, ele é o período fundamental. Se T é período, múltiplos inteiros positivos de T também são. Funções constantes admitem qualquer T>0 e não têm menor período positivo."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Um período positivo preserva todas as saídas após o mesmo deslocamento.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "f(x+T)=f(x), T>0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se T é período, qual igualdade vale para todas as entradas?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "A função repete a saída após o deslocamento T.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "f(T)=0"
+              },
+              {
+                "id": "b",
+                "texto": "f(x+T)=T·f(x)"
+              },
+              {
+                "id": "c",
+                "texto": "f(x+T)=f(x)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A igualdade pode ser aplicada sucessivamente: f(x+2T)=f((x+T)+T)=f(x+T)=f(x). Isso demonstra os múltiplos positivos. Em uma função constante, qualquer deslocamento mantém a saída; sempre podemos escolher T/2, impedindo um menor período positivo. Uma amostra finita não estabelece a regra em toda a reta."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Reconhecer períodos, período fundamental e limites da observação.",
+                      "exemplo": "Uma função em ℝ repete o bloco: valor 0 em [2k,2k+1) e valor 1 em [2k+1,2k+2), para todo inteiro k."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "O período fundamental é 2: um deslocamento entre 0 e 1 muda a saída perto de 1; entre 1 e 2, muda a saída em x=0. Todo T em (0,2) falha."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se 3 é período, qual também é período?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "Aplicar duas vezes o deslocamento de 3 preserva a saída.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3/2"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Periodicidade: repetir exige uma regra",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Uma função em ℝ repete o bloco: valor 0 em [2k,2k+1) e valor 1 em [2k+1,2k+2), para todo inteiro k."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Somar 2 mantém a posição dentro de blocos do mesmo tipo, portanto f(x+2)=f(x). Somar 1 troca os valores 0 e 1, então 1 não é período."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O período fundamental é 2: um deslocamento entre 0 e 1 muda a saída perto de 1; entre 1 e 2, muda a saída em x=0. Todo T em (0,2) falha."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma função constante em ℝ tem menor período positivo?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "Todo T>0 é período e T/2 também; zero não é período positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim, 1"
+              },
+              {
+                "id": "c",
+                "texto": "Sim, 0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f(0)=f(2) prova que 2 é período?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "É necessário verificar a igualdade para todo x, não só num ponto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas se f for contínua"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O fato de f(0)=f(2) não torna 2 um período. Em f(x)=x²−2x, f(0)=f(2)=0, mas f(1)=−1 e f(3)=3. Para uma afirmação universal, um padrão observado precisa de justificativa que cubra todas as entradas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No bloco alternado 0 e 1 do exemplo, qual é o período fundamental?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "Deslocar 2 repete o bloco; deslocamentos positivos menores falham.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Nesse exemplo, somar 1 faz o quê?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "O deslocamento passa de uma metade do bloco à outra.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Troca 0 por 1 e 1 por 0"
+              },
+              {
+                "id": "b",
+                "texto": "Preserva sempre a saída"
+              },
+              {
+                "id": "c",
+                "texto": "Deixa o domínio vazio"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Periodicidade será a ponte para seno, cosseno e tangente. Antes de olhar fórmulas, descreva o que se repete, em qual domínio e após qual deslocamento. Em dados reais, ciclos podem ser aproximações; aqui estudamos igualdade matemática exata."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual função não é periódica em ℝ?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "Se T>0, f(x+T)=x+T difere de x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "f(x)=5"
+              },
+              {
+                "id": "b",
+                "texto": "O bloco alternado do exemplo"
+              },
+              {
+                "id": "c",
+                "texto": "f(x)=x"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O período fundamental, quando existe, precisa ser qual?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "Múltiplos de um período não têm maior valor, mas pode haver um menor positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O maior período"
+              },
+              {
+                "id": "b",
+                "texto": "O menor período positivo"
+              },
+              {
+                "id": "c",
+                "texto": "Qualquer ponto de máximo"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "T>0 é um período de f se o domínio é preservado por deslocamentos ±T e f(x+T)=f(x) para todo x do domínio. Quando existe o menor período positivo, ele é o período fundamental. Se T é período, múltiplos inteiros positivos de T também são. Funções constantes admitem qualquer T>0 e não têm menor período positivo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: O período fundamental é 2: um deslocamento entre 0 e 1 muda a saída perto de 1; entre 1 e 2, muda a saída em x=0. Todo T em (0,2) falha."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como reconhecer períodos, período fundamental e limites da observação. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual exigência sobre o domínio é relevante?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "Comparar x e x+T exige entradas válidas e uma estrutura de repetição.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Ele precisa admitir os deslocamentos usados"
+              },
+              {
+                "id": "b",
+                "texto": "Precisa ser só [0,T]"
+              },
+              {
+                "id": "c",
+                "texto": "Precisa ser finito"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se 2 é o período fundamental, 4 pode ser chamado de período?",
+            "assunto": "Periodicidade: repetir exige uma regra",
+            "orientacao": "Verifique o padrão em todo o domínio; valores iguais em dois pontos não provam periodicidade.",
+            "explicacao": "O período fundamental é o menor, mas seus múltiplos também são períodos.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Só se a função for constante"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

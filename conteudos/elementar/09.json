@@ -1,582 +1,495 @@
 {
-	"versao": 1,
-	"trilha": "elementar",
-	"ponto": 9,
-	"atividades": [
-		{
-			"id": "depure-o-sinal",
-			"titulo": "Depure o sinal do painel",
-			"questoes": [
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Quando dois sinais se combinam",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Um painel combina duas leituras. Quando os fatores têm o mesmo sinal, seu produto é positivo. Quando os sinais são diferentes, o produto é negativo. Se um fator vale zero, o produto é zero."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "Regras de sinal para fatores diferentes de zero.",
-								"dados": {
-									"modelo": "quadro",
-									"linhas": [
-										{
-											"simbolo": "+ · +",
-											"leitura": "positivo",
-											"exemplo": "2 · 3 = 6."
-										},
-										{
-											"simbolo": "− · −",
-											"leitura": "positivo",
-											"exemplo": "(−2) · (−3) = 6."
-										},
-										{
-											"simbolo": "+ · −",
-											"leitura": "negativo",
-											"exemplo": "2 · (−3) = −6."
-										}
-									]
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "Em uma fração, aplicamos a mesma regra de sinais, mas o denominador nunca pode zerar. Domínio é o conjunto dos valores em que a expressão pode ser calculada. Para (x − 5)/(x + 2), retire −2 do domínio."
-							}
-						]
-					},
-					"numero": 1,
-					"ordem": 1
-				},
-				{
-					"numero": 2,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Dois limites de um sensor aparecem como fatores em (x − 1)(x + 3). Em quais pontos o produto zera?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{−1, 3}"
-							},
-							{
-								"id": "b",
-								"texto": "{1, 3}"
-							},
-							{
-								"id": "c",
-								"texto": "{−3, −1}"
-							},
-							{
-								"id": "d",
-								"texto": "{−3, 1}"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Zeros de um produto",
-						"orientacao": "Iguale cada fator a zero separadamente.",
-						"explicacao": "x − 1 zera em 1 e x + 3 zera em −3."
-					},
-					"ordem": 2
-				},
-				{
-					"numero": 3,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O visor calcula (x − 5)/(x + 2). Qual leitura precisa ser retirada do domínio?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "−2"
-							},
-							{
-								"id": "b",
-								"texto": "2"
-							},
-							{
-								"id": "c",
-								"texto": "5"
-							},
-							{
-								"id": "d",
-								"texto": "−5"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Domínio de um quociente",
-						"orientacao": "Iguale o denominador a zero.",
-						"explicacao": "x + 2 = 0 em x = −2, então −2 é excluído. O zero do numerador, 5, é permitido no domínio."
-					},
-					"ordem": 3
-				},
-				{
-					"numero": 4,
-					"modo": "questao",
-					"questao": {
-						"tipo": "ligacao",
-						"enunciado": "Para a expressão (x − 2)/(x + 3), ligue cada leitura ao seu papel no estudo de sinais.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "x = −3"
-							},
-							{
-								"id": "item-2",
-								"texto": "x = 2"
-							},
-							{
-								"id": "item-3",
-								"texto": "x = 0"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Ponto de teste interno"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Ponto fora do domínio"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Zero da expressão"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							}
-						],
-						"assunto": "Pontos críticos",
-						"orientacao": "Separe zero do numerador, zero do denominador e ponto interno.",
-						"explicacao": "−3 zera o denominador, 2 zera o numerador e 0 é um ponto de teste entre eles."
-					},
-					"ordem": 4
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Pontos que dividem a reta",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Primeiro, marque os zeros do numerador e do denominador. Eles dividem a reta em intervalos. Teste um valor dentro de cada intervalo. O zero do numerador pode entrar se a desigualdade permite igualdade e o denominador é diferente de zero."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "formula",
-								"leitura": "x menos dois, dividido por x mais um, maior ou igual a zero",
-								"termos": [
-									{
-										"forma": "fracao",
-										"numerador": "x − 2",
-										"denominador": "x + 1"
-									},
-									{
-										"forma": "texto",
-										"valor": " ≥ 0"
-									}
-								]
-							}
-						]
-					},
-					"numero": 13,
-					"ordem": 5
-				},
-				{
-					"numero": 5,
-					"modo": "questao",
-					"questao": {
-						"tipo": "passo-a-passo",
-						"enunciado": "O painel fica verde quando (x − 2)/(x + 1) ≥ 0. Vamos encontrar o intervalo de cada status.",
-						"passos": [
-							{
-								"id": "passo-1",
-								"titulo": "Marque as fronteiras",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Em x = −1, o denominador é zero e o painel não calcula. Em x = 2, o numerador zera e o denominador vale 3."
-									}
-								]
-							},
-							{
-								"id": "passo-2",
-								"titulo": "Teste os intervalos",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Em x = −2, a razão é positiva. Em x = 0, é negativa. Em x = 3, é positiva."
-									}
-								]
-							},
-							{
-								"id": "passo-3",
-								"titulo": "Decida o que entra",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "O zero x = 2 é permitido. O ponto x = −1 continua fora do domínio. O painel fica verde em (−∞, −1) ∪ [2, ∞)."
-									}
-								]
-							}
-						]
-					},
-					"ordem": 6
-				},
-				{
-					"numero": 6,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um indicador fica verde quando (x + 2)(x − 3) > 0. Quais leituras o deixam verde?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "(−2, 3)"
-							},
-							{
-								"id": "b",
-								"texto": "[−2, 3]"
-							},
-							{
-								"id": "c",
-								"texto": "(−∞, −2) ∪ (3, ∞)"
-							},
-							{
-								"id": "d",
-								"texto": "(−∞, −2] ∪ [3, ∞)"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Inequação-produto estrita",
-						"orientacao": "Teste um número antes, um entre e um depois dos zeros.",
-						"explicacao": "Os fatores têm o mesmo sinal antes de −2 e depois de 3. Como a regra pede > 0, os dois zeros ficam fora."
-					},
-					"ordem": 7
-				},
-				{
-					"numero": 7,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Para acionar um relé, o produto (x − 4)(x − 1) deve ser menor ou igual a zero. Qual é a faixa de acionamento?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "(1, 4)"
-							},
-							{
-								"id": "b",
-								"texto": "[1, 4]"
-							},
-							{
-								"id": "c",
-								"texto": "(−∞, 1] ∪ [4, ∞)"
-							},
-							{
-								"id": "d",
-								"texto": "(4, ∞)"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Inequação-produto não estrita",
-						"orientacao": "Entre as raízes, os fatores têm sinais opostos.",
-						"explicacao": "A expressão fica negativa entre 1 e 4 e zera nas pontas. A regra ≤ 0 dá [1, 4]."
-					},
-					"ordem": 8
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "material",
-						"titulo": "Ficha de depuração de sinais",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "1. Leve tudo para um lado. 2. Anote as restrições da expressão original. 3. Fatore e marque as fronteiras. 4. Teste sinais nos intervalos. 5. Confira as pontas antes de unir as faixas."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "referencia",
-								"titulo": "Notas e slides de Matemática Elementar",
-								"fonte": "IMD/UFRN",
-								"url": "https://matematica-elementar.github.io/"
-							}
-						]
-					},
-					"numero": 14,
-					"ordem": 9
-				},
-				{
-					"numero": 8,
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"enunciado": "Indique o sinal de (x + 1)/(x − 2) nos intervalos e pontos abaixo.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "x < −1"
-							},
-							{
-								"id": "item-2",
-								"texto": "−1 < x < 2"
-							},
-							{
-								"id": "item-3",
-								"texto": "x = −1"
-							},
-							{
-								"id": "item-4",
-								"texto": "x = 2"
-							},
-							{
-								"id": "item-5",
-								"texto": "x > 2"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Não definido"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Negativo"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "Positivo"
-							},
-							{
-								"id": "opcao-4",
-								"texto": "Zero"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-4"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-5",
-								"destino": "opcao-3"
-							}
-						],
-						"assunto": "Sinais de um quociente",
-						"orientacao": "Identifique os dois pontos críticos antes de testar os intervalos.",
-						"explicacao": "A razão é positiva antes de −1 e depois de 2, negativa entre eles, zero em −1 e indefinida em 2."
-					},
-					"ordem": 10
-				},
-				{
-					"numero": 9,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Um serviço aceita leituras que satisfazem (x − 4)/(x + 2) ≤ 0. Qual é o conjunto de leituras aceitas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[−2, 4]"
-							},
-							{
-								"id": "b",
-								"texto": "(−∞, −2) ∪ [4, ∞)"
-							},
-							{
-								"id": "c",
-								"texto": "(−2, 4)"
-							},
-							{
-								"id": "d",
-								"texto": "(−2, 4]"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Extremidades de uma inequação-quociente",
-						"orientacao": "Distinga o zero permitido da leitura proibida pelo denominador.",
-						"explicacao": "A razão é negativa entre −2 e 4, zera em 4 e é indefinida em −2. O conjunto é (−2, 4]."
-					},
-					"ordem": 11
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Cancelamento não devolve valores proibidos",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Em (x − 3)(x + 1)/(x − 3), o cancelamento vale onde x ≠ 3. Como a expressão original não existe em 3, esse valor continua de fora mesmo depois de simplificar."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Um fator ao quadrado fica positivo dos dois lados de seu zero. Por isso uma fronteira pode zerar a expressão sem trocar de sinal."
-							}
-						]
-					},
-					"numero": 15,
-					"ordem": 12
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Domínio após simplificação",
-						"enunciado": "Um cálculo usa (x² − 1)/(x − 1). Em x = 1, o código pode devolver 2 por simplificação?",
-						"orientacao": "Fatore o numerador, mas confira o denominador antes de cancelar.",
-						"explicacao": "Para x ≠ 1, a expressão se reduz a x + 1. No ponto x = 1 o cálculo original tem denominador zero e está indefinido.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "Sim, porque x + 1 vale 2."
-							},
-							{
-								"id": "b",
-								"texto": "Não, porque x = 1 está fora do domínio original."
-							},
-							{
-								"id": "c",
-								"texto": "Sim, porque o numerador é zero."
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 16,
-					"ordem": 13
-				},
-				{
-					"numero": 10,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Uma planilha simplificou (x − 3)(x + 1)/(x − 3) para x + 1. Qual valor continua proibido pela fórmula original?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "−1"
-							},
-							{
-								"id": "b",
-								"texto": "3"
-							},
-							{
-								"id": "c",
-								"texto": "−3"
-							},
-							{
-								"id": "d",
-								"texto": "1"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Cancelamento e domínio",
-						"orientacao": "Consulte a expressão original, antes de cancelar qualquer fator.",
-						"explicacao": "Em x = 3, o denominador original é zero. A expressão reduzida só é equivalente quando x ≠ 3."
-					},
-					"ordem": 14
-				},
-				{
-					"numero": 11,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O teste do jogo aprova quando (x − 2)²(x + 1) < 0. Onde isso acontece?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "(−∞, −1)"
-							},
-							{
-								"id": "b",
-								"texto": "(−1, 2)"
-							},
-							{
-								"id": "c",
-								"texto": "(−∞, −1] ∪ {2}"
-							},
-							{
-								"id": "d",
-								"texto": "(2, ∞)"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Fator quadrático repetido",
-						"orientacao": "O quadrado só muda entre positivo e zero. Quem determina o sinal fora dos zeros?",
-						"explicacao": "Para x < −1, x + 1 é negativo e o quadrado é positivo. Em −1 e 2 a expressão é zero, portanto esses pontos ficam fora."
-					},
-					"ordem": 15
-				},
-				{
-					"numero": 12,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O monitor indica alerta se (x − 1)(x − 4)/(x + 2) ≥ 0. Qual é o conjunto-solução?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[−2, 1] ∪ [4, ∞)"
-							},
-							{
-								"id": "b",
-								"texto": "(−∞, −2) ∪ [1, 4]"
-							},
-							{
-								"id": "c",
-								"texto": "(−2, 1] ∪ [4, ∞)"
-							},
-							{
-								"id": "d",
-								"texto": "(−2, 1) ∪ (4, ∞)"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "União dos intervalos de sinal",
-						"orientacao": "Ordene −2, 1 e 4. Avalie os quatro intervalos e trate os zeros separadamente.",
-						"explicacao": "O quociente é positivo em (−2, 1) e (4, ∞). Inclua 1 e 4, que zeram o numerador. Exclua −2, que zera o denominador."
-					},
-					"ordem": 16
-				}
-			]
-		}
-	]
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 9,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-09",
+      "titulo": "Logaritmo nasce de uma pergunta",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma oficina começa com 3 participantes e triplica o número em cada rodada idealizada. Quando alcançará 81? Se a pergunta procura a quantidade de rodadas, a incógnita está no expoente. É a deixa para o logaritmo entrar em cena."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Converter entre notações exponencial e logarítmica."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Potências e raízes (passos 7 e 8)."
+              }
+            ],
+            "titulo": "Logaritmo nasce de uma pergunta",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "logₐb é o expoente c tal que aᶜ=b. A base deve satisfazer a>0 e a≠1, e o argumento deve satisfazer b>0. Exemplo: log₃81=4 porque 3⁴=81. A notação ln b significa logaritmo de base e, com e≈2,71828. Quando o contexto usa log decimal, a base é 10, mas nesta trilha bases serão explicitadas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O logaritmo de b na base a é c exatamente quando a elevado a c é b.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "logₐb=c ⇔ aᶜ=b"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual potência traduz log₂8=3?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "Base 2 elevada ao resultado 3 produz o argumento 8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2³=8"
+              },
+              {
+                "id": "b",
+                "texto": "3²=8"
+              },
+              {
+                "id": "c",
+                "texto": "8³=2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para a>1, aˣ cresce estritamente; para 0<a<1, decresce estritamente. Assim um valor positivo b tem um único expoente real correspondente. Potências de base positiva são positivas: por isso não existe logₐ0 nem logaritmo real de argumento negativo nessa definição."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Converter entre notações exponencial e logarítmica.",
+                      "exemplo": "Resolva 2ˣ=1/8. Reescreva o lado direito como 2⁻³."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "A mesma conclusão escreve-se log₂(1/8)=−3. O expoente pode ser negativo mesmo quando o argumento é positivo."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale log₅25?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "5²=25.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5"
+              },
+              {
+                "id": "b",
+                "texto": "1/2"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Logaritmo nasce de uma pergunta",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva 2ˣ=1/8. Reescreva o lado direito como 2⁻³."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "A igualdade entre potências da mesma base admissível permite concluir x=−3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A mesma conclusão escreve-se log₂(1/8)=−3. O expoente pode ser negativo mesmo quando o argumento é positivo."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale log₂(1/8)?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "2⁻³=1/8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−4"
+              },
+              {
+                "id": "b",
+                "texto": "−3"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale log₇1?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "A potência de expoente zero de uma base admissível é 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "7"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "log₂8 não é 8/2, porque o logaritmo pergunta pelo expoente. E logₐ1=0 para qualquer base admissível, pois a⁰=1. Não aceite base 1: 1ˣ=1 para todo x, deixando de haver uma resposta única."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale log₃3?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "O expoente procurado é 1, pois 3¹=3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual base é válida?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "A base precisa ser positiva e diferente de 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−2"
+              },
+              {
+                "id": "b",
+                "texto": "1/2"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Antes de memorizar propriedades, treine a tradução ‘base elevada ao resultado é igual ao argumento’. Escreva exemplos com resultado positivo, zero e negativo. O sinal do logaritmo depende da base e do argumento, e não apenas de o argumento ser positivo."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual argumento é válido para log₂b em ℝ?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "O argumento deve ser estritamente positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/4"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "−4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale log_(1/2)4?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "(1/2)⁻²=4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "−2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "logₐb é o expoente c tal que aᶜ=b. A base deve satisfazer a>0 e a≠1, e o argumento deve satisfazer b>0. Exemplo: log₃81=4 porque 3⁴=81. A notação ln b significa logaritmo de base e, com e≈2,71828. Quando o contexto usa log decimal, a base é 10, mas nesta trilha bases serão explicitadas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: A mesma conclusão escreve-se log₂(1/8)=−3. O expoente pode ser negativo mesmo quando o argumento é positivo."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como converter entre notações exponencial e logarítmica. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a base de ln?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "ln é a notação do logaritmo natural, cuja base é e.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "e"
+              },
+              {
+                "id": "c",
+                "texto": "10"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se log₄b=3, quanto vale b?",
+            "assunto": "Logaritmo nasce de uma pergunta",
+            "orientacao": "Traduza a pergunta para uma potência e confira base positiva diferente de um e argumento positivo.",
+            "explicacao": "A definição fornece b=4³=64.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "64"
+              },
+              {
+                "id": "b",
+                "texto": "12"
+              },
+              {
+                "id": "c",
+                "texto": "81"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
 }

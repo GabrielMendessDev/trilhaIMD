@@ -1,38 +1,28 @@
 # Matemática Elementar · Unidade 1
 
-Pesquisa e atividades para a trilha `elementar`, pontos 1 a 10, com base no recorte da P1 de IMD1001 (IMD/UFRN, 2025.2). A unidade tem 184 telas de conteúdo e prática e 129 questões corrigíveis. Cada ponto tem uma abertura, um exemplo guiado, explicações intercaladas e materiais consultáveis. A revisão acrescenta uma segunda tentativa apenas às questões erradas.
+Versão reescrita: passos 1–20, 340 telas, 200 questões e 20 exemplos guiados.
 
-## Mapa da trilha
-
-| Ponto | Tema | O que o aluno precisa dominar |
+| Passo | Tema | Objetivo |
 | --- | --- | --- |
-| [1](../01.json) | Linguagem dos conjuntos e conjuntos numéricos | Ler e escrever conjuntos, distinguir pertinência de inclusão e classificar números. |
-| [2](../02.json) | Operações, intervalos e cardinalidade | Operar conjuntos, interpretar extremidades na reta e contar elementos e subconjuntos. |
-| [3](../03.json) | Potenciação e raízes | Simplificar potências e radicais, inclusive com expoentes negativos, fracionários e reais. |
-| [4](../04.json) | Logaritmos e número de Euler | Converter entre potência e logaritmo, aplicar propriedades e simplificar expressões com `e` e `ln`. |
-| [5](../05.json) | Desafio de revisão | Combinar conjuntos, potências e logaritmos dentro do que foi estudado até aqui. |
-| [6](../06.json) | Equações e sistemas do 1º grau | Isolar a incógnita, resolver sistemas `2 × 2` e descrever o conjunto-solução. |
-| [7](../07.json) | Equações quadráticas e biquadradas | Usar discriminante, Bhaskara e soma e produto, e resolver biquadradas com a troca `t = x²`. |
-| [8](../08.json) | Inequações lineares, quadráticas e simultâneas | Resolver desigualdades, ler sinais na reta e intersectar condições simultâneas. |
-| [9](../09.json) | Inequações-produto e inequações-quociente | Identificar domínio e pontos críticos, estudar sinais e escrever a união de intervalos. |
-| [10](../10.json) | Desafio final da Unidade 1 | Revisar os dois blocos e integrar conjuntos, domínio e álgebra na escrita de soluções. |
+| [1](../01.json) | Coleções, pistas e linguagem matemática | Representar conjuntos e distinguir elementos, vazio e conjunto unitário. |
+| [2](../02.json) | O mapa dos números | Classificar números em ℕ, ℤ, ℚ, irracionais e ℝ. |
+| [3](../03.json) | Pertencer é diferente de estar contido | Distinguir pertinência, inclusão e subconjunto próprio. |
+| [4](../04.json) | Operações: cruzando listas sem tropeçar | Calcular união, interseção, diferença e complemento com universo declarado. |
+| [5](../05.json) | O mistério das inscrições repetidas | Justificar contagens com união, interseção e conjunto das partes. |
+| [6](../06.json) | Intervalos: quem pode entrar? | Traduzir condições simultâneas e alternativas para intervalos. |
+| [7](../07.json) | Potências: multiplicar sem escrever tudo | Interpretar expoentes inteiros, zero e negativos. |
+| [8](../08.json) | Potências sob investigação | Aplicar leis de expoentes com suas hipóteses e diagnosticar regras falsas. |
+| [9](../09.json) | Logaritmo nasce de uma pergunta | Converter entre notações exponencial e logarítmica. |
+| [10](../10.json) | Logaritmos: a pergunta escondida | Justificar propriedades logarítmicas a partir de potências. |
+| [11](../11.json) | Equações: a balança e suas condições | Resolver equações lineares e identificar identidades e contradições. |
+| [12](../12.json) | Sistemas: três finais possíveis | Classificar sistemas 2×2 e justificar equivalência das operações. |
+| [13](../13.json) | Quadráticas: escolher o caminho | Resolver quadráticas por fatoração, soma e produto e fórmula geral. |
+| [14](../14.json) | Discriminante e o parâmetro suspeito | Determinar condições para raízes reais e raízes duplas. |
+| [15](../15.json) | Biquadradas: a troca que precisa voltar | Resolver equações biquadradas e controlar a restrição t≥0. |
+| [16](../16.json) | Desigualdades: virando o sinal com motivo | Resolver inequações lineares e combinar condições simultâneas. |
+| [17](../17.json) | A régua dos sinais | Construir e justificar tabelas de sinais de produtos. |
+| [18](../18.json) | Produtos com várias pistas | Estudar sinais de produtos com três fatores e raízes repetidas. |
+| [19](../19.json) | Quocientes: o ponto que nunca entra | Resolver inequações racionais sem perder o domínio. |
+| [20](../20.json) | Missão P1: defender uma solução | Integrar os fundamentos e construir justificativas completas. |
 
-A distribuição é uma proposta didática. O mapa reserva o ponto 5 para um desafio e o 10 para o desafio final. Os pontos 1 e 2 concentram linguagem matemática, conjuntos numéricos e operações. A reta numérica aparece desde o ponto 1 e volta nas inequações. Os números complexos entram como complemento do ponto 7, depois das equações quadráticas em ℝ.
-
-## Arquivos de trabalho
-
-- [Anotações dos pontos 1 a 10](anotacoes.md) · conceitos, pré-requisitos, erros frequentes e localizadores nas listas e na prova.
-- [Fontes, materiais e videoaulas](referencias.md) · PDFs de origem, leituras e aulas complementares por ponto.
-- [Análise das listas e da P1](analise-p1.md) · recorte do programa, habilidades observadas e correções de gabarito.
-
-## Importação dos dez pontos
-
-Depois de [preparar o banco e gerar o cliente Prisma](../../README.md#preparação-do-postgresql), execute na raiz do projeto com PowerShell.
-
-```powershell
-foreach ($ponto in 1..10) {
-    $arquivo = 'conteudos/elementar/{0:00}.json' -f $ponto
-    npm run conteudo:importar -- $arquivo
-    if ($LASTEXITCODE -ne 0) { throw "Falha ao importar $arquivo" }
-}
-```
+Consulte a [apostila completa](../APOSTILA-COMPLETA.md), o [manifesto](../manifesto.json) e o [guia da trilha](../README.md). Anotações anteriores da Unidade 1, quando presentes, são histórico editorial; a sequência vigente é a deste índice.

@@ -1,0 +1,72 @@
+[
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\styles\\motion.css",
+    "line": 344,
+    "snippet": "animation: var(--ease-spring)"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\styles\\motion.css",
+    "line": 413,
+    "snippet": "animation: var(--ease-spring)"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\styles\\motion.css",
+    "line": 443,
+    "snippet": "animation: var(--ease-spring)"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\styles\\motion.css",
+    "line": 449,
+    "snippet": "animation: var(--ease-spring)"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\styles\\motion.css",
+    "line": 456,
+    "snippet": "animation: var(--ease-spring)"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\styles\\motion.css",
+    "line": 462,
+    "snippet": "animation: var(--ease-spring)"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\styles\\motion.css",
+    "line": 11,
+    "snippet": "cubic-bezier(0.22, 1.3, 0.36, 1)"
+  }
+]

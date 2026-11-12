@@ -16,6 +16,9 @@ db.sqlite
 # next.js
 /.next/
 /.next-feedback-check/
+/.next-lives-check/
+/.next-lives-build/
+/conteudos/elementar/backups/
 /out/
 next-env.d.ts
 

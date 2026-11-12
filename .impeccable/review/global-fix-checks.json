@@ -1,0 +1,30 @@
+[
+  {
+    "width": 1440,
+    "theme": "dark",
+    "contrast": 8.932740490898276,
+    "overlapping": false,
+    "background": "rgb(23, 24, 50) none repeat scroll 0% 0% / auto padding-box border-box"
+  },
+  {
+    "width": 1024,
+    "theme": "dark",
+    "contrast": 8.932740490898276,
+    "overlapping": false,
+    "background": "rgb(23, 24, 50) none repeat scroll 0% 0% / auto padding-box border-box"
+  },
+  {
+    "width": 1920,
+    "theme": "dark",
+    "contrast": 8.932740490898276,
+    "overlapping": false,
+    "background": "rgb(23, 24, 50) none repeat scroll 0% 0% / auto padding-box border-box"
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "contrast": 8.348460746625545,
+    "overlapping": false,
+    "background": "radial-gradient(at 40% 0px, color(srgb 0.396078 0.345098 0.960784 / 0.09), rgba(0, 0, 0, 0) 650px) repeat scroll 0% 0% / auto padding-box border-box, rgb(247, 248, 252) none repeat scroll 0% 0% / auto padding-box border-box"
+  }
+]

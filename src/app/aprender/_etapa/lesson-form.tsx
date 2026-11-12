@@ -1,17 +1,29 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
 	type FormEvent,
 	type ReactNode,
 	useEffect,
+	useId,
 	useRef,
 	useState,
 	useTransition,
 } from "react";
 import { ActionButton } from "~/app/_components/action-button";
 import { useFeedback } from "~/app/_components/feedback";
+import { consumeFeedbackEvent } from "~/app/_components/feedback-events";
+import { FeedbackIcon } from "~/app/_components/feedback-icon";
 import { Icon } from "~/app/_components/icon";
+import { navigateLearning } from "~/app/_components/learning-navigation";
+import { ProgressBar } from "~/app/_components/progress-bar";
+import { publishRpg, type RpgBalance } from "~/app/_components/rpg-client";
+import type { AnswerAssessment } from "./answer-model";
+import { AnswerResult } from "./answer-result";
+import { applyLens, LessonBag, type LessonEffects } from "./lesson-bag";
+import { LessonLives } from "./lesson-lives";
+import { QuestionHelp } from "./question-help";
+import { StageScreen } from "./screen";
 
 export function LessonForm({
 	endpoint,
@@ -19,22 +31,57 @@ export function LessonForm({
 	round,
 	children,
 	label,
+	progress,
+	example,
+	autoSubmit = false,
+	bag,
+	lives = 5,
+	run = 1,
 }: {
 	endpoint: string;
 	entryKey: string;
 	round: 1 | 2;
 	children: ReactNode;
 	label: string;
+	progress?: number;
+	example?: ReactNode;
+	autoSubmit?: boolean;
+	bag?: { pointId: number; effects: LessonEffects };
+	lives?: number;
+	run?: number;
 }) {
+	const [effects, setEffects] = useState(bag?.effects);
+	const [currentLives, setCurrentLives] = useState(lives);
+	const [itemBusy, setItemBusy] = useState(false);
+	const statusId = useId();
 	const [state, setState] = useState<
-		"idle" | "submitting" | "navigating" | "error"
+		"idle" | "submitting" | "navigating" | "error" | "correct" | "incorrect"
 	>("idle");
-	const pending = state === "submitting" || state === "navigating";
 	const router = useRouter();
+	const search = useSearchParams();
 	const [changing, transition] = useTransition();
 	const { notify, startNavigation, finishNavigation, dismiss } = useFeedback();
 	const submitting = useRef(false);
 	const [error, setError] = useState("");
+	const [confirmed, setConfirmed] = useState<{
+		assessment: AnswerAssessment;
+		destination: string;
+		animate: boolean;
+	} | null>(null);
+	// Native history restoration is queued by Next. Reveal the continuation only
+	// after that router state commits, so a fast click cannot be superseded by it.
+	const visibleResult =
+		confirmed &&
+		search.get("retorno") === entryKey &&
+		search.get("rodada") === String(round)
+			? confirmed
+			: null;
+	const pending =
+		state === "submitting" ||
+		state === "navigating" ||
+		Boolean(confirmed && !visibleResult);
+	const request = useRef<AbortController | null>(null);
+	useEffect(() => () => request.current?.abort(), []);
 	useEffect(() => {
 		if (state === "navigating" && !changing) {
 			setState("idle");
@@ -45,30 +92,62 @@ export function LessonForm({
 
 	async function submit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
-		if (submitting.current) return;
-		const form = new FormData(event.currentTarget);
+		await send(event.currentTarget);
+	}
+
+	async function send(element: HTMLFormElement) {
+		if (submitting.current || confirmed || itemBusy) return;
+		const form = new FormData(element);
 		submitting.current = true;
 		setState("submitting");
 		setError("");
 		dismiss("lesson-request");
 		try {
+			request.current = new AbortController();
 			const response = await fetch(endpoint, {
 				method: "POST",
 				body: form,
-				signal: AbortSignal.timeout(20000),
+				signal: AbortSignal.any([
+					request.current.signal,
+					AbortSignal.timeout(20000),
+				]),
 			});
-			const result: { destination?: string; error?: string } =
-				await response.json();
+			const result: {
+				destination?: string;
+				continueTo?: string;
+				error?: string;
+				assessment?: AnswerAssessment;
+				rpg?: RpgBalance;
+			} = await response.json();
 			if (response.ok && result.destination) {
-				setState("navigating");
+				if (result.rpg) publishRpg(result.rpg);
+				if (result.assessment) {
+					finishNavigation();
+					// Keep the same controls and selection mounted. Reload restores this saved result.
+					window.history.replaceState(null, "", result.destination);
+					setConfirmed({
+						assessment: result.assessment,
+						destination:
+							result.continueTo ?? endpoint.replace(/\/responder$/, ""),
+						animate: consumeFeedbackEvent(
+							() => window.sessionStorage,
+							`${result.assessment.eventId}:motion`,
+						),
+					});
+					setState(result.assessment.correct ? "correct" : "incorrect");
+					return;
+				}
 				startNavigation(result.destination);
-				transition(() => {
-					if (
-						result.destination ===
-						`${window.location.pathname}${window.location.search}`
-					)
-						router.refresh();
-					else router.push(result.destination as string);
+				navigateLearning(() => {
+					setState("navigating");
+					transition(() => {
+						if (
+							result.destination ===
+							`${window.location.pathname}${window.location.search}`
+						)
+							router.refresh();
+						else router.push(result.destination as string);
+					});
 				});
 				return;
 			}
@@ -77,6 +156,7 @@ export function LessonForm({
 			setError(message);
 			notify({ id: "lesson-request", kind: "error", message });
 		} catch {
+			if (request.current?.signal.aborted) return;
 			const message =
 				"Não foi possível confirmar o envio. Sua escolha foi mantida. Tente novamente.";
 			setError(message);
@@ -90,29 +170,114 @@ export function LessonForm({
 		<form
 			action={endpoint}
 			aria-busy={pending}
-			className="space-y-4"
+			aria-describedby={autoSubmit && !confirmed ? statusId : undefined}
+			className="answer-experience space-y-4"
+			data-animate={visibleResult?.animate ? "true" : undefined}
+			data-auto-submit={autoSubmit || undefined}
+			data-outcome={
+				visibleResult
+					? visibleResult.assessment.correct
+						? "success"
+						: "error"
+					: undefined
+			}
 			data-question-state={state}
 			method="post"
+			onChange={(event) => {
+				const target = event.target;
+				if (
+					autoSubmit &&
+					(target instanceof HTMLInputElement ||
+						target instanceof HTMLSelectElement) &&
+					target.name.startsWith("resposta") &&
+					event.currentTarget.checkValidity()
+				)
+					void send(event.currentTarget);
+			}}
 			onSubmit={submit}
 		>
 			<input name="item" type="hidden" value={entryKey} />
 			<input name="rodada" type="hidden" value={round} />
-			<fieldset className="min-w-0" disabled={pending}>
-				{children}
+			<input name="run" type="hidden" value={run} />
+			<input name="variant" type="hidden" value={effects?.variant ?? ""} />
+			<LessonLives
+				lives={confirmed?.assessment.lives ?? currentLives}
+				review={round === 2}
+			/>
+			{bag && autoSubmit && !confirmed && (
+				<LessonBag
+					disabled={pending || itemBusy}
+					entryKey={entryKey}
+					onApply={(value) => {
+						setEffects(value);
+						if (value.lives !== undefined) setCurrentLives(value.lives);
+					}}
+					onBusy={setItemBusy}
+					pointId={bag.pointId}
+					round={round}
+					run={run}
+				/>
+			)}
+			{progress !== undefined && (
+				<ProgressBar
+					label={round === 2 ? "Andamento da revisão" : "Andamento da lição"}
+					value={confirmed?.assessment.progress ?? progress}
+				/>
+			)}
+			<fieldset
+				className="answer-controls min-w-0"
+				disabled={pending || Boolean(confirmed) || itemBusy}
+			>
+				{effects ? (
+					<StageScreen
+						key={effects.variant}
+						model={applyLens(effects.model, effects.removed)}
+						response
+					/>
+				) : (
+					children
+				)}
 			</fieldset>
+			<QuestionHelp example={effects?.example} hint={effects?.hint} />
+			{autoSubmit && !visibleResult && (
+				<p className="answer-auto-status" id={statusId} role="status">
+					<FeedbackIcon kind={pending ? "loading" : "info"} />
+					{pending
+						? "Conferindo sua resposta…"
+						: "Escolha sua resposta. A correção aparece aqui."}
+				</p>
+			)}
 			{error && (
 				<p className="study-error" role="alert">
 					{error}
 				</p>
 			)}
-			<ActionButton
-				busy={pending}
-				busyLabel={state === "navigating" ? "Abrindo…" : "Conferindo…"}
-				state={state === "error" ? "error" : undefined}
-				type="submit"
-			>
-				{label} <Icon className="size-4" name="arrow" />
-			</ActionButton>
+			{visibleResult ? (
+				<AnswerResult
+					assessment={visibleResult.assessment}
+					destination={visibleResult.destination}
+					example={example}
+				/>
+			) : !autoSubmit ? (
+				<ActionButton
+					busy={pending}
+					busyLabel={label}
+					state={state === "error" ? "error" : undefined}
+					type="submit"
+				>
+					{label} <Icon className="size-4" name="arrow" />
+				</ActionButton>
+			) : state === "error" ? (
+				<ActionButton
+					onClick={(event) => {
+						const form = event.currentTarget.form;
+						if (form?.checkValidity()) void send(form);
+					}}
+					type="button"
+				>
+					Tentar novamente
+				</ActionButton>
+			) : null}
 		</form>
 	);
 }

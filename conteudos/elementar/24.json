@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 24,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-24",
+      "titulo": "Fatorar é enxergar as peças",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Você recebe x³+2x²+3x+6 e a missão de achar um padrão. Os quatro termos não parecem combinar até você formar duas duplas. Fatorar é esse trabalho de edição: a expressão é a mesma, mas sua organização revela outra informação."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Escolher entre fator comum, agrupamento e identidades."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Produtos notáveis e propriedade do produto nulo."
+              }
+            ],
+            "titulo": "Fatorar é enxergar as peças",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Fatorar significa escrever uma soma como produto. Procure primeiro fator comum; depois identidades ou agrupamentos. Exemplos: ax+ay=a(x+y), x²−9=(x−3)(x+3) e x²+6x+9=(x+3)². A fatoração pode depender do universo: x²+1 não tem fatores lineares reais."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Um fator comum pode ser colocado em evidência.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "ax+ay=a(x+y)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fatoração de 3x²+6x?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "O fator comum máximo é 3x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3x(x+2)"
+              },
+              {
+                "id": "b",
+                "texto": "3x(x+6)"
+              },
+              {
+                "id": "c",
+                "texto": "3(x²+6x)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A fatoração usa a distributiva ao contrário. No agrupamento, x³+2x²+3x+6=x²(x+2)+3(x+2)=(x+2)(x²+3). O fator repetido x+2 funciona como uma única peça. Expandir o resultado sempre recupera a expressão original e é uma verificação completa por identidade."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Escolher entre fator comum, agrupamento e identidades.",
+                      "exemplo": "Fatore 2x³−8x. Todos os termos têm 2x: 2x(x²−4)."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Assim 2x³−8x=2x(x−2)(x+2). Se a expressão for igual a zero, as raízes reais serão 0,2,−2."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fatoração de x²−16?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "É uma diferença de quadrados.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x−4)²"
+              },
+              {
+                "id": "b",
+                "texto": "(x−8)(x+2)"
+              },
+              {
+                "id": "c",
+                "texto": "(x−4)(x+4)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Fatorar é enxergar as peças",
+            "assunto": "Fatorar é enxergar as peças",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Fatore 2x³−8x. Todos os termos têm 2x: 2x(x²−4)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O fator x²−4 é uma diferença de quadrados: (x−2)(x+2)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Assim 2x³−8x=2x(x−2)(x+2). Se a expressão for igual a zero, as raízes reais serão 0,2,−2."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fatoração de x²+6x+9?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "O termo central 6x é 2·x·3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x+9)(x+1)"
+              },
+              {
+                "id": "b",
+                "texto": "(x+3)²"
+              },
+              {
+                "id": "c",
+                "texto": "(x−3)²"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fatoração de x³+2x²+3x+6?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "Agrupamos x²(x+2)+3(x+2).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x+2)(x²+3)"
+              },
+              {
+                "id": "b",
+                "texto": "(x+3)(x²+2)"
+              },
+              {
+                "id": "c",
+                "texto": "(x+2)(x²+6)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Fatorar não autoriza cancelar termos de uma soma. Em (x+2)/x, o x do denominador não cancela ‘com o x de cima’. Cancelamento é de fatores multiplicativos, sempre respeitando o domínio da fração original."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais são as raízes de 2x³−8x?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "A fatoração é 2x(x−2)(x+2).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−4,4"
+              },
+              {
+                "id": "b",
+                "texto": "0,4"
+              },
+              {
+                "id": "c",
+                "texto": "−2,0,2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual polinômio não tem raízes reais?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "x²+1 é estritamente positivo em ℝ.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²−4"
+              },
+              {
+                "id": "b",
+                "texto": "x²+1"
+              },
+              {
+                "id": "c",
+                "texto": "x²−1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Compare forma expandida e fatorada: a primeira facilita ler coeficientes; a segunda facilita ler zeros e sinais. A melhor escrita depende da pergunta. Crie uma expressão fatorada, expanda e peça a si mesmo para reconstruir as peças."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "É válido cancelar x em (x+2)/x e obter 2?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "x não é fator do numerador inteiro; por exemplo, em x=2 o quociente é 2, mas em x=1 é 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Só quando x>0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fatoração de x²−5x+6?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "As raízes 2 e 3 têm soma 5 e produto 6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x+2)(x+3)"
+              },
+              {
+                "id": "b",
+                "texto": "(x−1)(x−6)"
+              },
+              {
+                "id": "c",
+                "texto": "(x−2)(x−3)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Fatorar significa escrever uma soma como produto. Procure primeiro fator comum; depois identidades ou agrupamentos. Exemplos: ax+ay=a(x+y), x²−9=(x−3)(x+3) e x²+6x+9=(x+3)². A fatoração pode depender do universo: x²+1 não tem fatores lineares reais."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Assim 2x³−8x=2x(x−2)(x+2). Se a expressão for igual a zero, as raízes reais serão 0,2,−2."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como escolher entre fator comum, agrupamento e identidades. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como verificar uma fatoração algebricamente?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "Expandir e comparar todos os coeficientes demonstra a identidade.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Comparando apenas o grau"
+              },
+              {
+                "id": "b",
+                "texto": "Expandindo os fatores"
+              },
+              {
+                "id": "c",
+                "texto": "Testando apenas x=0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na expressão ax+ay, qual peça pode ser colocada em evidência?",
+            "assunto": "Fatorar é enxergar as peças",
+            "orientacao": "Procure fator comum, produtos notáveis ou agrupamentos e confira expandindo o produto obtido.",
+            "explicacao": "Ambos os termos têm o fator multiplicativo a.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a"
+              },
+              {
+                "id": "b",
+                "texto": "x+y como coeficiente de x"
+              },
+              {
+                "id": "c",
+                "texto": "x"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { test } from "node:test";
 import { pointSchema } from "../scripts/esquema-conteudo.mjs";
 import {
 	advanceLesson,
+	lessonProgressPercent,
 	lessonScore,
 	pendingItem,
 } from "../src/server/lesson-progress.ts";
@@ -47,6 +48,8 @@ test("só as questões erradas voltam, com uma tentativa adicional após restaur
 	progress = answer(progress, "material", 1);
 	progress = answer(progress, "q2", 1, correct);
 	progress = answer(progress, "q3", 1, wrong);
+	assert.equal(lessonProgressPercent(items, progress, 1), 100);
+	assert.equal(lessonProgressPercent(items, progress, 2), 0);
 	progress = JSON.parse(JSON.stringify(progress));
 	assert.deepEqual(pendingItem(items, progress), { key: "q1", round: 2 });
 	assert.equal(
@@ -54,8 +57,10 @@ test("só as questões erradas voltam, com uma tentativa adicional após restaur
 		undefined,
 	);
 	progress = answer(progress, "q1", 2, correct);
+	assert.equal(lessonProgressPercent(items, progress, 2), 50);
 	assert.deepEqual(pendingItem(items, progress), { key: "q3", round: 2 });
 	progress = answer(progress, "q3", 2, wrong);
+	assert.equal(lessonProgressPercent(items, progress, 2), 100);
 	assert.equal(pendingItem(items, progress), undefined);
 	assert.equal(
 		advanceLesson(items, progress, { key: "q3", round: 2 }, correct),
@@ -107,7 +112,7 @@ test("o fluxo rejeita avanço fora de ordem e conclusão de questão sem respost
 	);
 });
 
-test("os dez pontos preservam identificadores e separam ensino, prática e material", () => {
+test("os dez primeiros passos reescritos separam ensino, prática e material", () => {
 	for (let number = 1; number <= 10; number++) {
 		const name = String(number).padStart(2, "0");
 		const file = new URL(

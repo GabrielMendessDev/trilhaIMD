@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 19,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-19",
+      "titulo": "Quocientes: o ponto que nunca entra",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Você simplifica (x−2)/(x−2) e obtém 1. Tudo parece resolvido, até x=2 bater à porta. O cancelamento apagou o fator da expressão, mas não pode apagar a restrição que veio com ele."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Resolver inequações racionais sem perder o domínio."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Produtos e tabelas de sinais (passos 17 e 18)."
+              }
+            ],
+            "titulo": "Quocientes: o ponto que nunca entra",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um quociente exige denominador diferente de zero. Para resolver uma inequação racional, registre o domínio, encontre zeros do numerador e do denominador, estude os sinais e só depois selecione os intervalos. Zeros do denominador nunca entram; zeros do numerador entram apenas quando a desigualdade aceita igualdade e o domínio permite."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma fração algébrica só está definida quando seu denominador não é zero.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "N(x)/D(x): D(x)≠0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio de (x−2)/(x−2)?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "O denominador zera em 2 e a simplificação não muda essa restrição.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ sem 0"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ sem 2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Multiplicar uma desigualdade por um denominador de sinal desconhecido pode inverter o sentido sem aviso. A tabela evita isso: o sinal do quociente é positivo quando numerador e denominador têm o mesmo sinal. Uma simplificação algébrica é uma igualdade no domínio comum, não uma permissão para reinserir pontos proibidos."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Resolver inequações racionais sem perder o domínio.",
+                      "exemplo": "Resolva ((x−2)(x−4))/((x+3)(x−1))≥0. Primeiro x≠−3 e x≠1. Os pontos críticos ordenados são −3,1,2,4."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Escolhendo sinais não negativos: S=(−∞,−3)∪(1,2]∪[4,∞). −3 e 1 ficam excluídos pelo domínio; 2 e 4 entram como zeros válidos."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−2)/(x−2)≥0?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "No domínio o quociente vale 1; x=2 permanece proibido.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[2,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ sem 2"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Quocientes: o ponto que nunca entra",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva ((x−2)(x−4))/((x+3)(x−1))≥0. Primeiro x≠−3 e x≠1. Os pontos críticos ordenados são −3,1,2,4."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Da esquerda para a direita, os sinais nos cinco intervalos são +,−,+,−,+. Todos os fatores têm multiplicidade um, logo o sinal troca a cada ponto crítico."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Escolhendo sinais não negativos: S=(−∞,−3)∪(1,2]∪[4,∞). −3 e 1 ficam excluídos pelo domínio; 2 e 4 entram como zeros válidos."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−2)/(x−1)≥0?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "Antes de 1 os sinais são iguais; entre 1 e 2 são opostos; a partir de 2 o quociente é não negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,1)∪[2,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[1,2]"
+              },
+              {
+                "id": "c",
+                "texto": "(1,2)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na expressão do exemplo, quais pontos são proibidos?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "São os zeros do denominador (x+3)(x−1).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2 e 4"
+              },
+              {
+                "id": "b",
+                "texto": "−3 e 4"
+              },
+              {
+                "id": "c",
+                "texto": "−3 e 1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não multiplique por x−1 como se ele fosse positivo em toda a reta. Se preferir multiplicar, separe explicitamente os casos x>1 e x<1. Em (x−2)/(x−2)≥0, a resposta continua ℝ sem 2, mesmo que a forma reduzida seja 1."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na expressão do exemplo, quais zeros podem entrar em ≥0?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "Os zeros do numerador são permitidos porque não anulam o denominador.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todos os quatro"
+              },
+              {
+                "id": "b",
+                "texto": "2 e 4"
+              },
+              {
+                "id": "c",
+                "texto": "−3 e 1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal de 1/(x−1) quando x<1?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "O numerador é positivo e o denominador negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Negativo"
+              },
+              {
+                "id": "b",
+                "texto": "Positivo"
+              },
+              {
+                "id": "c",
+                "texto": "Zero"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A organização do argumento importa tanto quanto a conta: domínio, pontos críticos, sinais, resposta e conferência. O exemplo corresponde à expressão destacada no acervo para P1 D2; a solução aqui foi calculada diretamente, sem depender de um gabarito oficial não conferido."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de 1/(x−1)>0?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "O denominador precisa ser positivo; x=1 não pertence ao domínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[1,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "(−∞,1)"
+              },
+              {
+                "id": "c",
+                "texto": "(1,∞)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Pode-se multiplicar por x−1 sem analisar seu sinal?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "O sentido da desigualdade depende do sinal do fator multiplicador.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim, se a desigualdade for ≥"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim, sempre"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um quociente exige denominador diferente de zero. Para resolver uma inequação racional, registre o domínio, encontre zeros do numerador e do denominador, estude os sinais e só depois selecione os intervalos. Zeros do denominador nunca entram; zeros do numerador entram apenas quando a desigualdade aceita igualdade e o domínio permite."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Escolhendo sinais não negativos: S=(−∞,−3)∪(1,2]∪[4,∞). −3 e 1 ficam excluídos pelo domínio; 2 e 4 entram como zeros válidos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como resolver inequações racionais sem perder o domínio. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de (x−2)²/(x+1)≤0?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "O numerador é positivo exceto em 2; o quociente é negativo antes de −1 e zero em 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,−1)∪{2}"
+              },
+              {
+                "id": "b",
+                "texto": "(−∞,−1]"
+              },
+              {
+                "id": "c",
+                "texto": "[−1,2]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o sinal da expressão do exemplo para x>4?",
+            "assunto": "Quocientes: o ponto que nunca entra",
+            "orientacao": "Anote primeiro os pontos proibidos; cancelamento de fatores não elimina restrições originais.",
+            "explicacao": "Os quatro fatores são estritamente positivos nesse intervalo.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Negativo"
+              },
+              {
+                "id": "b",
+                "texto": "Zero"
+              },
+              {
+                "id": "c",
+                "texto": "Positivo"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

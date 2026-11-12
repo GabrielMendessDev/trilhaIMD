@@ -1,7 +1,8 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ActionButton } from "~/app/_components/action-button";
+import { FeedbackIcon } from "~/app/_components/feedback-icon";
 import { ProgressBar } from "~/app/_components/progress-bar";
 import { ContentBlocks } from "./content";
 import type { ActivityItem, WalkthroughStep } from "./model";
@@ -10,24 +11,64 @@ import styles from "./stage.module.css";
 export function MultipleChoice({
 	choices,
 	response,
+	selected,
+	locked,
 }: {
 	choices: readonly ActivityItem[];
 	response?: boolean;
+	selected?: string;
+	locked?: boolean;
 }) {
 	const name = useId();
 
 	return (
-		<fieldset className={styles.controlGroup}>
+		<fieldset
+			className={`${styles.controlGroup} learning-options`}
+			disabled={locked}
+		>
 			<legend className="sr-only">Selecione uma alternativa</legend>
-			{choices.map(({ id, label }) => (
-				<label className={styles.choice} key={id}>
+			{choices.map(({ id, label }, index) => (
+				<label
+					className={`${styles.choice} animated-choice`}
+					key={id}
+					onPointerDown={(event) => {
+						const bounds = event.currentTarget.getBoundingClientRect();
+						event.currentTarget.style.setProperty(
+							"--wave-x",
+							`${event.clientX - bounds.left}px`,
+						);
+						event.currentTarget.style.setProperty(
+							"--wave-y",
+							`${event.clientY - bounds.top}px`,
+						);
+					}}
+				>
 					<input
+						defaultChecked={selected === id}
 						name={response ? "resposta" : name}
+						onClick={(event) => {
+							const form = event.currentTarget.form;
+							if (response && form?.dataset.questionState === "error")
+								form.requestSubmit();
+						}}
 						required={response}
 						type="radio"
 						value={id}
 					/>
-					<span>{label}</span>
+					<span aria-hidden="true" className="choice-letter">
+						{String.fromCharCode(65 + index)}
+					</span>
+					<span className="choice-copy">{label}</span>
+					<span aria-hidden="true" className="choice-wave" />
+					<span className="choice-mark choice-correct">
+						<FeedbackIcon kind="success" />
+					</span>
+					<span className="choice-mark choice-incorrect">
+						<FeedbackIcon kind="error" />
+					</span>
+					<span className="choice-processing">
+						<FeedbackIcon kind="loading" />
+					</span>
 				</label>
 			))}
 		</fieldset>
@@ -83,6 +124,15 @@ export function PairLinks({
 	const linkedSources = new Map(
 		Array.from(pairs, ([source, target]) => [target, source]),
 	);
+	const root = useRef<HTMLDivElement>(null);
+	useEffect(() => {
+		if (!response || sources.length === 0 || pairs.size !== sources.length)
+			return;
+		// Run after the hidden pair inputs have committed to the DOM.
+		root.current
+			?.closest<HTMLFormElement>('form[data-auto-submit="true"]')
+			?.requestSubmit();
+	}, [pairs, response, sources.length]);
 
 	function linkTo(target: string) {
 		if (selected === null) return;
@@ -100,7 +150,7 @@ export function PairLinks({
 	}
 
 	return (
-		<div className={styles.controlGroup}>
+		<div className={styles.controlGroup} ref={root}>
 			<p className={styles.panelHint}>
 				Selecione um item em cada coluna. Para desfazer uma ligação, selecione o
 				mesmo par novamente.
@@ -112,6 +162,7 @@ export function PairLinks({
 						<ActionButton
 							aria-pressed={selected === id}
 							className={styles.pairButton}
+							data-pair-source={id}
 							key={id}
 							onClick={() => setSelected(selected === id ? null : id)}
 							type="button"
@@ -137,6 +188,7 @@ export function PairLinks({
 							<ActionButton
 								aria-disabled={selected === null}
 								className={styles.pairButton}
+								data-pair-target={id}
 								disabled={selected === null}
 								key={id}
 								onClick={() => linkTo(id)}

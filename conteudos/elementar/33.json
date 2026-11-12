@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 33,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-33",
+      "titulo": "Domínio, contradomínio e imagem",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma função tem uma lista de entradas permitidas, uma lista de saídas anunciadas e as saídas que ela realmente alcança. É como o programa de uma mostra e as sessões efetivamente realizadas: comparar as duas listas pode revelar informação importante."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Separar conjuntos de entrada e saída e calcular domínios algébricos básicos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Funções, raízes e restrições de divisão."
+              }
+            ],
+            "titulo": "Domínio, contradomínio e imagem",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em f:A→B, A é domínio, B é contradomínio e Im(f)={f(x):x∈A}⊆B é imagem. Quando o enunciado pede domínio real máximo de uma expressão, excluímos divisões por zero e exigimos radicando não negativo em raízes de índice par. O domínio de uma função também pode ser restringido pelo próprio enunciado."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A imagem reúne as saídas alcançadas e está contida no contradomínio.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Im(f)={f(x):x∈A}⊆B"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em f:{1,2,3}→{a,b,c}, com saídas a,a,b, qual é a imagem?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "A imagem contém apenas saídas efetivamente atingidas, sem repetições.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{a,b}"
+              },
+              {
+                "id": "b",
+                "texto": "{a,b,c}"
+              },
+              {
+                "id": "c",
+                "texto": "{1,2,3}"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para f:ℝ→ℝ, f(x)=x², o domínio e contradomínio são ℝ, mas a imagem é [0,∞). Cada saída é não negativa e todo y≥0 é atingido por x=√y. A dupla verificação demonstra a imagem: mostrar que nenhum valor externo aparece e que todos os valores propostos aparecem."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Separar conjuntos de entrada e saída e calcular domínios algébricos básicos.",
+                      "exemplo": "Determine o domínio real máximo de f(x)=√(x−1)/(x−3). A raiz exige x−1≥0, isto é, x≥1."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "D=[1,3)∪(3,∞). x=1 entra porque raiz zero é permitida e o denominador não zera; x=3 fica fora."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio real máximo de 1/(x−2)?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "O denominador não pode zerar.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "[2,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ sem 2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Domínio, contradomínio e imagem",
+            "assunto": "Domínio, contradomínio e imagem",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Determine o domínio real máximo de f(x)=√(x−1)/(x−3). A raiz exige x−1≥0, isto é, x≥1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O denominador exige x≠3. Combine por interseção."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "D=[1,3)∪(3,∞). x=1 entra porque raiz zero é permitida e o denominador não zera; x=3 fica fora."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio real máximo de √(x−1)?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "A raiz quadrada permite radicando zero, exigindo x−1≥0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ sem 1"
+              },
+              {
+                "id": "b",
+                "texto": "[1,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "(1,∞)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio real máximo de √(x−1)/(x−3)?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "É necessário x≥1 e x≠3 simultaneamente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[1,3)∪(3,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[1,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "(−∞,3)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A expressão sozinha não informa necessariamente o contradomínio. E cancelar fatores em uma fração não autoriza recuperar entradas proibidas. Para imagem em domínio finito, avalie todas as entradas e retire saídas repetidas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de x² com domínio ℝ?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "Os quadrados são não negativos e zero é atingido.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "(0,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "[0,∞)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de x² com domínio {−2,0,1}?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "Avaliar as três entradas dá 4,0,1; o domínio finito não preenche o intervalo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[0,4]"
+              },
+              {
+                "id": "b",
+                "texto": "{0,1,4}"
+              },
+              {
+                "id": "c",
+                "texto": "{−2,0,1}"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao ler um problema, procure a declaração f:A→B antes de calcular. Registre as restrições de cada parte da expressão e cruze os conjuntos. Essa disciplina será útil em composições, inversas e aplicações contextualizadas."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em f:A→B, qual inclusão sempre vale?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "Todas as saídas de uma função precisam estar no contradomínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Im(f)⊆B"
+              },
+              {
+                "id": "b",
+                "texto": "B⊆Im(f)"
+              },
+              {
+                "id": "c",
+                "texto": "A⊆B"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio original de (x²−1)/(x−1)?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "O fator cancelável não remove a restrição original x≠1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ sem −1"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ sem 1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em f:A→B, A é domínio, B é contradomínio e Im(f)={f(x):x∈A}⊆B é imagem. Quando o enunciado pede domínio real máximo de uma expressão, excluímos divisões por zero e exigimos radicando não negativo em raízes de índice par. O domínio de uma função também pode ser restringido pelo próprio enunciado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: D=[1,3)∪(3,∞). x=1 entra porque raiz zero é permitida e o denominador não zera; x=3 fica fora."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como separar conjuntos de entrada e saída e calcular domínios algébricos básicos. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Pode haver dois contradomínios diferentes para a mesma fórmula e domínio?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "O contradomínio faz parte da especificação e pode ser maior que a imagem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Só se a função for vazia"
+              },
+              {
+                "id": "b",
+                "texto": "Sim, se ambos contiverem a imagem"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual procedimento demonstra uma imagem proposta I?",
+            "assunto": "Domínio, contradomínio e imagem",
+            "orientacao": "Separe entradas permitidas, saídas anunciadas e saídas alcançadas; combine todas as restrições de domínio.",
+            "explicacao": "As duas inclusões estabelecem a igualdade entre a imagem e I.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Mostrar que só há saídas em I e que cada valor de I é atingido"
+              },
+              {
+                "id": "b",
+                "texto": "Testar apenas x=0"
+              },
+              {
+                "id": "c",
+                "texto": "Declarar que I é o contradomínio"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 16,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-16",
+      "titulo": "Desigualdades: virando o sinal com motivo",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma pessoa tem no máximo 90 minutos para leitura e deslocamento. A frase ‘no máximo’ abre um conjunto de possibilidades, não uma resposta única. A desigualdade é uma ferramenta para negociar limites — sem pedir que todo mundo chegue ao mesmo minuto."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Resolver inequações lineares e combinar condições simultâneas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Equações lineares e intervalos."
+              }
+            ],
+            "titulo": "Desigualdades: virando o sinal com motivo",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Inequações usam <,≤,> ou ≥. Somar o mesmo real aos dois lados preserva a ordem. Multiplicar por positivo preserva o sentido; por negativo inverte. Condições simultâneas são combinadas por interseção. No universo real, a resposta costuma ser um intervalo; em contagens, depois filtramos os inteiros admissíveis."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Multiplicar uma desigualdade por um número negativo inverte seu sentido.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "a<b, c<0 ⇒ ac>bc"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva −2x≥−6.",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "Dividir por −2 inverte o sentido e produz x≤3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x≥3"
+              },
+              {
+                "id": "b",
+                "texto": "x≤−3"
+              },
+              {
+                "id": "c",
+                "texto": "x≤3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se a<b, então b−a>0. Multiplicando essa diferença por c<0 resulta c(b−a)<0, isto é, cb<ca. Portanto ca>cb: a ordem foi invertida. A regra não é uma penalidade por usar números negativos; ela expressa a reflexão da reta em torno de zero."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/intervalo.svg",
+                "alt": "Reta com intervalo (1,4]: 1 está excluído por círculo aberto, 4 incluído por círculo fechado; o trecho entre eles está destacado.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Reta com intervalo (1,4]: 1 está excluído por círculo aberto, 4 incluído por círculo fechado; o trecho entre eles está destacado.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva 3x+1<10.",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "Subtraia 1 e divida por 3 positivo; a desigualdade continua estrita.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x≤3"
+              },
+              {
+                "id": "b",
+                "texto": "x<3"
+              },
+              {
+                "id": "c",
+                "texto": "x>3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Desigualdades: virando o sinal com motivo",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva −2x+6≥0 e x<5. Na primeira, subtraia 6: −2x≥−6."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Divida por −2 e inverta o sentido: x≤3. A outra condição é x<5."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A interseção é (−∞,3]. Teste x=3: a primeira expressão vale 0 e a segunda condição é verdadeira."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x−4≥2.",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "Somar 4 aos dois lados preserva a ordem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x≥6"
+              },
+              {
+                "id": "b",
+                "texto": "x≤6"
+              },
+              {
+                "id": "c",
+                "texto": "x≥−2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de x≥2 e x<5?",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "A interseção inclui 2 e exclui 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(2,5]"
+              },
+              {
+                "id": "b",
+                "texto": "(−∞,5)"
+              },
+              {
+                "id": "c",
+                "texto": "[2,5)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Nem toda movimentação de um número negativo inverte o sinal. Somar ou subtrair negativos preserva a ordem; a inversão ocorre ao multiplicar ou dividir por um número negativo. E ‘e’ não é união: precisa cumprir as condições ao mesmo tempo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de x>4 e x≤1?",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "As exigências são incompatíveis.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "∅"
+              },
+              {
+                "id": "c",
+                "texto": "(1,4)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual operação inverte uma desigualdade?",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "A inversão depende da multiplicação por número negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Multiplicar ambos os lados por −3"
+              },
+              {
+                "id": "b",
+                "texto": "Subtrair 3 dos dois lados"
+              },
+              {
+                "id": "c",
+                "texto": "Somar −3 aos dois lados"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Monte uma desigualdade a partir de um limite de tempo ou capacidade, registrando unidades. Para estudar, resolva a mesma inequação por álgebra e por alguns testes na reta. Os testes ajudam a conferir, enquanto a transformação equivalente garante o intervalo completo."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva −x<2.",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "Multiplicar por −1 troca o sentido.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x<−2"
+              },
+              {
+                "id": "b",
+                "texto": "x>2"
+              },
+              {
+                "id": "c",
+                "texto": "x>−2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de 2x≤8 e x≥0?",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "A primeira dá x≤4; a segunda elimina os negativos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−∞,4]"
+              },
+              {
+                "id": "b",
+                "texto": "[0,4]"
+              },
+              {
+                "id": "c",
+                "texto": "(0,4)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Inequações usam <,≤,> ou ≥. Somar o mesmo real aos dois lados preserva a ordem. Multiplicar por positivo preserva o sentido; por negativo inverte. Condições simultâneas são combinadas por interseção. No universo real, a resposta costuma ser um intervalo; em contagens, depois filtramos os inteiros admissíveis."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: A interseção é (−∞,3]. Teste x=3: a primeira expressão vale 0 e a segunda condição é verdadeira."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como resolver inequações lineares e combinar condições simultâneas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se x é uma contagem inteira e 0≤x<3, quais valores servem?",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "O domínio inteiro seleciona apenas 0, 1 e 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0,1,2"
+              },
+              {
+                "id": "b",
+                "texto": "0,1,2,3"
+              },
+              {
+                "id": "c",
+                "texto": "Todos os reais de [0,3)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução de 0x≤1 em ℝ?",
+            "assunto": "Desigualdades: virando o sinal com motivo",
+            "orientacao": "Observe qual operação está sendo feita; só multiplicação ou divisão por negativo inverte a ordem.",
+            "explicacao": "O lado esquerdo sempre vale 0, e 0≤1 é sempre verdadeiro.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "∅"
+              },
+              {
+                "id": "b",
+                "texto": "{1}"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -19,9 +19,9 @@ export default function ErrorPage({ reset }: { reset: () => void }) {
 		});
 	}, [finishNavigation, notify]);
 	return (
-		<main className="ui-page">
+		<main className="ui-page standalone-state">
 			<FeedbackViewport />
-			<section className="ui-panel max-w-lg p-6">
+			<section className="journey-empty">
 				<h1 className="font-extrabold text-2xl">
 					Não foi possível abrir esta página
 				</h1>

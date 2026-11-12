@@ -1,145 +1,114 @@
 import { notFound } from "next/navigation";
 import Link from "~/app/_components/action-link";
 import { DashboardLayout, Icon } from "~/app/_components/dashboard";
+import { elementarCurriculum } from "~/domain/elementar-curriculum";
 import { getPublishedPoints } from "~/server/learning";
-import {
-	activityFormats,
-	type StageModel,
-	stageModes,
-} from "../../_etapa/model";
+import { ContentPanel } from "../../_etapa/content";
 import { PublishedLesson } from "../../_etapa/published-lesson";
-import { StageScreen } from "../../_etapa/screen";
-import styles from "../../_etapa/stage.module.css";
 import { stagesByTrail } from "../../_etapa/stages";
 import trailStyles from "../../trail.module.css";
-import { stageChallenge, trailMapHref, trails } from "../../trails";
-
-function modelHref(
-	base: string,
-	mode: StageModel["mode"],
-	kind: (typeof activityFormats)[number]["empty"]["kind"],
-) {
-	const query = new URLSearchParams();
-	if (mode !== "conteudo") query.set("modelo", mode);
-	if (kind !== activityFormats[0].empty.kind) query.set("tipo", kind);
-	return query.size ? `${base}?${query}` : base;
-}
-
+import { stageChallenge, trailMapHref, trails, trailUnit } from "../../trails";
 export default async function StagePage({
 	params,
 	searchParams,
 }: {
 	params: Promise<{ modulo: string; etapa: string }>;
 	searchParams: Promise<{
-		modelo?: string | string[];
-		tipo?: string | string[];
-		item?: string | string[];
-		material?: string | string[];
-		retorno?: string | string[];
-		rodada?: string | string[];
+		item?: string;
+		material?: string;
+		retorno?: string;
+		rodada?: string;
 	}>;
 }) {
 	const { modulo, etapa } = await params;
-	const trail = trails.find(({ id }) => id === modulo);
-	const number = Number(etapa);
-	if (
-		!trail ||
-		String(number) !== etapa ||
-		trail.positions[number - 1] === undefined
-	) {
+	const trail = trails.find((t) => t.id === modulo),
+		number = Number(etapa);
+	if (!trail || String(number) !== etapa || !trail.positions[number - 1])
 		notFound();
-	}
-
-	const { modelo, tipo, item, material, retorno, rodada } = await searchParams;
-	const points = await getPublishedPoints();
+	const [query, points] = await Promise.all([
+		searchParams,
+		getPublishedPoints(),
+	]);
 	const point = points?.find(
-		(point) => point.trail === trail.id && point.number === number,
+		(p) => p.trail === trail.id && p.number === number,
 	);
-	const mode = stageModes.find(({ id }) => id === modelo)?.id ?? "conteudo";
-	const format =
-		activityFormats.find(({ empty }) => empty.kind === tipo) ??
-		activityFormats[0];
-	const previewContent = { blocks: [] };
-	const preview: StageModel =
-		mode === "conteudo"
-			? { mode, content: previewContent }
-			: mode === "atividade"
-				? { mode, activity: format.empty }
-				: { mode, content: previewContent, activity: format.empty };
-	const published = stagesByTrail[trail.id]?.[number];
-	const base = `/aprender/${trail.id}/${number}`;
-	const title = point?.title ?? stageChallenge(number) ?? `Etapa ${number}`;
-
+	const preview = stagesByTrail[trail.id]?.[number];
+	const title =
+		point?.title ??
+		(trail.id === "elementar"
+			? elementarCurriculum.passos[number - 1]?.titulo
+			: undefined) ??
+		stageChallenge(number, trail.id) ??
+		`Etapa ${number}`;
+	const unit = trailUnit(trail.id, number);
 	return (
-		<DashboardLayout active="/aprender">
+		<DashboardLayout
+			active="/aprender"
+			lesson={{
+				backHref: trailMapHref(trail.id, number),
+				unit: `Unidade ${unit}`,
+			}}
+		>
 			<div
-				className={`${styles.page} ${trailStyles.trailTheme}`}
+				className={`lesson-workbench ${trailStyles.trailTheme}`}
 				data-trail={trail.id}
 			>
-				<Link className={styles.back} href={trailMapHref(trail.id, number)}>
-					<Icon className="size-4 rotate-90" name="chevron" />
-					Voltar ao mapa
-				</Link>
-				<header className={styles.stageHeader}>
+				<header className="lesson-context">
 					<div>
-						<h1>{title}</h1>
 						<p>
-							{trail.name}
-							{trail.id === "fmc" && " (FMC 1)"}
+							{trail.name} · Unidade {unit}
 						</p>
+						<h1>{title}</h1>
 					</div>
-					<span aria-hidden="true" className={styles.stageNumber}>
-						{number}
+					<span>
+						Lição <b>{number}</b>/{trail.positions.length}
 					</span>
 				</header>
-
-				{!published && !point && (
-					<div className={styles.preview}>
-						<div className={styles.previewIntro}>
-							<h2>Prévia dos modelos</h2>
-							<p>Confira os formatos disponíveis para montar esta etapa.</p>
-						</div>
-						<nav aria-label="Modelo da etapa" className={styles.modeNav}>
-							{stageModes.map(({ id, label }) => (
-								<Link
-									aria-current={mode === id ? "page" : undefined}
-									href={modelHref(base, id, format.empty.kind)}
-									key={id}
-									scroll={false}
-								>
-									{label}
-								</Link>
-							))}
-						</nav>
-						{mode !== "conteudo" && (
-							<nav aria-label="Tipo de atividade" className={styles.formatNav}>
-								{activityFormats.map(({ empty, label }) => (
-									<Link
-										aria-current={
-											format.empty.kind === empty.kind ? "page" : undefined
-										}
-										href={modelHref(base, mode, empty.kind)}
-										key={empty.kind}
-										scroll={false}
-									>
-										{label}
-									</Link>
-								))}
-							</nav>
-						)}
-					</div>
-				)}
-
 				{point ? (
 					<PublishedLesson
-						entryKey={typeof item === "string" ? item : undefined}
-						feedbackKey={typeof retorno === "string" ? retorno : undefined}
-						feedbackRound={rodada === "2" ? 2 : 1}
-						materialKey={typeof material === "string" ? material : undefined}
+						entryKey={query.item}
+						feedbackKey={query.retorno}
+						feedbackRound={query.rodada === "2" ? 2 : 1}
+						materialKey={query.material}
 						point={point}
 					/>
+				) : preview && "content" in preview ? (
+					<section className="lesson-exploration">
+						<p className="exploration-note">
+							<Icon className="size-4" name="book" />
+							Leitura de exploração · este material não registra XP ou
+							conclusão.
+						</p>
+						<ContentPanel content={preview.content} />
+						<Link className="ui-button" href={trailMapHref(trail.id, number)}>
+							Voltar ao mapa
+						</Link>
+					</section>
 				) : (
-					<StageScreen model={published ?? preview} />
+					<section className="journey-empty">
+						<Icon className="size-12" name="lock" />
+						<h2>
+							{trail.id === "elementar"
+								? "Abra o material de estudo"
+								: "Uma nova etapa está a caminho"}
+						</h2>
+						<p>
+							{trail.id === "elementar"
+								? "Este passo já está disponível no leitor independente, com explicações, exemplo guiado e questões comentadas. O progresso com XP fica disponível após a publicação no catálogo do aplicativo."
+								: "O conteúdo desta lição está sendo preparado. Explore o mapa e os materiais disponíveis da disciplina."}
+						</p>
+						{trail.id === "elementar" && (
+							<Link
+								className="ui-button"
+								href={`/materiais/elementar/index.html#passo-${number}`}
+							>
+								Estudar este passo
+							</Link>
+						)}
+						<Link className="ui-button" href={trailMapHref(trail.id, number)}>
+							Voltar ao mapa
+						</Link>
+					</section>
 				)}
 			</div>
 		</DashboardLayout>

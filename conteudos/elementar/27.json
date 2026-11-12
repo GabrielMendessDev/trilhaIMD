@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 27,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-27",
+      "titulo": "O resto pode ser descoberto sem dividir",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Alguém oferece uma divisão longa de grau alto. A pergunta, porém, só quer o resto ao dividir por x−2. Você pode fazer a conta inteira… ou descobrir que um único valor do polinômio contém exatamente a informação pedida."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Demonstrar e aplicar o teorema do resto e o teorema do fator."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Divisão polinomial e avaliação."
+              }
+            ],
+            "titulo": "O resto pode ser descoberto sem dividir",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao dividir P(x) por x−a, o resto é a constante P(a). Se P(a)=0, o divisor x−a é fator de P. Para um divisor linear ux−v, com u≠0, seu zero é a=v/u; o resto também é P(v/u), mas o quociente muda em relação à divisão pelo fator mônico x−v/u."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "O resto da divisão por x menos a é o valor do polinômio em a.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "R=P(a) ao dividir por x−a"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de x³−2x+4 por x−2?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "O teorema do resto fornece P(2)=8−4+4=8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "−8"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Como o divisor tem grau 1, o resto é constante r. Na identidade P(x)=(x−a)Q(x)+r, faça x=a. O produto zera e resta P(a)=r. Se r=0, a identidade passa a ser P=(x−a)Q, demonstrando o teorema do fator."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ruffini.svg",
+                "alt": "Ruffini por x−2: coeficientes 1,0,−2,4; produtos intermediários 2,4,4; resultados 1,2,2,8. Os três primeiros resultados formam x²+2x+2; o último é o resto 8.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Ruffini por x−2: coeficientes 1,0,−2,4; produtos intermediários 2,4,4; resultados 1,2,2,8. Os três primeiros resultados formam x²+2x+2; o último é o resto 8.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual valor se usa para divisor x+3?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "x+3=x−(−3), cujo zero é −3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "−3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · O resto pode ser descoberto sem dividir",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Ache o resto de P(x)=x³−2x+4 por x−2. O zero do divisor é 2, não −2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Avalie P(2)=8−4+4=8."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O resto é 8, como na divisão longa do passo anterior. Não precisamos do quociente para responder à pergunta sobre o resto."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se P(5)=0, qual divisor tem resto zero?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "O teorema do fator usa o zero 5 no fator x−5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²−5"
+              },
+              {
+                "id": "b",
+                "texto": "x−5"
+              },
+              {
+                "id": "c",
+                "texto": "x+5"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de x²+2x+1 por x+1?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "Avaliamos P(−1)=1−2+1=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para divisor x+3, usamos a=−3. Para divisor de grau 2, o resto pode ser linear: uma avaliação isolada não determina todos os seus coeficientes. O teorema com resto constante depende de o divisor ser linear."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual k faz x²+kx+2 ser divisível por x−1?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "P(1)=1+k+2=0 implica k=−3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "−2"
+              },
+              {
+                "id": "c",
+                "texto": "−3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de x⁴+1 por x?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "O divisor zera em 0, e P(0)=1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Procure a pergunta antes de escolher a técnica. Para resto por fator linear, avalie; para obter quociente, divida. Para encontrar um parâmetro que torna a divisão exata, imponha P(a)=0 e resolva a equação resultante."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ao dividir por 2x−4, em que ponto avaliar para achar o resto?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "O zero de 2x−4 é x=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "−2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O resto da divisão por x²+1 precisa ser constante?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "O resto pode ter grau 1 ou ser constante ou nulo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Precisa ter grau 2"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao dividir P(x) por x−a, o resto é a constante P(a). Se P(a)=0, o divisor x−a é fator de P. Para um divisor linear ux−v, com u≠0, seu zero é a=v/u; o resto também é P(v/u), mas o quociente muda em relação à divisão pelo fator mônico x−v/u."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: O resto é 8, como na divisão longa do passo anterior. Não precisamos do quociente para responder à pergunta sobre o resto."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como demonstrar e aplicar o teorema do resto e o teorema do fator. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual etapa demonstra o teorema do resto?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "A substituição anula o termo com divisor e deixa P(a)=r.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Dividir r por a"
+              },
+              {
+                "id": "b",
+                "texto": "Substituir x=a em P=(x−a)Q+r"
+              },
+              {
+                "id": "c",
+                "texto": "Igualar Q a zero"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de 3x²−x+2 por x−1?",
+            "assunto": "O resto pode ser descoberto sem dividir",
+            "orientacao": "Encontre o zero do divisor linear antes de avaliar o polinômio.",
+            "explicacao": "P(1)=3−1+2=4.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -83,7 +83,7 @@ function InclusionDiagram({ data }: { data: Inclusion }) {
 
 export function LessonDiagram({ data, caption }: Omit<Diagram, "id" | "type">) {
 	return (
-		<figure className={styles.diagram}>
+		<figure className={`${styles.diagram} learning-diagram`}>
 			{data.modelo === "inclusao" && <InclusionDiagram data={data} />}
 			{data.modelo === "venn" && (
 				<svg

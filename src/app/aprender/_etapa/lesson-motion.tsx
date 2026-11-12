@@ -1,26 +1,36 @@
 "use client";
 
-import { type ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useLayoutEffect, useRef } from "react";
+import { useFeedback } from "~/app/_components/feedback";
 import { consumeFeedbackEvent } from "~/app/_components/feedback-events";
 
 export function LessonTransition({
 	children,
 	screenKey,
+	kind = "question",
 }: {
 	children: ReactNode;
 	screenKey: string;
+	kind?: "question" | "explanation" | "review";
 }) {
 	const root = useRef<HTMLDivElement>(null);
-	useEffect(() => {
+	const { finishNavigation } = useFeedback();
+	useLayoutEffect(() => {
+		finishNavigation();
 		if (!screenKey) return;
 		const heading = root.current?.querySelector<HTMLElement>("h2");
 		if (heading) {
 			heading.tabIndex = -1;
 			heading.focus({ preventScroll: true });
 		}
-	}, [screenKey]);
+	}, [screenKey, finishNavigation]);
 	return (
-		<div className="lesson-transition" key={screenKey} ref={root}>
+		<div
+			className="lesson-transition"
+			data-step-kind={kind}
+			key={screenKey}
+			ref={root}
+		>
 			{children}
 		</div>
 	);
@@ -38,10 +48,12 @@ export function AnswerMotion({
 	children: ReactNode;
 }) {
 	const root = useRef<HTMLElement>(null);
-	useEffect(() => {
+	const { finishNavigation } = useFeedback();
+	useLayoutEffect(() => {
+		finishNavigation();
 		if (consumeFeedbackEvent(() => window.sessionStorage, `${eventId}:motion`))
 			root.current?.setAttribute("data-animate", "true");
-	}, [eventId]);
+	}, [eventId, finishNavigation]);
 	return (
 		<section
 			aria-label="Feedback da resposta"

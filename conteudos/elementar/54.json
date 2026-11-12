@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 54,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-54",
+      "titulo": "Oficina do ciclo: justificar em vez de adivinhar",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O desafio reúne um ângulo negativo, uma identidade e uma tangente que talvez nem exista. A missão não é correr até a tabela, mas decidir o que pode ser calculado e por qual caminho. Aqui o quadrante serve de verificação independente para os sinais."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Integrar conversão, quadrante, identidades e funções trigonométricas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Passos 47 a 53."
+              }
+            ],
+            "titulo": "Oficina do ciclo: justificar em vez de adivinhar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um roteiro confiável é converter a unidade, reduzir por voltas completas, localizar o quadrante ou eixo, obter os valores de referência e aplicar as definições com domínio. Esta oficina autoral treina habilidades relacionadas à trigonometria da P3 2025.2, com respostas justificadas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A tangente é ímpar nas entradas em que está definida.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "tan(−θ)=−tanθ no domínio"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale −225° em radianos?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "Multiplicar por π/180 e simplificar dá −5π/4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−5π/4"
+              },
+              {
+                "id": "b",
+                "texto": "−4π/5"
+              },
+              {
+                "id": "c",
+                "texto": "−3π/4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Reduzir um ângulo por 2kπ preserva seno e cosseno e, onde definida, a tangente. O oposto preserva cosseno e troca o sinal do seno e da tangente. Essas propriedades reduzem muitos problemas a ângulos agudos conhecidos, enquanto o domínio impede resultados sem sentido."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/ondas.svg",
+                "alt": "Seno e cosseno entre 0 e 2π: seno começa em 0, chega a 1 em π/2 e −1 em 3π/2; cosseno começa em 1 e chega a −1 em π. Ambos têm imagem [−1,1] e repetem o ciclo em 2π.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Seno e cosseno entre 0 e 2π: seno começa em 0, chega a 1 em π/2 e −1 em 3π/2; cosseno começa em 1 e chega a −1 em π. Ambos têm imagem [−1,1] e repetem o ciclo em 2π.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual ângulo em [0,2π) é coterminal com −5π/4?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "Somamos 2π=8π/4 e obtemos 3π/4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5π/4"
+              },
+              {
+                "id": "b",
+                "texto": "π/4"
+              },
+              {
+                "id": "c",
+                "texto": "3π/4"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Oficina do ciclo: justificar em vez de adivinhar",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule tan(−225°). Converta: −225π/180=−5π/4. Some 2π e obtenha 3π/4, no segundo quadrante."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "As coordenadas são cos=−√2/2 e sen=√2/2. Seu quociente é −1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Portanto tan(−225°)=−1. O denominador não zera, e o sinal negativo combina com o segundo quadrante. Pela periodicidade π, também poderíamos reduzir a −π/4."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale tan(−225°)?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "A redução para 3π/4 dá seno positivo e cosseno negativo de mesmo módulo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não definido"
+              },
+              {
+                "id": "b",
+                "texto": "−1"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale sen(7π/6)?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "O ângulo está no terceiro quadrante e tem referência π/6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1/2"
+              },
+              {
+                "id": "b",
+                "texto": "1/2"
+              },
+              {
+                "id": "c",
+                "texto": "−√3/2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Usar uma calculadora em graus com uma entrada em radianos pode produzir uma resposta plausível e errada. A unidade deve estar declarada antes da conta. Nos cálculos exatos desta oficina, π permanece simbólico até a conclusão."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale cos(5π/3)?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "No quarto quadrante, a referência é π/3 e o cosseno é positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1/2"
+              },
+              {
+                "id": "b",
+                "texto": "√3/2"
+              },
+              {
+                "id": "c",
+                "texto": "1/2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale secπ?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "cosπ=−1; seu recíproco é −1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não definido"
+              },
+              {
+                "id": "b",
+                "texto": "−1"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Escolha uma questão para escrever como solução discursiva completa, incluindo unidade, quadrante, valores e conclusão. Em outra, explique por que a expressão não está definida. Saber interromper uma operação inválida também é competência matemática."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale csc0?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "O denominador sen0 é zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não definido"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 1+tan²(π/4)?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "tan(π/4)=1, então 1+1²=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um roteiro confiável é converter a unidade, reduzir por voltas completas, localizar o quadrante ou eixo, obter os valores de referência e aplicar as definições com domínio. Esta oficina autoral treina habilidades relacionadas à trigonometria da P3 2025.2, com respostas justificadas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Portanto tan(−225°)=−1. O denominador não zera, e o sinal negativo combina com o segundo quadrante. Pela periodicidade π, também poderíamos reduzir a −π/4."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como integrar conversão, quadrante, identidades e funções trigonométricas. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se senθ=4/5 no primeiro quadrante, quanto vale tanθ?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "cosθ=3/5 positivo; o quociente é 4/3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4/5"
+              },
+              {
+                "id": "b",
+                "texto": "4/3"
+              },
+              {
+                "id": "c",
+                "texto": "3/4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual afirmação descreve o domínio da tangente?",
+            "assunto": "Oficina do ciclo: justificar em vez de adivinhar",
+            "orientacao": "Converta a unidade, reduza voltas, determine o quadrante e só então calcule a razão.",
+            "explicacao": "Os zeros do cosseno tornam a divisão sen/cos inválida.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Exclui π/2+kπ para k inteiro"
+              },
+              {
+                "id": "b",
+                "texto": "Exclui apenas zero"
+              },
+              {
+                "id": "c",
+                "texto": "Contém todos os reais"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

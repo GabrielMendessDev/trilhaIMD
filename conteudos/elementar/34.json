@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 34,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-34",
+      "titulo": "Injetora, sobrejetora e bijetora",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma distribuição de mesas pode deixar mesas vazias e pode colocar duas pessoas na mesma mesa. São duas perguntas independentes: houve compartilhamento? Sobrou mesa? Injeção e sobrejeção separam exatamente essas duas dimensões."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Classificar funções com atenção aos conjuntos declarados."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Domínio, contradomínio e imagem."
+              }
+            ],
+            "titulo": "Injetora, sobrejetora e bijetora",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "f:A→B é injetora se f(x₁)=f(x₂) implica x₁=x₂; sobrejetora se Im(f)=B; bijetora se satisfaz ambas. A identidade id_A(x)=x é bijetora A→A. Uma função constante em domínio com ao menos dois elementos não é injetora, pois entradas distintas têm a mesma saída."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma bijeção não tem colisões e atinge todo o contradomínio.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Bijetora = injetora e sobrejetora"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma função é injetora quando qual situação não ocorre?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "Injetividade impede colisões de imagens.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Uma saída do contradomínio ficar sem uso"
+              },
+              {
+                "id": "b",
+                "texto": "Uma entrada ter saída"
+              },
+              {
+                "id": "c",
+                "texto": "Entradas distintas com a mesma saída"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em f:ℝ→ℝ, x² não é injetora porque f(1)=f(−1), nem sobrejetora porque não atinge −1. Ao mudar para f:[0,∞)→[0,∞), a mesma fórmula é bijetora: quadrados preservam a ordem nesse domínio e todo y≥0 tem preimagem √y. A classificação pertence à função completa, não só à fórmula."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/setas.svg",
+                "alt": "Função de {1,2,3} para {a,b}: 1 vai para a, 2 vai para a e 3 vai para b. É função sobrejetora e não injetora, pois duas entradas chegam a a.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Função de {1,2,3} para {a,b}: 1 vai para a, 2 vai para a e 3 vai para b. É função sobrejetora e não injetora, pois duas entradas chegam a a.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma função é sobrejetora quando qual igualdade vale?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "Todas as saídas do contradomínio B precisam ser alcançadas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Im(f)=A"
+              },
+              {
+                "id": "b",
+                "texto": "Im(f)=B"
+              },
+              {
+                "id": "c",
+                "texto": "A=B"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Injetora, sobrejetora e bijetora",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Considere f:{1,2,3}→{a,b,c}, com f(1)=a, f(2)=b, f(3)=c. Cada saída recebe uma única entrada."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Não há repetição de saídas: é injetora. Todas as saídas anunciadas aparecem: é sobrejetora."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Logo é bijetora. Se acrescentarmos d ao contradomínio sem mudar as saídas, continua injetora, mas perde a sobrejetividade."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma bijeção é qual tipo de função?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "Bijeção combina as duas propriedades.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Injetora e sobrejetora"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas constante"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas sobrejetora"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f:ℝ→ℝ, f(x)=x², é injetora?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "f(1)=f(−1)=1 fornece um contraexemplo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só porque é quadrática"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ver saídas diferentes em dois exemplos não prova injetividade no domínio inteiro. Para refutar basta um par de entradas distintas com mesma saída. Para provar, use um argumento válido para quaisquer x₁ e x₂ ou analise todas as entradas quando o domínio for finito."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f:ℝ→[0,∞), f(x)=x², é sobrejetora?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "Todo y≥0 é imagem de x=√y, incluindo y=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas se x>0"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "f:[0,∞)→[0,∞), f(x)=x², é bijetora?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "No domínio não negativo não há colisões e todo valor do contradomínio é atingido.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Só se excluir zero"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Pergunte separadamente ‘há colisões?’ e ‘há saídas sem preimagem?’. Não use o número de elementos sem olhar a regra: dois conjuntos finitos de mesmo tamanho podem receber uma função que não seja nem injetora nem sobrejetora."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma constante f:ℝ→ℝ é injetora?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "Qualquer par de entradas distintas tem a mesma imagem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Depende do valor constante"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "A identidade id_A:A→A é qual tipo?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "Cada elemento é enviado a si mesmo, sem colisões e sem omissões.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sempre constante"
+              },
+              {
+                "id": "b",
+                "texto": "Bijetora"
+              },
+              {
+                "id": "c",
+                "texto": "Nunca sobrejetora"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "f:A→B é injetora se f(x₁)=f(x₂) implica x₁=x₂; sobrejetora se Im(f)=B; bijetora se satisfaz ambas. A identidade id_A(x)=x é bijetora A→A. Uma função constante em domínio com ao menos dois elementos não é injetora, pois entradas distintas têm a mesma saída."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Logo é bijetora. Se acrescentarmos d ao contradomínio sem mudar as saídas, continua injetora, mas perde a sobrejetividade."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como classificar funções com atenção aos conjuntos declarados. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se ampliamos só o contradomínio com valores não atingidos, qual propriedade se perde?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "A imagem fica menor que o novo contradomínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sobrejetividade"
+              },
+              {
+                "id": "b",
+                "texto": "Injetividade"
+              },
+              {
+                "id": "c",
+                "texto": "Ser função"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para refutar injetividade, o que basta?",
+            "assunto": "Injetora, sobrejetora e bijetora",
+            "orientacao": "Pergunte separadamente se há duas entradas com a mesma saída e se sobrou saída sem preimagem.",
+            "explicacao": "Um único par que viole a definição é um contraexemplo suficiente.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Duas entradas com imagens diferentes"
+              },
+              {
+                "id": "b",
+                "texto": "Uma saída positiva"
+              },
+              {
+                "id": "c",
+                "texto": "Duas entradas distintas com igual imagem"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

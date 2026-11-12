@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 29,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-29",
+      "titulo": "Raízes racionais: candidatos não são garantias",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Procurar raízes tentando números ao acaso é uma investigação com orçamento infinito. O teorema das raízes racionais reduz a lista de suspeitos. Ele não promete que alguém da lista será culpado; promete que uma raiz racional não escapará dela."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Gerar candidatos racionais, testar e fatorar um polinômio."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Divisibilidade inteira, avaliação e Ruffini."
+              }
+            ],
+            "titulo": "Raízes racionais: candidatos não são garantias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para um polinômio com coeficientes inteiros, uma raiz racional p/q em forma reduzida, q>0, satisfaz: p divide o termo constante e q divide o coeficiente líder. Se o termo constante é zero, extraia primeiro a potência de x. Depois teste candidatos por P(p/q) ou Ruffini; uma lista de candidatos não é uma lista de raízes."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Numa raiz racional reduzida p sobre q de um polinômio inteiro, p divide o termo constante e q divide o coeficiente líder.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "p divide a₀; q divide aₙ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para x³−2x²−x+2, quais são os candidatos racionais?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "O coeficiente líder é 1 e os divisores do termo constante 2 são ±1,±2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas 1 e 2"
+              },
+              {
+                "id": "b",
+                "texto": "±1 e ±2"
+              },
+              {
+                "id": "c",
+                "texto": "Todos os inteiros"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Substituir p/q e multiplicar por qⁿ dá aₙpⁿ+…+a₀qⁿ=0. Como p e q são coprimos, a igualdade força q a dividir aₙ e p a dividir a₀. Para polinômios mônicos inteiros, q=1: toda raiz racional é inteira. Isso não exclui raízes irracionais."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Gerar candidatos racionais, testar e fatorar um polinômio.",
+                      "exemplo": "Fatore P=x³−2x²−x+2. Os candidatos racionais são ±1 e ±2."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Q=(x−2)(x+1). Assim P=(x−1)(x−2)(x+1), com raízes 1,2,−1. O candidato −2 foi só candidato: P(−2)=−12."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale P(1) no exemplo?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "Substituir 1 dá 1−2−1+2=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "−2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Raízes racionais: candidatos não são garantias",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Fatore P=x³−2x²−x+2. Os candidatos racionais são ±1 e ±2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "P(1)=1−2−1+2=0. Ruffini por x−1 produz Q=x²−x−2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Q=(x−2)(x+1). Assim P=(x−1)(x−2)(x+1), com raízes 1,2,−1. O candidato −2 foi só candidato: P(−2)=−12."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual quociente resulta da divisão do exemplo por x−1?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "Ruffini com 1 dá coeficientes 1,−1,−2 e resto 0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²+x+2"
+              },
+              {
+                "id": "b",
+                "texto": "x²−2x+2"
+              },
+              {
+                "id": "c",
+                "texto": "x²−x−2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a fatoração completa do exemplo?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "As raízes obtidas são 1,2,−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x−1)²(x+2)"
+              },
+              {
+                "id": "b",
+                "texto": "(x−1)(x−2)(x+1)"
+              },
+              {
+                "id": "c",
+                "texto": "(x+1)(x+2)(x−1)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O teorema não diz que todas as raízes são racionais. x²−2 é mônico inteiro e só tem raízes irracionais ±√2. Também não use divisores de coeficientes decimais sem antes obter uma forma com coeficientes inteiros equivalente."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Todos os candidatos racionais precisam ser raízes?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "O teorema dá uma condição necessária, e cada candidato precisa ser testado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas nos polinômios mônicos"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma raiz racional de 2x²−3x+1 pode ter qual denominador positivo reduzido?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "O denominador precisa dividir o coeficiente líder 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas 3"
+              },
+              {
+                "id": "b",
+                "texto": "Qualquer natural"
+              },
+              {
+                "id": "c",
+                "texto": "1 ou 2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Este é um treino de investigação controlada: gerar possibilidades por uma condição necessária, testar, reduzir o problema e concluir. Uma boa solução discursiva deixa clara essa diferença entre condição necessária e suficiente."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual número não é candidato racional para 2x²−3x+1?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "Numeradores reduzidos dividem 1; 3 não divide 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "1/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se o polinômio é mônico com coeficientes inteiros, uma raiz racional precisa ser qual tipo?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "O denominador reduzido divide 1, portanto vale 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Inteira"
+              },
+              {
+                "id": "b",
+                "texto": "Positiva"
+              },
+              {
+                "id": "c",
+                "texto": "Natural diferente de zero"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para um polinômio com coeficientes inteiros, uma raiz racional p/q em forma reduzida, q>0, satisfaz: p divide o termo constante e q divide o coeficiente líder. Se o termo constante é zero, extraia primeiro a potência de x. Depois teste candidatos por P(p/q) ou Ruffini; uma lista de candidatos não é uma lista de raízes."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Q=(x−2)(x+1). Assim P=(x−1)(x−2)(x+1), com raízes 1,2,−1. O candidato −2 foi só candidato: P(−2)=−12."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como gerar candidatos racionais, testar e fatorar um polinômio. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual exemplo mostra que nem toda raiz de polinômio inteiro é racional?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "Suas raízes são ±√2, ambas irracionais.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²−1"
+              },
+              {
+                "id": "b",
+                "texto": "x−2"
+              },
+              {
+                "id": "c",
+                "texto": "x²−2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se o termo constante é zero, qual é uma boa primeira ação?",
+            "assunto": "Raízes racionais: candidatos não são garantias",
+            "orientacao": "Liste candidatos em forma reduzida e teste cada um; candidato não significa raiz confirmada.",
+            "explicacao": "x=0 já é raiz; extrair a potência de x reduz o problema sem perder esse caso.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Declarar que não há raízes"
+              },
+              {
+                "id": "b",
+                "texto": "Extrair um fator x"
+              },
+              {
+                "id": "c",
+                "texto": "Dividir por zero"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

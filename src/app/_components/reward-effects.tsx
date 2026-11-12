@@ -1,6 +1,12 @@
 "use client";
 
-import { type ReactNode, useEffect, useRef, useState } from "react";
+import {
+	type ReactNode,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from "react";
 import { useFeedback } from "./feedback";
 import { consumeFeedbackEvent } from "./feedback-events";
 import { Icon } from "./icon";
@@ -10,22 +16,24 @@ export function XpBalance({
 	account,
 	className,
 	children,
+	metric = "xp",
 }: {
 	value: number;
 	account: string;
 	className?: string;
 	children: ReactNode;
+	metric?: "xp" | "streak";
 }) {
 	const { observeBalance } = useFeedback();
 	const [pulse, setPulse] = useState(false);
 	useEffect(() => {
-		if (observeBalance(account, value)) setPulse(true);
+		if (observeBalance(`${account}:${metric}`, value)) setPulse(true);
 		const timeout = window.setTimeout(() => setPulse(false), 650);
 		return () => window.clearTimeout(timeout);
-	}, [value, account, observeBalance]);
+	}, [value, account, metric, observeBalance]);
 	return (
 		<span
-			className={`${className ?? ""} reward-balance`}
+			className={`${className ?? ""} ${metric === "streak" ? "streak-balance" : "reward-balance"}`}
 			data-reward={pulse || undefined}
 		>
 			{children}
@@ -58,28 +66,20 @@ export function CompletionEffects({
 	children: ReactNode;
 }) {
 	const root = useRef<HTMLDivElement>(null);
-	const { notify } = useFeedback();
-	useEffect(() => {
+	const { finishNavigation } = useFeedback();
+	useLayoutEffect(() => {
+		finishNavigation();
+		const heading = root.current?.querySelector<HTMLElement>("h2");
+		if (heading) {
+			heading.tabIndex = -1;
+			heading.focus({ preventScroll: true });
+		}
 		const counters =
 			root.current?.querySelectorAll<HTMLElement>("[data-reward-count]") ?? [];
 		let frame = 0;
 		const scheduled = window.setTimeout(() => {
 			if (!consumeFeedbackEvent(() => window.localStorage, eventId)) return;
 			root.current?.setAttribute("data-celebrate", "true");
-			const outcome =
-				reward > 0
-					? `Etapa concluída! +${reward} XP registrados.`
-					: "Etapa concluída! Seu progresso foi registrado.";
-			const next = unlocked ? ` A etapa ${unlocked} está disponível.` : "";
-			const medals = awards.length
-				? ` Conquista desbloqueada. ${awards.map(({ name }) => name).join(" e ")}.`
-				: "";
-			notify({
-				id: "completion",
-				kind: "success",
-				message: `${outcome}${next}${medals}`,
-				duration: awards.length ? 7500 : 4500,
-			});
 			if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 			const start = performance.now();
 			const animate = (time: number) => {
@@ -96,10 +96,19 @@ export function CompletionEffects({
 			for (const counter of counters)
 				counter.textContent = `+${counter.dataset.rewardCount}`;
 		};
-	}, [eventId, reward, unlocked, awards, notify]);
+	}, [eventId, finishNavigation]);
 	return (
-		<div className="completion-effects" ref={root}>
+		<div
+			className="completion-effects"
+			data-confirmed-reward={reward}
+			ref={root}
+		>
 			{children}
+			{unlocked && (
+				<p className="completion-next">
+					Etapa {unlocked} disponível na trilha.
+				</p>
+			)}
 			{awards.length > 0 && (
 				<section aria-label="Conquistas desta etapa" className="earned-awards">
 					<h3>Conquistas desbloqueadas</h3>
@@ -124,17 +133,19 @@ export function UnlockEffect({
 	eventId: string;
 	stage: number;
 }) {
-	const { notify } = useFeedback();
 	useEffect(() => {
 		if (!consumeFeedbackEvent(() => window.localStorage, `${eventId}:map`))
 			return;
 		const node = document.getElementById(`etapa-${stage}`);
+		if (node?.querySelector("button")?.getAttribute("data-state") !== "current")
+			return;
 		node?.setAttribute("data-unlocked", "true");
-		notify({
-			id: "unlock",
-			kind: "success",
-			message: `Nova lição desbloqueada! Etapa ${stage} disponível.`,
-		});
-	}, [eventId, stage, notify]);
+		document
+			.getElementById(`etapa-${stage - 1}`)
+			?.setAttribute("data-just-completed", "true");
+		document
+			.querySelector(`[data-trail-segment="${stage - 1}"]`)
+			?.setAttribute("data-energize", "true");
+	}, [eventId, stage]);
 	return null;
 }

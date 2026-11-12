@@ -119,6 +119,8 @@ test("fluxo publicado preserva revisão, feedback e XP no PostgreSQL", async () 
 			);
 			assert.equal(result.status, 200, result.error);
 			if (incorrect) {
+				const next = entries[entries.indexOf(entry) + 1];
+				assert.equal(result.continueTo, `${path}?item=${next.key}`);
 				const html = await page(student, result.destination);
 				assert.match(html, /Ainda não foi dessa vez!/);
 				assert.doesNotMatch(html, /<h3>Resposta correta<\/h3>/);
@@ -150,6 +152,7 @@ test("fluxo publicado preserva revisão, feedback e XP no PostgreSQL", async () 
 		]);
 		assert.equal(retry.status, 200, retry.error);
 		assert.equal(replay.destination, retry.destination);
+		assert.equal(replay.continueTo, retry.continueTo);
 		assert.match(
 			await page(student, retry.destination),
 			/Você conseguiu na revisão!/,

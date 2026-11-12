@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 30,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-30",
+      "titulo": "Oficina de prova: remontar um polinômio",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma expressão chega desmontada: raízes numa anotação, coeficiente líder em outra e um valor calculado numa terceira. Você vai verificar se as pistas contam a mesma história. É uma auditoria algébrica com direito a desconfiar do próprio rascunho."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Integrar operações, fatoração, resto e raízes racionais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Passos 21 a 29."
+              }
+            ],
+            "titulo": "Oficina de prova: remontar um polinômio",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para reconstruir um polinômio a partir de raízes e multiplicidades, use P(x)=a∏(x−rᵢ)ᵐⁱ e determine a escala a. Quando só algumas raízes são conhecidas, pode restar um fator sem raízes reais. Esta revisão é autoral e prepara habilidades associadas à P2, sem reproduzir enunciados oficiais."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A forma fatorada combina uma escala e fatores associados às raízes e suas multiplicidades.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "P(x)=a∏(x−rᵢ)ᵐⁱ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual polinômio de grau 2 tem raízes 1 e 3 e coeficiente líder 2?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "As raízes determinam os fatores; o coeficiente líder fixa a escala 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2(x−1)(x−3)"
+              },
+              {
+                "id": "b",
+                "texto": "(x−1)(x−3)"
+              },
+              {
+                "id": "c",
+                "texto": "2(x+1)(x+3)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Os fatores lineares garantem os zeros informados, mas multiplicar por uma constante não nula preserva esses zeros. Um valor adicional P(t), com t diferente das raízes, determina essa constante quando a estrutura de fatores já está fixada. A soma das multiplicidades precisa ser compatível com o grau."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Integrar operações, fatoração, resto e raízes racionais.",
+                      "exemplo": "Ache o polinômio de grau 3, com raiz 1 dupla e raiz −2 simples, cujo coeficiente líder é 3. Escreva P=3(x−1)²(x+2)."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Logo P=3x³−9x+6. Confira P(1)=0, P(−2)=0 e o termo líder 3x³. Há duas raízes distintas e três contadas com multiplicidade."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o termo constante de 2(x−1)(x−3)?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "Avaliar em zero dá 2·(−1)·(−3)=6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−6"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "6"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Oficina de prova: remontar um polinômio",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Ache o polinômio de grau 3, com raiz 1 dupla e raiz −2 simples, cujo coeficiente líder é 3. Escreva P=3(x−1)²(x+2)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Expanda: (x−1)²=x²−2x+1 e o produto por x+2 é x³−3x+2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Logo P=3x³−9x+6. Confira P(1)=0, P(−2)=0 e o termo líder 3x³. Há duas raízes distintas e três contadas com multiplicidade."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de 3x³−9x+6 por x−1?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "P(1)=3−9+6=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "6"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a multiplicidade de 1 em 3(x−1)²(x+2)?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "O fator x−1 aparece elevado ao quadrado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se você sabe apenas duas raízes de um polinômio de grau 4, faltam informações. Não complete com zeros imaginados. E escrever a expressão fatorada já é uma resposta válida quando ela mostra claramente o objeto solicitado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a expansão de 3(x−1)²(x+2)?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "Primeiro (x−1)²(x+2)=x³−3x+2; depois multiplique por 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3x³−3x+6"
+              },
+              {
+                "id": "b",
+                "texto": "3x³+9x+6"
+              },
+              {
+                "id": "c",
+                "texto": "3x³−9x+6"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se P=a(x−1)(x+2) e P(0)=−8, qual é a?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "Em x=0, P(0)=−2a=−8, logo a=4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "−4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Faça as primeiras questões sem consultar fórmulas e depois explique cada escolha. Classifique os erros: coeficiente, sinal, hipótese ou método. Essa classificação torna a volta aos passos anteriores mais útil do que repetir tudo no piloto automático."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o grau de (x−1)³(x+1)²?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "Os graus dos fatores se somam: 3+2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de x³+1 por x+1?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "Avaliamos em −1: −1+1=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "−2"
+              },
+              {
+                "id": "c",
+                "texto": "0"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para reconstruir um polinômio a partir de raízes e multiplicidades, use P(x)=a∏(x−rᵢ)ᵐⁱ e determine a escala a. Quando só algumas raízes são conhecidas, pode restar um fator sem raízes reais. Esta revisão é autoral e prepara habilidades associadas à P2, sem reproduzir enunciados oficiais."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Logo P=3x³−9x+6. Confira P(1)=0, P(−2)=0 e o termo líder 3x³. Há duas raízes distintas e três contadas com multiplicidade."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como integrar operações, fatoração, resto e raízes racionais. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Raízes 1 e 2, sem outras informações, determinam um único polinômio?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "Há diferentes escalas e graus possíveis; faltam condições.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas se forem inteiras"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual justifica que uma fatoração está correta?",
+            "assunto": "Oficina de prova: remontar um polinômio",
+            "orientacao": "Confira raízes, multiplicidades, grau e escala antes de expandir.",
+            "explicacao": "Igualdade de coeficientes demonstra a identidade inteira.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A expansão coincide em todos os coeficientes"
+              },
+              {
+                "id": "b",
+                "texto": "Os graus são iguais"
+              },
+              {
+                "id": "c",
+                "texto": "Uma única raiz coincide"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

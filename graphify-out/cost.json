@@ -6,6 +6,22 @@
       "output_tokens": 0,
       "files": 95,
       "usage_available": false
+    },
+    {
+      "date": "2026-11-12T17:04:40.415237+00:00",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "usage_available": false,
+      "files": 124,
+      "note": "Semantic agent tool does not expose usage; zero values are unmeasured placeholders."
+    },
+    {
+      "date": "2026-11-12T21:54:08.432992+00:00",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "files": 12,
+      "usage_available": false,
+      "note": "Final item-audit refresh. Complete host semantic extraction after auxiliary-agent usage limit; usage unmeasured."
     }
   ],
   "total_input_tokens": 0,

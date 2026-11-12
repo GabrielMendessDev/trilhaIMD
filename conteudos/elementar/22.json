@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 22,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-22",
+      "titulo": "Operações: organizar antes de calcular",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Dois grupos somam recursos para uma feira. Um registra x²+2x; outro, 3x²−x+4. Somar por colunas funciona, desde que as colunas representem a mesma potência. Misturar x com x² é como somar horas com metros e esperar diplomacia."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Somar, subtrair e multiplicar polinômios pela distributiva."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Termos e coeficientes (passo 21)."
+              }
+            ],
+            "titulo": "Operações: organizar antes de calcular",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Termos semelhantes têm a mesma potência de x. Na soma, somamos seus coeficientes. Na subtração, distribuímos o sinal negativo por todos os termos do segundo polinômio. No produto, multiplicamos cada termo de um fator por cada termo do outro e reunimos os semelhantes."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Termos da mesma potência podem ter seus coeficientes somados.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "axᵏ+bxᵏ=(a+b)xᵏ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x²+2x)+(3x²−x+4)?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "Somamos apenas coeficientes de termos semelhantes.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4x³+x+4"
+              },
+              {
+                "id": "b",
+                "texto": "4x²+3x+4"
+              },
+              {
+                "id": "c",
+                "texto": "4x²+x+4"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A distributividade explica as operações: axᵏ+bxᵏ=(a+b)xᵏ e axʳ·bxˢ=abxʳ⁺ˢ. Para polinômios não nulos, o grau do produto é a soma dos graus, porque o produto dos coeficientes líderes é não nulo. Na soma, os termos líderes podem se cancelar e reduzir o grau."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Somar, subtrair e multiplicar polinômios pela distributiva.",
+                      "exemplo": "Calcule (x+2)(2x−3). Distribua x: 2x²−3x. Distribua 2: 4x−6."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Confira em x=1: o produto original é 3·(−1)=−3 e o polinômio obtido é 2+1−6=−3. A distributiva garante a identidade; o teste apenas ajuda a conferir."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x²+1)−(x²−2x+3)?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "Distribuir o sinal dá x²+1−x²+2x−3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2x+4"
+              },
+              {
+                "id": "b",
+                "texto": "2x−2"
+              },
+              {
+                "id": "c",
+                "texto": "−2x+4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Operações: organizar antes de calcular",
+            "assunto": "Operações: organizar antes de calcular",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule (x+2)(2x−3). Distribua x: 2x²−3x. Distribua 2: 4x−6."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Some os resultados: 2x²−3x+4x−6=2x²+x−6."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira em x=1: o produto original é 3·(−1)=−3 e o polinômio obtido é 2+1−6=−3. A distributiva garante a identidade; o teste apenas ajuda a conferir."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é x²·x³?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "No produto de potências da mesma base, somamos expoentes.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x⁵"
+              },
+              {
+                "id": "b",
+                "texto": "x⁶"
+              },
+              {
+                "id": "c",
+                "texto": "2x⁵"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é 2x(3x²−1)?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "O fator 2x multiplica os dois termos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "6x²−1"
+              },
+              {
+                "id": "b",
+                "texto": "6x³−1"
+              },
+              {
+                "id": "c",
+                "texto": "6x³−2x"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O sinal de menos antes de parênteses atinge todos os termos: −(x²−2x+3)=−x²+2x−3. E (P+Q) pode ter grau menor que ambos: (x²+x)+(−x²+1)=x+1."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x+2)(2x−3)?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "Os termos centrais são −3x e 4x, cuja soma é x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2x²+7x−6"
+              },
+              {
+                "id": "b",
+                "texto": "2x²+x−6"
+              },
+              {
+                "id": "c",
+                "texto": "2x²−6"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o grau do produto de dois polinômios não nulos de graus 2 e 3?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "Os termos líderes se multiplicam e os graus se somam.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5"
+              },
+              {
+                "id": "b",
+                "texto": "6"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use o teste numérico como detector de erros, sem confundi-lo com demonstração. Escolha x=0 para conferir constantes e x=1 para conferir somas de coeficientes. Se falhar em um desses testes, há erro; se passar, ainda é preciso confiar na expansão correta."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x²+x)+(−x²+1)?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "Os termos x² se cancelam, reduzindo o grau.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2x²+x+1"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "x+1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é −(x²−2x+3)?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "O fator −1 troca o sinal de todos os termos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−x²+2x+3"
+              },
+              {
+                "id": "b",
+                "texto": "−x²+2x−3"
+              },
+              {
+                "id": "c",
+                "texto": "−x²−2x+3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Termos semelhantes têm a mesma potência de x. Na soma, somamos seus coeficientes. Na subtração, distribuímos o sinal negativo por todos os termos do segundo polinômio. No produto, multiplicamos cada termo de um fator por cada termo do outro e reunimos os semelhantes."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Confira em x=1: o produto original é 3·(−1)=−3 e o polinômio obtido é 2+1−6=−3. A distributiva garante a identidade; o teste apenas ajuda a conferir."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como somar, subtrair e multiplicar polinômios pela distributiva. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se uma expansão falha em x=1, o que se conclui?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "Uma identidade precisa valer em todos os reais; um contraexemplo basta para refutá-la.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A identidade proposta está errada"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas x=1 é proibido"
+              },
+              {
+                "id": "c",
+                "texto": "Os polinômios são iguais"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é (x−1)(x+1)?",
+            "assunto": "Operações: organizar antes de calcular",
+            "orientacao": "Alinhe termos semelhantes e distribua o sinal negativo por todo o parêntese.",
+            "explicacao": "Os termos +x e −x se cancelam.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x²+1"
+              },
+              {
+                "id": "b",
+                "texto": "x²−2x+1"
+              },
+              {
+                "id": "c",
+                "texto": "x²−1"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

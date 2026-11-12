@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 39,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-39",
+      "titulo": "Vértice: encontrar o melhor valor possível",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um projeto fictício usa R(x)=−x²+6x+7 para comparar resultados. A equipe quer o maior valor, não uma longa tabela de tentativas. O vértice oferece uma resposta exata e ainda explica por que nenhuma outra escolha supera aquela."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Obter forma canônica, extremos e imagem inclusive com domínio restrito."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Parábolas e completar quadrados."
+              }
+            ],
+            "titulo": "Vértice: encontrar o melhor valor possível",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na forma f(x)=a(x−h)²+k, o vértice é (h,k). Como (x−h)²≥0, k é mínimo se a>0 e máximo se a<0, quando h pertence ao domínio. Em ℝ, a imagem é [k,∞) para a>0 e (−∞,k] para a<0. Em domínio restrito, verifique o vértice e as extremidades permitidas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Na forma canônica, o vértice tem coordenadas h e k.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "f(x)=a(x−h)²+k"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a forma canônica de x²−4x+1?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "Expandir (x−2)²−3 dá x²−4x+1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x−2)²−3"
+              },
+              {
+                "id": "b",
+                "texto": "(x−4)²+1"
+              },
+              {
+                "id": "c",
+                "texto": "(x+2)²−3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para f(x)=ax²+bx+c, h=−b/(2a) e k=−Δ/(4a). Completar quadrados demonstra ambos. Em um intervalo fechado, se o vértice fica fora dele, a função é monótona naquele intervalo e o extremo ocorre em uma extremidade. A imagem pode mudar mesmo sem alterar a fórmula."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/maximo.svg",
+                "alt": "R(x)=−(x−3)²+16 abre para baixo e tem máximo 16 em x=3. No domínio restrito [0,2], cresce de 7 até 15.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "R(x)=−(x−3)²+16 abre para baixo e tem máximo 16 em x=3. No domínio restrito [0,2], cresce de 7 até 15.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o mínimo de x²−4x+1 em ℝ?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "O quadrado é mínimo em x=2 e vale zero ali.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "−3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Vértice: encontrar o melhor valor possível",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Complete quadrados em R(x)=−x²+6x+7: R(x)=−(x²−6x+9)+16=−(x−3)²+16."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Como o quadrado é não negativo, R(x)≤16, com igualdade em x=3. No domínio ℝ, a imagem é (−∞,16]."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Se o domínio for [0,2], x=3 não é permitido. R cresce ali, com R(0)=7 e R(2)=15; a imagem restrita é [7,15]."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem dessa função em ℝ?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "A concavidade é para cima e o mínimo −3 é atingido.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ"
+              },
+              {
+                "id": "b",
+                "texto": "[−3,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "(−∞,−3]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o vértice de −(x−3)²+16?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "O quadrado zera na entrada 3, cuja imagem é 16.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(3,16)"
+              },
+              {
+                "id": "b",
+                "texto": "(−3,16)"
+              },
+              {
+                "id": "c",
+                "texto": "(16,3)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As coordenadas do vértice são (entrada,saída), não o contrário. E o valor máximo k da fórmula canônica só é atingido se h for uma entrada permitida. Em domínios abertos, um limite de valores pode não ser alcançado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o máximo de −x²+6x+7 em ℝ?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "A forma canônica é −(x−3)²+16.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "7"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "16"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de −x²+6x+7 em [0,2]?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "A função cresce no intervalo e vai de R(0)=7 a R(2)=15.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[7,16]"
+              },
+              {
+                "id": "b",
+                "texto": "[7,15]"
+              },
+              {
+                "id": "c",
+                "texto": "(−∞,16]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Modelos quadráticos aparecem em geometria, planejamento e análise de resultados hipotéticos. Declare o domínio do modelo antes de otimizar. Se x é uma contagem inteira, compare os inteiros próximos do vértice em vez de aceitar uma quantidade fracionária automaticamente."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de x² em (0,1)?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "Nenhum extremo é atingido e os quadrados preenchem o intervalo aberto.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,1)"
+              },
+              {
+                "id": "b",
+                "texto": "[0,1]"
+              },
+              {
+                "id": "c",
+                "texto": "[0,∞)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o mínimo de (x−5)² em [0,2]?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "O vértice 5 está fora; o ponto permitido mais próximo é 2, com valor 9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "25"
+              },
+              {
+                "id": "c",
+                "texto": "9"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na forma f(x)=a(x−h)²+k, o vértice é (h,k). Como (x−h)²≥0, k é mínimo se a>0 e máximo se a<0, quando h pertence ao domínio. Em ℝ, a imagem é [k,∞) para a>0 e (−∞,k] para a<0. Em domínio restrito, verifique o vértice e as extremidades permitidas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Se o domínio for [0,2], x=3 não é permitido. R cresce ali, com R(0)=7 e R(2)=15; a imagem restrita é [7,15]."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como obter forma canônica, extremos e imagem inclusive com domínio restrito. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para contagem inteira x, se o vértice está em 2,4, o que é adequado?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "Os valores em 2 e 3 precisam ser comparados, respeitando outras restrições.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Arredondar sem avaliar a função"
+              },
+              {
+                "id": "b",
+                "texto": "Comparar os inteiros admissíveis próximos"
+              },
+              {
+                "id": "c",
+                "texto": "Declarar 2,4 pessoas"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual fórmula dá a abscissa do vértice?",
+            "assunto": "Vértice: encontrar o melhor valor possível",
+            "orientacao": "Use o sinal de a e confira se o vértice pertence ao domínio; em domínio restrito, avalie os extremos permitidos.",
+            "explicacao": "−b/(2a) fornece a entrada; −Δ/(4a) fornece a imagem correspondente.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−b/(2a)"
+              },
+              {
+                "id": "b",
+                "texto": "−Δ/(4a)"
+              },
+              {
+                "id": "c",
+                "texto": "c/a"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

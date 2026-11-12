@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 40,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-40",
+      "titulo": "Missão P2: da regra ao gráfico",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Você recebe um conjunto de pares, uma expressão fatorada e um gráfico descrito por coordenadas. A missão é mostrar que sabe mudar de representação sem perder informações. Uma função tem várias maneiras de se apresentar; a matemática não deve mudar de personalidade a cada uma."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Integrar polinômios, classificações, composições e funções afim e quadrática."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Passos 21 a 39."
+              }
+            ],
+            "titulo": "Missão P2: da regra ao gráfico",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Nesta revisão autoral, conecte entradas e saídas, raízes e fatores, forma canônica e imagem. Para classificar uma função, declare domínio e contradomínio; para inverter, comprove bijeção; para dividir um polinômio, confira P=DQ+R. As tarefas retomam habilidades mapeadas no acervo para a P2 2025.2."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A função é especificada pelos conjuntos e pela regra de associação.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "Domínio + regra + contradomínio"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale |{1,2}×{a,b,c}|?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "Multiplicamos as duas cardinalidades: 2·3=6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "6"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A precisão vem de combinar representações que se conferem mutuamente. O zero de um polinômio aparece como fator linear, ponto no eixo x e resto nulo de uma divisão. A imagem de uma quadrática aparece como desigualdade na forma canônica e como alcance vertical de seu gráfico."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Integrar polinômios, classificações, composições e funções afim e quadrática.",
+                      "exemplo": "Considere f:[1,∞)→[0,∞), f(x)=(x−1)². A forma canônica dá vértice (1,0)."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "De y=(x−1)² e x−1≥0, obtemos x=1+√y. Logo f⁻¹(x)=1+√x, com domínio [0,∞) e imagem [1,∞)."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "R={(1,a),(2,a)}, com domínio {1,2} e contradomínio {a,b}, é qual tipo?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "Cada entrada tem uma saída, mas há colisão em a e b não é atingido.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não é função"
+              },
+              {
+                "id": "b",
+                "texto": "Função não injetora nem sobrejetora"
+              },
+              {
+                "id": "c",
+                "texto": "Bijeção"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Missão P2: da regra ao gráfico",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Considere f:[1,∞)→[0,∞), f(x)=(x−1)². A forma canônica dá vértice (1,0)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "No domínio x≥1, a função é estritamente crescente e atinge todo y≥0; portanto é bijetora."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "De y=(x−1)² e x−1≥0, obtemos x=1+√y. Logo f⁻¹(x)=1+√x, com domínio [0,∞) e imagem [1,∞)."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio de 1/(x²−4)?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "O denominador (x−2)(x+2) zera em ±2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ sem −2 e 2"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ sem 4"
+              },
+              {
+                "id": "c",
+                "texto": "[−2,2]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=x+1 e g(x)=2x, qual é f(g(3))?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "Primeiro g(3)=6; depois f(6)=7.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8"
+              },
+              {
+                "id": "b",
+                "texto": "9"
+              },
+              {
+                "id": "c",
+                "texto": "7"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "No exemplo, usar 1−√x como ramo da inversa devolveria valores fora do domínio [1,∞), exceto em zero. Os conjuntos não são detalhes de cabeçalho: eles escolhem qual volta é válida."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inversa de f(x)=2x+3 em ℝ?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "Isolar x em y=2x+3 dá x=(y−3)/2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/(2x+3)"
+              },
+              {
+                "id": "b",
+                "texto": "(x−3)/2"
+              },
+              {
+                "id": "c",
+                "texto": "(x+3)/2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de x³−4x por x−2?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "Avaliar em 2 dá 8−8=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "−2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Depois de responder, escreva uma solução discursiva para o exemplo e outra para uma fatoração cúbica. Cada uma deve conter hipóteses, desenvolvimento e conferência. Se uma conta acertada foi baseada numa regra falsa, trate-a como lacuna a revisar."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a forma fatorada de x³−4x?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "Extraímos x e depois usamos diferença de quadrados.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x−4)(x+4)"
+              },
+              {
+                "id": "b",
+                "texto": "x(x−4)²"
+              },
+              {
+                "id": "c",
+                "texto": "x(x−2)(x+2)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inclinação da reta por (0,1) e (2,5)?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "A variação vertical 4 dividida pela horizontal 2 dá 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/2"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Nesta revisão autoral, conecte entradas e saídas, raízes e fatores, forma canônica e imagem. Para classificar uma função, declare domínio e contradomínio; para inverter, comprove bijeção; para dividir um polinômio, confira P=DQ+R. As tarefas retomam habilidades mapeadas no acervo para a P2 2025.2."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: De y=(x−1)² e x−1≥0, obtemos x=1+√y. Logo f⁻¹(x)=1+√x, com domínio [0,∞) e imagem [1,∞)."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como integrar polinômios, classificações, composições e funções afim e quadrática. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de (x−1)²−2 em ℝ?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "O mínimo é −2, atingido no vértice de abscissa 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[−2,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[1,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a inversa de (x−1)² com domínio [1,∞) e contradomínio [0,∞)?",
+            "assunto": "Missão P2: da regra ao gráfico",
+            "orientacao": "Combine a forma algébrica com os conjuntos declarados antes de classificar, inverter ou encontrar a imagem.",
+            "explicacao": "O domínio exige o ramo com x−1 não negativo, dando 1+√x.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1−√x"
+              },
+              {
+                "id": "b",
+                "texto": "±√x"
+              },
+              {
+                "id": "c",
+                "texto": "1+√x"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -13,6 +13,8 @@ Plataforma de estudo por trilhas para estudantes de Tecnologia da Informação d
 
 O [guia do banco de aprendizagem](conteudos/README.md) descreve o formato JSON por ponto da trilha, os quatro tipos de questão e os comandos de validação e importação.
 
+A [Matemática Elementar completa](conteudos/elementar/README.md) tem 60 passos reescritos, 1.020 telas e 600 questões comentadas. O [leitor independente](public/materiais/elementar/index.html) funciona sem banco ou login; no aplicativo, o mapa é contínuo do passo 1 ao 60. Consulte as [regras de vidas e itens de reposição](docs/vidas-atividades.md) para o fluxo com progresso salvo.
+
 ## What's next? How do I make an app with this?
 
 We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.

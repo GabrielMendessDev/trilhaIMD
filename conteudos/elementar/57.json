@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 57,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-57",
+      "titulo": "Produto matricial: linha encontra coluna",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma tabela diz quantas unidades de cada recurso um projeto utiliza; outra diz o custo unitário em cada cenário fictício. Para obter o total por projeto e cenário, é preciso somar produtos de quantidades e custos. Esse encontro é linha com coluna."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Calcular produtos compatíveis e refutar comutatividade geral."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Matrizes, somas e multiplicações reais."
+              }
+            ],
+            "titulo": "Produto matricial: linha encontra coluna",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se A é m×n e B é n×p, AB existe e tem dimensão m×p. A entrada (AB)ᵢⱼ é a soma aᵢ₁b₁ⱼ+…+aᵢₙbₙⱼ. O número de colunas de A deve coincidir com o de linhas de B. Em geral AB≠BA; às vezes BA nem está definido. A identidade satisfaz AI=A e IA=A com ordens compatíveis."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma entrada do produto é a soma dos produtos da linha correspondente pela coluna correspondente.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "(AB)ᵢⱼ=Σₖ aᵢₖbₖⱼ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A é 2×3 e B é 3×4, qual é a dimensão de AB?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "As dimensões internas coincidem e as externas formam a dimensão do resultado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2×4"
+              },
+              {
+                "id": "b",
+                "texto": "3×3"
+              },
+              {
+                "id": "c",
+                "texto": "4×2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Cada linha de A fornece pesos para os termos de cada coluna de B. A soma de produtos combina todas as contribuições intermediárias. A associatividade (AB)C=A(BC) em dimensões compatíveis vem da distributividade das somas finitas. Comutatividade não é garantida porque trocar a ordem muda os papéis das linhas e colunas."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Calcular produtos compatíveis e refutar comutatividade geral.",
+                      "exemplo": "Multiplique A=[[1,2],[0,1]] por B=[[2,0],[3,1]]. Primeira linha × primeira coluna: 1·2+2·3=8. Primeira linha × segunda coluna: 1·0+2·1=2."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Invertendo a ordem, BA=[[2,4],[3,7]]. As matrizes diferem, embora ambos os produtos existam. Esse é um contraexemplo explícito à comutatividade geral."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A é 2×3 e B é 2×2, AB existe?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "As três colunas de A não coincidem com as duas linhas de B.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só se A tiver zeros"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Produto matricial: linha encontra coluna",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Multiplique A=[[1,2],[0,1]] por B=[[2,0],[3,1]]. Primeira linha × primeira coluna: 1·2+2·3=8. Primeira linha × segunda coluna: 1·0+2·1=2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Segunda linha × primeira coluna: 0·2+1·3=3. Segunda linha × segunda coluna: 0·0+1·1=1. Logo AB=[[8,2],[3,1]]."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Invertendo a ordem, BA=[[2,4],[3,7]]. As matrizes diferem, embora ambos os produtos existam. Esse é um contraexemplo explícito à comutatividade geral."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a regra de uma entrada de AB?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "A definição combina todos os índices intermediários.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Soma de uma coluna de A com uma linha de B"
+              },
+              {
+                "id": "b",
+                "texto": "Soma dos produtos de uma linha de A por uma coluna de B"
+              },
+              {
+                "id": "c",
+                "texto": "Produto das entradas de mesma posição"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No exemplo, qual é (AB)₁₁?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "1·2+2·3=8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8"
+              },
+              {
+                "id": "b",
+                "texto": "2"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Produto usual de matrizes não é multiplicação de entradas correspondentes. E ‘as duas são quadradas’ não garante que comutem. Antes de calcular, anote as dimensões intermediárias para detectar produtos impossíveis."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No exemplo, qual é (AB)₁₂?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "1·0+2·1=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é AB no exemplo?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "Cada entrada vem da respectiva combinação linha–coluna.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[2,4],[3,7]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[8,2],[3,1]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[2,0],[0,1]]"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma aplicação precisa explicar o que é somado em cada entrada. Nos custos fictícios, unidades de recurso vezes custo por unidade produzem custo total; conferir unidades ajuda a avaliar a ordem das matrizes. Faça a conta de uma entrada por extenso antes de usar o esquema compacto."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é BA no exemplo?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "Inverter a ordem muda as combinações e os valores.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[[2,4],[3,7]]"
+              },
+              {
+                "id": "b",
+                "texto": "[[8,2],[3,1]]"
+              },
+              {
+                "id": "c",
+                "texto": "[[2,2],[3,1]]"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em geral AB=BA?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "O exemplo fornece dois produtos diferentes, refutando a regra universal.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só porque ambas são matrizes"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se A é m×n e B é n×p, AB existe e tem dimensão m×p. A entrada (AB)ᵢⱼ é a soma aᵢ₁b₁ⱼ+…+aᵢₙbₙⱼ. O número de colunas de A deve coincidir com o de linhas de B. Em geral AB≠BA; às vezes BA nem está definido. A identidade satisfaz AI=A e IA=A com ordens compatíveis."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Invertendo a ordem, BA=[[2,4],[3,7]]. As matrizes diferem, embora ambos os produtos existam. Esse é um contraexemplo explícito à comutatividade geral."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como calcular produtos compatíveis e refutar comutatividade geral. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale AIₙ para A com n colunas?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "A identidade seleciona as próprias entradas de cada linha.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Aᵀ"
+              },
+              {
+                "id": "b",
+                "texto": "A"
+              },
+              {
+                "id": "c",
+                "texto": "Iₙ"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma matriz 1×3 vezes uma 3×1 produz qual tipo de resultado?",
+            "assunto": "Produto matricial: linha encontra coluna",
+            "orientacao": "Confira dimensões internas iguais e calcule uma linha do primeiro fator com uma coluna do segundo.",
+            "explicacao": "As dimensões externas são 1 e 1; o único elemento é uma soma de três produtos.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Matriz 1×1"
+              },
+              {
+                "id": "b",
+                "texto": "Matriz 3×3"
+              },
+              {
+                "id": "c",
+                "texto": "Matriz 3×1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+## verdict
+
+1. Resolved — Bito supporting-motion ownership. `src/app/_components/shell.module.css:275` no longer declares the obsolete infinite animation; unused `bito-float` keyframes are removed. The mounted `.bito-rest` image now receives `bito-breathe 6s var(--ease-settle) 2s 2` from `src/styles/motion.css:469`, with 2px translation and 0.4-degree rotation. Reduced-motion cancellation remains in both the shell and central motion rules. Inspected the real Chrome assertion in `tests/feedback-browser.mjs:65` checking computed animation name and iteration count against `['bito-breathe', '2']`; builder reports it passed again in the latest complete browser run.
+
+2. Resolved — discipline-colored trail energy, raised as one additional narrow documentation/code discrepancy after the first verdict. `src/styles/motion.css:723` now keeps stroke at inherited `--accent` through 70% of the energized segment animation, then settles to `--mint`; the static completed connection stays Mint. Inspected the real rendered segment assertion in `tests/feedback-browser.mjs:516`: its inherited non-purple test accent yields active stroke `rgb(22, 127, 188)`, the completed animation yields `rgb(37, 197, 171)`, and reduced motion retains the same stable Mint. Builder reports the complete post-change Chrome run passed in 77 seconds. Static screenshots establish final composition, not the transient stroke; runtime assertions supply that evidence. DESIGN.md:202 now correctly describes a wave from the interaction point with a centered keyboard fallback.
+
+Reopened every original required capture at the same paths after recapture: `.impeccable/review/desktop.png`, `.impeccable/review/mobile.png`, and motion captures erro-desktop, erro-mobile, acerto-mobile, revisao-mobile, resultado-desktop, resultado-mobile, desbloqueio-desktop, envio-desktop, erro-rede-desktop, navegacao-desktop, acerto-mobile-continuar, resultado-mobile-acoes. Evidence remains valid. Refreshed desktop captures preserve the subordinate mascot placement and the selected answer plus integrated result composition; scrolled mobile viewport proofs preserve unobstructed Continue and result actions. No regression from the fix batch observed.
+
+## remaining
+
+Clear. This ship covers the scored fixes, not the whole surface. The original review found Bito's cascade conflict; a later specifically supplied discrepancy added discipline-colored trail energy to the scored fixes. Both are resolved. This verdict pass scored only those corrections, the associated documentation wording, and their resulting captures; it did not conduct a new defect hunt or run a second detector.
+
+Limitations retained: reviewer inspected code, assertions, and supplied screenshots rather than independently replaying motion or executing tests. Runtime evidence is Chrome desktop/mobile emulation, not physical intermediate-phone or cross-browser verification. Remaining lesson answers were populated through HTTP rather than all visually traversed. Pre-existing design.json drift and incumbent non-motion design decisions remain outside scope. Review by independent agent Diego.
+
+disposition: ship

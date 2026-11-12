@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server";
 import { trails } from "~/app/aprender/trails";
 import { auth } from "~/server/auth";
 import { recordAnswer } from "~/server/lesson";
+import { readRpgState, rpgBalance } from "~/server/rpg";
 
 export async function POST(
 	request: NextRequest,
@@ -49,8 +50,21 @@ export async function POST(
 		const destination =
 			"feedback" in result && result.feedback
 				? `${base}?${new URLSearchParams({ retorno: key, rodada: round })}`
-				: base;
-		return Response.json({ destination });
+				: "nextKey" in result && result.nextKey
+					? `${base}?${new URLSearchParams({ item: result.nextKey })}`
+					: base;
+		return Response.json({
+			destination,
+			continueTo:
+				"nextKey" in result && result.nextKey
+					? `${base}?${new URLSearchParams({ item: result.nextKey })}`
+					: base,
+			assessment: "assessment" in result ? result.assessment : undefined,
+			rpg: rpgBalance(
+				await readRpgState(user.id),
+				"awards" in result ? result.awards : [],
+			),
+		});
 	} catch (error) {
 		console.error(
 			"Falha ao salvar a etapa",

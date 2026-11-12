@@ -1,0 +1,277 @@
+[
+  {
+    "route": "/",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/aprender",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/aprender",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/aprender",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/aprender",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/aprender",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/disciplinas",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/disciplinas",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/disciplinas",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/disciplinas",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/disciplinas",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/disciplinas/elementar",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/disciplinas/elementar",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/disciplinas/elementar",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/disciplinas/elementar",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/disciplinas/elementar",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/progresso",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/progresso",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/progresso",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/progresso",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/progresso",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/conquistas",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/conquistas",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/conquistas",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/conquistas",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/conquistas",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/loja",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/loja",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/loja",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/loja",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/loja",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/mochila",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/mochila",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/mochila",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/mochila",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/mochila",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/perfil",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/perfil",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/perfil",
+    "width": 768,
+    "overflow": -15
+  },
+  {
+    "route": "/perfil",
+    "width": 1024,
+    "overflow": -15
+  },
+  {
+    "route": "/perfil",
+    "width": 1920,
+    "overflow": -15
+  },
+  {
+    "route": "/missoes",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/missoes",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/missoes",
+    "width": 768,
+    "overflow": 0
+  },
+  {
+    "route": "/missoes",
+    "width": 1024,
+    "overflow": 0
+  },
+  {
+    "route": "/missoes",
+    "width": 1920,
+    "overflow": 0
+  },
+  {
+    "route": "/ranking",
+    "width": 320,
+    "overflow": 0
+  },
+  {
+    "route": "/ranking",
+    "width": 390,
+    "overflow": 0
+  },
+  {
+    "route": "/ranking",
+    "width": 768,
+    "overflow": 0
+  },
+  {
+    "route": "/ranking",
+    "width": 1024,
+    "overflow": 0
+  },
+  {
+    "route": "/ranking",
+    "width": 1920,
+    "overflow": 0
+  }
+]

@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { motionTiming } from "./motion";
 
 const previousValues = new Map<string, number>();
 
@@ -28,8 +29,11 @@ export function ProgressBar({
 			)
 				return;
 			animation = bar.current?.animate(
-				[{ inlineSize: `${previous}%` }, { inlineSize: `${percent}%` }],
-				{ duration: 240, easing: "ease-out" },
+				[
+					{ transform: `scaleX(${previous / percent})` },
+					{ transform: "scaleX(1)" },
+				],
+				motionTiming(bar.current, "step"),
 			);
 		}, 0);
 		return () => {

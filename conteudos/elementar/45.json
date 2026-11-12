@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 45,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-45",
+      "titulo": "Logarítmica: o gráfico de volta",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A curva exponencial já sabe ir da rodada ao tamanho. A logarítmica responde o caminho de volta: do tamanho à rodada. Trocar as coordenadas transforma a tabela e também gira nossa interpretação de entradas e saídas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Relacionar exponencial e logarítmica, incluindo eˣ e ln x."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Logaritmos, exponenciais e função inversa."
+              }
+            ],
+            "titulo": "Logarítmica: o gráfico de volta",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "f(x)=logₐx, a>0 e a≠1, tem domínio (0,∞), imagem ℝ, intercepto horizontal (1,0) e assíntota vertical x=0. É crescente para a>1 e decrescente para 0<a<1. É a inversa de aˣ. Em particular ln(eˣ)=x para x∈ℝ e e^(ln x)=x para x>0."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A exponencial natural e o logaritmo natural são inversos, respeitando o argumento positivo do logaritmo.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "ln(eˣ)=x; e^(ln x)=x para x>0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio de ln x?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "O argumento do logaritmo real deve ser positivo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ"
+              },
+              {
+                "id": "c",
+                "texto": "[0,∞)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O par (u,aᵘ) da exponencial corresponde a (aᵘ,u) da logarítmica, refletido em y=x. Domínio e imagem trocam de papel. Como aᵘ pode ser qualquer positivo e u pode ser qualquer real, obtemos os conjuntos declarados. Para base maior que 1, logₐx tende a −∞ quando x se aproxima de 0 pela direita."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/inversas.svg",
+                "alt": "Curvas 2ˣ e log₂x, refletidas em y=x. A exponencial passa por (0,1),(1,2),(2,4); a logarítmica passa por (1,0),(2,1),(4,2).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Curvas 2ˣ e log₂x, refletidas em y=x. A exponencial passa por (0,1),(1,2),(2,4); a logarítmica passa por (1,0),(2,1),(4,2).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de ln x?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "Cada real u aparece como ln(eᵘ).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[0,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Logarítmica: o gráfico de volta",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Na exponencial 2ˣ, os pontos (−1,1/2),(0,1),(1,2) tornam-se (1/2,−1),(1,0),(2,1) em log₂x."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Assim log₂(1/2)=−1 e log₂2=1. A curva cruza o eixo x em x=1 e não cruza o eixo y, pois x=0 é proibido."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Para ln, o mesmo raciocínio fornece ln1=0 e ln e=1. A expressão e^(ln7) retorna 7 e ln(e⁻²) retorna −2."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o intercepto horizontal de logₐx?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "logₐ1=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,0)"
+              },
+              {
+                "id": "b",
+                "texto": "(1,0)"
+              },
+              {
+                "id": "c",
+                "texto": "(0,1)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a assíntota vertical da função logarítmica básica?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "O gráfico se aproxima do eixo y pelo lado positivo do domínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x=0"
+              },
+              {
+                "id": "b",
+                "texto": "y=0"
+              },
+              {
+                "id": "c",
+                "texto": "x=1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "ln0 não é zero nem um número real muito negativo: não está definido. A assíntota indica um comportamento de aproximação. Esta etapa mantém domínio geral da função básica; cálculos elaborados de domínio de expressões logarítmicas ficam fora da prioridade da P3 2025.2 conforme o acervo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale ln(e⁻²)?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "ln desfaz a exponencial natural em todo expoente real.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "e⁻²"
+              },
+              {
+                "id": "c",
+                "texto": "−2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale e^(ln7)?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "O argumento 7 é positivo, permitindo a composição inversa.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "e·7"
+              },
+              {
+                "id": "b",
+                "texto": "7"
+              },
+              {
+                "id": "c",
+                "texto": "ln7"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Desenhe a reta y=x e reflita três pontos da exponencial para construir a logarítmica. Escreva as coordenadas em texto junto ao desenho. É uma forma de visualizar inversas sem depender de um aplicativo ou de percepção de cor."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale ln0 em ℝ?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "Não há expoente real que faça eˣ=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não está definido"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "−1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se (2,4) está em y=2ˣ, qual ponto correspondente está na inversa?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "A inversão troca as coordenadas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(−2,4)"
+              },
+              {
+                "id": "b",
+                "texto": "(2,−4)"
+              },
+              {
+                "id": "c",
+                "texto": "(4,2)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "f(x)=logₐx, a>0 e a≠1, tem domínio (0,∞), imagem ℝ, intercepto horizontal (1,0) e assíntota vertical x=0. É crescente para a>1 e decrescente para 0<a<1. É a inversa de aˣ. Em particular ln(eˣ)=x para x∈ℝ e e^(ln x)=x para x>0."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Para ln, o mesmo raciocínio fornece ln1=0 e ln e=1. A expressão e^(ln7) retorna 7 e ln(e⁻²) retorna −2."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como relacionar exponencial e logarítmica, incluindo eˣ e ln x. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como é a monotonia de log_(1/2)x?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "A função inversa mantém o sentido de monotonia da exponencial de base 1/2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Constante"
+              },
+              {
+                "id": "b",
+                "texto": "Estritamente decrescente"
+              },
+              {
+                "id": "c",
+                "texto": "Estritamente crescente"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o ponto comum de todas as logarítmicas básicas admissíveis?",
+            "assunto": "Logarítmica: o gráfico de volta",
+            "orientacao": "Troque entrada e saída da exponencial e acompanhe a troca de domínio e imagem.",
+            "explicacao": "Toda base admissível elevada a zero produz 1, logo logₐ1=0.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(1,0)"
+              },
+              {
+                "id": "b",
+                "texto": "(0,1)"
+              },
+              {
+                "id": "c",
+                "texto": "(e,1)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

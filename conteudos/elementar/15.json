@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 15,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-15",
+      "titulo": "Biquadradas: a troca que precisa voltar",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma equação de quarto grau chega usando apenas x⁴ e x². Ela parece enorme, mas repete a mesma peça. Trocar x² por t é como perceber que o monstro final usa o mesmo padrão do tutorial. Só não esqueça de voltar para x."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Resolver equações biquadradas e controlar a restrição t≥0."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Equações quadráticas e raízes (passos 13 e 14)."
+              }
+            ],
+            "titulo": "Biquadradas: a troca que precisa voltar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma biquadrada tem a forma ax⁴+bx²+c=0, a≠0. Com t=x², obtemos at²+bt+c=0. No universo real, somente t≥0 pode gerar x. Se t>0, aparecem x=±√t; se t=0, apenas x=0; se t<0, não há x real associado."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A substituição t igual a x ao quadrado exige t não negativo no universo real.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "t=x²≥0"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Com t=x², em que se transforma x⁴−5x²+4=0?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "Substituímos x⁴ por t² e x² por t.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "t²−5t+4=0"
+              },
+              {
+                "id": "b",
+                "texto": "t⁴−5t+4=0"
+              },
+              {
+                "id": "c",
+                "texto": "t²−5t²+4=0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A substituição funciona porque x⁴=(x²)²=t². Resolver a quadrática em t fornece candidatos, não as respostas finais. O mapa x↦x² junta os valores opostos x e −x: por isso cada t positivo produz duas raízes reais. A simetria explica por que raízes não nulas vêm aos pares."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Resolver equações biquadradas e controlar a restrição t≥0.",
+                      "exemplo": "Resolva x⁴−5x²+4=0. Com t=x²: t²−5t+4=(t−1)(t−4)=0."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Logo S={−2,−1,1,2}. Conferindo x=2: 16−20+4=0; as raízes opostas funcionam porque só há potências pares."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se t=9, quais x reais correspondem a t=x²?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "As duas raízes quadradas com sinais opostos têm quadrado 9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas 3"
+              },
+              {
+                "id": "b",
+                "texto": "−9 e 9"
+              },
+              {
+                "id": "c",
+                "texto": "−3 e 3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Biquadradas: a troca que precisa voltar",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva x⁴−5x²+4=0. Com t=x²: t²−5t+4=(t−1)(t−4)=0."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "As possibilidades t=1 e t=4 são não negativas. Retorne: x²=1 ou x²=4."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Logo S={−2,−1,1,2}. Conferindo x=2: 16−20+4=0; as raízes opostas funcionam porque só há potências pares."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se t=−4, quantos x reais correspondem?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "Um quadrado real nunca é negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se t=0, qual é o conjunto de valores de x?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "x²=0 só é possível para x=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{0}"
+              },
+              {
+                "id": "b",
+                "texto": "{−1,1}"
+              },
+              {
+                "id": "c",
+                "texto": "∅"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não escreva x=1 ou x=4 depois de resolver t. Também não aceite x=±√(−1) como raízes reais. O exercício pode ter zero, uma, duas, três ou quatro raízes reais distintas; a raiz zero não ganha uma cópia por usar ±0."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução real de x⁴−5x²+4=0?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "Os valores de t são 1 e 4; suas raízes quadradas geram os quatro x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{1,4}"
+              },
+              {
+                "id": "b",
+                "texto": "{−4,−1,1,4}"
+              },
+              {
+                "id": "c",
+                "texto": "{−2,−1,1,2}"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x⁴−9=0 em ℝ.",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "t²=9 dá t=3 ou −3; apenas t=3 gera x real.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "∅"
+              },
+              {
+                "id": "b",
+                "texto": "{−√3,√3}"
+              },
+              {
+                "id": "c",
+                "texto": "{−3,3}"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use um roteiro de três verbos: substituir, filtrar, retornar. Em problemas de medidas, ainda pode haver uma condição extra x≥0. As quatro soluções algébricas não são automaticamente quatro medidas possíveis."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas raízes reais distintas tem x⁴−4x²=0?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "x²(x²−4)=0 gera x=0 e x=±2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "4"
+              },
+              {
+                "id": "c",
+                "texto": "2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a solução real de x⁴+x²+1=0?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "Todos os termos são não negativos e o termo constante é positivo; a soma nunca zera.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{−1,1}"
+              },
+              {
+                "id": "b",
+                "texto": "{0}"
+              },
+              {
+                "id": "c",
+                "texto": "∅"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma biquadrada tem a forma ax⁴+bx²+c=0, a≠0. Com t=x², obtemos at²+bt+c=0. No universo real, somente t≥0 pode gerar x. Se t>0, aparecem x=±√t; se t=0, apenas x=0; se t<0, não há x real associado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Logo S={−2,−1,1,2}. Conferindo x=2: 16−20+4=0; as raízes opostas funcionam porque só há potências pares."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como resolver equações biquadradas e controlar a restrição t≥0. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se uma medida x≥0 satisfaz x⁴−5x²+4=0, quais valores são admissíveis?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "Filtramos as quatro raízes pela condição de medida não negativa.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1 e 4"
+              },
+              {
+                "id": "b",
+                "texto": "1 e 2"
+              },
+              {
+                "id": "c",
+                "texto": "−2 e −1"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que raízes não nulas aparecem aos pares numa biquadrada?",
+            "assunto": "Biquadradas: a troca que precisa voltar",
+            "orientacao": "Resolva em t, descarte valores negativos e volte a x, incluindo os dois sinais quando cabível.",
+            "explicacao": "A simetria vem dos expoentes pares; não vale para qualquer equação.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Substituir x por −x preserva as potências pares"
+              },
+              {
+                "id": "b",
+                "texto": "Toda equação tem raízes opostas"
+              },
+              {
+                "id": "c",
+                "texto": "O grau sempre dá quatro raízes reais"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

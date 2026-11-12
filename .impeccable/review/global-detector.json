@@ -1,0 +1,1382 @@
+[
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 9,
+    "snippet": "Undocumented color #493081a8 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#493081a8",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 10,
+    "snippet": "Undocumented color #26265890 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#26265890",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 16,
+    "snippet": "Undocumented color #542c9baa is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#542c9baa",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 17,
+    "snippet": "Undocumented color #34378a9c is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#34378a9c",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 18,
+    "snippet": "Undocumented color #49367280 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#49367280",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 19,
+    "snippet": "Undocumented color #2d1c57 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#2d1c57",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 49,
+    "snippet": "font-size: 1.625rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.625rem",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 64,
+    "snippet": "Undocumented color #4828a67a is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#4828a67a",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 99,
+    "snippet": "Undocumented color #d4c5ff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#d4c5ff",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 128,
+    "snippet": "Undocumented color #b6a1fa is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#b6a1fa",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 129,
+    "snippet": "Undocumented color #452491 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#452491",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 198,
+    "snippet": "border-radius: 0.65rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.65rem",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 200,
+    "snippet": "font-size: 0.625rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.625rem",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 214,
+    "snippet": "Undocumented color #553897 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#553897",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 214,
+    "snippet": "Undocumented color #362764 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#362764",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 245,
+    "snippet": "font-size: 0.8125rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.8125rem",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 297,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 315,
+    "snippet": "Undocumented color #57437f is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#57437f",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 316,
+    "snippet": "Undocumented color #c6a6ff32 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#c6a6ff32",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 329,
+    "snippet": "Undocumented color #da8fff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#da8fff",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\shell.module.css",
+    "line": 377,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "dashboard.tsx",
+      "skip-link.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 60,
+    "snippet": "font-size: 0.95rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.95rem",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 87,
+    "snippet": "font-size: 1.2rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.2rem",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 95,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 125,
+    "snippet": "Undocumented color #e2c5ff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#e2c5ff",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 125,
+    "snippet": "Undocumented color #9968f2 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#9968f2",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 125,
+    "snippet": "Undocumented color #4b279c is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#4b279c",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 131,
+    "snippet": "Undocumented color #ffecd1 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffecd1",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 131,
+    "snippet": "Undocumented color #ffc987 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffc987",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 131,
+    "snippet": "Undocumented color #a95a32 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#a95a32",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 132,
+    "snippet": "Undocumented color #ee8958 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ee8958",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 137,
+    "snippet": "Undocumented color #d2fff6 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#d2fff6",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 137,
+    "snippet": "Undocumented color #69e5d4 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#69e5d4",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 137,
+    "snippet": "Undocumented color #157c77 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#157c77",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 138,
+    "snippet": "Undocumented color #9af2e3 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#9af2e3",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\_components\\study.module.css",
+    "line": 138,
+    "snippet": "Undocumented color #28bbad is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#28bbad",
+    "importedBy": [
+      "trail-card.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 36,
+    "snippet": "font-size: 1.625rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.625rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 56,
+    "snippet": "font-size: 1.125rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.125rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 67,
+    "snippet": "font-size: 1.125rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.125rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 102,
+    "snippet": "font-size: 0.8125rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.8125rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 153,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 194,
+    "snippet": "font-size: 0.8125rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.8125rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 240,
+    "snippet": "border-radius: 0.625rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.625rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 367,
+    "snippet": "border-radius: 0.5rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.5rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\_etapa\\stage.module.css",
+    "line": 371,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "activity.tsx",
+      "content.tsx",
+      "controls.tsx",
+      "screen.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 98,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 131,
+    "snippet": "border-radius: 0.5rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.5rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 135,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 190,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 205,
+    "snippet": "Undocumented color #6755d340 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#6755d340",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 207,
+    "snippet": "Undocumented color #15112b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#15112b",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 231,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 242,
+    "snippet": "border-radius: 0.9375rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.9375rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 246,
+    "snippet": "font-size: clamp(1.125rem, 4vw, 1.625rem) has fluid endpoints 1.125rem and 1.625rem off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.125rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 346,
+    "snippet": "font-size: 0.6875rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.6875rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 357,
+    "snippet": "border-radius: 0.875rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.875rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 376,
+    "snippet": "Undocumented color #39315f is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#39315f",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 401,
+    "snippet": "Undocumented color #6be7d7 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#6be7d7",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 401,
+    "snippet": "Undocumented color #1bafaa is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#1bafaa",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 413,
+    "snippet": "Undocumented color #ffe4d3 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffe4d3",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 439,
+    "snippet": "Undocumented color #514775 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#514775",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 439,
+    "snippet": "Undocumented color #342b58 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#342b58",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 448,
+    "snippet": "Undocumented color #4bdfd0 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#4bdfd0",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 448,
+    "snippet": "Undocumented color #179c9e is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#179c9e",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 468,
+    "snippet": "font-size: 0.6875rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.6875rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 482,
+    "snippet": "border-radius: 0.5rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.5rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 486,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 503,
+    "snippet": "border-radius: 0.5rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.5rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 507,
+    "snippet": "font-size: 0.6875rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.6875rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 536,
+    "snippet": "font-size: 0.6875rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.6875rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 559,
+    "snippet": "border-radius: 0.625rem is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "0.625rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 568,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "12px",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 603,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 616,
+    "snippet": "font-size: 0.6875rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.6875rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 631,
+    "snippet": "font-size: 1.375rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.375rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 672,
+    "snippet": "font-size: 0.8125rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.8125rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 719,
+    "snippet": "font-size: 0.75rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.75rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\aprender\\trail.module.css",
+    "line": 727,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "page.tsx",
+      "trail-diagram.tsx",
+      "trail-map.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 30,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 38,
+    "snippet": "font-size: 0.8rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.8rem"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 73,
+    "snippet": "Undocumented color #aa94ff59 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#aa94ff59"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 75,
+    "snippet": "Undocumented color #8978f654 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#8978f654"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 76,
+    "snippet": "Undocumented color #383777 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#383777"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 106,
+    "snippet": "font-size: 0.8rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.8rem"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 114,
+    "snippet": "Undocumented color #bca9ff70 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#bca9ff70"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\sim\\projetos\\trilha-imd\\src\\app\\home.module.css",
+    "line": 115,
+    "snippet": "Undocumented color #4a327e is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#4a327e"
+  }
+]

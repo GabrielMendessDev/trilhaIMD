@@ -1,814 +1,495 @@
 {
-	"versao": 1,
-	"trilha": "elementar",
-	"ponto": 2,
-	"atividades": [
-		{
-			"id": "controle-de-acesso",
-			"titulo": "Controle de acesso na feira",
-			"questoes": [
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "diagrama",
-						"titulo": "Duas oficinas, três regiões",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Duas oficinas podem receber a mesma pessoa. No diagrama de Venn, cada círculo é uma oficina. A região compartilhada guarda quem se inscreveu nas duas. Você pode usar a mesma ideia para cruzar duas listas de permissões no computador."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "Somente A: Ana e Lia. Nas duas: Caio. Somente B: Ivo.",
-								"dados": {
-									"modelo": "venn",
-									"esquerda": "Ana, Lia",
-									"centro": "Caio",
-									"direita": "Ivo"
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "diagrama",
-								"legenda": "Com A = {Ana, Caio, Lia} e B = {Caio, Ivo}, leia as operações olhando para as regiões.",
-								"dados": {
-									"modelo": "quadro",
-									"linhas": [
-										{
-											"simbolo": "∪",
-											"leitura": "união",
-											"exemplo": "A ∪ B = {Ana, Caio, Ivo, Lia}. Basta estar em pelo menos uma oficina."
-										},
-										{
-											"simbolo": "∩",
-											"leitura": "interseção",
-											"exemplo": "A ∩ B = {Caio}. É preciso estar em ambas as oficinas."
-										},
-										{
-											"simbolo": "∖",
-											"leitura": "diferença",
-											"exemplo": "A ∖ B = {Ana, Lia}. Lemos A menos B. Guarde os elementos de A que faltam em B."
-										},
-										{
-											"simbolo": "Aᶜ",
-											"leitura": "complementar de A",
-											"exemplo": "São os elementos do universo U que não estão em A. Se U = A ∪ B, então Aᶜ = {Ivo}."
-										}
-									]
-								}
-							},
-							{
-								"id": "bloco-4",
-								"tipo": "texto",
-								"texto": "Na união, conte a pessoa em comum uma vez. Na diferença, trocar a ordem muda quais elementos ficam. Uma interseção vazia, escrita ∅, indica que nenhum nome foi compartilhado."
-							}
-						]
-					},
-					"numero": 1,
-					"ordem": 1
-				},
-				{
-					"numero": 2,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "A = {Ana, Caio, Lia} fez a oficina de robótica. B = {Caio, Ivo} fez a de jogos. Quem fez as duas?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{Ana, Lia}"
-							},
-							{
-								"id": "b",
-								"texto": "{Ivo}"
-							},
-							{
-								"id": "c",
-								"texto": "{Caio}"
-							},
-							{
-								"id": "d",
-								"texto": "{Ana, Caio, Ivo, Lia}"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Interseção",
-						"orientacao": "Confira apenas a região comum aos dois grupos.",
-						"explicacao": "Caio aparece nas duas listas. Assim, a interseção é {Caio}."
-					},
-					"ordem": 2
-				},
-				{
-					"numero": 3,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "No universo U = {Ana, Bia, Caio, Dani}, o grupo C = {Ana, Dani} já fez check-in. Qual é o complementar de C em U?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{Ana, Dani}"
-							},
-							{
-								"id": "b",
-								"texto": "{Bia, Caio}"
-							},
-							{
-								"id": "c",
-								"texto": "∅"
-							},
-							{
-								"id": "d",
-								"texto": "{Ana, Bia, Caio, Dani}"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Complementar",
-						"orientacao": "Comece pelo universo U e retire quem fez check-in.",
-						"explicacao": "Ao retirar Ana e Dani de U, sobram Bia e Caio."
-					},
-					"ordem": 3
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"assunto": "Operações com conjuntos",
-						"enunciado": "Associe cada pedido da feira à operação certa. Considere A e B subconjuntos das inscrições U.",
-						"orientacao": "Pergunte se a condição pede pelo menos uma lista, as duas ou apenas uma delas.",
-						"explicacao": "A união cobre pelo menos uma lista, a interseção cobre as duas, A ∖ B retém só A e U ∖ A retém os inscritos de fora de A.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "Pelo menos uma oficina"
-							},
-							{
-								"id": "item-2",
-								"texto": "As duas oficinas"
-							},
-							{
-								"id": "item-3",
-								"texto": "Só na oficina A"
-							},
-							{
-								"id": "item-4",
-								"texto": "Inscritos que não estão em A"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "U ∖ A"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "A ∩ B"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "A ∪ B"
-							},
-							{
-								"id": "opcao-4",
-								"texto": "A ∖ B"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-4"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-1"
-							}
-						]
-					},
-					"numero": 13,
-					"ordem": 4
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Operações com conjuntos",
-						"enunciado": "Se o grupo de jogos contém {Bia} e o grupo de redes contém {Ivo}, o que vale para a interseção?",
-						"orientacao": "Procure um nome presente nos dois grupos.",
-						"explicacao": "Bia e Ivo são nomes diferentes e nenhum aparece nos dois grupos. A interseção é ∅.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{Bia, Ivo}"
-							},
-							{
-								"id": "b",
-								"texto": "∅"
-							},
-							{
-								"id": "c",
-								"texto": "{∅}"
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 14,
-					"ordem": 5
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Diferença entre conjuntos",
-						"enunciado": "O menu A = {som, vídeo} e o menu B = {vídeo, rede} mostram opções diferentes. Qual é B ∖ A?",
-						"orientacao": "Comece pelo conjunto à esquerda da diferença.",
-						"explicacao": "Começando em B, removemos vídeo porque também está em A. Sobra rede.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{som}"
-							},
-							{
-								"id": "b",
-								"texto": "{vídeo}"
-							},
-							{
-								"id": "c",
-								"texto": "{rede}"
-							}
-						],
-						"gabarito": "c"
-					},
-					"numero": 15,
-					"ordem": 6
-				},
-				{
-					"numero": 4,
-					"modo": "questao",
-					"questao": {
-						"tipo": "ligacao",
-						"enunciado": "Ligue cada pedido sobre as oficinas à operação correspondente.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "Alguém em pelo menos uma oficina"
-							},
-							{
-								"id": "item-2",
-								"texto": "Alguém em ambas as oficinas"
-							},
-							{
-								"id": "item-3",
-								"texto": "Alguém só na oficina A"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "A ∖ B"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "A ∪ B"
-							},
-							{
-								"id": "opcao-3",
-								"texto": "A ∩ B"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-3"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-1"
-							}
-						],
-						"assunto": "Operações com conjuntos",
-						"orientacao": "“Pelo menos uma” permite as duas. “Só A” exclui quem está em B.",
-						"explicacao": "União reúne as inscrições, interseção pega as compartilhadas e diferença retira de A quem pertence a B."
-					},
-					"ordem": 7
-				},
-				{
-					"numero": 5,
-					"modo": "questao",
-					"questao": {
-						"tipo": "passo-a-passo",
-						"enunciado": "A equipe da feira registra P = {Ana, Beto, Iara} e Q = {Beto, Rui}. Veja como escolher a operação certa.",
-						"passos": [
-							{
-								"id": "passo-1",
-								"titulo": "Procure quem aparece nas duas listas",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "Somente Beto aparece nas duas. Assim, P ∩ Q = {Beto}."
-									}
-								]
-							},
-							{
-								"id": "passo-2",
-								"titulo": "Reúna as inscrições",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "P ∪ Q = {Ana, Beto, Iara, Rui}. Beto aparece uma vez na união."
-									}
-								]
-							},
-							{
-								"id": "passo-3",
-								"titulo": "Mantenha apenas o que é exclusivo",
-								"blocos": [
-									{
-										"id": "texto",
-										"tipo": "texto",
-										"texto": "P ∖ Q = {Ana, Iara}. Trocar a ordem muda a pergunta: Q ∖ P = {Rui}."
-									}
-								]
-							}
-						]
-					},
-					"ordem": 8
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "diagrama",
-						"titulo": "Intervalos na reta do atendimento",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Entre 9h e 12h, o tempo pode assumir valores como 9h30. Para representar toda a faixa usamos um intervalo. O colchete fechado inclui a extremidade. O parêntese deixa a extremidade de fora. Assim, [9, 12) representa 9 ≤ t < 12."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "Cada marca corresponde a uma hora. O ponto 9 é o início da faixa [9, 12).",
-								"dados": {
-									"modelo": "reta",
-									"marcas": ["8", "9", "10", "11", "12", "13"],
-									"destaque": 1
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "texto",
-								"texto": "Uma faixa sem limite à direita usa ∞. O infinito não é um horário, por isso a extremidade fica sempre aberta. Para atender duas regras ao mesmo tempo, procure a interseção dos intervalos."
-							}
-						]
-					},
-					"numero": 16,
-					"ordem": 9
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Intervalos reais",
-						"enunciado": "O balcão aceita senhas somente depois das 8h e até as 11h, incluindo exatamente 11h. Qual expressão traduz a regra?",
-						"orientacao": "Decida separadamente se 8 e 11 podem entrar.",
-						"explicacao": "“Depois das 8” exclui 8 e “até as 11, inclusive” inclui 11. A escrita correta é (8, 11].",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[8, 11)"
-							},
-							{
-								"id": "b",
-								"texto": "[8, 11]"
-							},
-							{
-								"id": "c",
-								"texto": "(8, 11]"
-							}
-						],
-						"gabarito": "c"
-					},
-					"numero": 17,
-					"ordem": 10
-				},
-				{
-					"numero": 6,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O balcão abre às 9h e deixa de aceitar novas senhas exatamente às 12h. Qual intervalo representa os horários aceitos?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "(9, 12)"
-							},
-							{
-								"id": "b",
-								"texto": "[9, 12]"
-							},
-							{
-								"id": "c",
-								"texto": "(9, 12]"
-							},
-							{
-								"id": "d",
-								"texto": "[9, 12)"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Intervalos reais",
-						"orientacao": "Leia quais horários exatos ainda aceitam novas senhas.",
-						"explicacao": "9h já está disponível e 12h já está fora. Por isso [9, 12)."
-					},
-					"ordem": 11
-				},
-				{
-					"numero": 7,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O técnico está livre das 10h às 14h, incluindo as pontas. A sala está disponível das 12h em diante, mas fecha às 15h em ponto. Qual intervalo atende às duas condições?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[12, 14]"
-							},
-							{
-								"id": "b",
-								"texto": "[10, 15)"
-							},
-							{
-								"id": "c",
-								"texto": "(12, 14)"
-							},
-							{
-								"id": "d",
-								"texto": "[12, 15)"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "Interseção de intervalos",
-						"orientacao": "Procure o primeiro e o último horário aceitos pelas duas regras.",
-						"explicacao": "Os dois serviços funcionam a partir das 12h até 14h. As duas extremidades estão incluídas."
-					},
-					"ordem": 12
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Cardinalidade sem contar duas vezes",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Cardinalidade é a quantidade de elementos de um conjunto finito. Escrevemos |A| para contar elementos de A. Se Ana e Lia estão em A, então |A| = 2. Aqui as barras indicam contagem porque estão em volta de um conjunto."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Ao somar os totais de A e B, quem está na interseção foi contado duas vezes. Subtraia esse total uma vez. Por exemplo, 5 inscritos em A, 4 em B e 2 em ambas dão 5 + 4 − 2 = 7 inscritos na união."
-							}
-						]
-					},
-					"numero": 18,
-					"ordem": 13
-				},
-				{
-					"numero": 8,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "O conjunto de quem trouxe notebook tem 12 pessoas. O de quem trouxe extensão tem 8. Três pessoas aparecem nos dois. Quantas aparecem em pelo menos um?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "20"
-							},
-							{
-								"id": "b",
-								"texto": "23"
-							},
-							{
-								"id": "c",
-								"texto": "17"
-							},
-							{
-								"id": "d",
-								"texto": "9"
-							}
-						],
-						"gabarito": "c",
-						"assunto": "Cardinalidade",
-						"orientacao": "Ao somar os dois totais, verifique se alguém já foi contado.",
-						"explicacao": "12 + 8 conta as três pessoas comuns duas vezes. Logo a união tem 12 + 8 − 3 = 17 pessoas."
-					},
-					"ordem": 14
-				},
-				{
-					"numero": 9,
-					"modo": "questao",
-					"questao": {
-						"tipo": "associacao",
-						"enunciado": "Uma máquina só funciona nos tempos t ∈ (2, 5]. Marque se cada horário está no intervalo.",
-						"itens": [
-							{
-								"id": "item-1",
-								"texto": "t = 2"
-							},
-							{
-								"id": "item-2",
-								"texto": "t = 2,5"
-							},
-							{
-								"id": "item-3",
-								"texto": "t = 5"
-							},
-							{
-								"id": "item-4",
-								"texto": "t = 5,1"
-							}
-						],
-						"alternativas": [
-							{
-								"id": "opcao-1",
-								"texto": "Fora"
-							},
-							{
-								"id": "opcao-2",
-								"texto": "Dentro"
-							}
-						],
-						"gabarito": [
-							{
-								"origem": "item-1",
-								"destino": "opcao-1"
-							},
-							{
-								"origem": "item-2",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-3",
-								"destino": "opcao-2"
-							},
-							{
-								"origem": "item-4",
-								"destino": "opcao-1"
-							}
-						],
-						"assunto": "Intervalos reais",
-						"orientacao": "Parêntese deixa a extremidade de fora e colchete a mantém.",
-						"explicacao": "2 fica de fora. 2,5 e 5 entram. 5,1 já ultrapassa a faixa."
-					},
-					"ordem": 15
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "explicacao",
-						"titulo": "Conjunto das partes",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Uma configuração de sala pode ligar som, rede, ambos ou nenhum. Para R = {som, rede}, escrevemos 𝒫(R) = {∅, {som}, {rede}, {som, rede}}. Cada elemento de 𝒫(R) é um subconjunto de R."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "texto",
-								"texto": "Cada recurso oferece duas escolhas independentes: ligado ou desligado. Com n recursos, há 2ⁿ subconjuntos. Para contar apenas os próprios, retire a configuração que liga todos. Mesmo quando os recursos ficam desligados, o conjunto vazio continua sendo uma opção."
-							}
-						]
-					},
-					"numero": 19,
-					"ordem": 16
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Conjunto das partes",
-						"enunciado": "Para A = {som, luz}, qual item pertence a 𝒫(A)?",
-						"orientacao": "Em 𝒫(A), cada item deve ser um conjunto que usa só elementos de A.",
-						"explicacao": "{som} é subconjunto de A. O nome som sozinho é elemento de A, e {vídeo} usa um elemento ausente.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "som"
-							},
-							{
-								"id": "b",
-								"texto": "{som}"
-							},
-							{
-								"id": "c",
-								"texto": "{vídeo}"
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 20,
-					"ordem": 17
-				},
-				{
-					"modo": "conteudo",
-					"conteudo": {
-						"categoria": "material",
-						"titulo": "Mapa de operações para consultar",
-						"blocos": [
-							{
-								"id": "bloco-1",
-								"tipo": "texto",
-								"texto": "Em A ∪ B, conte todas as pessoas de A ou B uma única vez. Em A ∩ B, conte as compartilhadas. Em A ∖ B, comece sempre por A. Em Aᶜ, comece pelo universo U."
-							},
-							{
-								"id": "bloco-2",
-								"tipo": "diagrama",
-								"legenda": "Da esquerda para a direita: só A, A e B, só B.",
-								"dados": {
-									"modelo": "venn",
-									"esquerda": "Lia",
-									"centro": "Bia",
-									"direita": "Ivo"
-								}
-							},
-							{
-								"id": "bloco-3",
-								"tipo": "referencia",
-								"titulo": "Conjuntos e conjuntos numéricos",
-								"fonte": "Portal da OBMEP/IMPA",
-								"url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=87"
-							}
-						]
-					},
-					"numero": 21,
-					"ordem": 18
-				},
-				{
-					"numero": 10,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Há três recursos independentes na sala: som, projeção e rede. Cada configuração corresponde a um subconjunto dos recursos ligados. Quantas configurações existem, incluindo a sala toda desligada?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "6"
-							},
-							{
-								"id": "b",
-								"texto": "8"
-							},
-							{
-								"id": "c",
-								"texto": "7"
-							},
-							{
-								"id": "d",
-								"texto": "9"
-							}
-						],
-						"gabarito": "b",
-						"assunto": "Conjunto das partes",
-						"orientacao": "Cada recurso tem duas escolhas independentes.",
-						"explicacao": "São 2 · 2 · 2 = 8 configurações, incluindo ligar todos e desligar todos."
-					},
-					"ordem": 19
-				},
-				{
-					"numero": 11,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Se A = {som, projeção, rede}, quantos subconjuntos próprios de A existem?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "3"
-							},
-							{
-								"id": "b",
-								"texto": "6"
-							},
-							{
-								"id": "c",
-								"texto": "8"
-							},
-							{
-								"id": "d",
-								"texto": "7"
-							}
-						],
-						"gabarito": "d",
-						"assunto": "Subconjuntos próprios",
-						"orientacao": "Conte todos os subconjuntos e depois retire aquele que é igual a A.",
-						"explicacao": "De oito subconjuntos, só o próprio A deve sair. Ficam sete subconjuntos próprios."
-					},
-					"ordem": 20
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "União e diferença",
-						"enunciado": "Uma plataforma registra A = {Bia, Caio} no teste web e B = {Bia, Ivo} no teste mobile. Quem passou em exatamente um teste?",
-						"orientacao": "Junte as regiões exclusivas, retirando a região compartilhada.",
-						"explicacao": "A união é {Bia, Caio, Ivo} e a interseção é {Bia}. Retirando Bia, ficam Caio e Ivo.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "{Caio, Ivo}"
-							},
-							{
-								"id": "b",
-								"texto": "{Bia}"
-							},
-							{
-								"id": "c",
-								"texto": "{Bia, Caio, Ivo}"
-							}
-						],
-						"gabarito": "a"
-					},
-					"numero": 22,
-					"ordem": 21
-				},
-				{
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"assunto": "Conjunto vazio",
-						"enunciado": "A turma tem uma lista de presença A. O que sobra em A ∖ A?",
-						"orientacao": "Retire de A todos os elementos que também pertencem a A.",
-						"explicacao": "Todo elemento de A é removido. A diferença A ∖ A é ∅.",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "A"
-							},
-							{
-								"id": "b",
-								"texto": "∅"
-							},
-							{
-								"id": "c",
-								"texto": "{∅}"
-							}
-						],
-						"gabarito": "b"
-					},
-					"numero": 23,
-					"ordem": 22
-				},
-				{
-					"numero": 12,
-					"modo": "questao",
-					"questao": {
-						"tipo": "multipla-escolha",
-						"enunciado": "Duas sessões ocupam [8, 10) e [10, 11] no mesmo dia. Qual é a união dos horários ocupados?",
-						"alternativas": [
-							{
-								"id": "a",
-								"texto": "[8, 11]"
-							},
-							{
-								"id": "b",
-								"texto": "[8, 11)"
-							},
-							{
-								"id": "c",
-								"texto": "[8, 10) ∪ (10, 11]"
-							},
-							{
-								"id": "d",
-								"texto": "[10, 11]"
-							}
-						],
-						"gabarito": "a",
-						"assunto": "União de intervalos",
-						"orientacao": "Veja se o 10 deixa um buraco ou é incluído por uma sessão.",
-						"explicacao": "O segundo intervalo inclui 10 e o primeiro inclui todos os valores de 8 até antes de 10. O total é [8, 11]."
-					},
-					"ordem": 23
-				}
-			]
-		}
-	]
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 2,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-02",
+      "titulo": "O mapa dos números",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma sala tem 32 cadeiras, a temperatura de um modelo pode ser −2 e uma divisão de tarefas pede 3/2 hora. Os números trocam de roupa conforme o problema. O mapa dos conjuntos ajuda a saber quem cabe em cada descrição."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Classificar números em ℕ, ℤ, ℚ, irracionais e ℝ."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Conjuntos e pertencimento (passo 1)."
+              }
+            ],
+            "titulo": "O mapa dos números",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Nesta trilha, ℕ={0,1,2,…}; ℤ inclui os naturais e seus opostos; ℚ={p/q : p,q∈ℤ e q≠0}. Irracionais são os reais que não são racionais. ℝ reúne racionais e irracionais e corresponde aos pontos da reta real. As inclusões são ℕ⊂ℤ⊂ℚ⊂ℝ. Um mesmo número pode pertencer a vários conjuntos."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Naturais estão contidos nos inteiros, nos racionais e nos reais.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "ℕ⊂ℤ⊂ℚ⊂ℝ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Nesta trilha, 0 pertence a qual conjunto?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "Adotamos explicitamente ℕ={0,1,2,…}.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A nenhum conjunto numérico"
+              },
+              {
+                "id": "b",
+                "texto": "ℕ"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas aos irracionais"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Todo inteiro n pode ser escrito n/1, portanto é racional. Decimais finitos são frações com denominador potência de 10: 0,125=125/1000=1/8. Nem toda raiz é irracional: √9=3. Para √2, suponha √2=p/q em forma reduzida; p²=2q² força p par e depois q par, contrariando a forma reduzida. Logo √2 é irracional."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Classificar números em ℕ, ℤ, ℚ, irracionais e ℝ.",
+                      "exemplo": "Classifique −3, 0,125 e √9. O número −3 é inteiro, logo também racional e real, mas não natural."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "‘Menor conjunto da cadeia’ é uma resposta diferente de ‘todos os conjuntos a que pertence’. Leia a pergunta antes de escolher apenas um nome."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o menor conjunto da cadeia ℕ⊂ℤ⊂ℚ⊂ℝ que contém −7?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "−7 é inteiro e não natural.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℤ"
+              },
+              {
+                "id": "b",
+                "texto": "ℕ"
+              },
+              {
+                "id": "c",
+                "texto": "ℚ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · O mapa dos números",
+            "assunto": "O mapa dos números",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Classifique −3, 0,125 e √9. O número −3 é inteiro, logo também racional e real, mas não natural."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "0,125=1/8 é racional e real; não é inteiro. Já √9=3 é natural, inteiro, racional e real."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "‘Menor conjunto da cadeia’ é uma resposta diferente de ‘todos os conjuntos a que pertence’. Leia a pergunta antes de escolher apenas um nome."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual número é racional e não inteiro?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "3/2 é uma fração de inteiros e vale 1,5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−3"
+              },
+              {
+                "id": "b",
+                "texto": "√2"
+              },
+              {
+                "id": "c",
+                "texto": "3/2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale √9?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "O símbolo de raiz quadrada representa a raiz principal não negativa; resolver x²=9 daria ±3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "9"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "±3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Decimal com muitas casas não é automaticamente irracional; a escrita pode ser uma aproximação de uma fração. Também não classifique √4 como irracional só por haver radical. A convenção de incluir 0 em ℕ deve ser declarada, pois livros podem adotar outra."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual número é irracional?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "√2 não admite fração de inteiros; os outros dois admitem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "√2"
+              },
+              {
+                "id": "b",
+                "texto": "0,25"
+              },
+              {
+                "id": "c",
+                "texto": "−8/2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual fração representa 0,125?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "125/1000 simplifica para 1/8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/4"
+              },
+              {
+                "id": "b",
+                "texto": "1/125"
+              },
+              {
+                "id": "c",
+                "texto": "1/8"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na reta, racionais e irracionais convivem sem buracos no conjunto dos reais. A medida √2 pode surgir na diagonal de um quadrado de lado 1, independentemente da área do seu curso. Explique por que ‘todo inteiro é racional’ não implica ‘todo racional é inteiro’."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Todo inteiro é racional?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "Cada inteiro n é n/1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas os positivos"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Todo racional é inteiro?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "1/2 é racional e não inteiro, fornecendo contraexemplo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não"
+              },
+              {
+                "id": "b",
+                "texto": "Sim"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas se for positivo"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Nesta trilha, ℕ={0,1,2,…}; ℤ inclui os naturais e seus opostos; ℚ={p/q : p,q∈ℤ e q≠0}. Irracionais são os reais que não são racionais. ℝ reúne racionais e irracionais e corresponde aos pontos da reta real. As inclusões são ℕ⊂ℤ⊂ℚ⊂ℝ. Um mesmo número pode pertencer a vários conjuntos."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: ‘Menor conjunto da cadeia’ é uma resposta diferente de ‘todos os conjuntos a que pertence’. Leia a pergunta antes de escolher apenas um nome."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como classificar números em ℕ, ℤ, ℚ, irracionais e ℝ. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais pontos correspondem aos números reais?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "A reta real também contém pontos irracionais.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas marcas inteiras"
+              },
+              {
+                "id": "b",
+                "texto": "Apenas pontos racionais"
+              },
+              {
+                "id": "c",
+                "texto": "Todos os pontos da reta real"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a condição em p/q para definir um racional?",
+            "assunto": "O mapa dos números",
+            "orientacao": "Simplifique o número e tente escrevê-lo como fração de inteiros antes de classificá-lo.",
+            "explicacao": "A definição exige inteiros e proíbe divisão por zero.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "p irracional e q inteiro"
+              },
+              {
+                "id": "b",
+                "texto": "p e q inteiros, q≠0"
+              },
+              {
+                "id": "c",
+                "texto": "p e q naturais, q=0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -84,6 +84,7 @@ const questionFields = {
 	assunto: text.optional(),
 	orientacao: text.optional(),
 	explicacao: text.optional(),
+	essencial: z.boolean().optional(),
 };
 const question = z
 	.discriminatedUnion("tipo", [

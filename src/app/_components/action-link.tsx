@@ -1,12 +1,21 @@
 "use client";
 
 import Link, { useLinkStatus } from "next/link";
+import { useRouter } from "next/navigation";
 import { type ComponentProps, type ReactNode, useRef } from "react";
 import { useFeedback } from "./feedback";
 import { FeedbackIcon } from "./feedback-icon";
+import { navigateLearning } from "./learning-navigation";
 
-function LinkContents({ children }: { children: ReactNode }) {
-	const { pending } = useLinkStatus();
+function LinkContents({
+	children,
+	busy,
+}: {
+	children: ReactNode;
+	busy: boolean;
+}) {
+	const { pending: linkPending } = useLinkStatus();
+	const pending = busy || linkPending;
 	return (
 		<>
 			{children}
@@ -27,15 +36,29 @@ export default function ActionLink({
 	onNavigate,
 	...props
 }: ComponentProps<typeof Link>) {
-	const { startNavigation } = useFeedback();
+	const { startNavigation, navigation } = useFeedback();
+	const router = useRouter();
 	const target = useRef("");
+	const direction = useRef("forward");
+	const busy = Boolean(
+		navigation &&
+			target.current &&
+			new URL(target.current).pathname + new URL(target.current).search ===
+				navigation.target,
+	);
 	return (
 		<Link
 			{...props}
+			aria-busy={busy || props["aria-busy"]}
 			className={`${className} action-link`}
 			onClick={(event) => {
 				onClick?.(event);
 				target.current = event.currentTarget.href;
+				direction.current =
+					event.currentTarget.dataset.learningDirection ??
+					(event.currentTarget.textContent?.includes("Voltar")
+						? "back"
+						: "forward");
 			}}
 			onNavigate={(event) => {
 				let cancelled = false;
@@ -45,11 +68,35 @@ export default function ActionLink({
 						event.preventDefault();
 					},
 				});
-				if (!cancelled && !startNavigation(target.current))
+				if (cancelled) return;
+				if (!startNavigation(target.current)) {
 					event.preventDefault();
+					return;
+				}
+				const url = new URL(target.current, window.location.href);
+				if (
+					url.origin === window.location.origin &&
+					`${url.pathname}${url.search}` !==
+						`${window.location.pathname}${window.location.search}`
+				) {
+					event.preventDefault();
+					const sameLesson =
+						url.pathname === window.location.pathname &&
+						url.pathname.startsWith("/aprender/");
+					navigateLearning(
+						() => {
+							const destination = `${url.pathname}${url.search}${url.hash}`;
+							if (props.replace)
+								router.replace(destination, { scroll: props.scroll });
+							else router.push(destination, { scroll: props.scroll });
+						},
+						direction.current,
+						sameLesson,
+					);
+				}
 			}}
 		>
-			<LinkContents>{children}</LinkContents>
+			<LinkContents busy={busy}>{children}</LinkContents>
 		</Link>
 	);
 }

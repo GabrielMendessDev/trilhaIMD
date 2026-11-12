@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 12,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-12",
+      "titulo": "Sistemas: três finais possíveis",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Dois grupos registram a quantidade de refeições de um evento. Cada relatório oferece uma equação. Há três finais: os relatórios se completam, repetem a mesma informação ou discordam. O sistema vai contar qual história ocorreu."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Classificar sistemas 2×2 e justificar equivalência das operações."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Equações lineares (passo 11)."
+              }
+            ],
+            "titulo": "Sistemas: três finais possíveis",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um sistema pede um par (x,y) que satisfaça todas as equações. Pode ser possível determinado, com solução única; possível indeterminado, com infinitas; ou impossível, sem solução. Somar a uma equação um múltiplo da outra preserva as soluções porque a operação pode ser desfeita. Multiplicar uma equação por zero não é reversível."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "A solução do sistema reúne os pares que satisfazem simultaneamente as duas equações.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "S={(x,y):as duas equações são verdadeiras}"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x+y=9 e 2x+y=14.",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "A subtração fornece x=5; então y=4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(5,4)"
+              },
+              {
+                "id": "b",
+                "texto": "(4,5)"
+              },
+              {
+                "id": "c",
+                "texto": "(9,14)"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Retas não paralelas se cruzam em um ponto. Retas coincidentes descrevem os mesmos pares. Retas paralelas distintas não compartilham pares. Na eliminação, 0=0 indica que uma equação não acrescentou informação; 0=c, c≠0, é uma contradição. Classifique o sistema inteiro, considerando também a equação restante."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Classificar sistemas 2×2 e justificar equivalência das operações.",
+                      "exemplo": "Resolva x+y=9 e 2x+y=14. Subtraia a primeira da segunda: x=5."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Confira nos dois relatórios: 5+4=9 e 2·5+4=14. A solução única é S={(5,4)}."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como classificar x+y=2 e 2x+2y=4?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "A segunda equação é o dobro da primeira; ambas descrevem a mesma reta.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Solução única"
+              },
+              {
+                "id": "b",
+                "texto": "Nenhuma solução"
+              },
+              {
+                "id": "c",
+                "texto": "Infinitas soluções"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Sistemas: três finais possíveis",
+            "assunto": "Sistemas: três finais possíveis",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva x+y=9 e 2x+y=14. Subtraia a primeira da segunda: x=5."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Substitua em x+y=9: y=4. O par candidato é (5,4)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira nos dois relatórios: 5+4=9 e 2·5+4=14. A solução única é S={(5,4)}."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como classificar x+y=2 e 2x+2y=5?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "Dobrar a primeira exigiria 2x+2y=4, incompatível com 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Solução (1,1)"
+              },
+              {
+                "id": "b",
+                "texto": "Nenhuma solução"
+              },
+              {
+                "id": "c",
+                "texto": "Infinitas soluções"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual operação preserva as soluções de um sistema?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "A primeira operação é reversível por subtração do mesmo múltiplo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Somar à segunda equação duas vezes a primeira"
+              },
+              {
+                "id": "b",
+                "texto": "Multiplicar a primeira por zero e descartá-la"
+              },
+              {
+                "id": "c",
+                "texto": "Trocar x por 0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma conta que termina em 0=0 não significa que qualquer par serve. Em x+y=9 e 2x+2y=18, todos os pares da reta x+y=9 servem, mas (0,0) não. Não confunda infinitas soluções com ausência de restrições."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em x+y=2 e 2x+2y=4, (0,0) é solução?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "Apesar de haver infinitos pares, todos precisam satisfazer x+y=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Todo par é solução"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x−y=1 e x+y=5.",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "Somando, 2x=6; logo x=3 e y=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(4,1)"
+              },
+              {
+                "id": "b",
+                "texto": "(3,2)"
+              },
+              {
+                "id": "c",
+                "texto": "(2,3)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Modelos de produção, pesquisas sociais e distribuição de horários podem gerar sistemas. Declare as unidades e verifique se soluções reais também satisfazem as condições do contexto, como quantidades inteiras e não negativas. A álgebra pode resolver um modelo mal escolhido sem perceber o problema."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma eliminação termina em 0=3. O que isso indica?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "Nenhum valor das incógnitas torna 0 igual a 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Contradição"
+              },
+              {
+                "id": "b",
+                "texto": "Uma identidade"
+              },
+              {
+                "id": "c",
+                "texto": "x=3"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No sistema x=2 e y=−1, qual é o conjunto solução?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "O elemento do conjunto solução é um par ordenado, com x primeiro.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{2,−1}"
+              },
+              {
+                "id": "b",
+                "texto": "{(−1,2)}"
+              },
+              {
+                "id": "c",
+                "texto": "{(2,−1)}"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um sistema pede um par (x,y) que satisfaça todas as equações. Pode ser possível determinado, com solução única; possível indeterminado, com infinitas; ou impossível, sem solução. Somar a uma equação um múltiplo da outra preserva as soluções porque a operação pode ser desfeita. Multiplicar uma equação por zero não é reversível."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Confira nos dois relatórios: 5+4=9 e 2·5+4=14. A solução única é S={(5,4)}."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como classificar sistemas 2×2 e justificar equivalência das operações. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma solução representa número de pessoas e resulta x=2,5. O que fazer?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "A solução real pode ser incompatível com uma contagem inteira; arredondar pode violar as equações.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Aceitar meia pessoa"
+              },
+              {
+                "id": "b",
+                "texto": "Rever a adequação ao contexto"
+              },
+              {
+                "id": "c",
+                "texto": "Arredondar sem conferir"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se ax+y=1 e 2x+y=3, quando as retas são paralelas distintas?",
+            "assunto": "Sistemas: três finais possíveis",
+            "orientacao": "Elimine uma incógnita e interprete a igualdade restante: informação, identidade ou contradição.",
+            "explicacao": "Com a=2 os lados esquerdos são iguais e os direitos distintos.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a=2"
+              },
+              {
+                "id": "b",
+                "texto": "a=0"
+              },
+              {
+                "id": "c",
+                "texto": "a=1"
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -54,14 +54,6 @@
 .feedback-toast button:hover {
 	background: var(--surface-soft);
 }
-.feedback-navigation {
-	display: flex;
-	align-items: center;
-	gap: 0.6rem;
-	color: var(--accent);
-	font-size: 0.875rem;
-	font-weight: 750;
-}
 .action-control {
 	position: relative;
 	display: inline-grid;
@@ -132,10 +124,10 @@ input[type="radio"] {
 button:enabled,
 .action-link {
 	transition:
-		background-color 180ms ease,
-		border-color 180ms ease,
-		box-shadow 180ms ease,
-		transform 180ms ease;
+		background-color var(--motion-micro) var(--ease-elevate),
+		border-color var(--motion-micro) var(--ease-elevate),
+		box-shadow var(--motion-micro) var(--ease-elevate),
+		transform var(--motion-micro) var(--ease-elevate);
 }
 button:enabled:active,
 .action-link:active {
@@ -145,7 +137,7 @@ button[aria-disabled="true"] {
 	cursor: not-allowed;
 }
 .study-progress > span {
-	transition: inline-size 240ms ease-out;
+	transition: none;
 }
 .completion-effects {
 	display: grid;
@@ -190,34 +182,10 @@ button[aria-disabled="true"] {
 		animation: feedback-spin 850ms linear infinite;
 	}
 	.feedback-toast {
-		animation: feedback-enter 200ms ease-out both;
+		animation: feedback-enter var(--motion-micro) var(--ease-enter) both;
 	}
 	.feedback-toast[data-kind="warning"] {
-		animation: feedback-attention 500ms ease-out both;
-	}
-	.page-transition {
-		animation: page-arrives 180ms ease-out both;
-	}
-	.lesson-transition {
-		animation: lesson-arrives 200ms ease-out both;
-	}
-	.reward-balance[data-reward] {
-		animation: reward-pulse 600ms ease-out both;
-	}
-	.completion-effects[data-celebrate] .completion-medal {
-		animation: medal-arrives 320ms cubic-bezier(0.2, 0.8, 0.3, 1.1) both;
-	}
-	.completion-effects[data-celebrate] .earned-awards li {
-		animation: medal-arrives 320ms ease-out both;
-	}
-	.completion-effects[data-celebrate] .study-progress > span {
-		animation: performance-arrives 600ms ease-out both;
-	}
-	.completion-effects[data-celebrate] [data-reward-count] {
-		animation: reward-pulse 600ms ease-out both;
-	}
-	[data-unlocked] button {
-		animation: reward-pulse 650ms ease-out both;
+		animation: feedback-attention var(--motion-answer) var(--ease-settle) both;
 	}
 }
 
@@ -237,31 +205,11 @@ button[aria-disabled="true"] {
 		box-shadow: 0 5px 24px -6px var(--feedback-color);
 	}
 }
-@keyframes page-arrives {
-	from {
-		opacity: 0.8;
-	}
-}
-@keyframes lesson-arrives {
-	from {
-		opacity: 0.7;
-		transform: translateX(0.4rem);
-	}
-}
+
 @keyframes reward-pulse {
 	40% {
 		filter: brightness(1.2);
 		scale: 1.04;
-	}
-}
-@keyframes medal-arrives {
-	from {
-		transform: scale(0.6) rotate(-8deg);
-	}
-}
-@keyframes performance-arrives {
-	from {
-		inline-size: 0;
 	}
 }
 

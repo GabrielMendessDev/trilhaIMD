@@ -5,6 +5,7 @@ import type { TrailId } from "~/app/aprender/trails";
 import { db } from "~/server/db";
 import { summarizeCompletions } from "./learning-metrics";
 import type { Attempts } from "./lesson-progress";
+import { getRpgState } from "./rpg";
 
 export type PublishedPoint = {
 	id: number;
@@ -18,9 +19,15 @@ type Completion = {
 	pointId: number;
 	completedEntries: string[];
 	attempts: Attempts;
+	skippedEntries: string[];
+	deferredEntries: string[];
 	completedAt: Date | null;
 	xp: number;
 	correctAnswers: number;
+	lives: number;
+	run: number;
+	title: string | null;
+	archived: boolean;
 };
 
 export const getPublishedPoints = cache(async () => {
@@ -28,9 +35,9 @@ export const getPublishedPoints = cache(async () => {
 		return await db.$queryRaw<PublishedPoint[]>`
 			SELECT p.id, p."trailSlug" AS trail, p.number, p."xpReward" AS reward,
 				(SELECT a.title FROM "LearningActivity" a WHERE a."pointId" = p.id ORDER BY a.id LIMIT 1) AS title
-			FROM "TrailPoint" p
-			WHERE EXISTS (SELECT 1 FROM "TrailPointContent" c WHERE c."pointId" = p.id)
-				OR EXISTS (SELECT 1 FROM "LearningActivity" a WHERE a."pointId" = p.id)
+			FROM "TrailPoint" p JOIN "LearningTrail" t ON t.slug=p."trailSlug"
+			WHERE NOT t.archived AND (EXISTS (SELECT 1 FROM "TrailPointContent" c WHERE c."pointId" = p.id)
+				OR EXISTS (SELECT 1 FROM "LearningActivity" a WHERE a."pointId" = p.id))
 			ORDER BY p.number
 		`;
 	} catch (error) {
@@ -45,10 +52,19 @@ export const getPublishedPoints = cache(async () => {
 export const getLearningProgress = cache(async (userId: string) => {
 	try {
 		const rows = await db.$queryRaw<Completion[]>`
-			SELECT "pointId", "completedEntries", attempts, "completedAt", xp, "correctAnswers"
-			FROM "LearningPointProgress" WHERE "userId" = ${userId}
+			SELECT l."pointId", l."completedEntries", l.attempts, l."skippedEntries", l."deferredEntries", l."completedAt", l.xp, l."correctAnswers", l.lives, l.run, t.archived,
+			(SELECT a.title FROM "LearningActivity" a WHERE a."pointId"=p.id ORDER BY a.id LIMIT 1) AS title
+			FROM "LearningPointProgress" l JOIN "TrailPoint" p ON p.id=l."pointId" JOIN "LearningTrail" t ON t.slug=p."trailSlug" WHERE l."userId" = ${userId}
 		`;
-		return summarizeCompletions(rows);
+		const summary = summarizeCompletions(rows);
+		const rpg = await getRpgState(userId);
+		return {
+			...summary,
+			xp: rpg.xp,
+			streak: rpg.stats.studyStreak,
+			best: rpg.stats.bestStudyStreak,
+			rpg,
+		};
 	} catch (error) {
 		console.error(
 			"Progresso de aprendizagem indisponível",

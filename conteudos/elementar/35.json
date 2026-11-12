@@ -1,0 +1,495 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 35,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-35",
+      "titulo": "Composição: a ordem muda o resultado",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Primeiro descontar uma quantidade fixa e depois dobrar não costuma dar o mesmo que dobrar e depois descontar. A composição registra processos em sequência. A notação lê da direita para a esquerda, o que é um bom motivo para respirar antes de calcular."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Calcular composições e determinar entradas compatíveis."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Funções e restrições de domínio."
+              }
+            ],
+            "titulo": "Composição: a ordem muda o resultado",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "(f∘g)(x)=f(g(x)): aplique g primeiro e f depois. Para a composição estar definida, x precisa pertencer ao domínio de g e g(x) ao domínio de f. Em geral f∘g≠g∘f. A composição é associativa quando todas as funções e domínios são compatíveis."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Na composição f de g, aplique g primeiro e depois f ao resultado.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "(f∘g)(x)=f(g(x))"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em (f∘g)(x), qual função é aplicada primeiro?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "A expressão é f(g(x)); o argumento interno é calculado primeiro.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "As duas simultaneamente"
+              },
+              {
+                "id": "b",
+                "texto": "g"
+              },
+              {
+                "id": "c",
+                "texto": "f"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se f(x)=2x e g(x)=x+3, então f(g(x))=2(x+3)=2x+6, enquanto g(f(x))=2x+3. O intermediário inteiro entra como argumento da função seguinte. As restrições também são herdadas: f=1/x e g=x−2 dão f∘g=1/(x−2), exigindo x≠2."
+              },
+              {
+                "id": "roteiro",
+                "tipo": "diagrama",
+                "legenda": "Roteiro de leitura: objetivo e teste de consistência.",
+                "dados": {
+                  "modelo": "quadro",
+                  "linhas": [
+                    {
+                      "simbolo": "Objetivo",
+                      "leitura": "Calcular composições e determinar entradas compatíveis.",
+                      "exemplo": "Se f(x)=x² e g(x)=x−1 em ℝ, calcule f∘g: substitua o argumento de f por x−1."
+                    },
+                    {
+                      "simbolo": "Conferência",
+                      "leitura": "Volte às condições da expressão original.",
+                      "exemplo": "Em x=2, os resultados são 1 e 3. Esse contraexemplo mostra que a ordem não pode ser trocada livremente."
+                    }
+                  ]
+                }
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=2x e g(x)=x+3, qual é (f∘g)(x)?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "Substituímos g(x) em f: 2(x+3).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2x+6"
+              },
+              {
+                "id": "b",
+                "texto": "2x+3"
+              },
+              {
+                "id": "c",
+                "texto": "2x²+6x"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Composição: a ordem muda o resultado",
+            "assunto": "Composição: a ordem muda o resultado",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Se f(x)=x² e g(x)=x−1 em ℝ, calcule f∘g: substitua o argumento de f por x−1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O resultado é (x−1)². Já g∘f substitui o argumento de g por x² e produz x²−1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Em x=2, os resultados são 1 e 3. Esse contraexemplo mostra que a ordem não pode ser trocada livremente."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Com as mesmas funções, qual é (g∘f)(x)?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "Aplicamos g ao número 2x, somando 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2x+6"
+              },
+              {
+                "id": "b",
+                "texto": "x+6"
+              },
+              {
+                "id": "c",
+                "texto": "2x+3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=x² e g(x)=x−1, qual é (f∘g)(2)?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "g(2)=1 e depois f(1)=1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "f(g(x)) não é f(x)·g(x). E uma simplificação da expressão composta pode esconder restrições intermediárias. Para f(x)=1/x e g(x)=1/x, a composição vale x somente para x≠0, pois a primeira aplicação já proíbe zero."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Com essas funções, qual é (g∘f)(2)?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "f(2)=4 e depois g(4)=3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3"
+              },
+              {
+                "id": "b",
+                "texto": "1"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=1/x e g(x)=x−2, qual é o domínio real da composição f∘g?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "Precisamos de g(x)≠0, portanto x−2≠0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ sem 0"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ sem 2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Descreva a composição como um percurso com três posições: entrada, resultado intermediário e saída final. Esse esquema vale para conversões de medidas e etapas de processamento de dados, sem exigir nenhum software específico."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição adicional é necessária além de x∈Dom(g)?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "O resultado da primeira função precisa ser entrada válida da segunda.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "f(x)=g(x)"
+              },
+              {
+                "id": "b",
+                "texto": "g(x)∈Dom(f)"
+              },
+              {
+                "id": "c",
+                "texto": "x∈Im(f)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se f(x)=1/x e g(x)=1/x, qual é o domínio original de f∘g?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "A expressão reduzida é x, mas a primeira aplicação não aceita zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "ℝ sem 0"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ"
+              },
+              {
+                "id": "c",
+                "texto": "Apenas {0}"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "(f∘g)(x)=f(g(x)): aplique g primeiro e f depois. Para a composição estar definida, x precisa pertencer ao domínio de g e g(x) ao domínio de f. Em geral f∘g≠g∘f. A composição é associativa quando todas as funções e domínios são compatíveis."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Em x=2, os resultados são 1 e 3. Esse contraexemplo mostra que a ordem não pode ser trocada livremente."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como calcular composições e determinar entradas compatíveis. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "A composição é sempre comutativa?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "Os exemplos 2x+6 e 2x+3 diferem, refutando a comutatividade geral.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim"
+              },
+              {
+                "id": "b",
+                "texto": "Só porque funções têm uma saída"
+              },
+              {
+                "id": "c",
+                "texto": "Não"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se id(x)=x, qual é f∘id no domínio de f?",
+            "assunto": "Composição: a ordem muda o resultado",
+            "orientacao": "Calcule a expressão interna primeiro e confira se o resultado é entrada permitida da função seguinte.",
+            "explicacao": "A identidade não altera a entrada, de modo que f(id(x))=f(x).",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Uma constante"
+              },
+              {
+                "id": "b",
+                "texto": "f"
+              },
+              {
+                "id": "c",
+                "texto": "id"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

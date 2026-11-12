@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T00:11:18.493Z",
-  "title": "Sistema visual do trilbit",
+  "generatedAt": "2026-11-12T16:24:01.293Z",
+  "title": "Design System: trilbit",
   "extensions": {
     "colorMeta": {
       "orbit": {
@@ -86,20 +86,6 @@
           "oklch(72% 0.1277 56.3)",
           "oklch(84% 0.1277 56.3)",
           "oklch(95% 0.1277 56.3)"
-        ]
-      },
-      "solar-hover": {
-        "role": "secondary",
-        "displayName": "Solar claro",
-        "tonalRamp": [
-          "oklch(15% 0.0879 54.5)",
-          "oklch(26% 0.0879 54.5)",
-          "oklch(38% 0.0879 54.5)",
-          "oklch(49% 0.0879 54.5)",
-          "oklch(61% 0.0879 54.5)",
-          "oklch(72% 0.0879 54.5)",
-          "oklch(84% 0.0879 54.5)",
-          "oklch(95% 0.0879 54.5)"
         ]
       },
       "mint": {
@@ -367,59 +353,358 @@
           "oklch(84% 0.0529 335.4)",
           "oklch(95% 0.0529 335.4)"
         ]
+      },
+      "success-ink": {
+        "role": "secondary",
+        "displayName": "Menta de leitura — claro",
+        "tonalRamp": [
+          "oklch(15% 0.0897 176.2)",
+          "oklch(26% 0.0897 176.2)",
+          "oklch(38% 0.0897 176.2)",
+          "oklch(49% 0.0897 176.2)",
+          "oklch(61% 0.0897 176.2)",
+          "oklch(72% 0.0897 176.2)",
+          "oklch(84% 0.0897 176.2)",
+          "oklch(95% 0.0897 176.2)"
+        ]
+      },
+      "dark-success-ink": {
+        "role": "secondary",
+        "displayName": "Menta de leitura — escuro",
+        "tonalRamp": [
+          "oklch(15% 0.1066 182.0)",
+          "oklch(26% 0.1066 182.0)",
+          "oklch(38% 0.1066 182.0)",
+          "oklch(49% 0.1066 182.0)",
+          "oklch(61% 0.1066 182.0)",
+          "oklch(72% 0.1066 182.0)",
+          "oklch(84% 0.1066 182.0)",
+          "oklch(95% 0.1066 182.0)"
+        ]
+      },
+      "rpg-uncommon-ink": {
+        "role": "secondary",
+        "displayName": "Azul Incomum — claro",
+        "tonalRamp": [
+          "oklch(15% 0.1342 256.7)",
+          "oklch(26% 0.1342 256.7)",
+          "oklch(38% 0.1342 256.7)",
+          "oklch(49% 0.1342 256.7)",
+          "oklch(61% 0.1342 256.7)",
+          "oklch(72% 0.1342 256.7)",
+          "oklch(84% 0.1342 256.7)",
+          "oklch(95% 0.1342 256.7)"
+        ]
+      },
+      "dark-rpg-uncommon-ink": {
+        "role": "secondary",
+        "displayName": "Azul Incomum — escuro",
+        "tonalRamp": [
+          "oklch(15% 0.1007 250.4)",
+          "oklch(26% 0.1007 250.4)",
+          "oklch(38% 0.1007 250.4)",
+          "oklch(49% 0.1007 250.4)",
+          "oklch(61% 0.1007 250.4)",
+          "oklch(72% 0.1007 250.4)",
+          "oklch(84% 0.1007 250.4)",
+          "oklch(95% 0.1007 250.4)"
+        ]
+      },
+      "warm-ink": {
+        "role": "tertiary",
+        "displayName": "Coral quente de leitura — claro",
+        "tonalRamp": [
+          "oklch(15% 0.1074 49.3)",
+          "oklch(26% 0.1074 49.3)",
+          "oklch(38% 0.1074 49.3)",
+          "oklch(49% 0.1074 49.3)",
+          "oklch(61% 0.1074 49.3)",
+          "oklch(72% 0.1074 49.3)",
+          "oklch(84% 0.1074 49.3)",
+          "oklch(95% 0.1074 49.3)"
+        ]
+      },
+      "reward-ink": {
+        "role": "tertiary",
+        "displayName": "Dourado de recompensa — claro",
+        "tonalRamp": [
+          "oklch(15% 0.0763 64.8)",
+          "oklch(26% 0.0763 64.8)",
+          "oklch(38% 0.0763 64.8)",
+          "oklch(49% 0.0763 64.8)",
+          "oklch(61% 0.0763 64.8)",
+          "oklch(72% 0.0763 64.8)",
+          "oklch(84% 0.0763 64.8)",
+          "oklch(95% 0.0763 64.8)"
+        ]
+      },
+      "dark-reward-ink": {
+        "role": "tertiary",
+        "displayName": "Dourado de recompensa — escuro",
+        "tonalRamp": [
+          "oklch(15% 0.0983 76.9)",
+          "oklch(26% 0.0983 76.9)",
+          "oklch(38% 0.0983 76.9)",
+          "oklch(49% 0.0983 76.9)",
+          "oklch(61% 0.0983 76.9)",
+          "oklch(72% 0.0983 76.9)",
+          "oklch(84% 0.0983 76.9)",
+          "oklch(95% 0.0983 76.9)"
+        ]
+      },
+      "elementar-soft": {
+        "role": "secondary",
+        "displayName": "elementar soft",
+        "tonalRamp": [
+          "oklch(15% 0.1052 288.7)",
+          "oklch(26% 0.1052 288.7)",
+          "oklch(38% 0.1052 288.7)",
+          "oklch(49% 0.1052 288.7)",
+          "oklch(61% 0.1052 288.7)",
+          "oklch(72% 0.1052 288.7)",
+          "oklch(84% 0.1052 288.7)",
+          "oklch(95% 0.1052 288.7)"
+        ]
+      },
+      "elementar-deep": {
+        "role": "secondary",
+        "displayName": "elementar deep",
+        "tonalRamp": [
+          "oklch(15% 0.1789 281.9)",
+          "oklch(26% 0.1789 281.9)",
+          "oklch(38% 0.1789 281.9)",
+          "oklch(49% 0.1789 281.9)",
+          "oklch(61% 0.1789 281.9)",
+          "oklch(72% 0.1789 281.9)",
+          "oklch(84% 0.1789 281.9)",
+          "oklch(95% 0.1789 281.9)"
+        ]
+      },
+      "combinatoria": {
+        "role": "secondary",
+        "displayName": "combinatoria",
+        "tonalRamp": [
+          "oklch(15% 0.1445 49.2)",
+          "oklch(26% 0.1445 49.2)",
+          "oklch(38% 0.1445 49.2)",
+          "oklch(49% 0.1445 49.2)",
+          "oklch(61% 0.1445 49.2)",
+          "oklch(72% 0.1445 49.2)",
+          "oklch(84% 0.1445 49.2)",
+          "oklch(95% 0.1445 49.2)"
+        ]
+      },
+      "combinatoria-soft": {
+        "role": "secondary",
+        "displayName": "combinatoria soft",
+        "tonalRamp": [
+          "oklch(15% 0.0895 60.7)",
+          "oklch(26% 0.0895 60.7)",
+          "oklch(38% 0.0895 60.7)",
+          "oklch(49% 0.0895 60.7)",
+          "oklch(61% 0.0895 60.7)",
+          "oklch(72% 0.0895 60.7)",
+          "oklch(84% 0.0895 60.7)",
+          "oklch(95% 0.0895 60.7)"
+        ]
+      },
+      "combinatoria-deep": {
+        "role": "secondary",
+        "displayName": "combinatoria deep",
+        "tonalRamp": [
+          "oklch(15% 0.0939 17.0)",
+          "oklch(26% 0.0939 17.0)",
+          "oklch(38% 0.0939 17.0)",
+          "oklch(49% 0.0939 17.0)",
+          "oklch(61% 0.0939 17.0)",
+          "oklch(72% 0.0939 17.0)",
+          "oklch(84% 0.0939 17.0)",
+          "oklch(95% 0.0939 17.0)"
+        ]
+      },
+      "calculo": {
+        "role": "secondary",
+        "displayName": "calculo",
+        "tonalRamp": [
+          "oklch(15% 0.1135 232.9)",
+          "oklch(26% 0.1135 232.9)",
+          "oklch(38% 0.1135 232.9)",
+          "oklch(49% 0.1135 232.9)",
+          "oklch(61% 0.1135 232.9)",
+          "oklch(72% 0.1135 232.9)",
+          "oklch(84% 0.1135 232.9)",
+          "oklch(95% 0.1135 232.9)"
+        ]
+      },
+      "calculo-soft": {
+        "role": "secondary",
+        "displayName": "calculo soft",
+        "tonalRamp": [
+          "oklch(15% 0.0810 232.9)",
+          "oklch(26% 0.0810 232.9)",
+          "oklch(38% 0.0810 232.9)",
+          "oklch(49% 0.0810 232.9)",
+          "oklch(61% 0.0810 232.9)",
+          "oklch(72% 0.0810 232.9)",
+          "oklch(84% 0.0810 232.9)",
+          "oklch(95% 0.0810 232.9)"
+        ]
+      },
+      "calculo-deep": {
+        "role": "secondary",
+        "displayName": "calculo deep",
+        "tonalRamp": [
+          "oklch(15% 0.1335 262.8)",
+          "oklch(26% 0.1335 262.8)",
+          "oklch(38% 0.1335 262.8)",
+          "oklch(49% 0.1335 262.8)",
+          "oklch(61% 0.1335 262.8)",
+          "oklch(72% 0.1335 262.8)",
+          "oklch(84% 0.1335 262.8)",
+          "oklch(95% 0.1335 262.8)"
+        ]
+      },
+      "fmc": {
+        "role": "secondary",
+        "displayName": "fmc",
+        "tonalRamp": [
+          "oklch(15% 0.0967 186.7)",
+          "oklch(26% 0.0967 186.7)",
+          "oklch(38% 0.0967 186.7)",
+          "oklch(49% 0.0967 186.7)",
+          "oklch(61% 0.0967 186.7)",
+          "oklch(72% 0.0967 186.7)",
+          "oklch(84% 0.0967 186.7)",
+          "oklch(95% 0.0967 186.7)"
+        ]
+      },
+      "fmc-soft": {
+        "role": "secondary",
+        "displayName": "fmc soft",
+        "tonalRamp": [
+          "oklch(15% 0.1046 178.1)",
+          "oklch(26% 0.1046 178.1)",
+          "oklch(38% 0.1046 178.1)",
+          "oklch(49% 0.1046 178.1)",
+          "oklch(61% 0.1046 178.1)",
+          "oklch(72% 0.1046 178.1)",
+          "oklch(84% 0.1046 178.1)",
+          "oklch(95% 0.1046 178.1)"
+        ]
+      },
+      "fmc-deep": {
+        "role": "secondary",
+        "displayName": "fmc deep",
+        "tonalRamp": [
+          "oklch(15% 0.0715 206.8)",
+          "oklch(26% 0.0715 206.8)",
+          "oklch(38% 0.0715 206.8)",
+          "oklch(49% 0.0715 206.8)",
+          "oklch(61% 0.0715 206.8)",
+          "oklch(72% 0.0715 206.8)",
+          "oklch(84% 0.0715 206.8)",
+          "oklch(95% 0.0715 206.8)"
+        ]
+      },
+      "vga": {
+        "role": "secondary",
+        "displayName": "vga",
+        "tonalRamp": [
+          "oklch(15% 0.1727 332.3)",
+          "oklch(26% 0.1727 332.3)",
+          "oklch(38% 0.1727 332.3)",
+          "oklch(49% 0.1727 332.3)",
+          "oklch(61% 0.1727 332.3)",
+          "oklch(72% 0.1727 332.3)",
+          "oklch(84% 0.1727 332.3)",
+          "oklch(95% 0.1727 332.3)"
+        ]
+      },
+      "vga-soft": {
+        "role": "secondary",
+        "displayName": "vga soft",
+        "tonalRamp": [
+          "oklch(15% 0.0876 336.9)",
+          "oklch(26% 0.0876 336.9)",
+          "oklch(38% 0.0876 336.9)",
+          "oklch(49% 0.0876 336.9)",
+          "oklch(61% 0.0876 336.9)",
+          "oklch(72% 0.0876 336.9)",
+          "oklch(84% 0.0876 336.9)",
+          "oklch(95% 0.0876 336.9)"
+        ]
+      },
+      "vga-deep": {
+        "role": "secondary",
+        "displayName": "vga deep",
+        "tonalRamp": [
+          "oklch(15% 0.1436 298.7)",
+          "oklch(26% 0.1436 298.7)",
+          "oklch(38% 0.1436 298.7)",
+          "oklch(49% 0.1436 298.7)",
+          "oklch(61% 0.1436 298.7)",
+          "oklch(72% 0.1436 298.7)",
+          "oklch(84% 0.1436 298.7)",
+          "oklch(95% 0.1436 298.7)"
+        ]
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Título de abertura",
-        "purpose": "Saudação da página inicial."
+        "displayName": "Saudação",
+        "purpose": "Abertura desktop; reduz em tablet/celular."
       },
       "headline": {
         "displayName": "Título de página",
-        "purpose": "Cabeçalho das rotas internas."
+        "purpose": "Orientação da rota."
       },
       "title": {
-        "displayName": "Título de seção",
-        "purpose": "Seções como Disciplinas."
+        "displayName": "Título da lição",
+        "purpose": "Hierarquia do painel central."
       },
       "body": {
-        "displayName": "Texto de leitura",
-        "purpose": "Descrições e blocos de conteúdo."
+        "displayName": "Leitura da lição",
+        "purpose": "Texto principal com entrelinha ampla."
       },
       "label": {
-        "displayName": "Rótulo de controle",
-        "purpose": "Botões, links e opções."
+        "displayName": "Controle",
+        "purpose": "Ações e navegação; metadados têm tamanhos locais."
       },
       "notation": {
-        "displayName": "Notação monoespaçada",
-        "purpose": "Símbolos de disciplina, diagramas e código."
+        "displayName": "Notação",
+        "purpose": "Fórmulas, símbolos e código."
       }
     },
     "shadows": [
       {
-        "name": "card",
+        "name": "card-light",
         "value": "0 8px 24px -18px #151b3740",
-        "purpose": "Profundidade discreta de cartões no tema claro."
+        "purpose": "Token base claro; painéis comuns removem por override."
       },
       {
         "name": "card-dark",
         "value": "0 8px 24px -18px #0009",
-        "purpose": "Profundidade discreta de cartões no tema escuro."
+        "purpose": "Token base escuro efetivo."
       },
       {
         "name": "feature",
         "value": "0 18px 40px -26px #21175a99",
-        "purpose": "Sombra ampla do menu da conta."
+        "purpose": "Menu de conta e superfícies flutuantes."
       },
       {
-        "name": "link-card-hover",
-        "value": "0 12px 28px -21px var(--orbit)",
-        "purpose": "Resposta ao ponteiro em cartões clicáveis."
+        "name": "button-primary",
+        "value": "0 8px 16px -11px #6558f5bb",
+        "purpose": "Relevo local da ação primária."
       },
       {
-        "name": "checkpoint-selected",
-        "value": "0 0 0 4px var(--tint), 0 8px 20px -10px var(--accent)",
-        "purpose": "Halo da etapa selecionada no mapa."
+        "name": "lesson-panel",
+        "value": "0 10px 24px -22px var(--orbit)",
+        "purpose": "Brilho da questão; leitura contextual remove."
+      },
+      {
+        "name": "current-node",
+        "value": "0 0 0 7px color-mix(in srgb, var(--trail-color) 12%, transparent), 0 8px 28px -14px var(--trail-color)",
+        "purpose": "Halo local do nó disponível."
       }
     ],
     "motion": [
@@ -430,65 +715,250 @@
       },
       {
         "name": "reduced",
-        "value": "0.01ms",
-        "purpose": "Duração de animações e transições com movimento reduzido."
+        "value": "none",
+        "purpose": "Com prefers-reduced-motion: reduce, remover animações e transições da coreografia; navegação e valores finais permanecem imediatos. JavaScript também verifica a preferência antes de animar."
+      },
+      {
+        "name": "press",
+        "value": "110ms",
+        "purpose": "--motion-press: compressão de controles habilitados; botões chegam à escala 0.975 e alternativas a 0.985."
+      },
+      {
+        "name": "micro",
+        "value": "200ms",
+        "purpose": "--motion-micro: estados interativos, menu da conta, saída de páginas e fallback de etapas via Web Animations API."
+      },
+      {
+        "name": "enter",
+        "value": "340ms",
+        "purpose": "--motion-enter: alternativas, títulos, desenho de checks e indicador lateral."
+      },
+      {
+        "name": "step",
+        "value": "440ms",
+        "purpose": "--motion-step: troca de etapa, expansão do painel integrado, camadas de diagramas e aumento do progresso observado."
+      },
+      {
+        "name": "answer",
+        "value": "560ms",
+        "purpose": "--motion-answer: confirmação ou orientação, anel, seis partículas locais no acerto, fórmulas e traços da reta."
+      },
+      {
+        "name": "reward",
+        "value": "1100ms",
+        "purpose": "--motion-reward: luz de conclusão e preenchimento do desempenho confirmado."
+      },
+      {
+        "name": "stagger",
+        "value": "35ms",
+        "purpose": "--motion-stagger: alternativas entram em 0, 35, 70 e no máximo 105ms; três intervalos, inclusive para listas maiores."
+      },
+      {
+        "name": "ease-enter",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrada com desaceleração."
+      },
+      {
+        "name": "ease-exit",
+        "value": "cubic-bezier(0.4, 0, 1, 1)",
+        "purpose": "Saída acelerada."
+      },
+      {
+        "name": "ease-spring",
+        "value": "cubic-bezier(0.22, 1.3, 0.36, 1)",
+        "purpose": "Pequena expansão de emblemas, medalhas e desbloqueio."
+      },
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "Acomodação de progresso, brilho e resposta."
+      },
+      {
+        "name": "ease-elevate",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Elevação de 2px no hover e compressão dos controles."
+      },
+      {
+        "name": "answer-sequence",
+        "value": "selection → automatic submitting → server-confirmed result → manual Continue",
+        "purpose": "Questões corrigidas enviam ao selecionar: associações aguardam todos os campos válidos e ligações aguardam todos os pares. Sem botão Verificar ou Registrar resposta; spinner na alternativa e mensagem de estado durante validação. Só falhas técnicas oferecem Tentar novamente, preservando seleção. Manter os mesmos controles montados e bloquear envio duplicado; aplicar Menta/check ou tom quente/X apenas após confirmação. O feedback salvo atualiza o endereço com replaceState(null); resultado e continuidade aguardam os parâmetros refletirem a resposta, e continueTo fornece o próximo destino calculado pelo servidor. Primeiro erro orienta para revisão sem solução. Painel usa step, emblema e anel answer; Continuar entra com enter após 100ms, sem avanço automático. Teoria e roteiros mantêm Continuar. Resultado consome eventId em sessionStorage."
+      },
+      {
+        "name": "learning-navigation",
+        "value": "immediate navigation; Web Animations API exit + CSS content entry",
+        "purpose": "Atualizar a rota imediatamente, sem snapshot nativo aguardando commit. Saída micro do conteúdo real perde opacidade e desloca 16px à esquerda ao avançar ou à direita ao voltar; entrada CSS atua no conteúdo montado. Questão entra horizontalmente, explicação verticalmente e revisão com deslocamento vertical e escala discreta; conclusão conserva sua coreografia. Efeitos de layout encerram carregamento no commit, removem o aviso anterior de navegação e focam o título sem rolagem forçada."
+      },
+      {
+        "name": "page-content-transition",
+        "value": "outgoing opacity 1→0.65; arriving opacity 0.2→1 / translateY 8px→0; 340ms; stagger 35ms capped at 3 intervals",
+        "purpose": "Entre páginas, animar os textos e itens reais, aguardando a montagem do conteúdo principal. Avisos flutuantes somente para problemas técnicos; sem narração Abrindo ou Voltando. Esqueleto com rótulo acessível e Continuar com texto preservado. Cancelar animações e observadores ao desmontar ou substituir; movimento reduzido mostra o estado final imediatamente."
+      },
+      {
+        "name": "waapi-duration-units",
+        "value": ".34s = 340ms",
+        "purpose": "motionTiming normaliza os tokens de duração CSS em segundos ou milissegundos para o número em milissegundos exigido pela Web Animations API."
+      },
+      {
+        "name": "diagram-layer-delays",
+        "value": "0ms 100ms 180ms 260ms",
+        "purpose": "Camadas de inclusão, Venn, reta e quadros em step; limitar inícios tardios a 260ms. Fórmulas inteiras usam recorte e opacidade em answer, sem animar palavra por palavra."
+      },
+      {
+        "name": "trail-energy",
+        "value": "700ms var(--ease-settle) 180ms both",
+        "purpose": "Após conclusão real, desenhar check anterior e preencher o segmento na cor da disciplina; o nó de destino precisa estar confirmado como atual. Evento do mapa consumido uma vez em localStorage."
+      },
+      {
+        "name": "trail-unlock",
+        "value": "900ms var(--ease-spring) 700ms both",
+        "purpose": "Destacar o nó recém-disponível após a energia do segmento; preservar Menta nos concluídos e não pulsar disponibilidade em bloqueados."
+      },
+      {
+        "name": "trail-ready",
+        "value": "3200ms var(--ease-settle) 2",
+        "purpose": "Pulso finito do nó atual, com duas repetições."
+      },
+      {
+        "name": "bito-rest",
+        "value": "6s var(--ease-settle) 2s 2",
+        "purpose": "Respiração discreta de Bito: duas repetições após 2s, deslocamento máximo de 2px e rotação de 0.4deg."
+      },
+      {
+        "name": "completion-sequence",
+        "value": "medal 800ms; counter 600ms; light/progress var(--motion-reward)",
+        "purpose": "Conclusão consome eventId em localStorage antes de celebrar; revela categorias e ações coordenadas sem bloquear uso. Contador interpola apenas XP confirmado; a animação não concede recompensa. XP/ofensiva no cabeçalho pulsam apenas no aumento de saldo já observado para a mesma conta e métrica. A ação principal Voltar ao mapa seleciona a etapa desbloqueada quando houver; Reler a lição continua manual. Nó e conexão comunicam desbloqueio sem aviso flutuante."
+      },
+      {
+        "name": "motion-cleanup",
+        "value": "abort; clearTimeout; cancelAnimationFrame; Animation.cancel; skipTransition",
+        "purpose": "Ao desmontar ou substituir navegação, abortar requisições pendentes e cancelar temporizadores, quadros e animações; não vincular avanço, foco ou confirmação a tempos de animação."
+      },
+      {
+        "name": "rpg-confirmed-purchase",
+        "value": "artifact glow 1000ms ease-out; SVG flight 850ms cubic-bezier(0.2, 0.8, 0.3, 1)",
+        "purpose": "Somente após compra confirmada: atualizar saldo e estoque, iluminar o artefato e mover o SVG à Mochila se origem e destino estiverem disponíveis. A confirmação fica integrada ao layout."
+      },
+      {
+        "name": "rpg-award-sequence",
+        "value": "panel 650ms; medal 800ms; copy/reward 550ms delayed 180ms/300ms; cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Bloco compacto, medalha ao lado do texto e ações disponíveis. Identidade rpg-award por conta/conquista consumida em localStorage evita repetir o aviso no mesmo navegador."
+      },
+      {
+        "name": "rpg-bag-enter",
+        "value": "300ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrada do diálogo nativo da mochila da lição; lateral até 460px no desktop, painel inferior de até 85dvh até 600px."
+      },
+      {
+        "name": "rpg-question-help",
+        "value": "400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Revelação integrada de dica e exemplo. A resposta salva conserva painéis, seleção e alternativas removidas após recarga."
+      },
+      {
+        "name": "rpg-shield",
+        "value": "650ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Revelar escudo na proteção; o anel do item em aplicação usa 600ms e indica processamento, sem antecipar saldo ou efeito confirmado."
+      },
+      {
+        "name": "rpg-reduced",
+        "value": "animation: none; transition: none; flight display: none",
+        "purpose": "Com movimento reduzido, remover coreografia da extensão RPG, mantendo valores finais, feedback e ações."
       }
     ],
     "breakpoints": [
       {
-        "name": "map-controls",
-        "value": "481px"
+        "name": "small-phone",
+        "value": "360px"
       },
       {
-        "name": "home-two-columns",
-        "value": "520px"
+        "name": "stacked",
+        "value": "760px"
       },
       {
-        "name": "map-with-sidebar",
-        "value": "768px"
+        "name": "mobile-shell-max",
+        "value": "1024px"
       },
       {
-        "name": "desktop-rail",
+        "name": "desktop-shell-min",
         "value": "1025px"
       },
       {
-        "name": "home-three-columns",
-        "value": "1200px"
-      },
-      {
-        "name": "map-wide",
-        "value": "1281px"
-      },
-      {
-        "name": "map-extra-wide",
-        "value": "1441px"
+        "name": "compact-desktop",
+        "value": "1250px"
       }
-    ]
+    ],
+    "cascade": {
+      "sourceOrder": [
+        "src/styles/experience.css (import)",
+        "src/styles/globals.css (declarations)"
+      ],
+      "effectiveGlobalTokens": "globals.css wins equal-specificity root and dark-theme declarations; explicit component selectors retain local overrides.",
+      "limits": "Source extraction only; no visual approval, detector run or test certification."
+    }
   },
   "components": [
     {
-      "name": "Primário",
+      "name": "Ação primária",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Ação principal em superfícies de estudo.",
-      "html": "<button type=\"button\" class=\"ds-button-primary\">Abrir etapa</button>",
-      "css": ".ds-button-primary { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid transparent; border-radius: var(--radius-control, 12px); padding: 0.625rem 1rem; font: 750 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); cursor: pointer; transition: background-color var(--motion-ui, 180ms ease), border-color var(--motion-ui, 180ms ease); background: var(--orbit-glow, linear-gradient(155deg, #7946ed, #6335d7 72%, #4d2abc)); color: var(--on-orbit, #fff); box-shadow: inset 0 1px 0 #ffffff35, 0 6px 14px -8px #6a38e6bb; } .ds-button-primary:hover { box-shadow: inset 0 1px 0 #ffffff35, 0 9px 20px -9px #8e5af4; } .ds-button-primary:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-button-primary { transition: none; } }"
+      "description": "Ação principal com gradiente e relevo.",
+      "html": "<button class=\"ds-primary\">Continuar</button>",
+      "css": ".ds-primary{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 20px;border:1px solid #a69cff70;border-bottom:3px solid #4836b5;border-radius:var(--radius-control,12px);background:linear-gradient(160deg,#7567ff,#6558f5 75%);color:#fff;font-size:.875rem;font-weight:750;box-shadow:0 8px 16px -11px #6558f5bb;cursor:pointer;transition:transform 180ms ease,border-color 180ms ease,box-shadow 180ms ease}.ds-primary:hover{border-color:var(--accent,#5143e3);box-shadow:0 8px 20px -12px #6558f5}.ds-primary:focus-visible{outline:3px solid var(--focus,#5143e3);outline-offset:4px;}.ds-primary:active{transform:translateY(2px);border-bottom-width:1px}.ds-primary:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
     },
     {
-      "name": "Secundário",
+      "name": "Ação secundária",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Ação de apoio com borda e superfície temática.",
-      "html": "<button type=\"button\" class=\"ds-button-secondary\">Ver modelos</button>",
-      "css": ".ds-button-secondary { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid transparent; border-radius: var(--radius-control, 12px); padding: 0.625rem 1rem; font: 750 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); cursor: pointer; transition: background-color var(--motion-ui, 180ms ease), border-color var(--motion-ui, 180ms ease); border-color: var(--line, #e5e7f0); background: var(--surface, #fff); color: var(--ink, #151b37); } .ds-button-secondary:hover { border-color: var(--accent, #5143e3); background: var(--accent-wash, #eeeafe); } .ds-button-secondary:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-button-secondary { transition: none; } }"
+      "description": "Alternativa com superfície semântica.",
+      "html": "<button class=\"ds-secondary\">Voltar ao mapa</button>",
+      "css": ".ds-secondary{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);min-height:48px;padding:11px 20px;border:1px solid var(--line,#e5e7f0);border-bottom:3px solid var(--line,#e5e7f0);border-radius:var(--radius-control,12px);background:var(--surface,#fff);color:var(--ink,#151b37);font-size:.875rem;font-weight:750;cursor:pointer}.ds-secondary:hover{border-color:var(--accent,#5143e3);background:var(--accent-wash,#eeeafe)}.ds-secondary:focus-visible{outline:3px solid var(--focus,#5143e3);outline-offset:4px;}.ds-secondary:active{transform:translateY(2px);border-bottom-width:1px}"
     },
     {
-      "name": "Solar",
+      "name": "Navegação atual",
+      "kind": "nav",
+      "refersTo": "desktop-nav-current",
+      "description": "Um dos cinco destinos principais.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#inicio\" aria-current=\"page\"><svg aria-hidden=\"true\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m9 5 7 7-7 7\"/></svg>Início</a><a href=\"#trilhas\">Trilhas</a></nav>",
+      "css": ".ds-nav{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);display:grid;gap:10px;background:linear-gradient(180deg,#1c2344,#151b37);padding:16px;width:188px}.ds-nav a{display:flex;align-items:center;gap:14px;min-height:52px;padding:0 12px;color:#d3cfee;text-decoration:none;border:1px solid transparent;border-radius:12px;font-size:.875rem}.ds-nav a[aria-current]{background:linear-gradient(120deg,#7667ff,#5546db);border-color:#bcb4ff85;color:#fff;box-shadow:0 8px 24px -12px #6558f5c0}.ds-nav a:hover{background-color:#ffffff14}.ds-nav a:focus-visible{outline:3px solid var(--focus,#5143e3);outline-offset:4px;}"
+    },
+    {
+      "name": "Seletor de disciplina",
+      "kind": "chip",
+      "refersTo": "trail-tab-current",
+      "description": "Link selecionado com aria-current.",
+      "html": "<a class=\"ds-tab\" aria-current=\"page\" href=\"#elementar\">Matemática Elementar</a>",
+      "css": ".ds-tab{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);display:inline-flex;align-items:center;min-height:42px;padding:10px 14px;border:1px solid var(--line,#e5e7f0);border-radius:10px;background:var(--accent-wash,#eeeafe);color:var(--accent,#5143e3);font-size:.75rem;font-weight:750;text-decoration:none}.ds-tab:hover{border-color:var(--accent,#5143e3)}.ds-tab:focus-visible{outline:3px solid var(--focus,#5143e3);outline-offset:4px;}"
+    },
+    {
+      "name": "Banner da jornada",
+      "kind": "card",
+      "refersTo": "journey-banner",
+      "description": "Unidade, progresso registrado e continuidade.",
+      "html": "<section class=\"ds-banner\"><h2>Matemática Elementar</h2><p>Unidade 1 · 2 de 10 lições concluídas</p><progress max=\"10\" value=\"2\" aria-label=\"Progresso da unidade\"></progress><a href=\"#continuar\">Continuar <svg aria-hidden=\"true\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m9 5 7 7-7 7\"/></svg></a></section>",
+      "css": ".ds-banner{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);padding:24px;border:1px solid #d4ceffa6;border-radius:20px;background:linear-gradient(120deg,color-mix(in srgb,#6558f5 55%,#493ab0),#493ab0);color:#fff;max-width:600px}.ds-banner h2{font-family:var(--font-display,Sora,sans-serif);font-size:1.3rem;font-weight:800;line-height:1.4;margin:0}.ds-banner p{font-size:.75rem;line-height:1.6}.ds-banner progress{display:block;width:100%;height:8px;accent-color:#fff;margin:20px 0}.ds-banner a{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border:1px solid #fff;border-bottom:3px solid #d1cbff;border-radius:12px;background:#fff;color:#3b2e9a;font-size:.875rem;font-weight:750;text-decoration:none}.ds-banner a:hover{background:#eeeafe}.ds-banner a:focus-visible{outline:3px solid var(--focus,#5143e3);outline-offset:4px;}.ds-banner a:active{transform:translateY(2px)}"
+    },
+    {
+      "name": "Alternativa de questão",
+      "kind": "input",
+      "refersTo": "lesson-choice",
+      "description": "Radio nativo com letra, texto e foco explícito.",
+      "html": "<label class=\"ds-choice\"><input type=\"radio\" name=\"ds-answer\"/><span class=\"ds-letter\">A</span><span>web pertence ao conjunto A.</span></label>",
+      "css": ".ds-choice{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);position:relative;display:flex;align-items:center;gap:14px;min-height:62px;padding:14px 18px;border:1px solid var(--line,#e5e7f0);border-bottom:3px solid var(--line,#e5e7f0);border-radius:14px;background:var(--surface,#fff);color:var(--ink,#151b37);font-size:.9375rem;line-height:1.6;cursor:pointer}.ds-choice input{position:absolute;width:1px;height:1px;opacity:0}.ds-letter{display:grid;place-items:center;width:30px;height:30px;border:1px solid var(--line,#e5e7f0);border-radius:8px;font-size:.75rem;font-weight:750}.ds-choice:hover{border-color:var(--accent,#5143e3)}.ds-choice:has(input:checked){border-color:var(--accent,#5143e3);background:var(--accent-wash,#eeeafe)}.ds-choice:has(input:focus-visible){outline:3px solid var(--focus,#5143e3);outline-offset:3px}.ds-choice:active{scale:.985}@media(prefers-reduced-motion:reduce){.ds-choice:active{scale:1}}"
+    },
+    {
+      "name": "Painel de lição",
+      "kind": "card",
+      "refersTo": "lesson-panel",
+      "description": "Leitura e prática em uma coluna.",
+      "html": "<section class=\"ds-lesson\"><h2>Quem pertence ao conjunto?</h2><p>Um conjunto reúne elementos. Compare cada elemento com o conjunto A e escolha uma resposta.</p></section>",
+      "css": ".ds-lesson{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);padding:28px;border:1px solid color-mix(in srgb,var(--accent,#5143e3) 45%,var(--line,#e5e7f0));border-radius:20px;background:linear-gradient(155deg,color-mix(in srgb,var(--accent,#5143e3) 4%,var(--surface,#fff)),var(--surface,#fff));color:var(--ink,#151b37);box-shadow:0 10px 24px -22px #6558f5;max-width:720px}.ds-lesson h2{font-family:var(--font-display,Sora,sans-serif);font-size:1.5rem;font-weight:800;line-height:1.4;margin:0 0 18px}.ds-lesson p{font-size:1rem;line-height:1.85;margin:0}"
+    },
+    {
+      "name": "Slot da Mochila",
       "kind": "button",
-      "refersTo": "button-solar",
-      "description": "Variação de botão em Coral Solar.",
-      "html": "<button type=\"button\" class=\"ds-button-solar\">Explorar trilhas <svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></button>",
-      "css": ".ds-button-solar { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid transparent; border-radius: var(--radius-control, 12px); padding: 0.625rem 1rem; font: 750 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); cursor: pointer; transition: background-color var(--motion-ui, 180ms ease), border-color var(--motion-ui, 180ms ease); background: var(--solar, #ffaa6b); color: var(--night, #151b37); } .ds-button-solar:hover { background: #ffc29a; } .ds-button-solar:focus-visible { outline: 2px solid var(--solar, #ffaa6b); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-button-solar { transition: none; } }"
+      "refersTo": "inventory-slot",
+      "description": "Inspeção separada de equipamento e compra.",
+      "html": "<button class=\"ds-slot\" aria-pressed=\"true\"><span class=\"ds-qty\">×2</span><svg aria-hidden=\"true\" width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M13 8h22v30H13zM17 12h14M17 17h14M17 22h9M13 38c0 5-7 5-7 0V15h7M35 8c0-5 7-5 7 0v22h-7\"/></svg><strong>Pergaminho da Dica</strong><small>Comum</small></button>",
+      "css": ".ds-slot{font-family:var(--font-sans,\"Plus Jakarta Sans\",system-ui,sans-serif);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:180px;height:180px;padding:16px 12px;border:1px solid var(--success-ink,#08715f);border-bottom:3px solid var(--success-ink,#08715f);border-radius:16px;background:color-mix(in srgb,var(--success-ink,#08715f) 7%,var(--surface,#fff));color:var(--ink,#151b37);cursor:pointer;transition:transform 200ms}.ds-slot svg,.ds-slot small{color:var(--success-ink,#08715f)}.ds-slot strong{font-size:.8125rem;line-height:1.6}.ds-slot small{font-size:.6875rem}.ds-qty{position:absolute;top:10px;right:12px;font-size:.75rem;font-weight:750}.ds-slot:hover{transform:translateY(-2px)}.ds-slot:focus-visible{outline:3px solid var(--focus,#5143e3);outline-offset:4px;}.ds-slot:active{transform:translateY(0)}@media(prefers-reduced-motion:reduce){.ds-slot{transition:none}.ds-slot:hover{transform:none}}"
     },
     {
       "name": "Campo de associação",
@@ -499,54 +969,58 @@
       "css": ".ds-association { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 0.625rem; color: var(--ink, #151b37); font: 650 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); } .ds-association-select { min-width: 0; min-height: 2.75rem; width: 100%; border: 1px solid var(--line, #e5e7f0); border-radius: var(--radius-control, 12px); background: var(--surface, #fff); color: inherit; padding: 0.5rem 0.625rem; font: inherit; } .ds-association-select:focus-visible { outline: 2px solid var(--accent, #5143e3); outline-offset: 2px; }"
     },
     {
-      "name": "Navegação lateral",
-      "kind": "nav",
-      "refersTo": "desktop-nav-current",
-      "description": "A rota atual recebe fundo Órbita na navegação Noite.",
-      "html": "<nav aria-label=\"Navegação de exemplo\" class=\"ds-rail\"><a href=\"#inicio\">Início</a><a href=\"#trilhas\" aria-current=\"page\">Trilhas</a></nav>",
-      "css": ".ds-rail { display: grid; gap: 0.375rem; width: min(100%, 14.5rem); background: var(--night, #151b37); padding: 1rem; } .ds-rail a { display: flex; min-height: 2.875rem; align-items: center; border-radius: var(--radius-control, 12px); padding-inline: 0.75rem; color: var(--on-night-muted, #d3cfee); font: 650 0.875rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); text-decoration: none; transition: background-color var(--motion-ui, 180ms ease), color var(--motion-ui, 180ms ease); } .ds-rail a:hover { background: #ffffff14; color: var(--on-night, #f5f3ff); } .ds-rail a[aria-current=\"page\"] { background: var(--orbit-glow, linear-gradient(155deg, #7946ed, #6335d7 72%, #4d2abc)); color: var(--on-orbit, #fff); font-weight: 800; } .ds-rail a:focus-visible { outline: 2px solid var(--solar, #ffaa6b); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-rail a { transition: none; } }"
-    },
-    {
-      "name": "Contador de trilhas",
-      "kind": "chip",
-      "refersTo": "catalog-count",
-      "description": "Cápsula informativa com a contagem de trilhas no catálogo.",
-      "html": "<span class=\"ds-count\">5 trilhas</span>",
-      "css": ".ds-count { display: inline-block; border: 1px solid var(--line, #e5e7f0); border-radius: 100px; background: var(--surface, #fff); padding: 0.35rem 0.65rem; color: var(--muted, #57607b); font: 700 0.75rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); }"
-    },
-    {
-      "name": "Cartão de disciplina",
-      "kind": "card",
-      "refersTo": "course-card",
-      "description": "Acesso ao mapa com símbolo da disciplina e progresso baseado nas etapas publicadas.",
-      "html": "<a href=\"#mapa\" class=\"ds-course\"><span class=\"ds-course-top\"><span aria-hidden=\"true\" class=\"ds-course-symbol\">Σ</span><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></span><strong class=\"ds-course-title\">Matemática Elementar</strong><span class=\"ds-course-count\">10 etapas · 2 desafios</span></a>",
-      "css": ".ds-course { --ds-discipline-accent: var(--accent, #5143e3); --ds-discipline-tint: color-mix(in srgb, var(--ds-discipline-accent) 9%, var(--surface, #fff)); display: grid; gap: 0.55rem; align-content: start; border: 1px solid var(--line, #e5e7f0); border-radius: var(--radius-card, 20px); background: var(--surface, #fff); padding: 1rem; color: var(--ink, #151b37); text-decoration: none; box-shadow: var(--shadow-card, 0 8px 24px -18px #151b3740); transition: border-color var(--motion-ui, 180ms ease), box-shadow var(--motion-ui, 180ms ease); } .ds-course-top { display: flex; align-items: center; justify-content: space-between; color: var(--ds-discipline-accent); } .ds-course-symbol { display: grid; width: 2.65rem; aspect-ratio: 1; place-items: center; border-radius: var(--radius-control, 12px); background: var(--ds-discipline-tint); font: 800 1rem var(--font-mono, \"JetBrains Mono\", ui-monospace, monospace); } .ds-course-title { font: 800 0.975rem/1.4 var(--font-display, Sora, \"Plus Jakarta Sans\", system-ui, sans-serif); letter-spacing: -0.025em; } .ds-course-count { color: var(--muted, #57607b); font: 650 0.75rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); } .ds-course:hover { border-color: var(--ds-discipline-accent); box-shadow: 0 12px 28px -21px var(--orbit, #6558f5); } .ds-course:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-course { transition: none; } } .ds-course { background: linear-gradient(148deg, color-mix(in srgb, var(--ds-discipline-accent) 13%, var(--surface, #222143)), var(--surface, #222143) 78%); } :host-context([data-theme=\"dark\"]) .ds-course { border-color: #9764ff; background: radial-gradient(ellipse at 14% 3%, #9764ff66, transparent 76%), linear-gradient(145deg, #3c266c, #222143 92%); box-shadow: inset 0 1px 0 #ffffff35, 0 12px 27px -19px #9764ff; } :host-context([data-theme=\"dark\"]) .ds-course-symbol { color: #fff; background: linear-gradient(155deg, #9764ff, #5327bd 82%); box-shadow: inset 0 1px 0 #ffffff35, 0 5px 13px -6px #9764ff; }"
-    },
-    {
-      "name": "Ponto do mapa",
+      "name": "Medalha Incomum",
       "kind": "custom",
-      "refersTo": "checkpoint",
-      "description": "Conclusão em Menta, próxima etapa em Órbita com contorno Solar e pré-requisito marcado pelo cadeado.",
-      "html": "<div class=\"ds-checkpoints\"><button class=\"ds-checkpoint\" data-state=\"completed\" aria-label=\"Etapa 1 concluída\" type=\"button\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m5 12 4 4 10-10\"/></svg>1</button><button class=\"ds-checkpoint\" data-state=\"current\" aria-label=\"Etapa 2 disponível\" type=\"button\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 5v15M3 4h5l4 2 4-2h5v15h-5l-4 2-4-2H3z\"/></svg>2</button><button class=\"ds-checkpoint\" data-state=\"locked\" aria-label=\"Etapa 3 bloqueada\" type=\"button\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"5\" y=\"10\" width=\"14\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 1 1 8 0v3\"/></svg>3</button></div>",
-      "css": ".ds-checkpoints { --ds-discipline-accent: var(--accent, #5143e3); --ds-discipline-ink: var(--ink, #302282); --ds-discipline-tint: color-mix(in srgb, var(--ds-discipline-accent) 9%, var(--surface, #fff)); --ds-discipline-track: color-mix(in srgb, var(--ds-discipline-accent) 40%, var(--surface, #fff)); --ds-on-discipline: var(--white, #fff); display: flex; gap: 0.875rem; } :host-context([data-theme=\"dark\"]) .ds-checkpoints { --ds-on-discipline: var(--night, #151b37); } .ds-checkpoint { display: flex; width: 3.25rem; height: 3.25rem; align-items: center; justify-content: center; gap: 0.125rem; cursor: pointer; border: 2px solid var(--ds-discipline-track); border-radius: 50%; background: var(--surface, #fff); color: var(--ds-discipline-ink); box-shadow: 0 5px 14px -10px var(--ds-discipline-accent); font: 850 1rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); font-variant-numeric: tabular-nums; transition: border-color var(--motion-ui, 180ms ease), background-color var(--motion-ui, 180ms ease), box-shadow var(--motion-ui, 180ms ease); } .ds-checkpoint[data-published=\"true\"] { border-color: var(--ds-discipline-accent); background: var(--ds-discipline-tint); color: var(--ds-discipline-accent); } .ds-checkpoint[data-challenge=\"true\"] { border-radius: 0.875rem; background: var(--ds-discipline-tint); } .ds-checkpoint:hover { border-color: var(--ds-discipline-accent); background: var(--ds-discipline-tint); } .ds-checkpoint[aria-pressed=\"true\"] { border-color: var(--ds-discipline-accent); background: var(--ds-discipline-accent); color: var(--ds-on-discipline); box-shadow: 0 0 0 4px var(--ds-discipline-tint), 0 8px 20px -10px var(--ds-discipline-accent); } .ds-checkpoint:focus-visible { outline: 2px solid var(--focus, #5143e3); outline-offset: 3px; } @media (prefers-reduced-motion: reduce) { .ds-checkpoint { transition: none; } } .ds-checkpoint[data-state=\"completed\"] { background: linear-gradient(150deg, #6be7d7, #1bafaa 80%); border-color: var(--mint, #25c5ab); color: var(--night, #151b37); } .ds-checkpoint[data-state=\"current\"] { width: 3.75rem; height: 3.75rem; background: linear-gradient(155deg, #9764ff, #5327bd 82%); border: 3px solid #ffe4d3; box-shadow: 0 0 0 2px var(--solar, #ffaa6b), 0 0 16px 2px #9764ffb8; color: var(--white, #fff); } .ds-checkpoint[data-state=\"locked\"] { background: var(--surface-soft, #2d2854); border-color: var(--line, #4a426e); color: var(--muted, #b7bed8); }"
+      "refersTo": "rpg-medal-uncommon",
+      "description": "Azul semântico; corpo facetado, fita e símbolo de categoria em SVG, meta e pontos de nível.",
+      "html": "<figure class=\"ds-rpg-medal-example\"><span class=\"ds-rpg-medal\"><svg aria-hidden=\"true\" viewBox=\"0 0 100 108\"><path d=\"m26 59-8 42 21-10 11 13 11-13 21 10-8-42Z\" fill=\"currentColor\" fill-opacity=\".24\"/><path d=\"m50 4 15 7 17 2 5 17 9 14-6 17-2 17-18 6-20 10-20-10-18-6-2-17-6-17 9-14 5-17 17-2Z\" fill=\"currentColor\" fill-opacity=\".18\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"50\" cy=\"47\" r=\"29\" fill=\"none\" stroke=\"currentColor\"/><path d=\"M51 23c1 7-9 10-9 18a8 8 0 0 0 16 0c0-5-3-7-4-9 0 5-3 7-5 7-3-4 3-8 2-16Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg><small>7</small></span><figcaption>Semana de Ferro · Incomum</figcaption></figure>",
+      "css": ".ds-rpg-medal-example { color: var(--rpg-uncommon-ink, #245da8); font: 800 0.75rem var(--font-sans, \"Plus Jakarta Sans\", system-ui, sans-serif); margin: 0; display: flex; align-items: center; gap: 18px; } .ds-rpg-medal { display: block; position: relative; width: 100px; height: 110px; flex-shrink: 0; } .ds-rpg-medal svg { width: 100%; height: 100%; } .ds-rpg-medal small { position: absolute; bottom: 26px; left: 0; width: 100%; text-align: center; font-size: 9px; }"
     }
   ],
   "narrative": {
     "northStar": "Mapa de estudo conectado",
-    "overview": "O trilbit usa a linguagem dos mapas para orientar a revisão universitária. O T de nós conectados aparece na assinatura e a mesma geometria organiza os pontos de cada trilha. A área de estudo usa Noite e superfícies roxas como padrão. O início reúne saudação, trilhas e a próxima meta, com Bito parcialmente visível na base da navegação lateral.\n\nBito acolhe quem chega. O personagem do painel de referência ganhou uma ilustração própria, otimizada em WebP com registro de proveniência ao lado do arquivo. O símbolo em SVG foi reconstruído a partir do painel raster fornecido.",
+    "overview": "O trilbit orienta a revisão universitária por uma jornada de nós conectados, derivada do T da marca. O conteúdo ocupa superfícies de leitura contidas; cor, relevo e símbolos indicam disciplina, disponibilidade e resposta. Bito acolhe a exploração sem disputar espaço com a questão. A ilustração existente foi otimizada em WebP com proveniência ao lado do arquivo; o símbolo SVG foi reconstruído da prancha raster fornecida.\n\nA identidade oficial, Sora, Plus Jakarta Sans, símbolo e Bito permanecem vinculantes. Este registro descreve o redesign global em Operate, orientado pelo código e pela composição solicitada, como extensão do mundo existente. A dispensa de concept roll foi uma interpretação registrada dessa continuidade: não houve seed, rodada de conceitos ou comp aprovado. Este documento não representa aprovação visual nem certificação de testes.",
     "keyCharacteristics": [
-      "Área de estudo escura com alternativa clara.",
-      "Conexões e cores de disciplina que ajudam a localizar etapas.",
-      "Tipografia de leitura e controles compartilhados entre as rotas."
+      "Tema escuro padrão e alternativa clara com cores semânticas compartilhadas.",
+      "Percurso dominante, próxima ação explícita e apoio compacto na exploração.",
+      "Lição central em modo de concentração, leitura guiada e correção integrada.",
+      "Símbolos matemáticos e artefatos SVG próprios; Bito raster oficial com espaço reservado."
     ],
-    "rules": [],
+    "rules": [
+      {
+        "name": "The Rarity Rule",
+        "body": "Comum é Menta, Incomum é azul, Rara é roxa, Épica é quente e Lendária é dourada. Nome da raridade, símbolo de categoria, meta e estado escrito acompanham a cor; medalhas bloqueadas ficam atenuadas, e o brilho dourado distingue Lendária.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contextual Contrast Rule",
+        "body": "A ação contextual do nó usa Noite sobre a luz da disciplina no escuro e Branco sobre sua profundidade no claro. Não herdar uma tinta de outro contexto para esse controle.",
+        "section": "colors"
+      },
+      {
+        "name": "The Confirmed Response Rule",
+        "body": "A seleção permanece montada no mesmo cartão durante a validação. Só o resultado confirmado pelo servidor aplica o estado de acerto ou erro, desabilita as alternativas e revela o painel integrado. O acerto combina borda e fundo Menta, check desenhado, anel, pulso e seis partículas locais; o erro usa o tom quente semântico, X e deslocamento lateral curto de até 3 px. O primeiro erro orienta para a revisão sem revelar a solução. A continuidade depende de uma ação manual em Continuar ou Ver meu resultado; a coreografia não avança a atividade sozinha.",
+        "section": "components"
+      },
+      {
+        "name": "The Bounded Motion Rule",
+        "body": "O conteúdo principal conduz a atenção; movimento de repouso termina. O nó atual pulsa duas vezes em ciclos de `3200ms`. Bito respira duas vezes em ciclos de `6s`, após `2s`, deslocando-se no máximo 2 px com rotação de 0,4 grau. O menu da conta entra e sai em `--motion-micro`, e o indicador lateral desliza em `--motion-enter` quando a posição ativa muda.",
+        "section": "components"
+      }
+    ],
     "dos": [
-      "Faça a área de estudo responder ao tema com as cores semânticas de fundo, superfície, texto e foco.",
-      "Faça o estado selecionado aparecer também no texto, no ícone ou no estado semântico do controle.",
-      "Faça as transições de estado respeitarem a preferência por movimento reduzido."
+      "Do usar cores semânticas de fundo, superfície, texto e foco conforme o tema.",
+      "Do mostrar seleção, conclusão, bloqueio e raridade também em texto, ícone ou estado semântico.",
+      "Do manter próxima ação explícita e leitura da questão em uma coluna no modo de concentração.",
+      "Do aguardar confirmação do servidor, conservar seleção e oferecer continuidade manual.",
+      "Do limitar pulsos de repouso e consumir a identidade dos eventos de celebração.",
+      "Do respeitar movimento reduzido e cancelar requisições, temporizadores, quadros e animações ao desmontar."
     ],
     "donts": [
-      "Evite apresentar prévias como conteúdo publicado ou exibir progresso, XP e posições de ranking sem dados reais."
+      "Don't apresentar prévias como lições publicadas ou inventar progresso, recompensas e posições de ranking.",
+      "Don't vincular avanço, foco ou disponibilidade de ações ao fim de uma animação.",
+      "Don't deixar Bito cobrir texto, ação ou questão.",
+      "Don't substituir SVG matemático ou de interface por emoji ou glifo decorativo de fonte."
     ]
   }
 }

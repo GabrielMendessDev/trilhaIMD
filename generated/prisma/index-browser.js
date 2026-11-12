@@ -166,9 +166,173 @@ exports.Prisma.VerificationTokenScalarFieldEnum = {
   expires: 'expires'
 };
 
+exports.Prisma.LearningTrailScalarFieldEnum = {
+  slug: 'slug',
+  name: 'name',
+  archived: 'archived'
+};
+
+exports.Prisma.TrailPointScalarFieldEnum = {
+  id: 'id',
+  trailSlug: 'trailSlug',
+  number: 'number',
+  xpReward: 'xpReward'
+};
+
+exports.Prisma.LearningPointProgressScalarFieldEnum = {
+  userId: 'userId',
+  pointId: 'pointId',
+  completedEntries: 'completedEntries',
+  attempts: 'attempts',
+  skippedEntries: 'skippedEntries',
+  deferredEntries: 'deferredEntries',
+  completedAt: 'completedAt',
+  xp: 'xp',
+  correctAnswers: 'correctAnswers',
+  lives: 'lives',
+  run: 'run'
+};
+
+exports.Prisma.TrailPointContentScalarFieldEnum = {
+  pointId: 'pointId',
+  blocks: 'blocks',
+  summary: 'summary'
+};
+
+exports.Prisma.LearningActivityScalarFieldEnum = {
+  id: 'id',
+  pointId: 'pointId',
+  slug: 'slug',
+  title: 'title'
+};
+
+exports.Prisma.LearningEntryScalarFieldEnum = {
+  activityId: 'activityId',
+  number: 'number',
+  position: 'position',
+  mode: 'mode',
+  type: 'type',
+  prompt: 'prompt',
+  media: 'media',
+  payload: 'payload',
+  answer: 'answer',
+  content: 'content'
+};
+
+exports.Prisma.RpgWalletScalarFieldEnum = {
+  userId: 'userId',
+  bits: 'bits',
+  achievementXp: 'achievementXp',
+  stats: 'stats',
+  initialized: 'initialized'
+};
+
+exports.Prisma.AchievementDefinitionScalarFieldEnum = {
+  id: 'id',
+  definition: 'definition'
+};
+
+exports.Prisma.UserAchievementScalarFieldEnum = {
+  userId: 'userId',
+  achievementId: 'achievementId',
+  unlockedAt: 'unlockedAt',
+  xp: 'xp',
+  bits: 'bits'
+};
+
+exports.Prisma.AchievementProgressScalarFieldEnum = {
+  userId: 'userId',
+  achievementId: 'achievementId',
+  current: 'current'
+};
+
+exports.Prisma.RpgEventScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  key: 'key',
+  type: 'type',
+  payload: 'payload',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.CurrencyTransactionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  key: 'key',
+  kind: 'kind',
+  subject: 'subject',
+  bits: 'bits',
+  xp: 'xp',
+  balanceAfter: 'balanceAfter',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ShopItemScalarFieldEnum = {
+  id: 'id',
+  definition: 'definition'
+};
+
+exports.Prisma.InventoryItemScalarFieldEnum = {
+  userId: 'userId',
+  itemId: 'itemId',
+  quantity: 'quantity',
+  equipped: 'equipped'
+};
+
+exports.Prisma.ItemUsageScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  requestId: 'requestId',
+  itemId: 'itemId',
+  pointId: 'pointId',
+  entryKey: 'entryKey',
+  action: 'action',
+  result: 'result',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.RpgQuestionStateScalarFieldEnum = {
+  userId: 'userId',
+  pointId: 'pointId',
+  entryKey: 'entryKey',
+  effects: 'effects',
+  assisted: 'assisted'
+};
+
+exports.Prisma.UserStreakProtectionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  activatedDay: 'activatedDay',
+  protectedDay: 'protectedDay',
+  state: 'state',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.StudyDayScalarFieldEnum = {
+  userId: 'userId',
+  day: 'day'
+};
+
+exports.Prisma.MaterialReadingScalarFieldEnum = {
+  userId: 'userId',
+  pointId: 'pointId',
+  entryKey: 'entryKey',
+  startedAt: 'startedAt',
+  completedAt: 'completedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.JsonNullValueInput = {
+  JsonNull: Prisma.JsonNull
+};
+
+exports.Prisma.NullableJsonNullValueInput = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull
 };
 
 exports.Prisma.QueryMode = {
@@ -181,13 +345,49 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
+exports.LearningEntryMode = exports.$Enums.LearningEntryMode = {
+  CONTENT: 'CONTENT',
+  QUESTION: 'QUESTION',
+  MIXED: 'MIXED'
+};
+
+exports.LearningQuestionType = exports.$Enums.LearningQuestionType = {
+  MULTIPLE_CHOICE: 'MULTIPLE_CHOICE',
+  ASSOCIATION: 'ASSOCIATION',
+  PAIR_LINKS: 'PAIR_LINKS',
+  WALKTHROUGH: 'WALKTHROUGH'
+};
 
 exports.Prisma.ModelName = {
   Post: 'Post',
   Account: 'Account',
   Session: 'Session',
   User: 'User',
-  VerificationToken: 'VerificationToken'
+  VerificationToken: 'VerificationToken',
+  LearningTrail: 'LearningTrail',
+  TrailPoint: 'TrailPoint',
+  LearningPointProgress: 'LearningPointProgress',
+  TrailPointContent: 'TrailPointContent',
+  LearningActivity: 'LearningActivity',
+  LearningEntry: 'LearningEntry',
+  RpgWallet: 'RpgWallet',
+  AchievementDefinition: 'AchievementDefinition',
+  UserAchievement: 'UserAchievement',
+  AchievementProgress: 'AchievementProgress',
+  RpgEvent: 'RpgEvent',
+  CurrencyTransaction: 'CurrencyTransaction',
+  ShopItem: 'ShopItem',
+  InventoryItem: 'InventoryItem',
+  ItemUsage: 'ItemUsage',
+  RpgQuestionState: 'RpgQuestionState',
+  UserStreakProtection: 'UserStreakProtection',
+  StudyDay: 'StudyDay',
+  MaterialReading: 'MaterialReading'
 };
 
 /**

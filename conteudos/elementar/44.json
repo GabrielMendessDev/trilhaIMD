@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 44,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-44",
+      "titulo": "Exponenciais: crescer, decair e nunca tocar zero",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um arquivo dobrado a cada rodada e uma quantidade reduzida à metade têm curvas opostas, mas uma característica em comum: nenhum número finito de rodadas produz exatamente zero. A linha horizontal aparece como aproximação, não como destino alcançado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Descrever gráficos, domínio, imagem e assíntota de aˣ."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Potências reais e função crescente ou decrescente."
+              }
+            ],
+            "titulo": "Exponenciais: crescer, decair e nunca tocar zero",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para a>0 e a≠1, f(x)=aˣ tem domínio ℝ, imagem (0,∞), intercepto (0,1) e assíntota horizontal y=0. Se a>1 é estritamente crescente; se 0<a<1 é estritamente decrescente. Na primeira, aˣ tende a 0 quando x vai para −∞; na segunda, quando x vai para +∞."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Uma exponencial básica de base positiva diferente de um tem valores sempre positivos.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "f(x)=aˣ>0, a>0, a≠1"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o domínio de 2ˣ?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "A base positiva admite todo expoente real.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "[0,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "ℝ"
+              },
+              {
+                "id": "c",
+                "texto": "(0,∞)"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "aˣ é sempre positivo e cada y>0 tem o expoente x=logₐy, o que justifica a imagem. Se x₂>x₁, aˣ²/aˣ¹=a^(x₂−x₁). Essa razão é maior que 1 para a>1 e menor que 1 para 0<a<1, demonstrando a monotonia. Bases positivas garantem a definição para todo real x."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/exponenciais.svg",
+                "alt": "Curvas 2ˣ crescente e (1/2)ˣ decrescente: ambas passam por (0,1), permanecem positivas e se aproximam do eixo horizontal sem tocá-lo.",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Curvas 2ˣ crescente e (1/2)ˣ decrescente: ambas passam por (0,1), permanecem positivas e se aproximam do eixo horizontal sem tocá-lo.",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a imagem de 2ˣ?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "Os valores são positivos e todo positivo é atingido.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,∞)"
+              },
+              {
+                "id": "b",
+                "texto": "[0,∞)"
+              },
+              {
+                "id": "c",
+                "texto": "ℝ"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Exponenciais: crescer, decair e nunca tocar zero",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Compare f(x)=2ˣ e g(x)=(1/2)ˣ nos valores −1,0,1: f dá 1/2,1,2; g dá 2,1,1/2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Os gráficos passam por (0,1), são positivos e têm sentidos de monotonia opostos. Além disso, g(x)=f(−x), uma reflexão no eixo vertical."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Nenhum gráfico passa por (x,0). A assíntota descreve valores cada vez mais próximos de zero em uma direção ilimitada, sem afirmar igualdade em uma entrada finita."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o intercepto vertical de aˣ?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "a⁰=1 para a>0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(0,0)"
+              },
+              {
+                "id": "b",
+                "texto": "(1,0)"
+              },
+              {
+                "id": "c",
+                "texto": "(0,1)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a assíntota horizontal de 2ˣ?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "Quando x vai para −∞, os valores se aproximam de zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "y=1"
+              },
+              {
+                "id": "b",
+                "texto": "y=0"
+              },
+              {
+                "id": "c",
+                "texto": "x=0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A imagem não é [0,∞): zero não é atingido. Uma curva exponencial de base positiva também não passa pela origem. O modelo exponencial pode ser matematicamente definido em ℝ e fisicamente válido apenas num intervalo de tempo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como é a monotonia de (1/3)ˣ?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "A base está entre 0 e 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Estritamente decrescente"
+              },
+              {
+                "id": "b",
+                "texto": "Estritamente crescente"
+              },
+              {
+                "id": "c",
+                "texto": "Constante"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 2⁻¹?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "Expoente negativo produz o recíproco.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−2"
+              },
+              {
+                "id": "b",
+                "texto": "0"
+              },
+              {
+                "id": "c",
+                "texto": "1/2"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Compare uma sequência linear 1,2,3,4 com uma exponencial 1,2,4,8 nos mesmos instantes. Explique a diferença entre acrescentar uma quantidade fixa e multiplicar por um fator fixo. Isso ajuda a interpretar modelos sem vender previsões ilimitadas."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Existe x real tal que 2ˣ=0?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "Potências reais de base positiva são estritamente positivas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim, x=−1"
+              },
+              {
+                "id": "b",
+                "texto": "Não"
+              },
+              {
+                "id": "c",
+                "texto": "Sim, x=0"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual relação vale entre (1/2)ˣ e 2ˣ?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "A base recíproca equivale a trocar o sinal do expoente.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(1/2)ˣ=2⁻ˣ"
+              },
+              {
+                "id": "b",
+                "texto": "(1/2)ˣ=−2ˣ"
+              },
+              {
+                "id": "c",
+                "texto": "(1/2)ˣ=2ˣ/2"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para a>0 e a≠1, f(x)=aˣ tem domínio ℝ, imagem (0,∞), intercepto (0,1) e assíntota horizontal y=0. Se a>1 é estritamente crescente; se 0<a<1 é estritamente decrescente. Na primeira, aˣ tende a 0 quando x vai para −∞; na segunda, quando x vai para +∞."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Nenhum gráfico passa por (x,0). A assíntota descreve valores cada vez mais próximos de zero em uma direção ilimitada, sem afirmar igualdade em uma entrada finita."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como descrever gráficos, domínio, imagem e assíntota de aˣ. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se x₂>x₁ e a>1, como comparar aˣ² e aˣ¹?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "A função é estritamente crescente para base maior que 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "aˣ²<aˣ¹"
+              },
+              {
+                "id": "b",
+                "texto": "São iguais"
+              },
+              {
+                "id": "c",
+                "texto": "aˣ²>aˣ¹"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O modelo dobrado a cada rodada tem qual mudança entre saídas consecutivas?",
+            "assunto": "Exponenciais: crescer, decair e nunca tocar zero",
+            "orientacao": "Confira se a base está acima de um ou entre zero e um e diferencie assíntota de valor atingido.",
+            "explicacao": "Crescimento exponencial mantém um fator multiplicativo, não um acréscimo fixo.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Soma constante 2"
+              },
+              {
+                "id": "b",
+                "texto": "Razão constante 2"
+              },
+              {
+                "id": "c",
+                "texto": "Diferença constante 2"
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

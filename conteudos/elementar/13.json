@@ -1,0 +1,484 @@
+{
+  "versao": 1,
+  "trilha": "elementar",
+  "ponto": 13,
+  "atividades": [
+    {
+      "id": "elementar-v2-passo-13",
+      "titulo": "Quadráticas: escolher o caminho",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Você procura dois números cuja soma é 5 e cujo produto é 6. Talvez os encontre antes de terminar de ler. Esse pequeno enigma resolve uma equação quadrática inteira e ajuda a escolher quando usar uma fórmula maior."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Resolver quadráticas por fatoração, soma e produto e fórmula geral."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Equações lineares, potências e distributividade."
+              }
+            ],
+            "titulo": "Quadráticas: escolher o caminho",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma quadrática tem ax²+bx+c=0, a≠0. Se puder fatorar como a(x−r)(x−s), o produto é zero exatamente em r ou s. As raízes reais, quando existem, têm soma −b/a e produto c/a, contando multiplicidade. Com Δ=b²−4ac≥0, a fórmula geral é x=(−b±√Δ)/(2a)."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "As raízes quadráticas reais são menos b, mais ou menos a raiz de delta, tudo dividido por duas vezes a.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "x=(−b±√Δ)/(2a)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais são as raízes de x²−5x+6=0?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "As raízes têm soma 5 e produto 6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−2 e −3"
+              },
+              {
+                "id": "b",
+                "texto": "1 e 6"
+              },
+              {
+                "id": "c",
+                "texto": "2 e 3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Expandir a(x−r)(x−s) fornece ax²−a(r+s)x+ars. Comparar coeficientes explica a soma e o produto das raízes. Esta justificativa curta dá sentido ao método; sua dedução geral não é prioridade na P1 2025.2. A fórmula geral resolve inclusive casos em que adivinhar fatores é pouco prático."
+              },
+              {
+                "tipo": "imagem",
+                "src": "/materiais/elementar/parabola.svg",
+                "alt": "Parábola x²−4x+3 com concavidade para cima, zeros em 1 e 3, intercepto (0,3) e vértice (2,−1).",
+                "largura": 720,
+                "altura": 440,
+                "legenda": "Parábola x²−4x+3 com concavidade para cima, zeros em 1 e 3, intercepto (0,3) e vértice (2,−1).",
+                "id": "figura"
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a soma das raízes de 2x²−6x+4=0?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "A soma é −b/a=6/2=3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "−3"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo resolvido · Quadráticas: escolher o caminho",
+            "assunto": "Quadráticas: escolher o caminho",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva x²−5x+6=0. Precisamos de r+s=5 e rs=6. O par 2 e 3 satisfaz ambas as condições."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "A fatoração é (x−2)(x−3)=0. Pela propriedade do produto nulo, x=2 ou x=3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Pela fórmula: Δ=25−24=1 e x=(5±1)/2, dando os mesmos valores. A conferência revela dois métodos para uma mesma estrutura."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o produto das raízes de 2x²−6x+4=0?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "O produto é c/a=4/2=2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2"
+              },
+              {
+                "id": "b",
+                "texto": "3"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x²−9=0 em ℝ.",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "A diferença de quadrados fatorada é (x−3)(x+3)=0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{3}"
+              },
+              {
+                "id": "b",
+                "texto": "{−9,9}"
+              },
+              {
+                "id": "c",
+                "texto": "{−3,3}"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O sinal da soma é −b/a, não b/a. E a propriedade do produto nulo só vale quando o produto é igual a zero: de uv=6 não concluímos u=6 ou v=6. Equações incompletas também podem ser quadráticas se a≠0."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Antes de seguir: explique o erro em suas palavras e construa um exemplo que o torne visível."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Resolva x²−4x=0.",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "x(x−4)=0 inclui x=0, que seria perdido ao dividir por x.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "{−4,4}"
+              },
+              {
+                "id": "b",
+                "texto": "{0,4}"
+              },
+              {
+                "id": "c",
+                "texto": "{4}"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o discriminante de x²+2x−3=0?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "Δ=2²−4·1·(−3)=4+12=16.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "16"
+              },
+              {
+                "id": "b",
+                "texto": "−8"
+              },
+              {
+                "id": "c",
+                "texto": "4"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Escolha o método conforme a forma: fator comum em x²−4x, diferença de quadrados em x²−9, soma e produto para pares simples e fórmula geral quando necessário. Saber justificar a escolha reduz contas e facilita revisar sinais."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais são as raízes de x²+2x−3=0?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "x=(−2±4)/2 produz 1 e −3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3 e −1"
+              },
+              {
+                "id": "b",
+                "texto": "1 e 3"
+              },
+              {
+                "id": "c",
+                "texto": "1 e −3"
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que caracteriza uma equação quadrática?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "b ou c podem ser zero; a não pode.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O termo independente é positivo"
+              },
+              {
+                "id": "b",
+                "texto": "O coeficiente de x² é não nulo"
+              },
+              {
+                "id": "c",
+                "texto": "Todos os coeficientes são não nulos"
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma quadrática tem ax²+bx+c=0, a≠0. Se puder fatorar como a(x−r)(x−s), o produto é zero exatamente em r ou s. As raízes reais, quando existem, têm soma −b/a e produto c/a, contando multiplicidade. Com Δ=b²−4ac≥0, a fórmula geral é x=(−b±√Δ)/(2a)."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Verificação: Pela fórmula: Δ=25−24=1 e x=(5±1)/2, dando os mesmos valores. A conferência revela dois métodos para uma mesma estrutura."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: explique como resolver quadráticas por fatoração, soma e produto e fórmula geral. Depois reconstrua o exemplo sem consultar a solução."
+              },
+              {
+                "id": "texto-4",
+                "tipo": "texto",
+                "texto": "Referência curricular: IMD1001_acervo_unificado_P1_P2_P3.md, fornecido pelo estudante; recorte P1/P2/P3 de 2025.2. Texto, exemplos e questões desta versão são autorais. Os PDFs de P2/P3 não foram conferidos diretamente nesta produção. As exclusões de 2025.2 não devem ser presumidas para outras ofertas."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se uv=0 em ℝ, qual conclusão vale?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "Um produto real só é zero se pelo menos um fator for zero.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "u=0 ou v=0"
+              },
+              {
+                "id": "b",
+                "texto": "u=v=0 obrigatoriamente"
+              },
+              {
+                "id": "c",
+                "texto": "u+v=0"
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a forma fatorada de x²+x−6?",
+            "assunto": "Quadráticas: escolher o caminho",
+            "orientacao": "Escolha fatoração ou fórmula geral e confira os sinais de b e c antes de calcular.",
+            "explicacao": "Expandir dá x²+x−6, com raízes −3 e 2.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(x−3)(x+2)"
+              },
+              {
+                "id": "b",
+                "texto": "(x−3)(x−2)"
+              },
+              {
+                "id": "c",
+                "texto": "(x+3)(x−2)"
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

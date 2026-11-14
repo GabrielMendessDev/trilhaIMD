@@ -2,6 +2,25 @@
 
 Plataforma de estudo por trilhas para estudantes de Tecnologia da Informação do IMD/UFRN, construída com a [T3 Stack](https://create.t3.gg/).
 
+## Desenvolvimento local com PostgreSQL
+
+O projeto usa PostgreSQL com Prisma. Com Docker Desktop aberto, copie `.env.example` para `.env` se ainda não tiver um arquivo local e suba o banco:
+
+```sh
+docker compose up -d
+```
+
+O serviço publica o banco em `localhost:5432`, usa um volume Docker para preservar os dados entre reinicializações e verifica quando o PostgreSQL está pronto. As credenciais padrão estão no `.env.example`; se alterar usuário, senha ou nome do banco, mantenha `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` e `DATABASE_URL` alinhados no `.env`.
+
+Em um banco novo, aplique as migrações e inicie o app:
+
+```sh
+npm run db:migrate
+npm run dev
+```
+
+Para parar o banco sem apagar os dados, rode `docker compose down`. Para apagar também o banco local e seu volume, rode `docker compose down -v`.
+
 ## Login com Google
 
 1. Crie um cliente OAuth do tipo **Aplicativo da Web** na [Google Auth Platform](https://console.cloud.google.com/auth/clients).

@@ -13,11 +13,8 @@ import {
 	useState,
 } from "react";
 import { FeedbackIcon } from "./feedback-icon";
-import {
-	commitLearningNavigation,
-	hasNativeNavigation,
-	revealPageContent,
-} from "./learning-navigation";
+import { hasNativeNavigation, revealPageContent } from "./learning-navigation";
+import { RouteLoading } from "./route-loading";
 
 export type FeedbackKind = "success" | "error" | "info" | "warning" | "loading";
 type Notice = {
@@ -90,7 +87,6 @@ export function FeedbackProvider({ children }: { children: ReactNode }) {
 		);
 	}, []);
 	const finishNavigation = useCallback(() => {
-		commitLearningNavigation();
 		navigating.current = null;
 		setNavigation(null);
 		setNotices((current) =>
@@ -170,6 +166,7 @@ export function FeedbackProvider({ children }: { children: ReactNode }) {
 				<NavigationObserver />
 			</Suspense>
 			{children}
+			{navigation && <RouteLoading target={navigation.target} />}
 		</Context.Provider>
 	);
 }

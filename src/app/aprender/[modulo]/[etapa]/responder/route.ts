@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 import { trails } from "~/app/aprender/trails";
 import { auth } from "~/server/auth";
 import { recordAnswer } from "~/server/lesson";
-import { readRpgState, rpgBalance } from "~/server/rpg";
+import { readRpgBalance } from "~/server/rpg";
 
 export async function POST(
 	request: NextRequest,
@@ -60,8 +60,8 @@ export async function POST(
 					? `${base}?${new URLSearchParams({ item: result.nextKey })}`
 					: base,
 			assessment: "assessment" in result ? result.assessment : undefined,
-			rpg: rpgBalance(
-				await readRpgState(user.id),
+			rpg: await readRpgBalance(
+				user.id,
 				"awards" in result ? result.awards : [],
 			),
 		});

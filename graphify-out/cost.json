@@ -22,6 +22,14 @@
       "files": 12,
       "usage_available": false,
       "note": "Final item-audit refresh. Complete host semantic extraction after auxiliary-agent usage limit; usage unmeasured."
+    },
+    {
+      "date": "2026-11-16T17:20:24.743118+00:00",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "files": 166,
+      "usage_available": false,
+      "note": "Agent usage unavailable; zero counts are unmeasured placeholders."
     }
   ],
   "total_input_tokens": 0,

@@ -44,6 +44,11 @@ export type VerificationToken = $Result.DefaultSelection<Prisma.$VerificationTok
  */
 export type LearningTrail = $Result.DefaultSelection<Prisma.$LearningTrailPayload>
 /**
+ * Model LearningCatalogRevision
+ * 
+ */
+export type LearningCatalogRevision = $Result.DefaultSelection<Prisma.$LearningCatalogRevisionPayload>
+/**
  * Model TrailPoint
  * 
  */
@@ -343,6 +348,16 @@ export class PrismaClient<
     * ```
     */
   get learningTrail(): Prisma.LearningTrailDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.learningCatalogRevision`: Exposes CRUD operations for the **LearningCatalogRevision** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more LearningCatalogRevisions
+    * const learningCatalogRevisions = await prisma.learningCatalogRevision.findMany()
+    * ```
+    */
+  get learningCatalogRevision(): Prisma.LearningCatalogRevisionDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.trailPoint`: Exposes CRUD operations for the **TrailPoint** model.
@@ -970,6 +985,7 @@ export namespace Prisma {
     User: 'User',
     VerificationToken: 'VerificationToken',
     LearningTrail: 'LearningTrail',
+    LearningCatalogRevision: 'LearningCatalogRevision',
     TrailPoint: 'TrailPoint',
     LearningPointProgress: 'LearningPointProgress',
     TrailPointContent: 'TrailPointContent',
@@ -1006,7 +1022,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "post" | "account" | "session" | "user" | "verificationToken" | "learningTrail" | "trailPoint" | "learningPointProgress" | "trailPointContent" | "learningActivity" | "learningEntry" | "rpgWallet" | "achievementDefinition" | "userAchievement" | "achievementProgress" | "rpgEvent" | "currencyTransaction" | "shopItem" | "inventoryItem" | "itemUsage" | "rpgQuestionState" | "userStreakProtection" | "studyDay" | "materialReading"
+      modelProps: "post" | "account" | "session" | "user" | "verificationToken" | "learningTrail" | "learningCatalogRevision" | "trailPoint" | "learningPointProgress" | "trailPointContent" | "learningActivity" | "learningEntry" | "rpgWallet" | "achievementDefinition" | "userAchievement" | "achievementProgress" | "rpgEvent" | "currencyTransaction" | "shopItem" | "inventoryItem" | "itemUsage" | "rpgQuestionState" | "userStreakProtection" | "studyDay" | "materialReading"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1451,6 +1467,80 @@ export namespace Prisma {
           count: {
             args: Prisma.LearningTrailCountArgs<ExtArgs>
             result: $Utils.Optional<LearningTrailCountAggregateOutputType> | number
+          }
+        }
+      }
+      LearningCatalogRevision: {
+        payload: Prisma.$LearningCatalogRevisionPayload<ExtArgs>
+        fields: Prisma.LearningCatalogRevisionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LearningCatalogRevisionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LearningCatalogRevisionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>
+          }
+          findFirst: {
+            args: Prisma.LearningCatalogRevisionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LearningCatalogRevisionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>
+          }
+          findMany: {
+            args: Prisma.LearningCatalogRevisionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>[]
+          }
+          create: {
+            args: Prisma.LearningCatalogRevisionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>
+          }
+          createMany: {
+            args: Prisma.LearningCatalogRevisionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LearningCatalogRevisionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>[]
+          }
+          delete: {
+            args: Prisma.LearningCatalogRevisionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>
+          }
+          update: {
+            args: Prisma.LearningCatalogRevisionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>
+          }
+          deleteMany: {
+            args: Prisma.LearningCatalogRevisionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LearningCatalogRevisionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LearningCatalogRevisionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>[]
+          }
+          upsert: {
+            args: Prisma.LearningCatalogRevisionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LearningCatalogRevisionPayload>
+          }
+          aggregate: {
+            args: Prisma.LearningCatalogRevisionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLearningCatalogRevision>
+          }
+          groupBy: {
+            args: Prisma.LearningCatalogRevisionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LearningCatalogRevisionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LearningCatalogRevisionCountArgs<ExtArgs>
+            result: $Utils.Optional<LearningCatalogRevisionCountAggregateOutputType> | number
           }
         }
       }
@@ -2888,6 +2978,7 @@ export namespace Prisma {
     user?: UserOmit
     verificationToken?: VerificationTokenOmit
     learningTrail?: LearningTrailOmit
+    learningCatalogRevision?: LearningCatalogRevisionOmit
     trailPoint?: TrailPointOmit
     learningPointProgress?: LearningPointProgressOmit
     trailPointContent?: TrailPointContentOmit
@@ -10132,6 +10223,1000 @@ export namespace Prisma {
 
 
   /**
+   * Model LearningCatalogRevision
+   */
+
+  export type AggregateLearningCatalogRevision = {
+    _count: LearningCatalogRevisionCountAggregateOutputType | null
+    _avg: LearningCatalogRevisionAvgAggregateOutputType | null
+    _sum: LearningCatalogRevisionSumAggregateOutputType | null
+    _min: LearningCatalogRevisionMinAggregateOutputType | null
+    _max: LearningCatalogRevisionMaxAggregateOutputType | null
+  }
+
+  export type LearningCatalogRevisionAvgAggregateOutputType = {
+    id: number | null
+    version: number | null
+  }
+
+  export type LearningCatalogRevisionSumAggregateOutputType = {
+    id: number | null
+    version: bigint | null
+  }
+
+  export type LearningCatalogRevisionMinAggregateOutputType = {
+    id: number | null
+    version: bigint | null
+  }
+
+  export type LearningCatalogRevisionMaxAggregateOutputType = {
+    id: number | null
+    version: bigint | null
+  }
+
+  export type LearningCatalogRevisionCountAggregateOutputType = {
+    id: number
+    version: number
+    _all: number
+  }
+
+
+  export type LearningCatalogRevisionAvgAggregateInputType = {
+    id?: true
+    version?: true
+  }
+
+  export type LearningCatalogRevisionSumAggregateInputType = {
+    id?: true
+    version?: true
+  }
+
+  export type LearningCatalogRevisionMinAggregateInputType = {
+    id?: true
+    version?: true
+  }
+
+  export type LearningCatalogRevisionMaxAggregateInputType = {
+    id?: true
+    version?: true
+  }
+
+  export type LearningCatalogRevisionCountAggregateInputType = {
+    id?: true
+    version?: true
+    _all?: true
+  }
+
+  export type LearningCatalogRevisionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LearningCatalogRevision to aggregate.
+     */
+    where?: LearningCatalogRevisionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LearningCatalogRevisions to fetch.
+     */
+    orderBy?: LearningCatalogRevisionOrderByWithRelationInput | LearningCatalogRevisionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LearningCatalogRevisionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LearningCatalogRevisions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LearningCatalogRevisions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned LearningCatalogRevisions
+    **/
+    _count?: true | LearningCatalogRevisionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: LearningCatalogRevisionAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: LearningCatalogRevisionSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LearningCatalogRevisionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LearningCatalogRevisionMaxAggregateInputType
+  }
+
+  export type GetLearningCatalogRevisionAggregateType<T extends LearningCatalogRevisionAggregateArgs> = {
+        [P in keyof T & keyof AggregateLearningCatalogRevision]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLearningCatalogRevision[P]>
+      : GetScalarType<T[P], AggregateLearningCatalogRevision[P]>
+  }
+
+
+
+
+  export type LearningCatalogRevisionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LearningCatalogRevisionWhereInput
+    orderBy?: LearningCatalogRevisionOrderByWithAggregationInput | LearningCatalogRevisionOrderByWithAggregationInput[]
+    by: LearningCatalogRevisionScalarFieldEnum[] | LearningCatalogRevisionScalarFieldEnum
+    having?: LearningCatalogRevisionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LearningCatalogRevisionCountAggregateInputType | true
+    _avg?: LearningCatalogRevisionAvgAggregateInputType
+    _sum?: LearningCatalogRevisionSumAggregateInputType
+    _min?: LearningCatalogRevisionMinAggregateInputType
+    _max?: LearningCatalogRevisionMaxAggregateInputType
+  }
+
+  export type LearningCatalogRevisionGroupByOutputType = {
+    id: number
+    version: bigint
+    _count: LearningCatalogRevisionCountAggregateOutputType | null
+    _avg: LearningCatalogRevisionAvgAggregateOutputType | null
+    _sum: LearningCatalogRevisionSumAggregateOutputType | null
+    _min: LearningCatalogRevisionMinAggregateOutputType | null
+    _max: LearningCatalogRevisionMaxAggregateOutputType | null
+  }
+
+  type GetLearningCatalogRevisionGroupByPayload<T extends LearningCatalogRevisionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LearningCatalogRevisionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LearningCatalogRevisionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LearningCatalogRevisionGroupByOutputType[P]>
+            : GetScalarType<T[P], LearningCatalogRevisionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LearningCatalogRevisionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    version?: boolean
+  }, ExtArgs["result"]["learningCatalogRevision"]>
+
+  export type LearningCatalogRevisionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    version?: boolean
+  }, ExtArgs["result"]["learningCatalogRevision"]>
+
+  export type LearningCatalogRevisionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    version?: boolean
+  }, ExtArgs["result"]["learningCatalogRevision"]>
+
+  export type LearningCatalogRevisionSelectScalar = {
+    id?: boolean
+    version?: boolean
+  }
+
+  export type LearningCatalogRevisionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "version", ExtArgs["result"]["learningCatalogRevision"]>
+
+  export type $LearningCatalogRevisionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "LearningCatalogRevision"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      version: bigint
+    }, ExtArgs["result"]["learningCatalogRevision"]>
+    composites: {}
+  }
+
+  type LearningCatalogRevisionGetPayload<S extends boolean | null | undefined | LearningCatalogRevisionDefaultArgs> = $Result.GetResult<Prisma.$LearningCatalogRevisionPayload, S>
+
+  type LearningCatalogRevisionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LearningCatalogRevisionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LearningCatalogRevisionCountAggregateInputType | true
+    }
+
+  export interface LearningCatalogRevisionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LearningCatalogRevision'], meta: { name: 'LearningCatalogRevision' } }
+    /**
+     * Find zero or one LearningCatalogRevision that matches the filter.
+     * @param {LearningCatalogRevisionFindUniqueArgs} args - Arguments to find a LearningCatalogRevision
+     * @example
+     * // Get one LearningCatalogRevision
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LearningCatalogRevisionFindUniqueArgs>(args: SelectSubset<T, LearningCatalogRevisionFindUniqueArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one LearningCatalogRevision that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LearningCatalogRevisionFindUniqueOrThrowArgs} args - Arguments to find a LearningCatalogRevision
+     * @example
+     * // Get one LearningCatalogRevision
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LearningCatalogRevisionFindUniqueOrThrowArgs>(args: SelectSubset<T, LearningCatalogRevisionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LearningCatalogRevision that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LearningCatalogRevisionFindFirstArgs} args - Arguments to find a LearningCatalogRevision
+     * @example
+     * // Get one LearningCatalogRevision
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LearningCatalogRevisionFindFirstArgs>(args?: SelectSubset<T, LearningCatalogRevisionFindFirstArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LearningCatalogRevision that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LearningCatalogRevisionFindFirstOrThrowArgs} args - Arguments to find a LearningCatalogRevision
+     * @example
+     * // Get one LearningCatalogRevision
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LearningCatalogRevisionFindFirstOrThrowArgs>(args?: SelectSubset<T, LearningCatalogRevisionFindFirstOrThrowArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more LearningCatalogRevisions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LearningCatalogRevisionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all LearningCatalogRevisions
+     * const learningCatalogRevisions = await prisma.learningCatalogRevision.findMany()
+     * 
+     * // Get first 10 LearningCatalogRevisions
+     * const learningCatalogRevisions = await prisma.learningCatalogRevision.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const learningCatalogRevisionWithIdOnly = await prisma.learningCatalogRevision.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends LearningCatalogRevisionFindManyArgs>(args?: SelectSubset<T, LearningCatalogRevisionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a LearningCatalogRevision.
+     * @param {LearningCatalogRevisionCreateArgs} args - Arguments to create a LearningCatalogRevision.
+     * @example
+     * // Create one LearningCatalogRevision
+     * const LearningCatalogRevision = await prisma.learningCatalogRevision.create({
+     *   data: {
+     *     // ... data to create a LearningCatalogRevision
+     *   }
+     * })
+     * 
+     */
+    create<T extends LearningCatalogRevisionCreateArgs>(args: SelectSubset<T, LearningCatalogRevisionCreateArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many LearningCatalogRevisions.
+     * @param {LearningCatalogRevisionCreateManyArgs} args - Arguments to create many LearningCatalogRevisions.
+     * @example
+     * // Create many LearningCatalogRevisions
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LearningCatalogRevisionCreateManyArgs>(args?: SelectSubset<T, LearningCatalogRevisionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many LearningCatalogRevisions and returns the data saved in the database.
+     * @param {LearningCatalogRevisionCreateManyAndReturnArgs} args - Arguments to create many LearningCatalogRevisions.
+     * @example
+     * // Create many LearningCatalogRevisions
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many LearningCatalogRevisions and only return the `id`
+     * const learningCatalogRevisionWithIdOnly = await prisma.learningCatalogRevision.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LearningCatalogRevisionCreateManyAndReturnArgs>(args?: SelectSubset<T, LearningCatalogRevisionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a LearningCatalogRevision.
+     * @param {LearningCatalogRevisionDeleteArgs} args - Arguments to delete one LearningCatalogRevision.
+     * @example
+     * // Delete one LearningCatalogRevision
+     * const LearningCatalogRevision = await prisma.learningCatalogRevision.delete({
+     *   where: {
+     *     // ... filter to delete one LearningCatalogRevision
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LearningCatalogRevisionDeleteArgs>(args: SelectSubset<T, LearningCatalogRevisionDeleteArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one LearningCatalogRevision.
+     * @param {LearningCatalogRevisionUpdateArgs} args - Arguments to update one LearningCatalogRevision.
+     * @example
+     * // Update one LearningCatalogRevision
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LearningCatalogRevisionUpdateArgs>(args: SelectSubset<T, LearningCatalogRevisionUpdateArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more LearningCatalogRevisions.
+     * @param {LearningCatalogRevisionDeleteManyArgs} args - Arguments to filter LearningCatalogRevisions to delete.
+     * @example
+     * // Delete a few LearningCatalogRevisions
+     * const { count } = await prisma.learningCatalogRevision.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LearningCatalogRevisionDeleteManyArgs>(args?: SelectSubset<T, LearningCatalogRevisionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LearningCatalogRevisions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LearningCatalogRevisionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many LearningCatalogRevisions
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LearningCatalogRevisionUpdateManyArgs>(args: SelectSubset<T, LearningCatalogRevisionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LearningCatalogRevisions and returns the data updated in the database.
+     * @param {LearningCatalogRevisionUpdateManyAndReturnArgs} args - Arguments to update many LearningCatalogRevisions.
+     * @example
+     * // Update many LearningCatalogRevisions
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more LearningCatalogRevisions and only return the `id`
+     * const learningCatalogRevisionWithIdOnly = await prisma.learningCatalogRevision.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LearningCatalogRevisionUpdateManyAndReturnArgs>(args: SelectSubset<T, LearningCatalogRevisionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one LearningCatalogRevision.
+     * @param {LearningCatalogRevisionUpsertArgs} args - Arguments to update or create a LearningCatalogRevision.
+     * @example
+     * // Update or create a LearningCatalogRevision
+     * const learningCatalogRevision = await prisma.learningCatalogRevision.upsert({
+     *   create: {
+     *     // ... data to create a LearningCatalogRevision
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the LearningCatalogRevision we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LearningCatalogRevisionUpsertArgs>(args: SelectSubset<T, LearningCatalogRevisionUpsertArgs<ExtArgs>>): Prisma__LearningCatalogRevisionClient<$Result.GetResult<Prisma.$LearningCatalogRevisionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of LearningCatalogRevisions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LearningCatalogRevisionCountArgs} args - Arguments to filter LearningCatalogRevisions to count.
+     * @example
+     * // Count the number of LearningCatalogRevisions
+     * const count = await prisma.learningCatalogRevision.count({
+     *   where: {
+     *     // ... the filter for the LearningCatalogRevisions we want to count
+     *   }
+     * })
+    **/
+    count<T extends LearningCatalogRevisionCountArgs>(
+      args?: Subset<T, LearningCatalogRevisionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LearningCatalogRevisionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a LearningCatalogRevision.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LearningCatalogRevisionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LearningCatalogRevisionAggregateArgs>(args: Subset<T, LearningCatalogRevisionAggregateArgs>): Prisma.PrismaPromise<GetLearningCatalogRevisionAggregateType<T>>
+
+    /**
+     * Group by LearningCatalogRevision.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LearningCatalogRevisionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LearningCatalogRevisionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LearningCatalogRevisionGroupByArgs['orderBy'] }
+        : { orderBy?: LearningCatalogRevisionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LearningCatalogRevisionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLearningCatalogRevisionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the LearningCatalogRevision model
+   */
+  readonly fields: LearningCatalogRevisionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for LearningCatalogRevision.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LearningCatalogRevisionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the LearningCatalogRevision model
+   */
+  interface LearningCatalogRevisionFieldRefs {
+    readonly id: FieldRef<"LearningCatalogRevision", 'Int'>
+    readonly version: FieldRef<"LearningCatalogRevision", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * LearningCatalogRevision findUnique
+   */
+  export type LearningCatalogRevisionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * Filter, which LearningCatalogRevision to fetch.
+     */
+    where: LearningCatalogRevisionWhereUniqueInput
+  }
+
+  /**
+   * LearningCatalogRevision findUniqueOrThrow
+   */
+  export type LearningCatalogRevisionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * Filter, which LearningCatalogRevision to fetch.
+     */
+    where: LearningCatalogRevisionWhereUniqueInput
+  }
+
+  /**
+   * LearningCatalogRevision findFirst
+   */
+  export type LearningCatalogRevisionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * Filter, which LearningCatalogRevision to fetch.
+     */
+    where?: LearningCatalogRevisionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LearningCatalogRevisions to fetch.
+     */
+    orderBy?: LearningCatalogRevisionOrderByWithRelationInput | LearningCatalogRevisionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LearningCatalogRevisions.
+     */
+    cursor?: LearningCatalogRevisionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LearningCatalogRevisions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LearningCatalogRevisions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LearningCatalogRevisions.
+     */
+    distinct?: LearningCatalogRevisionScalarFieldEnum | LearningCatalogRevisionScalarFieldEnum[]
+  }
+
+  /**
+   * LearningCatalogRevision findFirstOrThrow
+   */
+  export type LearningCatalogRevisionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * Filter, which LearningCatalogRevision to fetch.
+     */
+    where?: LearningCatalogRevisionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LearningCatalogRevisions to fetch.
+     */
+    orderBy?: LearningCatalogRevisionOrderByWithRelationInput | LearningCatalogRevisionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LearningCatalogRevisions.
+     */
+    cursor?: LearningCatalogRevisionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LearningCatalogRevisions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LearningCatalogRevisions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LearningCatalogRevisions.
+     */
+    distinct?: LearningCatalogRevisionScalarFieldEnum | LearningCatalogRevisionScalarFieldEnum[]
+  }
+
+  /**
+   * LearningCatalogRevision findMany
+   */
+  export type LearningCatalogRevisionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * Filter, which LearningCatalogRevisions to fetch.
+     */
+    where?: LearningCatalogRevisionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LearningCatalogRevisions to fetch.
+     */
+    orderBy?: LearningCatalogRevisionOrderByWithRelationInput | LearningCatalogRevisionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing LearningCatalogRevisions.
+     */
+    cursor?: LearningCatalogRevisionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LearningCatalogRevisions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LearningCatalogRevisions.
+     */
+    skip?: number
+    distinct?: LearningCatalogRevisionScalarFieldEnum | LearningCatalogRevisionScalarFieldEnum[]
+  }
+
+  /**
+   * LearningCatalogRevision create
+   */
+  export type LearningCatalogRevisionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * The data needed to create a LearningCatalogRevision.
+     */
+    data: XOR<LearningCatalogRevisionCreateInput, LearningCatalogRevisionUncheckedCreateInput>
+  }
+
+  /**
+   * LearningCatalogRevision createMany
+   */
+  export type LearningCatalogRevisionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many LearningCatalogRevisions.
+     */
+    data: LearningCatalogRevisionCreateManyInput | LearningCatalogRevisionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LearningCatalogRevision createManyAndReturn
+   */
+  export type LearningCatalogRevisionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * The data used to create many LearningCatalogRevisions.
+     */
+    data: LearningCatalogRevisionCreateManyInput | LearningCatalogRevisionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LearningCatalogRevision update
+   */
+  export type LearningCatalogRevisionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * The data needed to update a LearningCatalogRevision.
+     */
+    data: XOR<LearningCatalogRevisionUpdateInput, LearningCatalogRevisionUncheckedUpdateInput>
+    /**
+     * Choose, which LearningCatalogRevision to update.
+     */
+    where: LearningCatalogRevisionWhereUniqueInput
+  }
+
+  /**
+   * LearningCatalogRevision updateMany
+   */
+  export type LearningCatalogRevisionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update LearningCatalogRevisions.
+     */
+    data: XOR<LearningCatalogRevisionUpdateManyMutationInput, LearningCatalogRevisionUncheckedUpdateManyInput>
+    /**
+     * Filter which LearningCatalogRevisions to update
+     */
+    where?: LearningCatalogRevisionWhereInput
+    /**
+     * Limit how many LearningCatalogRevisions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LearningCatalogRevision updateManyAndReturn
+   */
+  export type LearningCatalogRevisionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * The data used to update LearningCatalogRevisions.
+     */
+    data: XOR<LearningCatalogRevisionUpdateManyMutationInput, LearningCatalogRevisionUncheckedUpdateManyInput>
+    /**
+     * Filter which LearningCatalogRevisions to update
+     */
+    where?: LearningCatalogRevisionWhereInput
+    /**
+     * Limit how many LearningCatalogRevisions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LearningCatalogRevision upsert
+   */
+  export type LearningCatalogRevisionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * The filter to search for the LearningCatalogRevision to update in case it exists.
+     */
+    where: LearningCatalogRevisionWhereUniqueInput
+    /**
+     * In case the LearningCatalogRevision found by the `where` argument doesn't exist, create a new LearningCatalogRevision with this data.
+     */
+    create: XOR<LearningCatalogRevisionCreateInput, LearningCatalogRevisionUncheckedCreateInput>
+    /**
+     * In case the LearningCatalogRevision was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LearningCatalogRevisionUpdateInput, LearningCatalogRevisionUncheckedUpdateInput>
+  }
+
+  /**
+   * LearningCatalogRevision delete
+   */
+  export type LearningCatalogRevisionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+    /**
+     * Filter which LearningCatalogRevision to delete.
+     */
+    where: LearningCatalogRevisionWhereUniqueInput
+  }
+
+  /**
+   * LearningCatalogRevision deleteMany
+   */
+  export type LearningCatalogRevisionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LearningCatalogRevisions to delete
+     */
+    where?: LearningCatalogRevisionWhereInput
+    /**
+     * Limit how many LearningCatalogRevisions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * LearningCatalogRevision without action
+   */
+  export type LearningCatalogRevisionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LearningCatalogRevision
+     */
+    select?: LearningCatalogRevisionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LearningCatalogRevision
+     */
+    omit?: LearningCatalogRevisionOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Model TrailPoint
    */
 
@@ -15884,6 +16969,7 @@ export namespace Prisma {
     bits: number | null
     achievementXp: number | null
     initialized: boolean | null
+    settledDay: string | null
   }
 
   export type RpgWalletMaxAggregateOutputType = {
@@ -15891,6 +16977,7 @@ export namespace Prisma {
     bits: number | null
     achievementXp: number | null
     initialized: boolean | null
+    settledDay: string | null
   }
 
   export type RpgWalletCountAggregateOutputType = {
@@ -15899,6 +16986,7 @@ export namespace Prisma {
     achievementXp: number
     stats: number
     initialized: number
+    settledDay: number
     _all: number
   }
 
@@ -15918,6 +17006,7 @@ export namespace Prisma {
     bits?: true
     achievementXp?: true
     initialized?: true
+    settledDay?: true
   }
 
   export type RpgWalletMaxAggregateInputType = {
@@ -15925,6 +17014,7 @@ export namespace Prisma {
     bits?: true
     achievementXp?: true
     initialized?: true
+    settledDay?: true
   }
 
   export type RpgWalletCountAggregateInputType = {
@@ -15933,6 +17023,7 @@ export namespace Prisma {
     achievementXp?: true
     stats?: true
     initialized?: true
+    settledDay?: true
     _all?: true
   }
 
@@ -16028,6 +17119,7 @@ export namespace Prisma {
     achievementXp: number
     stats: JsonValue
     initialized: boolean
+    settledDay: string | null
     _count: RpgWalletCountAggregateOutputType | null
     _avg: RpgWalletAvgAggregateOutputType | null
     _sum: RpgWalletSumAggregateOutputType | null
@@ -16055,6 +17147,7 @@ export namespace Prisma {
     achievementXp?: boolean
     stats?: boolean
     initialized?: boolean
+    settledDay?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["rpgWallet"]>
 
@@ -16064,6 +17157,7 @@ export namespace Prisma {
     achievementXp?: boolean
     stats?: boolean
     initialized?: boolean
+    settledDay?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["rpgWallet"]>
 
@@ -16073,6 +17167,7 @@ export namespace Prisma {
     achievementXp?: boolean
     stats?: boolean
     initialized?: boolean
+    settledDay?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["rpgWallet"]>
 
@@ -16082,9 +17177,10 @@ export namespace Prisma {
     achievementXp?: boolean
     stats?: boolean
     initialized?: boolean
+    settledDay?: boolean
   }
 
-  export type RpgWalletOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "bits" | "achievementXp" | "stats" | "initialized", ExtArgs["result"]["rpgWallet"]>
+  export type RpgWalletOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "bits" | "achievementXp" | "stats" | "initialized" | "settledDay", ExtArgs["result"]["rpgWallet"]>
   export type RpgWalletInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -16106,6 +17202,7 @@ export namespace Prisma {
       achievementXp: number
       stats: Prisma.JsonValue
       initialized: boolean
+      settledDay: string | null
     }, ExtArgs["result"]["rpgWallet"]>
     composites: {}
   }
@@ -16535,6 +17632,7 @@ export namespace Prisma {
     readonly achievementXp: FieldRef<"RpgWallet", 'Int'>
     readonly stats: FieldRef<"RpgWallet", 'Json'>
     readonly initialized: FieldRef<"RpgWallet", 'Boolean'>
+    readonly settledDay: FieldRef<"RpgWallet", 'String'>
   }
     
 
@@ -30100,6 +31198,14 @@ export namespace Prisma {
   export type LearningTrailScalarFieldEnum = (typeof LearningTrailScalarFieldEnum)[keyof typeof LearningTrailScalarFieldEnum]
 
 
+  export const LearningCatalogRevisionScalarFieldEnum: {
+    id: 'id',
+    version: 'version'
+  };
+
+  export type LearningCatalogRevisionScalarFieldEnum = (typeof LearningCatalogRevisionScalarFieldEnum)[keyof typeof LearningCatalogRevisionScalarFieldEnum]
+
+
   export const TrailPointScalarFieldEnum: {
     id: 'id',
     trailSlug: 'trailSlug',
@@ -30167,7 +31273,8 @@ export namespace Prisma {
     bits: 'bits',
     achievementXp: 'achievementXp',
     stats: 'stats',
-    initialized: 'initialized'
+    initialized: 'initialized',
+    settledDay: 'settledDay'
   };
 
   export type RpgWalletScalarFieldEnum = (typeof RpgWalletScalarFieldEnum)[keyof typeof RpgWalletScalarFieldEnum]
@@ -30402,6 +31509,20 @@ export namespace Prisma {
    * Reference to a field of type 'Boolean'
    */
   export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
+   * Reference to a field of type 'BigInt'
+   */
+  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
+    
+
+
+  /**
+   * Reference to a field of type 'BigInt[]'
+   */
+  export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
     
 
 
@@ -30854,6 +31975,45 @@ export namespace Prisma {
     archived?: BoolWithAggregatesFilter<"LearningTrail"> | boolean
   }
 
+  export type LearningCatalogRevisionWhereInput = {
+    AND?: LearningCatalogRevisionWhereInput | LearningCatalogRevisionWhereInput[]
+    OR?: LearningCatalogRevisionWhereInput[]
+    NOT?: LearningCatalogRevisionWhereInput | LearningCatalogRevisionWhereInput[]
+    id?: IntFilter<"LearningCatalogRevision"> | number
+    version?: BigIntFilter<"LearningCatalogRevision"> | bigint | number
+  }
+
+  export type LearningCatalogRevisionOrderByWithRelationInput = {
+    id?: SortOrder
+    version?: SortOrder
+  }
+
+  export type LearningCatalogRevisionWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: LearningCatalogRevisionWhereInput | LearningCatalogRevisionWhereInput[]
+    OR?: LearningCatalogRevisionWhereInput[]
+    NOT?: LearningCatalogRevisionWhereInput | LearningCatalogRevisionWhereInput[]
+    version?: BigIntFilter<"LearningCatalogRevision"> | bigint | number
+  }, "id">
+
+  export type LearningCatalogRevisionOrderByWithAggregationInput = {
+    id?: SortOrder
+    version?: SortOrder
+    _count?: LearningCatalogRevisionCountOrderByAggregateInput
+    _avg?: LearningCatalogRevisionAvgOrderByAggregateInput
+    _max?: LearningCatalogRevisionMaxOrderByAggregateInput
+    _min?: LearningCatalogRevisionMinOrderByAggregateInput
+    _sum?: LearningCatalogRevisionSumOrderByAggregateInput
+  }
+
+  export type LearningCatalogRevisionScalarWhereWithAggregatesInput = {
+    AND?: LearningCatalogRevisionScalarWhereWithAggregatesInput | LearningCatalogRevisionScalarWhereWithAggregatesInput[]
+    OR?: LearningCatalogRevisionScalarWhereWithAggregatesInput[]
+    NOT?: LearningCatalogRevisionScalarWhereWithAggregatesInput | LearningCatalogRevisionScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"LearningCatalogRevision"> | number
+    version?: BigIntWithAggregatesFilter<"LearningCatalogRevision"> | bigint | number
+  }
+
   export type TrailPointWhereInput = {
     AND?: TrailPointWhereInput | TrailPointWhereInput[]
     OR?: TrailPointWhereInput[]
@@ -31208,6 +32368,7 @@ export namespace Prisma {
     achievementXp?: IntFilter<"RpgWallet"> | number
     stats?: JsonFilter<"RpgWallet">
     initialized?: BoolFilter<"RpgWallet"> | boolean
+    settledDay?: StringNullableFilter<"RpgWallet"> | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
@@ -31217,6 +32378,7 @@ export namespace Prisma {
     achievementXp?: SortOrder
     stats?: SortOrder
     initialized?: SortOrder
+    settledDay?: SortOrderInput | SortOrder
     user?: UserOrderByWithRelationInput
   }
 
@@ -31229,6 +32391,7 @@ export namespace Prisma {
     achievementXp?: IntFilter<"RpgWallet"> | number
     stats?: JsonFilter<"RpgWallet">
     initialized?: BoolFilter<"RpgWallet"> | boolean
+    settledDay?: StringNullableFilter<"RpgWallet"> | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "userId">
 
@@ -31238,6 +32401,7 @@ export namespace Prisma {
     achievementXp?: SortOrder
     stats?: SortOrder
     initialized?: SortOrder
+    settledDay?: SortOrderInput | SortOrder
     _count?: RpgWalletCountOrderByAggregateInput
     _avg?: RpgWalletAvgOrderByAggregateInput
     _max?: RpgWalletMaxOrderByAggregateInput
@@ -31254,6 +32418,7 @@ export namespace Prisma {
     achievementXp?: IntWithAggregatesFilter<"RpgWallet"> | number
     stats?: JsonWithAggregatesFilter<"RpgWallet">
     initialized?: BoolWithAggregatesFilter<"RpgWallet"> | boolean
+    settledDay?: StringNullableWithAggregatesFilter<"RpgWallet"> | string | null
   }
 
   export type AchievementDefinitionWhereInput = {
@@ -32366,6 +33531,41 @@ export namespace Prisma {
     archived?: BoolFieldUpdateOperationsInput | boolean
   }
 
+  export type LearningCatalogRevisionCreateInput = {
+    id: number
+    version?: bigint | number
+  }
+
+  export type LearningCatalogRevisionUncheckedCreateInput = {
+    id: number
+    version?: bigint | number
+  }
+
+  export type LearningCatalogRevisionUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type LearningCatalogRevisionUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type LearningCatalogRevisionCreateManyInput = {
+    id: number
+    version?: bigint | number
+  }
+
+  export type LearningCatalogRevisionUpdateManyMutationInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type LearningCatalogRevisionUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
   export type TrailPointCreateInput = {
     number: number
     xpReward?: number
@@ -32712,6 +33912,7 @@ export namespace Prisma {
     achievementXp?: number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: boolean
+    settledDay?: string | null
     user: UserCreateNestedOneWithoutRpgWalletInput
   }
 
@@ -32721,6 +33922,7 @@ export namespace Prisma {
     achievementXp?: number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: boolean
+    settledDay?: string | null
   }
 
   export type RpgWalletUpdateInput = {
@@ -32728,6 +33930,7 @@ export namespace Prisma {
     achievementXp?: IntFieldUpdateOperationsInput | number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: BoolFieldUpdateOperationsInput | boolean
+    settledDay?: NullableStringFieldUpdateOperationsInput | string | null
     user?: UserUpdateOneRequiredWithoutRpgWalletNestedInput
   }
 
@@ -32737,6 +33940,7 @@ export namespace Prisma {
     achievementXp?: IntFieldUpdateOperationsInput | number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: BoolFieldUpdateOperationsInput | boolean
+    settledDay?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type RpgWalletCreateManyInput = {
@@ -32745,6 +33949,7 @@ export namespace Prisma {
     achievementXp?: number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: boolean
+    settledDay?: string | null
   }
 
   export type RpgWalletUpdateManyMutationInput = {
@@ -32752,6 +33957,7 @@ export namespace Prisma {
     achievementXp?: IntFieldUpdateOperationsInput | number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: BoolFieldUpdateOperationsInput | boolean
+    settledDay?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type RpgWalletUncheckedUpdateManyInput = {
@@ -32760,6 +33966,7 @@ export namespace Prisma {
     achievementXp?: IntFieldUpdateOperationsInput | number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: BoolFieldUpdateOperationsInput | boolean
+    settledDay?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type AchievementDefinitionCreateInput = {
@@ -33934,6 +35141,58 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type BigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
+  }
+
+  export type LearningCatalogRevisionCountOrderByAggregateInput = {
+    id?: SortOrder
+    version?: SortOrder
+  }
+
+  export type LearningCatalogRevisionAvgOrderByAggregateInput = {
+    id?: SortOrder
+    version?: SortOrder
+  }
+
+  export type LearningCatalogRevisionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    version?: SortOrder
+  }
+
+  export type LearningCatalogRevisionMinOrderByAggregateInput = {
+    id?: SortOrder
+    version?: SortOrder
+  }
+
+  export type LearningCatalogRevisionSumOrderByAggregateInput = {
+    id?: SortOrder
+    version?: SortOrder
+  }
+
+  export type BigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
+  }
+
   export type LearningTrailScalarRelationFilter = {
     is?: LearningTrailWhereInput
     isNot?: LearningTrailWhereInput
@@ -34321,6 +35580,7 @@ export namespace Prisma {
     achievementXp?: SortOrder
     stats?: SortOrder
     initialized?: SortOrder
+    settledDay?: SortOrder
   }
 
   export type RpgWalletAvgOrderByAggregateInput = {
@@ -34333,6 +35593,7 @@ export namespace Prisma {
     bits?: SortOrder
     achievementXp?: SortOrder
     initialized?: SortOrder
+    settledDay?: SortOrder
   }
 
   export type RpgWalletMinOrderByAggregateInput = {
@@ -34340,6 +35601,7 @@ export namespace Prisma {
     bits?: SortOrder
     achievementXp?: SortOrder
     initialized?: SortOrder
+    settledDay?: SortOrder
   }
 
   export type RpgWalletSumOrderByAggregateInput = {
@@ -35498,6 +36760,14 @@ export namespace Prisma {
     deleteMany?: TrailPointScalarWhereInput | TrailPointScalarWhereInput[]
   }
 
+  export type BigIntFieldUpdateOperationsInput = {
+    set?: bigint | number
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
+  }
+
   export type LearningTrailCreateNestedOneWithoutPointsInput = {
     create?: XOR<LearningTrailCreateWithoutPointsInput, LearningTrailUncheckedCreateWithoutPointsInput>
     connectOrCreate?: LearningTrailCreateOrConnectWithoutPointsInput
@@ -36409,6 +37679,33 @@ export namespace Prisma {
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
   }
+
+  export type NestedBigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
+  }
+
+  export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
+  }
   export type NestedJsonFilter<$PrismaModel = never> =
     | PatchUndefined<
         Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
@@ -36928,6 +38225,7 @@ export namespace Prisma {
     achievementXp?: number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: boolean
+    settledDay?: string | null
   }
 
   export type RpgWalletUncheckedCreateWithoutUserInput = {
@@ -36935,6 +38233,7 @@ export namespace Prisma {
     achievementXp?: number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: boolean
+    settledDay?: string | null
   }
 
   export type RpgWalletCreateOrConnectWithoutUserInput = {
@@ -37323,6 +38622,7 @@ export namespace Prisma {
     achievementXp?: IntFieldUpdateOperationsInput | number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: BoolFieldUpdateOperationsInput | boolean
+    settledDay?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type RpgWalletUncheckedUpdateWithoutUserInput = {
@@ -37330,6 +38630,7 @@ export namespace Prisma {
     achievementXp?: IntFieldUpdateOperationsInput | number
     stats?: JsonNullValueInput | InputJsonValue
     initialized?: BoolFieldUpdateOperationsInput | boolean
+    settledDay?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type RpgEventUpsertWithWhereUniqueWithoutUserInput = {

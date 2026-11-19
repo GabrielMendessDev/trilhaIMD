@@ -1,6 +1,19 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"root": true,
+	"files": {
+		"includes": [
+			"src/**",
+			"!src/server/elementar-material-checks.json",
+			"scripts/**",
+			"tests/**/*.mjs",
+			"package.json",
+			"biome.jsonc",
+			"tsconfig.json",
+			"next.config.js",
+			"postcss.config.js"
+		]
+	},
 	"vcs": {
 		"enabled": true,
 		"useIgnoreFile": true,
@@ -23,7 +36,7 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true,
+			"preset": "recommended",
 			"nursery": {
 				"useSortedClasses": {
 					"level": "warn",

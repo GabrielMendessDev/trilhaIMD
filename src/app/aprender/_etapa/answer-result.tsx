@@ -2,6 +2,7 @@
 
 import { type ReactNode, useEffect, useRef } from "react";
 import Link from "~/app/_components/action-link";
+import { BitoReaction } from "~/app/_components/bito-reaction";
 import { FeedbackIcon } from "~/app/_components/feedback-icon";
 import { Icon } from "~/app/_components/icon";
 import type { AnswerAssessment } from "./answer-model";
@@ -16,9 +17,11 @@ export function AnswerResult({
 	example?: ReactNode;
 }) {
 	const heading = useRef<HTMLHeadingElement>(null);
+	const verdict = useRef<HTMLDivElement>(null);
 	const { correct, round, hint, explanation, solution, finished } = assessment;
 	useEffect(() => {
 		heading.current?.focus({ preventScroll: true });
+		verdict.current?.scrollIntoView({ block: "nearest", behavior: "instant" });
 	}, []);
 	const message = assessment.failed
 		? "As vidas acabaram"
@@ -36,7 +39,7 @@ export function AnswerResult({
 				className="answer-result"
 				data-result-panel="true"
 			>
-				<div className="answer-verdict">
+				<div className="answer-verdict" ref={verdict}>
 					<span className="answer-emblem">
 						<FeedbackIcon kind={correct ? "success" : "error"} />
 						<span aria-hidden="true" className="answer-ring" />
@@ -57,6 +60,9 @@ export function AnswerResult({
 										: "Dificuldade registrada para estudar"}
 						</p>
 					</div>
+					<BitoReaction
+						mood={correct ? "feliz" : round === 2 ? "triste" : "duvida"}
+					/>
 					{correct && (
 						<span aria-hidden="true" className="answer-particles">
 							{[0, 1, 2, 3, 4, 5].map((index) => (

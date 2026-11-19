@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-12T21:52:52.977562+00:00",
-  "old_nodes": 5166,
-  "new_nodes": 5192,
-  "old_edges": 10964,
-  "new_edges": 10976,
-  "changed_files": 12,
-  "cached_semantic_files": 2,
+  "updated_at": "2026-11-16T17:20:24.743118+00:00",
+  "old_nodes": 5192,
+  "new_nodes": 7859,
+  "old_edges": 10976,
+  "new_edges": 13689,
+  "changed_files": 166,
+  "cached_semantic_files": 0,
   "usage_available": false,
   "excluded": [
     ".impeccable/review/**"

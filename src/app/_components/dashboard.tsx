@@ -2,8 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import Link from "~/app/_components/action-link";
 import { auth, signOut } from "~/server/auth";
-import { getLearningProgress } from "~/server/learning";
-import { rpgBalance } from "~/server/rpg";
+import { getRpgSummary, rpgBalance } from "~/server/rpg";
 import { ActionButton } from "./action-button";
 import { FeedbackViewport } from "./feedback";
 import { Icon } from "./icon";
@@ -49,7 +48,7 @@ export async function DashboardLayout({
 	lesson?: { backHref: string; unit: string };
 }) {
 	const user = (await auth())?.user;
-	const progress = user ? await getLearningProgress(user.id) : null;
+	const rpg = user ? await getRpgSummary(user.id).catch(() => null) : null;
 	const name = user?.name || "Minha conta";
 	const section = nav.find(([href]) => active === href)?.[1];
 	const links = nav.map(([href, label, icon]) => (
@@ -67,17 +66,15 @@ export async function DashboardLayout({
 		<div
 			className={styles.shell}
 			data-arcane={
-				progress?.rpg.inventory.some(
-					(i) => i.id === "arcane-frame" && i.equipped,
-				) || undefined
+				rpg?.inventory.some((i) => i.id === "arcane-frame" && i.equipped) ||
+				undefined
 			}
 			data-experience="journey"
 			data-focus-lesson={Boolean(lesson) || undefined}
 			data-home={active === "/" || undefined}
 			data-stellar={
-				progress?.rpg.inventory.some(
-					(i) => i.id === "stellar-path" && i.equipped,
-				) || undefined
+				rpg?.inventory.some((i) => i.id === "stellar-path" && i.equipped) ||
+				undefined
 			}
 		>
 			<SkipLink />
@@ -129,7 +126,7 @@ export async function DashboardLayout({
 											: "Minha conta")}
 					</div>
 					<div className={styles.utilities}>
-						{progress && <RpgBalances initial={rpgBalance(progress.rpg)} />}
+						{rpg && <RpgBalances initial={rpgBalance(rpg)} />}
 						{user ? (
 							<details className={`${styles.userMenu} profile-menu`}>
 								<summary aria-label="Menu da conta" className={styles.avatar}>
@@ -194,7 +191,7 @@ export async function DashboardLayout({
 					tabIndex={-1}
 				>
 					{user && <RpgAwardNotice account={user.id} />}
-					{progress?.rpg.inventory.some(
+					{rpg?.inventory.some(
 						(i) => i.id === "bito-companion" && i.equipped,
 					) &&
 						!lesson && (

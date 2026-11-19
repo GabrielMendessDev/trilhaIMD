@@ -80,19 +80,12 @@ export default function ActionLink({
 						`${window.location.pathname}${window.location.search}`
 				) {
 					event.preventDefault();
-					const sameLesson =
-						url.pathname === window.location.pathname &&
-						url.pathname.startsWith("/aprender/");
-					navigateLearning(
-						() => {
-							const destination = `${url.pathname}${url.search}${url.hash}`;
-							if (props.replace)
-								router.replace(destination, { scroll: props.scroll });
-							else router.push(destination, { scroll: props.scroll });
-						},
-						direction.current,
-						sameLesson,
-					);
+					navigateLearning(() => {
+						const destination = `${url.pathname}${url.search}${url.hash}`;
+						if (props.replace)
+							router.replace(destination, { scroll: props.scroll });
+						else router.push(destination, { scroll: props.scroll });
+					}, direction.current);
 				}
 			}}
 		>

@@ -1,4 +1,4 @@
-import type { StudyInsights } from "~/server/study-insights";
+import type { DailyMissions as DailyMissionState } from "~/server/study-insights";
 import Link from "./action-link";
 import { Icon } from "./icon";
 import { ProgressBar } from "./progress-bar";
@@ -6,7 +6,7 @@ export function DailyMissions({
 	daily,
 	compact = false,
 }: {
-	daily: StudyInsights["daily"] | null;
+	daily: DailyMissionState | null;
 	compact?: boolean;
 }) {
 	const goals = [

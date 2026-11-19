@@ -172,6 +172,11 @@ exports.Prisma.LearningTrailScalarFieldEnum = {
   archived: 'archived'
 };
 
+exports.Prisma.LearningCatalogRevisionScalarFieldEnum = {
+  id: 'id',
+  version: 'version'
+};
+
 exports.Prisma.TrailPointScalarFieldEnum = {
   id: 'id',
   trailSlug: 'trailSlug',
@@ -224,7 +229,8 @@ exports.Prisma.RpgWalletScalarFieldEnum = {
   bits: 'bits',
   achievementXp: 'achievementXp',
   stats: 'stats',
-  initialized: 'initialized'
+  initialized: 'initialized',
+  settledDay: 'settledDay'
 };
 
 exports.Prisma.AchievementDefinitionScalarFieldEnum = {
@@ -370,6 +376,7 @@ exports.Prisma.ModelName = {
   User: 'User',
   VerificationToken: 'VerificationToken',
   LearningTrail: 'LearningTrail',
+  LearningCatalogRevision: 'LearningCatalogRevision',
   TrailPoint: 'TrailPoint',
   LearningPointProgress: 'LearningPointProgress',
   TrailPointContent: 'TrailPointContent',

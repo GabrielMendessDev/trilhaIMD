@@ -1,26 +1,26 @@
 {
-  "node_count": 160,
+  "node_count": 3648,
   "unverified_node_count": 0,
-  "raw_edge_count": 272,
+  "raw_edge_count": 4396,
   "non_object_edges": 0,
   "missing_endpoint_edges": 0,
-  "dangling_endpoint_edges": 68,
-  "external_reference_edges": 13,
+  "dangling_endpoint_edges": 234,
+  "external_reference_edges": 38,
   "self_loop_edges": 0,
-  "valid_candidate_edges": 191,
+  "valid_candidate_edges": 4124,
   "exact_duplicate_edges": 0,
-  "directed_unique_endpoint_pairs": 180,
-  "directed_same_endpoint_collapsed_edges": 11,
-  "undirected_unique_endpoint_pairs": 180,
-  "undirected_same_endpoint_collapsed_edges": 11,
-  "same_endpoint_group_count": 11,
-  "relation_variant_groups": 11,
+  "directed_unique_endpoint_pairs": 4095,
+  "directed_same_endpoint_collapsed_edges": 29,
+  "undirected_unique_endpoint_pairs": 4095,
+  "undirected_same_endpoint_collapsed_edges": 29,
+  "same_endpoint_group_count": 28,
+  "relation_variant_groups": 18,
   "source_file_variant_groups": 0,
-  "source_location_variant_groups": 0,
+  "source_location_variant_groups": 10,
   "context_variant_groups": 0,
   "post_build_graph_type": "Graph",
-  "post_build_node_count": 223,
-  "post_build_edge_count": 261,
+  "post_build_node_count": 3818,
+  "post_build_edge_count": 4365,
   "post_build_error": "",
   "producer_suppression": {
     "path": "C:\\Users\\luizr\\AppData\\Roaming\\uv\\tools\\graphifyy\\Lib\\site-packages\\graphify\\extract.py",
@@ -103,103 +103,94 @@
   },
   "examples": [
     {
-      "source": "src_app_aprender_etapa_lesson_bag_lessonbag",
-      "target": "src_app_aprender_etapa_lesson_bag_lessonbag_applyitem",
-      "edge_count": 2,
+      "source": "generated_prisma_index_d",
+      "target": "generated_prisma_index_d_either",
+      "edge_count": 3,
       "relations": [
-        "calls",
         "contains"
       ],
       "source_files": [
-        "src/app/aprender/_etapa/lesson-bag.tsx"
+        "generated/prisma/index.d.ts"
       ],
       "source_locations": [
-        "L215",
-        "L73"
+        "L779",
+        "L789",
+        "L798"
       ],
       "contexts": [
-        "",
-        "call"
+        ""
       ]
     },
     {
-      "source": "tests_items_checkpoint_browser",
-      "target": "tests_items_checkpoint_browser_openbag",
+      "source": "generated_prisma_index_d",
+      "target": "generated_prisma_index_d_prismapromise",
       "edge_count": 2,
       "relations": [
-        "calls",
         "contains"
       ],
       "source_files": [
-        "tests/items-checkpoint-browser.mjs"
+        "generated/prisma/index.d.ts"
       ],
       "source_locations": [
-        "L112",
-        "L90"
+        "L13",
+        "L531"
       ],
       "contexts": [
-        "",
-        "call"
+        ""
       ]
     },
     {
-      "source": "tests_rpg_http",
-      "target": "tests_rpg_http_learner",
+      "source": "generated_prisma_index_d",
+      "target": "generated_prisma_index_d_learningentrymode",
       "edge_count": 2,
       "relations": [
-        "calls",
         "contains"
       ],
       "source_files": [
-        "tests/rpg-http.mjs"
+        "generated/prisma/index.d.ts"
       ],
       "source_locations": [
-        "L103",
-        "L18"
+        "L147",
+        "L161"
       ],
       "contexts": [
-        "",
-        "call"
+        ""
       ]
     },
     {
-      "source": "tests_rpg_http",
-      "target": "tests_rpg_http_state",
+      "source": "generated_prisma_index_d",
+      "target": "generated_prisma_index_d_learningquestiontype",
       "edge_count": 2,
       "relations": [
-        "calls",
         "contains"
       ],
       "source_files": [
-        "tests/rpg-http.mjs"
+        "generated/prisma/index.d.ts"
       ],
       "source_locations": [
-        "L105",
-        "L32"
+        "L157",
+        "L165"
       ],
       "contexts": [
-        "",
-        "call"
+        ""
       ]
     },
     {
-      "source": "tests_rpg_http",
-      "target": "tests_rpg_http_post",
+      "source": "generated_prisma_index_d_prismaclient",
+      "target": "generated_prisma_index_d_prismaclient_transaction",
       "edge_count": 2,
       "relations": [
-        "calls",
-        "contains"
+        "method"
       ],
       "source_files": [
-        "tests/rpg-http.mjs"
+        "generated/prisma/index.d.ts"
       ],
       "source_locations": [
-        "L281",
-        "L37"
+        "L278",
+        "L280"
       ],
       "contexts": [
-        "",
-        "call"
+        ""
       ]
     }
   ]

@@ -20,11 +20,10 @@ import type { Attempts } from "./lesson-progress";
 
 export type RpgTx = Prisma.TransactionClient;
 export class RpgError extends Error {
-	constructor(
-		message: string,
-		public status = 422,
-	) {
+	status: number;
+	constructor(message: string, status = 422) {
 		super(message);
+		this.status = status;
 	}
 }
 type Wallet = {
@@ -32,19 +31,20 @@ type Wallet = {
 	achievementXp: number;
 	stats: Stats;
 	initialized: boolean;
+	settledDay: string | null;
 };
 export async function lockWallet(tx: RpgTx, userId: string) {
 	await tx.$executeRaw`INSERT INTO "RpgWallet"("userId") VALUES (${userId}) ON CONFLICT DO NOTHING`;
 	const [wallet] = await tx.$queryRaw<
 		Wallet[]
-	>`SELECT bits,"achievementXp",stats,initialized FROM "RpgWallet" WHERE "userId"=${userId} FOR UPDATE`;
+	>`SELECT bits,"achievementXp",stats,initialized,"settledDay" FROM "RpgWallet" WHERE "userId"=${userId} FOR UPDATE`;
 	if (!wallet) throw new RpgError("Carteira indisponível.");
 	return { ...wallet, stats: { ...emptyStats(), ...wallet.stats } };
 }
 async function walletIn(tx: RpgTx, userId: string) {
 	const [row] = await tx.$queryRaw<
 		Wallet[]
-	>`SELECT bits,"achievementXp",stats,initialized FROM "RpgWallet" WHERE "userId"=${userId}`;
+	>`SELECT bits,"achievementXp",stats,initialized,"settledDay" FROM "RpgWallet" WHERE "userId"=${userId}`;
 	if (!row) throw new RpgError("Carteira indisponível.");
 	return { ...row, stats: { ...emptyStats(), ...row.stats } };
 }
@@ -163,8 +163,8 @@ export async function settleProtection(
 	}
 	const run = studyRuns(calendar.days, calendar.protectedDays, today);
 	const wallet = await walletIn(tx, userId);
-	if (wallet.stats.studyStreak !== run.current)
-		await tx.$executeRaw`UPDATE "RpgWallet" SET stats=jsonb_set(stats,'{studyStreak}',${JSON.stringify(run.current)}::jsonb) WHERE "userId"=${userId}`;
+	if (wallet.stats.studyStreak !== run.current || wallet.settledDay !== today)
+		await tx.$executeRaw`UPDATE "RpgWallet" SET stats=jsonb_set(stats,'{studyStreak}',${JSON.stringify(run.current)}::jsonb),"settledDay"=${today} WHERE "userId"=${userId}`;
 	return run;
 }
 export async function registerStudy(
@@ -252,9 +252,17 @@ export async function registerCompletionRpg(
 }
 
 export async function ensureRpg(userId: string) {
+	const now = new Date();
+	const today = studyDay(now);
+	const [current] = await db.$queryRaw<
+		{ initialized: boolean; settledDay: string | null }[]
+	>`
+		SELECT initialized,"settledDay" FROM "RpgWallet" WHERE "userId"=${userId}`;
+	if (current?.initialized && current.settledDay === today) return;
 	await db.$transaction(
 		async (tx) => {
 			const wallet = await lockWallet(tx, userId);
+			if (wallet.initialized && wallet.settledDay === today) return;
 			if (!wallet.initialized) {
 				// Existing completion dates are the only historical dates we can substantiate.
 				const legacy = await tx.$queryRaw<
@@ -304,26 +312,28 @@ export async function ensureRpg(userId: string) {
 				}
 				await tx.$executeRaw`UPDATE "RpgWallet" SET initialized=true WHERE "userId"=${userId}`;
 			}
-			await settleProtection(tx, userId);
+			await settleProtection(tx, userId, now);
 		},
 		{ timeout: 30000 },
 	);
 }
 
-export async function readRpgState(userId: string) {
+async function readWallet(userId: string) {
+	const [wallet] = await db.$queryRaw<
+		(Wallet & { xp: number; protected: boolean })[]
+	>`
+		SELECT w.*,(w."achievementXp"+COALESCE((SELECT sum(xp) FROM "LearningPointProgress"
+		WHERE "userId"=${userId} AND "completedAt" IS NOT NULL),0))::int AS xp,
+		EXISTS(SELECT 1 FROM "UserStreakProtection" WHERE "userId"=${userId} AND state='armed') AS protected
+		FROM "RpgWallet" w WHERE w."userId"=${userId}`;
+	if (!wallet) throw new RpgError("Carteira indisponível.");
+	return wallet;
+}
+
+export async function readRpgSummary(userId: string) {
 	await ensureRpg(userId);
-	const [
-		walletRows,
-		inventory,
-		unlocked,
-		progress,
-		history,
-		usages,
-		protections,
-	] = await Promise.all([
-		db.$queryRaw<
-			(Wallet & { xp: number })[]
-		>`SELECT w.*,(w."achievementXp"+COALESCE((SELECT sum(xp) FROM "LearningPointProgress" WHERE "userId"=${userId} AND "completedAt" IS NOT NULL),0))::int AS xp FROM "RpgWallet" w WHERE w."userId"=${userId}`,
+	const [wallet, inventory, unlocked, progress] = await Promise.all([
+		readWallet(userId),
 		db.$queryRaw<
 			{ itemId: string; quantity: number; equipped: boolean }[]
 		>`SELECT "itemId",quantity,equipped FROM "InventoryItem" WHERE "userId"=${userId}`,
@@ -333,6 +343,41 @@ export async function readRpgState(userId: string) {
 		db.$queryRaw<
 			{ achievementId: string; current: number }[]
 		>`SELECT "achievementId",current FROM "AchievementProgress" WHERE "userId"=${userId}`,
+	]);
+	const unlockedById = new Map(unlocked.map((row) => [row.achievementId, row]));
+	const progressById = new Map(
+		progress.map((row) => [row.achievementId, row.current]),
+	);
+	const inventoryById = new Map(inventory.map((row) => [row.itemId, row]));
+	return {
+		account: userId,
+		bits: wallet.bits,
+		xp: wallet.xp,
+		achievementXp: wallet.achievementXp,
+		level: levelForXp(wallet.xp),
+		stats: { ...emptyStats(), ...wallet.stats },
+		protected: wallet.protected,
+		inventory: items.map((item) => ({
+			...item,
+			...(inventoryById.get(item.id) ?? { quantity: 0, equipped: false }),
+		})),
+		achievements: achievements.map((def) => {
+			const earned = unlockedById.get(def.id);
+			return {
+				...def,
+				xp: earned?.xp ?? def.xp,
+				bits: earned?.bits ?? def.bits,
+				current: progressById.get(def.id) ?? 0,
+				unlockedAt: earned?.unlockedAt.toISOString() ?? null,
+			};
+		}),
+	};
+}
+export const getRpgSummary = cache(readRpgSummary);
+
+export async function readRpgState(userId: string) {
+	const summary = await getRpgSummary(userId);
+	const [history, usages, protections] = await Promise.all([
 		db.$queryRaw<
 			{
 				id: number;
@@ -363,34 +408,8 @@ export async function readRpgState(userId: string) {
 			}[]
 		>`SELECT id,state,"protectedDay","activatedDay" FROM "UserStreakProtection" WHERE "userId"=${userId} ORDER BY id DESC LIMIT 5`,
 	]);
-	const wallet = walletRows[0];
-	if (!wallet) throw new RpgError("Carteira indisponível.");
 	return {
-		account: userId,
-		bits: wallet.bits,
-		xp: wallet.xp,
-		achievementXp: wallet.achievementXp,
-		level: levelForXp(wallet.xp),
-		stats: { ...emptyStats(), ...wallet.stats },
-		inventory: items.map((item) => ({
-			...item,
-			...(inventory.find((row) => row.itemId === item.id) ?? {
-				quantity: 0,
-				equipped: false,
-			}),
-		})),
-		achievements: achievements.map((def) => ({
-			...def,
-			xp: unlocked.find((row) => row.achievementId === def.id)?.xp ?? def.xp,
-			bits:
-				unlocked.find((row) => row.achievementId === def.id)?.bits ?? def.bits,
-			current:
-				progress.find((row) => row.achievementId === def.id)?.current ?? 0,
-			unlockedAt:
-				unlocked
-					.find((row) => row.achievementId === def.id)
-					?.unlockedAt.toISOString() ?? null,
-		})),
+		...summary,
 		history: history.map((row) => ({
 			...row,
 			createdAt: row.createdAt.toISOString(),
@@ -410,15 +429,60 @@ export async function getCompletionBits(userId: string, pointId: number) {
 	return result?.bits ?? 0;
 }
 export type RpgState = Awaited<ReturnType<typeof readRpgState>>;
-export function rpgBalance(state: RpgState, awards: readonly string[] = []) {
+export function rpgBalance(
+	state: Awaited<ReturnType<typeof readRpgSummary>>,
+	awards: readonly string[] = [],
+) {
 	return {
 		account: state.account,
 		bits: state.bits,
 		xp: state.xp,
 		level: state.level,
 		streak: state.stats.studyStreak,
-		protected: state.protections.some((p) => p.state === "armed"),
+		protected: state.protected,
 		awards: state.achievements.filter((a) => awards.includes(a.id)),
+	};
+}
+
+// Answer submissions only need balances and newly unlocked awards, not inventory/history.
+export async function readRpgBalance(
+	userId: string,
+	awards: readonly string[] = [],
+) {
+	await ensureRpg(userId);
+	const wallet = await readWallet(userId);
+	const unlocked = awards.length
+		? await db.$queryRaw<
+				{
+					achievementId: string;
+					xp: number;
+					bits: number;
+					unlockedAt: Date;
+				}[]
+			>`SELECT "achievementId",xp,bits,"unlockedAt" FROM "UserAchievement"
+		WHERE "userId"=${userId} AND "achievementId"=ANY(${[...awards]}::text[])`
+		: [];
+	return {
+		account: userId,
+		bits: wallet.bits,
+		xp: wallet.xp,
+		level: levelForXp(wallet.xp),
+		streak: wallet.stats.studyStreak ?? 0,
+		protected: wallet.protected,
+		awards: unlocked.flatMap((row) => {
+			const definition = achievements.find((a) => a.id === row.achievementId);
+			return definition
+				? [
+						{
+							...definition,
+							xp: row.xp,
+							bits: row.bits,
+							current: definition.goal,
+							unlockedAt: row.unlockedAt.toISOString(),
+						},
+					]
+				: [];
+		}),
 	};
 }
 

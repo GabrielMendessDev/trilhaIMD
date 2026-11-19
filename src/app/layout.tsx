@@ -2,7 +2,6 @@ import "~/styles/globals.css";
 
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
-import { TRPCReactProvider } from "~/trpc/react";
 import { FeedbackProvider } from "./_components/feedback";
 
 export const metadata: Metadata = {
@@ -22,9 +21,7 @@ export default async function RootLayout({
 	return (
 		<html data-theme={theme} lang="pt-BR" suppressHydrationWarning>
 			<body>
-				<TRPCReactProvider>
-					<FeedbackProvider>{children}</FeedbackProvider>
-				</TRPCReactProvider>
+				<FeedbackProvider>{children}</FeedbackProvider>
 			</body>
 		</html>
 	);

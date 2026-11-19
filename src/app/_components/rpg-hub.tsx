@@ -5,6 +5,7 @@ import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { achievements, categoryNames, items, rarityNames } from "~/domain/rpg";
 import type { RpgState } from "~/server/rpg";
 import Link from "./action-link";
+import { BitoReaction } from "./bito-reaction";
 import { InventoryGrid } from "./inventory-grid";
 import { publishRpg, rpgRequest } from "./rpg-client";
 import { RpgIcon, RpgMedal } from "./rpg-icon";
@@ -32,10 +33,14 @@ export function RpgHub({
 		[status, setStatus] = useState("todos"),
 		[busy, setBusy] = useState(""),
 		[error, setError] = useState(""),
-		[notice, setNotice] = useState(""),
+		[notice, setNotice] = useState<{
+			message: string;
+			purchased: boolean;
+		} | null>(null),
 		[celebrate, setCelebrate] = useState(""),
 		[selected, setSelected] = useState<string | null>(null);
 	const dialog = useRef<HTMLDialogElement>(null),
+		confirmation = useRef<HTMLDivElement>(null),
 		operation = useRef<{ key: string; id: string } | null>(null),
 		inFlight = useRef(false);
 	const router = useRouter();
@@ -51,6 +56,13 @@ export function RpgHub({
 		const timer = setTimeout(() => setFlight(null), 850);
 		return () => clearTimeout(timer);
 	}, [flight]);
+	useEffect(() => {
+		if (notice?.purchased)
+			confirmation.current?.scrollIntoView({
+				block: "nearest",
+				behavior: "instant",
+			});
+	}, [notice]);
 	const inventory =
 		state?.inventory ??
 		items.map((item) => ({ ...item, quantity: 0, equipped: false }));
@@ -75,7 +87,7 @@ export function RpgHub({
 			operation.current = { key, id: crypto.randomUUID() };
 		setBusy(id);
 		setError("");
-		setNotice("");
+		setNotice(null);
 		try {
 			const result = await rpgRequest<{ state: RpgState }>({
 				action,
@@ -87,13 +99,15 @@ export function RpgHub({
 			publishRpg(result.state);
 			operation.current = null;
 			const name = items.find((i) => i.id === id)?.name ?? "Item";
-			setNotice(
-				action === "buy"
-					? `${name} chegou à sua Mochila.`
-					: action === "arm"
-						? "Escudo ativado para proteger o próximo dia perdido."
-						: `${name} ${equipped ? "equipado" : "guardado"}.`,
-			);
+			setNotice({
+				purchased: action === "buy",
+				message:
+					action === "buy"
+						? `${name} chegou à sua Mochila.`
+						: action === "arm"
+							? "Escudo ativado para proteger o próximo dia perdido."
+							: `${name} ${equipped ? "equipado" : "guardado"}.`,
+			});
 			setCelebrate(id);
 			if (action === "buy") {
 				const start = dialog.current
@@ -355,9 +369,18 @@ export function RpgHub({
 				</span>
 			</fieldset>
 			{notice && (
-				<div className="rpg-confirmation" key={notice} role="status">
-					<RpgIcon name={celebrate} />
-					<span>{notice}</span>
+				<div
+					className="rpg-confirmation"
+					key={notice.message}
+					ref={confirmation}
+					role="status"
+				>
+					{notice.purchased ? (
+						<BitoReaction mood="feliz" />
+					) : (
+						<RpgIcon name={celebrate} />
+					)}
+					<span>{notice.message}</span>
 					<Link className="ui-link" href="/mochila">
 						Ver Mochila
 					</Link>

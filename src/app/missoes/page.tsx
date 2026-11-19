@@ -6,11 +6,11 @@ import {
 	PageHeading,
 } from "~/app/_components/dashboard";
 import { auth } from "~/server/auth";
-import { getStudyInsights } from "~/server/study-insights";
+import { getDailyMissions } from "~/server/study-insights";
 export const metadata = { title: "Missões de hoje" };
 export default async function MissoesPage() {
 	const user = (await auth())?.user;
-	const insights = user ? await getStudyInsights(user.id) : null;
+	const daily = user ? await getDailyMissions(user.id) : null;
 	return (
 		<DashboardLayout active="/conquistas">
 			<div className="ui-page missions-page">
@@ -18,7 +18,7 @@ export default async function MissoesPage() {
 					description="Faça um pouco hoje. Seu progresso é salvo enquanto você aprende."
 					title="Pequenas metas. Novas descobertas."
 				/>
-				<DailyMissions daily={insights?.daily ?? null} />
+				<DailyMissions daily={daily} />
 				<Link className="ui-button" href={user ? "/aprender" : "/login"}>
 					{user ? "Continuar estudando" : "Entrar para acompanhar"}
 					<Icon className="size-4" name="arrow" />

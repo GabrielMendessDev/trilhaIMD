@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "~/app/_components/action-link";
+import { BitoReaction } from "~/app/_components/bito-reaction";
 import { Icon, ProgressBar } from "~/app/_components/dashboard";
 import {
 	CompletionEffects,
@@ -421,6 +422,12 @@ export async function PublishedLesson({
 	const { entry, model } = current;
 	const index = lesson.findIndex((item) => item.key === entry.key);
 	const round = pending?.round ?? 1;
+	const startingLesson =
+		index === 0 &&
+		round === 1 &&
+		!row?.completedAt &&
+		state.completedEntries.length === 0 &&
+		Object.keys(state.attempts).length === 0;
 	const retryQueue =
 		round === 2
 			? items.filter(({ key }) => state.attempts[key]?.[0]?.correct === false)
@@ -450,24 +457,27 @@ export async function PublishedLesson({
 						</div>
 					</div>
 				)}
-				<div className="space-y-2">
-					<p className="ui-muted font-semibold text-sm">
-						{round === 2
-							? `Revisão ${retryIndex + 1} de ${retryQueue.length}`
-							: questionIndex >= 0
-								? `Questão ${questionIndex + 1} de ${gradedItems.length} · Tela ${index + 1} de ${lesson.length}`
-								: `Material de estudo · Tela ${index + 1} de ${lesson.length}`}
-					</p>
-					{(!user || !progress || row?.completedAt) && (
-						<ProgressBar
-							label="Andamento da lição"
-							value={
-								row?.completedAt
-									? 100
-									: (state.completedEntries.length / lesson.length) * 100
-							}
-						/>
-					)}
+				<div className={startingLesson ? styles.lessonStart : undefined}>
+					{startingLesson && <BitoReaction mood="acenando" />}
+					<div className="min-w-0 flex-1 space-y-2">
+						<p className="ui-muted font-semibold text-sm">
+							{round === 2
+								? `Revisão ${retryIndex + 1} de ${retryQueue.length}`
+								: questionIndex >= 0
+									? `Questão ${questionIndex + 1} de ${gradedItems.length} · Tela ${index + 1} de ${lesson.length}`
+									: `Material de estudo · Tela ${index + 1} de ${lesson.length}`}
+						</p>
+						{(!user || !progress || row?.completedAt) && (
+							<ProgressBar
+								label="Andamento da lição"
+								value={
+									row?.completedAt
+										? 100
+										: (state.completedEntries.length / lesson.length) * 100
+								}
+							/>
+						)}
+					</div>
 				</div>
 				{user && progress && !row?.completedAt ? (
 					<LessonForm

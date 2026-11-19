@@ -49,7 +49,11 @@ export function SidebarMotion({
 			className={`${className} sidebar-motion`}
 			ref={root}
 		>
-			<span aria-hidden="true" className="sidebar-indicator opacity-0" ref={indicator} />
+			<span
+				aria-hidden="true"
+				className="sidebar-indicator opacity-0"
+				ref={indicator}
+			/>
 			{children}
 		</nav>
 	);

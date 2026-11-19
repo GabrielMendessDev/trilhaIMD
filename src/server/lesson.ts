@@ -18,7 +18,7 @@ import type { TrailId } from "~/app/aprender/trails";
 import { livesOf } from "~/domain/lesson-lives.mjs";
 import { db } from "~/server/db";
 import {
-	getLearningProgress,
+	getLearningRecords,
 	getPublishedPoints,
 	getTrailStatus,
 } from "./learning";
@@ -31,7 +31,7 @@ import {
 	pendingItem,
 } from "./lesson-progress";
 import { persistLesson } from "./lesson-state";
-import { lockWallet, registerAnswerRpg } from "./rpg";
+import { ensureRpg, lockWallet, registerAnswerRpg } from "./rpg";
 import { effectiveEntry, getQuestionState } from "./rpg-support";
 
 const block = z.discriminatedUnion("tipo", [
@@ -356,7 +356,7 @@ export async function recordAnswer(
 ) {
 	const [points, progress] = await Promise.all([
 		getPublishedPoints(),
-		getLearningProgress(userId),
+		getLearningRecords(userId),
 	]);
 	if (!points || !progress)
 		return { error: "O progresso está indisponível. Tente novamente." };
@@ -375,6 +375,7 @@ export async function recordAnswer(
 		return { error: "A etapa mudou. Atualize a página antes de continuar." };
 	let entry: Entry = original;
 	const items = lessonItems(entries);
+	await ensureRpg(userId);
 	const assessment = (
 		answer: Attempt,
 		state: LessonProgress,

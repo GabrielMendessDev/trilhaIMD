@@ -187,7 +187,7 @@ Erro e orientação usam pares semânticos próprios; os tons de leitura quente 
 
 ### Neutral
 
-Noite/Nuvem organizam fundo e leitura; superfícies, texto secundário e linhas seguem tokens semânticos. Os valores dark-* no frontmatter descrevem a cascata efetiva: as declarações posteriores de globals.css vencem as tentativas de redefinição de mesma especificidade em experience.css. Os valores azul-noite alternativos desse arquivo não se tornam uma segunda fonte normativa. A Home utiliza o canvas, sem o antigo campo amplo de gradientes roxos; a navegação conserva seu gradiente próprio.
+Noite/Nuvem organizam fundo e leitura; superfícies, texto secundário e linhas seguem tokens semânticos. Os valores dark-* no frontmatter são definidos em tokens.css, importado por globals.css. As redefinições de tema e geometria sobrescritas de experience.css foram removidas, preservando os valores efetivos. A Home utiliza o canvas, sem o antigo campo amplo de gradientes roxos; a navegação conserva seu gradiente próprio.
 
 **The Contextual Contrast Rule.** A ação contextual do nó usa Noite sobre a luz da disciplina no escuro e Branco sobre sua profundidade no claro. Não herdar uma tinta de outro contexto para esse controle.
 
@@ -224,7 +224,7 @@ O login usa duas colunas até 1240px, uma delas para Bito, e empilha até 760px.
 
 A base combina linha fina e camada tonal. Botões, alternativas e nós usam borda inferior mais espessa para comunicar pressão; isso não estabelece uma regra de sombra dura deslocada. Banner e nó atual usam gradiente de disciplina, conclusão usa Menta e foco continua explícito. Painéis comuns eliminam sombra por override local; o painel de lição conserva brilho discreto, e a leitura contextual remove moldura e brilho.
 
-O vocabulário completo fica em extensions.shadows: os tokens globais de globals.css continuam efetivos, enquanto sombra da questão, halo do nó e relevo do botão são tratamentos locais. Não promover os valores globais sobrescritos de experience.css a novos tokens.
+O vocabulário completo fica em extensions.shadows: os tokens globais estão centralizados em tokens.css, enquanto sombra da questão, halo do nó e relevo do botão são tratamentos locais.
 
 ## Shapes
 

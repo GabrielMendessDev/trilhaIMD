@@ -15,6 +15,14 @@ O [guia do banco de aprendizagem](conteudos/README.md) descreve o formato JSON p
 
 A [Matemática Elementar completa](conteudos/elementar/README.md) tem 60 passos reescritos, 1.020 telas e 600 questões comentadas. O [leitor independente](public/materiais/elementar/index.html) funciona sem banco ou login; no aplicativo, o mapa é contínuo do passo 1 ao 60. Consulte as [regras de vidas e itens de reposição](docs/vidas-atividades.md) para o fluxo com progresso salvo.
 
+## Verificações e atualização do banco
+
+Use Node.js 24 e `npm ci`. `npm run verify` executa lint do código autoral, tipos, testes locais e validação dos 60 passos. `npm run build` verifica a compilação de produção. O workflow de qualidade executa ambos em pushes e pull requests.
+
+Antes de iniciar esta versão sobre um banco existente, aplique `npm run db:migrate`. A migração `20261116000100_read_models` adiciona a reconciliação diária da carteira, índices de histórico e a revisão do catálogo usada pelo cache. Publicações e importações SQL atualizam a revisão na mesma transação; respostas e dados pessoais permanecem fora do cache compartilhado.
+
+No Windows com PostgreSQL 16 e Chrome instalados, `npm run test:vidas:local` cria banco e servidor descartáveis e verifica vidas, leituras de RPG, invalidação de catálogo, índice de eventos e navegação desktop/celular. Não usa o banco configurado em `.env`. As opções de executáveis são `TRILBIT_PG_BIN` e `TRILBIT_TEST_CHROME`.
+
 ## What's next? How do I make an app with this?
 
 We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.

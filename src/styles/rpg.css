@@ -650,6 +650,9 @@
 	margin-left: auto;
 	white-space: nowrap;
 }
+.rpg-confirmation:has(> .bito-reaction) {
+	scroll-margin-block: 6rem;
+}
 .rpg-protection h2 {
 	font-weight: 800;
 }

@@ -10,7 +10,7 @@ const origin = process.env.TRILBIT_TEST_URL;
 assert.ok(origin && new URL(origin).hostname === "127.0.0.1");
 const db = new PrismaClient();
 const students = [];
-process.env.TRILBIT_SCREENSHOTS = resolve("tests/artifacts/elementar-60");
+process.env.TRILBIT_SCREENSHOTS ??= resolve("tests/artifacts/elementar-60");
 async function learner() {
 	const id = `teste-browser-vidas-${randomUUID()}`,
 		token = randomUUID();
@@ -109,6 +109,24 @@ test("leitor completo, mapa contínuo, vidas, revisão e loja funcionam no deskt
 		await noOverflow();
 		await browser.screenshot("reader-quiz-mobile");
 		await browser.go(origin + "/aprender", "Suas trilhas");
+		assert.deepEqual(
+			await browser.evaluate(`(() => {
+				const root = document.documentElement;
+				root.dataset.theme = 'dark';
+				const dark = getComputedStyle(document.body).backgroundColor;
+				root.dataset.theme = 'light';
+				const light = getComputedStyle(document.body).backgroundColor;
+				const tokens = getComputedStyle(root);
+				const radii = ['--radius-card','--radius-panel','--radius-control'].map(name => tokens.getPropertyValue(name).trim());
+				root.dataset.theme = 'dark';
+				return { dark, light, radii };
+			})()`),
+			{
+				dark: "rgb(23, 24, 50)",
+				light: "rgb(247, 248, 252)",
+				radii: ["20px", "24px", "12px"],
+			},
+		);
 		await until(
 			() =>
 				browser.evaluate(
@@ -199,6 +217,14 @@ test("leitor completo, mapa contínuo, vidas, revisão e loja funcionam no deskt
 		const bad = current.payload.alternativas.find(
 			(a) => a.id !== current.answer,
 		).id;
+		// The server-rendered lives label can appear before the client form hydrates.
+		await until(
+			() =>
+				browser.evaluate(
+					"typeof document.querySelector('.rpg-open-bag')?.onclick === 'function'",
+				),
+			"formulário de resposta hidratado",
+		);
 		await browser.evaluate(
 			`document.querySelector('input[name=resposta][value=${JSON.stringify(bad)}]').click()`,
 		);
@@ -285,6 +311,18 @@ test("leitor completo, mapa contínuo, vidas, revisão e loja funcionam no deskt
 		console.log(
 			"Capturas desktop/móvel e fluxos do mapa, leitor, vidas, perda, recomeço, revisão e loja conferidos.",
 		);
+	} catch (error) {
+		console.log(
+			"Diagnóstico do navegador",
+			await browser
+				.evaluate(
+					"({url:location.href,state:document.querySelector('form.answer-experience')?.dataset.questionState,text:document.querySelector('main')?.innerText})",
+				)
+				.catch(() => null),
+			errors,
+		);
+		await browser.screenshot("failure").catch(() => {});
+		throw error;
 	} finally {
 		await browser.close();
 		for (const id of students)

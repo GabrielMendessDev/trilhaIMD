@@ -1,21 +1,3 @@
-:root {
-	--radius-card: 18px;
-	--radius-panel: 22px;
-	--radius-control: 12px;
-	--space-page: 32px;
-	--shadow-card: 0 10px 26px -22px #151b3760;
-	--shadow-feature: 0 18px 45px -24px #151b3790;
-}
-[data-theme="dark"] {
-	--canvas: #14192f;
-	--surface: #1c233e;
-	--surface-soft: #242d4b;
-	--ink: #f7f8fc;
-	--muted: #b6c0d8;
-	--line: #3a4564;
-	--accent: #bcb4ff;
-	--accent-wash: #2c2d55;
-}
 body {
 	background: var(--canvas);
 }
@@ -2187,21 +2169,6 @@ button:disabled {
 }
 .standalone-state {
 	padding-top: 8dvh;
-}
-.journey-skeleton-surface {
-	max-width: 760px;
-	min-height: 370px;
-	margin: 40px auto;
-	padding: 28px;
-	border: 1px solid var(--line);
-	border-radius: 18px;
-	background: var(--surface);
-}
-.journey-skeleton-surface > div:last-child {
-	height: 220px;
-}
-.learning-skeleton {
-	min-height: 65dvh;
 }
 @media (max-width: 1250px) {
 	.trail-detail-columns {

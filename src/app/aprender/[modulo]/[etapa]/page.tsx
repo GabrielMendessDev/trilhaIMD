@@ -87,24 +87,11 @@ export default async function StagePage({
 				) : (
 					<section className="journey-empty">
 						<Icon className="size-12" name="lock" />
-						<h2>
-							{trail.id === "elementar"
-								? "Abra o material de estudo"
-								: "Uma nova etapa está a caminho"}
-						</h2>
+						<h2>Uma nova etapa está a caminho</h2>
 						<p>
-							{trail.id === "elementar"
-								? "Este passo já está disponível no leitor independente, com explicações, exemplo guiado e questões comentadas. O progresso com XP fica disponível após a publicação no catálogo do aplicativo."
-								: "O conteúdo desta lição está sendo preparado. Explore o mapa e os materiais disponíveis da disciplina."}
+							O conteúdo desta lição está sendo preparado. Explore o mapa e os
+							materiais disponíveis da disciplina.
 						</p>
-						{trail.id === "elementar" && (
-							<Link
-								className="ui-button"
-								href={`/materiais/elementar/index.html#passo-${number}`}
-							>
-								Estudar este passo
-							</Link>
-						)}
 						<Link className="ui-button" href={trailMapHref(trail.id, number)}>
 							Voltar ao mapa
 						</Link>

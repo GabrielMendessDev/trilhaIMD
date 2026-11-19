@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+/tests/artifacts/optimization/
 
 # database
 /prisma/db.sqlite
@@ -18,6 +19,7 @@ db.sqlite
 /.next-feedback-check/
 /.next-lives-check/
 /.next-lives-build/
+/.next-optimization-build/
 /conteudos/elementar/backups/
 /out/
 next-env.d.ts

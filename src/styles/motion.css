@@ -123,7 +123,23 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	gap: 1rem;
+	gap: clamp(0.5rem, 2vw, 1rem);
+	scroll-margin-block: 6rem 1.5rem;
+}
+.bito-reaction {
+	display: block;
+	flex: none;
+	width: clamp(3.5rem, 11vw, 6.25rem);
+	height: auto;
+}
+.answer-verdict > .bito-reaction {
+	margin-inline-start: auto;
+}
+@media (max-width: 420px) {
+	.answer-verdict > .answer-emblem,
+	.answer-verdict > .answer-particles {
+		display: none;
+	}
 }
 .answer-verdict h2 {
 	color: var(--answer-color);

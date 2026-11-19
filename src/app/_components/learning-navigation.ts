@@ -2,7 +2,6 @@
 // Async router work must not wait for a browser snapshot's update promise.
 import { motionTiming } from "./motion";
 
-let exit: Animation | undefined;
 const revealed = new WeakMap<Element, string>();
 let arrivals: Animation[] = [];
 
@@ -50,38 +49,9 @@ export function hasNativeNavigation() {
 	return false;
 }
 
-export function commitLearningNavigation() {
-	exit?.cancel();
-	exit = undefined;
-}
-
-export function navigateLearning(
-	update: () => void,
-	direction = "forward",
-	snapshots = true,
-) {
+export function navigateLearning(update: () => void, direction = "forward") {
 	for (const animation of arrivals) animation.cancel();
 	arrivals = [];
-	commitLearningNavigation();
 	document.documentElement.dataset.learningDirection = direction;
-	if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-		update();
-		return;
-	}
-	{
-		const step = document.querySelector(
-			".lesson-transition, .completion-effects, #conteudo-principal, main",
-		);
-		exit = step?.animate(
-			[
-				{ opacity: 1, transform: "translateX(0)" },
-				{
-					opacity: snapshots ? 0 : 0.65,
-					transform: `translateX(${direction === "back" ? "" : "-"}16px)`,
-				},
-			],
-			{ ...motionTiming(step, "micro", "exit"), fill: "forwards" },
-		);
-		update();
-	}
+	update();
 }

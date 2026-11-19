@@ -8,6 +8,14 @@ import { setTimeout as delay } from "node:timers/promises";
 import { promisify } from "node:util";
 
 const exec = promisify(execFile);
+const args = process.argv.slice(2);
+if (
+	args.length > 1 ||
+	args.some((arg) => !["--read-models", "--browser"].includes(arg))
+)
+	throw new Error(
+		"Use sem argumentos, --read-models ou --browser para a verificação focada.",
+	);
 const pg = process.env.TRILBIT_PG_BIN ?? "C:/Program Files/PostgreSQL/16/bin";
 const temporary = await mkdtemp(join(tmpdir(), "trilbit-lives-"));
 const dbPath = join(temporary, "data");
@@ -22,11 +30,14 @@ const freePort = () =>
 const dbPort = await freePort(),
 	appPort = await freePort();
 const origin = `http://127.0.0.1:${appPort}`;
+const artifacts = resolve("tests/artifacts/optimization");
 const env = {
 	...process.env,
 	DATABASE_URL: `postgresql://postgres@127.0.0.1:${dbPort}/postgres`,
 	TRILBIT_TEST_URL: origin,
 	TRILBIT_TEST_DATABASE_URL: `postgresql://postgres@127.0.0.1:${dbPort}/postgres`,
+	TRILBIT_DISPOSABLE_TEST: "1",
+	TRILBIT_SCREENSHOTS: artifacts,
 	AUTH_URL: origin,
 	AUTH_TRUST_HOST: "true",
 	AUTH_SECRET: "trilbit-disposable-local-test-secret",
@@ -107,12 +118,12 @@ try {
 	await run(["scripts/publicar-elementar.mjs", "--importar"]);
 	await run(["tests/legacy-elementar-fixture.mjs", "conferir"]);
 	await run(["scripts/publicar-elementar.mjs", "--importar"]);
-	await mkdir("tests/artifacts/elementar-60", { recursive: true });
+	await mkdir(artifacts, { recursive: true });
 	await writeFile(
-		"tests/artifacts/elementar-60/test-environment.json",
+		join(artifacts, "test-environment.json"),
 		JSON.stringify({ origin, database: env.DATABASE_URL }),
 	);
-	log = await open("tests/artifacts/elementar-60/server.log", "w");
+	log = await open(join(artifacts, "server.log"), "w");
 	server = spawn(
 		process.execPath,
 		[
@@ -141,7 +152,9 @@ try {
 	}
 	if (!ready) throw new Error("Servidor de teste não respondeu.");
 	console.log(`Servidor descartável disponível em ${origin}.`);
-	await run(["--test", "tests/vidas-http.mjs"]);
+	if (!args.length) await run(["--test", "tests/vidas-http.mjs"]);
+	if (!args.includes("--browser"))
+		await run(["--test", "tests/read-models-http.mjs"]);
 	await run(["--test", "tests/elementar-browser.mjs"]);
 } finally {
 	if (server?.pid)

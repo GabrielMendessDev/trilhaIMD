@@ -304,6 +304,21 @@ model MaterialReading {
     @@id([userId,pointId,entryKey])
 }
 
+model MeExamAttempt {
+    id          String    @id
+    userId      String
+    version     Int       @default(1)
+    questions   Json      @db.JsonB
+    answers     Json      @default("{}") @db.JsonB
+    revision    Int       @default(0)
+    createdAt   DateTime  @default(now()) @db.Timestamptz(3)
+    submittedAt DateTime? @db.Timestamptz(3)
+    score       Int?
+    user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@index([userId, createdAt])
+}
+
 model AnalyticsSession {
     id        String   @id @db.Uuid
     startedAt DateTime @default(now()) @db.Timestamptz(3)

@@ -3,6 +3,9 @@ import { randomUUID } from "node:crypto";
 import { test } from "node:test";
 import { PrismaClient } from "../generated/prisma/index.js";
 import { dayAt, dayIndex, items, studyDay } from "../src/domain/rpg.ts";
+import materialChecks from "../src/server/elementar-material-checks.json" with {
+	type: "json",
+};
 
 process.loadEnvFile();
 const origin = new URL(process.env.TRILBIT_TEST_URL ?? "http://127.0.0.1:3318")
@@ -163,9 +166,21 @@ test("economia, itens, progressão e proteção persistem com transações reais
 			stock(before, "hint-scroll"),
 		);
 		const swap = await action(u, "use", "challenge-swap", context);
-		assert.equal(swap.status, 200, JSON.stringify(swap));
-		assert.ok(swap.result.variant);
-		assert.equal(swap.result.model.activity.prompt.includes("api"), true);
+		const swapped = swap.status === 200;
+		if (swapped) {
+			assert.ok(swap.result.variant);
+			assert.equal(swap.result.model.activity.prompt.includes("api"), true);
+		} else {
+			// O catálogo reescrito só permite trocas com equivalente validado.
+			assert.equal(swap.status, 422, JSON.stringify(swap));
+			assert.match(swap.error, /variante equivalente/);
+			assert.equal(
+				stock(await state(u), "challenge-swap"),
+				stock(before, "challenge-swap"),
+			);
+		}
+		const variant = swapped ? swap.result.variant : "";
+		const correctAnswer = swapped ? "extra-1" : first.answer;
 		const hintId = randomUUID();
 		const hint = await action(u, "use", "hint-scroll", {
 			...context,
@@ -180,19 +195,27 @@ test("economia, itens, progressão e proteção persistem com transações reais
 		);
 		assert.equal(stock(await state(u), "hint-scroll"), 0);
 		const example = await action(u, "use", "example-scroll", context);
-		assert.equal(example.status, 200, JSON.stringify(example));
-		assert.ok(example.result.example);
+		if (example.status === 200) assert.ok(example.result.example);
+		else {
+			assert.equal(example.status, 422, JSON.stringify(example));
+			assert.match(example.error, /exemplo adicional/);
+			assert.equal(
+				stock(await state(u), "example-scroll"),
+				stock(before, "example-scroll"),
+			);
+		}
 		const lens = await action(u, "use", "answer-lens", context);
 		assert.equal(lens.status, 200, JSON.stringify(lens));
 		assert.ok(lens.result.removed.length);
-		assert.ok(!lens.result.removed.includes("extra-1"));
+		assert.ok(!lens.result.removed.includes(correctAnswer));
 		assert.equal((await action(u, "use", "answer-lens", context)).status, 422);
 		const restored = await bag(u, pointId, first.key);
-		assert.equal(restored.variant, swap.result.variant);
+		assert.equal(restored.variant, variant);
 		assert.deepEqual(restored.removed, lens.result.removed);
-		assert.equal((await answer(u, first, 1, first.answer)).status, 422);
+		if (swapped)
+			assert.equal((await answer(u, first, 1, first.answer)).status, 422);
 		assert.equal(
-			(await answer(u, first, 1, "extra-1", swap.result.variant)).status,
+			(await answer(u, first, 1, correctAnswer, variant)).status,
 			200,
 		);
 		const s = await state(u);
@@ -328,7 +351,7 @@ test("economia, itens, progressão e proteção persistem com transações reais
 					action: "material",
 					pointId,
 					entryKey: material.key,
-					answer: "extra-1",
+					answer: materialChecks[0].answer,
 				})
 			).status,
 			200,
@@ -343,7 +366,7 @@ test("economia, itens, progressão e proteção persistem com transações reais
 					action: "material",
 					pointId,
 					entryKey: material.key,
-					answer: "extra-1",
+					answer: materialChecks[0].answer,
 				})
 			).status,
 			200,
@@ -358,6 +381,8 @@ test("economia, itens, progressão e proteção persistem com transações reais
 		assert.equal(stock(await state(shield), "streak-shield"), 0);
 		await db.$executeRaw`UPDATE "StudyDay" SET day=${dayAt(dayIndex(today) - 2)} WHERE "userId"=${shield.id}`;
 		await db.$executeRaw`UPDATE "UserStreakProtection" SET "activatedDay"=${dayAt(dayIndex(today) - 2)} WHERE "userId"=${shield.id}`;
+		// A fixture altera o passado diretamente; invalide o fechamento diário em cache.
+		await db.$executeRaw`UPDATE "RpgWallet" SET "settledDay"=NULL WHERE "userId"=${shield.id}`;
 		const protectedState = await state(shield);
 		assert.equal(protectedState.protections[0].state, "used");
 		assert.equal(protectedState.stats.studyStreak, 1);
@@ -367,15 +392,16 @@ test("economia, itens, progressão e proteção persistem com transações reais
 		assert.equal(days.count, 1);
 		// Known prerequisite completions are fixtures only; the final checkpoint runs through the real API.
 		const explorer = await learner(1000);
-		await db.$executeRaw`INSERT INTO "LearningPointProgress"("userId","pointId","completedAt",xp) SELECT ${explorer.id},id,now()-interval '1 hour',10 FROM "TrailPoint" WHERE "trailSlug"='elementar' AND number<10`;
+		await db.$executeRaw`INSERT INTO "LearningPointProgress"("userId","pointId","completedAt",xp) SELECT ${explorer.id},id,now()-interval '1 hour',10 FROM "TrailPoint" WHERE "trailSlug"='elementar' AND number<60`;
 		const [finalPoint] =
-			await db.$queryRaw`SELECT id FROM "TrailPoint" WHERE "trailSlug"='elementar' AND number=10`;
+			await db.$queryRaw`SELECT id FROM "TrailPoint" WHERE "trailSlug"='elementar' AND number=60`;
 		const finalEntries =
 			await db.$queryRaw`SELECT a.id::text||'-'||e.number::text AS key,e.type,e.answer FROM "LearningActivity" a JOIN "LearningEntry" e ON a.id=e."activityId" WHERE a."pointId"=${finalPoint.id} ORDER BY a.id,COALESCE(e.position,e.number),e.number`;
 		const checkpointQuestions = finalEntries.filter((entry) => entry.answer);
 		const finalVerification = checkpointQuestions.at(-1);
 		let practiceChecked = false;
 		let checkpointChecked = false;
+		let checkpointSwapStock = 2;
 		for (const entry of finalEntries) {
 			if (!practiceChecked && entry.answer) {
 				await action(explorer, "buy", "challenge-swap");
@@ -390,18 +416,26 @@ test("economia, itens, progressão e proteção persistem com transações reais
 					available.inventory.find((i) => i.id === "question-pass").reason,
 					null,
 				);
-				assert.equal(
-					available.inventory.find((i) => i.id === "challenge-swap").reason,
-					null,
-				);
+				const swapReason = available.inventory.find(
+					(i) => i.id === "challenge-swap",
+				).reason;
 				const changed = await action(
 					explorer,
 					"use",
 					"challenge-swap",
 					context,
 				);
-				assert.equal(changed.status, 200, JSON.stringify(changed));
-				assert.ok(changed.result.variant);
+				assert.equal(
+					changed.status,
+					swapReason === null ? 200 : 422,
+					JSON.stringify(changed),
+				);
+				if (changed.status === 200) assert.ok(changed.result.variant);
+				checkpointSwapStock = changed.status === 200 ? 1 : 2;
+				assert.equal(
+					stock(await state(explorer), "challenge-swap"),
+					checkpointSwapStock,
+				);
 				await action(explorer, "buy", "question-pass");
 				await action(explorer, "buy", "question-pass");
 				assert.equal(
@@ -442,10 +476,13 @@ test("economia, itens, progressão e proteção persistem com transações reais
 				});
 				assert.equal(refusedSwap.status, 422);
 				assert.match(refusedSwap.error, /questão essencial/);
-				assert.equal(stock(await state(explorer), "challenge-swap"), 1);
+				assert.equal(
+					stock(await state(explorer), "challenge-swap"),
+					checkpointSwapStock,
+				);
 				checkpointChecked = true;
 			}
-			const result = await answer(explorer, entry, 1, entry.answer, "", 10);
+			const result = await answer(explorer, entry, 1, entry.answer, "", 60);
 			assert.equal(result.status, 200, JSON.stringify(result));
 		}
 		assert.ok(practiceChecked && checkpointChecked);

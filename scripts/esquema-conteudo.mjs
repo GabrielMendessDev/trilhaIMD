@@ -33,7 +33,7 @@ const assembly = z
 	.object({
 		tipo: z.literal("montagem"),
 		componente: id,
-		dados: z.record(z.unknown()),
+		dados: z.record(z.string(), z.unknown()),
 	})
 	.strict();
 const media = z.discriminatedUnion("tipo", [image, assembly]);

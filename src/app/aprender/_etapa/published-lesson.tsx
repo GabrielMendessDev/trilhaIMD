@@ -38,6 +38,7 @@ import { LessonForm } from "./lesson-form";
 import { LessonLives } from "./lesson-lives";
 import { AnswerMotion, LessonTransition } from "./lesson-motion";
 import { LessonRestart } from "./lesson-restart";
+import { LessonSession } from "./lesson-session";
 import { MaterialCompletion } from "./material-completion";
 import styles from "./pedagogy.module.css";
 import { QuestionHelp } from "./question-help";
@@ -395,6 +396,11 @@ export async function PublishedLesson({
 							</div>
 						)}
 						<div className={styles.actions}>
+							{trail === "elementar" && number === 20 && (
+								<Link className="ui-button" href="/aprender/elementar/prova-1">
+									Fazer a Prova 1
+								</Link>
+							)}
 							<Link
 								className="ui-button"
 								data-learning-direction="back"
@@ -443,7 +449,7 @@ export async function PublishedLesson({
 	const gradedItems = items.filter(({ graded }) => graded);
 	const questionIndex = gradedItems.findIndex(({ key }) => key === entry.key);
 
-	return (
+	const content = (
 		<LessonTransition
 			key={`${entry.key}-${round}`}
 			kind={
@@ -560,4 +566,23 @@ export async function PublishedLesson({
 			</section>
 		</LessonTransition>
 	);
+	if (
+		trail === "elementar" &&
+		user &&
+		progress &&
+		round === 1 &&
+		!row?.completedAt &&
+		index > 0 &&
+		index % 6 === 0
+	)
+		return (
+			<LessonSession
+				key={entry.key}
+				number={Math.floor(index / 6) + 1}
+				total={Math.ceil(lesson.length / 6)}
+			>
+				{content}
+			</LessonSession>
+		);
+	return content;
 }

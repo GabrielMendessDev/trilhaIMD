@@ -6,14 +6,35 @@ import {
 	emptyStats,
 	items,
 	levelForXp,
+	levelProgress,
+	maxLevel,
+	rewardsForLevel,
 	studyDay,
 	studyRuns,
+	xpForLevel,
 } from "../src/domain/rpg.ts";
 import {
 	advanceLesson,
 	lessonScore,
 	pendingItem,
 } from "../src/server/lesson-progress.ts";
+
+test("todos os níveis têm limiar de XP, bônus válido e progressão até o teto", () => {
+	const ids = new Set(items.map((item) => item.id));
+	assert.equal(xpForLevel(1), 0);
+	assert.equal(xpForLevel(1000), 99_800_100);
+	for (let level = 1; level <= maxLevel; level++) {
+		const threshold = xpForLevel(level);
+		assert.equal(levelForXp(threshold).level, level);
+		assert.ok(rewardsForLevel(level).length > 0);
+		assert.ok(rewardsForLevel(level).every((id) => ids.has(id)));
+		if (level > 1) assert.equal(levelForXp(threshold - 1).level, level - 1);
+	}
+	assert.equal(levelProgress(250).remaining, 150);
+	assert.equal(levelProgress(250).percent, 50);
+	assert.equal(levelForXp(100_000_000).next, null);
+	assert.equal(levelProgress(100_000_000).percent, 100);
+});
 
 test("41 metas únicas cobrem as sete categorias e os treze itens têm economia separada", () => {
 	assert.equal(achievements.length, 41);

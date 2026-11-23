@@ -88,13 +88,21 @@ export async function PublishedLesson({
 }) {
 	const { trail, number, id } = point;
 	const base = `/aprender/${trail}/${number}`;
-	const [session, catalog, lesson] = await Promise.all([
-		auth(),
+	const [catalog, lesson, student] = await Promise.all([
 		getPublishedPoints(),
 		getLesson(id),
+		auth().then(async (session) => {
+			const user = session?.user;
+			const [progress, questionStates] = user
+				? await Promise.all([
+						getLearningProgress(user.id),
+						getAllQuestionStates(user.id, id),
+					])
+				: [null, {} as Awaited<ReturnType<typeof getAllQuestionStates>>];
+			return { user, progress, questionStates };
+		}),
 	]);
-	const user = session?.user;
-	const progress = user ? await getLearningProgress(user.id) : null;
+	const { user, progress, questionStates } = student;
 	const { published, completed, next } = getTrailStatus(
 		catalog ?? [],
 		progress,
@@ -103,7 +111,6 @@ export async function PublishedLesson({
 	const row = progress?.rows.find((item) => item.pointId === id);
 	const state = row ?? emptyProgress;
 	const items = lessonItems(lesson);
-	const questionStates = user ? await getAllQuestionStates(user.id, id) : {};
 	const models = lesson.map((original) => {
 		const entry = effectiveEntry(
 			original,
@@ -509,7 +516,7 @@ export async function PublishedLesson({
 								<Walkthrough steps={worked.activity.steps} />
 							) : undefined;
 						})()}
-						key={`${entry.key}-${round}`}
+						key={`${entry.key}-${round}-run-${state.run ?? 1}`}
 						label="Continuar"
 						lives={livesOf(state)}
 						progress={

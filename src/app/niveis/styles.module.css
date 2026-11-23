@@ -1,0 +1,59 @@
+.page {
+	max-inline-size: 70rem;
+	margin-inline: auto;
+}
+
+.jump,
+.pagination {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	margin-block: 1.25rem;
+}
+
+.jump label {
+	font-weight: 750;
+}
+
+.jump input {
+	inline-size: 6em;
+	min-block-size: 2.75rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-control);
+	padding-inline: 0.65rem;
+	background: var(--surface);
+	color: var(--ink);
+}
+
+.table {
+	overflow-x: auto;
+}
+
+.table table {
+	inline-size: 100%;
+	text-align: start;
+	font-size: clamp(0.8rem, 2vw, 0.95rem);
+	font-variant-numeric: tabular-nums;
+}
+
+.table caption {
+	text-align: start;
+	color: var(--muted);
+	padding-block: 0.5rem;
+}
+
+.table :is(th, td) {
+	border-block-end: 1px solid var(--line);
+	padding: 0.65rem clamp(0.4rem, 2vw, 1rem);
+	text-align: start;
+}
+
+.table [data-current] {
+	background: var(--accent-wash);
+}
+
+.table small {
+	display: block;
+	color: var(--muted);
+}

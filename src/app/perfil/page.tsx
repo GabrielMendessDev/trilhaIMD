@@ -5,8 +5,8 @@ import {
 	DashboardLayout,
 	Icon,
 	PageHeading,
-	ProgressBar,
 } from "~/app/_components/dashboard";
+import { LevelBar, levelRewardNames } from "~/app/_components/level-progress";
 import { RpgIcon } from "~/app/_components/rpg-icon";
 import { ThemeToggle } from "~/app/_components/theme-toggle";
 import { auth, signOut } from "~/server/auth";
@@ -52,7 +52,7 @@ export default async function PerfilPage() {
 						</p>
 						{level && (
 							<span>
-								Nível {level.level} · {progress?.xp} XP
+								Nível {level.level} · {progress?.xp.toLocaleString("pt-BR")} XP
 							</span>
 						)}
 					</div>
@@ -65,14 +65,48 @@ export default async function PerfilPage() {
 				{progress && level && (
 					<>
 						<div className="profile-level">
-							<ProgressBar
-								label="Evolução de nível"
-								value={
-									((progress.xp - level.start) / (level.next - level.start)) *
-									100
-								}
-							/>
-							<span>{level.next - progress.xp} XP para o próximo nível</span>
+							<LevelBar level={level} />
+							{level.next === null ? (
+								<dl className="profile-xp-facts">
+									<div>
+										<dt>XP total</dt>
+										<dd>{progress.xp.toLocaleString("pt-BR")}</dd>
+									</div>
+									<div>
+										<dt>XP para atingir o nível máximo</dt>
+										<dd>{level.start.toLocaleString("pt-BR")}</dd>
+									</div>
+								</dl>
+							) : (
+								<>
+									<dl className="profile-xp-facts">
+										<div>
+											<dt>XP total</dt>
+											<dd>{progress.xp.toLocaleString("pt-BR")}</dd>
+										</div>
+										<div>
+											<dt>XP neste nível</dt>
+											<dd>
+												{level.earned.toLocaleString("pt-BR")} /{" "}
+												{(level.next - level.start).toLocaleString("pt-BR")}
+											</dd>
+										</div>
+										<div>
+											<dt>XP para atingir o nível {level.level + 1}</dt>
+											<dd>
+												{level.next.toLocaleString("pt-BR")} (
+												{level.remaining.toLocaleString("pt-BR")} restantes)
+											</dd>
+										</div>
+									</dl>
+									<p>
+										Próxima recompensa · {levelRewardNames(level.level + 1)}
+									</p>
+								</>
+							)}
+							<Link className="ui-link" href={`/niveis?nivel=${level.level}`}>
+								Ver tabela de níveis e recompensas
+							</Link>
 						</div>
 						<dl className="profile-stats">
 							<div>
@@ -154,6 +188,11 @@ export default async function PerfilPage() {
 					<Link href="/missoes">
 						<Icon className="size-5" name="quests" />
 						Missões de hoje
+						<Icon className="size-4" name="arrow" />
+					</Link>
+					<Link href="/privacidade">
+						<Icon className="size-5" name="book" />
+						Privacidade e métricas
 						<Icon className="size-4" name="arrow" />
 					</Link>
 				</nav>

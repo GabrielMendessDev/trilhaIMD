@@ -574,6 +574,39 @@
 	width: 20px;
 	height: 20px;
 }
+.rpg-xp-level {
+	display: grid;
+	gap: 0.2rem;
+	min-inline-size: 4.5rem;
+	line-height: 1.15;
+}
+.rpg-xp-caption {
+	display: grid;
+	gap: 0.125rem;
+	white-space: nowrap;
+}
+.rpg-xp-caption [data-rpg-xp] {
+	font-size: 0.6875rem;
+}
+.rpg-xp-level .study-progress,
+.rpg-level .study-progress {
+	block-size: 4px;
+	margin-block: 0.15rem 0;
+}
+.profile-xp-facts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.25rem;
+	margin-block: 0.65rem;
+}
+.profile-xp-facts dt {
+	font-size: 0.8rem;
+	color: var(--muted);
+}
+.profile-xp-facts dd {
+	font-weight: 800;
+	font-variant-numeric: tabular-nums;
+}
 .rpg-bits,
 .rpg-streak {
 	display: flex;

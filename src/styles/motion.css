@@ -132,8 +132,83 @@
 	width: clamp(3.5rem, 11vw, 6.25rem);
 	height: auto;
 }
-.answer-verdict > .bito-reaction {
-	margin-inline-start: auto;
+.answer-reaction {
+	--reaction-tone: var(--success-ink);
+	position: fixed;
+	z-index: 54;
+	inset: 0;
+	overflow: clip;
+	pointer-events: none;
+	animation: answer-reaction-lifetime 2.8s linear both;
+}
+.answer-reaction[data-correct="false"] {
+	--reaction-tone: var(--warm-ink);
+}
+.answer-reaction-banner {
+	position: absolute;
+	inset-block-start: max(4.5rem, calc(env(safe-area-inset-top) + 3.5rem));
+	inset-inline: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	width: fit-content;
+	max-width: calc(100% - 2rem);
+	margin-inline: auto;
+	padding: 0.65rem 1rem;
+	border: 1px solid color-mix(in srgb, var(--reaction-tone) 44%, var(--line));
+	border-radius: var(--radius-control);
+	background: color-mix(in srgb, var(--reaction-tone) 13%, var(--surface));
+	box-shadow: 0 12px 28px -16px var(--reaction-tone);
+	color: var(--ink);
+	font-weight: 800;
+}
+.answer-reaction-banner > svg {
+	flex: none;
+	width: 1.25rem;
+	height: 1.25rem;
+	color: var(--reaction-tone);
+}
+.answer-reaction-bito {
+	position: absolute;
+	inset-inline-end: clamp(0.25rem, 4vw, 5rem);
+	inset-block-end: clamp(1rem, 8dvh, 4.5rem);
+	width: min(73vw, 69dvh, 39rem);
+}
+.answer-reaction-bito > .bito-reaction {
+	width: 100%;
+	filter: drop-shadow(
+		0 1rem 1.5rem color-mix(in srgb, var(--orbit) 34%, transparent)
+	);
+}
+@keyframes answer-reaction-lifetime {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	12%,
+	82% {
+		opacity: 1;
+	}
+}
+@keyframes answer-bito-visit {
+	0%,
+	100% {
+		transform: translateX(calc(100% + 5rem));
+	}
+	19%,
+	76% {
+		transform: translateX(0);
+	}
+}
+@keyframes answer-banner-visit {
+	0%,
+	100% {
+		transform: translateY(-1rem);
+	}
+	14%,
+	82% {
+		transform: translateY(0);
+	}
 }
 @media (max-width: 420px) {
 	.answer-verdict > .answer-emblem,
@@ -349,6 +424,12 @@
 	}
 	.lesson-transition .animated-choice:nth-of-type(n + 4) {
 		animation-delay: calc(var(--motion-stagger) * 3);
+	}
+	.answer-reaction-banner {
+		animation: answer-banner-visit 2.8s var(--ease-enter) both;
+	}
+	.answer-reaction-bito {
+		animation: answer-bito-visit 2.8s var(--ease-enter) both;
 	}
 	.answer-experience[data-animate] .answer-reveal {
 		animation: panel-reveal var(--motion-step) var(--ease-enter) both;

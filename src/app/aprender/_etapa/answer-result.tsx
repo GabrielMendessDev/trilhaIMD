@@ -1,20 +1,58 @@
 "use client";
 
-import { type ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "~/app/_components/action-link";
 import { BitoReaction } from "~/app/_components/bito-reaction";
 import { FeedbackIcon } from "~/app/_components/feedback-icon";
 import { Icon } from "~/app/_components/icon";
 import type { AnswerAssessment } from "./answer-model";
 
+function AnswerReaction({
+	correct,
+	message,
+	round,
+}: {
+	correct: boolean;
+	message: string;
+	round: 1 | 2;
+}) {
+	const [finished, setFinished] = useState(false);
+	if (finished) return null;
+
+	return createPortal(
+		<div
+			aria-hidden="true"
+			className="answer-reaction"
+			data-correct={correct}
+			onAnimationEnd={(event) => {
+				if (event.target === event.currentTarget) setFinished(true);
+			}}
+		>
+			<div className="answer-reaction-banner">
+				<FeedbackIcon kind={correct ? "success" : "error"} />
+				<span>{message}</span>
+			</div>
+			<div className="answer-reaction-bito">
+				<BitoReaction
+					mood={correct ? "feliz" : round === 2 ? "triste" : "duvida"}
+				/>
+			</div>
+		</div>,
+		document.body,
+	);
+}
+
 export function AnswerResult({
 	assessment,
 	destination,
 	example,
+	animate = false,
 }: {
 	assessment: AnswerAssessment;
 	destination: string;
 	example?: ReactNode;
+	animate?: boolean;
 }) {
 	const heading = useRef<HTMLHeadingElement>(null);
 	const verdict = useRef<HTMLDivElement>(null);
@@ -32,8 +70,32 @@ export function AnswerResult({
 			: round === 1
 				? "Ainda não foi dessa vez!"
 				: "Vamos entender a resposta";
+	const resultTitle = assessment.failed
+		? "As vidas acabaram"
+		: correct
+			? round === 2
+				? "Questão recuperada"
+				: "Resposta correta"
+			: round === 2
+				? "Resposta incorreta na revisão"
+				: "Resposta incorreta";
+	const caption = assessment.failed
+		? "Atividade perdida · sem conclusão ou recompensa da etapa"
+		: correct
+			? null
+			: round === 1
+				? "Uma nova chance no fim da atividade"
+				: "Dificuldade registrada para estudar";
 	return (
 		<div className="answer-reveal">
+			{animate && (
+				<AnswerReaction
+					correct={correct}
+					key={assessment.eventId}
+					message={message}
+					round={round}
+				/>
+			)}
 			<section
 				aria-label="Resultado da resposta"
 				className="answer-result"
@@ -46,23 +108,10 @@ export function AnswerResult({
 					</span>
 					<div>
 						<h2 ref={heading} tabIndex={-1}>
-							{message}
+							{resultTitle}
 						</h2>
-						<p className="answer-caption">
-							{assessment.failed
-								? "Atividade perdida · sem conclusão ou recompensa da etapa"
-								: correct
-									? round === 1
-										? "Resposta correta registrada"
-										: "Questão recuperada"
-									: round === 1
-										? "Uma nova chance no fim da atividade"
-										: "Dificuldade registrada para estudar"}
-						</p>
+						{caption && <p className="answer-caption">{caption}</p>}
 					</div>
-					<BitoReaction
-						mood={correct ? "feliz" : round === 2 ? "triste" : "duvida"}
-					/>
 					{correct && (
 						<span aria-hidden="true" className="answer-particles">
 							{[0, 1, 2, 3, 4, 5].map((index) => (

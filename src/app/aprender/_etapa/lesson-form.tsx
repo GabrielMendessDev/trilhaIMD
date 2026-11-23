@@ -11,6 +11,7 @@ import {
 	useTransition,
 } from "react";
 import { ActionButton } from "~/app/_components/action-button";
+import { activeStudyTime } from "~/app/_components/analytics-client";
 import { useFeedback } from "~/app/_components/feedback";
 import { consumeFeedbackEvent } from "~/app/_components/feedback-events";
 import { FeedbackIcon } from "~/app/_components/feedback-icon";
@@ -24,6 +25,8 @@ import { applyLens, LessonBag, type LessonEffects } from "./lesson-bag";
 import { LessonLives } from "./lesson-lives";
 import { QuestionHelp } from "./question-help";
 import { StageScreen } from "./screen";
+
+let responderWarmed = false;
 
 export function LessonForm({
 	endpoint,
@@ -81,7 +84,34 @@ export function LessonForm({
 		state === "navigating" ||
 		Boolean(confirmed && !visibleResult);
 	const request = useRef<AbortController | null>(null);
+	const questionClock = useRef({ visibleSince: 0, elapsed: 0 });
+	useEffect(() => {
+		if (!autoSubmit) return;
+		const clock = questionClock.current;
+		clock.elapsed = 0;
+		clock.visibleSince = document.hidden ? 0 : performance.now();
+		const visibility = () => {
+			if (clock.visibleSince)
+				clock.elapsed += performance.now() - clock.visibleSince;
+			clock.visibleSince = document.hidden ? 0 : performance.now();
+		};
+		document.addEventListener("visibilitychange", visibility);
+		return () => document.removeEventListener("visibilitychange", visibility);
+	}, [autoSubmit]);
 	useEffect(() => () => request.current?.abort(), []);
+	useEffect(() => {
+		if (process.env.NODE_ENV !== "development" || responderWarmed) return;
+		// Compile the on-demand route while the student is reading the lesson.
+		responderWarmed = true;
+		void fetch(endpoint, { method: "OPTIONS" }).then(
+			(response) => {
+				if (!response.ok) responderWarmed = false;
+			},
+			() => {
+				responderWarmed = false;
+			},
+		);
+	}, [endpoint]);
 	useEffect(() => {
 		if (state === "navigating" && !changing) {
 			setState("idle");
@@ -98,6 +128,14 @@ export function LessonForm({
 	async function send(element: HTMLFormElement) {
 		if (submitting.current || confirmed || itemBusy) return;
 		const form = new FormData(element);
+		const activeMs = activeStudyTime();
+		if (autoSubmit && activeMs !== undefined) {
+			const { elapsed, visibleSince } = questionClock.current;
+			const responseMs =
+				elapsed + (visibleSince ? performance.now() - visibleSince : 0);
+			form.set("metricResponseMs", String(Math.round(responseMs)));
+			form.set("metricActiveMs", String(Math.round(activeMs)));
+		}
 		submitting.current = true;
 		setState("submitting");
 		setError("");
@@ -254,6 +292,7 @@ export function LessonForm({
 			)}
 			{visibleResult ? (
 				<AnswerResult
+					animate={visibleResult.animate}
 					assessment={visibleResult.assessment}
 					destination={visibleResult.destination}
 					example={example}

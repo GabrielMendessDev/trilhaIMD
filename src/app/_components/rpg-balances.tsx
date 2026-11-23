@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { rarityNames } from "~/domain/rpg";
 import Link from "./action-link";
 import { consumeFeedbackEvent } from "./feedback-events";
+import { LevelBar } from "./level-progress";
 import type { RpgBalance } from "./rpg-client";
 import { RpgIcon, RpgMedal } from "./rpg-icon";
 
@@ -38,7 +39,16 @@ export function RpgBalances({ initial }: { initial: RpgBalance }) {
 				{value.streak}
 				<span className="sr-only"> dias de ofensiva</span>
 			</span>
-			<span data-rpg-xp>{value.xp.toLocaleString("pt-BR")} XP</span>
+			<Link
+				className="rpg-xp-level"
+				href={`/niveis?nivel=${value.level.level}`}
+			>
+				<span className="rpg-xp-caption">
+					<strong>Nível {value.level.level}</strong>
+					<span data-rpg-xp>{value.xp.toLocaleString("pt-BR")} XP</span>
+				</span>
+				<LevelBar level={value.level} />
+			</Link>
 			<Link
 				aria-label={`${value.bits} Bits. Abrir Loja do Bito`}
 				className="rpg-bits"

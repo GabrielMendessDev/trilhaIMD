@@ -360,9 +360,45 @@ export const items = [
 ] as const;
 export type ItemId = (typeof items)[number]["id"];
 export type ShopItem = (typeof items)[number];
+export const maxLevel = 1000;
+export const xpForLevel = (level: number) => (level - 1) ** 2 * 100;
+
 export function levelForXp(xp: number) {
-	const level = Math.floor(Math.sqrt(Math.max(0, xp) / 100)) + 1;
-	return { level, start: (level - 1) ** 2 * 100, next: level ** 2 * 100 };
+	const level = Math.min(
+		maxLevel,
+		Math.floor(Math.sqrt(Math.max(0, xp) / 100)) + 1,
+	);
+	const start = xpForLevel(level);
+	const next = level === maxLevel ? null : xpForLevel(level + 1);
+	return { level, start, next };
+}
+
+export function levelProgress(xp: number) {
+	const { level, start, next } = levelForXp(xp);
+	return {
+		level,
+		start,
+		next,
+		earned: Math.max(0, xp - start),
+		remaining: next === null ? 0 : Math.max(0, next - xp),
+		percent:
+			next === null ? 100 : (Math.max(0, xp - start) / (next - start)) * 100,
+	};
+}
+
+const studyRewards = [
+	"hint-scroll",
+	"example-scroll",
+	"answer-lens",
+	"tactical-delay",
+] as const;
+
+export function rewardsForLevel(level: number): readonly ItemId[] {
+	if (level % 25 === 0)
+		return ["life-elixir", "streak-shield", "example-scroll"];
+	if (level % 10 === 0) return ["life-elixir", "streak-shield"];
+	if (level % 5 === 0) return ["life-elixir"];
+	return [studyRewards[(level - 1) % studyRewards.length] ?? "hint-scroll"];
 }
 export function studyDay(now: Date) {
 	return new Intl.DateTimeFormat("en-CA", {

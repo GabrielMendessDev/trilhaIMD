@@ -7,6 +7,7 @@ import type { RpgState } from "~/server/rpg";
 import Link from "./action-link";
 import { BitoReaction } from "./bito-reaction";
 import { InventoryGrid } from "./inventory-grid";
+import { LevelBar } from "./level-progress";
 import { publishRpg, rpgRequest } from "./rpg-client";
 import { RpgIcon, RpgMedal } from "./rpg-icon";
 
@@ -238,10 +239,14 @@ export function RpgHub({
 						</p>
 					</div>
 					{state && (
-						<span className="rpg-level">
+						<Link
+							className="rpg-level"
+							href={`/niveis?nivel=${state.level.level}`}
+						>
 							Nível {state.level.level}
 							<small>{number(state.xp)} XP</small>
-						</span>
+							<LevelBar level={state.level} />
+						</Link>
 					)}
 				</header>
 			)}
@@ -568,7 +573,9 @@ export function RpgHub({
 													? achievements.find((a) => a.id === row.subject)?.name
 													: row.kind === "daily"
 														? "Bônus diário"
-														: "Conclusão de lição"}
+														: row.kind === "level-overflow"
+															? `Recompensa de nível convertida em Bits · Nível ${row.subject}`
+															: "Conclusão de lição"}
 										</strong>
 										<small>{date(row.createdAt)}</small>
 									</div>

@@ -524,7 +524,7 @@ C) 4∈A
 Todo conjunto é subconjunto de si mesmo, pois nenhum elemento seu fica de fora dele. O vazio é subconjunto de qualquer conjunto: não existe elemento do vazio que possa violar a condição. Para provar A=B, podemos mostrar A⊆B e B⊆A. Para refutar inclusão, basta exibir um elemento de A que não esteja em B.
 
 - **Objetivo:** Distinguir pertinência, inclusão e subconjunto próprio. Se A={1,2} e B={1,2,3}, então todo elemento de A está em B: A⊆B.
-- **Conferência:** Volte às condições da expressão original. Se C={{1,2},3}, então A∈C, mas 1∉C. O objeto {1,2} aparece inteiro como elemento de C.
+- **Conferência:** Volte às condições da expressão original. Se C=&#123;{1,2},3}, então A∈C, mas 1∉C. O objeto {1,2} aparece inteiro como elemento de C.
 
 ### Tela 5 · Pratique
 
@@ -555,7 +555,7 @@ Como 3∈B e 3∉A, os conjuntos são diferentes; portanto A⊊B. Além disso, 2
 
 **3. Concluir e conferir**
 
-Se C={{1,2},3}, então A∈C, mas 1∉C. O objeto {1,2} aparece inteiro como elemento de C.
+Se C=&#123;{1,2},3}, então A∈C, mas 1∉C. O objeto {1,2} aparece inteiro como elemento de C.
 
 ### Tela 7 · Pratique
 
@@ -616,7 +616,7 @@ C) 1∈A e 1∉B
 
 ### Tela 11 · Pratique
 
-Em C={{1,2},3}, qual é um elemento de C?
+Em C=&#123;{1,2},3}, qual é um elemento de C?
 
 A) 2
 
@@ -654,7 +654,7 @@ C) {a,b,c}
 
 ### Tela 14 · Pratique
 
-Quantos elementos tem {{1,2},3}?
+Quantos elementos tem &#123;{1,2},3}?
 
 A) 3
 
@@ -673,7 +673,7 @@ C) 2
 
 A⊆B significa: para todo x, se x∈A, então x∈B. A é subconjunto de B. A⊊B acrescenta A≠B e indica subconjunto próprio. O símbolo ∈ compara um objeto com um conjunto; ⊆ compara conjuntos. Conjuntos também podem ser elementos de outros conjuntos, quando isso é explicitado.
 
-Verificação: Se C={{1,2},3}, então A∈C, mas 1∉C. O objeto {1,2} aparece inteiro como elemento de C.
+Verificação: Se C=&#123;{1,2},3}, então A∈C, mas 1∉C. O objeto {1,2} aparece inteiro como elemento de C.
 
 Recuperação ativa: explique como distinguir pertinência, inclusão e subconjunto próprio. Depois reconstrua o exemplo sem consultar a solução.
 

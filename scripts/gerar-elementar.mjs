@@ -210,7 +210,7 @@ const markdownPoint = (file) => {
 const body = files.map(markdownPoint);
 await writeFile(
 	new URL("APOSTILA-COMPLETA.md", output),
-	intro + body.join("\n---\n\n"),
+	(intro + body.join("\n---\n\n")).replace(/\{(?=[{%])/g, "&#123;"),
 );
 for (let u = 1; u <= 3; u++) {
 	const directory = new URL(`unidade-${u}/`, output);

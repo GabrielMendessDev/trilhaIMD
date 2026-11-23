@@ -5,6 +5,7 @@ import {
 	PageHeading,
 	ProgressBar,
 } from "~/app/_components/dashboard";
+import { LevelBar } from "~/app/_components/level-progress";
 import { RpgMedal } from "~/app/_components/rpg-icon";
 import { dayAt, dayIndex, studyDay } from "~/domain/rpg";
 import { auth } from "~/server/auth";
@@ -74,16 +75,18 @@ export default async function ProgressoPage() {
 					<div>
 						<h2>Nível {level.level}</h2>
 						<p>{progress.xp.toLocaleString("pt-BR")} XP acumulados</p>
-						<ProgressBar
-							label={`Progresso até o nível ${level.level + 1}`}
-							value={
-								((progress.xp - level.start) / (level.next - level.start)) * 100
-							}
-						/>
+						<LevelBar level={level} />
 						<small>
-							Faltam {level.next - progress.xp} XP para o nível{" "}
-							{level.level + 1}.
+							{level.next === null
+								? "Nível máximo atingido."
+								: `Faltam ${level.remaining.toLocaleString("pt-BR")} XP para o nível ${level.level + 1}.`}
 						</small>
+						<Link
+							className="ui-link mt-2 block"
+							href={`/niveis?nivel=${level.level}`}
+						>
+							Ver níveis e recompensas
+						</Link>
 					</div>
 					<Link className="ui-button" href="/aprender">
 						Continuar jornada <Icon className="size-4" name="arrow" />

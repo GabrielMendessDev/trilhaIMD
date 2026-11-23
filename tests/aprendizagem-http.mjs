@@ -122,11 +122,11 @@ test("fluxo publicado preserva revisão, feedback e XP no PostgreSQL", async () 
 				const next = entries[entries.indexOf(entry) + 1];
 				assert.equal(result.continueTo, `${path}?item=${next.key}`);
 				const html = await page(student, result.destination);
-				assert.match(html, /Ainda não foi dessa vez!/);
+				assert.match(html, /Resposta incorreta/);
 				assert.doesNotMatch(html, /<h3>Resposta correta<\/h3>/);
 				assert.match(
 					await page(student, result.destination),
-					/Ainda não foi dessa vez!/,
+					/Resposta incorreta/,
 				);
 				assert.doesNotMatch(await page(student), /Hora de revisar!/);
 				assert.equal((await send(student, entry, 2)).status, 422);
@@ -153,10 +153,7 @@ test("fluxo publicado preserva revisão, feedback e XP no PostgreSQL", async () 
 		assert.equal(retry.status, 200, retry.error);
 		assert.equal(replay.destination, retry.destination);
 		assert.equal(replay.continueTo, retry.continueTo);
-		assert.match(
-			await page(student, retry.destination),
-			/Você conseguiu na revisão!/,
-		);
+		assert.match(await page(student, retry.destination), /Questão recuperada/);
 		assert.match(await page(student), /Etapa concluída!/);
 		assert.equal((await send(student, recover, 3)).status, 400);
 		const final = await progress(student);

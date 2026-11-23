@@ -91,6 +91,12 @@ export default async function LoginPage({
 						>
 							Explorar sem entrar <Icon className="size-4" name="arrow" />
 						</Link>
+						<Link
+							className="ui-link mt-2 self-start text-sm"
+							href="/privacidade"
+						>
+							Privacidade e métricas
+						</Link>
 					</section>
 
 					<aside className="entry-story">

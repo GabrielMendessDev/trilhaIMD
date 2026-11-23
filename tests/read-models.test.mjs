@@ -81,7 +81,11 @@ beforeEach(() => {
 });
 
 function settled() {
-	return { initialized: true, settledDay: studyDay(new Date()) };
+	return {
+		initialized: true,
+		settledDay: studyDay(new Date()),
+		rewardedLevel: 1,
+	};
 }
 
 test("60 studied lessons use one metadata query and preserve review ordering and scores", async () => {
@@ -159,7 +163,7 @@ test("daily missions avoid catalog, progress and lesson reads", async () => {
 	assert.equal(db.transactions, 0);
 });
 
-test("RPG summary has no histories and balances need only two reads without awards", async () => {
+test("RPG summary has no histories and initialized balances need one read without awards", async () => {
 	db.read = (sql) => {
 		if (sql.includes('SELECT initialized,"settledDay"')) return [settled()];
 		if (sql.includes("SELECT w.*"))
@@ -186,7 +190,7 @@ test("RPG summary has no histories and balances need only two reads without awar
 	assert.ok(!("history" in summary));
 	db.queries = [];
 	assert.equal((await readRpgBalance("learner")).xp, 120);
-	assert.equal(db.queries.length, 2);
+	assert.equal(db.queries.length, 1);
 	assert.equal(db.transactions, 0);
 });
 

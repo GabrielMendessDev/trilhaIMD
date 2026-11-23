@@ -17,8 +17,9 @@ import {
 import type { TrailId } from "~/app/aprender/trails";
 import { livesOf } from "~/domain/lesson-lives.mjs";
 import { db } from "~/server/db";
+import { publishedCatalogCache } from "./catalog-cache";
 import {
-	getLearningRecords,
+	getCompletedLearningPoints,
 	getPublishedPoints,
 	getTrailStatus,
 } from "./learning";
@@ -159,17 +160,17 @@ export type Entry = {
 	content: unknown;
 };
 
-export const getLesson = cache(async (pointId: number) => {
-	const content = await db.$queryRaw<
-		{ blocks: unknown; summary: string | null }[]
-	>`
-		SELECT blocks, summary FROM "TrailPointContent" WHERE "pointId" = ${pointId}
-	`;
-	const rows = await db.$queryRaw<Entry[]>`
-		SELECT a.id::text || '-' || e.number::text AS key, a.title, e.type, e.prompt, e.media, e.payload, e.answer, e.content
-		FROM "LearningActivity" a JOIN "LearningEntry" e ON e."activityId" = a.id
-		WHERE a."pointId" = ${pointId} ORDER BY a.id, COALESCE(e.position, e.number), e.number
-	`;
+async function readLesson(pointId: number) {
+	const [content, rows] = await Promise.all([
+		db.$queryRaw<{ blocks: unknown; summary: string | null }[]>`
+			SELECT blocks, summary FROM "TrailPointContent" WHERE "pointId" = ${pointId}
+		`,
+		db.$queryRaw<Entry[]>`
+			SELECT a.id::text || '-' || e.number::text AS key, a.title, e.type, e.prompt, e.media, e.payload, e.answer, e.content
+			FROM "LearningActivity" a JOIN "LearningEntry" e ON e."activityId" = a.id
+			WHERE a."pointId" = ${pointId} ORDER BY a.id, COALESCE(e.position, e.number), e.number
+		`,
+	]);
 	const first = content[0];
 	if (!first) return rows;
 	return [
@@ -185,7 +186,11 @@ export const getLesson = cache(async (pointId: number) => {
 		},
 		...rows,
 	];
-});
+}
+
+export const getLesson = cache((pointId: number) =>
+	publishedCatalogCache(`lesson:${pointId}`, () => readLesson(pointId)),
+);
 
 const labels = (items: z.infer<typeof entries>) =>
 	items.map(({ id, texto }) => ({ id, label: texto }));
@@ -354,15 +359,15 @@ export async function recordAnswer(
 	submission: PendingItem,
 	form: FormData,
 ) {
-	const [points, progress] = await Promise.all([
+	const [points, done] = await Promise.all([
 		getPublishedPoints(),
-		getLearningRecords(userId),
+		getCompletedLearningPoints(userId),
 	]);
-	if (!points || !progress)
+	if (!points || !done)
 		return { error: "O progresso está indisponível. Tente novamente." };
 	const { published, completed, next } = getTrailStatus(
 		points,
-		progress,
+		{ done },
 		trail,
 	);
 	const point = published.find((point) => point.number === number);
@@ -496,6 +501,17 @@ export async function recordAnswer(
 						assessment: assessment(attempt, updated, persisted.finished),
 						nextKey: upcoming?.key,
 						awards,
+						analytics: {
+							pointId: point.id,
+							entryKey: entry.key,
+							run: row.run ?? 1,
+							round: submission.round,
+							correct: attempt.correct,
+							replaced: Boolean(support.effects.replacement),
+							assisted:
+								Boolean(attempt.assisted) ||
+								Boolean(support.effects.replacement),
+						},
 					}
 				: { continued: true, nextKey: upcoming?.key, awards };
 		},

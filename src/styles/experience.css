@@ -1407,17 +1407,12 @@ button:disabled {
 	font-weight: 700;
 }
 .profile-level {
-	display: flex;
-	align-items: center;
-	gap: 18px;
+	display: grid;
+	gap: 10px;
 	padding: 12px 0 28px;
 }
-.profile-level > div {
-	flex: 1 1 0;
-}
 .profile-level .study-progress {
-	width: auto;
-	min-width: 0;
+	width: 100%;
 	min-height: 8px;
 }
 .profile-level > span {
@@ -2348,15 +2343,6 @@ button:disabled {
 	}
 	.explorer-profile p {
 		font-size: 0.75rem;
-	}
-	.profile-level {
-		flex-direction: column;
-		align-items: stretch;
-		gap: 10px;
-	}
-	.profile-level .study-progress {
-		flex: none;
-		width: 100%;
 	}
 	.profile-stats {
 		gap: 20px;

@@ -318,7 +318,7 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", {
 		}
 		assert.equal(
 			await evaluate(
-				`document.querySelector('[data-outcome=success] .answer-verdict h2')?.textContent.includes('Mandou bem')`,
+				`document.querySelector('[data-outcome=success] .answer-verdict h2')?.textContent.includes('Resposta correta')`,
 			),
 			true,
 		);
@@ -483,7 +483,7 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", {
 		await until(
 			() =>
 				evaluate(
-					`document.querySelector('.answer-verdict h2')?.textContent.includes('Você conseguiu na revisão')`,
+					`document.querySelector('.answer-verdict h2')?.textContent.includes('Questão recuperada')`,
 				),
 			"recuperação na segunda tentativa",
 		);
@@ -502,7 +502,7 @@ test("microinterações reais, falhas, revisão, XP e navegação no Chrome", {
 		await until(
 			() =>
 				evaluate(
-					`document.querySelector('.answer-verdict h2')?.textContent.includes('Vamos entender a resposta')`,
+					`document.querySelector('.answer-verdict h2')?.textContent.includes('Resposta incorreta na revisão')`,
 				),
 			"dificuldade na segunda tentativa",
 		);

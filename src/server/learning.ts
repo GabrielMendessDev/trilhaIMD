@@ -53,6 +53,21 @@ export const getPublishedPoints = cache(async () => {
 	}
 });
 
+export async function getCompletedLearningPoints(userId: string) {
+	try {
+		return await db.$queryRaw<{ pointId: number }[]>`
+			SELECT "pointId" FROM "LearningPointProgress"
+			WHERE "userId" = ${userId} AND "completedAt" IS NOT NULL
+		`;
+	} catch (error) {
+		console.error(
+			"Conclusões de aprendizagem indisponíveis",
+			error instanceof Error ? error.name : error,
+		);
+		return null;
+	}
+}
+
 export const getLearningRecords = cache(async (userId: string) => {
 	try {
 		const rows = await db.$queryRaw<Completion[]>`
@@ -99,7 +114,7 @@ export type LearningProgress = NonNullable<
 
 export function getTrailStatus(
 	points: PublishedPoint[],
-	progress: Pick<LearningProgress, "done"> | null,
+	progress: { done: readonly { pointId: number }[] } | null,
 	trail: TrailId,
 ) {
 	const published = points.filter((point) => point.trail === trail);

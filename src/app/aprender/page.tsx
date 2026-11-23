@@ -27,13 +27,19 @@ export default async function AprenderPage({
 		concluida?: string;
 	}>;
 }) {
-	const query = await searchParams;
-	const trail = trails.find((t) => t.id === query.modulo) ?? trails[0];
-	const user = (await auth())?.user;
-	const [catalog, progress] = await Promise.all([
+	const [query, catalog, student] = await Promise.all([
+		searchParams,
 		getPublishedPoints(),
-		user ? getLearningProgress(user.id) : null,
+		auth().then(async (session) => {
+			const user = session?.user;
+			return {
+				user,
+				progress: user ? await getLearningProgress(user.id) : null,
+			};
+		}),
 	]);
+	const trail = trails.find((t) => t.id === query.modulo) ?? trails[0];
+	const { user, progress } = student;
 	const { published, completed, next } = getTrailStatus(
 		catalog ?? [],
 		progress,

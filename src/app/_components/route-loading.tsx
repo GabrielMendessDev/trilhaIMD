@@ -1,5 +1,6 @@
 import { useId } from "react";
 import styles from "./route-loading.module.css";
+import { RouteLoadingRain } from "./route-loading-rain";
 
 export function RouteLoading({
 	target,
@@ -71,6 +72,7 @@ export function RouteLoading({
 					</div>
 				)}
 			</div>
+			<RouteLoadingRain />
 			<div className={styles.mark}>
 				<svg aria-hidden="true" fill="none" viewBox="0 0 48 48">
 					<defs>

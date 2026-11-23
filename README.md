@@ -28,6 +28,12 @@ Para parar o banco sem apagar os dados, rode `docker compose down`. Para apagar 
 3. No `.env` local, preencha `AUTH_GOOGLE_ID` e `AUTH_GOOGLE_SECRET` com os valores do cliente. Configure `AUTH_SECRET` (gere com `npx auth secret` se precisar) e aponte `DATABASE_URL` para o PostgreSQL. Em produção, defina também `AUTH_URL` com a origem pública do app.
 4. Aplique as [migrações do banco](conteudos/README.md#preparação-do-postgresql). Reinicie o servidor e abra `/login`.
 
+## Painel e progressão
+
+O painel de métricas está em `/admin/dashboard`. Configure `ADMIN_USERNAME` e `ADMIN_PASSWORD` no `.env`. O padrão local é `admin` para ambos. Em produção, o painel exige senha de pelo menos 16 caracteres e HTTPS. Defina `ANALYTICS_ENABLED=false` para pausar a coleta. A página `/privacidade` permite pausar a medição no navegador.
+
+A tabela em `/niveis` mostra o XP acumulado e os itens dos níveis 1 a 1.000. A Mochila recebe as recompensas dos níveis atingidos automaticamente, inclusive para contas existentes. Itens que excedem o limite de estoque viram Bits.
+
 ## Conteúdos e atividades
 
 O [guia do banco de aprendizagem](conteudos/README.md) descreve o formato JSON por ponto da trilha, os quatro tipos de questão e os comandos de validação e importação.

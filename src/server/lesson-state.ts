@@ -7,7 +7,12 @@ import {
 	lessonScore,
 	pendingItem,
 } from "./lesson-progress";
-import { RpgError, type RpgTx, registerCompletionRpg } from "./rpg";
+import {
+	RpgError,
+	type RpgTx,
+	registerCompletionRpg,
+	settleLevelRewards,
+} from "./rpg";
 
 export async function persistLesson(
 	tx: RpgTx,
@@ -61,5 +66,6 @@ export async function persistLesson(
 	const awards = finished
 		? await registerCompletionRpg(tx, userId, pointId, perfect, recovered, now)
 		: [];
+	if (finished) await settleLevelRewards(tx, userId);
 	return { pending, score, awards, failed, finished };
 }

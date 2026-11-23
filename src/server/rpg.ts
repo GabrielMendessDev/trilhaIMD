@@ -7,9 +7,12 @@ import {
 	dayIndex,
 	economy,
 	emptyStats,
+	type ItemId,
 	items,
 	levelForXp,
+	levelProgress,
 	type ProgressEvent,
+	rewardsForLevel,
 	type Stats,
 	studyDay,
 	studyRuns,
@@ -66,7 +69,60 @@ export async function grantCurrency(
 	>`INSERT INTO "CurrencyTransaction"("userId",key,kind,subject,bits,xp,"balanceAfter") VALUES (${userId},${key},${kind},${subject},${bits},${xp},${wallet.bits + bits}) ON CONFLICT ("userId",key) DO NOTHING RETURNING id`;
 	if (!inserted.length) return false;
 	await tx.$executeRaw`UPDATE "RpgWallet" SET bits=bits+${bits},"achievementXp"="achievementXp"+${xp} WHERE "userId"=${userId}`;
+	if (xp > 0) await settleLevelRewards(tx, userId);
 	return true;
+}
+
+// Callers hold the wallet lock. Inventory, overflow Bits and the cursor commit together.
+export async function settleLevelRewards(tx: RpgTx, userId: string) {
+	const [wallet] = await tx.$queryRaw<{ rewardedLevel: number; xp: number }[]>`
+		SELECT w."rewardedLevel", (w."achievementXp" + COALESCE((
+			SELECT sum(xp) FROM "LearningPointProgress"
+			WHERE "userId" = ${userId} AND "completedAt" IS NOT NULL
+		), 0))::int AS xp
+		FROM "RpgWallet" w WHERE w."userId" = ${userId}
+	`;
+	if (!wallet) throw new RpgError("Carteira indisponível.");
+	const { level } = levelForXp(wallet.xp);
+	if (level <= wallet.rewardedLevel) return;
+
+	const rewards = new Map<ItemId, number>();
+	for (let unlocked = wallet.rewardedLevel + 1; unlocked <= level; unlocked++) {
+		for (const item of rewardsForLevel(unlocked)) {
+			rewards.set(item, (rewards.get(item) ?? 0) + 1);
+		}
+	}
+	const stock = await tx.$queryRaw<{ itemId: ItemId; quantity: number }[]>`
+		SELECT "itemId", quantity FROM "InventoryItem"
+		WHERE "userId" = ${userId} AND "itemId" = ANY(${[...rewards.keys()]}::text[])
+	`;
+	let overflowBits = 0;
+	for (const item of items) {
+		const earned = rewards.get(item.id);
+		if (!earned) continue;
+		const quantity =
+			stock.find(({ itemId }) => itemId === item.id)?.quantity ?? 0;
+		const added = Math.min(earned, Math.max(0, item.max - quantity));
+		overflowBits += (earned - added) * Math.floor(item.price / 2);
+		if (added) {
+			await tx.$executeRaw`
+				INSERT INTO "InventoryItem" ("userId", "itemId", quantity)
+				VALUES (${userId}, ${item.id}, ${added})
+				ON CONFLICT ("userId", "itemId") DO UPDATE SET quantity = "InventoryItem".quantity + EXCLUDED.quantity
+			`;
+		}
+	}
+	if (overflowBits) {
+		await grantCurrency(
+			tx,
+			userId,
+			`level-overflow:${level}`,
+			"level-overflow",
+			String(level),
+			overflowBits,
+		);
+	}
+	await tx.$executeRaw`UPDATE "RpgWallet" SET "rewardedLevel" = ${level} WHERE "userId" = ${userId}`;
 }
 
 export async function emitRpg(
@@ -255,14 +311,18 @@ export async function ensureRpg(userId: string) {
 	const now = new Date();
 	const today = studyDay(now);
 	const [current] = await db.$queryRaw<
-		{ initialized: boolean; settledDay: string | null }[]
+		{ initialized: boolean; settledDay: string | null; rewardedLevel: number }[]
 	>`
-		SELECT initialized,"settledDay" FROM "RpgWallet" WHERE "userId"=${userId}`;
-	if (current?.initialized && current.settledDay === today) return;
+		SELECT initialized,"settledDay","rewardedLevel" FROM "RpgWallet" WHERE "userId"=${userId}`;
+	if (
+		current?.initialized &&
+		current.settledDay === today &&
+		current.rewardedLevel > 0
+	)
+		return;
 	await db.$transaction(
 		async (tx) => {
 			const wallet = await lockWallet(tx, userId);
-			if (wallet.initialized && wallet.settledDay === today) return;
 			if (!wallet.initialized) {
 				// Existing completion dates are the only historical dates we can substantiate.
 				const legacy = await tx.$queryRaw<
@@ -312,7 +372,9 @@ export async function ensureRpg(userId: string) {
 				}
 				await tx.$executeRaw`UPDATE "RpgWallet" SET initialized=true WHERE "userId"=${userId}`;
 			}
-			await settleProtection(tx, userId, now);
+			if (!wallet.initialized || wallet.settledDay !== today)
+				await settleProtection(tx, userId, now);
+			await settleLevelRewards(tx, userId);
 		},
 		{ timeout: 30000 },
 	);
@@ -354,7 +416,7 @@ export async function readRpgSummary(userId: string) {
 		bits: wallet.bits,
 		xp: wallet.xp,
 		achievementXp: wallet.achievementXp,
-		level: levelForXp(wallet.xp),
+		level: levelProgress(wallet.xp),
 		stats: { ...emptyStats(), ...wallet.stats },
 		protected: wallet.protected,
 		inventory: items.map((item) => ({
@@ -444,29 +506,30 @@ export function rpgBalance(
 	};
 }
 
-// Answer submissions only need balances and newly unlocked awards, not inventory/history.
+// Answer submissions initialize and settle the wallet before saving progress.
 export async function readRpgBalance(
 	userId: string,
 	awards: readonly string[] = [],
 ) {
-	await ensureRpg(userId);
-	const wallet = await readWallet(userId);
-	const unlocked = awards.length
-		? await db.$queryRaw<
-				{
-					achievementId: string;
-					xp: number;
-					bits: number;
-					unlockedAt: Date;
-				}[]
-			>`SELECT "achievementId",xp,bits,"unlockedAt" FROM "UserAchievement"
-		WHERE "userId"=${userId} AND "achievementId"=ANY(${[...awards]}::text[])`
-		: [];
+	const [wallet, unlocked] = await Promise.all([
+		readWallet(userId),
+		awards.length
+			? db.$queryRaw<
+					{
+						achievementId: string;
+						xp: number;
+						bits: number;
+						unlockedAt: Date;
+					}[]
+				>`SELECT "achievementId",xp,bits,"unlockedAt" FROM "UserAchievement"
+				WHERE "userId"=${userId} AND "achievementId"=ANY(${[...awards]}::text[])`
+			: [],
+	]);
 	return {
 		account: userId,
 		bits: wallet.bits,
 		xp: wallet.xp,
-		level: levelForXp(wallet.xp),
+		level: levelProgress(wallet.xp),
 		streak: wallet.stats.studyStreak ?? 0,
 		protected: wallet.protected,
 		awards: unlocked.flatMap((row) => {

@@ -1,0 +1,2 @@
+ALTER TABLE "RpgWallet" ADD COLUMN "rewardedLevel" INTEGER NOT NULL DEFAULT 0
+    CHECK ("rewardedLevel" BETWEEN 0 AND 1000);

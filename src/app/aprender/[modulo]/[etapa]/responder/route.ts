@@ -1,8 +1,15 @@
-import type { NextRequest } from "next/server";
+import { after, type NextRequest } from "next/server";
 import { trails } from "~/app/aprender/trails";
+import { acceptsAnalytics, recordAnswerMetrics } from "~/server/analytics";
 import { auth } from "~/server/auth";
 import { recordAnswer } from "~/server/lesson";
 import { readRpgBalance } from "~/server/rpg";
+
+function milliseconds(raw: FormDataEntryValue | null, maximum: number) {
+	if (typeof raw !== "string" || !/^\d{1,8}$/.test(raw)) return undefined;
+	const value = Number(raw);
+	return value <= maximum ? value : undefined;
+}
 
 export async function POST(
 	request: NextRequest,
@@ -46,6 +53,22 @@ export async function POST(
 		if (result.error) {
 			return Response.json({ error: result.error }, { status: 422 });
 		}
+		if (
+			"analytics" in result &&
+			result.analytics &&
+			acceptsAnalytics(request)
+		) {
+			const metric = result.analytics;
+			const responseMs = milliseconds(form.get("metricResponseMs"), 600_000);
+			const activeMs = milliseconds(form.get("metricActiveMs"), 86_400_000);
+			after(async () => {
+				await recordAnswerMetrics(metric, user.id, responseMs, activeMs).catch(
+					() => {
+						console.error("Métricas de resposta indisponíveis.");
+					},
+				);
+			});
+		}
 		const base = `/aprender/${trail.id}/${number}`;
 		const destination =
 			"feedback" in result && result.feedback
@@ -53,6 +76,16 @@ export async function POST(
 				: "nextKey" in result && result.nextKey
 					? `${base}?${new URLSearchParams({ item: result.nextKey })}`
 					: base;
+		const rpg = await readRpgBalance(
+			user.id,
+			"awards" in result ? result.awards : [],
+		).catch((error: unknown) => {
+			console.error(
+				"Saldo indisponível após salvar a etapa",
+				error instanceof Error ? error.name : error,
+			);
+			return undefined;
+		});
 		return Response.json({
 			destination,
 			continueTo:
@@ -60,10 +93,7 @@ export async function POST(
 					? `${base}?${new URLSearchParams({ item: result.nextKey })}`
 					: base,
 			assessment: "assessment" in result ? result.assessment : undefined,
-			rpg: await readRpgBalance(
-				user.id,
-				"awards" in result ? result.awards : [],
-			),
+			rpg,
 		});
 	} catch (error) {
 		console.error(

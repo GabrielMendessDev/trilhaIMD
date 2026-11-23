@@ -56,6 +56,7 @@ model Session {
 }
 
 model User {
+    meExams MeExamAttempt[]
     id            String    @id @default(cuid())
     name          String?
     email         String?   @unique
@@ -300,4 +301,19 @@ model MaterialReading {
     user User @relation(fields:[userId], references:[id], onDelete:Cascade)
     point TrailPoint @relation(fields:[pointId], references:[id], onDelete:Cascade)
     @@id([userId,pointId,entryKey])
+}
+
+model MeExamAttempt {
+  id          String    @id
+  userId      String
+  version     Int       @default(1)
+  questions   Json      @db.JsonB
+  answers     Json      @default("{}") @db.JsonB
+  revision    Int       @default(0)
+  createdAt   DateTime  @default(now()) @db.Timestamptz(3)
+  submittedAt DateTime? @db.Timestamptz(3)
+  score       Int?
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
 }

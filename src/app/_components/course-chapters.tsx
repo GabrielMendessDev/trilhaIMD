@@ -53,6 +53,11 @@ export function CourseChapters({
 						: "Capítulos da unidade"}
 				</h2>
 				<p>Aprenda o conceito, pratique e revise no seu ritmo.</p>
+				{trail === "elementar" && (
+					<Link className="ui-link" href="/aprender/elementar/plano">
+						Unidades e avalia??es de ME
+					</Link>
+				)}
 			</header>
 			<ol>
 				{chapters.map((ch) => {

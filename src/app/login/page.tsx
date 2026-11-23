@@ -8,6 +8,7 @@ import { FeedbackViewport } from "~/app/_components/feedback";
 import { ThemeToggle } from "~/app/_components/theme-toggle";
 import { auth, signIn } from "~/server/auth";
 import { isGoogleConfigured } from "~/server/auth/config";
+import { localLoginEnabled } from "~/server/local-login";
 import { GoogleButton } from "./google-button";
 
 export const metadata: Metadata = {
@@ -58,6 +59,13 @@ export default async function LoginPage({
 							jornada fica salvo aqui.
 						</p>
 
+						{localLoginEnabled() && (
+							<form action="/api/dev-login" className="mt-4" method="post">
+								<button className="ui-button" type="submit">
+									Entrar como estudante de teste
+								</button>
+							</form>
+						)}
 						<form action={enterWithGoogle} className="mt-8">
 							<GoogleButton disabled={!isGoogleConfigured} />
 						</form>

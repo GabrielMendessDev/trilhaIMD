@@ -18,7 +18,7 @@ export function LessonTransition({
 	useLayoutEffect(() => {
 		finishNavigation();
 		if (!screenKey) return;
-		const heading = root.current?.querySelector<HTMLElement>("h2");
+		const heading = root.current?.querySelector<HTMLElement>("h2, legend");
 		if (heading) {
 			heading.tabIndex = -1;
 			heading.focus({ preventScroll: true });

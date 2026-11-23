@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
+import { existsSync } from "node:fs";
 import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
@@ -14,10 +15,18 @@ export async function until(check, label) {
 }
 
 export async function openBrowser() {
-	const profile = await mkdtemp(join(tmpdir(), "trilbit-feedback-"));
 	const executable =
 		process.env.TRILBIT_TEST_CHROME ??
-		"C:/Program Files/Google/Chrome/Application/chrome.exe";
+		[
+			"C:/Program Files/Google/Chrome/Application/chrome.exe",
+			"C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe",
+			"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+		].find(existsSync);
+	if (!executable || !existsSync(executable))
+		throw new Error(
+			"Navegador não encontrado. Configure TRILBIT_TEST_CHROME com o caminho de um navegador Chromium instalado.",
+		);
+	const profile = await mkdtemp(join(tmpdir(), "trilbit-feedback-"));
 	const processHandle = spawn(
 		executable,
 		[
@@ -32,8 +41,13 @@ export async function openBrowser() {
 		],
 		{ windowsHide: true, stdio: "ignore" },
 	);
+	let launchError;
+	processHandle.on("error", (error) => {
+		launchError = error;
+	});
 	let port;
 	await until(async () => {
+		if (launchError) throw launchError;
 		try {
 			[port] = (
 				await readFile(join(profile, "DevToolsActivePort"), "utf8")
@@ -43,12 +57,23 @@ export async function openBrowser() {
 			return false;
 		}
 	}, "porta do Chrome");
-	const targets = await (
-		await fetch(`http://127.0.0.1:${port}/json/list`)
-	).json();
-	const tab = targets.find(
-		({ type, url }) => type === "page" && url === "about:blank",
-	);
+	let tab;
+	await until(async () => {
+		if (launchError) throw launchError;
+		try {
+			const targets = await (
+				await fetch(`http://127.0.0.1:${port}/json/list`)
+			).json();
+			tab = targets.find(
+				({ type, url }) => type === "page" && url === "about:blank",
+			);
+			return Boolean(tab);
+		} catch (error) {
+			if (error instanceof TypeError && error.message === "fetch failed")
+				return false;
+			throw error;
+		}
+	}, "aba de teste pronta");
 	assert.ok(tab);
 	const ws = new WebSocket(tab.webSocketDebuggerUrl);
 	await new Promise((resolve, reject) => {
@@ -58,19 +83,33 @@ export async function openBrowser() {
 	let counter = 0;
 	const pending = new Map();
 	const handlers = new Map();
+	const disconnect = () => {
+		for (const command of pending.values()) {
+			clearTimeout(command.timer);
+			command.reject(new Error("Navegador de teste desconectado"));
+		}
+		pending.clear();
+	};
+	ws.addEventListener("close", disconnect);
+	ws.addEventListener("error", disconnect);
 	ws.addEventListener("message", (event) => {
 		const data = JSON.parse(event.data);
 		if (data.method) handlers.get(data.method)?.(data.params);
 		const command = pending.get(data.id);
 		if (!command) return;
 		pending.delete(data.id);
+		clearTimeout(command.timer);
 		if (data.error) command.reject(new Error(data.error.message));
 		else command.resolve(data.result);
 	});
 	const send = (method, params = {}) =>
 		new Promise((resolve, reject) => {
 			const id = ++counter;
-			pending.set(id, { resolve, reject });
+			const timer = setTimeout(() => {
+				pending.delete(id);
+				reject(new Error(`Tempo esgotado no comando do navegador: ${method}`));
+			}, 20000);
+			pending.set(id, { resolve, reject, timer });
 			ws.send(JSON.stringify({ id, method, params }));
 		});
 	const evaluate = async (expression) => {
@@ -96,30 +135,11 @@ export async function openBrowser() {
 			heading,
 		);
 	};
-	const screenshot = async (name, options = {}) => {
+	const screenshot = async (name) => {
 		if (!process.env.TRILBIT_SCREENSHOTS) return;
 		await evaluate("document.fonts.ready.then(()=>true)");
-		await delay(1200);
-		await evaluate(
-			options.bottom
-				? "window.scrollTo(0,document.body.scrollHeight)"
-				: "window.scrollTo(0,0)",
-		);
-		const metrics = await send("Page.getLayoutMetrics");
-		const bounds = metrics.cssContentSize;
-		const result = await send("Page.captureScreenshot", {
-			format: "png",
-			captureBeyondViewport: !options.viewport,
-			...(!options.viewport && {
-				clip: {
-					x: 0,
-					y: 0,
-					width: bounds.width,
-					height: bounds.height,
-					scale: 1,
-				},
-			}),
-		});
+		await delay(250);
+		const result = await send("Page.captureScreenshot", { format: "png" });
 		await writeFile(
 			join(process.env.TRILBIT_SCREENSHOTS, `${name}.png`),
 			Buffer.from(result.data, "base64"),

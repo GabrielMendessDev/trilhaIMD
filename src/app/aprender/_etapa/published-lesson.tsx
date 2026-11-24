@@ -6,7 +6,9 @@ import {
 	CompletionEffects,
 	RewardValue,
 } from "~/app/_components/reward-effects";
+import { elementarCurriculum } from "~/domain/elementar-curriculum";
 import { livesOf } from "~/domain/lesson-lives.mjs";
+import { type ExamUnit, examPath } from "~/domain/me-exams";
 import { auth } from "~/server/auth";
 import type { PublishedPoint } from "~/server/learning";
 import {
@@ -396,11 +398,18 @@ export async function PublishedLesson({
 							</div>
 						)}
 						<div className={styles.actions}>
-							{trail === "elementar" && number === 20 && (
-								<Link className="ui-button" href="/aprender/elementar/prova-1">
-									Fazer a Prova 1
-								</Link>
-							)}
+							{trail === "elementar" &&
+								elementarCurriculum.unidades
+									.filter((unit) => unit.fim === number)
+									.map((unit) => (
+										<Link
+											className="ui-button"
+											href={examPath(unit.unidade as ExamUnit)}
+											key={unit.unidade}
+										>
+											Fazer a Prova {unit.unidade}
+										</Link>
+									))}
 							<Link
 								className="ui-button"
 								data-learning-direction="back"

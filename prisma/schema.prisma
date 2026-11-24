@@ -305,6 +305,7 @@ model MaterialReading {
 }
 
 model MeExamAttempt {
+    unit        Int       @default(1)
     id          String    @id
     userId      String
     version     Int       @default(1)
@@ -317,6 +318,7 @@ model MeExamAttempt {
     user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
     @@index([userId, createdAt])
+    @@index([userId, unit, createdAt])
 }
 
 model AnalyticsSession {

@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "~/app/_components/action-link";
 import { DashboardLayout } from "~/app/_components/dashboard";
 import { elementarCurriculum } from "~/domain/elementar-curriculum";
+import { type ExamUnit, examPath, examUnits } from "~/domain/me-exams";
 import { auth } from "~/server/auth";
 import {
 	getLearningProgress,
 	getPublishedPoints,
 	getTrailStatus,
 } from "~/server/learning";
-import { canTakeUnitOneExam } from "~/server/me-exam";
+import { canTakeExam } from "~/server/me-exam";
 
 export const metadata: Metadata = { title: "Unidades de Matemática Elementar" };
 export default async function MePlanPage() {
@@ -16,7 +17,9 @@ export default async function MePlanPage() {
 	const [catalog, progress, unlocked] = await Promise.all([
 		getPublishedPoints(),
 		user ? getLearningProgress(user.id) : null,
-		user ? canTakeUnitOneExam(user.id) : false,
+		Promise.all(
+			examUnits.map((number) => (user ? canTakeExam(user.id, number) : false)),
+		),
 	]);
 	const { published, completed, next } = getTrailStatus(
 		catalog ?? [],
@@ -75,25 +78,22 @@ export default async function MePlanPage() {
 									</li>
 								))}
 						</ol>
-						{unit.unidade === 1 ? (
-							<div>
-								<h3 className="font-bold">Prova 1 · 20 questões</h3>
-								{unlocked ? (
-									<Link
-										className="ui-button mt-3"
-										href="/aprender/elementar/prova-1"
-									>
-										Abrir Prova 1
-									</Link>
-								) : (
-									<p>
-										Conclua as etapas 1 a 20 da Unidade 1 para liberar a prova.
-									</p>
-								)}
-							</div>
-						) : (
-							<p>Avaliação da Unidade {unit.unidade}: em preparação.</p>
-						)}
+						<div>
+							<h3 className="font-bold">Prova {unit.unidade} · 20 questões</h3>
+							{unlocked[unit.unidade - 1] ? (
+								<Link
+									className="ui-button mt-3"
+									href={examPath(unit.unidade as ExamUnit)}
+								>
+									Abrir Prova {unit.unidade}
+								</Link>
+							) : (
+								<p>
+									Conclua as etapas {unit.inicio} a {unit.fim} da Unidade{" "}
+									{unit.unidade} para liberar a prova.
+								</p>
+							)}
+						</div>
 					</section>
 				))}
 				<section className="ui-panel space-y-3 p-5">

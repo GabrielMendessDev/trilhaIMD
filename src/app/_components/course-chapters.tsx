@@ -1,3 +1,4 @@
+import { fmcCurriculum } from "~/domain/fmc-curriculum";
 import type { PublishedPoint } from "~/server/learning";
 import Link from "./action-link";
 import { Icon } from "./icon";
@@ -23,15 +24,23 @@ export function CourseChapters({
 							"Percorra a sequência completa de fundamentos, polinômios, funções, trigonometria e matrizes num único mapa.",
 					},
 				]
-			: [
-					{
-						name: "Primeira unidade",
-						start: 1,
-						end: 10,
+			: trail === "fmc"
+				? fmcCurriculum.unidades.map((u) => ({
+						name: `Unidade ${u.unidade} · ${u.titulo}`,
+						start: u.inicio,
+						end: u.fim,
 						objective:
-							"Explore os conceitos e avance pelas lições publicadas desta disciplina.",
-					},
-				];
+							"Estude o conceito, pratique, revise e realize a prova da unidade.",
+					}))
+				: [
+						{
+							name: "Primeira unidade",
+							start: 1,
+							end: 10,
+							objective:
+								"Explore os conceitos e avance pelas lições publicadas desta disciplina.",
+						},
+					];
 	if (!points.length)
 		return (
 			<section className="course-unpublished">
@@ -48,14 +57,14 @@ export function CourseChapters({
 		<section className="course-chapters">
 			<header>
 				<h2>
-					{trail === "elementar"
+					{trail === "elementar" || trail === "fmc"
 						? "Conteúdo da trilha"
 						: "Capítulos da unidade"}
 				</h2>
 				<p>Aprenda o conceito, pratique e revise no seu ritmo.</p>
-				{trail === "elementar" && (
-					<Link className="ui-link" href="/aprender/elementar/plano">
-						Unidades e avalia??es de ME
+				{(trail === "elementar" || trail === "fmc") && (
+					<Link className="ui-link" href={`/aprender/${trail}/plano`}>
+						Unidades e avaliações de {trail === "fmc" ? "FMC 1" : "ME"}
 					</Link>
 				)}
 			</header>
@@ -109,7 +118,11 @@ export function CourseChapters({
 																completed.includes(p.number)
 																	? "check"
 																	: p.number %
-																				(trail === "elementar" ? 20 : 5) ===
+																				(trail === "elementar"
+																					? 20
+																					: trail === "fmc"
+																						? 6
+																						: 5) ===
 																			0
 																		? "star"
 																		: "book"

@@ -1,4 +1,6 @@
-﻿import { z } from "zod";
+import { z } from "zod";
+import { unitThreeRows } from "./me-exam-unit-three.mjs";
+import { unitTwoRows } from "./me-exam-unit-two.mjs";
 
 export const questionSchema = z.object({
 	id: z.string(),
@@ -172,4 +174,25 @@ export function examScore(questions, answers) {
 		(total, q) => total + Number(answers[q.id] === q.answer),
 		0,
 	);
+}
+
+/** @param {2|3} unit @param {[string,string,string[],number,string][]} items */
+function makeExam(unit, items) {
+	return examSchema.parse(
+		items.map(([topic, prompt, texts, correct, explanation], i) => ({
+			id: `u${unit}-${i + 1}`,
+			topic,
+			prompt,
+			choices: texts.map((text, j) => ({ id: String(j), text })),
+			answer: String(correct),
+			explanation,
+		})),
+	);
+}
+export const unitTwoExam = makeExam(2, unitTwoRows);
+export const unitThreeExam = makeExam(3, unitThreeRows);
+/** @param {1|2|3} unit */
+export function getExamDefinition(unit) {
+	const banks = { 1: unitOneExam, 2: unitTwoExam, 3: unitThreeExam };
+	return { questions: banks[unit], version: unit === 1 ? examVersion : 1 };
 }

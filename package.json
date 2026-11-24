@@ -39,7 +39,7 @@
 		"preview": "next build && next start",
 		"start": "next start",
 		"typecheck": "next typegen && tsc --noEmit",
-		"test:prova": "node --test tests/me-exam.test.mjs",
+		"test:prova": "node --test tests/me-exam.test.mjs tests/me-exam-units.test.mjs",
 		"test:prova:http": "node --test tests/me-exam-http.mjs",
 		"test:prova:browser": "node --test tests/me-exam-browser.mjs"
 	},

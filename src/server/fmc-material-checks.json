@@ -1,0 +1,326 @@
+[
+	{
+		"prompt": "Qual frase é uma proposição determinada?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "2+3=5."
+			},
+			{
+				"id": "b",
+				"texto": "Qual é seu nome?"
+			},
+			{
+				"id": "c",
+				"texto": "x>3, sem domínio ou valor de x."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Quanto vale 1011₂ em decimal?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "11."
+			},
+			{
+				"id": "b",
+				"texto": "13."
+			},
+			{
+				"id": "c",
+				"texto": "1011."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Qual é a faixa sem sinal com oito bits?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "De 0 a 255."
+			},
+			{
+				"id": "b",
+				"texto": "De 0 a 256."
+			},
+			{
+				"id": "c",
+				"texto": "De −128 a 127."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Qual é a definição de inteiro par?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "n=2k para algum k∈ℤ."
+			},
+			{
+				"id": "b",
+				"texto": "n=2k+1 para algum k∈ℤ."
+			},
+			{
+				"id": "c",
+				"texto": "n>0."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Para provar P(n) para n≥1 por indução, qual é uma base adequada?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "Demonstrar P(1)."
+			},
+			{
+				"id": "b",
+				"texto": "Demonstrar apenas P(100)."
+			},
+			{
+				"id": "c",
+				"texto": "Supor que P(n) vale para todo n."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Quanto vale 0! na definição usual?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "1."
+			},
+			{
+				"id": "b",
+				"texto": "0."
+			},
+			{
+				"id": "c",
+				"texto": "Não é definido."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "A afirmação 4∣28 é verdadeira?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "Sim, pois 28=4·7."
+			},
+			{
+				"id": "b",
+				"texto": "Não, pois 4<28."
+			},
+			{
+				"id": "c",
+				"texto": "Sim, pois 4=28·7."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Quanto vale mdc(48,18)?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "6."
+			},
+			{
+				"id": "b",
+				"texto": "12."
+			},
+			{
+				"id": "c",
+				"texto": "3."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Qual número é primo?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "29."
+			},
+			{
+				"id": "b",
+				"texto": "1."
+			},
+			{
+				"id": "c",
+				"texto": "27."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "O que significa a≡b (mod m)?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "m divide a−b."
+			},
+			{
+				"id": "b",
+				"texto": "a=b nos inteiros."
+			},
+			{
+				"id": "c",
+				"texto": "a divide m."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Qual é um inverso de 3 módulo 7?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "5."
+			},
+			{
+				"id": "b",
+				"texto": "3."
+			},
+			{
+				"id": "c",
+				"texto": "2."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "No ciclo das horas 0,…,23, que hora vem 17 horas após as 19?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "12."
+			},
+			{
+				"id": "b",
+				"texto": "36."
+			},
+			{
+				"id": "c",
+				"texto": "2."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Há 3 perfis e 4 temas. Quantos pares perfil-tema existem?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "12."
+			},
+			{
+				"id": "b",
+				"texto": "7."
+			},
+			{
+				"id": "c",
+				"texto": "16."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Quantas filas existem com quatro pessoas distintas?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "24."
+			},
+			{
+				"id": "b",
+				"texto": "16."
+			},
+			{
+				"id": "c",
+				"texto": "4."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Quanto vale C(8,3)?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "56."
+			},
+			{
+				"id": "b",
+				"texto": "336."
+			},
+			{
+				"id": "c",
+				"texto": "24."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Se A tem 20 elementos, B tem 15 e A∩B tem 6, quantos elementos tem A∪B?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "29."
+			},
+			{
+				"id": "b",
+				"texto": "35."
+			},
+			{
+				"id": "c",
+				"texto": "41."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Com a₀=1, a₁=2 e aₙ=aₙ₋₁+aₙ₋₂, quanto vale a₂?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "3."
+			},
+			{
+				"id": "b",
+				"texto": "2."
+			},
+			{
+				"id": "c",
+				"texto": "4."
+			}
+		],
+		"answer": "a"
+	},
+	{
+		"prompt": "Se a₀=5 e aₙ=2aₙ₋₁, qual fórmula é correta?",
+		"alternatives": [
+			{
+				"id": "a",
+				"texto": "aₙ=5·2ⁿ."
+			},
+			{
+				"id": "b",
+				"texto": "aₙ=2·5ⁿ."
+			},
+			{
+				"id": "c",
+				"texto": "aₙ=5+2n."
+			}
+		],
+		"answer": "a"
+	}
+]

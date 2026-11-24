@@ -1,0 +1,178 @@
+{
+  "versao": 1,
+  "data": "2026-11-24",
+  "trilha": "fmc",
+  "fonte": "Rosen, Matemática Discreta e Suas Aplicações, 6ª edição; recorte descrito em FONTES.md",
+  "unidades": [
+    {
+      "unidade": 1,
+      "inicio": 1,
+      "fim": 6,
+      "titulo": "Representar e justificar"
+    },
+    {
+      "unidade": 2,
+      "inicio": 7,
+      "fim": 12,
+      "titulo": "Entender os números inteiros"
+    },
+    {
+      "unidade": 3,
+      "inicio": 13,
+      "fim": 18,
+      "titulo": "Contar e reconhecer padrões"
+    }
+  ],
+  "passos": [
+    {
+      "ponto": 1,
+      "titulo": "Linguagem matemática: ler antes de calcular",
+      "arquivo": "01.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 2,
+      "titulo": "Bases numéricas: o valor de cada posição",
+      "arquivo": "02.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 3,
+      "titulo": "Bits, sinais e aproximações",
+      "arquivo": "03.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 4,
+      "titulo": "Demonstrações: explicar por que sempre funciona",
+      "arquivo": "04.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 5,
+      "titulo": "Indução: construir a ponte entre os casos",
+      "arquivo": "05.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 6,
+      "titulo": "Recursão e missão da primeira unidade",
+      "arquivo": "06.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 7,
+      "titulo": "Divisibilidade e divisão euclidiana",
+      "arquivo": "07.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 8,
+      "titulo": "MDC, MMC e o algoritmo de Euclides",
+      "arquivo": "08.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 9,
+      "titulo": "Primos e fatoração: as peças dos inteiros",
+      "arquivo": "09.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 10,
+      "titulo": "Congruências: números com o mesmo resto",
+      "arquivo": "10.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 11,
+      "titulo": "Inversos e equações modulares",
+      "arquivo": "11.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 12,
+      "titulo": "Ciclos, códigos e missão dos inteiros",
+      "arquivo": "12.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 13,
+      "titulo": "Contar sem listar: soma e produto",
+      "arquivo": "13.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 14,
+      "titulo": "Permutações e arranjos: quando a ordem importa",
+      "arquivo": "14.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 15,
+      "titulo": "Combinações e coeficientes binomiais",
+      "arquivo": "15.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 16,
+      "titulo": "Restrições, sobreposições e princípio das gavetas",
+      "arquivo": "16.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 17,
+      "titulo": "Construir recorrências e escolher as bases",
+      "arquivo": "17.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    },
+    {
+      "ponto": 18,
+      "titulo": "Resolver recorrências e missão integradora",
+      "arquivo": "18.json",
+      "telas": 17,
+      "questoes": 10,
+      "exemplos": 1
+    }
+  ],
+  "totais": {
+    "passos": 18,
+    "telas": 306,
+    "questoes": 180,
+    "exemplos": 18
+  }
+}

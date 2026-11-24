@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 16,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-16",
+      "titulo": "Restrições, sobreposições e princípio das gavetas",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Vinte alunos usam uma ferramenta e quinze usam outra. A soma 35 não informa quantos alunos distintos usam alguma delas: pessoas podem estar nas duas listas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Conjuntos, contagem aditiva e combinações."
+              }
+            ],
+            "titulo": "Restrições, sobreposições e princípio das gavetas",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para conjuntos finitos, a cardinalidade da união de dois conjuntos é a soma de suas cardinalidades menos a da interseção. Para três conjuntos, somamos os tamanhos individuais, subtraímos as três interseções de pares e adicionamos a interseção tripla. No princípio das gavetas, distribuir N objetos em k≥1 caixas garante uma caixa com pelo menos ⌈N/k⌉ objetos. São garantias de existência, não uma indicação de qual caixa atingirá o limite."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "card(A∪B)=card(A)+card(B)−card(A∩B)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A tem 20 elementos, B tem 15 e A∩B tem 6, quantos elementos tem A∪B?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "20+15−6=29, corrigindo a dupla contagem dos elementos comuns.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "35."
+              },
+              {
+                "id": "b",
+                "texto": "41."
+              },
+              {
+                "id": "c",
+                "texto": "29."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na soma de dois tamanhos, um elemento da interseção aparece duas vezes e deve ficar uma. Com três conjuntos, um elemento da interseção tripla é contado três vezes, subtraído três vezes e, por isso, precisa ser adicionado uma vez. Para as gavetas, se todas as caixas tivessem menos que o limite necessário, a capacidade total não comportaria os N objetos."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Entre 1 e 30, quantos inteiros são divisíveis por 2 ou por 3?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "Há 15 múltiplos de 2, 10 de 3 e 5 de 6: 15+10−5=20.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "15."
+              },
+              {
+                "id": "b",
+                "texto": "20."
+              },
+              {
+                "id": "c",
+                "texto": "25."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Restrições, sobreposições e princípio das gavetas",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Entre os inteiros de 1 a 30, quantos são divisíveis por 2 ou por 3? Há 15 múltiplos de 2 e 10 de 3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Os múltiplos comuns são os múltiplos de 6: existem 5. Subtraia a contagem repetida: 15+10−5=20."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O “ou” é inclusivo: 6 e 12 entram uma vez. Como há 30 inteiros no universo, 10 não são divisíveis por nenhum dos dois."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em um universo de 30 elementos, a união tem 20. Quantos estão fora dela?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "O complemento tem 30−20=10 elementos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "10."
+              },
+              {
+                "id": "b",
+                "texto": "20."
+              },
+              {
+                "id": "c",
+                "texto": "50."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Treze pessoas são agrupadas por mês de nascimento. O que é garantido?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "Há 13 pessoas para 12 categorias, então alguma categoria contém ao menos duas.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todas nasceram no mesmo mês."
+              },
+              {
+                "id": "b",
+                "texto": "Cada mês tem ao menos uma pessoa."
+              },
+              {
+                "id": "c",
+                "texto": "Pelo menos duas nasceram no mesmo mês."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não use inclusão-exclusão sem identificar o universo e as interseções. No princípio das gavetas, a garantia depende da pior distribuição possível; uma distribuição particular mais concentrada não muda esse limite garantido."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Dez objetos são distribuídos em três caixas. Qual ocupação mínima é garantida em alguma caixa?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "O teto de 10/3 é 4. A distribuição 4,3,3 mostra que não se garante 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Pelo menos 5 objetos."
+              },
+              {
+                "id": "b",
+                "texto": "Pelo menos 4 objetos."
+              },
+              {
+                "id": "c",
+                "texto": "Pelo menos 3 objetos."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para garantir três objetos em alguma de cinco caixas, quantos objetos bastam e são necessários no pior caso?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "Com dez, é possível colocar dois por caixa. O décimo primeiro força uma caixa a chegar a três.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "11."
+              },
+              {
+                "id": "b",
+                "texto": "10."
+              },
+              {
+                "id": "c",
+                "texto": "15."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Aplique essas ideias a listas sobrepostas, restrições de senhas e colisões em categorias. Distinguir “há uma repetição garantida” de “todos os grupos têm repetição” evita conclusões excessivas."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na inclusão-exclusão de três conjuntos, o que fazemos com a interseção tripla após subtrair as interseções de pares?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "O elemento triplo teve saldo zero após as duas etapas anteriores; precisa aparecer uma vez.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Subtraímos mais uma vez."
+              },
+              {
+                "id": "b",
+                "texto": "Ignoramos sempre."
+              },
+              {
+                "id": "c",
+                "texto": "Adicionamos uma vez."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas sequências de quatro bits possuem ao menos um bit 1?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "Do total 2⁴=16, retire apenas 0000.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "14."
+              },
+              {
+                "id": "b",
+                "texto": "15."
+              },
+              {
+                "id": "c",
+                "texto": "16."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para conjuntos finitos, a cardinalidade da união de dois conjuntos é a soma de suas cardinalidades menos a da interseção. Para três conjuntos, somamos os tamanhos individuais, subtraímos as três interseções de pares e adicionamos a interseção tripla. No princípio das gavetas, distribuir N objetos em k≥1 caixas garante uma caixa com pelo menos ⌈N/k⌉ objetos. São garantias de existência, não uma indicação de qual caixa atingirá o limite."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §5.2 e §§7.5–7.6. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A e B são disjuntos, quanto vale a cardinalidade de A∪B?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "A interseção tem tamanho zero, então não há dupla contagem a corrigir.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A soma das cardinalidades de A e B."
+              },
+              {
+                "id": "b",
+                "texto": "A soma mais 1."
+              },
+              {
+                "id": "c",
+                "texto": "O produto das cardinalidades."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se um cadastro associa 101 pessoas a apenas 100 códigos possíveis, o que é garantido?",
+            "assunto": "Restrições, sobreposições e princípio das gavetas",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar inclusão-exclusão e o princípio das gavetas com domínios finitos.",
+            "explicacao": "As gavetas garantem pelo menos uma colisão, mas não determinam a quantidade exata de colisões.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todas recebem códigos distintos."
+              },
+              {
+                "id": "b",
+                "texto": "Exatamente duas pessoas recebem o mesmo código, necessariamente."
+              },
+              {
+                "id": "c",
+                "texto": "Duas pessoas recebem o mesmo código."
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

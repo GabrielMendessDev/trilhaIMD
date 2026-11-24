@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 1,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-01",
+      "titulo": "Linguagem matemática: ler antes de calcular",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma inscrição exige que todos os campos estejam preenchidos. Encontrar um formulário completo confirma que todos estão completos? Traduzir “todos” e “existe” muda o que precisamos verificar."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Distinguir proposições, quantificadores, pertinência e inclusão."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Operações com inteiros e leitura de conjuntos."
+              }
+            ],
+            "titulo": "Linguagem matemática: ler antes de calcular",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma proposição é uma afirmação com valor de verdade; perguntas e expressões com variável livre não são proposições determinadas. Em p⇒q, p é hipótese e q é conclusão; a implicação só é falsa quando p é verdadeira e q é falsa. ∀ significa “para todo”; ∃, “existe”. O domínio precisa estar declarado. a∈A compara elemento e conjunto; A⊆B compara conjuntos. Adotamos ℕ={0,1,2,…}."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Distinguir proposições, quantificadores, pertinência e inclusão.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "p⇒q ⇔ ¬q⇒¬p"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual frase é uma proposição determinada?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "A igualdade tem valor de verdade. A pergunta não é uma afirmação, e x>3 é uma sentença aberta.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Qual é seu nome?"
+              },
+              {
+                "id": "b",
+                "texto": "x>3, sem domínio ou valor de x."
+              },
+              {
+                "id": "c",
+                "texto": "2+3=5."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma afirmação universal precisa valer para cada elemento do domínio. Um único contraexemplo a refuta. Já uma existência é estabelecida por uma testemunha. Negar “todos têm P” significa “existe alguém sem P”, e não “ninguém tem P”."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em p⇒q, quando a implicação é falsa?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "Uma hipótese verdadeira não pode levar a conclusão falsa numa implicação verdadeira.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "p e q falsas."
+              },
+              {
+                "id": "b",
+                "texto": "p verdadeira e q falsa."
+              },
+              {
+                "id": "c",
+                "texto": "p falsa e q verdadeira."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Linguagem matemática: ler antes de calcular",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Considere a afirmação: para todo n∈ℕ, n²≥n. Identifique o domínio ℕ e a propriedade n²≥n."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Para refutar uma universal, procuraríamos um n∈ℕ com n²<n. Testar alguns números orienta a investigação, mas não prova todos os casos."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Aqui n²−n=n(n−1)≥0: para n=0 o produto é 0; para n≥1 ambos os fatores são não negativos. A afirmação foi justificada para todo o domínio."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a negação de “todo aluno enviou o arquivo”?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "Para negar uma universal, basta afirmar a existência de um contraexemplo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Existe aluno que não enviou o arquivo."
+              },
+              {
+                "id": "b",
+                "texto": "Nenhum aluno enviou o arquivo."
+              },
+              {
+                "id": "c",
+                "texto": "Todo aluno enviou dois arquivos."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a negação de “existe n∈ℕ com P(n)”?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "Negar a existência exige que nenhum elemento tenha a propriedade.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Existe n∈ℕ com não P(n)."
+              },
+              {
+                "id": "b",
+                "texto": "Para todo n∈ℕ, P(n)."
+              },
+              {
+                "id": "c",
+                "texto": "Para todo n∈ℕ, não P(n)."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Trocar ∀ por ∃ enfraquece a afirmação. Além disso, a contrapositiva de p⇒q é ¬q⇒¬p; a recíproca q⇒p não é automaticamente equivalente."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se A={1,2}, qual afirmação é verdadeira?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "O número 1 é um elemento de A; um conjunto unitário não é o mesmo objeto que seu elemento.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3∈A."
+              },
+              {
+                "id": "b",
+                "texto": "1∈A."
+              },
+              {
+                "id": "c",
+                "texto": "{1}=1."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para A={1,2} e B={1,2,3}, qual relação vale?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "Cada elemento de A pertence a B; 3 impede a inclusão na direção contrária.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A⊆B."
+              },
+              {
+                "id": "b",
+                "texto": "B⊆A."
+              },
+              {
+                "id": "c",
+                "texto": "A=B."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Leia requisitos de um sistema separando condição necessária, condição suficiente e domínio. Um teste que encontra um erro refuta “o programa funciona para toda entrada”; alguns testes bem-sucedidos não demonstram essa frase universal."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como refutar uma afirmação universal sobre inteiros?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "Um contraexemplo no domínio declarado basta; exemplos favoráveis não cobrem todos os inteiros.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Exibir três inteiros que a satisfaçam."
+              },
+              {
+                "id": "b",
+                "texto": "Testar só os positivos."
+              },
+              {
+                "id": "c",
+                "texto": "Exibir um inteiro que a viole."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a contrapositiva de p⇒q?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "A contrapositiva nega e troca hipótese e conclusão, preservando a equivalência lógica.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "¬p⇒¬q."
+              },
+              {
+                "id": "b",
+                "texto": "¬q⇒¬p."
+              },
+              {
+                "id": "c",
+                "texto": "q⇒p."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma proposição é uma afirmação com valor de verdade; perguntas e expressões com variável livre não são proposições determinadas. Em p⇒q, p é hipótese e q é conclusão; a implicação só é falsa quando p é verdadeira e q é falsa. ∀ significa “para todo”; ∃, “existe”. O domínio precisa estar declarado. a∈A compara elemento e conjunto; A⊆B compara conjuntos. Adotamos ℕ={0,1,2,…}."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§1.1–1.4 e 2.1–2.2. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos elementos possui {∅}?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "O conjunto tem um único elemento: o conjunto vazio. Ele é diferente de ∅.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "0."
+              },
+              {
+                "id": "c",
+                "texto": "2."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em ℕ={0,1,2,…}, qual frase é verdadeira?",
+            "assunto": "Linguagem matemática: ler antes de calcular",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir proposições, quantificadores, pertinência e inclusão.",
+            "explicacao": "n=0 é uma testemunha da existência; n=1 refuta a afirmação universal.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todo n∈ℕ satisfaz n²=0."
+              },
+              {
+                "id": "b",
+                "texto": "Não existe n∈ℕ com n²=0."
+              },
+              {
+                "id": "c",
+                "texto": "Existe n∈ℕ com n²=0."
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

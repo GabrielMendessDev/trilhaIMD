@@ -22,6 +22,7 @@ db.sqlite
 /.next-lives-build/
 /.next-optimization-build/
 /conteudos/elementar/backups/
+/conteudos/fmc/backups/
 /out/
 next-env.d.ts
 

@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 11,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-11",
+      "titulo": "Inversos e equações modulares",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na aritmética usual, dividir por 3 resolve 3x=1 nos racionais. Em módulo 7, a tarefa é outra: encontrar um inteiro cujo produto por 3 deixe resto 1."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Decidir se há inverso e resolver congruências lineares."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Congruências, MDC e identidade de Bézout."
+              }
+            ],
+            "titulo": "Inversos e equações modulares",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um inverso de a módulo m é um inteiro u com au≡1 (mod m). Ele existe exatamente quando mdc(a,m)=1. Bézout fornece u ao escrever 1=ua+vm. A congruência ax≡b (mod m) tem solução se e somente se d=mdc(a,m) divide b; quando tem, possui d classes de soluções módulo m. Se a é invertível, multiplicar por seu inverso produz a única classe de solução."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Decidir se há inverso e resolver congruências lineares.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "ax≡b tem solução ⇔ mdc(a,m)∣b"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é um inverso de 3 módulo 7?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "3·5=15≡1 (mod 7).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2."
+              },
+              {
+                "id": "b",
+                "texto": "5."
+              },
+              {
+                "id": "c",
+                "texto": "3."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se ax−my=b, todo divisor comum de a e m precisa dividir b, mostrando a condição necessária. Quando d divide b, uma identidade de Bézout para d pode ser multiplicada por b/d para produzir uma solução. As demais aparecem em intervalos de m/d dentro de um sistema de resíduos módulo m."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O número 2 possui inverso módulo 6?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "Só as classes coprimas ao módulo possuem inverso.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não, pois mdc(2,6)=2."
+              },
+              {
+                "id": "b",
+                "texto": "Sim, o inverso é 3."
+              },
+              {
+                "id": "c",
+                "texto": "Sim, todo número diferente de zero tem inverso."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Inversos e equações modulares",
+            "assunto": "Inversos e equações modulares",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Resolva 6x≡8 (mod 14). Temos mdc(6,14)=2, que divide 8; há duas classes módulo 14."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Divida coeficientes e módulo por 2: 3x≡4 (mod 7). Como o inverso de 3 módulo 7 é 5, x≡20≡6 (mod 7)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Em {0,…,13}, as soluções são 6 e 13. Confira: 6·6−8=28 e 6·13−8=70, ambos múltiplos de 14."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual classe resolve 3x≡4 (mod 7)?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "Multiplique por 5: x≡20≡6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "x≡4 (mod 7)."
+              },
+              {
+                "id": "b",
+                "texto": "x≡3 (mod 7)."
+              },
+              {
+                "id": "c",
+                "texto": "x≡6 (mod 7)."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas classes módulo 14 resolvem 6x≡8?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "O MDC é 2 e divide 8; portanto há duas classes de solução.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Nenhuma."
+              },
+              {
+                "id": "b",
+                "texto": "Duas."
+              },
+              {
+                "id": "c",
+                "texto": "Uma."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não declare uma solução única módulo 14 apenas porque a congruência reduzida tem uma classe módulo 7. Também não tente obter inverso de 2 módulo 6: nenhum produto 2u pode ter resto ímpar 1."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais representantes em {0,…,13} resolvem 6x≡8 (mod 14)?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "A redução dá x≡6 (mod 7); somar 7 fornece os dois representantes.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "6 e 13."
+              },
+              {
+                "id": "b",
+                "texto": "4 e 11."
+              },
+              {
+                "id": "c",
+                "texto": "6 e 8."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "A congruência 4x≡3 (mod 6) possui solução?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "O MDC de 4 e 6 é 2, que não divide 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim, x≡1."
+              },
+              {
+                "id": "b",
+                "texto": "Sim, x≡3."
+              },
+              {
+                "id": "c",
+                "texto": "Não."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use inversos para desfazer multiplicações em códigos e congruências. Sempre confira o MDC antes de dividir e substitua cada solução no problema original."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é um inverso de 7 módulo 26?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "7·15=105=4·26+1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "13."
+              },
+              {
+                "id": "b",
+                "texto": "15."
+              },
+              {
+                "id": "c",
+                "texto": "7."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se 1=3a−2m, qual número é inverso de a módulo m?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "Reduzindo a identidade módulo m, fica 3a≡1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3."
+              },
+              {
+                "id": "b",
+                "texto": "−2."
+              },
+              {
+                "id": "c",
+                "texto": "m."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um inverso de a módulo m é um inteiro u com au≡1 (mod m). Ele existe exatamente quando mdc(a,m)=1. Bézout fornece u ao escrever 1=ua+vm. A congruência ax≡b (mod m) tem solução se e somente se d=mdc(a,m) divide b; quando tem, possui d classes de soluções módulo m. Se a é invertível, multiplicar por seu inverso produz a única classe de solução."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §3.7. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a condição de existência de solução de ax≡b (mod m)?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "A condição permite ou impede que a diferença ax−b seja múltiplo de m.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a é sempre primo."
+              },
+              {
+                "id": "b",
+                "texto": "b é sempre menor que a."
+              },
+              {
+                "id": "c",
+                "texto": "mdc(a,m) divide b."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas classes módulo 9 resolvem 3x≡0?",
+            "assunto": "Inversos e equações modulares",
+            "orientacao": "Retome a definição e as condições do problema. Decidir se há inverso e resolver congruências lineares.",
+            "explicacao": "3x múltiplo de 9 equivale a x múltiplo de 3; há três representantes no sistema de resíduos.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Nove."
+              },
+              {
+                "id": "b",
+                "texto": "Três: 0,3 e 6."
+              },
+              {
+                "id": "c",
+                "texto": "Uma: apenas 0."
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

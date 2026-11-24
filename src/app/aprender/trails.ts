@@ -1,10 +1,15 @@
 export type TrailId = "elementar" | "combinatoria" | "calculo" | "fmc" | "vga";
 
 export function trailUnit(trail: TrailId, stage: number) {
-	return trail === "elementar" ? Math.ceil(stage / 20) : 1;
+	return trail === "elementar"
+		? Math.ceil(stage / 20)
+		: trail === "fmc"
+			? Math.ceil(stage / 6)
+			: 1;
 }
 
 export function stageChallenge(stage: number, trail?: TrailId) {
+	if (trail === "fmc") return stage % 6 === 0 ? "Missão da unidade" : undefined;
 	if (trail === "elementar") {
 		if (stage % 20 === 0) return "Missão da unidade";
 		return;
@@ -84,7 +89,10 @@ export const trails = [
 			"Explore a lógica e as estruturas matemáticas que sustentam a computação.",
 		diagramTitle: "Porta lógica E",
 		diagramCaption: "A saída vale 1 quando as duas entradas valem 1.",
-		positions: [31, 31, 65, 65, 48, 48, 25, 25, 69, 69],
+		positions: Array.from(
+			{ length: 18 },
+			(_, i) => [31, 48, 65, 48, 31, 48][i % 6] ?? 48,
+		),
 		connection: "circuit",
 	},
 	{

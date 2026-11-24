@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 18,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-18",
+      "titulo": "Resolver recorrências e missão integradora",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Conhecer uma regra que gera o próximo termo é útil, mas calcular o milésimo termo repetindo mil passos pode ser desnecessário. Uma fórmula explícita permite ver o padrão e precisa ser conferida nas bases e na regra."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Encontrar e verificar fórmulas explícitas para recorrências simples."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Indução, potências, modelos recursivos e contagem."
+              }
+            ],
+            "titulo": "Resolver recorrências e missão integradora",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para aₙ=raₙ₋₁, com a₀ dado, aₙ=a₀rⁿ. Para T₀=0 e Tₙ=2Tₙ₋₁+1, a fórmula é Tₙ=2ⁿ−1. Ela pode ser conjecturada por expansão e verificada por indução. Na recorrência linear homogênea aₙ=c₁aₙ₋₁+c₂aₙ₋₂, raízes características distintas e não nulas r₁,r₂ da equação r²−c₁r−c₂=0 levam à forma aₙ=A r₁ⁿ+B r₂ⁿ, com A,B determinados pelas bases. Raiz repetida exige outra forma e não é coberta por essa fórmula de raízes distintas."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Encontrar e verificar fórmulas explícitas para recorrências simples.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "aₙ=3aₙ₋₁−2aₙ₋₂; a₀=1, a₁=3"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a₀=5 e aₙ=2aₙ₋₁, qual fórmula é correta?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "A base é 5 e cada passo multiplica por 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "aₙ=5·2ⁿ."
+              },
+              {
+                "id": "b",
+                "texto": "aₙ=2·5ⁿ."
+              },
+              {
+                "id": "c",
+                "texto": "aₙ=5+2n."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Substituir aₙ=rⁿ na regra homogênea conduz à equação característica. Cada raiz fornece uma solução, e combinações lineares também satisfazem a regra. As bases definem os coeficientes. Para regras com termo adicional, como +1, é preciso incluir uma solução particular ou encontrar outra transformação; não se pode aplicar cegamente a fórmula homogênea."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para T₀=0 e Tₙ=2Tₙ₋₁+1, qual fórmula é correta?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "A base dá 0 e 2(2ⁿ⁻¹−1)+1=2ⁿ−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Tₙ=2ⁿ."
+              },
+              {
+                "id": "b",
+                "texto": "Tₙ=n²."
+              },
+              {
+                "id": "c",
+                "texto": "Tₙ=2ⁿ−1."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Resolver recorrências e missão integradora",
+            "assunto": "Resolver recorrências e missão integradora",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Considere a₀=1, a₁=3 e aₙ=3aₙ₋₁−2aₙ₋₂. A equação característica é r²−3r+2=0, com raízes 1 e 2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Escreva aₙ=A+B·2ⁿ. As bases dão A+B=1 e A+2B=3, portanto B=2 e A=−1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Logo aₙ=2ⁿ⁺¹−1, que produz 1,3,7,15. Substituir na recorrência e nas duas bases confere a solução. A representação binária desses valores contém n+1 bits 1, conectando contagem, recorrência e bases numéricas."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na recorrência aₙ=3aₙ₋₁−2aₙ₋₂, qual equação característica aparece?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "Substitua aₙ=rⁿ e reúna os termos da regra homogênea.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "r−3=0."
+              },
+              {
+                "id": "b",
+                "texto": "r²−3r+2=0."
+              },
+              {
+                "id": "c",
+                "texto": "r²+3r−2=0."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais são as raízes de r²−3r+2=0?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "A fatoração é (r−1)(r−2).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1 e 2."
+              },
+              {
+                "id": "b",
+                "texto": "−1 e −2."
+              },
+              {
+                "id": "c",
+                "texto": "2 e 3."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ajustar uma fórmula aos três primeiros termos não demonstra que ela vale sempre. Verifique as condições iniciais e prove que a fórmula satisfaz a regra no domínio inteiro. Também separe raízes distintas de repetidas na equação característica."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Com a₀=1 e a₁=3, quais coeficientes satisfazem aₙ=A+B·2ⁿ?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "A+B=1 e A+2B=3 dão B=2 e A=−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A=1 e B=2."
+              },
+              {
+                "id": "b",
+                "texto": "A=2 e B=−1."
+              },
+              {
+                "id": "c",
+                "texto": "A=−1 e B=2."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na sequência anterior, quanto vale a₄?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "A fórmula 2ⁿ⁺¹−1 dá 2⁵−1=31.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "63."
+              },
+              {
+                "id": "b",
+                "texto": "31."
+              },
+              {
+                "id": "c",
+                "texto": "15."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na missão final, modele uma contagem, obtenha uma recorrência, resolva um caso simples e justifique a resposta por indução. Use restos e bases numéricas como verificações adicionais, sempre explicando por que cada teste é pertinente."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a escrita binária de 31?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "31=16+8+4+2+1, somando cinco potências consecutivas de 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "11111₂."
+              },
+              {
+                "id": "b",
+                "texto": "10000₂."
+              },
+              {
+                "id": "c",
+                "texto": "11110₂."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que a fórmula homogênea não pode ser aplicada diretamente a Tₙ=2Tₙ₋₁+1?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "O +1 torna a recorrência não homogênea e precisa ser tratado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Porque nenhuma recorrência possui fórmula explícita."
+              },
+              {
+                "id": "b",
+                "texto": "Porque T₀=0 é proibido."
+              },
+              {
+                "id": "c",
+                "texto": "Há um termo adicional independente dos termos anteriores."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para aₙ=raₙ₋₁, com a₀ dado, aₙ=a₀rⁿ. Para T₀=0 e Tₙ=2Tₙ₋₁+1, a fórmula é Tₙ=2ⁿ−1. Ela pode ser conjecturada por expansão e verificada por indução. Na recorrência linear homogênea aₙ=c₁aₙ₋₁+c₂aₙ₋₂, raízes características distintas e não nulas r₁,r₂ da equação r²−c₁r−c₂=0 levam à forma aₙ=A r₁ⁿ+B r₂ⁿ, com A,B determinados pelas bases. Raiz repetida exige outra forma e não é coberta por essa fórmula de raízes distintas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§7.1–7.2. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual verificação é necessária para aceitar uma fórmula explícita proposta?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "Bases e regra determinam a sequência; poucos exemplos não substituem a demonstração.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Observar que seus valores são positivos."
+              },
+              {
+                "id": "b",
+                "texto": "Conferir as bases e demonstrar que satisfaz a recorrência no domínio."
+              },
+              {
+                "id": "c",
+                "texto": "Conferir apenas o termo n=1."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas sequências binárias não vazias têm comprimento no máximo 4?",
+            "assunto": "Resolver recorrências e missão integradora",
+            "orientacao": "Retome a definição e as condições do problema. Encontrar e verificar fórmulas explícitas para recorrências simples.",
+            "explicacao": "Somamos 2¹+2²+2³+2⁴=30. Incluir o comprimento zero acrescentaria uma sequência e daria 31.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "30."
+              },
+              {
+                "id": "b",
+                "texto": "16."
+              },
+              {
+                "id": "c",
+                "texto": "31."
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

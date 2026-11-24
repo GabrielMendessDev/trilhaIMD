@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 3,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-03",
+      "titulo": "Bits, sinais e aproximações",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma soma pode ser correta nos inteiros e não caber no registro disponível. O padrão 1111 pode significar quinze ou menos um, dependendo da interpretação combinada."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Distinguir valor, largura, sinal e aproximação em representações computacionais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Conversões entre base dois e base dez."
+              }
+            ],
+            "titulo": "Bits, sinais e aproximações",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Com n bits sem sinal, os inteiros vão de 0 a 2ⁿ−1. Em complemento de dois, vão de −2ⁿ⁻¹ a 2ⁿ⁻¹−1: o bit mais significativo tem peso negativo. Para obter o oposto, quando ele também cabe nessa faixa, inverta os bits e some 1, mantendo a largura. O menor valor negativo não possui oposto positivo representável com a mesma largura. Na parte fracionária binária, as posições pesam 1/2,1/4,1/8,…; uma fração reduzida tem expansão binária finita quando seu denominador é potência de dois. No formato binário32 normal, o valor é (−1)ˢ·(1+f)·2^(e−127), com 1 bit de sinal, 8 de expoente e 23 de fração. Expoentes extremos têm significados especiais e não usam essa fórmula normal."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "−2ⁿ⁻¹ ≤ x ≤ 2ⁿ⁻¹−1"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a faixa sem sinal com oito bits?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "Há 256 padrões, numerados de 0 a 2⁸−1=255.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "De 0 a 255."
+              },
+              {
+                "id": "b",
+                "texto": "De 0 a 256."
+              },
+              {
+                "id": "c",
+                "texto": "De −128 a 127."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Os n bits oferecem 2ⁿ padrões. O complemento de dois atribui ao bit da esquerda o peso −2ⁿ⁻¹, distribuindo-os entre valores negativos e não negativos. Representar uma fração como inteiro dividido por 2ᵏ explica por que fatores diferentes de 2 no denominador impedem uma expansão binária finita."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a faixa em complemento de dois com oito bits?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "A faixa é de −2⁷ até 2⁷−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "De −127 a 128."
+              },
+              {
+                "id": "b",
+                "texto": "De 0 a 255."
+              },
+              {
+                "id": "c",
+                "texto": "De −128 a 127."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Bits, sinais e aproximações",
+            "assunto": "Bits, sinais e aproximações",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para representar −5 em complemento de dois com oito bits, comece por 5=00000101₂."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Inverta: 11111010. Some 1: 11111011. Mantenha exatamente oito bits."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira pelos pesos: −128+64+32+16+8+2+1=−5. Já 0,101₂ é a fração 1/2+1/8=0,625₁₀; valor e padrão de bits são conceitos diferentes."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto representa 1111 em complemento de dois com quatro bits?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "Os pesos dão −8+4+2+1=−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−7."
+              },
+              {
+                "id": "b",
+                "texto": "−1."
+              },
+              {
+                "id": "c",
+                "texto": "15."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual padrão de oito bits representa −5 em complemento de dois?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "Inverta 00000101 e some 1: 11111011.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "11111011."
+              },
+              {
+                "id": "b",
+                "texto": "10000101."
+              },
+              {
+                "id": "c",
+                "texto": "11111010."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em complemento de dois com oito bits, 127+1 não cabe como inteiro positivo: há overflow. A largura e a convenção de sinal precisam estar declaradas. Não confunda 23 bits de fração armazenados com os 24 bits de precisão dos números normais em binário32, que incluem o 1 implícito."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 0,101₂?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "As posições 1 e 3 após a vírgula contribuem 1/2+1/8=5/8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0,101₁₀."
+              },
+              {
+                "id": "b",
+                "texto": "0,75₁₀."
+              },
+              {
+                "id": "c",
+                "texto": "0,625₁₀."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual fração tem expansão binária finita?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "Em forma reduzida, o denominador 8 é potência de dois. Os outros têm fatores 5 ou 3.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1/3."
+              },
+              {
+                "id": "b",
+                "texto": "3/8."
+              },
+              {
+                "id": "c",
+                "texto": "1/10."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Antes de interpretar um arquivo, registre largura, sinal e formato. Em cálculos aproximados, diferencie o número real desejado do valor efetivamente armazenado; arredondamentos podem se acumular."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que acontece com a soma inteira 127+1 em complemento de dois de oito bits?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "Nos inteiros a soma é 128, mas esse valor está fora da faixa. O padrão truncado não altera a soma matemática.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O resultado inteiro positivo não cabe: ocorre overflow."
+              },
+              {
+                "id": "b",
+                "texto": "O resultado 128 é representável nesse formato."
+              },
+              {
+                "id": "c",
+                "texto": "O resultado matemático é −128."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos padrões existem com quatro bits?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "Cada uma das quatro posições tem duas escolhas: 2⁴=16.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "15."
+              },
+              {
+                "id": "b",
+                "texto": "4."
+              },
+              {
+                "id": "c",
+                "texto": "16."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Com n bits sem sinal, os inteiros vão de 0 a 2ⁿ−1. Em complemento de dois, vão de −2ⁿ⁻¹ a 2ⁿ⁻¹−1: o bit mais significativo tem peso negativo. Para obter o oposto, quando ele também cabe nessa faixa, inverta os bits e some 1, mantendo a largura. O menor valor negativo não possui oposto positivo representável com a mesma largura. Na parte fracionária binária, as posições pesam 1/2,1/4,1/8,…; uma fração reduzida tem expansão binária finita quando seu denominador é potência de dois. No formato binário32 normal, o valor é (−1)ˢ·(1+f)·2^(e−127), com 1 bit de sinal, 8 de expoente e 23 de fração. Expoentes extremos têm significados especiais e não usam essa fórmula normal."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §3.6; complemento: Oracle, IEEE Arithmetic, representação e precisão. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Como se distribuem os bits de um binário32 IEEE 754?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "O formato possui três campos; para números normais, há ainda um 1 inicial implícito na significanda.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8 de sinal, 1 de expoente e 23 de fração."
+              },
+              {
+                "id": "b",
+                "texto": "1 de sinal, 8 de expoente e 23 de fração."
+              },
+              {
+                "id": "c",
+                "texto": "1 de sinal, 7 de expoente e 24 de fração."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em um número normal binário32, s=0, e=128 e f=0 representam qual valor?",
+            "assunto": "Bits, sinais e aproximações",
+            "orientacao": "Retome a definição e as condições do problema. Distinguir valor, largura, sinal e aproximação em representações computacionais.",
+            "explicacao": "A fórmula dá (+1)·1·2^(128−127)=2. Ela pressupõe expoente normal, diferente de 0 e 255.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2."
+              },
+              {
+                "id": "b",
+                "texto": "128."
+              },
+              {
+                "id": "c",
+                "texto": "1."
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

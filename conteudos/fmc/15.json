@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 15,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-15",
+      "titulo": "Combinações e coeficientes binomiais",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A equipe {Ana,Bia,Caio} é a mesma se os nomes forem listados em outra ordem. Uma contagem que distingue essas listas precisa ser corrigida antes de contar equipes."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Contar seleções sem ordem e reconhecer identidades binomiais básicas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Permutações, fatorial e princípio aditivo."
+              }
+            ],
+            "titulo": "Combinações e coeficientes binomiais",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma seleção de r objetos entre n distintos, sem ordem e sem reposição, tem C(n,r)=n!/[r!(n−r)!] possibilidades. Vale C(n,r)=C(n,n−r), pois escolher quem entra determina quem fica fora. A identidade de Pascal é C(n,r)=C(n−1,r−1)+C(n−1,r), nos índices aplicáveis. No desenvolvimento de (x+y)ⁿ, o coeficiente de xⁿ⁻ʳyʳ é C(n,r). Quando são escolhidos r objetos indistinguíveis de n tipos, com repetição permitida e sem limites por tipo, a contagem é C(n+r−1,r)."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "C(n,r)=n!/[r!(n−r)!]"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale C(8,3)?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "8·7·6 dividido por 3·2·1 resulta em 56.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "56."
+              },
+              {
+                "id": "b",
+                "texto": "336."
+              },
+              {
+                "id": "c",
+                "texto": "24."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma escolha ordenada de r objetos conta cada subconjunto r! vezes, uma por ordem interna; dividir corrige a multiplicidade. Na identidade de Pascal, separe as seleções que incluem um objeto fixado das que não incluem. As categorias são disjuntas e cobrem todas as possibilidades."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos pares sem ordem podem ser escolhidos entre cinco pessoas?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "C(5,2)=5·4/2=10.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "20."
+              },
+              {
+                "id": "b",
+                "texto": "25."
+              },
+              {
+                "id": "c",
+                "texto": "10."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Combinações e coeficientes binomiais",
+            "assunto": "Combinações e coeficientes binomiais",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Escolher três pessoas entre oito, sem cargos, é uma seleção sem ordem."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "A contagem ordenada 8·7·6 conta a mesma equipe de 3!=6 maneiras. Dividindo: C(8,3)=56."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira pela divisão de casos sobre uma pessoa fixa: C(7,2)+C(7,3)=21+35=56. As duas justificativas descrevem a mesma família de equipes."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale C(6,0)?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "Há um único subconjunto vazio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "6."
+              },
+              {
+                "id": "b",
+                "texto": "1."
+              },
+              {
+                "id": "c",
+                "texto": "0."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale C(6,6)?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "Existe uma única seleção que inclui todos os seis objetos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "6."
+              },
+              {
+                "id": "c",
+                "texto": "720."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "C(n,r) não serve automaticamente para posições distintas ou para escolhas com repetição. Antes da fórmula, escreva se a ordem importa, se objetos podem se repetir e se há limites por tipo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual igualdade expressa a simetria das combinações?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "A escolha de quem entra equivale à escolha do complemento.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "C(n,r)=nʳ, sempre."
+              },
+              {
+                "id": "b",
+                "texto": "C(n,r)=r!."
+              },
+              {
+                "id": "c",
+                "texto": "C(n,r)=C(n,n−r)."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o coeficiente de x³y² em (x+y)⁵?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "É C(5,2)=10, escolhendo em quais dois fatores aparece y.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5."
+              },
+              {
+                "id": "b",
+                "texto": "10."
+              },
+              {
+                "id": "c",
+                "texto": "20."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use combinações para comissões, amostras sem ordem e coeficientes. Para misturas de tipos com repetição, estabeleça explicitamente se as cópias de cada tipo são indistinguíveis."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale C(5,2)+C(5,3)?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "Ambos valem 10; pela identidade de Pascal a soma é C(6,3)=20.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "20."
+              },
+              {
+                "id": "b",
+                "texto": "10."
+              },
+              {
+                "id": "c",
+                "texto": "30."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas soluções inteiras não negativas tem a+b+c=4?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "Distribuir quatro unidades indistinguíveis entre três variáveis dá C(4+3−1,3−1)=C(6,2)=15.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "12."
+              },
+              {
+                "id": "b",
+                "texto": "81."
+              },
+              {
+                "id": "c",
+                "texto": "15."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma seleção de r objetos entre n distintos, sem ordem e sem reposição, tem C(n,r)=n!/[r!(n−r)!] possibilidades. Vale C(n,r)=C(n,n−r), pois escolher quem entra determina quem fica fora. A identidade de Pascal é C(n,r)=C(n−1,r−1)+C(n−1,r), nos índices aplicáveis. No desenvolvimento de (x+y)ⁿ, o coeficiente de xⁿ⁻ʳyʳ é C(n,r). Quando são escolhidos r objetos indistinguíveis de n tipos, com repetição permitida e sem limites por tipo, a contagem é C(n+r−1,r)."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§5.3–5.5. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Escolher três sabores distintos entre sete, sem importar a ordem, exige qual expressão?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "É uma seleção de três elementos distintos sem ordem nem repetição.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "7³."
+              },
+              {
+                "id": "b",
+                "texto": "C(7,3)."
+              },
+              {
+                "id": "c",
+                "texto": "P(7,3)."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em uma prova de Pascal, por que os casos “inclui o objeto fixado” e “não inclui” podem ser somados?",
+            "assunto": "Combinações e coeficientes binomiais",
+            "orientacao": "Retome a definição e as condições do problema. Contar seleções sem ordem e reconhecer identidades binomiais básicas.",
+            "explicacao": "O princípio aditivo é válido porque nenhuma seleção pertence aos dois casos.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "São disjuntos e cobrem todas as seleções."
+              },
+              {
+                "id": "b",
+                "texto": "Porque a ordem dos objetos passou a importar."
+              },
+              {
+                "id": "c",
+                "texto": "Porque têm sempre o mesmo tamanho."
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

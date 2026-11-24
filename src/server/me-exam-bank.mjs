@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { fmcExamRows } from "./fmc-exam-rows.mjs";
 import { unitThreeRows } from "./me-exam-unit-three.mjs";
 import { unitTwoRows } from "./me-exam-unit-two.mjs";
 
@@ -176,11 +177,11 @@ export function examScore(questions, answers) {
 	);
 }
 
-/** @param {2|3} unit @param {[string,string,string[],number,string][]} items */
-function makeExam(unit, items) {
+/** @param {1|2|3} unit @param {[string,string,string[],number,string][]} items @param {string} prefix */
+function makeExam(unit, items, prefix = "") {
 	return examSchema.parse(
 		items.map(([topic, prompt, texts, correct, explanation], i) => ({
-			id: `u${unit}-${i + 1}`,
+			id: `${prefix}u${unit}-${i + 1}`,
 			topic,
 			prompt,
 			choices: texts.map((text, j) => ({ id: String(j), text })),
@@ -191,8 +192,14 @@ function makeExam(unit, items) {
 }
 export const unitTwoExam = makeExam(2, unitTwoRows);
 export const unitThreeExam = makeExam(3, unitThreeRows);
-/** @param {1|2|3} unit */
-export function getExamDefinition(unit) {
+const fmcBanks = {
+	1: makeExam(1, fmcExamRows[1], "fmc-"),
+	2: makeExam(2, fmcExamRows[2], "fmc-"),
+	3: makeExam(3, fmcExamRows[3], "fmc-"),
+};
+/** @param {1|2|3} unit @param {"elementar"|"fmc"} trail */
+export function getExamDefinition(unit, trail = "elementar") {
+	if (trail === "fmc") return { questions: fmcBanks[unit], version: 1 };
 	const banks = { 1: unitOneExam, 2: unitTwoExam, 3: unitThreeExam };
 	return { questions: banks[unit], version: unit === 1 ? examVersion : 1 };
 }

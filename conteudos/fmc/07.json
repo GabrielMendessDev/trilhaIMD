@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 7,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-07",
+      "titulo": "Divisibilidade e divisão euclidiana",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Distribuir 29 peças em caixas de cinco deixa quatro peças fora. Essa sobra tem uma regra: precisa ser não negativa e menor que a capacidade da caixa."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Inteiros, multiplicação e provas diretas."
+              }
+            ],
+            "titulo": "Divisibilidade e divisão euclidiana",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para inteiros a≠0 e b, a divide b, escrito a∣b, se b=ak para algum k∈ℤ. Isso é uma afirmação, não a fração a/b. Para todo inteiro n e divisor positivo d, há únicos q,r∈ℤ tais que n=dq+r e 0≤r<d. Uma divisão exata tem resto zero. Se a divide b e c, divide também toda combinação inteira ub+vc."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "n=dq+r, 0≤r<d"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "A afirmação 4∣28 é verdadeira?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "Divisibilidade exige que o segundo número seja múltiplo inteiro do primeiro.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não, pois 4<28."
+              },
+              {
+                "id": "b",
+                "texto": "Sim, pois 4=28·7."
+              },
+              {
+                "id": "c",
+                "texto": "Sim, pois 28=4·7."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Os múltiplos consecutivos de d separam os inteiros em blocos. Há um único bloco que contém n; sua posição determina q, e a distância até seu início determina r. Para combinações lineares, b=ak e c=aℓ implicam ub+vc=a(uk+vℓ), um múltiplo de a."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual par (q,r) satisfaz 29=5q+r, com 0≤r<5?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "5·5+4=29 e o resto 4 está na faixa exigida.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(4,9)."
+              },
+              {
+                "id": "b",
+                "texto": "(5,4)."
+              },
+              {
+                "id": "c",
+                "texto": "(6,−1)."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Divisibilidade e divisão euclidiana",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para dividir −17 por 5 na convenção euclidiana, procure −17=5q+r com 0≤r<5."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Com q=−4, temos 5q=−20 e r=3. A alternativa q=−3 daria r=−2 e viola a condição do resto."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira: 5·(−4)+3=−17 e 0≤3<5. Logo o par correto é (−4,3); a convenção precisa ser explícita ao comparar com operadores de linguagens de programação."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto euclidiano de −17 por 5?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "−17=5·(−4)+3; a convenção exige resto não negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3."
+              },
+              {
+                "id": "b",
+                "texto": "−2."
+              },
+              {
+                "id": "c",
+                "texto": "2."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a∣b e a∣c, o que sempre vale?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "Escrever b=ak e c=aℓ dá b+c=a(k+ℓ).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "b∣a."
+              },
+              {
+                "id": "b",
+                "texto": "a=b=c."
+              },
+              {
+                "id": "c",
+                "texto": "a∣(b+c)."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não confunda quociente truncado em direção a zero com quociente euclidiano para dividendo negativo. E a∣b não significa b∣a: 3 divide 12, mas 12 não divide 3."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual número é divisível por 7?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "91=7·13.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "95."
+              },
+              {
+                "id": "b",
+                "texto": "91."
+              },
+              {
+                "id": "c",
+                "texto": "93."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o quociente euclidiano de −1 por 4?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "−1=4·(−1)+3. O quociente 0 deixaria um resto negativo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "−1."
+              },
+              {
+                "id": "b",
+                "texto": "0."
+              },
+              {
+                "id": "c",
+                "texto": "1."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use quociente e resto para endereçar posições em blocos, repartir dados e interpretar operações de módulo. Declare sempre o divisor positivo e a faixa escolhida para o resto."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na divisão por um divisor positivo d, qual condição o resto deve satisfazer?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "Essa faixa padroniza o resto e garante a unicidade da divisão.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0<r≤d."
+              },
+              {
+                "id": "b",
+                "texto": "−d<r≤0."
+              },
+              {
+                "id": "c",
+                "texto": "0≤r<d."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para a≠0, qual afirmação sempre vale?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "O inteiro 0 é a·0; a divisibilidade de 1 só vale para a=1 ou a=−1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a∣1."
+              },
+              {
+                "id": "b",
+                "texto": "a∣0."
+              },
+              {
+                "id": "c",
+                "texto": "0∣a."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para inteiros a≠0 e b, a divide b, escrito a∣b, se b=ak para algum k∈ℤ. Isso é uma afirmação, não a fração a/b. Para todo inteiro n e divisor positivo d, há únicos q,r∈ℤ tais que n=dq+r e 0≤r<d. Uma divisão exata tem resto zero. Se a divide b e c, divide também toda combinação inteira ub+vc."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §3.4. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se 6∣a e 6∣b, qual expressão é certamente divisível por 6?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "Combinações com coeficientes inteiros preservam a divisibilidade por 6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "2a−3b."
+              },
+              {
+                "id": "b",
+                "texto": "a+1."
+              },
+              {
+                "id": "c",
+                "texto": "b−1."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o par euclidiano de 42 por 7?",
+            "assunto": "Divisibilidade e divisão euclidiana",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar a definição de divisibilidade e encontrar quociente e resto, inclusive para inteiros negativos.",
+            "explicacao": "A divisão é exata: 42=7·6+0; um resto igual ao divisor não é permitido.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "(5,7)."
+              },
+              {
+                "id": "b",
+                "texto": "(7,−7)."
+              },
+              {
+                "id": "c",
+                "texto": "(6,0)."
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

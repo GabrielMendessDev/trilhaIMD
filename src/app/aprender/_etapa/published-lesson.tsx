@@ -7,6 +7,7 @@ import {
 	RewardValue,
 } from "~/app/_components/reward-effects";
 import { elementarCurriculum } from "~/domain/elementar-curriculum";
+import { fmcCurriculum } from "~/domain/fmc-curriculum";
 import { livesOf } from "~/domain/lesson-lives.mjs";
 import { type ExamUnit, examPath } from "~/domain/me-exams";
 import { auth } from "~/server/auth";
@@ -398,13 +399,16 @@ export async function PublishedLesson({
 							</div>
 						)}
 						<div className={styles.actions}>
-							{trail === "elementar" &&
-								elementarCurriculum.unidades
+							{(trail === "elementar" || trail === "fmc") &&
+								(trail === "fmc" ? fmcCurriculum : elementarCurriculum).unidades
 									.filter((unit) => unit.fim === number)
 									.map((unit) => (
 										<Link
 											className="ui-button"
-											href={examPath(unit.unidade as ExamUnit)}
+											href={examPath(
+												unit.unidade as ExamUnit,
+												trail as "elementar" | "fmc",
+											)}
 											key={unit.unidade}
 										>
 											Fazer a Prova {unit.unidade}
@@ -576,7 +580,7 @@ export async function PublishedLesson({
 		</LessonTransition>
 	);
 	if (
-		trail === "elementar" &&
+		(trail === "elementar" || trail === "fmc") &&
 		user &&
 		progress &&
 		round === 1 &&

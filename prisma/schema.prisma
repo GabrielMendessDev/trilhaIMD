@@ -305,6 +305,7 @@ model MaterialReading {
 }
 
 model MeExamAttempt {
+    trail String @default("elementar")
     unit        Int       @default(1)
     id          String    @id
     userId      String
@@ -319,6 +320,7 @@ model MeExamAttempt {
 
     @@index([userId, createdAt])
     @@index([userId, unit, createdAt])
+    @@index([userId, trail, unit, createdAt])
 }
 
 model AnalyticsSession {

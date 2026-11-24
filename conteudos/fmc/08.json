@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 8,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-08",
+      "titulo": "MDC, MMC e o algoritmo de Euclides",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Duas rotinas se repetem a cada 12 e 18 minutos. Descobrir quando coincidem novamente é diferente de descobrir o maior bloco que reparte ambos os intervalos sem sobra."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Divisão euclidiana e divisibilidade."
+              }
+            ],
+            "titulo": "MDC, MMC e o algoritmo de Euclides",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para inteiros positivos a,b, mdc(a,b) é seu maior divisor comum positivo; mmc(a,b), o menor múltiplo comum positivo. Eles satisfazem mdc(a,b)·mmc(a,b)=ab. No algoritmo de Euclides, se a=bq+r, então mdc(a,b)=mdc(b,r); o último resto não nulo é o MDC. Existem inteiros u,v com mdc(a,b)=ua+vb, identidade de Bézout. Se o MDC é 1, os números são coprimos."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "mdc(a,b)=mdc(b,a mod b)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale mdc(48,18)?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "48=2·18+12; 18=12+6; 12=2·6. O último resto não nulo é 6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3."
+              },
+              {
+                "id": "b",
+                "texto": "6."
+              },
+              {
+                "id": "c",
+                "texto": "12."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um divisor comum de a e b divide r=a−bq. Um divisor comum de b e r divide a=bq+r. Portanto os conjuntos de divisores comuns coincidem, justificando cada etapa de Euclides. Reverter as substituições expressa o último resto como combinação dos números iniciais."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale mmc(12,18)?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "O MDC é 6, então o MMC é 12·18/6=36.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "36."
+              },
+              {
+                "id": "b",
+                "texto": "216."
+              },
+              {
+                "id": "c",
+                "texto": "6."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · MDC, MMC e o algoritmo de Euclides",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule mdc(252,105): 252=2·105+42; 105=2·42+21; 42=2·21+0."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O último resto não nulo é 21. Recuando: 21=105−2·42=105−2(252−2·105)=5·105−2·252."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira: 525−504=21. Além disso, mmc(252,105)=252·105/21=1260. MDC e MMC respondem perguntas diferentes."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No algoritmo de Euclides, qual resto fornece o MDC?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "As divisões preservam os divisores comuns até a divisão exata final.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "O último resto, que é zero."
+              },
+              {
+                "id": "b",
+                "texto": "O primeiro resto, sempre."
+              },
+              {
+                "id": "c",
+                "texto": "O último resto não nulo."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual par é coprimo?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "14=2·7 e 25=5² não têm fator primo comum.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "25 e 35."
+              },
+              {
+                "id": "b",
+                "texto": "14 e 25."
+              },
+              {
+                "id": "c",
+                "texto": "14 e 21."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O último resto do algoritmo é zero; o MDC é o último resto não nulo. Para o MMC, dividir o produto pelo MDC evita contar fatores comuns duas vezes. Para casos envolvendo zero, declare a convenção: mdc(a,0)=a quando a>0."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a=bq+r, qual igualdade é válida?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "Um divisor de a e b divide r, e um divisor de b e r divide a.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "mdc(a,b)=mdc(b,r)."
+              },
+              {
+                "id": "b",
+                "texto": "mdc(a,b)=q."
+              },
+              {
+                "id": "c",
+                "texto": "mdc(a,b)=a+b."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual identidade de Bézout para 35 e 12 produz o MDC 1?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "36−35=1, logo 35 e 12 são coprimos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "35−2·12=1."
+              },
+              {
+                "id": "b",
+                "texto": "35+12=1."
+              },
+              {
+                "id": "c",
+                "texto": "3·12−35=1."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use o MMC para sincronizar ciclos e o MDC para simplificar razões. A identidade de Bézout será usada para decidir quando existe um inverso modular."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale mdc(21,0), na convenção para primeiro argumento positivo?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "Os divisores comuns positivos são os divisores de 21, cujo maior é 21.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "21."
+              },
+              {
+                "id": "c",
+                "texto": "0."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se mdc(a,b)=4 e ab=240, quanto vale mmc(a,b), para a,b positivos?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "Pela identidade, o MMC é 240/4=60.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "60."
+              },
+              {
+                "id": "b",
+                "texto": "960."
+              },
+              {
+                "id": "c",
+                "texto": "244."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para inteiros positivos a,b, mdc(a,b) é seu maior divisor comum positivo; mmc(a,b), o menor múltiplo comum positivo. Eles satisfazem mdc(a,b)·mmc(a,b)=ab. No algoritmo de Euclides, se a=bq+r, então mdc(a,b)=mdc(b,r); o último resto não nulo é o MDC. Existem inteiros u,v com mdc(a,b)=ua+vb, identidade de Bézout. Se o MDC é 1, os números são coprimos."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§3.5–3.6. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Dois eventos se repetem a cada 8 e 12 minutos e coincidem agora. Em quanto tempo coincidem novamente?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "Procuramos o menor múltiplo comum positivo, que é 24.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4 minutos."
+              },
+              {
+                "id": "b",
+                "texto": "96 minutos."
+              },
+              {
+                "id": "c",
+                "texto": "24 minutos."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual escrita confere mdc(252,105)=21 por Bézout?",
+            "assunto": "MDC, MMC e o algoritmo de Euclides",
+            "orientacao": "Retome a definição e as condições do problema. Calcular MDC e MMC e usar divisões sucessivas e combinações de Bézout.",
+            "explicacao": "A combinação resulta em 525−504=21 e vem da substituição reversa de Euclides.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "252−105=21."
+              },
+              {
+                "id": "b",
+                "texto": "5·105−2·252=21."
+              },
+              {
+                "id": "c",
+                "texto": "2·105−5·252=21."
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

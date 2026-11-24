@@ -2,7 +2,13 @@ import { notFound, redirect } from "next/navigation";
 import Link from "~/app/_components/action-link";
 import { DashboardLayout, ProgressBar } from "~/app/_components/dashboard";
 import { LessonTransition } from "~/app/aprender/_etapa/lesson-motion";
-import { type ExamUnit, examPath, meExams } from "~/domain/me-exams";
+import {
+	type ExamTrail,
+	type ExamUnit,
+	examPath,
+	fmcExams,
+	meExams,
+} from "~/domain/me-exams";
 import { auth } from "~/server/auth";
 import { db } from "~/server/db";
 import { canTakeExam, type ExamRow, getExam } from "~/server/me-exam";
@@ -10,26 +16,28 @@ import { canTakeExam, type ExamRow, getExam } from "~/server/me-exam";
 export default async function ExamPage({
 	searchParams,
 	unit,
+	trail = "elementar",
 }: {
 	unit: ExamUnit;
+	trail?: ExamTrail;
 	searchParams: Promise<{
 		tentativa?: string;
 		questao?: string;
 		aviso?: string;
 	}>;
 }) {
-	const base = examPath(unit);
-	const config = meExams[unit];
+	const base = examPath(unit, trail);
+	const config = (trail === "fmc" ? fmcExams : meExams)[unit];
 	const user = (await auth())?.user;
 	if (!user) redirect("/login");
-	if (!(await canTakeExam(user.id, unit)))
-		redirect(`/aprender/elementar/plano#unidade-${unit}`);
+	if (!(await canTakeExam(user.id, unit, trail)))
+		redirect(`/aprender/${trail}/plano#unidade-${unit}`);
 	const params = await searchParams;
 	const history = await db.$queryRaw<
 		Pick<ExamRow, "id" | "createdAt" | "submittedAt" | "score">[]
-	>`SELECT id,"createdAt","submittedAt",score FROM "MeExamAttempt" WHERE "userId"=${user.id} AND unit=${unit} ORDER BY "createdAt" DESC LIMIT 10`;
+	>`SELECT id,"createdAt","submittedAt",score FROM "MeExamAttempt" WHERE "userId"=${user.id} AND unit=${unit} AND trail=${trail} ORDER BY "createdAt" DESC LIMIT 10`;
 	const exam = params.tentativa
-		? await getExam(params.tentativa, user.id, unit)
+		? await getExam(params.tentativa, user.id, unit, trail)
 		: null;
 	if (params.tentativa && !exam) notFound();
 	const index = Math.floor(
@@ -40,8 +48,8 @@ export default async function ExamPage({
 	return (
 		<DashboardLayout active="/aprender">
 			<main className="mx-auto max-w-3xl space-y-6 px-4 py-6">
-				<Link className="ui-link" href="/aprender/elementar/plano">
-					Voltar às unidades de ME
+				<Link className="ui-link" href={`/aprender/${trail}/plano`}>
+					Voltar às unidades de {trail === "fmc" ? "FMC 1" : "ME"}
 				</Link>
 				<h1 className="font-black text-3xl">
 					Prova {unit} — {config.title}

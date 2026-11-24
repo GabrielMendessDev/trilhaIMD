@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 17,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-17",
+      "titulo": "Construir recorrências e escolher as bases",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Quantas sequências binárias de comprimento n não têm dois bits 1 consecutivos? Listar todas cresce rapidamente; classificar pelo começo da sequência conecta o problema a comprimentos menores."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Modelar contagens e processos por recorrências com condições iniciais corretas."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Recursão, princípios de contagem e indução."
+              }
+            ],
+            "titulo": "Construir recorrências e escolher as bases",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma relação de recorrência determina termos a partir de anteriores; condições iniciais selecionam uma sequência específica. Para contar sequências de bits sem 11, use a₀=1 para a sequência vazia e a₁=2 para 0 e 1. Para n≥2, aₙ=aₙ₋₁+aₙ₋₂: as sequências que começam por 0 correspondem a problemas de tamanho n−1; as que começam por 1 precisam começar por 10 e correspondem ao tamanho n−2. Uma recorrência precisa declarar domínio, índices e bases."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Modelar contagens e processos por recorrências com condições iniciais corretas.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "aₙ=aₙ₋₁+aₙ₋₂; a₀=1, a₁=2"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Com a₀=1, a₁=2 e aₙ=aₙ₋₁+aₙ₋₂, quanto vale a₂?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "a₂=a₁+a₀=2+1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4."
+              },
+              {
+                "id": "b",
+                "texto": "3."
+              },
+              {
+                "id": "c",
+                "texto": "2."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Os dois casos do modelo são disjuntos e cobrem todas as sequências válidas. Remover o prefixo fixado produz uma bijeção com a família menor correspondente. As bases tratam os tamanhos nos quais a classificação por dois caracteres ainda não pode ser aplicada diretamente."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na mesma sequência, quanto vale a₄?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "Os termos iniciais são 1,2,3,5,8.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8."
+              },
+              {
+                "id": "b",
+                "texto": "5."
+              },
+              {
+                "id": "c",
+                "texto": "13."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Construir recorrências e escolher as bases",
+            "assunto": "Construir recorrências e escolher as bases",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para sequências sem 11: a₀=1 e a₁=2. Calcule a₂=a₁+a₀=3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Depois a₃=3+2=5 e a₄=5+3=8. As três sequências válidas de comprimento 2 são 00,01 e 10."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O valor a₄=8 depende das bases 1 e 2. A mesma regra com bases diferentes produziria outra sequência; ela é relacionada a Fibonacci, mas os índices precisam ser ajustados."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas sequências de bits de comprimento zero existem?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "Há uma única maneira de não escolher posições; essa convenção é a base combinatória adequada.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Nenhuma."
+              },
+              {
+                "id": "b",
+                "texto": "Duas."
+              },
+              {
+                "id": "c",
+                "texto": "Uma, a sequência vazia."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas sequências de três bits não contêm 11?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "São 000,001,010,100 e 101.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "8."
+              },
+              {
+                "id": "b",
+                "texto": "5."
+              },
+              {
+                "id": "c",
+                "texto": "6."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A sequência vazia conta como uma possibilidade quando contamos todas as sequências de comprimento zero. Usar a₀=0 neste problema altera todos os termos seguintes. Não reutilize bases de outro problema só porque a fórmula recursiva parece igual."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que os casos “começa por 0” e “começa por 10” podem ser somados para n≥2?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "Toda sequência válida começa por 0 ou, se começa por 1, precisa ter 0 na segunda posição.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "São disjuntos e cobrem todas as sequências válidas."
+              },
+              {
+                "id": "b",
+                "texto": "Porque têm necessariamente a mesma quantidade."
+              },
+              {
+                "id": "c",
+                "texto": "Porque toda sequência contém 10."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma recorrência sem condições iniciais normalmente determina uma única sequência?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "A mesma regra pode gerar sequências diferentes a partir de valores iniciais distintos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim, sempre."
+              },
+              {
+                "id": "b",
+                "texto": "Sim, se houver uma soma."
+              },
+              {
+                "id": "c",
+                "texto": "Não; as bases selecionam uma sequência entre várias."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para modelar um processo, desenhe um caso pequeno, separe casos disjuntos e explique como cada um reduz o tamanho. Só depois escreva a recorrência e determine as bases."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Com b₀=3 e bₙ=bₙ₋₁+2 para n≥1, quanto vale b₃?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "A sequência começa 3,5,7,9.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "11."
+              },
+              {
+                "id": "b",
+                "texto": "9."
+              },
+              {
+                "id": "c",
+                "texto": "6."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se T₀=0 e Tₙ=2Tₙ₋₁+1, quanto vale T₃?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "Os termos são 0,1,3,7.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "7."
+              },
+              {
+                "id": "b",
+                "texto": "8."
+              },
+              {
+                "id": "c",
+                "texto": "6."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma relação de recorrência determina termos a partir de anteriores; condições iniciais selecionam uma sequência específica. Para contar sequências de bits sem 11, use a₀=1 para a sequência vazia e a₁=2 para 0 e 1. Para n≥2, aₙ=aₙ₋₁+aₙ₋₂: as sequências que começam por 0 correspondem a problemas de tamanho n−1; as que começam por 1 precisam começar por 10 e correspondem ao tamanho n−2. Uma recorrência precisa declarar domínio, índices e bases."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §7.1. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a recorrência usa n−2, qual cuidado é necessário?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "O domínio dos índices faz parte da definição matemática.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Substituir sempre termos negativos por zero, sem aviso."
+              },
+              {
+                "id": "b",
+                "texto": "Ignorar o caso n=0."
+              },
+              {
+                "id": "c",
+                "texto": "Declarar um início no qual esses índices façam sentido e fornecer as bases correspondentes."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual etapa deve vir antes de aplicar uma fórmula pronta de recorrência?",
+            "assunto": "Construir recorrências e escolher as bases",
+            "orientacao": "Retome a definição e as condições do problema. Modelar contagens e processos por recorrências com condições iniciais corretas.",
+            "explicacao": "Modelos semelhantes podem ter regras ou bases diferentes; o significado do termo orienta a conta.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Supor que todas as recorrências são Fibonacci."
+              },
+              {
+                "id": "b",
+                "texto": "Definir o que o termo conta e justificar a decomposição do problema."
+              },
+              {
+                "id": "c",
+                "texto": "Escolher bases por aparência."
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

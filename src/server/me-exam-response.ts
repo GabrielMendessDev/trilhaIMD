@@ -1,22 +1,29 @@
 import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { elementarCurriculum } from "~/domain/elementar-curriculum";
-import { type ExamUnit, examPath } from "~/domain/me-exams";
+import { fmcCurriculum } from "~/domain/fmc-curriculum";
+import { type ExamTrail, type ExamUnit, examPath } from "~/domain/me-exams";
 import { auth } from "~/server/auth";
 import { db } from "~/server/db";
 import { canTakeExam, type ExamRow, readExam } from "~/server/me-exam";
 import { examScore, getExamDefinition } from "~/server/me-exam-bank.mjs";
 
-export async function submitExam(request: Request, unit: ExamUnit) {
-	const base = examPath(unit);
-	const config = elementarCurriculum.unidades.find((u) => u.unidade === unit);
+export async function submitExam(
+	request: Request,
+	unit: ExamUnit,
+	trail: ExamTrail = "elementar",
+) {
+	const base = examPath(unit, trail);
+	const config = (
+		trail === "fmc" ? fmcCurriculum : elementarCurriculum
+	).unidades.find((u) => u.unidade === unit);
 	if (!config) return new NextResponse(null, { status: 404 });
 	const url = new URL(request.url);
 	if (request.headers.get("origin") !== url.origin)
 		return new NextResponse(null, { status: 403 });
 	const user = (await auth())?.user;
 	if (!user) return new NextResponse(null, { status: 401 });
-	if (!(await canTakeExam(user.id, unit)))
+	if (!(await canTakeExam(user.id, unit, trail)))
 		return new NextResponse(
 			`Conclua as etapas ${config.inicio} a ${config.fim} da Unidade ${unit} para acessar a prova.`,
 			{ status: 403 },
@@ -27,8 +34,8 @@ export async function submitExam(request: Request, unit: ExamUnit) {
 		NextResponse.redirect(new URL(base + query, url), 303);
 	if (action === "start") {
 		const id = randomUUID();
-		const { questions, version } = getExamDefinition(unit);
-		await db.$executeRaw`INSERT INTO "MeExamAttempt" (id,"userId",unit,version,questions) VALUES (${id},${user.id},${unit},${version},${JSON.stringify(questions)}::jsonb)`;
+		const { questions, version } = getExamDefinition(unit, trail);
+		await db.$executeRaw`INSERT INTO "MeExamAttempt" (id,"userId",unit,trail,version,questions) VALUES (${id},${user.id},${unit},${trail},${version},${JSON.stringify(questions)}::jsonb)`;
 		return go(`?tentativa=${id}`);
 	}
 	const id = form.get("attempt"),
@@ -44,7 +51,7 @@ export async function submitExam(request: Request, unit: ExamUnit) {
 	const result = await db.$transaction(async (tx) => {
 		const rows = await tx.$queryRaw<
 			ExamRow[]
-		>`SELECT * FROM "MeExamAttempt" WHERE id=${id} AND "userId"=${user.id} AND unit=${unit} FOR UPDATE`;
+		>`SELECT * FROM "MeExamAttempt" WHERE id=${id} AND "userId"=${user.id} AND unit=${unit} AND trail=${trail} FOR UPDATE`;
 		if (!rows[0]) return { status: 404 };
 		const exam = readExam(rows[0]);
 		if (exam.submittedAt) return { query: `?tentativa=${id}` };

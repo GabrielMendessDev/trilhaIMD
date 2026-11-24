@@ -9,7 +9,7 @@
 		"check:unsafe": "biome check --write --unsafe .",
 		"check:write": "biome check --write .",
 		"test": "node --test tests/*.test.mjs",
-		"verify": "npm run check && npm run typecheck && npm test && npm run conteudo:validar:elementar",
+		"verify": "npm run check && npm run typecheck && npm test && npm run conteudo:validar:elementar && npm run conteudo:validar:fmc",
 		"db:generate": "prisma migrate dev",
 		"db:migrate": "prisma migrate deploy",
 		"db:push": "prisma db push",
@@ -41,7 +41,13 @@
 		"typecheck": "next typegen && tsc --noEmit",
 		"test:prova": "node --test tests/me-exam.test.mjs tests/me-exam-units.test.mjs",
 		"test:prova:http": "node --test tests/me-exam-http.mjs",
-		"test:prova:browser": "node --test tests/me-exam-browser.mjs"
+		"test:prova:browser": "node --test tests/me-exam-browser.mjs",
+		"conteudo:gerar:fmc": "node scripts/gerar-fmc.mjs",
+		"conteudo:validar:fmc": "node scripts/publicar-fmc.mjs",
+		"conteudo:publicar:fmc": "node scripts/publicar-fmc.mjs --importar",
+		"test:fmc": "node --test tests/fmc.test.mjs",
+		"test:fmc:http": "node --test tests/fmc-http.mjs tests/fmc-learning-http.mjs",
+		"test:fmc:browser": "node --test tests/fmc-browser.mjs"
 	},
 	"dependencies": {
 		"@auth/prisma-adapter": "^2.7.2",

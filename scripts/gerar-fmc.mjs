@@ -206,7 +206,7 @@ await writeFile(
 	new URL("manifesto.json", directory),
 	JSON.stringify(manifest, null, 2) + "\n",
 );
-await writeFile(new URL("APOSTILA.md", directory), markdown);
+await writeFile(new URL("APOSTILA.md", directory), `${markdown.trimEnd()}\n`);
 await writeFile(
 	new URL("../src/server/fmc-material-checks.json", import.meta.url),
 	JSON.stringify(checks, null, "\t") + "\n",

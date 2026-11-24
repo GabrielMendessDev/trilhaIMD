@@ -2305,4 +2305,3 @@ Resposta: 30.
 Somamos 2¹+2²+2³+2⁴=30. Incluir o comprimento zero acrescentaria uma sequência e daria 31.
 
 Referência: Rosen, 6ª ed., §§7.1–7.2
-

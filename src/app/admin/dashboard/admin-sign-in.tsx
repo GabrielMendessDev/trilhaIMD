@@ -6,10 +6,12 @@ export function AdminSignIn({
 	available,
 	firstAccess,
 	invalid,
+	weakEnvironmentPassword,
 }: {
 	available: boolean;
 	firstAccess: boolean;
 	invalid: boolean;
+	weakEnvironmentPassword: boolean;
 }) {
 	return (
 		<main className={styles.signIn}>
@@ -19,9 +21,15 @@ export function AdminSignIn({
 			<h1>Painel administrativo</h1>
 			<p>
 				{firstAccess
-					? "No primeiro acesso, entre com as credenciais temporárias para criar seu próprio login e senha."
+					? "No primeiro acesso, use admin como usuário e senha para iniciar a configuração."
 					: "Entre para consultar as métricas do trilbit."}
 			</p>
+			{weakEnvironmentPassword && (
+				<p role="status">
+					A senha definida no ambiente precisa ter pelo menos 16 caracteres.
+					Você também pode configurar o acesso pelo formulário abaixo.
+				</p>
+			)}
 			{available ? (
 				<form action={enterAdmin} className={styles.form}>
 					<label>
@@ -57,8 +65,9 @@ export function AdminSignIn({
 					</ActionButton>
 				</form>
 			) : (
-				<p role="alert">
-					Verifique as credenciais do painel e as migrações do banco de dados.
+				<p className={styles.error} role="alert">
+					O aplicativo não conseguiu consultar a configuração de acesso. Confira
+					a conexão com o banco e tente novamente.
 				</p>
 			)}
 		</main>

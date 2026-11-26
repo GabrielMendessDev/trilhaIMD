@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 14,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-14",
+      "titulo": "Permutações e arranjos: quando a ordem importa",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Escolher três pessoas para uma equipe não é a mesma tarefa que escolher presidente, secretário e tesoureiro. Na segunda, trocar pessoas de cargo altera o resultado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Contar ordenações completas e parciais, com e sem objetos repetidos."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Princípio multiplicativo e fatorial."
+              }
+            ],
+            "titulo": "Permutações e arranjos: quando a ordem importa",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para n objetos distintos, uma permutação dos n objetos tem n! possibilidades. Uma escolha ordenada de r objetos distintos, sem reposição, tem P(n,r)=n!/(n−r)!, para 0≤r≤n. Se há grupos de objetos indistinguíveis com tamanhos n₁,…,nₖ e soma n, as ordenações distintas são n!/(n₁!⋯nₖ!). Já uma sequência de r posições com n opções em cada uma, permitindo repetição, possui nʳ possibilidades. A fórmula depende do modelo, não do nome usado pelo enunciado."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Contar ordenações completas e parciais, com e sem objetos repetidos.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "P(n,r)=n!/(n−r)!"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas filas existem com quatro pessoas distintas?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "São 4!=4·3·2·1=24 ordenações.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "4."
+              },
+              {
+                "id": "b",
+                "texto": "24."
+              },
+              {
+                "id": "c",
+                "texto": "16."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Sem reposição, as opções diminuem: n na primeira posição, n−1 na segunda e assim por diante. Para objetos repetidos, marcar artificialmente objetos iguais conta cada arranjo várias vezes; dividir pelas permutações internas de cada grupo remove essa multiplicidade."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantos pódios de três posições podem ser formados com seis pessoas distintas, sem empates?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "As posições têm 6,5 e 4 opções: 6·5·4=120.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "120."
+              },
+              {
+                "id": "b",
+                "texto": "20."
+              },
+              {
+                "id": "c",
+                "texto": "216."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Permutações e arranjos: quando a ordem importa",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Quantas palavras distintas podem ser feitas com todas as letras de ARARA? São cinco letras, com A repetido três vezes e R duas."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Se cada cópia fosse rotulada, teríamos 5! ordenações. Cada palavra sem rótulos aparece 3!·2! vezes nessa contagem."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O total é 5!/(3!·2!)=10. Não exigimos que a palavra exista no dicionário; contamos sequências de letras."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale P(5,2)?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "Escolhemos dois objetos em ordem, sem reposição: 5·4=20.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "10."
+              },
+              {
+                "id": "b",
+                "texto": "25."
+              },
+              {
+                "id": "c",
+                "texto": "20."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas sequências de três posições usam quatro símbolos com repetição permitida?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "Cada posição tem quatro opções: 4³=64.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "12."
+              },
+              {
+                "id": "b",
+                "texto": "64."
+              },
+              {
+                "id": "c",
+                "texto": "24."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não use n! para uma escolha ordenada que ocupa apenas r posições. E dividir por r! só faz sentido quando as r! ordens contadas representam o mesmo resultado não ordenado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas ordenações distintas possuem as letras de ARARA?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "Divida 5! por 3! para os A e 2! para os R.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "10."
+              },
+              {
+                "id": "b",
+                "texto": "120."
+              },
+              {
+                "id": "c",
+                "texto": "20."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas ordenações distintas possuem as letras de CASA?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "Há quatro letras com A repetido duas vezes: 4!/2!=12.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "24."
+              },
+              {
+                "id": "b",
+                "texto": "6."
+              },
+              {
+                "id": "c",
+                "texto": "12."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Distinga cargos, pódios, posições em fila e conjuntos de pessoas. Declare se objetos repetidos são realmente indistinguíveis ou apenas têm características iguais."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 0!?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "Há uma única ordenação vazia, compatível com a definição recursiva do fatorial.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não existe."
+              },
+              {
+                "id": "b",
+                "texto": "1."
+              },
+              {
+                "id": "c",
+                "texto": "0."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Escolher presidente e secretário entre cinco pessoas exige qual contagem?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "Os cargos distinguem as posições e a mesma pessoa não ocupa ambos nessa escolha.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5·4."
+              },
+              {
+                "id": "b",
+                "texto": "5+4."
+              },
+              {
+                "id": "c",
+                "texto": "5·5, sem restrição."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para n objetos distintos, uma permutação dos n objetos tem n! possibilidades. Uma escolha ordenada de r objetos distintos, sem reposição, tem P(n,r)=n!/(n−r)!, para 0≤r≤n. Se há grupos de objetos indistinguíveis com tamanhos n₁,…,nₖ e soma n, as ordenações distintas são n!/(n₁!⋯nₖ!). Já uma sequência de r posições com n opções em cada uma, permitindo repetição, possui nʳ possibilidades. A fórmula depende do modelo, não do nome usado pelo enunciado."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§5.3 e 5.5. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que dividimos por 3!·2! em ARARA?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "A divisão corrige as múltiplas rotulações artificiais de um mesmo resultado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Porque a ordem nunca importa em palavras."
+              },
+              {
+                "id": "b",
+                "texto": "Porque há somente duas letras."
+              },
+              {
+                "id": "c",
+                "texto": "Porque trocar cópias dos A e dos R não altera a palavra sem rótulos."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quantas ordenações de ABCDE começam por A?",
+            "assunto": "Permutações e arranjos: quando a ordem importa",
+            "orientacao": "Retome a definição e as condições do problema. Contar ordenações completas e parciais, com e sem objetos repetidos.",
+            "explicacao": "A primeira posição está fixa; as quatro restantes podem ser permutadas de 4! formas.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "5."
+              },
+              {
+                "id": "b",
+                "texto": "24."
+              },
+              {
+                "id": "c",
+                "texto": "120."
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

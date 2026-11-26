@@ -14,7 +14,7 @@ Base: `origin/main` em `2edc811`. Integra as melhorias de `feat/revisao-me-e-amb
 
 Execute `npm ci` e `npm run db:migrate`. Em um banco novo, publique o catálogo com `npm run conteudo:publicar:elementar`; em bancos com dados, consulte as regras de migração do catálogo em `conteudos/elementar/README.md` antes da publicação. Nunca substitua ou restaure o banco para testar a integração.
 
-Os testes desta integração devem usar um banco separado e uma origem local em `TRILBIT_TEST_URL`. As provas das unidades 2 e 3 e o desafio final opcional continuam em preparação; o conteúdo de estudo dessas unidades permanece disponível.
+Os testes desta integração devem usar um banco separado e uma origem local em `TRILBIT_TEST_URL`. Na entrega de 23/11, as provas das unidades 2 e 3 e o desafio final opcional estavam em preparação. Em 24/11, as Provas 2 e 3 foram implementadas, conforme [provas-me.md](provas-me.md); o desafio final opcional separado permanece em preparação.
 
 ## Verificação executada
 

@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 2,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-02",
+      "titulo": "Bases numéricas: o valor de cada posição",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "O texto 101 não identifica sozinho uma quantidade: em base dez vale cento e um; em base dois vale cinco. O computador não muda a matemática, mas a convenção de escrita."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Potências de expoente inteiro não negativo."
+              }
+            ],
+            "titulo": "Bases numéricas: o valor de cada posição",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na base b≥2, os algarismos permitidos são 0,…,b−1 e o valor de aₖ…a₁a₀ é a soma aᵢbⁱ. Em hexadecimal, A,…,F representam 10,…,15. Para converter um inteiro não negativo da base dez, divida sucessivamente por b e leia os restos de baixo para cima. Cada grupo de quatro bits corresponde a um dígito hexadecimal."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "n=Σ aᵢbⁱ"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 1011₂ em decimal?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "1·8+0·4+1·2+1=11.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1011."
+              },
+              {
+                "id": "b",
+                "texto": "11."
+              },
+              {
+                "id": "c",
+                "texto": "13."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "A divisão euclidiana escreve n=bq+r, com 0≤r<b. O resto é o algarismo das unidades; aplicar a mesma decomposição ao quociente encontra a posição seguinte. O processo termina porque os quocientes positivos diminuem."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a escrita binária de 13₁₀?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "13=8+4+1, portanto os bits são 1101.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1101₂."
+              },
+              {
+                "id": "b",
+                "texto": "1011₂."
+              },
+              {
+                "id": "c",
+                "texto": "1110₂."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Bases numéricas: o valor de cada posição",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Converter 45₁₀ para base 2: 45=2·22+1; 22=2·11+0; 11=2·5+1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Continue: 5=2·2+1; 2=2·1+0; 1=2·0+1. Os restos, na ordem inversa, formam 101101₂."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "Confira: 32+8+4+1=45. Agrupando 0010 1101, a mesma quantidade é 2D₁₆."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 2A₁₆?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "2·16+10=42, pois A representa dez.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "26₁₀."
+              },
+              {
+                "id": "b",
+                "texto": "210₁₀."
+              },
+              {
+                "id": "c",
+                "texto": "42₁₀."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual escrita é inválida na base indicada?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "Na base 2, os únicos algarismos são 0 e 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "102₁₀."
+              },
+              {
+                "id": "b",
+                "texto": "102₂."
+              },
+              {
+                "id": "c",
+                "texto": "102₃."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Não leia os restos na ordem em que foram produzidos. E 102₂ é inválido, pois a base 2 não admite o algarismo 2. Zeros à esquerda não mudam o valor numérico, embora possam indicar a largura de um registro."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 10000₂?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "O único bit 1 ocupa a posição 4: 2⁴=16.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "16₁₀."
+              },
+              {
+                "id": "b",
+                "texto": "8₁₀."
+              },
+              {
+                "id": "c",
+                "texto": "32₁₀."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 17₈?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "1·8+7=15.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "17₁₀."
+              },
+              {
+                "id": "b",
+                "texto": "9₁₀."
+              },
+              {
+                "id": "c",
+                "texto": "15₁₀."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use agrupamentos de bits para ler endereços e cores em hexadecimal, sempre distinguindo valor, base e quantidade de bits do armazenamento."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na conversão por divisões sucessivas, como ler os restos?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "O primeiro resto é o algarismo menos significativo, por isso a escrita é obtida na ordem inversa.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Somando todos."
+              },
+              {
+                "id": "b",
+                "texto": "Do último para o primeiro."
+              },
+              {
+                "id": "c",
+                "texto": "Do primeiro para o último."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual hexadecimal corresponde a 1111₂?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "1111₂=15₁₀, valor representado por F.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "F₁₆."
+              },
+              {
+                "id": "b",
+                "texto": "E₁₆."
+              },
+              {
+                "id": "c",
+                "texto": "10₁₆."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Na base b≥2, os algarismos permitidos são 0,…,b−1 e o valor de aₖ…a₁a₀ é a soma aᵢbⁱ. Em hexadecimal, A,…,F representam 10,…,15. Para converter um inteiro não negativo da base dez, divida sucessivamente por b e leia os restos de baixo para cima. Cada grupo de quatro bits corresponde a um dígito hexadecimal."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §3.6. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o maior inteiro sem sinal representável com quatro bits?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "Os quatro bits 1 somam 8+4+2+1=15.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "16."
+              },
+              {
+                "id": "b",
+                "texto": "8."
+              },
+              {
+                "id": "c",
+                "texto": "15."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Ao conferir 101101₂, qual soma é correta?",
+            "assunto": "Bases numéricas: o valor de cada posição",
+            "orientacao": "Retome a definição e as condições do problema. Converter inteiros entre bases 2, 10 e 16 e justificar o procedimento.",
+            "explicacao": "Os bits 1 estão nas posições 5,3,2 e 0; a soma é 45.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "32+8+2+1."
+              },
+              {
+                "id": "b",
+                "texto": "32+8+4+1."
+              },
+              {
+                "id": "c",
+                "texto": "32+16+4+1."
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

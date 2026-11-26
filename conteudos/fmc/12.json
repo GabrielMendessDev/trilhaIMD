@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 12,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-12",
+      "titulo": "Ciclos, códigos e missão dos inteiros",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um calendário, um dígito verificador e uma cifra podem compartilhar a mesma ideia: descartar parte da informação e trabalhar com restos. É preciso saber o que cada modelo realmente garante."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Primos, potências modulares e inversos."
+              }
+            ],
+            "titulo": "Ciclos, códigos e missão dos inteiros",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma posição circular é calculada reduzindo deslocamentos módulo o tamanho do ciclo. Um dígito verificador simples pode ser escolhido para que uma soma ponderada seja congruente a zero; essa regra detecta certos erros, mas não todos. Para primo p e a não múltiplo de p, o pequeno teorema de Fermat dá a^(p−1)≡1 (mod p). Em um exemplo didático RSA, dois primos distintos p,q dão n=pq e φ(n)=(p−1)(q−1); escolhemos e coprimo a φ(n) e d inverso de e nesse módulo. Mensagens são resíduos módulo n e a operação envolve exponenciação modular. Os números pequenos usados aqui servem apenas para estudo."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "a^(p−1)≡1 (mod p), p primo e p∤a"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No ciclo das horas 0,…,23, que hora vem 17 horas após as 19?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "19+17=36 e 36≡12 (mod 24).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "12."
+              },
+              {
+                "id": "b",
+                "texto": "36."
+              },
+              {
+                "id": "c",
+                "texto": "2."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ciclos descartam voltas completas, que são múltiplos do tamanho do ciclo. A condição de coprimalidade permite desfazer uma multiplicação no anel de resíduos. No exemplo RSA, a relação ed≡1 (mod φ(n)) é o vínculo entre os expoentes; a justificativa completa também considera separadamente os fatores primos do módulo."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual d∈{0,…,9} torna 7+8+d congruente a 0 módulo 10?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "A soma inicial é 15; somar 5 leva a 20, múltiplo de 10.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3."
+              },
+              {
+                "id": "b",
+                "texto": "0."
+              },
+              {
+                "id": "c",
+                "texto": "5."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Ciclos, códigos e missão dos inteiros",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Use p=5 e q=11: n=55 e φ(n)=4·10=40. Escolha e=3."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "O inverso é d=27, pois 3·27=81≡1 (mod 40). Para a mensagem 7, calcule c=7³ mod 55=13."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A decodificação calcula 13²⁷ mod 55=7. Faça as potências por quadrados sucessivos e reduza a cada multiplicação; não confunda φ(n)=40 com o módulo das mensagens, n=55."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Duas mensagens têm a mesma soma módulo 10. O que podemos concluir?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "Mensagens diferentes podem produzir o mesmo resto; isso é uma colisão da checagem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A checagem detecta todo erro possível."
+              },
+              {
+                "id": "b",
+                "texto": "A checagem sozinha não garante que as mensagens sejam iguais."
+              },
+              {
+                "id": "c",
+                "texto": "As mensagens são necessariamente iguais."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais hipóteses permitem usar a^(p−1)≡1 (mod p)?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "A primalidade do módulo e a não divisibilidade são as condições do pequeno teorema de Fermat.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "p primo e p não divide a."
+              },
+              {
+                "id": "b",
+                "texto": "p positivo, sem outras condições."
+              },
+              {
+                "id": "c",
+                "texto": "a=p."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma soma verificadora igual não prova que dois arquivos são iguais. E as hipóteses de Fermat importam: a^(p−1)≡1 requer p primo e a não divisível por p. O exemplo de criptografia com números pequenos não é uma receita de segurança para sistemas reais."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de 3¹⁰⁰ por 7?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "3⁶≡1 e 100 deixa resto 4 na divisão por 6. Assim 3¹⁰⁰≡3⁴=81≡4.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "3."
+              },
+              {
+                "id": "c",
+                "texto": "4."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "No exemplo p=5 e q=11, quanto valem n e φ(n)?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "n é o produto dos primos; φ(n) é (5−1)(11−1)=40.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "n=16 e φ(n)=10."
+              },
+              {
+                "id": "b",
+                "texto": "n=55 e φ(n)=40."
+              },
+              {
+                "id": "c",
+                "texto": "n=40 e φ(n)=55."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Modele ciclos de horários e checagens aritméticas declarando exatamente o módulo. Ao explicar um algoritmo, separe a propriedade matemática demonstrada das garantias adicionais exigidas por uma aplicação real."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que e=3 admite inverso módulo 40?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "A coprimalidade é exatamente a condição de existência do inverso.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Porque mdc(3,40)=1."
+              },
+              {
+                "id": "b",
+                "texto": "Porque 3 divide 40."
+              },
+              {
+                "id": "c",
+                "texto": "Porque 40 é primo."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual d resolve 3d≡1 (mod 40)?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "3·27=81=2·40+1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "13."
+              },
+              {
+                "id": "b",
+                "texto": "3."
+              },
+              {
+                "id": "c",
+                "texto": "27."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma posição circular é calculada reduzindo deslocamentos módulo o tamanho do ciclo. Um dígito verificador simples pode ser escolhido para que uma soma ponderada seja congruente a zero; essa regra detecta certos erros, mas não todos. Para primo p e a não múltiplo de p, o pequeno teorema de Fermat dá a^(p−1)≡1 (mod p). Em um exemplo didático RSA, dois primos distintos p,q dão n=pq e φ(n)=(p−1)(q−1); escolhemos e coprimo a φ(n) e d inverso de e nesse módulo. Mensagens são resíduos módulo n e a operação envolve exponenciação modular. Os números pequenos usados aqui servem apenas para estudo."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §3.7. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 7³ mod 55?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "7³=343=6·55+13.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "18."
+              },
+              {
+                "id": "b",
+                "texto": "13."
+              },
+              {
+                "id": "c",
+                "texto": "7."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na missão RSA didática, quais módulos têm papéis diferentes?",
+            "assunto": "Ciclos, códigos e missão dos inteiros",
+            "orientacao": "Retome a definição e as condições do problema. Aplicar aritmética modular em ciclos, verificação e um exemplo didático de criptografia.",
+            "explicacao": "O produto n=pq é o módulo da exponenciação; φ(n) orienta a escolha dos expoentes inversos.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "55 para as mensagens e 40 para relacionar os expoentes."
+              },
+              {
+                "id": "b",
+                "texto": "40 para as mensagens e 55 para os expoentes."
+              },
+              {
+                "id": "c",
+                "texto": "Apenas o módulo 3 é utilizado."
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 import Link from "~/app/_components/action-link";
+import { elementarCurriculum } from "~/domain/elementar-curriculum";
+import { fmcCurriculum } from "~/domain/fmc-curriculum";
 import { livesOf } from "~/domain/lesson-lives.mjs";
+import { examPath, examUnits } from "~/domain/me-exams";
 import { auth } from "~/server/auth";
 import type { PublishedPoint } from "~/server/learning";
 import {
@@ -143,11 +146,22 @@ export async function PublishedLesson({
 		}
 	}
 
+	const examTrail =
+		trail === "elementar" || trail === "fmc" ? trail : undefined;
+	const unit = (
+		examTrail === "fmc" ? fmcCurriculum : elementarCurriculum
+	).unidades.find(({ fim }) => fim === number)?.unidade;
+	const examUnit = examUnits.find((candidate) => candidate === unit);
+	const exam =
+		examTrail && examUnit
+			? { unit: examUnit, href: examPath(examUnit, examTrail) }
+			: undefined;
+
 	return (
 		<LessonPlayer
 			base={base}
 			completionMapHref={trailMapHref(trail, upcoming?.number ?? number)}
-			exam={trail === "elementar" && number === 20}
+			exam={exam}
 			initialCursor={cursor}
 			initialFeedback={feedback}
 			initialInventory={Object.fromEntries(
@@ -186,7 +200,7 @@ export async function PublishedLesson({
 				) : undefined
 			}
 			upcoming={upcoming?.number}
-			usesSessions={trail === "elementar"}
+			usesSessions={Boolean(examTrail)}
 		/>
 	);
 }

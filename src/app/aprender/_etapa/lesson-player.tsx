@@ -12,7 +12,12 @@ import {
 } from "./lesson-materials";
 import { LessonCompletion } from "./lesson-outcome";
 import { LessonStep, LostLesson, RestoredLessonAnswer } from "./lesson-screens";
-import type { LessonCursor, LessonScreen, RestoredAnswer } from "./lesson-view";
+import type {
+	LessonCursor,
+	LessonExamLink,
+	LessonScreen,
+	RestoredAnswer,
+} from "./lesson-view";
 
 const itemHref = (base: string, key: string) =>
 	`${base}?${new URLSearchParams({ item: key })}`;
@@ -44,7 +49,7 @@ export function LessonPlayer({
 	mapHref: string;
 	completionMapHref: string;
 	upcoming?: number;
-	exam: boolean;
+	exam?: LessonExamLink;
 	usesSessions: boolean;
 	screens: LessonScreen[];
 	materials: Material[];

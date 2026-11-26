@@ -51,3 +51,5 @@ export type RestoredAnswer = {
 	assessment: AnswerAssessment;
 	effects?: LessonEffects;
 };
+
+export type LessonExamLink = { unit: number; href: string };

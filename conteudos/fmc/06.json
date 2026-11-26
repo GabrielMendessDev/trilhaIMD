@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 6,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-06",
+      "titulo": "Recursão e missão da primeira unidade",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Um programa que calcula o fatorial chama uma versão menor do mesmo problema. Sem uma condição de parada, a regra “multiplique e chame de novo” nunca produz uma resposta."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Calcular definições recursivas e justificar a ligação entre recursão e indução."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Indução, bases numéricas e definição de função."
+              }
+            ],
+            "titulo": "Recursão e missão da primeira unidade",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma definição recursiva fornece casos iniciais e uma regra para reduzir novos casos a anteriores. Para n≥0, 0!=1 e (n+1)!=(n+1)n!. Em Fibonacci, F₀=0, F₁=1 e Fₙ=Fₙ₋₁+Fₙ₋₂ para n≥2: são necessários dois valores iniciais. Uma medida natural que diminui até a base pode justificar o término de um algoritmo recursivo. A correção costuma ser provada por indução. O valor de uma expressão não deve ser confundido com o número de chamadas usadas para calculá-la."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "0!=1; (n+1)!=(n+1)n!"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 0! na definição usual?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "A base 0!=1 permite a regra (n+1)!=(n+1)n! e é compatível com as identidades de contagem.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "0."
+              },
+              {
+                "id": "c",
+                "texto": "Não é definido."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Cada redução precisa aproximar o problema de uma base conhecida. A indução acompanha a mesma estrutura: verificamos a base e demonstramos que a regra preserva a propriedade desejada. Especificar um domínio impede chamadas indefinidas, como um fatorial recursivo que deveria aceitar somente naturais mas recebe −1."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 4!?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "4·3·2·1=24.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "16."
+              },
+              {
+                "id": "b",
+                "texto": "10."
+              },
+              {
+                "id": "c",
+                "texto": "24."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Recursão e missão da primeira unidade",
+            "assunto": "Recursão e missão da primeira unidade",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Defina a₀=2 e aₙ₊₁=3aₙ para n≥0. Os primeiros termos são 2,6,18,54."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "A conjectura aₙ=2·3ⁿ vale em n=0. Se aₖ=2·3ᵏ, então aₖ₊₁=3aₖ=2·3ᵏ⁺¹."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A indução confirma a fórmula. Pela mesma regra a₄=162; escrito em base dois, esse inteiro é 10100010₂. A missão combina recorrência, demonstração e representação."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Com F₀=0, F₁=1 e Fₙ=Fₙ₋₁+Fₙ₋₂, quanto vale F₅?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "Os termos de F₀ a F₅ são 0,1,1,2,3,5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3."
+              },
+              {
+                "id": "b",
+                "texto": "5."
+              },
+              {
+                "id": "c",
+                "texto": "8."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a₀=2 e aₙ₊₁=3aₙ, quanto vale a₃?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "A partir de 2, multiplicamos por 3 três vezes: 2,6,18,54.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "54."
+              },
+              {
+                "id": "b",
+                "texto": "18."
+              },
+              {
+                "id": "c",
+                "texto": "81."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma recorrência de ordem dois geralmente exige dois termos iniciais. E diminuir um número não garante término se o domínio e a base não forem compatíveis: decrementar um inteiro negativo para tentar chegar a zero o afasta da base."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual fórmula corresponde a a₀=2 e aₙ₊₁=3aₙ?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "A fórmula tem a base correta e cada termo é três vezes o anterior.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "aₙ=3·2ⁿ."
+              },
+              {
+                "id": "b",
+                "texto": "aₙ=2+3n."
+              },
+              {
+                "id": "c",
+                "texto": "aₙ=2·3ⁿ."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que n−1 aproxima a recursão do fatorial da base, para n>0?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "No domínio natural, diminuir uma unidade conduz à base após finitíssimos passos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Porque já é o resultado de n!."
+              },
+              {
+                "id": "b",
+                "texto": "Porque é um natural menor, até atingir 0."
+              },
+              {
+                "id": "c",
+                "texto": "Porque sempre é negativo."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao ler uma rotina recursiva, escreva domínio, base, redução e resultado pretendido. Depois simule uma entrada pequena e justifique por que as chamadas chegam à base."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Uma regra usa aₙ₋₁ e aₙ₋₂ para n≥2. Que informação inicial costuma ser necessária?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "O cálculo de a₂ depende dos dois termos anteriores.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a₀ e a₁."
+              },
+              {
+                "id": "b",
+                "texto": "Apenas a₀, em qualquer caso."
+              },
+              {
+                "id": "c",
+                "texto": "Nenhum termo inicial."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual técnica combina naturalmente com a prova de correção de uma definição recursiva sobre ℕ?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "A prova segue as bases e as mesmas reduções usadas na definição.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Testar um único caso."
+              },
+              {
+                "id": "b",
+                "texto": "Supor a conclusão."
+              },
+              {
+                "id": "c",
+                "texto": "Indução matemática."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma definição recursiva fornece casos iniciais e uma regra para reduzir novos casos a anteriores. Para n≥0, 0!=1 e (n+1)!=(n+1)n!. Em Fibonacci, F₀=0, F₁=1 e Fₙ=Fₙ₋₁+Fₙ₋₂ para n≥2: são necessários dois valores iniciais. Uma medida natural que diminui até a base pode justificar o término de um algoritmo recursivo. A correção costuma ser provada por indução. O valor de uma expressão não deve ser confundido com o número de chamadas usadas para calculá-la."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§4.3–4.4. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale 10100010₂?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "As posições ativas somam 128+32+2=162.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "164."
+              },
+              {
+                "id": "b",
+                "texto": "162."
+              },
+              {
+                "id": "c",
+                "texto": "160."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que falta à regra “fat(n)=n·fat(n−1)” para definir o fatorial sobre ℕ?",
+            "assunto": "Recursão e missão da primeira unidade",
+            "orientacao": "Retome a definição e as condições do problema. Calcular definições recursivas e justificar a ligação entre recursão e indução.",
+            "explicacao": "Sem um caso inicial, a regra não determina onde o cálculo termina nem o valor a partir do qual se constrói o resultado.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Uma base, como fat(0)=1."
+              },
+              {
+                "id": "b",
+                "texto": "Uma divisão por zero."
+              },
+              {
+                "id": "c",
+                "texto": "A afirmação de que n é sempre negativo."
+              }
+            ],
+            "gabarito": "a"
+          }
+        }
+      ]
+    }
+  ]
+}

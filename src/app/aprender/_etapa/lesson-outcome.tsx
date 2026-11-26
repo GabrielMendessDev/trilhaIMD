@@ -6,7 +6,7 @@ import {
 	CompletionEffects,
 	RewardValue,
 } from "~/app/_components/reward-effects";
-import type { LessonCursor } from "./lesson-view";
+import type { LessonCursor, LessonExamLink } from "./lesson-view";
 import styles from "./pedagogy.module.css";
 
 export function LessonCompletion({
@@ -21,7 +21,7 @@ export function LessonCompletion({
 	title: string;
 	mapHref: string;
 	upcoming?: number;
-	exam: boolean;
+	exam?: LessonExamLink;
 	onRead?: () => void;
 }) {
 	const { score } = result;
@@ -118,8 +118,8 @@ export function LessonCompletion({
 				)}
 				<div className={styles.actions}>
 					{exam && (
-						<Link className="ui-button" href="/aprender/elementar/prova-1">
-							Fazer a Prova 1
+						<Link className="ui-button" href={exam.href}>
+							Fazer a Prova {exam.unit}
 						</Link>
 					)}
 					<Link

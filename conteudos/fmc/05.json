@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 5,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-05",
+      "titulo": "Indução: construir a ponte entre os casos",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma escada infinita não é percorrida só por saber passar de um degrau ao próximo. Também precisamos alcançar o primeiro degrau. A indução formaliza essas duas tarefas."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Demonstrações e manipulação de somas e potências."
+              }
+            ],
+            "titulo": "Indução: construir a ponte entre os casos",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para provar P(n) para todo n≥n₀, demonstramos P(n₀) e, para k arbitrário com k≥n₀, provamos P(k)⇒P(k+1). A hipótese indutiva é uma suposição local usada para construir essa implicação, não a conclusão de que todos os casos já valem. Na indução forte, podemos usar os casos de n₀ até k; precisamos estabelecer todas as bases exigidas pelo passo. O princípio da boa ordenação afirma que todo subconjunto não vazio de ℕ tem menor elemento."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "P(n₀) e ∀k≥n₀: P(k)⇒P(k+1)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Para provar P(n) para n≥1 por indução, qual é uma base adequada?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "A base precisa iniciar a cadeia no primeiro valor do domínio considerado.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Supor que P(n) vale para todo n."
+              },
+              {
+                "id": "b",
+                "texto": "Demonstrar P(1)."
+              },
+              {
+                "id": "c",
+                "texto": "Demonstrar apenas P(100)."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se houvesse uma primeira falha após uma base válida, o caso anterior seria verdadeiro e o passo de indução impediria essa falha. Essa ideia do menor contraexemplo explica por que os dois componentes da prova são necessários."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a hipótese no passo usual de indução?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "A hipótese local permite demonstrar a implicação P(k)⇒P(k+1).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "P(k), para um k arbitrário no domínio."
+              },
+              {
+                "id": "b",
+                "texto": "P(k+1), que já é o objetivo."
+              },
+              {
+                "id": "c",
+                "texto": "P(1) para qualquer k."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Indução: construir a ponte entre os casos",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Provar 1+2+⋯+n=n(n+1)/2 para n≥1. Base: em n=1, ambos os lados valem 1."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Suponha 1+⋯+k=k(k+1)/2. Ao somar k+1, obtemos k(k+1)/2+(k+1)=(k+1)(k+2)/2."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A expressão final é exatamente a fórmula para k+1. A base e a passagem foram justificadas; a igualdade vale para todo n≥1."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se Sₖ=k(k+1)/2, quanto vale Sₖ+(k+1)?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "Coloque k+1 em evidência: (k+1)(k/2+1).",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "k(k+2)/2."
+              },
+              {
+                "id": "b",
+                "texto": "(k+1)²/2."
+              },
+              {
+                "id": "c",
+                "texto": "(k+1)(k+2)/2."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a soma dos primeiros cinco inteiros positivos?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "A fórmula n(n+1)/2 dá 5·6/2=15.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "25."
+              },
+              {
+                "id": "b",
+                "texto": "15."
+              },
+              {
+                "id": "c",
+                "texto": "10."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Substituir k+1 nos dois lados da igualdade que se deseja provar não é uma demonstração. É preciso partir da hipótese P(k) e construir P(k+1). Também verifique onde o passo realmente funciona: uma passagem válida só para k≥2 não conecta, sozinha, a base n=1 ao caso n=2."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a soma dos primeiros quatro números ímpares positivos?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "1+3+5+7=16, exemplo da identidade cuja soma é n².",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "16."
+              },
+              {
+                "id": "b",
+                "texto": "15."
+              },
+              {
+                "id": "c",
+                "texto": "8."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se a passagem é válida somente para k≥2, uma base P(1) basta automaticamente?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "O passo não cobre k=1; é preciso demonstrar os casos iniciais necessários.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim; qualquer base serve."
+              },
+              {
+                "id": "b",
+                "texto": "Sim; não é necessário verificar P(2)."
+              },
+              {
+                "id": "c",
+                "texto": "Não; falta justificar a ligação até os casos cobertos pelo passo."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao provar propriedades de laços ou de estruturas recursivas, procure o caso mínimo e a regra que leva de casos já resolvidos ao seguinte. Condições iniciais não são um detalhe dispensável."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que permite a hipótese da indução forte?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "A força está na hipótese mais ampla, não em dispensar o início da cadeia.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Ignorar as bases."
+              },
+              {
+                "id": "b",
+                "texto": "Usar todos os casos anteriores desde a base até k."
+              },
+              {
+                "id": "c",
+                "texto": "Usar a conclusão para k+1 sem prova."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual afirmação corresponde à boa ordenação de ℕ?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "O conjunto precisa ser não vazio e estar contido nos naturais.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Todo subconjunto não vazio de ℕ tem menor elemento."
+              },
+              {
+                "id": "b",
+                "texto": "Todo subconjunto de ℤ tem menor elemento."
+              },
+              {
+                "id": "c",
+                "texto": "Todo subconjunto de ℕ tem maior elemento."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para provar P(n) para todo n≥n₀, demonstramos P(n₀) e, para k arbitrário com k≥n₀, provamos P(k)⇒P(k+1). A hipótese indutiva é uma suposição local usada para construir essa implicação, não a conclusão de que todos os casos já valem. Na indução forte, podemos usar os casos de n₀ até k; precisamos estabelecer todas as bases exigidas pelo passo. O princípio da boa ordenação afirma que todo subconjunto não vazio de ℕ tem menor elemento."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§4.1–4.2. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Na prova de 2ⁿ≥n+1 para n≥0, a base n=0 é verdadeira?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "A potência 2⁰ vale 1 e o lado direito também vale 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Não: 0≥1."
+              },
+              {
+                "id": "b",
+                "texto": "Não existe 2⁰."
+              },
+              {
+                "id": "c",
+                "texto": "Sim: 1≥1."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que caracteriza uma prova completa por indução?",
+            "assunto": "Indução: construir a ponte entre os casos",
+            "orientacao": "Retome a definição e as condições do problema. Identificar caso inicial, hipótese e passo indutivo, respeitando o domínio.",
+            "explicacao": "Os dois componentes conectam o primeiro caso a toda a cadeia de naturais.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Apenas escrever a fórmula para k+1."
+              },
+              {
+                "id": "b",
+                "texto": "Base válida e passo válido para todo k exigido."
+              },
+              {
+                "id": "c",
+                "texto": "Muitos exemplos sem passo geral."
+              }
+            ],
+            "gabarito": "b"
+          }
+        }
+      ]
+    }
+  ]
+}

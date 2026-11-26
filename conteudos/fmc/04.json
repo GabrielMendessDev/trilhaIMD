@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 4,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-04",
+      "titulo": "Demonstrações: explicar por que sempre funciona",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Testar que 2², 4² e 6² são pares sugere uma regra. Para convencer alguém de que todo quadrado de par é par, precisamos usar o significado de “par”, não uma lista maior de testes."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Escolher entre demonstração direta, contraposição, contradição e contraexemplo."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Hipótese, conclusão e negação de afirmações."
+              }
+            ],
+            "titulo": "Demonstrações: explicar por que sempre funciona",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma prova direta parte da hipótese e chega à conclusão usando definições e fatos justificados. Na contraposição, provamos ¬q⇒¬p para estabelecer p⇒q. Na contradição, supomos a negação do que queremos provar e deduzimos uma impossibilidade. Um contraexemplo refuta uma universal; não demonstra uma universal verdadeira. Um inteiro é par se n=2k para algum k∈ℤ, e ímpar se n=2k+1."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "n par ⇔ ∃k∈ℤ, n=2k"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a definição de inteiro par?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "A definição usa um múltiplo inteiro de 2, incluindo 0 e os pares negativos.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "n=2k+1 para algum k∈ℤ."
+              },
+              {
+                "id": "b",
+                "texto": "n>0."
+              },
+              {
+                "id": "c",
+                "texto": "n=2k para algum k∈ℤ."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "As técnicas preservam a lógica da afirmação. Definições transformam palavras em expressões que podem ser manipuladas. Separar hipótese e conclusão impede a circularidade de supor justamente o resultado que se queria demonstrar."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Se n=2k+1, qual expressão mostra que n² é ímpar?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "Expandir (2k+1)² dá 4k²+4k+1, que tem a forma 2m+1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "n²=4k²+1, sempre."
+              },
+              {
+                "id": "b",
+                "texto": "n²=2(2k²+2k)+1."
+              },
+              {
+                "id": "c",
+                "texto": "n²=2k²+1."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Demonstrações: explicar por que sempre funciona",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Para provar que n² ímpar implica n ímpar, considere a contrapositiva: se n é par, então n² é par."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Escreva n=2k. Então n²=4k²=2(2k²), que é par por definição."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "A contrapositiva foi demonstrada para todo inteiro k. Logo a implicação original também é verdadeira. Nenhuma lista finita de exemplos foi usada como prova geral."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é a contrapositiva de “se n² é ímpar, então n é ímpar”?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "Negue e troque hipótese e conclusão, usando que um inteiro não ímpar é par.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Se n é par, então n² é par."
+              },
+              {
+                "id": "b",
+                "texto": "Se n é ímpar, então n² é ímpar."
+              },
+              {
+                "id": "c",
+                "texto": "Se n² é par, então n é par."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual número refuta “todo primo é ímpar”?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "2 é primo e é par, por isso contradiz a afirmação universal.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "3."
+              },
+              {
+                "id": "b",
+                "texto": "5."
+              },
+              {
+                "id": "c",
+                "texto": "2."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Provar a recíproca não prova a implicação original. Também não é válido começar uma prova de a=b afirmando a=b e apenas reorganizar a igualdade sem demonstrar a reversibilidade dos passos."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Por que testar mil casos não prova uma afirmação sobre todos os naturais?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "Testes ajudam a formular conjecturas, mas não substituem um argumento válido para todo o domínio.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Porque toda afirmação universal é falsa."
+              },
+              {
+                "id": "b",
+                "texto": "Ainda podem existir naturais não testados que a violem."
+              },
+              {
+                "id": "c",
+                "texto": "Porque exemplos nunca são úteis para investigar."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Em uma prova por contradição de P, o que assumimos inicialmente?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "A negação, junto às hipóteses, deve levar a uma impossibilidade lógica.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "A negação de P."
+              },
+              {
+                "id": "b",
+                "texto": "Que P já está demonstrada."
+              },
+              {
+                "id": "c",
+                "texto": "Uma afirmação sem relação com P."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Ao justificar um algoritmo, declare as hipóteses sobre a entrada e o resultado esperado. Distinguir um argumento geral de testes experimentais será essencial para indução e recorrências."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "De a=2r e b=2s, qual escrita prova que a+b é par?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "Como r+s é inteiro, a soma tem a forma de um múltiplo inteiro de 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a+b=r+s."
+              },
+              {
+                "id": "b",
+                "texto": "a+b=2rs."
+              },
+              {
+                "id": "c",
+                "texto": "a+b=2(r+s)."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual inferência é inválida?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "Afirmar o consequente confunde a implicação com sua recíproca.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "p⇒q e q falsa, portanto p falsa."
+              },
+              {
+                "id": "b",
+                "texto": "p⇒q e q verdadeira, portanto p verdadeira."
+              },
+              {
+                "id": "c",
+                "texto": "p⇒q e p verdadeira, portanto q verdadeira."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Uma prova direta parte da hipótese e chega à conclusão usando definições e fatos justificados. Na contraposição, provamos ¬q⇒¬p para estabelecer p⇒q. Na contradição, supomos a negação do que queremos provar e deduzimos uma impossibilidade. Um contraexemplo refuta uma universal; não demonstra uma universal verdadeira. Um inteiro é par se n=2k para algum k∈ℤ, e ímpar se n=2k+1."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§1.6–1.7. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Um único contraexemplo é suficiente para quê?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "A universal exige todos os casos; um caso contrário basta para negá-la.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Refutar uma afirmação universal."
+              },
+              {
+                "id": "b",
+                "texto": "Provar uma afirmação universal."
+              },
+              {
+                "id": "c",
+                "texto": "Demonstrar qualquer existência em outro domínio."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual atitude evita uma demonstração circular?",
+            "assunto": "Demonstrações: explicar por que sempre funciona",
+            "orientacao": "Retome a definição e as condições do problema. Escolher entre demonstração direta, contraposição, contradição e contraexemplo.",
+            "explicacao": "Uma prova precisa fundamentar a conclusão a partir de premissas justificadas.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Repetir a conclusão como primeiro argumento."
+              },
+              {
+                "id": "b",
+                "texto": "Confirmar só um exemplo favorável."
+              },
+              {
+                "id": "c",
+                "texto": "Usar as hipóteses e definições sem assumir a conclusão."
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

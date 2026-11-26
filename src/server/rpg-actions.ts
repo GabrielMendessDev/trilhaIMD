@@ -1,3 +1,4 @@
+import fmcChecks from "./fmc-material-checks.json";
 import "server-only";
 import type { LessonCursor } from "~/app/aprender/_etapa/lesson-view";
 import {
@@ -300,7 +301,9 @@ export async function materialAction(
 		const challenge =
 			point.trail === "elementar"
 				? elementarChecks[point.number - 1]
-				: supportFor(point.number);
+				: point.trail === "fmc"
+					? fmcChecks[point.number - 1]
+					: supportFor(point.number);
 		if (!challenge)
 			throw new RpgError(
 				"A verificação deste material ainda não foi cadastrada.",

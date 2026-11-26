@@ -1,0 +1,470 @@
+{
+  "versao": 1,
+  "trilha": "fmc",
+  "ponto": 10,
+  "atividades": [
+    {
+      "id": "fmc-v1-passo-10",
+      "titulo": "Congruências: números com o mesmo resto",
+      "questoes": [
+        {
+          "numero": 1,
+          "ordem": 1,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Num relógio de doze horas, avançar quinze horas tem o mesmo efeito que avançar três. Os inteiros não se tornam iguais: ficam equivalentes para uma pergunta específica sobre restos."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Ao concluir: Operar congruências e reconhecer limites do cancelamento modular."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Para começar: Divisão euclidiana, divisibilidade e MDC."
+              }
+            ],
+            "titulo": "Congruências: números com o mesmo resto",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 2,
+          "ordem": 2,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para m≥2, a≡b (mod m) significa m∣(a−b), equivalentemente, a e b têm o mesmo resto euclidiano módulo m. Podemos somar, subtrair e multiplicar congruências com o mesmo módulo. Potências inteiras positivas também preservam a congruência. Para cancelar um fator c sem mudar o módulo, precisamos de mdc(c,m)=1. Um sistema completo de resíduos é {0,1,…,m−1}."
+              },
+              {
+                "id": "formula-central",
+                "tipo": "formula",
+                "leitura": "Operar congruências e reconhecer limites do cancelamento modular.",
+                "termos": [
+                  {
+                    "forma": "texto",
+                    "valor": "a≡b (mod m) ⇔ m∣(a−b)"
+                  }
+                ]
+              }
+            ],
+            "titulo": "Dar nome às ideias",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 3,
+          "ordem": 3,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "O que significa a≡b (mod m)?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "A diferença ser múltiplo de m equivale a ter o mesmo resto euclidiano.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a=b nos inteiros."
+              },
+              {
+                "id": "b",
+                "texto": "a divide m."
+              },
+              {
+                "id": "c",
+                "texto": "m divide a−b."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 4,
+          "ordem": 4,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Se a−b=mk e c−d=mℓ, então (a+c)−(b+d)=m(k+ℓ). Para produtos, ac−bd=c(a−b)+b(c−d), também múltiplo de m. Cancelar é diferente: só podemos desfazer uma multiplicação quando o fator tem inverso modular."
+              }
+            ],
+            "titulo": "Por que isso funciona?",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 5,
+          "ordem": 5,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual representante está em {0,1,…,6} e é congruente a −8 módulo 7?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "−8=7·(−2)+6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "6."
+              },
+              {
+                "id": "c",
+                "texto": "−1."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 6,
+          "ordem": 6,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Exemplo guiado · Congruências: números com o mesmo resto",
+            "assunto": "Congruências: números com o mesmo resto",
+            "tipo": "passo-a-passo",
+            "passos": [
+              {
+                "id": "passo-1",
+                "titulo": "Organizar as informações",
+                "blocos": [
+                  {
+                    "id": "exemplo-1",
+                    "tipo": "texto",
+                    "texto": "Calcule 7²⁰ módulo 5. Primeiro reduza 7≡2 (mod 5)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-2",
+                "titulo": "Desenvolver o raciocínio",
+                "blocos": [
+                  {
+                    "id": "exemplo-2",
+                    "tipo": "texto",
+                    "texto": "Como 2⁴=16≡1 (mod 5), temos 2²⁰=(2⁴)⁵≡1⁵≡1 (mod 5)."
+                  }
+                ]
+              },
+              {
+                "id": "passo-3",
+                "titulo": "Concluir e conferir",
+                "blocos": [
+                  {
+                    "id": "exemplo-3",
+                    "tipo": "texto",
+                    "texto": "O resto procurado é 1. Confira o padrão das potências de 2: 2,4,3,1, que se repete. A redução evita construir um inteiro enorme."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "numero": 7,
+          "ordem": 7,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale o resto de 38+27 por 5?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "38≡3 e 27≡2; a soma é congruente a 5, ou 0.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "0."
+              },
+              {
+                "id": "b",
+                "texto": "3."
+              },
+              {
+                "id": "c",
+                "texto": "2."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 8,
+          "ordem": 8,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quanto vale o resto de 9·8 por 7?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "9≡2 e 8≡1, portanto o produto é congruente a 2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "4."
+              },
+              {
+                "id": "c",
+                "texto": "2."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 9,
+          "ordem": 9,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Em módulo 6, 2·1≡2·4, mas 1 não é congruente a 4. Não é permitido cancelar 2 nesse módulo, pois mdc(2,6)=2. A congruência original só implica uma relação com módulo reduzido."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Explique por que o argumento falha e teste as condições antes de continuar."
+              }
+            ],
+            "titulo": "O erro que vale investigar",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 10,
+          "ordem": 10,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de 2¹⁰ por 7?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "2³≡1, então 2¹⁰=(2³)³·2≡2.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "2."
+              },
+              {
+                "id": "c",
+                "texto": "4."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 11,
+          "ordem": 11,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual condição permite cancelar c numa congruência módulo m sem alterar o módulo?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "A coprimalidade garante a existência do inverso de c no módulo.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "mdc(c,m)=1."
+              },
+              {
+                "id": "b",
+                "texto": "c ser positivo, apenas."
+              },
+              {
+                "id": "c",
+                "texto": "c<m, apenas."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 12,
+          "ordem": 12,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Use classes de restos para ciclos, calendários, posições circulares e verificações aritméticas. O módulo faz parte da afirmação: equivalência em módulo 5 não implica equivalência em módulo 7."
+              }
+            ],
+            "titulo": "Levar a ideia para outra situação",
+            "categoria": "explicacao"
+          }
+        },
+        {
+          "numero": 13,
+          "ordem": 13,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "É válido deduzir 1≡4 (mod 6) de 2·1≡2·4 (mod 6)?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "Os produtos diferem por 6, mas 1 e 4 diferem por 3, que não é múltiplo de 6.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Sim; pode-se sempre dividir uma congruência por 2."
+              },
+              {
+                "id": "b",
+                "texto": "Sim; 1 e 4 têm o mesmo resto por 6."
+              },
+              {
+                "id": "c",
+                "texto": "Não; 2 não é invertível módulo 6."
+              }
+            ],
+            "gabarito": "c"
+          }
+        },
+        {
+          "numero": 14,
+          "ordem": 14,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Quais inteiros são congruentes a 3 módulo 5?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "A diferença para 3 deve ser um múltiplo inteiro de 5.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "Os da forma 5+3k, sempre."
+              },
+              {
+                "id": "b",
+                "texto": "Os da forma 3+5k, k∈ℤ."
+              },
+              {
+                "id": "c",
+                "texto": "Somente o inteiro 3."
+              }
+            ],
+            "gabarito": "b"
+          }
+        },
+        {
+          "numero": 15,
+          "ordem": 15,
+          "modo": "conteudo",
+          "conteudo": {
+            "blocos": [
+              {
+                "id": "texto-1",
+                "tipo": "texto",
+                "texto": "Para m≥2, a≡b (mod m) significa m∣(a−b), equivalentemente, a e b têm o mesmo resto euclidiano módulo m. Podemos somar, subtrair e multiplicar congruências com o mesmo módulo. Potências inteiras positivas também preservam a congruência. Para cancelar um fator c sem mudar o módulo, precisamos de mdc(c,m)=1. Um sistema completo de resíduos é {0,1,…,m−1}."
+              },
+              {
+                "id": "texto-2",
+                "tipo": "texto",
+                "texto": "Referência: Rosen, 6ª ed., §§3.4 e 3.7. Texto e exercícios desta trilha são autorais."
+              },
+              {
+                "id": "texto-3",
+                "tipo": "texto",
+                "texto": "Recuperação ativa: reconstrua o exemplo sem consultar a solução e justifique cada passo."
+              }
+            ],
+            "titulo": "Mapa de bolso",
+            "categoria": "material"
+          }
+        },
+        {
+          "numero": 16,
+          "ordem": 16,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "Qual é o resto de 7²⁰ por 5?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "7≡2 e 2⁴≡1; como 20 é múltiplo de 4, o resultado é 1.",
+            "essencial": false,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "1."
+              },
+              {
+                "id": "b",
+                "texto": "2."
+              },
+              {
+                "id": "c",
+                "texto": "4."
+              }
+            ],
+            "gabarito": "a"
+          }
+        },
+        {
+          "numero": 17,
+          "ordem": 17,
+          "modo": "questao",
+          "questao": {
+            "enunciado": "De a≡b (mod m), para inteiro n≥1, o que sempre vale?",
+            "assunto": "Congruências: números com o mesmo resto",
+            "orientacao": "Retome a definição e as condições do problema. Operar congruências e reconhecer limites do cancelamento modular.",
+            "explicacao": "Multiplicar congruências repetidamente preserva o módulo; divisão exige condições adicionais.",
+            "essencial": true,
+            "tipo": "multipla-escolha",
+            "alternativas": [
+              {
+                "id": "a",
+                "texto": "a/n≡b/n em qualquer caso."
+              },
+              {
+                "id": "b",
+                "texto": "a=b."
+              },
+              {
+                "id": "c",
+                "texto": "aⁿ≡bⁿ (mod m)."
+              }
+            ],
+            "gabarito": "c"
+          }
+        }
+      ]
+    }
+  ]
+}

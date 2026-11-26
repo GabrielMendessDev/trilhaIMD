@@ -67,5 +67,12 @@ export async function persistLesson(
 		? await registerCompletionRpg(tx, userId, pointId, perfect, recovered, now)
 		: [];
 	if (finished) await settleLevelRewards(tx, userId);
-	return { pending, score, awards, failed, finished };
+	return {
+		pending,
+		score,
+		awards,
+		failed,
+		finished,
+		completedAt: finished ? now : null,
+	};
 }

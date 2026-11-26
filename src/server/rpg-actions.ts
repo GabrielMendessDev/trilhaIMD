@@ -1,31 +1,32 @@
 import fmcChecks from "./fmc-material-checks.json";
 import "server-only";
+import type { LessonCursor } from "~/app/aprender/_etapa/lesson-view";
 import {
 	lifeItems,
 	livesOf,
 	MAX_LIVES,
 	restoredLives,
 } from "~/domain/lesson-lives.mjs";
-import { isEssentialQuestion } from "~/domain/question-policy";
 import { economy, items } from "~/domain/rpg";
 import { db } from "./db";
 import elementarChecks from "./elementar-material-checks.json";
-import {
-	type Entry,
-	getLesson,
-	isGraded,
-	lessonItems,
-	toStageModel,
-} from "./lesson";
+import { getLesson } from "./lesson-catalog";
+import { lessonItems } from "./lesson-content";
 import { type LessonProgress, pendingItem } from "./lesson-progress";
+import {
+	accessiblePoint,
+	itemCompatibility,
+	lessonCursor,
+	publicEffects,
+} from "./lesson-resources";
 import { persistLesson } from "./lesson-state";
 import {
 	emitRpg,
 	ensureRpg,
-	getRpgState,
 	lockWallet,
 	RpgError,
-	type RpgTx,
+	readRpgBalance,
+	readRpgInventory,
 	readRpgState,
 	registerStudy,
 } from "./rpg";
@@ -33,167 +34,16 @@ import {
 	contextualExample,
 	effectiveEntry,
 	getQuestionState,
-	type QuestionEffects,
-	type QuestionState,
 	replacementFor,
 	supportFor,
 } from "./rpg-support";
 
-export async function getAllQuestionStates(userId: string, pointId: number) {
-	const rows = await db.$queryRaw<
-		(QuestionState & { entryKey: string })[]
-	>`SELECT "entryKey",effects,assisted FROM "RpgQuestionState" WHERE "userId"=${userId} AND "pointId"=${pointId}`;
-	return Object.fromEntries(rows.map((row) => [row.entryKey, row]));
-}
-async function accessiblePoint(tx: RpgTx, userId: string, pointId: number) {
-	const [point] = await tx.$queryRaw<
-		{ id: number; trail: string; number: number; reward: number }[]
-	>`SELECT p.id,p."trailSlug" AS trail,p.number,p."xpReward" AS reward FROM "TrailPoint" p JOIN "LearningTrail" t ON t.slug=p."trailSlug" WHERE p.id=${pointId} AND NOT t.archived`;
-	if (!point) throw new RpgError("Lição indisponível.");
-	const [earlier] = await tx.$queryRaw<
-		{ count: number }[]
-	>`SELECT count(*)::int AS count FROM "TrailPoint" p WHERE p."trailSlug"=${point.trail} AND p.number<${point.number} AND (EXISTS(SELECT 1 FROM "LearningActivity" a WHERE a."pointId"=p.id) OR EXISTS(SELECT 1 FROM "TrailPointContent" c WHERE c."pointId"=p.id)) AND NOT EXISTS(SELECT 1 FROM "LearningPointProgress" l WHERE l."userId"=${userId} AND l."pointId"=p.id AND l."completedAt" IS NOT NULL)`;
-	if (earlier?.count)
-		throw new RpgError("Conclua a etapa disponível no mapa antes desta lição.");
-	return point;
-}
-export function itemCompatibility(
-	itemId: string,
-	entry: Entry,
-	number: number,
-	round: 1 | 2,
-	state: LessonProgress,
-	effects: QuestionEffects,
-	lesson: Entry[],
-) {
-	if (!isGraded(entry)) return "Este recurso é usado nas questões.";
-	if (livesOf(state) === 0)
-		return "Esta atividade foi perdida. Recomece para continuar.";
-	if (
-		state.attempts[entry.key]?.[round - 1] ||
-		state.skippedEntries?.includes(entry.key)
-	)
-		return "Esta resposta já foi encerrada.";
-	if (lifeItems[itemId]) {
-		if (round === 2)
-			return "A revisão não perde vidas e não precisa de reposição.";
-		return livesOf(state) >= MAX_LIVES
-			? "Você já tem as 5 vidas desta atividade."
-			: null;
-	}
-	if (itemId === "hint-scroll") {
-		const hint = (entry.payload as { orientacao?: string } | null)?.orientacao;
-		return effects.hint
-			? "A dica já está aberta."
-			: !hint?.trim() || /resposta (correta|certa) (é|:)/i.test(hint)
-				? "Ainda não há dica válida para esta questão."
-				: null;
-	}
-	if (itemId === "example-scroll")
-		return effects.example
-			? "O exemplo já está aberto."
-			: !contextualExample(entry, number)
-				? "Ainda não há exemplo adicional para esta habilidade."
-				: null;
-	if (itemId === "answer-lens") {
-		const options = (entry.payload as { alternativas?: unknown[] } | null)
-			?.alternativas;
-		return effects.removed?.length
-			? "A lente já foi usada."
-			: entry.type !== "MULTIPLE_CHOICE" || !options || options.length <= 2
-				? "A lente precisa de múltipla escolha com ao menos três opções."
-				: null;
-	}
-	if (itemId === "question-pass" || itemId === "challenge-swap") {
-		if (round !== 1) return "Disponível apenas antes da primeira resposta.";
-		if (isEssentialQuestion(entry, number, lesson))
-			return "Esta questão essencial precisa ser respondida sem pulo ou troca.";
-		if (itemId === "question-pass") {
-			const count = lesson.filter(isGraded).length;
-			return count - (state.skippedEntries?.length ?? 0) - 1 <
-				Math.ceil(count * economy.minimumAnswerRatio)
-				? "O mínimo de questões respondidas deve ser preservado."
-				: null;
-		}
-		return effects.replacement ||
-			effects.removed?.length ||
-			effects.hint ||
-			effects.example
-			? "A troca deve vir antes dos outros auxílios."
-			: !replacementFor(entry, number)
-				? "Não há variante equivalente validada para esta questão."
-				: null;
-	}
-	if (itemId === "tactical-delay")
-		return round !== 1
-			? "Adie apenas na primeira rodada."
-			: effects.deferred
-				? "Esta questão já foi adiada."
-				: !lesson.some(
-							(item) =>
-								item.key !== entry.key &&
-								!state.completedEntries.includes(item.key) &&
-								!state.deferredEntries?.includes(item.key),
-						)
-					? "Não há outra tela para estudar antes desta questão."
-					: null;
-	return "Ative ou equipe este item na Mochila, fora da questão.";
-}
-function publicEffects(entry: Entry, effects: QuestionEffects) {
-	const effective = effectiveEntry(entry, effects);
-	return {
-		hint: effects.hint,
-		example: effects.example,
-		removed: effects.removed ?? [],
-		variant: effects.replacement?.key ?? "",
-		model: toStageModel(effective),
-	};
-}
-export async function lessonBag(
-	userId: string,
-	pointId: number,
-	entryKey: string,
-	round: 1 | 2,
-) {
-	const point = await accessiblePoint(db, userId, pointId);
-	const [lesson, rpg] = await Promise.all([
-		getLesson(pointId),
-		getRpgState(userId),
-	]);
-	const entry = lesson.find((e) => e.key === entryKey);
-	if (!entry) throw new RpgError("Questão indisponível.");
-	const [state] = await db.$queryRaw<
-		(LessonProgress & { completedAt: Date | null })[]
-	>`SELECT "completedEntries",attempts,"skippedEntries","deferredEntries","completedAt",lives,run FROM "LearningPointProgress" WHERE "userId"=${userId} AND "pointId"=${pointId}`;
-	const progress: LessonProgress = state ?? {
-		completedEntries: [],
-		attempts: {},
-	};
-	const question = await getQuestionState(userId, pointId, entryKey);
-	const pending = pendingItem(lessonItems(lesson), progress);
-	return {
-		inventory: rpg.inventory.map((item) => ({
-			...item,
-			reason:
-				state?.completedAt ||
-				pending?.key !== entryKey ||
-				pending.round !== round
-					? "Esta questão não está disponível para uso."
-					: itemCompatibility(
-							item.id,
-							effectiveEntry(entry, question.effects),
-							point.number,
-							round,
-							progress,
-							question.effects,
-							lesson,
-						),
-		})),
-		...publicEffects(entry, question.effects),
-		lives: livesOf(progress),
-		run: progress.run ?? 1,
-	};
-}
+export {
+	getAllQuestionStates,
+	itemCompatibility,
+	lessonBag,
+	lessonCursor,
+} from "./lesson-resources";
 
 export async function applyQuestionItem(
 	userId: string,
@@ -204,11 +54,13 @@ export async function applyQuestionItem(
 	round: 1 | 2,
 	confirmed: boolean,
 	lessonRun = 1,
+	withFlow = false,
 ) {
 	await ensureRpg(userId);
 	const item = items.find((i) => i.id === itemId);
 	if (item?.kind !== "consumable" || itemId === "streak-shield")
 		throw new RpgError("Item indisponível nesta questão.");
+	const lesson = await getLesson(pointId);
 	const result = await db.$transaction(
 		async (tx) => {
 			await lockWallet(tx, userId);
@@ -238,7 +90,6 @@ export async function applyQuestionItem(
 				return prior.result;
 			}
 			const point = await accessiblePoint(tx, userId, pointId);
-			const lesson = await getLesson(pointId);
 			const original = lesson.find((e) => e.key === entryKey);
 			if (!original) throw new RpgError("Questão indisponível.");
 			await tx.$executeRaw`INSERT INTO "LearningPointProgress"("userId","pointId") VALUES (${userId},${pointId}) ON CONFLICT DO NOTHING`;
@@ -307,6 +158,8 @@ export async function applyQuestionItem(
 				await tx.$executeRaw`INSERT INTO "RpgQuestionState"("userId","pointId","entryKey",effects,assisted) VALUES (${userId},${pointId},${entryKey},${JSON.stringify(effects)}::jsonb,true) ON CONFLICT ("userId","pointId","entryKey") DO UPDATE SET effects=EXCLUDED.effects,assisted=true`;
 			await emitRpg(tx, userId, `item:${requestId}`, { kind: "break" });
 			let destination: string | undefined;
+			let completedAt: Date | null = null;
+			let awards: string[] = [];
 			if (itemId === "question-pass" || itemId === "tactical-delay") {
 				const saved = await persistLesson(
 					tx,
@@ -317,6 +170,8 @@ export async function applyQuestionItem(
 					point.reward,
 				);
 				const base = `/aprender/${point.trail}/${point.number}`;
+				completedAt = saved.completedAt;
+				awards = saved.awards;
 				destination = saved.pending
 					? `${base}?item=${saved.pending.key}`
 					: base;
@@ -327,12 +182,37 @@ export async function applyQuestionItem(
 				itemId,
 				lives: livesOf(state),
 				run: state.run ?? 1,
+				cursor: withFlow
+					? await lessonCursor({
+							userId,
+							point,
+							lesson,
+							progress: state,
+							completedAt,
+							awards,
+							connection: tx,
+							knownEffects: destination ? undefined : { [entryKey]: effects },
+						})
+					: undefined,
 			};
 			await tx.$executeRaw`INSERT INTO "ItemUsage"("userId","requestId","itemId","pointId","entryKey",action,result) VALUES (${userId},${requestId},${itemId},${pointId},${entryKey},'use',${JSON.stringify(applied)}::jsonb)`;
 			return applied;
 		},
 		{ timeout: 15000 },
 	);
+	if (withFlow) {
+		const [rpg, inventory] = await Promise.all([
+			readRpgBalance(userId),
+			readRpgInventory(userId),
+		]);
+		return {
+			result,
+			rpg,
+			inventory: Object.fromEntries(
+				inventory.map(({ itemId, quantity }) => [itemId, quantity]),
+			),
+		};
+	}
 	return { result, state: await readRpgState(userId) };
 }
 
@@ -341,15 +221,22 @@ export async function restartLesson(
 	pointId: number,
 	requestId: string,
 	lessonRun: number,
+	withFlow = false,
 ) {
 	await ensureRpg(userId);
+	const lesson = withFlow ? await getLesson(pointId) : [];
 	return db.$transaction(async (tx) => {
 		await lockWallet(tx, userId);
 		const [prior] = await tx.$queryRaw<
 			{
 				pointId: number;
 				action: string;
-				result: { run: number; lives: number; destination: string };
+				result: {
+					run: number;
+					lives: number;
+					destination: string;
+					cursor?: LessonCursor;
+				};
 			}[]
 		>`SELECT "pointId",action,result FROM "ItemUsage" WHERE "userId"=${userId} AND "requestId"=${requestId}`;
 		if (prior) {
@@ -372,6 +259,21 @@ export async function restartLesson(
 			run: row.run + 1,
 			lives: MAX_LIVES,
 			destination: `/aprender/${point.trail}/${point.number}`,
+			cursor: withFlow
+				? await lessonCursor({
+						userId,
+						point,
+						lesson,
+						progress: {
+							completedEntries: [],
+							attempts: {},
+							lives: MAX_LIVES,
+							run: row.run + 1,
+						},
+						knownEffects: {},
+						connection: tx,
+					})
+				: undefined,
 		};
 		await tx.$executeRaw`INSERT INTO "ItemUsage" ("userId","requestId","itemId","pointId",action,result) VALUES (${userId},${requestId},'lesson-restart',${pointId},'restart',${JSON.stringify(result)}::jsonb)`;
 		return result;
@@ -385,11 +287,11 @@ export async function materialAction(
 	answer?: string,
 ) {
 	await ensureRpg(userId);
+	const lesson = await getLesson(pointId);
 	const result = await db.$transaction(async (tx) => {
 		await lockWallet(tx, userId);
 		const awards: string[] = [];
 		const point = await accessiblePoint(tx, userId, pointId);
-		const lesson = await getLesson(pointId);
 		const entry = lesson.find((e) => e.key === entryKey);
 		if (
 			!entry ||

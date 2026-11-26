@@ -1,9 +1,9 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import Link from "~/app/_components/action-link";
-import { auth, signOut } from "~/server/auth";
+import { auth } from "~/server/auth";
 import { getRpgSummary, rpgBalance } from "~/server/rpg";
-import { ActionButton } from "./action-button";
+import { AccountMenu } from "./account-menu";
 import { FeedbackViewport } from "./feedback";
 import { Icon } from "./icon";
 import { RpgAwardNotice, RpgBalances } from "./rpg-balances";
@@ -49,7 +49,6 @@ export async function DashboardLayout({
 }) {
 	const user = (await auth())?.user;
 	const rpg = user ? await getRpgSummary(user.id).catch(() => null) : null;
-	const name = user?.name || "Minha conta";
 	const section = nav.find(([href]) => active === href)?.[1];
 	const links = nav.map(([href, label, icon]) => (
 		<Link
@@ -128,52 +127,10 @@ export async function DashboardLayout({
 					<div className={styles.utilities}>
 						{rpg && <RpgBalances initial={rpgBalance(rpg)} />}
 						{user ? (
-							<details className={`${styles.userMenu} profile-menu`}>
-								<summary aria-label="Menu da conta" className={styles.avatar}>
-									{user.image?.startsWith("https://") ? (
-										<Image
-											alt=""
-											height={40}
-											src={user.image}
-											unoptimized
-											width={40}
-										/>
-									) : (
-										<Icon className="size-6" name="profile" />
-									)}
-								</summary>
-								<div className={styles.userDropdown}>
-									<strong className="block px-2 pb-2 text-sm [overflow-wrap:anywhere]">
-										{name}
-									</strong>
-									<Link className="ui-link block p-2 text-sm" href="/perfil">
-										Perfil e configurações
-									</Link>
-									<Link className="ui-link block p-2 text-sm" href="/mochila">
-										Minha Mochila
-									</Link>
-									<Link className="ui-link block p-2 text-sm" href="/loja">
-										Loja do Bito
-									</Link>
-									<Link className="ui-link block p-2 text-sm" href="/ranking">
-										Ranking · em preparação
-									</Link>
-									<form
-										action={async () => {
-											"use server";
-											await signOut({ redirectTo: "/login" });
-										}}
-									>
-										<ActionButton
-											busyLabel="Saindo…"
-											className="ui-link p-2 text-sm"
-											type="submit"
-										>
-											Sair da conta
-										</ActionButton>
-									</form>
-								</div>
-							</details>
+							<AccountMenu
+								image={user.image}
+								name={user.name || "Minha conta"}
+							/>
 						) : (
 							<>
 								<ThemeToggle />

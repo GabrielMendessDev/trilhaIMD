@@ -3,14 +3,18 @@ import {
 	DashboardLayout,
 	Icon,
 	PageHeading,
-	ProgressBar,
 } from "~/app/_components/dashboard";
 import { LevelBar } from "~/app/_components/level-progress";
 import { RpgMedal } from "~/app/_components/rpg-icon";
-import { dayAt, dayIndex, studyDay } from "~/domain/rpg";
 import { auth } from "~/server/auth";
 import { getLearningProgress } from "~/server/learning";
 import { getStudyInsights } from "~/server/study-insights";
+import {
+	CourseEvolution,
+	LearningHistory,
+	ReviewRecommendations,
+	StudyRhythm,
+} from "./study-sections";
 export const metadata = { title: "Progresso" };
 export default async function ProgressoPage() {
 	const user = (await auth())?.user;
@@ -46,20 +50,7 @@ export default async function ProgressoPage() {
 			</DashboardLayout>
 		);
 	const level = progress.rpg.level;
-	const days = Array.from({ length: 7 }, (_, i) => {
-		const day = dayAt(dayIndex(studyDay(new Date())) - 6 + i);
-		return {
-			day,
-			count: insights.history.filter(
-				(h) => h.at && studyDay(new Date(h.at)) === day,
-			).length,
-		};
-	});
-	const highest = Math.max(1, ...days.map((d) => d.count));
 	const earned = progress.rpg.achievements.filter((a) => a.unlockedAt);
-	const reviews = insights.review
-		.filter((r) => r.kind !== "recovered")
-		.slice(0, 5);
 	return (
 		<DashboardLayout active="/progresso">
 			<div className="ui-page evolution-page">
@@ -135,97 +126,10 @@ export default async function ProgressoPage() {
 					</div>
 				</dl>
 				<div className="evolution-columns">
-					<section className="study-rhythm">
-						<h2>Seu ritmo nesta semana</h2>
-						<p>
-							Lições concluídas por dia. Cada barra representa seu estudo
-							registrado.
-						</p>
-						<div
-							aria-label={days
-								.map((d) => `${d.day}: ${d.count} lições`)
-								.join("; ")}
-							className="study-week"
-							role="img"
-						>
-							{days.map((d) => (
-								<div key={d.day}>
-									<span>{d.count}</span>
-									<i
-										style={{
-											height: `${Math.max(3, (d.count / highest) * 100)}%`,
-										}}
-									/>
-									<small>
-										{new Date(`${d.day}T12:00Z`)
-											.toLocaleDateString("pt-BR", {
-												weekday: "short",
-												timeZone: "America/Sao_Paulo",
-											})
-											.replace(".", "")}
-									</small>
-								</div>
-							))}
-						</div>
-					</section>
-					<section className="course-evolution">
-						<h2>Progresso nas disciplinas</h2>
-						{insights.courses
-							.filter((c) => c.total > 0)
-							.map((c) => (
-								<Link href={`/disciplinas/${c.id}`} key={c.id}>
-									<div>
-										<strong>{c.name}</strong>
-										<span>
-											{c.done}/{c.total}
-										</span>
-									</div>
-									<ProgressBar label={c.name} value={c.percent} />
-								</Link>
-							))}
-						<p>
-							{insights.bestCourse
-								? `Sua maior evolução está em ${insights.bestCourse.name}.`
-								: "Conclua a primeira lição para começar seu histórico."}
-						</p>
-					</section>
+					<StudyRhythm history={insights.history} />
+					<CourseEvolution insights={insights} />
 				</div>
-				<section className="review-recommendations">
-					<header>
-						<h2>Dar mais um passo no conceito</h2>
-						<span>
-							{reviews.length ? "Revisões recomendadas" : "Tudo em dia"}
-						</span>
-					</header>
-					{reviews.length ? (
-						<ul>
-							{reviews.map((r) => (
-								<li key={`${r.pointId}-${r.key}`}>
-									<Icon className="size-5" name="book" />
-									<div>
-										<strong>{r.topic}</strong>
-										<small>
-											{r.title} ·{" "}
-											{r.kind === "pending"
-												? "Revisão pendente"
-												: r.kind === "skipped"
-													? "Questão pulada"
-													: "Precisa revisar"}
-										</small>
-									</div>
-									<Link className="ui-link" href={r.href}>
-										Rever <Icon className="size-4" name="arrow" />
-									</Link>
-								</li>
-							))}
-						</ul>
-					) : (
-						<p>
-							Quando uma questão pedir mais estudo, o caminho para rever o
-							conceito aparecerá aqui.
-						</p>
-					)}
-				</section>
+				<ReviewRecommendations insights={insights} />
 				<section className="evolution-awards">
 					<header>
 						<h2>Marcos da sua jornada</h2>
@@ -253,32 +157,7 @@ export default async function ProgressoPage() {
 						</p>
 					)}
 				</section>
-				<section className="learning-history">
-					<h2>Histórico de evolução</h2>
-					{insights.history.length ? (
-						<ol>
-							{insights.history
-								.slice(-8)
-								.reverse()
-								.map((h) => (
-									<li key={h.pointId}>
-										<Icon className="size-4" name="check" />
-										<span>{h.title}</span>
-										<small>
-											{h.at
-												? new Date(h.at).toLocaleDateString("pt-BR", {
-														timeZone: "America/Sao_Paulo",
-													})
-												: ""}
-										</small>
-										<b>+{h.xp} XP</b>
-									</li>
-								))}
-						</ol>
-					) : (
-						<p>Suas lições concluídas formarão este histórico.</p>
-					)}
-				</section>
+				<LearningHistory insights={insights} />
 			</div>
 		</DashboardLayout>
 	);

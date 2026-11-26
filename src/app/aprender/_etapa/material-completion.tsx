@@ -14,9 +14,11 @@ type Reading = {
 export function MaterialCompletion({
 	pointId,
 	entryKey,
+	onInventory,
 }: {
 	pointId: number;
 	entryKey: string;
+	onInventory: (stock: Record<string, number>) => void;
 }) {
 	const [reading, setReading] = useState<Reading | null>(null),
 		[error, setError] = useState(""),
@@ -36,6 +38,11 @@ export function MaterialCompletion({
 					answer,
 				});
 				setReading(next);
+				onInventory(
+					Object.fromEntries(
+						next.state.inventory.map(({ id, quantity }) => [id, quantity]),
+					),
+				);
 				publishRpg(next.state, next.awards);
 			} catch (e) {
 				setError(e instanceof Error ? e.message : "Tente novamente.");
@@ -44,7 +51,7 @@ export function MaterialCompletion({
 				setBusy(false);
 			}
 		},
-		[pointId, entryKey],
+		[pointId, entryKey, onInventory],
 	);
 	useEffect(() => {
 		void request();

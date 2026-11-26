@@ -400,13 +400,15 @@ export function rewardsForLevel(level: number): readonly ItemId[] {
 	if (level % 5 === 0) return ["life-elixir"];
 	return [studyRewards[(level - 1) % studyRewards.length] ?? "hint-scroll"];
 }
+const studyDayFormatter = new Intl.DateTimeFormat("en-CA", {
+	timeZone: "America/Sao_Paulo",
+	year: "numeric",
+	month: "2-digit",
+	day: "2-digit",
+});
+
 export function studyDay(now: Date) {
-	return new Intl.DateTimeFormat("en-CA", {
-		timeZone: "America/Sao_Paulo",
-		year: "numeric",
-		month: "2-digit",
-		day: "2-digit",
-	}).format(now);
+	return studyDayFormatter.format(now);
 }
 export const dayIndex = (day: string) =>
 	Math.floor(Date.parse(`${day}T00:00:00Z`) / 86400000);

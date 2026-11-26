@@ -46,11 +46,13 @@ function AnswerReaction({
 export function AnswerResult({
 	assessment,
 	destination,
+	onContinue,
 	example,
 	animate = false,
 }: {
 	assessment: AnswerAssessment;
 	destination: string;
+	onContinue?: () => void;
 	example?: ReactNode;
 	animate?: boolean;
 }) {
@@ -157,6 +159,15 @@ export function AnswerResult({
 					className="ui-button answer-continue"
 					data-learning-direction="forward"
 					href={destination}
+					onNavigate={
+						onContinue
+							? (event) => {
+									event.preventDefault();
+									onContinue();
+								}
+							: undefined
+					}
+					prefetch={onContinue ? false : undefined}
 				>
 					{assessment.failed
 						? "Ver atividade perdida"

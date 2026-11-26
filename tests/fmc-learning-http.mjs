@@ -39,7 +39,7 @@ test("FMC: conteúdo, exemplo guiado, vidas, revisão, XP, material e desbloquei
 	};
 	try {
 		await db.$executeRaw`INSERT INTO "User"(id,name) VALUES (${id},'Teste FMC')`;
-		await db.$executeRaw`INSERT INTO "Session"(id,"sessionToken","userId",expires) VALUES (${randomUUID()},${token},${id},now()+interval '1 hour')`;
+		await db.$executeRaw`INSERT INTO "Session"(id,"sessionToken","userId",expires) VALUES (${randomUUID()},${token},${id},timezone('UTC',now()+interval '1 hour'))`;
 		const [point] =
 			await db.$queryRaw`SELECT id,"xpReward" FROM "TrailPoint" WHERE "trailSlug"='fmc' AND number=1`;
 		const entries =
@@ -115,6 +115,57 @@ test("FMC: conteúdo, exemplo guiado, vidas, revisão, XP, material e desbloquei
 		const [reading] =
 			await db.$queryRaw`SELECT "completedAt" FROM "MaterialReading" WHERE "userId"=${id} AND "pointId"=${point.id}`;
 		assert.ok(reading.completedAt);
+	} finally {
+		await db.$executeRaw`DELETE FROM "User" WHERE id=${id}`;
+		await db.$disconnect();
+	}
+});
+
+test("a aula de FMC mantém as pausas e cada fim de unidade oferece sua prova", async () => {
+	const db = new PrismaClient();
+	const id = `teste-fmc-percurso-${randomUUID()}`;
+	const token = randomUUID();
+	const headers = { cookie: `authjs.session-token=${token}` };
+	const page = async (path) => {
+		const response = await fetch(`${origin}${path}`, { headers });
+		assert.equal(response.status, 200, path);
+		return (await response.text()).replace(/<!--.*?-->/gs, "");
+	};
+	try {
+		await db.$transaction([
+			db.$executeRaw`INSERT INTO "User" (id,name) VALUES (${id},'Teste de percurso')`,
+			db.$executeRaw`INSERT INTO "Session" (id,"sessionToken","userId",expires) VALUES (${randomUUID()},${token},${id},timezone('UTC',now()+interval '1 hour'))`,
+		]);
+		const [point] =
+			await db.$queryRaw`SELECT id, EXISTS(SELECT 1 FROM "TrailPointContent" WHERE "pointId"=p.id) AS intro FROM "TrailPoint" p WHERE "trailSlug"='fmc' AND number=1`;
+		const entries =
+			await db.$queryRaw`SELECT a.id::text||'-'||e.number::text AS key FROM "LearningEntry" e JOIN "LearningActivity" a ON a.id=e."activityId" WHERE a."pointId"=${point.id} ORDER BY a.id,COALESCE(e.position,e.number),e.number LIMIT 6`;
+		const completed = [
+			...(point.intro ? ["leitura"] : []),
+			...entries.map(({ key }) => key),
+		].slice(0, 6);
+		assert.equal(completed.length, 6);
+		await db.$executeRaw`INSERT INTO "LearningPointProgress" ("userId","pointId","completedEntries") VALUES (${id},${point.id},${completed}::text[])`;
+		assert.match(await page("/aprender/fmc/1"), /Sessão 2 de 3/);
+
+		const points =
+			await db.$queryRaw`SELECT id,"trailSlug" AS trail,number FROM "TrailPoint" WHERE ("trailSlug"='fmc' AND number IN (6,12,18)) OR ("trailSlug"='elementar' AND number IN (19,20,40,60))`;
+		assert.equal(points.length, 7);
+		for (const { id: pointId, trail, number } of points) {
+			await db.$executeRaw`INSERT INTO "LearningPointProgress" ("userId","pointId","completedAt") VALUES (${id},${pointId},timezone('UTC',now()))`;
+			const html = await page(`/aprender/${trail}/${number}`);
+			if (number === 19) {
+				assert.doesNotMatch(html, />Fazer a Prova \d<\/a>/);
+				continue;
+			}
+			const unit = number / (trail === "fmc" ? 6 : 20);
+			assert.ok(
+				html.includes(
+					`href="/aprender/${trail}/prova-${unit}">Fazer a Prova ${unit}</a>`,
+				),
+				`Link da prova da unidade ${unit} de ${trail}`,
+			);
+		}
 	} finally {
 		await db.$executeRaw`DELETE FROM "User" WHERE id=${id}`;
 		await db.$disconnect();

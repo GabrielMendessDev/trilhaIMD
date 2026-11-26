@@ -1,10 +1,12 @@
 "use client";
-import type { RpgState, rpgBalance } from "~/server/rpg";
+import type { RpgInventoryState, rpgBalance } from "~/server/rpg";
+import { invalidateRpgHistory } from "./rpg-history-cache";
 export type RpgBalance = ReturnType<typeof rpgBalance>;
 export function publishRpg(
-	state: RpgState | RpgBalance,
+	state: RpgInventoryState | RpgBalance,
 	awards?: RpgBalance["awards"],
 ) {
+	invalidateRpgHistory();
 	const balance = {
 		...state,
 		streak: "stats" in state ? state.stats.studyStreak : state.streak,

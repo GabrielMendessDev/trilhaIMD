@@ -1,21 +1,21 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useRef, useState, useTransition } from "react";
+import { useRef, useState } from "react";
 import { rpgRequest } from "~/app/_components/rpg-client";
+import type { LessonCursor } from "./lesson-view";
 
 export function LessonRestart({
 	pointId,
 	run,
+	onRestart,
 }: {
 	pointId: number;
 	run: number;
+	onRestart: (cursor: LessonCursor, destination: string) => void;
 }) {
 	const request = useRef<string | null>(null),
 		lock = useRef(false);
 	const [busy, setBusy] = useState(false),
 		[error, setError] = useState("");
-	const [navigating, transition] = useTransition();
-	const router = useRouter();
 	async function restart() {
 		if (lock.current) return;
 		lock.current = true;
@@ -23,16 +23,17 @@ export function LessonRestart({
 		setError("");
 		request.current ??= crypto.randomUUID();
 		try {
-			const result = await rpgRequest<{ destination: string }>({
+			const result = await rpgRequest<{
+				cursor: LessonCursor;
+				destination: string;
+			}>({
 				action: "restart",
+				lessonFlow: true,
 				pointId,
 				lessonRun: run,
 				requestId: request.current,
 			});
-			transition(() => {
-				router.replace(result.destination);
-				router.refresh();
-			});
+			onRestart(result.cursor, result.destination);
 		} catch (e) {
 			setError(
 				e instanceof Error
@@ -48,11 +49,11 @@ export function LessonRestart({
 		<div>
 			<button
 				className="ui-button"
-				disabled={busy || navigating}
+				disabled={busy}
 				onClick={() => void restart()}
 				type="button"
 			>
-				{busy || navigating ? "Recomeçando…" : "Recomeçar com 5 vidas"}
+				{busy ? "Recomeçando…" : "Recomeçar com 5 vidas"}
 			</button>
 			{error && (
 				<p className="study-error" role="alert">

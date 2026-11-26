@@ -37,7 +37,7 @@ test("read models preserve settlement, avoid read locks, invalidate published ca
 		await db.$transaction(
 			async (tx) => {
 				await tx.$queryRaw`SELECT "userId" FROM "RpgWallet" WHERE "userId"=${id} FOR UPDATE`;
-				const response = await fetch(origin + "/api/rpg", {
+				const response = await fetch(`${origin}/api/rpg`, {
 					headers: { cookie },
 					signal: AbortSignal.timeout(5000),
 				});
@@ -55,6 +55,35 @@ test("read models preserve settlement, avoid read locks, invalidate published ca
 		// Protection bridges the gap without counting it as another studied day.
 		assert.equal(state.stats.studyStreak, 1);
 		assert.equal(state.protections[0].state, "used");
+		const historyResponse = await get("/api/rpg?history=1");
+		assert.equal(
+			historyResponse.headers.get("cache-control"),
+			"private, no-store",
+		);
+		const history = await historyResponse.json();
+		assert.equal(history.account, id);
+		assert.equal(history.usages[0].action, "protect");
+		assert.equal(history.usages[0].result, null);
+		assert.ok(state.usages[0].result);
+		assert.equal((await fetch(`${origin}/api/rpg?history=1`)).status, 401);
+		await db.$executeRaw`UPDATE "RpgWallet" SET bits=500 WHERE "userId"=${id}`;
+		const purchase = await fetch(`${origin}/api/rpg`, {
+			method: "POST",
+			headers: { cookie, origin, "content-type": "application/json" },
+			body: JSON.stringify({
+				action: "buy",
+				compact: true,
+				itemId: "hint-scroll",
+				requestId: randomUUID(),
+			}),
+		});
+		assert.equal(purchase.status, 200);
+		const compact = (await purchase.json()).state;
+		assert.equal(compact.bits, 465);
+		assert.equal(compact.history, undefined);
+		assert.equal(compact.usages, undefined);
+		const updatedHistory = await (await get("/api/rpg?history=1")).json();
+		assert.equal(updatedHistory.history[0].subject, "hint-scroll");
 		await get("/api/rpg");
 		const [settled] =
 			await db.$queryRaw`SELECT "settledDay",(SELECT count(*)::int FROM "ItemUsage" WHERE "userId"=${id} AND action='protect') AS uses FROM "RpgWallet" WHERE "userId"=${id}`;

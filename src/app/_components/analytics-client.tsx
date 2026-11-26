@@ -83,10 +83,11 @@ export function activeStudyTime() {
 
 function classifyScreen(path: string): Screen | undefined {
 	if (/^\/aprender\/[^/]+\/\d+\/?$/.test(path)) {
-		if (document.querySelector("[data-result-panel]"))
+		if (document.querySelector("[data-result-panel]:not([hidden] *)"))
 			return "/aprender/resultado";
-		const phase =
-			document.querySelector<HTMLElement>("[data-step-kind]")?.dataset.stepKind;
+		const phase = document.querySelector<HTMLElement>(
+			"[data-step-kind]:not([hidden] *)",
+		)?.dataset.stepKind;
 		if (phase === "question") return "/aprender/questao";
 		if (phase === "review") return "/aprender/revisao";
 		if (phase === "explanation") return "/aprender/material";
@@ -215,7 +216,7 @@ export function AnalyticsClient() {
 			subtree: true,
 			childList: true,
 			attributes: true,
-			attributeFilter: ["data-step-kind", "data-result-panel"],
+			attributeFilter: ["data-step-kind", "data-result-panel", "hidden"],
 		});
 		window.addEventListener("pointerdown", interact, { passive: true });
 		window.addEventListener("keydown", interact);

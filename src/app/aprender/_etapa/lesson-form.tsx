@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
 import {
 	type FormEvent,
 	type ReactNode,
@@ -8,7 +7,6 @@ import {
 	useId,
 	useRef,
 	useState,
-	useTransition,
 } from "react";
 import { ActionButton } from "~/app/_components/action-button";
 import { activeStudyTime } from "~/app/_components/analytics-client";
@@ -16,109 +14,81 @@ import { useFeedback } from "~/app/_components/feedback";
 import { consumeFeedbackEvent } from "~/app/_components/feedback-events";
 import { FeedbackIcon } from "~/app/_components/feedback-icon";
 import { Icon } from "~/app/_components/icon";
-import { navigateLearning } from "~/app/_components/learning-navigation";
 import { ProgressBar } from "~/app/_components/progress-bar";
 import { publishRpg, type RpgBalance } from "~/app/_components/rpg-client";
 import type { AnswerAssessment } from "./answer-model";
 import { AnswerResult } from "./answer-result";
-import { applyLens, LessonBag, type LessonEffects } from "./lesson-bag";
+import { applyLens, LessonBag } from "./lesson-bag";
 import { LessonLives } from "./lesson-lives";
+import type { LessonCursor, LessonScreen } from "./lesson-view";
 import { QuestionHelp } from "./question-help";
 import { StageScreen } from "./screen";
 
-let responderWarmed = false;
-
 export function LessonForm({
 	endpoint,
-	entryKey,
-	round,
-	children,
-	label,
-	progress,
+	pointId,
+	cursor,
+	screen,
+	inventory,
+	active,
 	example,
-	autoSubmit = false,
-	bag,
-	lives = 5,
-	run = 1,
+	onAdvance,
+	onFeedback,
+	onInventory,
+	onUseItem,
 }: {
 	endpoint: string;
-	entryKey: string;
-	round: 1 | 2;
-	children: ReactNode;
-	label: string;
-	progress?: number;
+	pointId: number;
+	cursor: Extract<LessonCursor, { kind: "step" }>;
+	screen: LessonScreen;
+	inventory: Record<string, number>;
+	active: boolean;
 	example?: ReactNode;
-	autoSubmit?: boolean;
-	bag?: { pointId: number; effects: LessonEffects };
-	lives?: number;
-	run?: number;
+	onAdvance: (cursor: LessonCursor, destination: string) => void;
+	onFeedback: (destination: string) => void;
+	onInventory: (stock: Record<string, number>) => void;
+	onUseItem: (
+		cursor: LessonCursor,
+		inventory: Record<string, number>,
+		destination?: string,
+	) => void;
 }) {
-	const [effects, setEffects] = useState(bag?.effects);
-	const [currentLives, setCurrentLives] = useState(lives);
-	const [itemBusy, setItemBusy] = useState(false);
+	const { key, round, run, bag } = cursor;
+	const autoSubmit = screen.graded;
+	const effects = bag?.effects;
 	const statusId = useId();
+	const [itemBusy, setItemBusy] = useState(false);
 	const [state, setState] = useState<
-		"idle" | "submitting" | "navigating" | "error" | "correct" | "incorrect"
+		"idle" | "submitting" | "error" | "correct" | "incorrect"
 	>("idle");
-	const router = useRouter();
-	const search = useSearchParams();
-	const [changing, transition] = useTransition();
-	const { notify, startNavigation, finishNavigation, dismiss } = useFeedback();
-	const submitting = useRef(false);
+	const { notify, dismiss } = useFeedback();
 	const [error, setError] = useState("");
 	const [confirmed, setConfirmed] = useState<{
 		assessment: AnswerAssessment;
 		destination: string;
+		cursor: LessonCursor;
 		animate: boolean;
 	} | null>(null);
-	// Native history restoration is queued by Next. Reveal the continuation only
-	// after that router state commits, so a fast click cannot be superseded by it.
-	const visibleResult =
-		confirmed &&
-		search.get("retorno") === entryKey &&
-		search.get("rodada") === String(round)
-			? confirmed
-			: null;
-	const pending =
-		state === "submitting" ||
-		state === "navigating" ||
-		Boolean(confirmed && !visibleResult);
 	const request = useRef<AbortController | null>(null);
 	const questionClock = useRef({ visibleSince: 0, elapsed: 0 });
 	useEffect(() => {
-		if (!autoSubmit) return;
+		if (!autoSubmit || !active) return;
 		const clock = questionClock.current;
-		clock.elapsed = 0;
-		clock.visibleSince = document.hidden ? 0 : performance.now();
 		const visibility = () => {
+			const now = performance.now();
+			if (clock.visibleSince) clock.elapsed += now - clock.visibleSince;
+			clock.visibleSince = document.hidden ? 0 : now;
+		};
+		visibility();
+		document.addEventListener("visibilitychange", visibility);
+		return () => {
+			document.removeEventListener("visibilitychange", visibility);
 			if (clock.visibleSince)
 				clock.elapsed += performance.now() - clock.visibleSince;
-			clock.visibleSince = document.hidden ? 0 : performance.now();
+			clock.visibleSince = 0;
 		};
-		document.addEventListener("visibilitychange", visibility);
-		return () => document.removeEventListener("visibilitychange", visibility);
-	}, [autoSubmit]);
+	}, [autoSubmit, active]);
 	useEffect(() => () => request.current?.abort(), []);
-	useEffect(() => {
-		if (process.env.NODE_ENV !== "development" || responderWarmed) return;
-		// Compile the on-demand route while the student is reading the lesson.
-		responderWarmed = true;
-		void fetch(endpoint, { method: "OPTIONS" }).then(
-			(response) => {
-				if (!response.ok) responderWarmed = false;
-			},
-			() => {
-				responderWarmed = false;
-			},
-		);
-	}, [endpoint]);
-	useEffect(() => {
-		if (state === "navigating" && !changing) {
-			setState("idle");
-			submitting.current = false;
-			finishNavigation();
-		}
-	}, [state, changing, finishNavigation]);
 
 	async function submit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
@@ -126,8 +96,9 @@ export function LessonForm({
 	}
 
 	async function send(element: HTMLFormElement) {
-		if (submitting.current || confirmed || itemBusy) return;
+		if (request.current || confirmed || itemBusy) return;
 		const form = new FormData(element);
+		form.set("lessonFlow", "1");
 		const activeMs = activeStudyTime();
 		if (autoSubmit && activeMs !== undefined) {
 			const { elapsed, visibleSince } = questionClock.current;
@@ -136,17 +107,17 @@ export function LessonForm({
 			form.set("metricResponseMs", String(Math.round(responseMs)));
 			form.set("metricActiveMs", String(Math.round(activeMs)));
 		}
-		submitting.current = true;
+		const controller = new AbortController();
+		request.current = controller;
 		setState("submitting");
 		setError("");
 		dismiss("lesson-request");
 		try {
-			request.current = new AbortController();
 			const response = await fetch(endpoint, {
 				method: "POST",
 				body: form,
 				signal: AbortSignal.any([
-					request.current.signal,
+					controller.signal,
 					AbortSignal.timeout(20000),
 				]),
 			});
@@ -155,66 +126,61 @@ export function LessonForm({
 				continueTo?: string;
 				error?: string;
 				assessment?: AnswerAssessment;
+				cursor?: LessonCursor;
+				inventory?: Record<string, number>;
 				rpg?: RpgBalance;
 			} = await response.json();
-			if (response.ok && result.destination) {
-				if (result.rpg) publishRpg(result.rpg);
-				if (result.assessment) {
-					finishNavigation();
-					// Keep the same controls and selection mounted. Reload restores this saved result.
-					window.history.replaceState(null, "", result.destination);
-					setConfirmed({
-						assessment: result.assessment,
-						destination:
-							result.continueTo ?? endpoint.replace(/\/responder$/, ""),
-						animate: consumeFeedbackEvent(
-							() => window.sessionStorage,
-							`${result.assessment.eventId}:motion`,
-						),
-					});
-					setState(result.assessment.correct ? "correct" : "incorrect");
-					return;
-				}
-				startNavigation(result.destination);
-				navigateLearning(() => {
-					setState("navigating");
-					transition(() => {
-						if (
-							result.destination ===
-							`${window.location.pathname}${window.location.search}`
-						)
-							router.refresh();
-						else router.push(result.destination as string);
-					});
-				});
-				return;
+			if (!response.ok || !result.destination || !result.cursor) {
+				throw new Error(
+					result.error ?? "Não foi possível salvar. Tente novamente.",
+				);
 			}
+			if (result.rpg) publishRpg(result.rpg);
+			if (result.inventory) onInventory(result.inventory);
+			if (result.assessment) {
+				onFeedback(result.destination);
+				setConfirmed({
+					assessment: result.assessment,
+					destination:
+						result.continueTo ?? endpoint.replace(/\/responder$/, ""),
+					cursor: result.cursor,
+					animate: consumeFeedbackEvent(
+						() => window.sessionStorage,
+						`${result.assessment.eventId}:motion`,
+					),
+				});
+				setState(result.assessment.correct ? "correct" : "incorrect");
+			} else {
+				onAdvance(result.cursor, result.destination);
+				setState("idle");
+			}
+		} catch (cause) {
+			if (controller.signal.aborted) return;
 			const message =
-				result.error ?? "Não foi possível salvar. Tente novamente.";
+				cause instanceof Error && cause.name === "Error"
+					? cause.message
+					: "Não foi possível confirmar o envio. Sua escolha foi mantida. Tente novamente.";
 			setError(message);
+			setState("error");
 			notify({ id: "lesson-request", kind: "error", message });
-		} catch {
-			if (request.current?.signal.aborted) return;
-			const message =
-				"Não foi possível confirmar o envio. Sua escolha foi mantida. Tente novamente.";
-			setError(message);
-			notify({ id: "lesson-request", kind: "error", message });
+		} finally {
+			request.current = null;
 		}
-		setState("error");
-		submitting.current = false;
 	}
 
+	const pending = state === "submitting";
+	const model = effects?.model ?? screen.model;
 	return (
 		<form
 			action={endpoint}
 			aria-busy={pending}
 			aria-describedby={autoSubmit && !confirmed ? statusId : undefined}
 			className="answer-experience space-y-4"
-			data-animate={visibleResult?.animate ? "true" : undefined}
+			data-animate={confirmed?.animate ? "true" : undefined}
 			data-auto-submit={autoSubmit || undefined}
 			data-outcome={
-				visibleResult
-					? visibleResult.assessment.correct
+				confirmed
+					? confirmed.assessment.correct
 						? "success"
 						: "error"
 					: undefined
@@ -234,50 +200,43 @@ export function LessonForm({
 			}}
 			onSubmit={submit}
 		>
-			<input name="item" type="hidden" value={entryKey} />
+			<input name="item" type="hidden" value={key} />
 			<input name="rodada" type="hidden" value={round} />
 			<input name="run" type="hidden" value={run} />
 			<input name="variant" type="hidden" value={effects?.variant ?? ""} />
 			<LessonLives
-				lives={confirmed?.assessment.lives ?? currentLives}
+				lives={confirmed?.assessment.lives ?? cursor.lives}
 				review={round === 2}
 			/>
-			{bag && autoSubmit && !confirmed && (
+			{bag && !confirmed && (
 				<LessonBag
+					bag={bag}
 					disabled={pending || itemBusy}
-					entryKey={entryKey}
-					onApply={(value) => {
-						setEffects(value);
-						if (value.lives !== undefined) setCurrentLives(value.lives);
-					}}
+					entryKey={key}
+					inventory={inventory}
+					onApply={onUseItem}
 					onBusy={setItemBusy}
-					pointId={bag.pointId}
+					pointId={pointId}
 					round={round}
 					run={run}
 				/>
 			)}
-			{progress !== undefined && (
-				<ProgressBar
-					label={round === 2 ? "Andamento da revisão" : "Andamento da lição"}
-					value={confirmed?.assessment.progress ?? progress}
-				/>
-			)}
+			<ProgressBar
+				label={round === 2 ? "Andamento da revisão" : "Andamento da lição"}
+				value={confirmed?.assessment.progress ?? cursor.progress}
+			/>
 			<fieldset
 				className="answer-controls min-w-0"
 				disabled={pending || Boolean(confirmed) || itemBusy}
 			>
-				{effects ? (
-					<StageScreen
-						key={effects.variant}
-						model={applyLens(effects.model, effects.removed)}
-						response
-					/>
-				) : (
-					children
-				)}
+				<StageScreen
+					key={effects?.variant}
+					model={effects ? applyLens(model, effects.removed) : model}
+					response
+				/>
 			</fieldset>
 			<QuestionHelp example={effects?.example} hint={effects?.hint} />
-			{autoSubmit && !visibleResult && (
+			{autoSubmit && !confirmed && (
 				<p className="answer-auto-status" id={statusId} role="status">
 					<FeedbackIcon kind={pending ? "loading" : "info"} />
 					{pending
@@ -290,21 +249,22 @@ export function LessonForm({
 					{error}
 				</p>
 			)}
-			{visibleResult ? (
+			{confirmed ? (
 				<AnswerResult
-					animate={visibleResult.animate}
-					assessment={visibleResult.assessment}
-					destination={visibleResult.destination}
+					animate={confirmed.animate}
+					assessment={confirmed.assessment}
+					destination={confirmed.destination}
 					example={example}
+					onContinue={() => onAdvance(confirmed.cursor, confirmed.destination)}
 				/>
 			) : !autoSubmit ? (
 				<ActionButton
 					busy={pending}
-					busyLabel={label}
+					busyLabel="Continuar"
 					state={state === "error" ? "error" : undefined}
 					type="submit"
 				>
-					{label} <Icon className="size-4" name="arrow" />
+					Continuar <Icon className="size-4" name="arrow" />
 				</ActionButton>
 			) : state === "error" ? (
 				<ActionButton

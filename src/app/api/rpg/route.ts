@@ -1,19 +1,15 @@
 import type { NextRequest } from "next/server";
 import { z } from "zod";
 import { auth } from "~/server/auth";
-import {
-	armProtection,
-	equipItem,
-	purchaseItem,
-	RpgError,
-	readRpgState,
-} from "~/server/rpg";
+import { RpgError, readRpgState } from "~/server/rpg";
 import {
 	applyQuestionItem,
 	lessonBag,
 	materialAction,
 	restartLesson,
 } from "~/server/rpg-actions";
+import { readRpgHistory } from "~/server/rpg-history";
+import { armProtection, equipItem, purchaseItem } from "~/server/rpg-store";
 
 const input = z.object({
 	action: z.enum(["buy", "equip", "arm", "use", "material", "restart"]),
@@ -26,12 +22,19 @@ const input = z.object({
 	confirmed: z.boolean().optional(),
 	equipped: z.boolean().optional(),
 	answer: z.string().max(80).optional(),
+	lessonFlow: z.boolean().optional(),
+	compact: z.boolean().optional(),
 });
 export async function GET(request: NextRequest) {
 	const user = (await auth())?.user;
 	if (!user)
 		return Response.json({ error: "Entre na sua conta." }, { status: 401 });
 	try {
+		if (request.nextUrl.searchParams.get("history") === "1")
+			return Response.json(
+				{ account: user.id, ...(await readRpgHistory(user.id, false)) },
+				{ headers: { "Cache-Control": "private, no-store" } },
+			);
 		const point = Number(request.nextUrl.searchParams.get("pointId"));
 		const entry = request.nextUrl.searchParams.get("entryKey");
 		const round = request.nextUrl.searchParams.get("round") === "2" ? 2 : 1;
@@ -66,6 +69,7 @@ export async function POST(request: NextRequest) {
 					value.pointId,
 					value.requestId,
 					value.lessonRun,
+					value.lessonFlow,
 				),
 			);
 		}
@@ -85,7 +89,12 @@ export async function POST(request: NextRequest) {
 			throw new RpgError("Identifique a operação e o item.");
 		if (value.action === "buy")
 			return Response.json({
-				state: await purchaseItem(user.id, value.itemId, value.requestId),
+				state: await purchaseItem(
+					user.id,
+					value.itemId,
+					value.requestId,
+					value.compact,
+				),
 			});
 		if (value.action === "equip")
 			return Response.json({
@@ -94,13 +103,14 @@ export async function POST(request: NextRequest) {
 					value.itemId,
 					Boolean(value.equipped),
 					value.requestId,
+					value.compact,
 				),
 			});
 		if (value.action === "arm") {
 			if (value.itemId !== "streak-shield")
 				throw new RpgError("Proteção inválida.");
 			return Response.json({
-				state: await armProtection(user.id, value.requestId),
+				state: await armProtection(user.id, value.requestId, value.compact),
 			});
 		}
 		if (!value.pointId || !value.entryKey || !value.round)
@@ -115,6 +125,7 @@ export async function POST(request: NextRequest) {
 				value.round,
 				Boolean(value.confirmed),
 				value.lessonRun,
+				value.lessonFlow,
 			),
 		);
 	} catch (error) {

@@ -3,7 +3,8 @@ import { trails } from "~/app/aprender/trails";
 import { acceptsAnalytics, recordAnswerMetrics } from "~/server/analytics";
 import { auth } from "~/server/auth";
 import { recordAnswer } from "~/server/lesson";
-import { readRpgBalance } from "~/server/rpg";
+import { readRpgBalance, readRpgInventory } from "~/server/rpg";
+import { lessonCursor } from "~/server/rpg-actions";
 
 function milliseconds(raw: FormDataEntryValue | null, maximum: number) {
 	if (typeof raw !== "string" || !/^\d{1,8}$/.test(raw)) return undefined;
@@ -76,24 +77,50 @@ export async function POST(
 				: "nextKey" in result && result.nextKey
 					? `${base}?${new URLSearchParams({ item: result.nextKey })}`
 					: base;
-		const rpg = await readRpgBalance(
-			user.id,
-			"awards" in result ? result.awards : [],
-		).catch((error: unknown) => {
-			console.error(
-				"Saldo indisponível após salvar a etapa",
-				error instanceof Error ? error.name : error,
-			);
-			return undefined;
-		});
+		const flow = form.get("lessonFlow") === "1";
+		const view = "view" in result ? result.view : undefined;
+		const awards = "awards" in result ? result.awards : undefined;
+		const assessment = "assessment" in result ? result.assessment : undefined;
+		const [rpg, cursor, inventory] = await Promise.all([
+			!flow || assessment || view?.completedAt
+				? readRpgBalance(user.id, awards).catch((error: unknown) => {
+						console.error(
+							"Saldo indisponível após salvar a etapa",
+							error instanceof Error ? error.name : error,
+						);
+						return undefined;
+					})
+				: undefined,
+			flow && view
+				? lessonCursor({
+						userId: user.id,
+						...view,
+						awards,
+					})
+				: undefined,
+			flow &&
+			(awards?.length ||
+				view?.completedAt ||
+				(assessment && !("analytics" in result)))
+				? readRpgInventory(user.id)
+						.then((stock) =>
+							Object.fromEntries(
+								stock.map(({ itemId, quantity }) => [itemId, quantity]),
+							),
+						)
+						.catch(() => undefined)
+				: undefined,
+		]);
 		return Response.json({
 			destination,
 			continueTo:
 				"nextKey" in result && result.nextKey
 					? `${base}?${new URLSearchParams({ item: result.nextKey })}`
 					: base,
-			assessment: "assessment" in result ? result.assessment : undefined,
+			assessment,
 			rpg,
+			cursor,
+			inventory,
 		});
 	} catch (error) {
 		console.error(

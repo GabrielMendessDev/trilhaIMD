@@ -1,26 +1,19 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useRef, useState, useTransition } from "react";
+import { useRef, useState } from "react";
 import Link from "~/app/_components/action-link";
-import { useFeedback } from "~/app/_components/feedback";
-import { navigateLearning } from "~/app/_components/learning-navigation";
-import { publishRpg, rpgRequest } from "~/app/_components/rpg-client";
+import {
+	publishRpg,
+	type RpgBalance,
+	rpgRequest,
+} from "~/app/_components/rpg-client";
 import { RpgIcon } from "~/app/_components/rpg-icon";
-import type { RpgState } from "~/server/rpg";
+import { items } from "~/domain/rpg";
+import type { LessonBagView, LessonCursor } from "./lesson-view";
 import type { StageModel } from "./model";
 
-export type LessonEffects = {
-	hint?: string;
-	example?: string;
-	removed: string[];
-	variant: string;
-	model: StageModel;
-	lives?: number;
-};
-type Bag = {
-	inventory: (RpgState["inventory"][number] & { reason: string | null })[];
-} & LessonEffects;
 export function LessonBag({
+	bag,
+	inventory,
 	pointId,
 	entryKey,
 	round,
@@ -33,45 +26,27 @@ export function LessonBag({
 	entryKey: string;
 	round: 1 | 2;
 	disabled: boolean;
-	onApply: (effects: LessonEffects) => void;
+	bag: LessonBagView;
+	inventory: Record<string, number>;
+	onApply: (
+		cursor: LessonCursor,
+		inventory: Record<string, number>,
+		destination?: string,
+	) => void;
 	onBusy: (value: boolean) => void;
 	run?: number;
 }) {
-	const [bag, setBag] = useState<Bag | null>(null),
-		[busy, setBusy] = useState(""),
+	const [busy, setBusy] = useState(""),
 		[error, setError] = useState(""),
 		[confirm, setConfirm] = useState("");
 	const dialog = useRef<HTMLDialogElement>(null),
 		lock = useRef(false),
 		operation = useRef<{ item: string; id: string } | null>(null);
-	const router = useRouter();
-	const { startNavigation } = useFeedback();
-	const [, transition] = useTransition();
-	async function load() {
-		const response = await fetch(
-			`/api/rpg?${new URLSearchParams({ pointId: String(pointId), entryKey, round: String(round) })}`,
-			{ cache: "no-store", signal: AbortSignal.timeout(20000) },
-		);
-		const value = await response.json();
-		if (!response.ok) throw new Error(value.error);
-		setBag(value as Bag);
-	}
-	async function open() {
+	function open() {
 		if (disabled) return;
-		dialog.current?.showModal();
-		setBusy("loading");
 		setError("");
-		try {
-			await load();
-		} catch (e) {
-			setError(
-				e instanceof Error
-					? e.message
-					: "Não foi possível abrir. Tente novamente.",
-			);
-		} finally {
-			setBusy("");
-		}
+		setConfirm("");
+		dialog.current?.showModal();
 	}
 	async function applyItem(itemId: string) {
 		if (lock.current || disabled) return;
@@ -87,8 +62,9 @@ export function LessonBag({
 			operation.current = { item: itemId, id: crypto.randomUUID() };
 		try {
 			const value = await rpgRequest<{
-				result: LessonEffects & { destination?: string };
-				state: RpgState;
+				result: { cursor?: LessonCursor; destination?: string };
+				rpg: RpgBalance;
+				inventory: Record<string, number>;
 			}>({
 				action: "use",
 				itemId,
@@ -96,33 +72,17 @@ export function LessonBag({
 				entryKey,
 				round,
 				lessonRun: run,
+				lessonFlow: true,
 				confirmed: confirm === itemId,
 				requestId: operation.current.id,
 			});
-			publishRpg(value.state);
+			if (!value.result.cursor)
+				throw new Error("Atualize a lição para recuperar o estado da questão.");
+			publishRpg(value.rpg);
 			operation.current = null;
 			setConfirm("");
-			if (value.result.destination) {
-				const destination = value.result.destination;
-				dialog.current?.close();
-				startNavigation(destination);
-				navigateLearning(() =>
-					transition(() => {
-						if (
-							destination !==
-							`${window.location.pathname}${window.location.search}`
-						)
-							router.push(destination);
-						// Item mutations happen outside a Server Action: invalidate the
-						// cached lesson instead of reloading the old question's bag.
-						router.refresh();
-					}),
-				);
-				return;
-			}
-			onApply(value.result);
-			await load();
 			dialog.current?.close();
+			onApply(value.result.cursor, value.inventory, value.result.destination);
 		} catch (e) {
 			setError(
 				e instanceof Error
@@ -140,7 +100,7 @@ export function LessonBag({
 			<button
 				className="rpg-open-bag"
 				disabled={disabled}
-				onClick={() => void open()}
+				onClick={open}
 				type="button"
 			>
 				<RpgIcon name="bag" />
@@ -173,24 +133,19 @@ export function LessonBag({
 					Use apenas quando precisar. Auxílios retiram a elegibilidade de lição
 					perfeita.
 				</p>
-				{busy === "loading" && <p role="status">Consultando seus itens…</p>}
 				{error && (
 					<p className="study-error" role="alert">
 						{error}
 					</p>
 				)}
-				{!bag && error && (
-					<button
-						className="ui-button"
-						onClick={() => void open()}
-						type="button"
-					>
-						Tentar novamente
-					</button>
-				)}
 				<ul>
-					{bag?.inventory
+					{items
 						.filter((i) => i.kind === "consumable" && i.id !== "streak-shield")
+						.map((i) => ({
+							...i,
+							quantity: inventory[i.id] ?? 0,
+							reason: bag.reasons[i.id],
+						}))
 						.sort((a, b) => Number(b.quantity > 0) - Number(a.quantity > 0))
 						.map((i) => (
 							<li

@@ -1,41 +1,64 @@
 ﻿"use client";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import Link from "~/app/_components/action-link";
 
 export function LessonSession({
 	number,
 	total,
 	children,
+	pauseHref,
 }: {
 	number: number;
 	total: number;
 	children: React.ReactNode;
+	pauseHref: string;
 }) {
-	const [started, setStarted] = useState(false);
-	if (started) return children;
+	const [mode, setMode] = useState<"arrival" | "paused" | "started">("arrival");
+	const heading = useRef<HTMLHeadingElement>(null);
+	useLayoutEffect(() => {
+		if (mode !== "started") heading.current?.focus({ preventScroll: true });
+	}, [mode]);
+	if (mode === "started") return children;
+	const paused = mode === "paused";
 	return (
 		<section
 			aria-labelledby="session-title"
 			className="ui-panel session-arrival my-4 space-y-4 p-6"
 		>
-			<h2 className="font-bold text-2xl" id="session-title">
-				Sessão {number} de {total}
+			<h2
+				className="font-bold text-2xl"
+				id="session-title"
+				ref={heading}
+				tabIndex={-1}
+			>
+				{paused ? "Sessão pausada" : `Sessão ${number} de ${total}`}
 			</h2>
 			<p>
-				Você chegou a uma pausa do percurso. As respostas anteriores estão
-				salvas. Continue com a próxima sessão ou retome pelo mapa quando quiser.
+				{paused
+					? "Seu progresso está salvo. Retome quando quiser."
+					: "Você chegou a uma pausa do percurso. As respostas anteriores estão salvas."}
 			</p>
 			<div className="flex flex-wrap gap-3">
 				<button
 					className="ui-button"
-					onClick={() => setStarted(true)}
+					onClick={() => setMode("started")}
 					type="button"
 				>
-					Começar esta sessão
+					{paused ? "Retomar sessão" : "Começar esta sessão"}
 				</button>
-				<Link className="ui-link" href="/aprender">
-					Fazer uma pausa
-				</Link>
+				{paused ? (
+					<Link className="ui-link" href={pauseHref}>
+						Voltar ao mapa
+					</Link>
+				) : (
+					<button
+						className="ui-link"
+						onClick={() => setMode("paused")}
+						type="button"
+					>
+						Fazer uma pausa
+					</button>
+				)}
 			</div>
 		</section>
 	);

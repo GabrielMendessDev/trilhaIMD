@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import { ActionButton } from "~/app/_components/action-button";
-import { adminConfigured, isAdmin } from "~/server/admin-auth";
+import {
+	adminSession,
+	adminSetupAvailable,
+	adminSetupRequiresToken,
+	readAdminCredentials,
+} from "~/server/admin-auth";
 import { readAdminMetrics } from "~/server/admin-metrics";
 import { pruneAnalytics } from "~/server/analytics";
 import { leaveAdmin } from "./actions";
+import { AdminSetup } from "./admin-setup";
 import { AdminSignIn } from "./admin-sign-in";
 import { DashboardMetrics } from "./metrics-sections";
 import styles from "./styles.module.css";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
 	title: "Painel administrativo",
@@ -20,10 +28,27 @@ export default async function AdminDashboard({
 }: {
 	searchParams: Promise<{ erro?: string }>;
 }) {
-	if (!(await isAdmin())) {
-		const configured = adminConfigured();
-		const invalid = (await searchParams).erro === "1";
-		return <AdminSignIn configured={configured} invalid={invalid} />;
+	const credentials = await readAdminCredentials().catch(() => ({
+		mode: "disabled" as const,
+	}));
+	const session = await adminSession(credentials);
+	if (session !== "admin") {
+		const { erro } = await searchParams;
+		if (session === "setup")
+			return (
+				<AdminSetup
+					available={adminSetupAvailable()}
+					invalid={erro === "setup"}
+					requiresToken={adminSetupRequiresToken()}
+				/>
+			);
+		return (
+			<AdminSignIn
+				available={credentials.mode !== "disabled"}
+				firstAccess={credentials.mode === "setup"}
+				invalid={erro === "1"}
+			/>
+		);
 	}
 
 	const data = await readAdminMetrics().catch((error: unknown) => {

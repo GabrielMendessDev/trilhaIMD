@@ -6,8 +6,10 @@ import { redirect } from "next/navigation";
 import {
 	adminCookie,
 	adminCredentialsMatch,
-	adminSessionSeconds,
+	adminSession,
 	adminToken,
+	initializeAdmin,
+	readAdminCredentials,
 } from "~/server/admin-auth";
 
 const dashboard = "/admin/dashboard";
@@ -21,18 +23,43 @@ const cookieOptions = {
 export async function enterAdmin(form: FormData) {
 	const username = form.get("username");
 	const password = form.get("password");
+	const credentials = await readAdminCredentials();
 	if (
 		typeof username !== "string" ||
 		typeof password !== "string" ||
-		!adminCredentialsMatch(username, password)
+		!(await adminCredentialsMatch(credentials, username, password))
 	) {
 		await new Promise((resolve) => setTimeout(resolve, 350));
 		redirect(`${dashboard}?erro=1`);
 	}
-	(await cookies()).set(adminCookie, adminToken(), {
-		...cookieOptions,
-		maxAge: adminSessionSeconds,
-	});
+	const { value, maxAge } = adminToken(credentials);
+	(await cookies()).set(adminCookie, value, { ...cookieOptions, maxAge });
+	redirect(dashboard);
+}
+
+export async function completeAdminSetup(form: FormData) {
+	const credentials = await readAdminCredentials();
+	if ((await adminSession(credentials)) !== "setup") redirect(dashboard);
+	const username = form.get("username");
+	const password = form.get("password");
+	const token = form.get("setupToken");
+	if (
+		typeof username !== "string" ||
+		typeof password !== "string" ||
+		password !== form.get("confirmPassword") ||
+		!(await initializeAdmin(
+			username.trim(),
+			password,
+			typeof token === "string" ? token : "",
+		))
+	) {
+		await new Promise((resolve) => setTimeout(resolve, 350));
+		redirect(`${dashboard}?erro=setup`);
+	}
+	const saved = await readAdminCredentials();
+	if (saved.mode !== "stored") redirect(dashboard);
+	const { value, maxAge } = adminToken(saved);
+	(await cookies()).set(adminCookie, value, { ...cookieOptions, maxAge });
 	redirect(dashboard);
 }
 

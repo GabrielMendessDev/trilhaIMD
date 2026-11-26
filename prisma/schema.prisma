@@ -345,3 +345,10 @@ model AnalyticsDaily {
 
     @@id([day, kind, label])
 }
+
+model AdminCredential {
+    id           Int    @id @default(1)
+    username     String
+    salt         String
+    passwordHash String
+}

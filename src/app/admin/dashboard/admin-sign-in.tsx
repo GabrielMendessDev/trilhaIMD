@@ -3,10 +3,12 @@ import { ActionButton } from "~/app/_components/action-button";
 import { enterAdmin } from "./actions";
 import styles from "./styles.module.css";
 export function AdminSignIn({
-	configured,
+	available,
+	firstAccess,
 	invalid,
 }: {
-	configured: boolean;
+	available: boolean;
+	firstAccess: boolean;
 	invalid: boolean;
 }) {
 	return (
@@ -15,8 +17,12 @@ export function AdminSignIn({
 				trilbit
 			</Link>
 			<h1>Painel administrativo</h1>
-			<p>Entre para consultar as métricas do trilbit.</p>
-			{configured ? (
+			<p>
+				{firstAccess
+					? "No primeiro acesso, entre com as credenciais temporárias para criar seu próprio login e senha."
+					: "Entre para consultar as métricas do trilbit."}
+			</p>
+			{available ? (
 				<form action={enterAdmin} className={styles.form}>
 					<label>
 						Usuário
@@ -52,7 +58,7 @@ export function AdminSignIn({
 				</form>
 			) : (
 				<p role="alert">
-					Configure a senha administrativa no ambiente para liberar o painel.
+					Verifique as credenciais do painel e as migrações do banco de dados.
 				</p>
 			)}
 		</main>

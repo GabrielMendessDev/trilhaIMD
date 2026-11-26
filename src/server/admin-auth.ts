@@ -24,23 +24,45 @@ type StoredCredential = {
 	passwordHash: string;
 };
 type AdminCredentials =
-	| { mode: "setup" }
-	| { mode: "disabled" }
+	| { mode: "setup"; weakEnvironmentPassword: boolean }
+	| { mode: "unavailable" }
 	| { mode: "environment"; username: string; password: string }
 	| ({ mode: "stored" } & StoredCredential);
 
 export async function readAdminCredentials(): Promise<AdminCredentials> {
 	const username = process.env.ADMIN_USERNAME?.trim();
 	const password = process.env.ADMIN_PASSWORD;
-	if (username && password && !(username === "admin" && password === "admin")) {
-		if (process.env.NODE_ENV === "production" && password.length < 16)
-			return { mode: "disabled" };
+	const usingTemporaryDefaults = username === "admin" && password === "admin";
+	const weakEnvironmentPassword = Boolean(
+		username &&
+			password?.trim() &&
+			!usingTemporaryDefaults &&
+			process.env.NODE_ENV === "production" &&
+			password.length < 16,
+	);
+	if (
+		username &&
+		password?.trim() &&
+		!usingTemporaryDefaults &&
+		!weakEnvironmentPassword
+	)
 		return { mode: "environment", username, password };
+	try {
+		const [saved] = await db.$queryRaw<StoredCredential[]>`
+			SELECT username, salt, "passwordHash" FROM "AdminCredential" WHERE id = 1
+		`;
+		return saved
+			? { mode: "stored", ...saved }
+			: { mode: "setup", weakEnvironmentPassword };
+	} catch (error) {
+		const failure = error as { code?: string; meta?: { code?: string } } | null;
+		console.error(
+			"Falha ao consultar as credenciais administrativas.",
+			error instanceof Error ? error.name : "Erro desconhecido",
+			failure?.meta?.code ?? failure?.code ?? "",
+		);
+		return { mode: "unavailable" };
 	}
-	const [saved] = await db.$queryRaw<StoredCredential[]>`
-		SELECT username, salt, "passwordHash" FROM "AdminCredential" WHERE id = 1
-	`;
-	return saved ? { mode: "stored", ...saved } : { mode: "setup" };
 }
 
 const digest = (value: string) => createHash("sha256").update(value).digest();
@@ -59,7 +81,7 @@ export async function adminCredentialsMatch(
 	password: string,
 ) {
 	if (
-		expected.mode === "disabled" ||
+		expected.mode === "unavailable" ||
 		username.length > 256 ||
 		password.length > 1024
 	)
@@ -126,7 +148,7 @@ export async function initializeAdmin(
 }
 
 function scope(expected: AdminCredentials) {
-	if (expected.mode === "disabled") return null;
+	if (expected.mode === "unavailable") return null;
 	return expected.mode === "setup" ? "setup" : "admin";
 }
 

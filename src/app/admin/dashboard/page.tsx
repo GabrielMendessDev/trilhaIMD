@@ -28,9 +28,7 @@ export default async function AdminDashboard({
 }: {
 	searchParams: Promise<{ erro?: string }>;
 }) {
-	const credentials = await readAdminCredentials().catch(() => ({
-		mode: "disabled" as const,
-	}));
+	const credentials = await readAdminCredentials();
 	const session = await adminSession(credentials);
 	if (session !== "admin") {
 		const { erro } = await searchParams;
@@ -44,9 +42,12 @@ export default async function AdminDashboard({
 			);
 		return (
 			<AdminSignIn
-				available={credentials.mode !== "disabled"}
+				available={credentials.mode !== "unavailable"}
 				firstAccess={credentials.mode === "setup"}
 				invalid={erro === "1"}
+				weakEnvironmentPassword={
+					credentials.mode === "setup" && credentials.weakEnvironmentPassword
+				}
 			/>
 		);
 	}

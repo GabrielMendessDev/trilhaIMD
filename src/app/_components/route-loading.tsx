@@ -1,6 +1,5 @@
-import { useId } from "react";
+import Image from "next/image";
 import styles from "./route-loading.module.css";
-import { RouteLoadingRain } from "./route-loading-rain";
 
 export function RouteLoading({
 	target,
@@ -22,10 +21,6 @@ export function RouteLoading({
 						? "catalog"
 						: "list";
 	const hasRail = layout !== "login" && layout !== "lesson";
-	const markId = useId();
-	const leftId = `${markId}-left`;
-	const rightId = `${markId}-right`;
-	const topId = `${markId}-top`;
 
 	return (
 		<div
@@ -72,45 +67,14 @@ export function RouteLoading({
 					</div>
 				)}
 			</div>
-			<RouteLoadingRain />
-			<div className={styles.mark}>
-				<svg aria-hidden="true" fill="none" viewBox="0 0 48 48">
-					<defs>
-						<path
-							d="M9 13c0 5 2 8 7 8h2c1 0 2 1 2 2v8c0 5 1 8 4 9"
-							id={leftId}
-							pathLength="1"
-						/>
-						<path
-							d="M39 9c0 6-2 10-8 10h-1c-2 0-3 1-3 3v10c0 5-1 7-3 8"
-							id={rightId}
-							pathLength="1"
-						/>
-						<path d="M9 13c5-1 10-1 15-2l15-2" id={topId} pathLength="1" />
-					</defs>
-					<g stroke="#8C6DFF" strokeLinecap="round" strokeWidth="5.5">
-						<use href={`#${leftId}`} />
-						<use href={`#${rightId}`} />
-						<use href={`#${topId}`} />
-					</g>
-					<g
-						className={styles.pulses}
-						stroke="#fff"
-						strokeLinecap="round"
-						strokeWidth="2.2"
-					>
-						<use href={`#${leftId}`} />
-						<use href={`#${rightId}`} />
-						<use href={`#${topId}`} />
-					</g>
-					<circle cx="9" cy="13" fill="#6558F5" r="8" />
-					<circle cx="39" cy="9" fill="#FFAA6B" r="8" />
-					<circle cx="24" cy="39" fill="#25C5AB" r="8" />
-					<circle cx="9" cy="13" fill="#fff" r="3.5" />
-					<circle cx="39" cy="9" fill="#fff" r="3.5" />
-					<circle cx="24" cy="39" fill="#fff" r="3.5" />
-				</svg>
-			</div>
+			<Image
+				alt=""
+				className={styles.mark}
+				height={96}
+				src="/brand/trilbit-mark.svg"
+				unoptimized
+				width={96}
+			/>
 		</div>
 	);
 }

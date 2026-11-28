@@ -4,8 +4,6 @@
 
 <h1>trilbit</h1>
 
-<p><em>Aprenda TI. Evolua por trilhas.</em></p>
-
 <p>Plataforma de estudo para estudantes de TI do IMD/UFRN,<br />feita por estudantes do BTI.</p>
 
 <p>

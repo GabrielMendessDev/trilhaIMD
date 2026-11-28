@@ -5,7 +5,7 @@ import { dayAt, dayIndex, economy, studyDay } from "~/domain/rpg";
 import { publishedCatalogCache } from "./catalog-cache";
 import { db } from "./db";
 import { getLearningRecords, getPublishedPoints } from "./learning";
-import { ensureRpg } from "./rpg";
+import { ensureRpgOnce } from "./rpg";
 
 const getQuestionMetadata = cache(() =>
 	publishedCatalogCache(
@@ -21,7 +21,7 @@ const getQuestionMetadata = cache(() =>
 );
 
 export const getDailyMissions = cache(async (userId: string) => {
-	await ensureRpg(userId);
+	await ensureRpgOnce(userId);
 	const today = studyDay(new Date()),
 		start = new Date(`${today}T03:00:00Z`),
 		end = new Date(`${dayAt(dayIndex(today) + 1)}T03:00:00Z`);

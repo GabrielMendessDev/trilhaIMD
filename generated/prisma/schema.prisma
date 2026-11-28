@@ -2,8 +2,9 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  provider        = "prisma-client-js"
+  output          = "../generated/prisma"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
@@ -56,6 +57,7 @@ model Session {
 }
 
 model User {
+  meExams              MeExamAttempt[]
   id                   String                  @id @default(cuid())
   name                 String?
   email                String?                 @unique
@@ -183,6 +185,7 @@ model RpgWallet {
   userId        String  @id
   bits          Int     @default(0)
   achievementXp Int     @default(0)
+  rewardedLevel Int     @default(0)
   stats         Json    @default("{}") @db.JsonB
   initialized   Boolean @default(false)
   settledDay    String?
@@ -322,4 +325,53 @@ model MaterialReading {
   point       TrailPoint @relation(fields: [pointId], references: [id], onDelete: Cascade)
 
   @@id([userId, pointId, entryKey])
+}
+
+model MeExamAttempt {
+  trail       String    @default("elementar")
+  unit        Int       @default(1)
+  id          String    @id
+  userId      String
+  version     Int       @default(1)
+  questions   Json      @db.JsonB
+  answers     Json      @default("{}") @db.JsonB
+  revision    Int       @default(0)
+  createdAt   DateTime  @default(now()) @db.Timestamptz(3)
+  submittedAt DateTime? @db.Timestamptz(3)
+  score       Int?
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([userId, unit, createdAt])
+  @@index([userId, trail, unit, createdAt])
+}
+
+model AnalyticsSession {
+  id        String   @id @db.Uuid
+  startedAt DateTime @default(now()) @db.Timestamptz(3)
+  lastSeen  DateTime @db.Timestamptz(3)
+  sequence  Int
+  activeMs  Int
+  screen    String
+  device    String
+  viewport  String
+
+  @@index([startedAt])
+}
+
+model AnalyticsDaily {
+  day   String
+  kind  String
+  label String
+  count Int    @default(0)
+  total BigInt @default(0)
+
+  @@id([day, kind, label])
+}
+
+model AdminCredential {
+  id           Int    @id @default(1)
+  username     String
+  salt         String
+  passwordHash String
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { signOut } from "~/server/auth";
 import { ActionButton } from "./action-button";
 import Link from "./action-link";
+import { DismissibleDetails } from "./dismissible-details";
 import { Icon } from "./icon";
 import styles from "./shell.module.css";
 
@@ -13,7 +14,7 @@ export function AccountMenu({
 	name: string;
 }) {
 	return (
-		<details className={`${styles.userMenu} profile-menu`}>
+		<DismissibleDetails className={`${styles.userMenu} profile-menu`}>
 			<summary aria-label="Menu da conta" className={styles.avatar}>
 				{image?.startsWith("https://") ? (
 					<Image alt="" height={40} src={image} unoptimized width={40} />
@@ -52,6 +53,6 @@ export function AccountMenu({
 					</ActionButton>
 				</form>
 			</div>
-		</details>
+		</DismissibleDetails>
 	);
 }

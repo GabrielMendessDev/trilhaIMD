@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ActionButton } from "~/app/_components/action-button";
 import Link from "~/app/_components/action-link";
+import { isGoogleAvatar } from "~/app/_components/avatar";
 import {
 	DashboardLayout,
 	Icon,
@@ -30,14 +31,8 @@ export default async function PerfilPage() {
 							equipped.some((i) => i.id === "arcane-frame") || undefined
 						}
 					>
-						{user?.image?.startsWith("https://") ? (
-							<Image
-								alt=""
-								height={88}
-								src={user.image}
-								unoptimized
-								width={88}
-							/>
+						{isGoogleAvatar(user?.image) ? (
+							<Image alt="" height={88} src={user.image} width={88} />
 						) : (
 							<Icon className="size-10" name="profile" />
 						)}

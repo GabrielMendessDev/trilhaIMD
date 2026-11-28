@@ -56,30 +56,6 @@ npm run db:migrate
 npm run dev
 ```
 
-<details>
-<summary><strong>Configurar o login com Google</strong></summary>
-
-<br />
-
-1. Crie um cliente OAuth do tipo **Aplicativo da Web** na [Google Auth Platform](https://console.cloud.google.com/auth/clients).
-2. Adicione `http://localhost:3000/api/auth/callback/google` às URIs de redirecionamento.
-3. Preencha `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET` e `AUTH_SECRET` (gere com `npx auth secret`) no `.env`.
-
-</details>
-
-<details>
-<summary><strong>Comandos úteis</strong></summary>
-
-<br />
-
-| Comando | O que faz |
-|---|---|
-| `npm run verify` | Lint, tipos, testes e validação dos conteúdos |
-| `npm run build` | Build de produção |
-| `npm run db:studio` | Abre o Prisma Studio |
-
-</details>
-
 <br />
 
 <div align="center">

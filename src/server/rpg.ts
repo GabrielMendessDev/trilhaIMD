@@ -49,8 +49,12 @@ export function readRpgInventory(userId: string) {
 	>`SELECT "itemId",quantity,equipped FROM "InventoryItem" WHERE "userId"=${userId}`;
 }
 
+// Settles the wallet once per server render. Outside a render (server actions),
+// React's cache does not memoize, so every call still settles the wallet.
+export const ensureRpgOnce = cache(ensureRpg);
+
 export async function readRpgSummary(userId: string) {
-	await ensureRpg(userId);
+	await ensureRpgOnce(userId);
 	const [wallet, inventory, unlocked, progress] = await Promise.all([
 		readWallet(userId),
 		readRpgInventory(userId),

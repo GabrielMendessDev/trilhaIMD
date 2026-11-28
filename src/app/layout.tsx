@@ -16,9 +16,7 @@ export default async function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	const theme =
-		(await cookies()).get("trilbit-theme")?.value === "dark"
-			? "dark"
-			: "light";
+		(await cookies()).get("trilbit-theme")?.value === "dark" ? "dark" : "light";
 
 	return (
 		<html data-theme={theme} lang="pt-BR" suppressHydrationWarning>

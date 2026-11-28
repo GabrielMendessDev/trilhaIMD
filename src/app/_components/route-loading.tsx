@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./route-loading.module.css";
 
 export function RouteLoading({
@@ -67,14 +66,6 @@ export function RouteLoading({
 					</div>
 				)}
 			</div>
-			<Image
-				alt=""
-				className={styles.mark}
-				height={96}
-				src="/brand/trilbit-mark.svg"
-				unoptimized
-				width={96}
-			/>
 		</div>
 	);
 }

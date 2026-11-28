@@ -1,0 +1,10 @@
+# Deploy pela CLI (npx vercel --prod): não enviar segredos locais nem artefatos.
+# As variáveis de produção vêm do projeto na Vercel.
+.env
+.env.*
+!.env.example
+node_modules
+.next
+.next-*
+generated/prisma
+graphify-out

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { signOut } from "~/server/auth";
 import { ActionButton } from "./action-button";
 import Link from "./action-link";
+import { isGoogleAvatar } from "./avatar";
 import { DismissibleDetails } from "./dismissible-details";
 import { Icon } from "./icon";
 import styles from "./shell.module.css";
@@ -16,8 +17,8 @@ export function AccountMenu({
 	return (
 		<DismissibleDetails className={`${styles.userMenu} profile-menu`}>
 			<summary aria-label="Menu da conta" className={styles.avatar}>
-				{image?.startsWith("https://") ? (
-					<Image alt="" height={40} src={image} unoptimized width={40} />
+				{isGoogleAvatar(image) ? (
+					<Image alt="" height={40} src={image} width={40} />
 				) : (
 					<Icon className="size-6" name="profile" />
 				)}

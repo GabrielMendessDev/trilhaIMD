@@ -215,12 +215,6 @@
 	min-height: 10rem;
 }
 
-.mark {
-	position: relative;
-	width: clamp(4rem, 12vw, 6rem);
-	height: auto;
-}
-
 @media (prefers-reduced-motion: no-preference) {
 	.skeleton i,
 	.loading[data-layout="lesson"] .content::before,

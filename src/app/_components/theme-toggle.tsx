@@ -17,7 +17,7 @@ function isDark() {
 
 export function ThemeToggle({ withLabel = false }: { withLabel?: boolean }) {
 	const { notify } = useFeedback();
-	const dark = useSyncExternalStore(subscribe, isDark, () => true);
+	const dark = useSyncExternalStore(subscribe, isDark, () => false);
 	const label = dark ? "Ativar tema claro" : "Ativar tema escuro";
 
 	return (

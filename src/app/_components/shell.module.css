@@ -230,7 +230,7 @@
 	.shell[data-home] .top {
 		justify-content: flex-end;
 		border-block-end-color: transparent;
-		background: transparent;
+		background: var(--canvas);
 	}
 
 	.desktopContext {
